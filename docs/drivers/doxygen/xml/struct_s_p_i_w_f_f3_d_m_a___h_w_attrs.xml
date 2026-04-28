@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>SPIWFF3DMA_HWAttrs</compoundname>
+    <includes refid="_s_p_i_w_f_f3_d_m_a_8h" local="no">SPIWFF3DMA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a89a4800d38bb65eb344e3ebb933369e2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::baseAddr</definition>
+        <argsstring></argsstring>
+        <name>baseAddr</name>
+        <briefdescription>
+<para>SPI Peripheral&apos;s base address. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="836" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="836" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9d5707f26695d038cb372ccc393766d4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::swiPriority</definition>
+        <argsstring></argsstring>
+        <name>swiPriority</name>
+        <briefdescription>
+<para>SPI SWI priority. The higher the number, the higher the priority. The minimum is 0 and the maximum is 15 by default. The maximum can be reduced to save RAM by adding or modifying Swi.numPriorities in the kernel configuration file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="843" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="843" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a926f83d292542a0405a5a265b20d6f41" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::rxDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>rxDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA RX channel number </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="845" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="845" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a20860dd4aee14fcb435797a04d8dcf80" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::txDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>txDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA TX channel number </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="847" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="847" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a82dc78f91dc01763b3dc4c933f05b7e5" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t SPIWFF3DMA_HWAttrs::pociPinMux</definition>
+        <argsstring></argsstring>
+        <name>pociPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>POCI PIN mux value. Can be applied to either PICO or POCI </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="849" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="849" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1afe439c88a71d6bc911235f99c7d4f544" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t SPIWFF3DMA_HWAttrs::picoPinMux</definition>
+        <argsstring></argsstring>
+        <name>picoPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PICO PIN mux value. Can be applied to either PICO or POCI </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="851" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="851" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1ac335249eface4085feb7e8631816d321" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t SPIWFF3DMA_HWAttrs::sclkPinMux</definition>
+        <argsstring></argsstring>
+        <name>sclkPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SCLK PIN mux value for flow control </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="853" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="853" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a524265216d26b04a6d2ed0346d386051" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t SPIWFF3DMA_HWAttrs::csnPinMux</definition>
+        <argsstring></argsstring>
+        <name>csnPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CSN PIN mux value for flow control </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="855" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="855" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9070263a7f577750642bea43ad0d5a97" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::csnSel</definition>
+        <argsstring></argsstring>
+        <name>csnSel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI Selected CSN </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="857" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="857" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a93d889dfac936a3c33998a5ec20f78a0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_HWAttrs::minDmaTransferSize</definition>
+        <argsstring></argsstring>
+        <name>minDmaTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum transfer size for DMA based transfer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="859" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="859" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a1debc37cc0e3bd5a5a401d9df9285fee" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t SPIWFF3DMA_HWAttrs::defaultTxBufValue</definition>
+        <argsstring></argsstring>
+        <name>defaultTxBufValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default TX value if txBuf == NULL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="861" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="861" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a3d00bbd92bd4c66d77c4dee5c6d90609" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPIWFF3DMA_HWAttrs::txChannelEvtMux</definition>
+        <argsstring></argsstring>
+        <name>txChannelEvtMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA Mux ID for this SPI TX channel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="863" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="863" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a5525a650e735eb4557d82534657433b9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPIWFF3DMA_HWAttrs::rxChannelEvtMux</definition>
+        <argsstring></argsstring>
+        <name>rxChannelEvtMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA Mux ID for this SPI RX channel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="865" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="865" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a346254ee9baa19f1a7f7904531d6f6e3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPIWFF3DMA_HWAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPIWFF3DMA Peripheral&apos;s interrupt vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="867" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="867" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1aeb616694499ce1fe7cc22017bbd2cfeb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPIWFF3DMA_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+<para>SPIWFF3DMA Peripheral&apos;s interrupt priority. </para>        </briefdescription>
+        <detaileddescription>
+<para>The WFF3 devices use either three or two priority bits, depending on the device. That means ~0 has the same effect as (7 &lt;&lt; 5) or (3 &lt;&lt; 6), respectively.</para><para>Setting the priority to 0 is not supported by this driver.</para><para>HWI&apos;s with priority 0 ignore the HWI dispatcher to support zero-latency interrupts, thus invalidating the critical sections in this driver. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="879" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="879" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a3dac5741969e61a711e51b234748a291" prot="public" static="no" mutable="no">
+        <type>PowerWFF3_Resource</type>
+        <definition>PowerWFF3_Resource SPIWFF3DMA_HWAttrs::powerID</definition>
+        <argsstring></argsstring>
+        <name>powerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power driver ID for this SPI instance </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="881" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="881" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a21750b1fdb5b5e6dee34350495aef747" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t SPIWFF3DMA_HWAttrs::picoPin</definition>
+        <argsstring></argsstring>
+        <name>picoPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI PICO pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="883" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="883" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9227a0ad0fa7839d73887bb0c930014b" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t SPIWFF3DMA_HWAttrs::pociPin</definition>
+        <argsstring></argsstring>
+        <name>pociPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI POCI pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="885" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="885" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1ae7037e855dd9f0a8d9ca5581e667dec1" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t SPIWFF3DMA_HWAttrs::sclkPin</definition>
+        <argsstring></argsstring>
+        <name>sclkPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI SCLK pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="887" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="887" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a333cfae3183d8b658583c8cb180275a8" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t SPIWFF3DMA_HWAttrs::csnPin</definition>
+        <argsstring></argsstring>
+        <name>csnPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SPI CSN pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="889" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="889" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SPIWFF3DMA Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields, with the exception of intPriority, are used by driverlib APIs and therefore must be populated by driverlib macro definitions. For driverlib these definitions are found in:<itemizedlist>
+<listitem><para>inc/hw_memmap.h</para></listitem><listitem><para>inc/hw_ints.h</para></listitem><listitem><para>driverlib/dma.h</para></listitem></itemizedlist>
+</para><para>intPriority is the SPI peripheral&apos;s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS&apos;s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for SYS/BIOS applications, refer to the ti.sysbios.family.arm.m3.Hwi documentation for SYS/BIOS usage of interrupt priorities. If the driver uses the ti.dpl interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the SYS/BIOS port, intPriority is passed unmodified to Hwi_create().</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>SPIWFF3DMA_HWAttrs<sp/>SPIWFF3DMAobjects[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>SPI0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_SP_SPI_0_EVT_REQ,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerID<sp/>=<sp/>PowerWFF3_PERIPH_SPI0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.defaultTxBufValue<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxDmaChannel<sp/>=<sp/>1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txDmaChannel<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txChannelEvtMux<sp/>=<sp/>DMAWFF3_PERIPH_SPI_0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxChannelEvtMux<sp/>=<sp/>DMAWFF3_PERIPH_SPI_0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.picoPin<sp/>=<sp/>CONFIG_SPI0_POCI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pociPin<sp/>=<sp/>CONFIG_SPI0_PICO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclkPin<sp/>=<sp/>CONFIG_SPI0_CLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPin<sp/>=<sp/>CONFIG_SPI0_CSN,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnSel<sp/>=<sp/>SPI_CSSEL_CS0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pociPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.picoPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclkPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.minDmaTransferSize<sp/>=<sp/>10</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>SPI1_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_SP_SPI_1_EVT_REQ,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerID<sp/>=<sp/>PowerWFF3_PERIPH_SPI1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.defaultTxBufValue<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxDmaChannel<sp/>=<sp/>1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txDmaChannel<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txChannelEvtMux<sp/>=<sp/>DMAWFF3_PERIPH_SPI_1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxChannelEvtMux<sp/>=<sp/>DMAWFF3_PERIPH_SPI_1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.picoPin<sp/>=<sp/>CONFIG_SPI1_POCI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pociPin<sp/>=<sp/>CONFIG_SPI1_PICO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclkPin<sp/>=<sp/>CONFIG_SPI1_CLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPin<sp/>=<sp/>CONFIG_SPI1_CSN,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnSel<sp/>=<sp/>SPI_CSSEL_CS0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pociPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.picoPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclkPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.csnPinMux<sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.minDmaTransferSize<sp/>=<sp/>10</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="834" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="833" bodyend="890"/>
+    <listofallmembers>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a89a4800d38bb65eb344e3ebb933369e2" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>baseAddr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a333cfae3183d8b658583c8cb180275a8" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>csnPin</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a524265216d26b04a6d2ed0346d386051" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>csnPinMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9070263a7f577750642bea43ad0d5a97" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>csnSel</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a1debc37cc0e3bd5a5a401d9df9285fee" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>defaultTxBufValue</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a346254ee9baa19f1a7f7904531d6f6e3" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>intNum</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1aeb616694499ce1fe7cc22017bbd2cfeb" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a93d889dfac936a3c33998a5ec20f78a0" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>minDmaTransferSize</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a21750b1fdb5b5e6dee34350495aef747" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>picoPin</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1afe439c88a71d6bc911235f99c7d4f544" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>picoPinMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9227a0ad0fa7839d73887bb0c930014b" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>pociPin</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a82dc78f91dc01763b3dc4c933f05b7e5" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>pociPinMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a3dac5741969e61a711e51b234748a291" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>powerID</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a5525a650e735eb4557d82534657433b9" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>rxChannelEvtMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a926f83d292542a0405a5a265b20d6f41" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>rxDmaChannel</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1ae7037e855dd9f0a8d9ca5581e667dec1" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>sclkPin</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1ac335249eface4085feb7e8631816d321" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>sclkPinMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a9d5707f26695d038cb372ccc393766d4" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>swiPriority</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a3d00bbd92bd4c66d77c4dee5c6d90609" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>txChannelEvtMux</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___h_w_attrs_1a20860dd4aee14fcb435797a04d8dcf80" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_HWAttrs</scope><name>txDmaChannel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

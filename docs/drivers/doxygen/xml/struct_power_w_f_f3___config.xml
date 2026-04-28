@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_power_w_f_f3___config" kind="struct" language="C++" prot="public">
+    <compoundname>PowerWFF3_Config</compoundname>
+    <includes refid="_power_w_f_f3_8h" local="no">PowerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_power_w_f_f3___config_1a00a0f8e8360d8908e650037b54c18c93" prot="public" static="no" mutable="no">
+        <type><ref refid="_power_8h_1a435fdeb71d13ea6be86f599c9b6a0d78" kindref="member">Power_PolicyInitFxn</ref></type>
+        <definition>Power_PolicyInitFxn PowerWFF3_Config::policyInitFxn</definition>
+        <argsstring></argsstring>
+        <name>policyInitFxn</name>
+        <briefdescription>
+<para>The Power Policy&apos;s initialization function. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the policy does not have an initialization function, &apos;NULL&apos; should be specified. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="187" column="1" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_power_w_f_f3___config_1ab20812736d93a92d69ac2463e77fedbc" prot="public" static="no" mutable="no">
+        <type><ref refid="_power_8h_1a333038d1e9cd5f93dda7b83f8a1afa8b" kindref="member">Power_PolicyFxn</ref></type>
+        <definition>Power_PolicyFxn PowerWFF3_Config::policyFxn</definition>
+        <argsstring></argsstring>
+        <name>policyFxn</name>
+        <briefdescription>
+<para>The Power Policy function. </para>        </briefdescription>
+        <detaileddescription>
+<para>When enabled, this function is invoked in the idle loop, to opportunistically select and activate sleep states.</para><para>Two reference policies are provided:</para><para><ref refid="_power_w_f_f3_8h_1aada14a3353349686dfc252b679312900" kindref="member">PowerWFF3_doWFI()</ref> - a simple policy that invokes CPU wait for interrupt (WFI)</para><para><ref refid="_power_w_f_f3_8h_1a481549556cf82e616668f77183d63e5c" kindref="member">PowerWFF3_sleepPolicy()</ref> - an aggressive policy that considers constraints, time until next scheduled work, and SLEEP state latencies, and optionally puts the device into the SLEEP state, the IDLE state, or as a minimum, WFI.</para><para>Custom policies can be written, and specified via this function pointer.</para><para>In addition to this static selection, the Power Policy can be dynamically changed at runtime, via the <ref refid="_power_8h_1aa4af0d238813058bf6146df6021df8cc" kindref="member">Power_setPolicy()</ref> API.</para><para>If not NULL, the policy function will be invoked once for each pass of the idle loop.</para><para>The power policy can be dynamically enabled and disabled at runtime, via the <ref refid="_power_8h_1ae8d6092a8fb35b6db52a69a35fcc327f" kindref="member">Power_enablePolicy()</ref> and <ref refid="_power_8h_1acf9706c39bd0fa07ec977dd643e5dd2a" kindref="member">Power_disablePolicy()</ref> functions, respectively. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="216" column="1" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/power/PowerWFF3.h" line="180" column="1" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="179" bodyend="217"/>
+    <listofallmembers>
+      <member refid="struct_power_w_f_f3___config_1ab20812736d93a92d69ac2463e77fedbc" prot="public" virt="non-virtual"><scope>PowerWFF3_Config</scope><name>policyFxn</name></member>
+      <member refid="struct_power_w_f_f3___config_1a00a0f8e8360d8908e650037b54c18c93" prot="public" virt="non-virtual"><scope>PowerWFF3_Config</scope><name>policyInitFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

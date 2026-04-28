@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Wi-Fi Coexistence &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug coexistence coexistence-ieee";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Wi-Fi Coexistence</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wi-fi-coexistence">
+<span id="sec-ieee-coexistence"></span><h1>Wi-Fi Coexistence<a class="headerlink" href="#wi-fi-coexistence" title="Permalink to this headline">¶</a></h1>
+<p>The coexistence (coex) feature is a means to organize wireless packet traffic for
+communication protocols operating in the same frequency band. Instead of interfering
+with each other’s transmissions, affecting the RF performance, two co-located devices
+will have a dedicated communication interface to signal and determine access to the
+shared frequency band.</p>
+<p>IEEE 802.15.4-based stacks and Wi-Fi channels both exist in the 2.4 GHz band over the
+same frequency space. When deploying both protocols in the same environments, careful
+planning must be performed to make sure that they don’t interfere with each other.
+Coexistence is particularly required when placing the Wi-Fi and 802.15.4 devices on
+the same platform (for example, a combined gateway). In these cases, the isolation
+between the antennas of the two devices is not enough to avoid impact on the
+performance. Without a proper coexistence mechanism, the RX of the 802.15.4 device
+will be affected by the Wi-Fi TX and vice versa. The coexistence mechanism protects the
+RX using GPIOs interface between the devices and allows visibility of the Wi-Fi TX/RX
+activity along with the ability to hold a Wi-Fi transmission.</p>
+<p>The coex interface implemented for SimpleLink CC13xx/CC26xx devices is compatible with
+Wi-Fi devices that support two-wire coexistence mode.  This approach is based on a shared
+control module between the coexisting devices, to decide which device is permitted
+to communicate in the shared frequency band. Many Wi-Fi devices implement their version
+of such a module, and the implemented coex feature is based on the assumption that the
+two-wire control module is embedded in the Wi-Fi device. The Wi-Fi device will therefore
+have a host role in this coex device scheme, as it controls the two-wire logic. The
+coexistence interface can be abstracted to a signal interface between the two devices,
+as illustrated in the figure below. For an example of supported Wi-Fi devices, view the
+available <a class="reference external" href="https://www.ti.com/wireless-connectivity/wi-fi/products.html#p2792=External%20MPU">WiLink Products</a></p>
+<div class="figure align-center" id="figure-1">
+<a class="reference internal image-reference" href="../_images/block-diagram_coex-ieee-interface-abstraction.png"><img alt="../_images/block-diagram_coex-ieee-interface-abstraction.png" src="../_images/block-diagram_coex-ieee-interface-abstraction.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Block-diagram of coexistence interface abstraction</span></p>
+<div class="legend">
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Z-Stack also supports three-wire PTA coexistence, refer to the <a href="#system-message-1"><span class="problematic" id="problematic-1">|COEXISTENCE|</span></a>
+module for more information on this mode of operation</p>
+</div>
+</div>
+</div>
+<div class="section" id="two-wire-coex-interface">
+<span id="sec-two-wire-interface"></span><h2>Two-wire Coex Interface<a class="headerlink" href="#two-wire-coex-interface" title="Permalink to this headline">¶</a></h2>
+<p>The supported IEEE 802.15.4 two-wire coex mode can be illustrated as in the
+block-diagram below. Seen from the 802.15.4 device, the REQUEST signal is
+defined as an output while the GRANT signal is defined as an input.</p>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/block-diagram_coex-2-wire.png"><img alt="../_images/block-diagram_coex-2-wire.png" src="../_images/block-diagram_coex-2-wire.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Block-diagram of coexistence mode <strong>2-Wire</strong></span></p>
+</div>
+<p>Two-wire coexistence modes are not supported on all Wi-Fi devices. For example,
+the SimpleLink CC3135 and CC3235 Wi-Fi devices only support the 1-Wire REQUEST mode.</p>
+</div>
+<div class="section" id="coexistence-signaling">
+<span id="sec-two-wire-coex-signaling"></span><h2>Coexistence Signaling<a class="headerlink" href="#coexistence-signaling" title="Permalink to this headline">¶</a></h2>
+<p>The coexistence signaling approach for the 2-Wire mode, using the two available
+signals, can be summarized as follows:</p>
+<ul>
+<li><p class="first">Coex <strong>REQUEST</strong> signal:</p>
+<blockquote>
+<div><p>This is an output signal, controlled by the coex target. This signal is used to
+request that the Wi-Fi device disables transmissions for a given time.  This is
+used during high priority situations for which IEEE 802.15.4 communication
+must proceed in order to maintain the network.  It connects to the PA_SD pin
+of the WiLink device.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Coex <strong>GRANT</strong> signal:</p>
+<blockquote>
+<div><p>This is an input signal, controlled by the coex host. This signal indicates
+whether Wi-Fi transmissions are active so that the 802.15.4 device will not
+execute simultaneous transmissions.  This connects to the WiLink RX line.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The terms signal <strong>assert</strong> and signal <strong>de-assert</strong> are used to describe the value
+change of a signal to respectively <em>active</em> and <em>idle</em>. For an <em>active high</em>
+signal, the signal is asserted by changing the signal value from low to high. For
+an <em>active low</em> signal, the signal is asserted by changing the signal value from
+high to low. For the opposite signal operation, de-assert, the signal value changes
+from active to idle.</p>
+<table border="1" class="last docutils" id="table-1">
+<caption><span class="caption-text">Assert and de-assert meaning for signal active/idle level</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="23%" />
+<col width="20%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Active Level</th>
+<th class="head">Idle Level</th>
+<th class="head">Assert</th>
+<th class="head">De-assert</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>High</strong></td>
+<td>Low</td>
+<td>Low → High</td>
+<td>High → Low</td>
+</tr>
+<tr class="row-odd"><td><strong>Low</strong></td>
+<td>High</td>
+<td>High → Low</td>
+<td>Low → High</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In order to support time-shared signals, the coex feature is heavily dependent on
+accurate <em>timing</em>. What makes this implementation compatible with a Wi-Fi device that
+supports a two-wire interface, is the adherence to such timing requirements.</p>
+</div>
+<div class="section" id="configuration-options">
+<span id="sec-two-wire-coex-config"></span><h2>Configuration Options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+<p>The coex configuration options are made available from the RF driver module in
+SysConfig (<em>TI Drivers</em> → <em>RF</em>).</p>
+<div class="figure align-center" id="figure-3">
+<a class="reference internal image-reference" href="../_images/syscfg_ieee-coex-config.png"><img alt="../_images/syscfg_ieee-coex-config.png" src="../_images/syscfg_ieee-coex-config.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Coexistence configuration options in SysConfig</span></p>
+</div>
+<p>Depending on the application, use case, and what Wi-Fi device the SimpleLink
+CC13xx/CC26xx IEEE 802.15.4 device is intended to coexist with, certain options
+are up to the user to configure.</p>
+<p><strong>Coex mode</strong>: Only two-wire mode is currently supported for the IEEE 802.15.4 PHY</p>
+<p><strong>Coex signal idle level</strong>: The signal idle level can be configured as <em>low</em> or
+<em>high</em>, which in other terms means that the same signal is either respectively
+<em>active high</em> or <em>active low</em>. By default both REQUEST and GRANT are set to idle
+level low.</p>
+<p><strong>Coex pin mapping</strong>: The coex signal(s) used for the two-wire interface with the
+Wi-Fi device can be mapped to any available DIO pins. This is configured in the pin
+mux section of the RF module, as illustrated in the figure below.</p>
+<div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/syscfg_ieee-coex-pin-selection.png"><img alt="../_images/syscfg_ieee-coex-pin-selection.png" src="../_images/syscfg_ieee-coex-pin-selection.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Coexistence pin mapping</span></p>
+</div>
+<p><strong>Coex pin configuration while not in use</strong>: Options are given in regards to the pin
+configuration for coexistence REQUEST &amp; GRANT pins while they are not being used.
+For the lowest power operation it is recommended that the following selections
+be made accordingly.</p>
+<div class="figure align-center" id="figure-5">
+<a class="reference internal image-reference" href="../_images/syscfg_ieee-coex-pin-configuration.png"><img alt="../_images/syscfg_ieee-coex-pin-configuration.png" src="../_images/syscfg_ieee-coex-pin-configuration.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Coexistence pin configuration</span></p>
+</div>
+<p>After finishing with SysConfig settings, be sure to add <em>IEEE_COEX_ENABLED</em> inside
+<em>Project Properties</em> → <em>Build</em> → <em>Arm Compiler</em> → <em>Predefined Symbols</em>
+to fully enabled two-wire coexistence operation.</p>
+<div class="figure align-center" id="figure-6">
+<a class="reference internal image-reference" href="../_images/project_ieee-coex-predefine.png"><img alt="../_images/project_ieee-coex-predefine.png" src="../_images/project_ieee-coex-predefine.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Coexistence predefined symbol</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

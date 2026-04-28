@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_common_x_x_f3_8h" kind="file" language="C++">
+    <compoundname>AESCommonXXF3.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_a_e_s_common_8h" local="no">ti/drivers/AESCommon.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(inc/hw_types.h)</includes>
+    <includedby refid="_a_e_s_c_b_c_x_x_f3_8h" local="no">AESCBCXXF3.h</includedby>
+    <includedby refid="_a_e_s_c_c_m_x_x_f3_8h" local="no">AESCCMXXF3.h</includedby>
+    <includedby refid="_a_e_s_c_m_a_c_x_x_f3_8h" local="no">AESCMACXXF3.h</includedby>
+    <includedby refid="_a_e_s_c_t_r_x_x_f3_8h" local="no">AESCTRXXF3.h</includedby>
+    <includedby refid="_a_e_s_e_c_b_x_x_f3_8h" local="no">AESECBXXF3.h</includedby>
+    <includedby refid="_a_e_s_g_c_m_x_x_f3_h_s_m_8h" local="no">AESGCMXXF3HSM.h</includedby>
+    <incdepgraph>
+      <node id="87">
+        <label>stdbool.h</label>
+      </node>
+      <node id="88">
+        <label>stdint.h</label>
+      </node>
+      <node id="86">
+        <label>AESCommonXXF3.h</label>
+        <link refid="_a_e_s_common_x_x_f3_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>stddef.h</label>
+      </node>
+      <node id="93">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="92">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="94">
+        <label>DeviceFamily_constructPath(inc/hw_types.h)</label>
+      </node>
+      <node id="91">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>ti/drivers/AESCommon.h</label>
+        <link refid="_a_e_s_common_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="101">
+        <label>AESECBXXF3.h</label>
+        <link refid="_a_e_s_e_c_b_x_x_f3_8h"/>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>AESGCMXXF3HSM.h</label>
+        <link refid="_a_e_s_g_c_m_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="95">
+        <label>AESCommonXXF3.h</label>
+        <link refid="_a_e_s_common_x_x_f3_8h"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>ti_psa_crypto_mac.h</label>
+        <link refid="ti__psa__crypto__mac_8h"/>
+      </node>
+      <node id="98">
+        <label>AESCMACXXF3.h</label>
+        <link refid="_a_e_s_c_m_a_c_x_x_f3_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>AESCBCXXF3.h</label>
+        <link refid="_a_e_s_c_b_c_x_x_f3_8h"/>
+      </node>
+      <node id="102">
+        <label>ti_psa_crypto_cipher.h</label>
+        <link refid="ti__psa__crypto__cipher_8h"/>
+      </node>
+      <node id="97">
+        <label>AESCCMXXF3.h</label>
+        <link refid="_a_e_s_c_c_m_x_x_f3_8h"/>
+      </node>
+      <node id="100">
+        <label>AESCTRXXF3.h</label>
+        <link refid="_a_e_s_c_t_r_x_x_f3_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_a_e_s_common_x_x_f3___h_w_attrs" prot="public">AESCommonXXF3_HWAttrs</innerclass>
+    <innerclass refid="struct_a_e_s_common_x_x_f3___object" prot="public">AESCommonXXF3_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1ad65d8db1633473936b9a359e259a96cf" prot="public" static="no">
+        <name>AESCommonXXF3_UNALIGNED_IO_SUPPORT_ENABLE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="83" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a8abbe66fe3bd1cb61fe321f9f8289d7c" prot="public" static="no">
+        <name>DMA_CH4</name>
+        <initializer>4U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="87" column="9" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a43e8efa9f91375d6ef4c0be45c9fce84" prot="public" static="no">
+        <name>DMA_CH5</name>
+        <initializer>5U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="88" column="9" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a2b4f31bd10f81f6510dd1ef2bd8e7a66" prot="public" static="no">
+        <name>AESCommonXXF3_DMA_CHA_BITMASK</name>
+        <initializer>((uint32_t)1U &lt;&lt; DMA_CH4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="91" column="9" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a31246d05ca5a498c9504b5281272743d" prot="public" static="no">
+        <name>AESCommonXXF3_DMA_CHB_BITMASK</name>
+        <initializer>((uint32_t)1U &lt;&lt; DMA_CH5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="93" column="9" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1acd405fc899517bab407ece17c5e1afa9" prot="public" static="no">
+        <name>AESCommonXXF3_256_KEY_LENGTH_BYTES</name>
+        <initializer>(256U / 8U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="96" column="9" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" prot="public" static="no">
+        <name>AES_BLOCK_SIZE</name>
+        <initializer>16U</initializer>
+        <briefdescription>
+<para>Block size in number of bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="103" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a7debbbaa862b868ca515e8546f4ec7d5" prot="public" static="no">
+        <name>AES_BLOCK_SIZE_WORDS</name>
+        <initializer>(<ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref> / 4U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="104" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a84c3cc04fc5bdd5d50c42d4d5e465f8a" prot="public" static="no">
+        <name>AES_BLOCK_SIZE_MULTIPLE_MASK</name>
+        <initializer>0xFFFFFFF0U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="105" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1ad434bb4b00f0e8f2445b967de3999df2" prot="public" static="no">
+        <name>AES_BLOCK_SIZE_MULTIPLE_LENGTH</name>
+        <param><defname>len</defname></param>
+        <initializer>((len)&amp;<ref refid="_a_e_s_common_x_x_f3_8h_1a84c3cc04fc5bdd5d50c42d4d5e465f8a" kindref="member">AES_BLOCK_SIZE_MULTIPLE_MASK</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="106" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a572e2029a8a71ea46565d84ce804f432" prot="public" static="no">
+        <name>AES_NON_BLOCK_SIZE_MULTIPLE_MASK</name>
+        <initializer>0x0000000FU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="107" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a9ddf015d2f55151c369e33d9c378f792" prot="public" static="no">
+        <name>AES_NON_BLOCK_SIZE_MULTIPLE_LENGTH</name>
+        <param><defname>len</defname></param>
+        <initializer>((len)&amp;<ref refid="_a_e_s_common_x_x_f3_8h_1a572e2029a8a71ea46565d84ce804f432" kindref="member">AES_NON_BLOCK_SIZE_MULTIPLE_MASK</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="108" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a76763bbf6b1d475f026fc3c8c36a48e0" prot="public" static="no">
+        <name>AES_IV_LENGTH_BYTES</name>
+        <initializer><ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="110" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a05b7f39a091a394c8b1d9523b676ad32" prot="public" static="no">
+        <name>AES_TAG_LENGTH_BYTES</name>
+        <initializer><ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="111" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1a9b27221155276bc2fbf350749b0fb1b7" prot="public" static="no">
+        <name>AES_128_KEY_LENGTH_BYTES</name>
+        <initializer>(128U / 8U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="113" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_common_x_x_f3_8h_1acdbabb90a10036db9f48b0af00047e52" prot="public" static="no">
+        <name>IS_WORD_ALIGNED</name>
+        <param><defname>ptr</defname></param>
+        <initializer>(((uintptr_t)(ptr) &lt;&lt; 30) == 0U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="115" column="13" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCommon driver implementation for the Low Power F3 family. </para>    </briefdescription>
+    <detaileddescription>
+<para>==========================================================================</para><para>The AESCommonXXF3 module provides common functionality used by the AES mode-specific implementations for the Low Power F3 family.</para><para><simplesect kind="note"><para>This module is not intended to be used directly by applications. But, if an application is built without SysConfig, application source code must include below code snippet to use the AESCommonXXF3 module. Below code is normally generated by SysConfig and is used to allocate control table entries for the DMA channels used by the AES CommonXXF3 module.</para></simplesect>
+<programlisting><codeline><highlight class="normal">ALLOCATE_CONTROL_TABLE_ENTRY(dmaChannel4ControlTableEntry,<sp/>4);</highlight></codeline>
+<codeline><highlight class="normal">ALLOCATE_CONTROL_TABLE_ENTRY(dmaChannel5ControlTableEntry,<sp/>5);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">volatile<sp/>uDMAControlTableEntry<sp/>*AESCommonXXF3_dmaPriControlTableEntryChA<sp/>=<sp/>&amp;dmaChannel4ControlTableEntry;</highlight></codeline>
+<codeline><highlight class="normal">volatile<sp/>uDMAControlTableEntry<sp/>*AESCommonXXF3_dmaPriControlTableEntryChB<sp/>=<sp/>&amp;dmaChannel5ControlTableEntry;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/>AESCommonXXF3_dmaChannelMaskChA<sp/>=<sp/>(uint32_t)0x01UL<sp/>&lt;&lt;<sp/>4;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/>AESCommonXXF3_dmaChannelMaskChB<sp/>=<sp/>(uint32_t)0x01UL<sp/>&lt;&lt;<sp/>5;</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_aescommon_AESCommonXXF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_aescommon_AESCommonXXF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_common_8h" kindref="compound">ti/drivers/AESCommon.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_types.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>Unaligned<sp/>input/output<sp/>pointer<sp/>arguments<sp/>are<sp/>not<sp/>supported<sp/>by<sp/>default</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>because<sp/>the<sp/>performance<sp/>will<sp/>be<sp/>up<sp/>to<sp/>5x<sp/>slower.<sp/>Enabling<sp/>unaligned<sp/>I/O</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>is<sp/>strongly<sp/>discouraged.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AESCommonXXF3_UNALIGNED_IO_SUPPORT_ENABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="_a_e_s_common_x_x_f3_8h_1ad65d8db1633473936b9a359e259a96cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AESCommonXXF3_UNALIGNED_IO_SUPPORT_ENABLE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DMA<sp/>Channel<sp/>Numbers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="_a_e_s_common_x_x_f3_8h_1a8abbe66fe3bd1cb61fe321f9f8289d7c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DMA_CH4<sp/>4U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_a_e_s_common_x_x_f3_8h_1a43e8efa9f91375d6ef4c0be45c9fce84" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DMA_CH5<sp/>5U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DMA<sp/>Channel<sp/>4<sp/>is<sp/>reserved<sp/>for<sp/>AES<sp/>Channel<sp/>A<sp/>(input)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="_a_e_s_common_x_x_f3_8h_1a2b4f31bd10f81f6510dd1ef2bd8e7a66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AESCommonXXF3_DMA_CHA_BITMASK<sp/>((uint32_t)1U<sp/>&lt;&lt;<sp/>DMA_CH4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DMA<sp/>Channel<sp/>5<sp/>is<sp/>reserved<sp/>for<sp/>AES<sp/>Channel<sp/>B<sp/>(output)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_a_e_s_common_x_x_f3_8h_1a31246d05ca5a498c9504b5281272743d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AESCommonXXF3_DMA_CHB_BITMASK<sp/>((uint32_t)1U<sp/>&lt;&lt;<sp/>DMA_CH5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Max<sp/>key<sp/>length<sp/>supported<sp/>by<sp/>HSM<sp/>-<sp/>needed<sp/>for<sp/>KeyStore<sp/>material<sp/>retrieval<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_a_e_s_common_x_x_f3_8h_1acd405fc899517bab407ece17c5e1afa9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AESCommonXXF3_256_KEY_LENGTH_BYTES<sp/>(256U<sp/>/<sp/>8U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>CC27XX<sp/>and<sp/>CC23XX<sp/>devices,<sp/>below<sp/>AES<sp/>defines<sp/>come<sp/>from<sp/>driverlib<sp/>headers.</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>For<sp/>CC35XX<sp/>devices,<sp/>driverlib<sp/>does<sp/>NOT<sp/>contain<sp/>these<sp/>defines.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>So,<sp/>below<sp/>defines<sp/>are<sp/>added.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_BLOCK_SIZE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16U<sp/></highlight></codeline>
+<codeline lineno="104" refid="_a_e_s_common_x_x_f3_8h_1a7debbbaa862b868ca515e8546f4ec7d5" refkind="member"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_BLOCK_SIZE_WORDS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AES_BLOCK_SIZE<sp/>/<sp/>4U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="_a_e_s_common_x_x_f3_8h_1a84c3cc04fc5bdd5d50c42d4d5e465f8a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_BLOCK_SIZE_MULTIPLE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFFFFFFF0U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_a_e_s_common_x_x_f3_8h_1ad434bb4b00f0e8f2445b967de3999df2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_BLOCK_SIZE_MULTIPLE_LENGTH(len)<sp/><sp/><sp/><sp/><sp/>((len)&amp;AES_BLOCK_SIZE_MULTIPLE_MASK)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="_a_e_s_common_x_x_f3_8h_1a572e2029a8a71ea46565d84ce804f432" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_NON_BLOCK_SIZE_MULTIPLE_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0000000FU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="_a_e_s_common_x_x_f3_8h_1a9ddf015d2f55151c369e33d9c378f792" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_NON_BLOCK_SIZE_MULTIPLE_LENGTH(len)<sp/>((len)&amp;AES_NON_BLOCK_SIZE_MULTIPLE_MASK)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="_a_e_s_common_x_x_f3_8h_1a76763bbf6b1d475f026fc3c8c36a48e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_IV_LENGTH_BYTES<sp/><sp/>AES_BLOCK_SIZE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="_a_e_s_common_x_x_f3_8h_1a05b7f39a091a394c8b1d9523b676ad32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_TAG_LENGTH_BYTES<sp/>AES_BLOCK_SIZE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="_a_e_s_common_x_x_f3_8h_1a9b27221155276bc2fbf350749b0fb1b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AES_128_KEY_LENGTH_BYTES<sp/>(128U<sp/>/<sp/>8U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_a_e_s_common_x_x_f3_8h_1acdbabb90a10036db9f48b0af00047e52" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>IS_WORD_ALIGNED(ptr)<sp/>(((uintptr_t)(ptr)<sp/>&lt;&lt;<sp/>30)<sp/>==<sp/>0U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="struct_a_e_s_common_x_x_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135" refid="struct_a_e_s_common_x_x_f3___h_w_attrs_1a2f9b27cfa7ba515149181c1f0fe7479c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_e_s_common_x_x_f3___h_w_attrs_1a2f9b27cfa7ba515149181c1f0fe7479c" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_common_x_x_f3___h_w_attrs" kindref="compound">AESCommonXXF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="struct_a_e_s_common_x_x_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145" refid="struct_a_e_s_common_x_x_f3___object_1a90741906f1c6b422b60c0900f02f9fd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a90741906f1c6b422b60c0900f02f9fd6" kindref="member">semaphoreTimeout</ref>;</highlight></codeline>
+<codeline lineno="146" refid="struct_a_e_s_common_x_x_f3___object_1ae14d653156bfcfbb29fc6d8c8db9846e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1ae14d653156bfcfbb29fc6d8c8db9846e" kindref="member">key</ref>;</highlight></codeline>
+<codeline lineno="147" refid="struct_a_e_s_common_x_x_f3___object_1a41447d1e2026df43d2548e0ab202397a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a41447d1e2026df43d2548e0ab202397a" kindref="member">returnStatus</ref>;</highlight></codeline>
+<codeline lineno="148" refid="struct_a_e_s_common_x_x_f3___object_1a6680906e6d1926c33cd76900d8fdbafa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_common_8h_1a2820f6d52c454af5c0d7b20215e4a448" kindref="member">AES_ReturnBehavior</ref><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a6680906e6d1926c33cd76900d8fdbafa" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="149" refid="struct_a_e_s_common_x_x_f3___object_1ae4c63d1c3323f31788b5c510d8ecf4bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1ae4c63d1c3323f31788b5c510d8ecf4bb" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="150" refid="struct_a_e_s_common_x_x_f3___object_1a64667a16253c36d0de0c5921fe2d0162" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a64667a16253c36d0de0c5921fe2d0162" kindref="member">cryptoResourceLocked</ref>;</highlight></codeline>
+<codeline lineno="151" refid="struct_a_e_s_common_x_x_f3___object_1a3f232c6b7f0d8832cd9dc3b69b70c536" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a3f232c6b7f0d8832cd9dc3b69b70c536" kindref="member">operationInProgress</ref>;</highlight></codeline>
+<codeline lineno="152" refid="struct_a_e_s_common_x_x_f3___object_1a03de5dabf5e24ead77da23e0e0e95105" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_common_x_x_f3___object_1a03de5dabf5e24ead77da23e0e0e95105" kindref="member">powerConstraintSet</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">int_fast16_t<sp/>AESCommonXXF3_construct(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="_a_e_s_common_8h_1a2820f6d52c454af5c0d7b20215e4a448" kindref="member">AES_ReturnBehavior</ref><sp/>returnBehavior,<sp/>uint32_t<sp/>timeout);</highlight></codeline>
+<codeline lineno="188"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_loadKey(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="191"><highlight class="preprocessor">#if<sp/>(ENABLE_KEY_STORAGE<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Due<sp/>to<sp/>circular<sp/>include<sp/>dependencies,<sp/>these<sp/>types<sp/>are<sp/>defined<sp/>here<sp/>instead<sp/>of<sp/>retrieved<sp/>via<sp/>an<sp/>include<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifndef<sp/>KeyStore_PSA_Algorithm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_crypto_key_key_store___p_s_a_8h_1affb3aa48f4e8a24ca3cfea0d79bb5ec6" kindref="member">KeyStore_PSA_Algorithm</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifndef<sp/>KeyStore_PSA_KeyUsage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_crypto_key_key_store___p_s_a_8h_1ae56fe7b014c6118a37cd85c6952c9e95" kindref="member">KeyStore_PSA_KeyUsage</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">int_fast16_t<sp/>AESCommonXXF3_loadKeyFromKeyStore(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*key,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>*keyAssetID,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KeyStore_PSA_Algorithm<sp/>targetAlg,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KeyStore_PSA_KeyUsage<sp/>targetUsage);</highlight></codeline>
+<codeline lineno="218"><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ENABLE_KEY_STORAGE<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_setupOperation(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*key,<sp/>uint32_t<sp/>autoCfgVal);</highlight></codeline>
+<codeline lineno="239"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_close(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">int_fast16_t<sp/>AESCommonXXF3_setOperationInProgress(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_clearOperationInProgress(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">-&gt;operationInProgress<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_cleanup(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">int_fast16_t<sp/>AESCommonXXF3_setupSegmentedOperation(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="306"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AESCommonXXF3_isDMALengthValid(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*input,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*output,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="324"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_configInputDMA(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*input,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>inputLength);</highlight></codeline>
+<codeline lineno="343"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_configOutputDMA(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*output,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>outputLength);</highlight></codeline>
+<codeline lineno="354"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_cancelDMA(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cancelChannelB);</highlight></codeline>
+<codeline lineno="369"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_cancelOperation(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cancelDMAChannelB);</highlight></codeline>
+<codeline lineno="381"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_setupHwi(HwiP_Fxn<sp/>hwiFxn,<sp/>uintptr_t<sp/>hwiFxnArg,<sp/>uint8_t<sp/>intPriority);</highlight></codeline>
+<codeline lineno="391"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_cleanupHwi(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="402"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AESCommonXXF3_setupDMA(<ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>uint32_t<sp/>dmaConfig);</highlight></codeline>
+<codeline lineno="405"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_aescommon_AESCommonXXF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_flash_polling_cfg" kind="struct" language="C++" prot="public">
+    <compoundname>FlashPollingCfg</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_flash_polling_cfg_1a65d84a1a8b6ebd80dc724d3b409fd2b9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashPollingCfg::NumOfIteration</definition>
+        <argsstring></argsstring>
+        <name>NumOfIteration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum number of polling iterations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="287" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_polling_cfg_1aed549c1483f28e7a98b4b99b36852f1a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashPollingCfg::command</definition>
+        <argsstring></argsstring>
+        <name>command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Command to execute for polling </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="288" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_polling_cfg_1a0919e465deb5df7966e691f0663ea9a2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashPollingCfg::timeOut</definition>
+        <argsstring></argsstring>
+        <name>timeOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout value for polling operation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="289" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_polling_cfg_1a03ccf2bcecf978075aafd1d96e8a6433" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashPollingCfg::polarity</definition>
+        <argsstring></argsstring>
+        <name>polarity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expected polarity of status bit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="290" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_polling_cfg_1a4b9d9fa294221a66c42d2a5737f2a7aa" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashPollingCfg::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bit mask for status checking </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="291" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Flash polling configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure containing parameters for polling flash status during operations. </para>    </detaileddescription>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="286" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="285" bodyend="292"/>
+    <listofallmembers>
+      <member refid="struct_flash_polling_cfg_1aed549c1483f28e7a98b4b99b36852f1a" prot="public" virt="non-virtual"><scope>FlashPollingCfg</scope><name>command</name></member>
+      <member refid="struct_flash_polling_cfg_1a4b9d9fa294221a66c42d2a5737f2a7aa" prot="public" virt="non-virtual"><scope>FlashPollingCfg</scope><name>mask</name></member>
+      <member refid="struct_flash_polling_cfg_1a65d84a1a8b6ebd80dc724d3b409fd2b9" prot="public" virt="non-virtual"><scope>FlashPollingCfg</scope><name>NumOfIteration</name></member>
+      <member refid="struct_flash_polling_cfg_1a03ccf2bcecf978075aafd1d96e8a6433" prot="public" virt="non-virtual"><scope>FlashPollingCfg</scope><name>polarity</name></member>
+      <member refid="struct_flash_polling_cfg_1a0919e465deb5df7966e691f0663ea9a2" prot="public" virt="non-virtual"><scope>FlashPollingCfg</scope><name>timeOut</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

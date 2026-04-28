@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_h_s_m_x_x_f3_8h" kind="file" language="C++">
+    <compoundname>HSMXXF3.h</compoundname>
+    <briefdescription>
+<para>Interface to for all HSM-related operations. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>This module provides functions for use of the Hardware Security Module.</para><para>The HSM initialization procedure must first enable the clock, then initialize the mailbox, and finally boot the device.</para><para>APIs are provided to synchronize access to the HSM and submit command tokens, constructed by TI crypto drivers.</para><para>Additional APIs to construct command tokens, interpret result token data as well as additional key/asset management operations. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>HSMXXF3.h</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Interface<sp/>to<sp/>for<sp/>all<sp/>HSM-related<sp/>operations</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>module<sp/>provides<sp/>functions<sp/>for<sp/>use<sp/>of<sp/>the<sp/>Hardware<sp/>Security<sp/>Module.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>HSM<sp/>initialization<sp/>procedure<sp/>must<sp/>first<sp/>enable<sp/>the<sp/>clock,<sp/>then<sp/>initialize<sp/>the</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>mailbox,<sp/>and<sp/>finally<sp/>boot<sp/>the<sp/>device.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>APIs<sp/>are<sp/>provided<sp/>to<sp/>synchronize<sp/>access<sp/>to<sp/>the<sp/>HSM<sp/>and<sp/>submit<sp/>command<sp/>tokens,</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>constructed<sp/>by<sp/>TI<sp/>crypto<sp/>drivers.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Additional<sp/>APIs<sp/>to<sp/>construct<sp/>command<sp/>tokens,<sp/>interpret<sp/>result<sp/>token<sp/>data<sp/>as<sp/>well<sp/>as<sp/>additional<sp/>key/asset<sp/>management</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>operations.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_h_a2_8h" kindref="compound">ti/drivers/SHA2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_h_a2_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/sha2/SHA2XXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_g_c_m_8h" kindref="compound">ti/drivers/AESGCM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_g_c_m_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/aesgcm/AESGCMXXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_e_c_b_8h" kindref="compound">ti/drivers/AESECB.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_e_c_b_x_x_f3_8h" kindref="compound">ti/drivers/aesecb/AESECBXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_t_r_8h" kindref="compound">ti/drivers/AESCTR.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_t_r_x_x_f3_8h" kindref="compound">ti/drivers/aesctr/AESCTRXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_b_c_8h" kindref="compound">ti/drivers/AESCBC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_b_c_x_x_f3_8h" kindref="compound">ti/drivers/aescbc/AESCBCXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_m_a_c_8h" kindref="compound">ti/drivers/AESCMAC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_m_a_c_x_x_f3_8h" kindref="compound">ti/drivers/aescmac/AESCMACXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_c_m_8h" kindref="compound">ti/drivers/AESCCM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_c_m_x_x_f3_8h" kindref="compound">ti/drivers/aesccm/AESCCMXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_c_d_h_8h" kindref="compound">ti/drivers/ECDH.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_c_d_h_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/ecdh/ECDHXXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_c_d_s_a_8h" kindref="compound">ti/drivers/ECDSA.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/ecdsa/ECDSAXXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_d_d_s_a_8h" kindref="compound">ti/drivers/EDDSA.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_d_d_s_a_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/eddsa/EDDSAXXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_t_r_n_g_8h" kindref="compound">ti/drivers/TRNG.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_t_r_n_g_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/trng/TRNGXXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;third_party/hsmddk/include/Kit/EIP130/TokenHelper/incl/eip130_token_common.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor">#define<sp/>HSMXXF3_STATUS_SUCCESS<sp/>((int_fast16_t)0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor">#define<sp/>HSMXXF3_STATUS_ERROR<sp/>((int_fast16_t)-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor">#define<sp/>HSMXXF3_STATUS_TIMEOUT<sp/>((int_fast16_t)-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor">#define<sp/>HSMXXF3_STATUS_IN_SLEEP_MODE<sp/>((int_fast16_t)-3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor">#define<sp/>HSMXXF3_STATUS_RESOURCE_UNAVAILABLE<sp/>((int_fast16_t)-4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Co-processor<sp/>ID<sp/>for<sp/>LAES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_LAES_COPROCESSOR_ID<sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>following<sp/>defines<sp/>are<sp/>the<sp/>default<sp/>RNG<sp/>configuration<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Default<sp/>TRNG<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_AUTOSEED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_SAMPLE_CYCLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4BBE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_MAX_SAMPLE_CYCLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_DEFAULT_NOISEBLOCKS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_SCALE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_SAMPLEDIV<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_REPCNTCUTOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x09</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_ADAPTPROP64CUTOFF<sp/><sp/>0x15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_TRNG_DEFAULT_ADAPTPROP512CUTOFF<sp/>0x47</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Default<sp/>CRNG<sp/>parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_CRNG_DEFAULT_AUTOSEED<sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RNG_CONFG_CRNG_DEFAULT_MIXCYCLE<sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSMXXF3_RETVAL_MASK<sp/>MASK_8_BITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Power<sp/>state<sp/>defines<sp/>from<sp/>LPF3<sp/>to<sp/>WFF3<sp/>mapping.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PowerLPF3_ENTERING_STANDBY<sp/>PowerWFF3_ENTERING_SLEEP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PowerLPF3_AWAKE_STANDBY<sp/><sp/><sp/><sp/>PowerWFF3_AWAKE_SLEEP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>PowerLPF3_DISALLOW_STANDBY<sp/>PowerWFF3_DISALLOW_SLEEP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_MODE_CRNG<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_MODE_TRNG<sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}<sp/>HSMXXF3_NRBGMode;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_RETURN_BEHAVIOR_CALLBACK<sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_RETURN_BEHAVIOR_BLOCKING<sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_RETURN_BEHAVIOR_POLLING<sp/>=<sp/>4,<sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}<sp/>HSMXXF3_ReturnBehavior;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*HSMXXF3_CallbackFxn)(uintptr_t<sp/>arg0);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>Eip130Token_Command_t<sp/>commandToken;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>Eip130Token_Result_t<sp/>resultToken;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_ReturnBehavior<sp/>returnBehavior;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>HSMXXF3_CallbackFxn<sp/>callbackFxn;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/>driverHandle;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}<sp/>HSMXXF3_Operation;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructRTOSObjects(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_disableClock(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_sleep(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_wakeUp(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HSMXXF3_isStandaloneDMASupportEnabled(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_provisionHUK(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HSMXXF3_acquireLock(uint32_t<sp/>timeout,<sp/>uintptr_t<sp/>driverHandle);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_releaseLock(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_submitToken(HSMXXF3_ReturnBehavior<sp/>retBehavior,</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HSMXXF3_CallbackFxn<sp/>callbackFxn,</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uintptr_t<sp/>driverHandle);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_waitForResult(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_cancelOperation(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HSMXXF3_isOperationInProgress(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal">HSMXXF3_NRBGMode<sp/>HSMXXF3_getCurrentNRBGMode(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_updateInternalNRBGMode();</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="439"><highlight class="comment"><sp/>*<sp/><sp/>================<sp/>APIs<sp/>to<sp/>handle<sp/>result<sp/>token<sp/>data<sp/>================</highlight></codeline>
+<codeline lineno="440"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="450"><highlight class="normal">int32_t<sp/>HSMXXF3_getResultCode(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal">uint32_t<sp/>HSMXXF3_getResultAssetID(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_getResultDigest(uint8_t<sp/>*digest,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>digestLength);</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_getAESEncryptTag(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*mac,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>macLength);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_getAESIV(uint8_t<sp/>*iv);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_getAESCMACSignMac(uint8_t<sp/>*mac,<sp/>uint8_t<sp/>macLength);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_getPublicDataRead(uint32_t<sp/>assetId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>dataLength);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="504"><highlight class="comment"><sp/>*<sp/><sp/>================<sp/>APIs<sp/>to<sp/>construct<sp/>key/asset<sp/>management-related<sp/>command<sp/>tokens<sp/>================</highlight></codeline>
+<codeline lineno="505"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructCreateAssetToken(uint64_t<sp/>assetPolicy,<sp/>uint32_t<sp/>assetLength);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="528"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructLoadPlaintextAssetToken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input_p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>inputLength,<sp/>uint32_t<sp/>assetId);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructDeleteAssetToken(uint32_t<sp/>assetId);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal">int_fast16_t<sp/>HSMXXF3_constructExportAssetCopToken(uint32_t<sp/>assetId,<sp/>uint16_t<sp/>copID,<sp/>uint16_t<sp/>copOffset);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="558"><highlight class="comment"><sp/>*<sp/><sp/>================<sp/>APIs<sp/>to<sp/>construct<sp/>driver-specific<sp/>command<sp/>tokens<sp/>================</highlight></codeline>
+<codeline lineno="559"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="566"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructSHA2PhysicalToken(SHA2XXF3HSM_Object<sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructECDHGenPubPhysicalToken(<ref refid="struct_e_c_d_h_x_x_f3_h_s_m___object" kindref="compound">ECDHXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight></codeline>
+<codeline lineno="580"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructECDHGenShrdSecPhysicalToken(<ref refid="struct_e_c_d_h_x_x_f3_h_s_m___object" kindref="compound">ECDHXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructECDHVerifyKeysPhysicalToken(<ref refid="struct_e_c_d_h_x_x_f3_h_s_m___object" kindref="compound">ECDHXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructECDSAPhysicalToken(<ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object" kindref="compound">ECDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSAGenPubKeyPhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSASignInitialPhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSAIntermediateHashPhysicalToken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>inputLength,</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>tempAssetID);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSASignUpdatePhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSASignFinalizePhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSAVerifyInitialPhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="647"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructEDDSAVerifyFinalizePhysicalToken(<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"></highlight></codeline>
+<codeline lineno="656"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructGCMToken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_g_c_m_x_x_f3_h_s_m___object" kindref="compound">AESGCMXXF3HSM_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>saveIV,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>loadIV);</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructCCMToken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object" kindref="compound">AESCCMXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>saveIV,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>loadIV);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructAESECBOneStepPhysicalToken(<ref refid="struct_a_e_s_e_c_b_x_x_f3___object" kindref="compound">AESECBXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>uint8_t<sp/>*key);</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"></highlight></codeline>
+<codeline lineno="681"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructAESCTROneStepPhysicalToken(<ref refid="struct_a_e_s_c_t_r_x_x_f3___object" kindref="compound">AESCTRXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>uint8_t<sp/>*key);</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="683"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="684"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/>Constructs<sp/>an<sp/>AES-CBC<sp/>one-step<sp/>command<sp/>token</highlight></codeline>
+<codeline lineno="685"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="686"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/><sp/>[in]<sp/>object<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>AESCBCXXF3<sp/>object<sp/>that<sp/>contains<sp/>necessary<sp/>data</highlight></codeline>
+<codeline lineno="687"><highlight class="comment"><sp/>*<sp/><sp/>@param<sp/><sp/>[in]<sp/>key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pointer<sp/>to<sp/>key<sp/>material<sp/>if<sp/>it<sp/>has<sp/>been<sp/>retrieved<sp/>in<sp/>plaintext</highlight></codeline>
+<codeline lineno="688"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructAESCBCOneStepPhysicalToken(<ref refid="struct_a_e_s_c_b_c_x_x_f3___object" kindref="compound">AESCBCXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>uint8_t<sp/>*key);</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="698"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructCMACToken(<ref refid="struct_a_e_s_c_m_a_c_x_x_f3___object" kindref="compound">AESCMACXXF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFirst,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFinal);</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"></highlight></codeline>
+<codeline lineno="700"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"></highlight></codeline>
+<codeline lineno="706"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructRNGSwitchNRBGWithDefaultsPhysicalToken(HSMXXF3_NRBGMode<sp/>HSMXXF3_nrbgMode);</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructRNGReseedDRBGPhysicalToken(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="714"><highlight class="normal"></highlight></codeline>
+<codeline lineno="721"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructRNGGetRandomNumberPhysicalToken(uintptr_t<sp/>entropyBuffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>entropyRequested);</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HSMXXF3_constructRNGGetRawRandomNumberPhysicalToken(uintptr_t<sp/>entropyBuffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>entropyRequested);</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/cryptoutils/hsm/HSMXXF3.h"/>
+  </compounddef>
+</doxygen>

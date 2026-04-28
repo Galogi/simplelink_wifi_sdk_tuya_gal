@@ -1,0 +1,349 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>HOST_MCU_SEC</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">HOST_MCU_SEC</A></H2>
+<P>This section provides information on the HOST_MCU_SEC Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">HOST_MCU_SEC Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="HOST_MCU_SEC"><A href="_.html"> </A>:HOST_MCU_SEC Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SEC_SSWIRQ2NS">SSWIRQ2NS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SEC_SWIRQ2CM3">SWIRQ2CM3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SEC_LCKUP">LCKUP</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">HOST_MCU_SEC Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">HOST_MCU_SEC Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:HOST_MCU_SEC Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SEC_SSWIRQ2NS"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU_SEC</A>:SSWIRQ2NS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Secure Software Interrupt</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED8</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_SSWIRQ2NS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Secure context of CM33 can use this register to interrupt non secure context of CM33.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SEC_SWIRQ2CM3"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU_SEC</A>:SWIRQ2CM3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Software Interrupt to CM3</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED8</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_SWIRQ2CM3</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Secure context of CM33 can use this register to interrupt CM3.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SEC_LCKUP"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU_SEC</A>:LCKUP</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Software Interrupt to CM3</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED8</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The processor enters a lockup state if a fault occurs when it cannot be serviced or escalated. When<BR>the processor is in lockup state, it does not execute any instructions.<BR>The processor remains in lockup state until either:<BR>* It is reset.<BR>* Preemption by a higher priority exception occurs.<BR>* It is halted by a debugger.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

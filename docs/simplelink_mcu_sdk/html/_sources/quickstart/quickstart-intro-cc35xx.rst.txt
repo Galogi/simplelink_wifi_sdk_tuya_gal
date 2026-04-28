@@ -1,0 +1,201 @@
+.. _sec-cc35xx-getting-started:
+
+Getting Started with the SimpleLink |DEVICE|
+********************************************
+
+The |SDK| delivers components that enable engineers to develop applications on
+the Texas Instruments SimpleLink |DEVICE| family of wireless microcontroller
+(MCUs). This powerful software toolkit provides a cohesive and consistent
+software experience for all SimpleLink |DEVICE| wireless MCU users by packaging
+essential software components, such as a Bluetooth\ |reg| Low Energy (Bluetooth 
+LE) protocol stack supporting Bluetooth 5.4, and Wi-Fi 6 networking stack based on
+LwIP (https://savannah.nongnu.org/projects/lwip/), as well as the FreeRTOS kernel and TI
+Drivers in one easy-to-use software package along with example applications and
+exhaustive documentation.
+
+Prerequisites
+=============
+
+The user is expected to have the following:
+
+* |LP|
+* XDS110 Debugger `LP-XDS110ET`_
+* |SDK|
+* CCS 20.4.0
+* Sysconfig 1.26.0
+* Putty or any other Serial Terminal Application
+
+.. attention::
+       Please note that CCS must be installed prior to moving on to the next steps. CCS is available here: `Code Composer Studio`_ .
+
+SDK - Download and Installation
+===============================
+
+Installing the SDK
+------------------
+This section covers the required settings for a |SDK| installation. The |SDK|
+contains all of the Documentation, Example, Kernel, Driver Sources, and tools 
+required to get up and running with the SimpleLink |DEVICE| family of devices.
+
+1.  Download the |SDK| from the `SDK Product Page <https://www.ti.com/tool/SIMPLELINK-WIFI-SDK>`_.
+
+2.  Install to the default installation directory.
+
+
+Activation and Initial Programming
+==================================
+
+This section will cover the activation and initial programming of the
+SimpleLink |DEVICE|. 
+
+.. attention::
+    Please note that throughout the activation and initial programming the window should **NOT be refreshed at any
+    point**. Additionally, the activation and initial programming process **should only be done ONCE** for each new |DEVICE|.
+
+Activation
+----------
+
+When the device is first received it will be in an 'OPEN' security state , which
+will not allow you to do much with until it has gone through the activation
+process. The activation process will change the device ownership by flipping 
+the security state to 'deployed', and add customer credentials.
+
+For the following steps you will need to have the |LP| connected to the
+|LP-XDS110| and to the PC.
+
+.. attention::
+        Make sure that both |LP-XDS110| and |LP| are connected to the same PC through two different USB-C ports. 
+
+
+1. Start the Toolbox application that is downloaded along the |SDK| by navigating to the root of the `simplelink_wifi_toolbox_"platform"_x_x_x` and run the "simplelink-wifi-toolbox.exe". 
+    Executing the Toolbox application will open the default browser at the Toolbox home page. Once in the home page click on the **Programmer** tool.
+
+    .. _fig_activation-1:
+
+    .. figure:: resources/activation-1.png
+        :align: center
+        :scale: 50
+
+        Toolbox Application Home Page
+
+2. This will open a windows that will allow you to see any XDS connected device and select onbnoard flash.
+    Select the connected XDS110 device from a drop-down list of XDS-devices
+    connected to the PC.
+
+    .. _fig_activation-2:
+
+    .. figure:: resources/activation-2.png
+        :align: center
+        :scale: 50
+
+        XDS110 Select Page
+
+    .. note::
+        
+        If you are using a Revision A Launchpad, select IS25WJ064F. For Launchpads Revision E4 or earlier revisions, select IS25WJ032F
+
+    .. _fig_activation-2-1:
+
+    .. figure:: resources/flash-options.png
+        :align: center
+        :scale: 50
+
+        Flash Device Select Page
+
+3. The following step will require you to select the activation method. 
+    There are 3 options for activating the device: 
+
+    a. **Vendor Key** - Use custom Vendor keys
+
+    b. **SDK Example Key** - Emulate the full vendor operation using an emulation key (TI-provided 'debug' key).
+
+    c. **Authentication Bypass** - Enable the vendor to load and execute 
+    unauthenticated images.
+
+    However for the purposes of this Quickstart User's Guide please **select the SDK example key** (if wanting to use a Vendor Key please refer to the programmer guide in the Wifi Toolbox User guide)
+
+    .. _fig_activation-3:
+
+    .. figure:: resources/activation-3.png
+        :align: center
+        :scale: 50
+
+        Activation Type Page
+
+4. Since the SDK example key was selected the "Root of Trust" key will be pre-selected. 
+    The key is not pre-selected if the Authentication Bypass activation method is chosen. Confirm
+    the "Root of Trust" key is selected and activate the |DEVICE|.
+
+    .. _fig_activation-4:
+
+    .. figure:: resources/activation-4.png
+        :align: center
+        :scale: 50
+
+        Activation Page
+
+5. At the end of the activation process the tool will report a summary for review. 
+    In case of failed RoT fuse-programming, the activation/programming process 
+    will be halted.
+
+    .. _fig_activation-5:
+
+    .. figure:: resources/activation-5.png
+        :align: center
+        :scale: 50
+
+        Review Page
+
+Initial Programming
+-------------------
+
+Once the activation process has concluded, the Initial Programming process will start 
+automatically in the next window. During this process you will download 
+an example image and :ref:`sec-cc35xx-connectivity-core` image to the |DEVICE| 
+in addition to flash configuration. As a reminder, please be sure **not to refresh the page** during this process.
+
+    * **Image selectionBoot Sector** - Flash partition, calibration, and flash 
+      high-speed configuration.
+    * **TI Bootloader** - RAM-bootloader (2nd stage BL provided by TI).
+    * **TI Wifi Firmware** - WiFi Servicepack
+    * **Vendor Demo Image** - for FCS versions the image will program Network Terminal.
+
+    .. _fig_programming-1:
+
+    .. figure:: resources/programming-1.png
+        :align: center
+
+        Initial Programming Page
+
+Press the program button to begin Initial Programming. Once programmed you will be met with the following screen.
+
+    .. figure:: resources/programming-2.png
+        :align: center
+
+        Initial Programming Page
+
+
+Example Application (Network Terminal)
+--------------------------------------
+
+As part of the initial programming process above a precompiled network terminal
+example has been programmed as the vendor image. In order to use the device and 
+evaluate using the demo, follow the steps below:
+
+    1. Determine which COM port the LP-XDS110ET is connected to. On Windows this can be done by referencing Ports section in Device Manager. Two XDS devices will show, for a serial connection the COM port that is relevant belongs to the device that is labeled "Application/User UART".
+    2. Open a serial terminal application such as 'Putty' or 'Tera Term'.
+    3. Configure the connection as Serial with BAUD of 115200 and the COM port found in step 1.
+    4. Reset the |LP| and |LP-XDS110|.
+    5. The **Network Terminal** example screen should show up, providing you with
+       a command-line interface that enables running basic operations. The initial bringup and/or typing ``help`` 
+       will show this menu:
+
+    .. figure:: resources/tera-term.png
+        :align: center
+        :scale: 150
+
+        Network Terminal Help Screen
+
+
+This allows for verification that the device has been flashed and is working. For further development please refer
+to the SimpleLink Wireless MCU CC35xx Overview section. 

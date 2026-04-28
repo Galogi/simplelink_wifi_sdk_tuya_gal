@@ -1,0 +1,92 @@
+
+Making Choices for Your Application
+===================================
+
+When using the SDK to create your own application, you should begin by making the following choices:
+* Choosing which hardware target to use?
+* Choosing which development environment to use?
+* Choosing which driver access method to use? 
+
+Choosing a Development Environment
+----------------------------------
+Choose your preferred development environment. The SimpleLink MCU SDK supports all of the following development environments equally well:
+
+* TI's Code Composer Studio (CCS)
+* Command Line Interface (CLI)
+
+Choosing a Driver Access Method
+-------------------------------
+You can choose a driver access method to fit the needs of that application. Factors that can be used to determine which method to use include:
+
+- Does the application use FreeRTOS? FreeRTOS enables the use of TI Drivers.
+- Do you want portability across MCUs? We recommend using the TI Drivers in this case.
+- Would you like the method to provide resource allocation and abstracted power management? TI Drivers provides these features.
+- Do you need to access device-specific features? Driverlib is recommended for device-specific programming. The Driverlib APIS are well-tested and are often available in ROM. They also provide an easy abstraction model for device-specific programming.
+- If access to a desired feature is not available in Driverlib, or if you want full control over the registers, we recommend using the Register Access method.
+
+You can use a combination of access methods. For example, you can use TI Drivers and Driverlib together. However, be aware that power management and resource allocation differ between access methods. For this reason, resource conflicts can arise. As long as you remain aware of the issues when using multiple access methods, it is possible to use the best features of each one.
+
+.. tabs::
+   .. tab:: TI Drivers
+
+      The TI Drivers provide an API interface that is compatible across the supported MCUs. Your applications can use this API with the FreeRTOS kernel.
+
+      In order to provide a cross-MCU compatible set of APIs, some device-specific features are not available in the TI Drivers. Instead, the focus is on ease of migration. The TI Drivers abstract the common features rather than providing feature-completeness.
+
+   .. tab:: Driverlib
+
+      Driverlib provides very low-level, device-specific APIs that abstract register and peripheral details. They are intended
+      to ease TI Driver implementation and supplement TI Driver functionality for use cases that are too specific for a general
+      driver.
+
+      Users should check if the appropriate TI Driver solves their use case before attempting to use driverlib as that requires
+      significantly deeper understanding of the target's hardware.
+
+      Since APIs and features are closely tied to the hardware, API compatibility across devices is not guaranteed.
+
+      This API interface provides an abstracted way to configure hardware registers. This access method acts as a translation layer for setting/resetting a register bit or set of register bits.
+
+   .. tab:: Register Access
+
+      This access method configures hardware registers directly by setting/resetting specific bit combinations. This method provides 100% feature coverage with no abstraction at all.
+
+      When using this method, refer to the **Device Family Technical Reference Manual** and the **Device Datasheet**. Set and reset specific bits in the registers using the definitions in the device header files included with the SDK.
+
+Rebuilding the Libraries
+------------------------
+
+You can rebuild many of the libraries in the SDK by following these steps:
+
+#. In the root directory of the SDK installation, edit the `imports.mak` file.
+#. Modify the directory paths as needed for the variables defined there. Some variables are optional, as described
+   below.
+    * To disable a specific compiler, keep the line defining the environment variable but leave the definition blank.
+        For example, to build only for `ticlang`:
+
+        .. code-block:: bash
+            
+            TICLANG_ARMCOMPILER    ?= c:/ti/ccs/tools/compiler/ti-cgt-armllvm_<version>
+            GCC_ARMCOMPILER        ?=
+
+    * `CMAKE` must be configured for most component library builds. It should point to the executable named `cmake`.
+
+#. Go to the `<SDK_INSTALL_DIR>` directory. Notice that this directory contains a `Makefile`.
+
+#. Run `make build` to build all supported components. Code Composer Studio installs a copy of GNU make in
+   `<CCS_INSTALL_DIR>/ccs/utils/bin/gmake`
+
+Using an external FreeRTOS installation
+---------------------------------------
+
+The SDK ships its own copy of the FreeRTOS kernel source files and builds
+libraries based on some of the assembly files contained therein.
+
+If you want to use your own installation of FreeRTOS, you can rebuild the
+libraries using this external installation as follows:
+
+* Set `FREERTOS_INSTALL_DIR` in imports.mak. `FREERTOS_INSTALL_DIR` must have a
+   sub-directory structure of `./source/third_party/freertos/Source/...`. This
+   directory structure is needed for CMake to find the right FreeRTOS files.
+
+Changing FreeRTOS versions or installations is not recommended. The SDK is only
+tested and validated using the FreeRTOS installation contained in the SDK.

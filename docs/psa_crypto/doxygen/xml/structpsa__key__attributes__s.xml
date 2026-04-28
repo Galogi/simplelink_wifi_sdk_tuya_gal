@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__key__attributes__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_key_attributes_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__key__attributes__s_1a94c29b35d6934143eab78b8eafc46a40" prot="public" static="no" mutable="no">
+        <type><ref refid="structpsa__core__key__attributes__t" kindref="compound">psa_core_key_attributes_t</ref></type>
+        <definition>psa_core_key_attributes_t psa_key_attributes_s::core</definition>
+        <argsstring></argsstring>
+        <name>core</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="176" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="176" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1ac255da850a00bbed925390044f016b34" compoundref="crypto__struct_8h" startline="290" endline="294">psa_get_key_algorithm</referencedby>
+        <referencedby refid="crypto__struct_8h_1a5bee85c2164ad3d4c0d42501241eeb06" compoundref="crypto__struct_8h" startline="326" endline="330">psa_get_key_bits</referencedby>
+        <referencedby refid="crypto__struct_8h_1add35bbb9e3aea14934cb61c396a3e6f1" compoundref="crypto__struct_8h" startline="250" endline="254">psa_get_key_id</referencedby>
+        <referencedby refid="crypto__struct_8h_1a9ea8eae1b81e480cc56dec858859aff9" compoundref="crypto__struct_8h" startline="265" endline="269">psa_get_key_lifetime</referencedby>
+        <referencedby refid="crypto__struct_8h_1ae4fb812af4f57aa1ad85e335a865b918" compoundref="crypto__struct_8h" startline="310" endline="314">psa_get_key_type</referencedby>
+        <referencedby refid="crypto__struct_8h_1aa1af20f142ca722222c6d98678a0c448" compoundref="crypto__struct_8h" startline="278" endline="282">psa_get_key_usage_flags</referencedby>
+        <referencedby refid="crypto__struct_8h_1aeb8341ca52baa0279475ea3fd3bcdc98" compoundref="crypto__struct_8h" startline="284" endline="288">psa_set_key_algorithm</referencedby>
+        <referencedby refid="crypto__struct_8h_1af61683ac87f87687a40262b5afbfa018" compoundref="crypto__struct_8h" startline="316" endline="324">psa_set_key_bits</referencedby>
+        <referencedby refid="crypto__struct_8h_1a7085a16b7b3d1642cb9fe9bf4a91e561" compoundref="crypto__struct_8h" startline="229" endline="248">psa_set_key_id</referencedby>
+        <referencedby refid="crypto__struct_8h_1ac03ccf09ca6d36cc3d5b43f8303db6f7" compoundref="crypto__struct_8h" startline="256" endline="263">psa_set_key_lifetime</referencedby>
+        <referencedby refid="crypto__struct_8h_1a6857ef0ecb3fa844d4536939d9c64025" compoundref="crypto__struct_8h" startline="303" endline="308">psa_set_key_type</referencedby>
+        <referencedby refid="crypto__struct_8h_1a42a65b3c4522ce9b67ea5ea7720e17de" compoundref="crypto__struct_8h" startline="271" endline="276">psa_set_key_usage_flags</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__attributes__s_1a90016ef020629083a665d70aa67cac95" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* psa_key_attributes_s::domain_parameters</definition>
+        <argsstring></argsstring>
+        <name>domain_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="177" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__attributes__s_1a35b2b4226f825f12bdaa94c2b815e725" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_key_attributes_s::domain_parameters_size</definition>
+        <argsstring></argsstring>
+        <name>domain_parameters_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="178" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="21">
+        <label>psa_key_policy_s</label>
+        <link refid="structpsa__key__policy__s"/>
+      </node>
+      <node id="22">
+        <label>mbedtls_svc_key_id_t</label>
+        <link refid="structmbedtls__svc__key__id__t"/>
+      </node>
+      <node id="19">
+        <label>psa_key_attributes_s</label>
+        <link refid="structpsa__key__attributes__s"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>core</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>psa_core_key_attributes_t</label>
+        <link refid="structpsa__core__key__attributes__t"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>policy</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="175" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="174" bodyend="179"/>
+    <listofallmembers>
+      <member refid="structpsa__key__attributes__s_1a94c29b35d6934143eab78b8eafc46a40" prot="public" virt="non-virtual"><scope>psa_key_attributes_s</scope><name>core</name></member>
+      <member refid="structpsa__key__attributes__s_1a90016ef020629083a665d70aa67cac95" prot="public" virt="non-virtual"><scope>psa_key_attributes_s</scope><name>domain_parameters</name></member>
+      <member refid="structpsa__key__attributes__s_1a35b2b4226f825f12bdaa94c2b815e725" prot="public" virt="non-virtual"><scope>psa_key_attributes_s</scope><name>domain_parameters_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

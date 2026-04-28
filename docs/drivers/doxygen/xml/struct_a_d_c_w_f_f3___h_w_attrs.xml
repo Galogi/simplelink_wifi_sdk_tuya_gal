@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_d_c_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>ADCWFF3_HWAttrs</compoundname>
+    <includes refid="_a_d_c_w_f_f3_8h" local="no">ADCWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a353fa4f89bd331de095d626422860894" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ADCWFF3_HWAttrs::adcInputDIO</definition>
+        <argsstring></argsstring>
+        <name>adcInputDIO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DIO that the ADC input is routed to. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="146" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a0624f2b9c4079119fd25de2623a4a2ed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ADCWFF3_HWAttrs::internalChannel</definition>
+        <argsstring></argsstring>
+        <name>internalChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal signal routed to ADC. The channel number is determined by the selected DIO. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="148" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a59e6dd3f6ea20802f7b4d7ea2bb62fb4" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2e" kindref="member">ADCWFF3_ReferenceSource</ref></type>
+        <definition>ADCWFF3_ReferenceSource ADCWFF3_HWAttrs::refSource</definition>
+        <argsstring></argsstring>
+        <name>refSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference source for the ADC to use. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="150" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a83960f919a02cc450a81bc925e29a238" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ADCWFF3_HWAttrs::samplingDuration</definition>
+        <argsstring></argsstring>
+        <name>samplingDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time the ADC spends sampling, in divided sampling clock cycles. Allowed range: 0 - 16383. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="152" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a081f8dad7d2db17afe55536d58df1777" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412d" kindref="member">ADCWFF3_ClockDivider</ref></type>
+        <definition>ADCWFF3_ClockDivider ADCWFF3_HWAttrs::adcClkDivider</definition>
+        <argsstring></argsstring>
+        <name>adcClkDivider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADC sample clock divider value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="154" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1ae7228983360e656b9593f5e8b88088e4" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cd" kindref="member">ADCWFF3_SampleClockSource</ref></type>
+        <definition>ADCWFF3_SampleClockSource ADCWFF3_HWAttrs::sampleClkSrc</definition>
+        <argsstring></argsstring>
+        <name>sampleClkSrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADC sampling clock source. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="156" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___h_w_attrs_1a2d9be4fda8a8797d69a6b7c360023d98" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9d" kindref="member">ADCWFF3_FullScaleRange</ref></type>
+        <definition>ADCWFF3_FullScaleRange ADCWFF3_HWAttrs::fullScaleRange</definition>
+        <argsstring></argsstring>
+        <name>fullScaleRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADC full scale range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="158" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ADCWFF3 Hardware attributes These fields are used by driverlib APIs and therefore must be populated by driverlib macro definitions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/adc/ADCWFF3.h" line="144" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="143" bodyend="160"/>
+    <listofallmembers>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a081f8dad7d2db17afe55536d58df1777" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>adcClkDivider</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a353fa4f89bd331de095d626422860894" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>adcInputDIO</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a2d9be4fda8a8797d69a6b7c360023d98" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>fullScaleRange</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a0624f2b9c4079119fd25de2623a4a2ed" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>internalChannel</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a59e6dd3f6ea20802f7b4d7ea2bb62fb4" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>refSource</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1ae7228983360e656b9593f5e8b88088e4" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>sampleClkSrc</name></member>
+      <member refid="struct_a_d_c_w_f_f3___h_w_attrs_1a83960f919a02cc450a81bc925e29a238" prot="public" virt="non-virtual"><scope>ADCWFF3_HWAttrs</scope><name>samplingDuration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

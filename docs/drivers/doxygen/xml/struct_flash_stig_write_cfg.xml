@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_flash_stig_write_cfg" kind="struct" language="C++" prot="public">
+    <compoundname>FlashStigWriteCfg</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_flash_stig_write_cfg_1a71979d744a87af1ad8a3e83c6af8ff22" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashStigWriteCfg::preStigCfg</definition>
+        <argsstring></argsstring>
+        <name>preStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is pre STIG configuration needed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="257" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_write_cfg_1ad8560e1ab3d0d0af1a9f4faf21ddac0a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashStigWriteCfg::postStigCfg</definition>
+        <argsstring></argsstring>
+        <name>postStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is post STIG configuration needed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="258" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_write_cfg_1a53d0a831416f26c1ad1301355e3fffe8" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigWriteCfg::preStigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>preStigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to perform before STIG write </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="259" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_write_cfg_1a51337fc8a7277505cd30873d9fa1769e" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigWriteCfg::stigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>stigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations for STIG write command </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="260" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_write_cfg_1a97f8eb777b1243d947da4cb62e0e7260" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigWriteCfg::postStigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>postStigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to perform after STIG write </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="261" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Flash STIG write configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure containing configuration parameters and register operations for STIG-based flash write operations. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="66">
+        <label>FlashRegister</label>
+        <link refid="struct_flash_register"/>
+      </node>
+      <node id="65">
+        <label>FlashStigWriteCfg</label>
+        <link refid="struct_flash_stig_write_cfg"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="256" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="255" bodyend="262"/>
+    <listofallmembers>
+      <member refid="struct_flash_stig_write_cfg_1ad8560e1ab3d0d0af1a9f4faf21ddac0a" prot="public" virt="non-virtual"><scope>FlashStigWriteCfg</scope><name>postStigCfg</name></member>
+      <member refid="struct_flash_stig_write_cfg_1a97f8eb777b1243d947da4cb62e0e7260" prot="public" virt="non-virtual"><scope>FlashStigWriteCfg</scope><name>postStigOperation</name></member>
+      <member refid="struct_flash_stig_write_cfg_1a71979d744a87af1ad8a3e83c6af8ff22" prot="public" virt="non-virtual"><scope>FlashStigWriteCfg</scope><name>preStigCfg</name></member>
+      <member refid="struct_flash_stig_write_cfg_1a53d0a831416f26c1ad1301355e3fffe8" prot="public" virt="non-virtual"><scope>FlashStigWriteCfg</scope><name>preStigOperation</name></member>
+      <member refid="struct_flash_stig_write_cfg_1a51337fc8a7277505cd30873d9fa1769e" prot="public" virt="non-virtual"><scope>FlashStigWriteCfg</scope><name>stigOperation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

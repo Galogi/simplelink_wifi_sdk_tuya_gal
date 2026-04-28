@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Throughput Testing Guide &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Peer to Peer" href="cc35xx-p2p.html" />
+    <link rel="prev" title="SNTP" href="cc35xx-sntp.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug wifi cc35xx-throughput-test";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-wifi.html">Wi-Fi User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview &amp; Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#get-and-set">GET and SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-http.html">HTTP Client and Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sockets.html">Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-network-addresses.html">Network Address - Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sntp.html">SNTP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Throughput Testing Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iperf-introduction">iPerf Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iperf-throughput-example">iPerf Throughput Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-p2p.html">Peer to Peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-power-management.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-wifi.html">Wi-Fi User’s Guide</a> &raquo;</li>
+        
+      <li>Throughput Testing Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="throughput-testing-guide">
+<span id="sec-wifi-throughput"></span><h1>Throughput Testing Guide<a class="headerlink" href="#throughput-testing-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Throughput in WiFi refers to the amount of data transmitted from a source to destination within a specified period of time, usually measured in
+megabits per second (Mb/s). There are numerous factors that can affect throughput including the number of devices on the network, the protocol
+used (UDP vs TCP), and the host being used with the CC35xx. For example, using a Beaglebone Black (AM335) as a host will result in a lower
+throughput when compared to the AM62 being used as a host. This discrepancy in rates is due to the difference in how much data each device
+is capable of receiving. In order to get an accurate idea of the CC35xx throughput it is recommended that the test is conducted in a clean
+environment at first without interference for an accurate estimate of the device’s throughput capabilities with the desired host.</p>
+<p>The main tool recommended to test the throughput of the CC35xx is known as iPerf and is an open source command line tool designed for testing
+network throughput. In order to use iPerf, at least one device must act as a server and another as a client. These devices should both be
+connected to the same AP and data will be transmitted between them with the AP acting as a bridge.</p>
+</div>
+<div class="section" id="iperf-introduction">
+<h2>iPerf Introduction<a class="headerlink" href="#iperf-introduction" title="Permalink to this headline">¶</a></h2>
+<p>In order for devices to be connected via iPerf, one needs to be configured as a server that is listening on the same port that the client will
+be configured to transmit to. The commands listed below can be used for various adjustments to this configuration. For example, to open a basic
+server configured for TCP broadcasts on the default port (5900) the following command would be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iperf -s
+</pre></div>
+</div>
+<p>To open a basic client to transmit on the same port, also using TCP, the following command can be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iperf -c &lt;server_ip_address&gt;
+</pre></div>
+</div>
+<p>To adjust the port, change the protocol to UDP, or other configurations the commands below can be used. This is not the full list, which can be
+displayed using iperf -h or iperf -help, but these are the commands most relevant to the throughput testing covered in this guide.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Client/Server:
+-i, --interval          <span class="c1">#       seconds between periodic bandwidth reports</span>
+-p, --port              <span class="c1">#       server port to listen on/connect to</span>
+-u, --udp               <span class="c1">#       use UDP rather than TCP</span>
+-w, --window            <span class="c1">#       [KM]    TCP window size (socket buffer size)</span>
+
+Server specific:
+-s, --server            <span class="c1">#       run in server mode</span>
+-U, --single_udp        <span class="c1">#       run in single threaded UDP mode</span>
+
+Client specific:
+-b, --bandwidth         <span class="c1">#       [KM] for UDP, bandwidth to send at in bits/sec (default 1 Mbit/sec, implies -u)</span>
+-c, --client            <span class="c1">#       &lt;host&gt;   run in client mode, connecting to &lt;host&gt;</span>
+-n, --num               <span class="c1">#       [KM] number of bytes to transmit (instead of -t)</span>
+-t, --time              <span class="c1">#       time in seconds to transmit for (default 10 secs)</span>
+
+Miscellaneous:
+-h, --help              <span class="c1">#       print this message and quit</span>
+
+<span class="o">[</span>KM<span class="o">]</span> Indicates options that support a K or M suffix <span class="k">for</span> kilo- or mega-
+</pre></div>
+</div>
+</div>
+<div class="section" id="iperf-throughput-example">
+<h2>iPerf Throughput Example<a class="headerlink" href="#iperf-throughput-example" title="Permalink to this headline">¶</a></h2>
+<p>Configuring the CC35xx as a client and the computer as a server.</p>
+<p>In this configuration, the CC35xx is in station mode and connected to the AP via WiFi. Additionally, the computer behind the AP is connected through ethernet.
+A connection over ethernet, rather than WiFi, is recommended so that the computer behind the AP does not take up bandwidth and compete
+with the CC35xx over the air. The CC35xx is then configured using iPerf to be a client, while the computer is configured as a server.
+The data from the CC35xx is being transmitted from the CC35xx to the AP then to the computer. The steps to start this setup are as follows:</p>
+<ol class="arabic simple">
+<li>Connect the CC35xx to the AP as a station using the WiFi APIs.</li>
+<li>Connect a computer or laptop (from here on out referred to as Computer 1) to the same AP via ethernet.</li>
+</ol>
+<p>Run either ipconfig (Windows) or ifconfig (Linux) to find out the IP Address of the assigned to the computer. This is the IP address that
+the CC35xx will connect to with iPerf when configured as a client.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrator&gt;ipconfig
+
+Windows IP Configuration
+
+Ethernet adapter AP:
+
+    Connection-specific DNS Suffix  . : dhcp.ti.com
+    Link-local IPv6 Address . . . . . : fe80::686b:36c3:ae90:e8de%29
+    IPv4 Address. . . . . . . . . . . : 192.168.50.119
+    Subnet Mask . . . . . . . . . . . : 255.255.255.0
+    Default Gateway . . . . . . . . . : 192.168.50.1
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">IPv4</span> <span class="pre">Address</span></code> is the IP address assigned to the laptop by the AP while the <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Gateway</span></code> is the IP Address of the AP itself.</p>
+<p>3. To ensure that both Computer 1 and the CC35xx are properly connected it’s a good idea to ping Computer 1 from the CC35xx using the command
+below and it should produce a result similar to what is shown below if they are connected.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>root@am335x-evm:/usr/share/cc35xx# ping 192.168.50.119
+PING 192.168.50.119 (192.168.50.119): 56 data bytes
+64 bytes from 192.168.50.119: seq=0 ttl=128 time=901.689 ms
+64 bytes from 192.168.50.119: seq=1 ttl=128 time=105.525 ms
+64 bytes from 192.168.50.119: seq=2 ttl=128 time=436.115 ms
+64 bytes from 192.168.50.119: seq=3 ttl=128 time=561.868 ms
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Open a server on Computer 1 with the following command:</li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">iperf</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5901</span> <span class="o">-</span><span class="n">i1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>-s specifies that a server is being started</li>
+<li>-p 5901 opens the server on port 5901</li>
+<li>-i1 ensures that the data that is received by the server will be broadcasted on the screen</li>
+<li>For more information, such as using UDP or adjusting the TCP window, reference the full list with the command iperf -h</li>
+</ul>
+<p>Expected output on Computer 1:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrator&gt;iperf -s -p 5901 -i1
+------------------------------------------------------------
+Server listening on TCP port 5901
+TCP window size: 64.0 KByte (default)
+------------------------------------------------------------
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Connect to the server and transmit data from the CC35xx host using the following command:</li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">iperf</span> <span class="o">-</span><span class="n">c</span> <span class="mf">192.168.50.119</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5901</span> <span class="o">-</span><span class="n">i1</span> <span class="o">-</span><span class="n">t5</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>-c specifies that a client is being started and will connect to the following IP address</li>
+<li>-p specifies the same port that was opened on the server side</li>
+<li>-i1 broadcasts the data which can be seen below on both the server and client sides</li>
+<li>-t5 configures the device to transmit data for 5 sec</li>
+</ul>
+<p>Expected output on CC35xx host:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>root@am335x-evm:/usr/share/cc35xx# iperf -c 192.168.50.119 -p 5901 -i1 -t5
+------------------------------------------------------------
+Client connecting to 192.168.50.119, TCP port 5901
+TCP window size: 83.8 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.50.143 port 35430 connected with 192.168.50.119 port 5901
+[ ID] Interval       Transfer      Bandwidth
+[  3]  0.0- 1.0 sec   XXX KBytes   Y.YY Mbits/sec
+[  3]  1.0- 2.0 sec   XXX KBytes   Y.YY Mbits/sec
+[  3]  2.0- 3.0 sec   XXX KBytes   Y.YY Mbits/sec
+[  3]  3.0- 4.0 sec   XXX KBytes   Y.YY Mbits/sec
+[  3]  4.0- 5.0 sec   XXX KBytes   Y.YY Mbits/sec
+</pre></div>
+</div>
+<p>Expected output on Computer 1:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>C:\Users\Administrator&gt;iperf -s -p 5901
+------------------------------------------------------------
+Server listening on TCP port 5901
+TCP window size: 64.0 KByte (default)
+------------------------------------------------------------
+[428] local 192.168.50.119 port 5901 connected with 192.168.50.119 port 5901
+[ ID] Interval        Transfer      Bandwidth
+[428]  0.0- 1.0 sec   X.XX MBytes   Y.YY Mbits/sec
+[428]  1.0- 2.0 sec   X.XX MBytes   Y.YY Mbits/sec
+[428]  2.0- 3.0 sec   X.XX MBytes   Y.YY Mbits/sec
+[428]  3.0- 4.0 sec   X.XX MBytes   Y.YY Mbits/sec
+[428]  4.0- 5.0 sec   X.XX MBytes   Y.YY Mbits/sec
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above example can be adjusted based on the desired test in a number of ways. The configuration could be switched where
+the CC35xx host acted as the server and Computer 1 was the client by simply switching the same commands on the respective devices.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-p2p.html" class="btn btn-neutral float-right" title="Peer to Peer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-sntp.html" class="btn btn-neutral float-left" title="SNTP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AT Commands &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Calibrator Tool" href="../calibrator.html" />
+    <link rel="prev" title="Examples" href="../examples-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx software cc35xx-at-commands";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples-index.html">Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AT Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disclaimers">Disclaimers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-syntax">Command Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-return-values">Command Return Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-events">Asynchronous Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commands-summary">Commands Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-commands">Device Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#at-test"><em>AT + Test</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-version"><em>AT + Version</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-ate0"><em>AT + Ate0</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-ate1"><em>AT + Ate1</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#socket-commands">Socket Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#at-socket"><em>AT + Socket</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-close"><em>AT + Close</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-accept"><em>AT + Accept</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bind"><em>AT + Bind</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-listen"><em>AT + Listen</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-connect"><em>AT + Connect</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-recv"><em>AT + Recv</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-recvfrom"><em>AT + RecvFrom</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-send"><em>AT + Send</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-sendto"><em>AT + SendTo</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-commands">WLAN Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanstart"><em>AT + WlanStart</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanstop"><em>AT + WlanStop</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanconnect"><em>AT + WlanConnect</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlandisconnect"><em>AT + WlanDisconnect</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanscan"><em>AT + WlanScan</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanstaroleup"><em>AT + WlanStaRoleUp</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanaproleup"><em>AT + WlanApRoleUp</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlanroledown"><em>AT + WlanRoleDown</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlansetmacaddress"><em>AT + WlanSetMacAddress</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-wlangetmacaddress"><em>AT + WlanGetMacAddress</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ble-commands">BLE Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#at-bleinit"><em>AT + BleInit</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blesetmacaddress"><em>AT + BleSetMacAddress</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blegetmacaddress"><em>AT + BleGetMacAddress</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blesetdevicename"><em>AT + BleSetDeviceName</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blegetdevicename"><em>AT + BleGetDeviceName</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blesetscancfg"><em>AT + BleSetScanCfg</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blegetscancfg"><em>AT + BleGetScanCfg</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blescan"><em>AT + BleScan</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bleconnect"><em>AT + BleConnect</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bledisconnect"><em>AT + BleDisconnect</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bleconnectedpeers"><em>AT + BleConnectedPeers</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blesetadvcfg"><em>AT + BleSetAdvCfg</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-blegetadvcfg"><em>AT + BleGetAdvCfg</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bleadvstart"><em>AT + BleAdvStart</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-bleadvstop"><em>AT + BleAdvStop</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-commands">Network Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#at-netcfgsetinterfaceip"><em>AT + NetCfgSetInterfaceIp</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-netcfggetinterfaceip"><em>AT + NetCfgGetInterfaceIp</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-netcfgsetdhcpserver"><em>AT + NetCfgSetDhcpServer</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#at-netcfggetdhcpserver"><em>AT + NetCfgGetDhcpServer</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wlanevent"><em>WlanEvent</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#networkevent"><em>NetworkEvent</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bleevent"><em>BleEvent</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calibrator.html">Calibrator Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples-index.html">Examples</a> &raquo;</li>
+        
+      <li>AT Commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="at-commands">
+<span id="sec-wifi-at-commands"></span><h1>AT Commands<a class="headerlink" href="#at-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document describes all available AT commands as well as how to use them. The SDK for the CC35X1 has an AT commands example project which allows users to run these commands. Some of these commands require only one MX device, while other commands require at least 2 devices in order to verify functionality. It is ideal to use 2 devices when testing AT commands that deal with sockets, BLE etc.</p>
+</div>
+<div class="section" id="disclaimers">
+<h2>Disclaimers<a class="headerlink" href="#disclaimers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Buffer Limit - If you type more than 520 bytes, the current command you are trying to type will be deleted and a new prompt will appear.</li>
+<li>Cancellation - Commands inserted into the terminal can be canceled in the midst of insertion by simply pressing “Ctrl+C”. That applies for “at+send” and “at+sendto” commands too, which can prompt for more data if inserted payload isn’t matching the stated payload length.</li>
+<li>CMDs History - You will not be able to navigate command history using arrow keys when using long commands. A command is considered long when it requires the terminal the wrap around the line it’s currently processing.</li>
+</ul>
+</div>
+<div class="section" id="command-syntax">
+<h2>Command Syntax<a class="headerlink" href="#command-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span><span class="o">+&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;=&lt;</span><span class="n">param1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">param2</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...,</span><span class="o">&lt;</span><span class="n">paramX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Commands that contain parameters should include an equal sign (=) between the command name and the first parameter.</p>
+</li>
+<li><p class="first">Commands that contain parameters should include a comma mark (,) as a delimiter between them—comma delimiters are mandatory.</p>
+</li>
+<li><p class="first">In case the parameter is defined as “ignore” or “optional”, it could be left empty but the comma delimiter should be mentioned—it looks like two conjunction delimiters (,,).</p>
+</li>
+<li><p class="first">Parameters that are left empty must be treated as 0 or NULL (according to the parameter type), and in case it was not defined as “ignore” or “optional”, an error will be raised.</p>
+</li>
+<li><p class="first">String parameters containing spaces must be enclosed with quotes (” “).</p>
+</li>
+<li><p class="first">String parameters containing a comma delimiter (,) must be enclosed with quotes (” “).</p>
+</li>
+<li><p class="first">Numeric value parameters could be one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Decimal</li>
+<li>Hexadecimal—sometimes a prefix of zero x notation (0x) is required (mostly for sheer numbers and not addresses such as MAC)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Numeric array parameters could be enclosed with square brackets ([ ]).</p>
+</li>
+<li><p class="first">Numeric array parameters could be one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>IPv4 address—contains four numeric values (8 bits each) with a point mark (.) as a delimiter between them enclosed with or without square brackets—x.x.x.x or [x.x.x.x]</li>
+<li>IPv6 address—contains four numeric values (32 bit each) with a colon mark (:) as a delimiter between them enclosed with or without square brackets—x:x:x:x or [x:x:x:x]</li>
+<li>MAC address—contains six numeric values (8 bit each) with a colon mark (:) as a delimiter between them enclosed with or without square brackets—x:x:x:x:x:x or [x:x:x:x:x:x]</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Bitmask parameters should contain values with a vertical bar ( | ) as delimiter between them enclosed with or without square brackets—x|x|x or [x|x|x]</p>
+</li>
+<li><p class="first">The AT command handler allows for the AT commands to be entered in uppercase or lowercase with spaces between the arguments.</p>
+</li>
+<li><p class="first">Data parameter should be one of the following formats:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Binary format</li>
+<li>Base64 format—binary to text encoding</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="command-return-values">
+<h2>Command Return Values<a class="headerlink" href="#command-return-values" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Command that returns values:</li>
+</ul>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;:</span> <span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...,</span> <span class="o">&lt;</span><span class="n">valueX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Command that returns success:</dt>
+<dd><ul class="first last">
+<li>None</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Command that returns failure:</li>
+</ul>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">event</span> <span class="n">name</span><span class="o">&gt;:</span> <span class="o">&lt;</span><span class="n">event</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,...,</span><span class="o">&lt;</span><span class="n">valueX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Command return status should include a colon mark (:) between the command name and the first value.</li>
+<li>Command return status that contains list values should include a semicolon mark (;) as a delimiter between the list members.</li>
+</ul>
+</div>
+<div class="section" id="asynchronous-events">
+<h2>Asynchronous Events<a class="headerlink" href="#asynchronous-events" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The events may arrive at any time. Asynchronous events are always built in the following format:</li>
+</ul>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">event</span> <span class="n">name</span><span class="o">&gt;:</span> <span class="o">&lt;</span><span class="n">event</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,...,</span><span class="o">&lt;</span><span class="n">valueX</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The event should include a colon mark (:) between the event name and the event ID.</li>
+</ul>
+</div>
+<div class="section" id="commands-summary">
+<h2>Commands Summary<a class="headerlink" href="#commands-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong>Device Commands</strong>:</dt>
+<dd><ul class="first last">
+<li>AT + Test: Test command</li>
+<li>AT + Version: Get Version</li>
+<li>AT + Ate0: Echo off</li>
+<li>At + Ate1: Echo on</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Socket Commands</strong>:</dt>
+<dd><ul class="first last">
+<li>AT + Socket: Create endpoint for communication</li>
+<li>AT + Close: Close socket</li>
+<li>AT + Accept: Accept a connection on a socket</li>
+<li>AT + Bind: Assign a name to a socket</li>
+<li>AT + Listen: Listen for connections on a socket</li>
+<li>AT + Connect: Initiate a connection on a socket</li>
+<li>AT + Recv: Read data from TCP socket</li>
+<li>AT + RecvFrom: Read data from socket</li>
+<li>AT + Send: Write data to TCP socket</li>
+<li>AT + SendTo: Write data to socket</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>WLAN Commands</strong></dt>
+<dd><ul class="first last">
+<li>AT + WlanStart: Starts the WLAN device</li>
+<li>AT + WlanStop: Stops the WLAN device</li>
+<li>AT + WlanConnect: Connect to WLAN network as a station</li>
+<li>AT + WlanDisconnect: Disconnect connection</li>
+<li>AT + WlanStaRoleUp: Start WLAN STA role activity</li>
+<li>AT + WlanApRoleUp: Start WLAN AP role activity</li>
+<li>AT + WlanRoleDown: Stop WLAN STA/AP role activity</li>
+<li>AT + WlanScan: Gets the WLAN scan operation results</li>
+<li>AT + WlanSetMacAddress: Sets WLAN role MAC address</li>
+<li>AT + WlanGetMacAddress: Gets WLAN role MAC address</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>BLE Commands</strong></dt>
+<dd><ul class="first last">
+<li>AT + BleInit: Starts/stops the BLE module</li>
+<li>AT + BleSetMacAddress: Set BLE MAC address type</li>
+<li>AT + BleGetMacAddress: Get BLE random MAC address</li>
+<li>AT + BleSetDeviceName: Set BLE device name</li>
+<li>AT + BleGetDeviceName: Get BLE device name</li>
+<li>AT + BleSetScanCfg: Set BLE scan configurations</li>
+<li>AT + BleGetScanCfg: Get BLE scan configurations</li>
+<li>AT + BleScan: BLE scan enable</li>
+<li>AT + BleConnect: BLE connect</li>
+<li>AT + BleDisconnect: BLE disconnect</li>
+<li>AT + BleConnectedPeers: Get BLE connected peers</li>
+<li>AT + BleSetAdvCfg: Set BLE advertise configurations</li>
+<li>AT + BleGetAdvCfg: Get BLE advertise configurations</li>
+<li>AT + BleAdvStart: BLE start advertise</li>
+<li>AT + BleAdvStop: BLE stop advertise</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Network Commands</strong></dt>
+<dd><ul class="first last">
+<li>AT + NetCfgSetInterfaceIp: Set interface IP</li>
+<li>AT + NetCfgSetInterfaceIp: Get interface IP</li>
+<li>AT + NetCfgSetDhcpServer: Set AP`s DHCP server parameters</li>
+<li>AT + NetCfgGetDhcpServer: Get AP`s DHCP server parameters</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="device-commands">
+<h2>Device Commands<a class="headerlink" href="#device-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-test">
+<h3><em>AT + Test</em><a class="headerlink" href="#at-test" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This is to test whether or not you receive “OK”.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Test</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Test</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-version">
+<h3><em>AT + Version</em><a class="headerlink" href="#at-version" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get Host Driver Version.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="26%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Version</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Version</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-ate0">
+<h3><em>AT + Ate0</em><a class="headerlink" href="#at-ate0" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This command causes terminal to display nothing when you type.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Ate0</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Ate0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-ate1">
+<h3><em>AT + Ate1</em><a class="headerlink" href="#at-ate1" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This command causes terminal to display what you type.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Ate1</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Ate1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="socket-commands">
+<h2>Socket Commands<a class="headerlink" href="#socket-commands" title="Permalink to this headline">¶</a></h2>
+<p>Note that the two endpoints of the socket need to be connected to the same network.</p>
+<div class="section" id="at-socket">
+<h3><em>AT + Socket</em><a class="headerlink" href="#at-socket" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Creates an End-Point for Communication.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="53%" />
+<col width="29%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Socket</td>
+<td>+Socket:[socket]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last">
+<li><dl class="first docutils">
+<dt>Domain - Specifies protocol family of socket:</dt>
+<dd><ul class="first last simple">
+<li>INET: For network protocol IPv4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Type (specifies) communication semantic</dt>
+<dd><ul class="first last simple">
+<li>STREAM: Reliable stream-oriented service
+or Stream Sockets</li>
+<li>DGRAM: Datagram service of Datagram
+Sockets</li>
+<li>RAW: Raw protocols atop the network layer</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Protocol (Specifies particular transport to
+be used with the socket)</p>
+<blockquote>
+<div><ul class="simple">
+<li>TCP</li>
+<li>UDP</li>
+<li>RAW</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</td>
+<td>socket: Socket descriptor
+that will be used in the
+socket commands 4.2.2
+through 4.2.x</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Socket</span> <span class="o">=</span> <span class="n">INET</span><span class="p">,</span> <span class="n">STREAM</span><span class="p">,</span> <span class="n">TCP</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-close">
+<h3><em>AT + Close</em><a class="headerlink" href="#at-close" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Close Socket.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="47%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Close = [socket]</td>
+<td>+Close:[socket]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>socket: Socket descriptor received
+from AT + Socket command</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Close</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// where 0 is the socket number (this is assuming you already used the AT + Socket command and it returned something like +socket:0 where 0 is the socket number)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-accept">
+<h3><em>AT + Accept</em><a class="headerlink" href="#at-accept" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Accept a Connection on a Socket.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="52%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Accept = [socket],[family]</td>
+<td>+Accept:
+[New Socket],[Family],
+[Port],[Address]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>socket: Socket descriptor received from
+AT + Socket command</li>
+<li><dl class="first docutils">
+<dt>family - Specifies protocol family of socket:</dt>
+<dd><ul class="first last">
+<li>INET: For network protocol IPv4</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>NewSocket: New connected
+socket</li>
+<li>Family: internet protocol
+(AF_INET)</li>
+<li>Port: Address port</li>
+<li>Address: Peer socket
+address</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Accept</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">INET</span> <span class="c1">// note that another device must be trying to connect to you first</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-bind">
+<h3><em>AT + Bind</em><a class="headerlink" href="#at-bind" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Assign a Name to a Socket.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="53%" />
+<col width="29%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Bind = [Socket],[Family],[Port],[Address]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last">
+<li><p class="first">Socket: Socket descriptor received from
+AT+Socket command</p>
+</li>
+<li><p class="first">Family: Specifies the protocol family of the
+created socket:</p>
+<blockquote>
+<div><ul class="simple">
+<li>INET: For protocol IPv4</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Port: Address port</p>
+</li>
+<li><p class="first">Address: Local socket address</p>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Bind</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">INET</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span><span class="mf">192.168.10.27</span> <span class="c1">// the socket address is the IP found after issuing AT + NetCfgGetInterfaceIp (after device has connected to an AP), and the port is within 49512-65525 which are free to use in client programs and are not reserved</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-listen">
+<h3><em>AT + Listen</em><a class="headerlink" href="#at-listen" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Listen for Connections on a Socket.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="53%" />
+<col width="29%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Listen = [socket],[backlog]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>socket: Received from AT+Socket command</li>
+<li>backlog: Listen</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Listen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">Listen</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-connect">
+<h3><em>AT + Connect</em><a class="headerlink" href="#at-connect" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Initiate a Connection on a Socket.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="46%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Connect = [Socket],[Family],[Port],[Address]</td>
+<td>OK
++Connect : [Port], [Address]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Socket: Received from AT+Socket command</li>
+<li><dl class="first docutils">
+<dt>family - Specifies protocol family of socket:</dt>
+<dd><ul class="first last">
+<li>INET: For network protocol IPv4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Port: Adress port</li>
+<li>Address: Peer socket address (“x.x.x.x”)</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>Port: Address port</li>
+<li>Address: Peer socket address (“x.x.x.x”)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Connect</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">INET</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span><span class="mf">192.168.10.27</span> <span class="c1">// note that AT + Socket must be run first, and the descriptor must be the same as what the other device is using</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-recv">
+<h3><em>AT + Recv</em><a class="headerlink" href="#at-recv" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Read Data From TCP Socket.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.</p>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="47%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Recv = [sd],[format],[length]</td>
+<td>OK
++Recv: [sd],[format],[length],[data]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>sd: Socket handle</li>
+<li><dl class="first docutils">
+<dt>format: Data format:</dt>
+<dd><ul class="first last">
+<li>0: Binary data format</li>
+<li>1: Base64 data format (binary to text encoding)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>length: Maximum number of bytes to receive</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Recv</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="c1">// if the device receiving is the one that accepted the connection, it must use the new connected socket (return argument from AT + Accept) as the parameter for AT + Recv</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-recvfrom">
+<h3><em>AT + RecvFrom</em><a class="headerlink" href="#at-recvfrom" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Read Data From Socket.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.</p>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="56%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + RecvFrom = [sd],[family],[port],[addr],
+[format],[length]</td>
+<td>+Recv: [sd],[format],
+[length],[data]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>sd: Socket handle</li>
+<li><dl class="first docutils">
+<dt>family: internet protocol</dt>
+<dd><ul class="first last">
+<li>INET: For protocol IPv4</li>
+<li>INET6: For protocol IPv6</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>port: Address port (16 bits)</li>
+<li>addr: internet address (32 bits)</li>
+<li><dl class="first docutils">
+<dt>format: Data format:</dt>
+<dd><ul class="first last">
+<li>0: Binary data format</li>
+<li>1: Base64 data format (binary to text encoding)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>length: Maximum number of bytes to receive</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">RecvFrom</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">INET</span><span class="p">,</span><span class="mi">54911</span><span class="p">,</span><span class="mf">192.168.10.54</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="c1">// recall that if this device is the one that accepted a connection, SD, Port, and Addr are return values from AT + Accept</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-send">
+<h3><em>AT + Send</em><a class="headerlink" href="#at-send" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Write Data to TCP Socket.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.</p>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="14%" />
+<col width="47%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + Send = [sd],[format],[por],[length],[data]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>sd: Socket handle</li>
+<li><dl class="first docutils">
+<dt>format: Data format:</dt>
+<dd><ul class="first last">
+<li>0: Binary data format</li>
+<li>1: Base64 data format (binary to text encoding)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>length: Number of bytes to send</li>
+<li>data: Data to send</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">Send</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-sendto">
+<h3><em>AT + SendTo</em><a class="headerlink" href="#at-sendto" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Write Data to Socket.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.</p>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="56%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + SendTo = [sd],[family],[port],[addr],
+[format],[length],[data]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>sd: Socket handle</li>
+<li><dl class="first docutils">
+<dt>family: internet protocol</dt>
+<dd><ul class="first last">
+<li>INET: For protocol IPv4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>port: Address port (16 bits)</li>
+<li>addr: internet address (32 bits)</li>
+<li><dl class="first docutils">
+<dt>format: Data format:</dt>
+<dd><ul class="first last">
+<li>0: Binary data format</li>
+<li>1: Base64 data format (binary to text encoding)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>length: Maximum number of bytes to send</li>
+<li>data: Data to send</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">SendTo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">INET</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span><span class="mf">192.168.10.27</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="wlan-commands">
+<h2>WLAN Commands<a class="headerlink" href="#wlan-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-wlanstart">
+<h3><em>AT + WlanStart</em><a class="headerlink" href="#at-wlanstart" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This command starts the WLAN device.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanStart</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanStart</span> <span class="c1">// you might need to hit enter after the command completes in order to issue additional commands</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanstop">
+<h3><em>AT + WlanStop</em><a class="headerlink" href="#at-wlanstop" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">This command stops the WLAN device.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="29%" />
+<col width="27%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanStop</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanStop</span> <span class="c1">// you can only issue this after AT + WlanStart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanconnect">
+<h3><em>AT + WlanConnect</em><a class="headerlink" href="#at-wlanconnect" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Connect to WLAN Network as a Station.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="55%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanConnect = [SSID],[BSSID],[SecurityType],
+[SecurityKey]</td>
+<td>OK
+IPv4 Acquired</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first simple">
+<li>SSID: Name of the Access Point</li>
+<li>BSSID: Access Point MAC address (optional)</li>
+<li><dl class="first docutils">
+<dt>SecurityType: Security type:</dt>
+<dd><ul class="first last">
+<li>OPEN</li>
+<li>WPA_WPA2</li>
+<li>WPA2_PLUS</li>
+<li>WPA3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Security Key: Password (Optional in case OPEN
+security type was chosen)</li>
+</ul>
+<p>Arguments for WPS connection:</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>Security Type:</dt>
+<dd><ul class="first last">
+<li>WPS_PIN</li>
+<li>WPS_PBC</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Example Usage (note that WPS does not require SSID or BSSID fields):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanConnect</span> <span class="o">=</span> <span class="n">texas_instruments</span><span class="p">,</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="p">,</span><span class="n">WPA_WPA2</span><span class="p">,</span><span class="mi">12345678</span> <span class="c1">// for the fields you enter such as SSID, BSSID etc, you can obtain them after conducting a WlanScan. Note that you might need to press enter if you want to issue more commands afterwards.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlandisconnect">
+<h3><em>AT + WlanDisconnect</em><a class="headerlink" href="#at-wlandisconnect" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Disconnect the connection.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="26%" />
+<col width="34%" />
+<col width="39%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanDisconnect</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanDisconnect</span> <span class="c1">// you can only do this after being connected to an access point</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanscan">
+<h3><em>AT + WlanScan</em><a class="headerlink" href="#at-wlanscan" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Gets the WLAN Scan Operation Results.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="15%" />
+<col width="51%" />
+<col width="35%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanScan = [Count]</td>
+<td>OK
++WlanScan:
+[SSID],[BSSID],[RSSI],[Channel],
+[Security_Type],[Hidden_SSID]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Count: How many entries to fetch; maximum is 20.
+Count should be in the range of 1 to 20 (including).</li>
+</ul>
+</td>
+<td><p class="first">None</p>
+<ul class="last simple">
+<li>SSID: Wireless LAN identifier</li>
+<li>BSSID: MAC address of the
+wireless access point</li>
+<li>Channel</li>
+<li>RSSI: Relative received signal
+strength in a wireless environment</li>
+<li><dl class="first docutils">
+<dt>Security_Type:</dt>
+<dd><ul class="first last">
+<li>OPEN</li>
+<li>WPA</li>
+<li>WPA2</li>
+<li>WPA_WPA2</li>
+<li>WPA3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Hidden_SSID:</dt>
+<dd><ul class="first last">
+<li>1: Hidden</li>
+<li>0: Not hidden</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanScan</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">// you can only issue this after AT + WlanStaRoleUp; you might need to hit enter after the command completes in order to issue additional commands</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanstaroleup">
+<h3><em>AT + WlanStaRoleUp</em><a class="headerlink" href="#at-wlanstaroleup" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Start WLAN STA Role (mode).</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="33%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanStaRoleUp</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanStaRoleUp</span> <span class="c1">// you can only issue this after already issuing AT + WlanStart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanaproleup">
+<h3><em>AT + WlanApRoleUp</em><a class="headerlink" href="#at-wlanaproleup" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Start WLAN AP Role (mode).</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="56%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + wlanApRoleUp = [SSID],[SecurityType],[Password],
+[Hidden_SSID],[Channel],[Max Stations]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>SSID: Wireless LAN identifier</li>
+<li><dl class="first docutils">
+<dt>SecurityType: Security type:</dt>
+<dd><ul class="first last">
+<li>OPEN</li>
+<li>WPA_WPA2</li>
+<li>WPA2_PLUS</li>
+<li>WPA3</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Password: Set Password for AP mode (Password
+for WPA: 8-63 characters)</li>
+<li><dl class="first docutils">
+<dt>hidden (whether AP is Hidden or Not):</dt>
+<dd><ul class="first last">
+<li>1: Hidden</li>
+<li>0: Not Hidden</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Channel: Set channel for AP role</li>
+<li>Max Stations: Set Max AP stations (1-4)</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanApRoleUp</span> <span class="o">=</span> <span class="n">hello</span><span class="p">,</span><span class="n">WPA_WPA2</span><span class="p">,</span><span class="mi">12345678</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlanroledown">
+<h3><em>AT + WlanRoleDown</em><a class="headerlink" href="#at-wlanroledown" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Stop WLAN Role (mode).</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="21%" />
+<col width="48%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanRoleDown = [Role]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Role</dt>
+<dd><ul class="first last">
+<li>STA: For WLAN station role</li>
+<li>AP: For WLAN Access Point role</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">wlanRoleDown</span> <span class="o">=</span> <span class="n">STA</span> <span class="c1">// or AT + wlanRoleDown = AP assuming that the role up has been issuesd for the respective mode</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlansetmacaddress">
+<h3><em>AT + WlanSetMacAddress</em><a class="headerlink" href="#at-wlansetmacaddress" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set Role MAC Address.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="49%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanSetMacAddress = [Role],
+[MAC_ADDRESS]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Role
+- STA: For WLAN station role
+- AP: For WLAN Access Point role</li>
+<li>MAC_ADDRESS: Requested MAC address</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">WlanSetMacAddress</span> <span class="o">=</span> <span class="n">STA</span><span class="p">,</span><span class="nl">aa</span><span class="p">:</span><span class="nl">bb</span><span class="p">:</span><span class="nl">cc</span><span class="p">:</span><span class="nl">dd</span><span class="p">:</span><span class="nl">ee</span><span class="p">:</span><span class="n">ff</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-wlangetmacaddress">
+<h3><em>AT + WlanGetMacAddress</em><a class="headerlink" href="#at-wlangetmacaddress" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get Role MAC Address.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="21%" />
+<col width="48%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + WlanGetMacAddress = [Role]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Role</dt>
+<dd><ul class="first last">
+<li>STA: For WLAN station role</li>
+<li>AP: For WLAN Access Point role</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">WlanGetMacAddress</span> <span class="o">=</span> <span class="n">STA</span> <span class="c1">// or = AP depending on the respective mode set during STA role up</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ble-commands">
+<h2>BLE Commands<a class="headerlink" href="#ble-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-bleinit">
+<h3><em>AT + BleInit</em><a class="headerlink" href="#at-bleinit" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Start / Stop BLE module.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="21%" />
+<col width="47%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleInit = [Role]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Role</dt>
+<dd><ul class="first last">
+<li>0: Deinit BLE</li>
+<li>1: Init BLE</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleInit</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">// or = 0 depending on AT + BleInit was issued already; can only be used after AT + WlanStart , but should be done before any BLE operation</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blesetmacaddress">
+<h3><em>AT + BleSetMacAddress</em><a class="headerlink" href="#at-blesetmacaddress" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set BLE MAC address type.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="49%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleSetMacAddress = [AddressType]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>AddressType</dt>
+<dd><ul class="first last">
+<li>0: Public</li>
+<li>1: Random</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Note that every call for setting a
+random BLE address will result in
+generation of a new random address</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleSetMacAddress</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">// or = 0, depending on what type of address you want - you can observe that repeated arguments of 0 will result in the same MAC address, whereas an argument of 1 will behave as the note described</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blegetmacaddress">
+<h3><em>AT + BleGetMacAddress</em><a class="headerlink" href="#at-blegetmacaddress" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE random MAC address.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="43%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleGetMacAddress</td>
+<td>+BleGetMacAddress:[MacAddress]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleGetMacAddress</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blesetdevicename">
+<h3><em>AT + BleSetDeviceName</em><a class="headerlink" href="#at-blesetdevicename" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set BLE device name.
+: Limit up to 31 characters; default name is “TI CC3xxxx”</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="49%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleSetDeviceName = [DeviceName]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>DeviceName: Requested device name.
+Allowing up to 31 characters.</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleSetDeviceName</span> <span class="o">=</span> <span class="n">Texas</span> <span class="c1">// you can verify changes using AT + BleGetDeviceName</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blegetdevicename">
+<h3><em>AT + BleGetDeviceName</em><a class="headerlink" href="#at-blegetdevicename" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE device name.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="43%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleGetDeviceName</td>
+<td>+BleGetDeviceName:[DeviceName]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleGetDeviceName</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blesetscancfg">
+<h3><em>AT + BleSetScanCfg</em><a class="headerlink" href="#at-blesetscancfg" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE device name.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="11%" />
+<col width="67%" />
+<col width="22%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleSetScancfg = [scanType],
+[ownAddressType],[filterPolicy],
+[scanInterval],[scanWindow]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>ScanType:<ul>
+<li>0: Passive Scan</li>
+<li>1: Active Scan</li>
+</ul>
+</li>
+<li>Own Address Type:<ul>
+<li>0: Public Device Address</li>
+<li>1: Random Device Address</li>
+</ul>
+</li>
+<li>Filter Policy:<ul>
+<li>0: Accept all advertisements except directed ones not intended for this device</li>
+<li>1: Accept only from devices in White List except directed ones not intended for this device</li>
+<li>2: Accept all advertisements including directed ones not intended for this device</li>
+<li>3: Accept only from devices in White List including ones not intended for this device</li>
+</ul>
+</li>
+<li>Scan Interval:<ul>
+<li>0.625ms per interval</li>
+<li>Range is [0x004, 0x4000] or 2.5ms to 10.24s</li>
+<li>Parameter must be no less than “Scan Window” parameter</li>
+</ul>
+</li>
+<li>Scan Window:<ul>
+<li>0.625ms per window</li>
+<li>Range is [0x004, 0x4000] or 2.5ms to 10.24s</li>
+<li>Parameter must be no greater than “Scan Interval” parameter</li>
+</ul>
+</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleSetScanCfg</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blegetscancfg">
+<h3><em>AT + BleGetScanCfg</em><a class="headerlink" href="#at-blegetscancfg" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE scan configurations.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="42%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleGetScancfg</td>
+<td>+BleGetScanCfg: = [scanType],
+[ownAddressType],[filterPolicy],
+[scanInterval],[scanWindow]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleGetScanCfg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blescan">
+<h3><em>AT + BleScan</em><a class="headerlink" href="#at-blescan" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">BLE scan enable.
+: Note that in order to use this API, one must first set the scan parameters using “AT+BleSetScanCfg”.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="51%" />
+<col width="29%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleScan = [Enable]&lt;,[Duration]&gt;</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Enable: Enable or disable the scan<ul>
+<li>0: disable</li>
+<li>1: enable</li>
+</ul>
+</li>
+<li>Duration: Must be set if enable == 1
+Set scan duration in units of seconds
+If set to 0, the scan is continuously
+running until this API is called again
+with enable==0.</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleScan</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span> <span class="c1">// this command can only be used after setting the scan configuration</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-bleconnect">
+<h3><em>AT + BleConnect</em><a class="headerlink" href="#at-bleconnect" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">BLE connect.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="43%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleConnect = [Peer Address],
+[Peer Address Type]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Peer Address</li>
+<li>Peer Address Type</li>
+</ul>
+</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleConnect</span> <span class="o">=</span> <span class="nl">aa</span><span class="p">:</span><span class="nl">bb</span><span class="p">:</span><span class="nl">cc</span><span class="p">:</span><span class="nl">dd</span><span class="p">:</span><span class="nl">ee</span><span class="p">:</span><span class="n">ff</span><span class="p">,</span><span class="n">random</span> <span class="c1">// note that the Bluetooth Device you are connecting to must be advertising to your device and allow your device to connect to it</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-bledisconnect">
+<h3><em>AT + BleDisconnect</em><a class="headerlink" href="#at-bledisconnect" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">BLE disconnect.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="43%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleDisconnect</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleDisconnect</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-bleconnectedpeers">
+<h3><em>AT + BleConnectedPeers</em><a class="headerlink" href="#at-bleconnectedpeers" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE connected peers.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="42%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleConnectedPeers</td>
+<td>+BleConnectedPeers:[MAC Address]
+OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">BleConnectedPeers</span> <span class="c1">// will show empty list if not connected with anyone</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-blesetadvcfg">
+<h3><em>AT + BleSetAdvCfg</em><a class="headerlink" href="#at-blesetadvcfg" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set BLE advertise configurations.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="12%" />
+<col width="67%" />
+<col width="21%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleSetAdvCfg = [Min Interval],[Max Interval],[Adv Type],
+[Own Address Type],[Channel Map], [Filter Policy],
+[Peer Address Type], [Peer Address], [Primary Phy],
+[Secondary Phy]</td>
+<td>OK
+IPv4_ACQUIRED</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li>Min Interval<ul>
+<li>Min interval is 0.625 ms, if 0 stack uses same defaults</li>
+<li>Range [0x0020, 0x4000] or [20,10240] milliseconds</li>
+</ul>
+</li>
+<li>Max Interval<ul>
+<li>Maximum advertising interval in 0.625 ms, if 0 stack uses
+same defaults where</li>
+<li>Range is same as min interval</li>
+</ul>
+</li>
+<li>Adv Type:<ul>
+<li>0: BLE_ADV_TYPE_IND</li>
+<li>1: BLE_ADV_TYPE_DIRECT_IND_HIGH (max 1280 ms)</li>
+<li>2: BLE_ADV_TYPE_SCAN_IND</li>
+<li>3: BLE_ADV_TYPE_NONCONN_IND</li>
+<li>4: BLE_ADV_TYPE_DIRECT_IND_LOW</li>
+<li>5: BLE_ADV_TYPE_EXT_NOSCANNABLE_IND</li>
+<li>6: BLE_ADV_TYPE_EXT_CONNECTABLE_IND</li>
+<li>7: BLE_ADV_TYPE_EXT_SCANNABLE_IND</li>
+</ul>
+</li>
+<li>Own Address Type Used By Advertising Instance<ul>
+<li>0: Public Device Address</li>
+<li>1: Random Device Address</li>
+</ul>
+</li>
+<li>Channel Map: Advertising Channel Map, if 0 stack<ul>
+<li>1: Channel 37</li>
+<li>2: Channel 38</li>
+<li>3: Channel 39</li>
+<li>4: All channels</li>
+</ul>
+</li>
+<li>Advertising Filter Policy<ul>
+<li>0: NONE (default) - no whitelist</li>
+<li>1: SCAN - process all connection requests but only scans from whitelist</li>
+<li>2: CONN: - process all scan requests but only connection requests from whitelist</li>
+<li>3: BOTH: ignore all scan and connection requests unless in whitelist</li>
+</ul>
+</li>
+<li>Peer Address Type for Direct Advertising If Directed Is Set<ul>
+<li>0: Public Device Address</li>
+<li>1: Random Device Address</li>
+</ul>
+</li>
+<li>Peer Address for directed advertising if directed is set</li>
+<li>Primary Phy<ul>
+<li>1: 1M Phy</li>
+<li>3: Coded Phy (yes it’s a 3)</li>
+</ul>
+</li>
+<li>Secondary Phy<ul>
+<li>1: 1M Phy</li>
+<li>2: 2M Phy</li>
+<li>3: Coded Phy</li>
+</ul>
+</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="at-blegetadvcfg">
+<h3><em>AT + BleGetAdvCfg</em><a class="headerlink" href="#at-blegetadvcfg" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get BLE advertise configurations.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="12%" />
+<col width="21%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT+BleSetAdvCfg</td>
+<td>OK
+[Min Interval],[Max Interval],[Adv Type],
+[Own Address Type],[Channel Map], [Filter Policy],
+[Peer Address Type], [Peer Address], [Primary Phy],
+[Secondary Phy]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>&#160;</td>
+<td><ul class="first last simple">
+<li>Min Interval<ul>
+<li>Min interval is 0.625 ms, if 0 stack uses same defaults</li>
+<li>Range [0x0020, 0x4000] or [20,10240] milliseconds</li>
+</ul>
+</li>
+<li>Max Interval<ul>
+<li>Maximum advertising interval in 0.625 ms, if 0 stack uses
+same defaults where</li>
+<li>Range is same as min interval</li>
+</ul>
+</li>
+<li>Adv Type:<ul>
+<li>0: BLE_ADV_TYPE_IND</li>
+<li>1: BLE_ADV_TYPE_DIRECT_IND_HIGH</li>
+<li>2: BLE_ADV_TYPE_SCAN_IND</li>
+<li>3: BLE_ADV_TYPE_NONCONN_IND</li>
+<li>4: BLE_ADV_TYPE_DIRECT_IND_LOW</li>
+<li>5: BLE_ADV_TYPE_EXT_NOSCANNABLE_IND</li>
+<li>6: BLE_ADV_TYPE_EXT_CONNECTABLE_IND</li>
+<li>7: BLE_ADV_TYPE_EXT_SCANNABLE_IND</li>
+</ul>
+</li>
+<li>Own Address Type Used By Advertising Instance<ul>
+<li>0: Public Device Address</li>
+<li>1: Random Device Address</li>
+</ul>
+</li>
+<li>Channel Map: Advertising Channel Map, if 0 stack<ul>
+<li>1: Channel 37</li>
+<li>2: Channel 38</li>
+<li>3: Channel 39</li>
+<li>4: All channels</li>
+</ul>
+</li>
+<li>Advertising Filter Policy<ul>
+<li>0: NONE (default) - no whitelist</li>
+<li>1: SCAN - process all connection requests but only scans from whitelist</li>
+<li>2: CONN: - process all scan requests but only connection requests from whitelist</li>
+<li>3: BOTH: ignore all scan and connection requests unless in whitelist</li>
+</ul>
+</li>
+<li>Peer Address Type for Direct Advertising If Directed Is Set<ul>
+<li>0: Public Device Address</li>
+<li>1: Random Device Address</li>
+</ul>
+</li>
+<li>Peer Address for directed advertising if directed is set</li>
+<li>Primary Phy<ul>
+<li>1: 1M Phy</li>
+<li>3: Coded Phy (yes it’s a 3)</li>
+</ul>
+</li>
+<li>Secondary Phy<ul>
+<li>1: 1M Phy</li>
+<li>2: 2M Phy</li>
+<li>3: Coded Phy</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="at-bleadvstart">
+<h3><em>AT + BleAdvStart</em><a class="headerlink" href="#at-bleadvstart" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Start advertising in BLE.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="42%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleAdvStart</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="at-bleadvstop">
+<h3><em>AT + BleAdvStop</em><a class="headerlink" href="#at-bleadvstop" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Stop advertising in BLE.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="42%" />
+<col width="40%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + BleAdvStop</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="network-commands">
+<h2>Network Commands<a class="headerlink" href="#network-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="at-netcfgsetinterfaceip">
+<h3><em>AT + NetCfgSetInterfaceIp</em><a class="headerlink" href="#at-netcfgsetinterfaceip" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set interface IP.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="58%" />
+<col width="26%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + NetCfgSetInterfaceIp = [Role],[IP Mode],[IP Address],
+[Netmask],[Gateway Address]</td>
+<td>OK
+IPv4_ACQUIRED</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first simple">
+<li>Role / Interface: Interface we wish to set<ul>
+<li>STA</li>
+<li>AP</li>
+</ul>
+</li>
+<li>IP Mode:<ul>
+<li>STATIC</li>
+<li>DHCP</li>
+</ul>
+</li>
+</ul>
+<p>The following parameters are applicable for all roles
+except for STA using DHCP</p>
+<ul class="last simple">
+<li>IP Address</li>
+<li>Netmask Address</li>
+<li>Gateway Address</li>
+</ul>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">NetCfgSetInterfaceIp</span> <span class="o">=</span> <span class="n">AP</span><span class="p">,</span><span class="n">DHCP</span><span class="p">,</span><span class="mf">192.168.1.100</span><span class="p">,</span><span class="mf">255.255.255.0</span><span class="p">,</span><span class="mf">192.168.1.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-netcfggetinterfaceip">
+<h3><em>AT + NetCfgGetInterfaceIp</em><a class="headerlink" href="#at-netcfggetinterfaceip" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get interface IP.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="57%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + NetCfgGetInterfaceIp = [Role]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Role/Interface: Interface we wish to get IP info about</dt>
+<dd><ul class="first last">
+<li>STA</li>
+<li>AP</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>IP Address</li>
+<li>Netmask Address</li>
+<li>Gateway Address</li>
+<li>DHCP/STATIC Mode:
+- 0: STATIC
+- 1: DHCP</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">NetCfgGetnterfaceIp</span> <span class="o">=</span> <span class="n">STA</span> <span class="c1">// or = AP depending on what role up command was used</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-netcfgsetdhcpserver">
+<h3><em>AT + NetCfgSetDhcpServer</em><a class="headerlink" href="#at-netcfgsetdhcpserver" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Set AP’s DHCP server parameters.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="15%" />
+<col width="59%" />
+<col width="26%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + NetCfgSetDhcpServer = [Lease Time],[IP start address],
+[IP end address]</td>
+<td>OK</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td><ul class="first simple">
+<li>Lease Time: Address lease time, in minutes. Optional
+parameter</li>
+<li>IP start address</li>
+<li>IP end address</li>
+</ul>
+<p class="last">Note: for AP role this API can only be used if AP role is up</p>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">NetCfgSetDhcpServer</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="mf">192.168.1.1</span><span class="p">,</span><span class="mf">192.168.1.100</span> <span class="c1">// note that the range of these addresses cannot include the current AP&#39;s address</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="at-netcfggetdhcpserver">
+<h3><em>AT + NetCfgGetDhcpServer</em><a class="headerlink" href="#at-netcfggetdhcpserver" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Get AP’s DHCP server parameters.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Command Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="14%" />
+<col width="54%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><em>Request</em></td>
+<td><em>Response</em></td>
+</tr>
+<tr class="row-even"><td><strong>Expression</strong></td>
+<td>AT + NetCfgGetDhcpServer</td>
+<td>OK
++NetCfgGetDhcpServer:[Lease Time],
+[IP Start Address],[IP End Address]</td>
+</tr>
+<tr class="row-odd"><td><strong>Arguments</strong></td>
+<td>None</td>
+<td><ul class="first last simple">
+<li>Lease Time: Address lease time,
+in minutes. Optional parameter</li>
+<li>IP start address</li>
+<li>IP end address</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">AT</span> <span class="o">+</span> <span class="n">NetCfgGetDhcpServer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="wlanevent">
+<h3><em>WlanEvent</em><a class="headerlink" href="#wlanevent" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">WLAN Asynchronous Event.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Event Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">Response</td>
+</tr>
+<tr class="row-even"><td colspan="2">+EventWlan:[EventID],[Value1],…,[ValueX]</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Arguments:</td>
+</tr>
+<tr class="row-even"><td>Event ID</td>
+<td>Value</td>
+</tr>
+<tr class="row-odd"><td>CONNECT
+STA connection indication event</td>
+<td><ul class="first last simple">
+<li>SSID Name</li>
+<li>BSSID</li>
+<li>-1 on Connection Failure</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>DISCONNECT
+STA client disconnection event</td>
+<td><ul class="first last simple">
+<li>SSID Name</li>
+<li>BSSID</li>
+<li>Reason Code</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>SCAN_RESULTS
+STA scan results. Received as multiple
+sequential events, separated by ;</td>
+<td><ul class="first last simple">
+<li>SSID Name</li>
+<li>BSSID</li>
+<li>RSSI</li>
+<li>Channel</li>
+<li>Security Type</li>
+<li>Key</li>
+<li>Hidden
+- 0: SSID Not Hidden
+- 1: SSID Hidden</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>STA_ADDED
+STA connected to operating AP</td>
+<td><ul class="first last simple">
+<li>MAC Address</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>STA_REMOVED
+STA disconnected to operating AP</td>
+<td><ul class="first last simple">
+<li>MAC Address</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="networkevent">
+<h3><em>NetworkEvent</em><a class="headerlink" href="#networkevent" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Network Asynchronous Event.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Event Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">Response</td>
+</tr>
+<tr class="row-even"><td colspan="2">+EventNetwork:[EventID],[Value1],…,[ValueX]</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Arguments:</td>
+</tr>
+<tr class="row-even"><td>Event ID</td>
+<td>Value</td>
+</tr>
+<tr class="row-odd"><td>IPv4_ACQUIRED
+Network interface acquied IPv4 (STA)</td>
+<td><ul class="first last simple">
+<li>IP Address</li>
+<li>Gateway Address</li>
+<li>Netmask</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="bleevent">
+<h3><em>BleEvent</em><a class="headerlink" href="#bleevent" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">BLE Asynchronous Event.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>Event Parameters</strong></dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">Response</td>
+</tr>
+<tr class="row-even"><td colspan="2">+EventBle:[EventID],[Value1],…,[ValueX]</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Arguments:</td>
+</tr>
+<tr class="row-even"><td>Event ID</td>
+<td>Value</td>
+</tr>
+<tr class="row-odd"><td>BLESCAN
+BLE scan result received</td>
+<td><ul class="first last simple">
+<li>MAC Address</li>
+<li>RSSI</li>
+<li>Own Address Type:<ul>
+<li>Public</li>
+<li>Random</li>
+</ul>
+</li>
+<li>Device Name<ul>
+<li>“Unnamed” if N/A</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>BLESCANDONE
+BLE scan is done</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>BLECONNECT
+BLE is connected</td>
+<td><ul class="first last simple">
+<li>Connection Handle</li>
+<li>MAC Address</li>
+<li>Peer Address Type</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>BLEDISCONNECT
+BLE is disconnected</td>
+<td><ul class="first last simple">
+<li>Connection Handle</li>
+<li>MAC Address</li>
+<li>Address Type</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>BLEADVCOMPLETE
+BLE advertise is completed</td>
+<td><ul class="first last simple">
+<li>Termination Code</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../calibrator.html" class="btn btn-neutral float-right" title="Calibrator Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../examples-index.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

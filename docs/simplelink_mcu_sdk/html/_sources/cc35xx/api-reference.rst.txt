@@ -1,0 +1,14 @@
+
+.. _TI Vendor Specific HCI Guide: ../vs-hci-commands/index-vs-hci-commands.html
+
+API References
+***************
+
+User Interface
+^^^^^^^^^^^^^^^
+* `wlan_interface`_
+
+
+Vendor Specific HCI Guide
+^^^^^^^^^^^^^^^^^^^^^^^^^
+For detailed information on BLE HCI commands please refer to the `TI Vendor Specific HCI Guide`_ 

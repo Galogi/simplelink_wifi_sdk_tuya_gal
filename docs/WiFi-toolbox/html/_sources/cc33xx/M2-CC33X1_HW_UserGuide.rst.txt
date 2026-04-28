@@ -1,0 +1,506 @@
+
+
+.. _My Secure: https://www.ti.com/securesoftware
+.. _Request now here: https://www.ti.com/licreg/docs/swlicexportcontrol.tsp?form_id=338887&prod_no=CC33X1-DESIGN&ref_url=epd_connect_wcs_CC3301
+
+.. _SK-AM62B-P1: https://www.ti.com/tool/SK-AM62B-P1
+.. _SK-AM62A-LP: https://www.ti.com/tool/SK-AM62A-LP
+.. _SK-AM62-LP: https://www.ti.com/tool/SK-AM62-LP
+.. _CC33XX Radio Tool User's Guide: ../WiFi-toolbox/radio_tool_user_guide.html
+
+.. _CC33XX Logger User Guide: ../WiFi-toolbox/logger_user_guide.html
+
+M2-CC33X1 Add-in Card Hardware User's Guide
+********************************************
+
+.. _M2-CC33X1_overview:
+
+M2-CC33X1 Overview
+===================
+
+The SimpleLink |trade| CC33XX Wi-Fi 6 and Bluetooth |reg| Low Energy devices enable affordable, reliable and secure connectivity in embedded applications with a processor host running Linux |reg| or an MCU host running RTOS. The CC33X1 M.2 card plug-in module is a test and development board that can be easily connected to TI processor boards or other processor boards with an M.2 Key E interface support; thus enabling rapid software development.
+
+This document is intended to serve as a hardware user's guide to explain the various hardware configurations and features of the M2-CC3351.  The `CC33XX Radio Tool User's Guide`_ explains how use Radio Tool for RF evaluation.
+
+.. note:: 
+
+  This guide may refer to a M2-CC33X1 to mention either the M2-CC3301 or M2-CC3351, since both are functionally similar. The M2-CC3351 differs by the addition of Dual-Band (2.4GHz and 5GHz) Wi-Fi 6 feature, as such the CC3351 companion device is populated and pin 38 (RF_A band for 5Ghz) is not grounded.
+
+  **Device Part Numbers**
+   * CC3300 - 2.4Ghz Wi-Fi 6  
+   * CC3301 - 2.4Ghz Wi-Fi 6 and Bluetooth |reg| Low Energy
+   * CC3350 - 2.4/5Ghz (Dual-Band) Wi-Fi 6 
+   * CC3351 - 2.4/5Ghz (Dual-Band) Wi-Fi 6 and Bluetooth |reg| Low Energy
+
+
+
+.. figure:: resources/M2CC33X1/TopViewM2-CC3351.png
+    :align: center
+    :scale: 40
+    :alt: M2-CC33X51TopView
+
+    Top View of M2-CC3351 Add-in Card
+
+This Add-in card can be easily paired with the following processor boards:
+
+* `SK-AM62B-P1`_
+* `SK-AM62A-LP`_
+* `SK-AM62-LP`_
+
+The M2-CC33X1 Add-In Card can also be used with other other processor boards with an M.2 Key E Connector. 
+
+
+M2-CC33X1 System Overview
+--------------------------
+The M2-CC33X1 is a board designed to enable rapid and easy software and hardware development for the CC33XX device. Other components on the board are only populated for testing and support of this main device. The block diagram for the M2-CC33X1 is shown below.
+
+
+
+.. figure:: resources/M2CC33X1/M2-CC3351_BlockDiagram.png
+    :align: center
+    :scale: 90
+    :alt: M2-CC3351_BlockDiagram
+
+    M2-CC3351 Block diagram 
+
+
+* SimpleLink |trade| CC3351 Dual-Band (2.4GHz and 5GHz) Wi-Fi 6 and Bluetooth |reg| Low Energy combo device
+* Gold pins for M.2 Type 2230 Key E interface (PCIE standard)
+* Onboard chip dual-band antenna
+* Optional RF path to U.FL connector for conducted RF testing
+* Power from on board LDO (3.3 V to 1.8 V)
+* For low power evaluation an optional 32 kHz oscillator may be populated
+* Optional alternative paths for nReset and WLAN interrupt line via 0ohm resistors
+
+.. _M2-CC33X1_Hardware_Features:
+
+M2-CC33X1 Hardware Features
+----------------------------
+The figures below show the features on the Top and Bottom side of the M2-CC33X1 Add-in Card features, some of the features highlighted are described below:
+
+.. _M2-CC33X1_HW_Features:
+.. figure:: resources/M2CC33X1/M2-CC33X1_Features.png
+    :align: center
+    :scale: 75
+    :alt: M2-CC33X1_Features
+
+    M2-CC33X1 Features 
+
+* The mounted 0 Ohm resistor can be swapped to a different position to do conducted testing with the connector on board (J1/J2), the default configuration allows use of the onboard chip antenna.
+* The board provides a Test Point (LOG) to use the logger output from the device (UART TX debug logger).
+* There is footprint for an SMA connector (J2) onboard to replace the onboard UF.L connector (J1) for performing conducted testing measurements with a compatible coaxial cable (refer to :numref:`M2-CC33X1_Hardware_MoreFeatures` ).
+* There is an optional placement for a 32.768 kHz oscillator (Y2). The CC33XX has an internal Slow Clock, but the slow clock can be generated externally by an oscillator (Y2) for optimal power consumption.
+* The optional 2 pin header (J3) can access or provide the 3.3V power source and the board's ground.
+* The M2-CC33X1 Gold finger Edge connector (J5) follows the PCIE M.2 form factor Type 2230 Key E, as such the board can be compatible with any host that has a 75-position host interface connector for type key E.  Refer to :ref:`Signal Assignment` for more information on the pin out.
+
+
+.. _M2-CC33X1_Hardware_MoreFeatures:
+.. figure:: resources/M2CC33X1/M2-CC33X1_MoreFeatures.png
+    :align: center
+    :scale: 75
+    :alt: M2-CC33X1_MoreFeatures
+
+    M2-CC33X1 More Features
+
+* The onboard LDO (U2) is used to derive 1.8V from the provided 3.3V.
+* There is an onboard Level Shifter (U3) to receive only 1.8V for the nRESET Net signal (Active Low).
+* Important to note that the "Dual Inverter Buffer with Open-Drain Output" (U4) allows the device to output the interrupt lines (Active Low) and conform to the PCI Express M.2 Specification. Since the component is Open-Drain the host platform must have a 10k pull up, pads have been provided to add the resistor (R11 for IRQ_WL, and R12 for IRQ_BLE) in case that is not true.
+* There are resistors to optionally change the pin used for the "HOST_nRESET" and "IRQ_WL_toHost" Net signals (refer to :ref:`Signal Assignment` ).
+
+.. _M2-CC33X1_LEDs:
+
+LED's on M2-CC33X1
+----------------------
+
+The Table below lists the function for the LED's D1 and D2 seen in :ref:`M2-CC33X1_Hardware_Features`
+
+.. list-table:: LEDs
+   :widths: 3 5 5 35
+   :header-rows: 1
+
+   * - Reference
+     - Color
+     - Usage
+     - Comments
+   * - D1
+     - Red
+     - nReset
+     - The LED indicates the state of the nReset pin. When the LED is on it indicates that the nReset line is high and the device is functional.
+   * - D2
+     - Green
+     - 3.3V power
+     - The Green LED indicates the state of the 3.3v power rail on the device. When D2 is on the power rail is up.
+
+.. _M2-CC33X1_HW_setup:
+
+Hardware Setup
+===============
+The M2-CC33X1 must be inserted on the M.2 Key-E socket of the platform. The figure below shows the Add-in Card inserted in the M.2 Key E socket (J2 on the SK-AM62A-LP).
+
+
+.. figure:: resources/M2CC33X1/SK-AM62A-LP_M2-CC33X1.png
+    :name: M2CC33X1_AM62A
+    :align: center
+    :scale: 70
+    :alt: M2CC33X1 on SK-AM62A-LP
+
+    Image of M2-CC33X1 on SK-AM62A-LP
+
+.. _Signal Assignment:
+
+Signal Assignment
+---------------------
+
+The M2-CC33X1 Add-in Card uses the interface signals from the PCIE standard "M.2 Type 2230 Key-E" and has 67 gold pins. The signal assignment for these pins is described in the following tables.
+
+.. _J5A pin assignment:
+
+.. list-table:: Top M.2 Connector Pins (J5A)
+   :widths: 3 10 10 40
+   :header-rows: 1
+
+   * - Pins (on J5A)
+     - M2-CC33X1 Net
+     - Type/ Direction
+     - Description
+   * - P1
+     - GND
+     - GND
+     - Board ground
+   * - P3
+     - NC
+     - N/A
+     - Not connected
+   * - P5
+     - NC
+     - N/A
+     - Not connected
+   * - P7
+     - GND
+     - GND
+     - Board ground
+   * - P9
+     - SDIO_CLK_1V8
+     - Input
+     - SDIO clock or SPI clock. Must be driven by host.
+   * - P11
+     - SDIO_CMD_1V8
+     - Input/Output
+     - SDIO command or SPI PICO.
+   * - P13
+     - SDIO_D0_1V8
+     - Input/Output
+     - SDIO data D0.
+   * - P15
+     - SDIO_D1_1V8
+     - Input/Output
+     - SDIO data D1.
+   * - P17
+     - SDIO_D2_1V8
+     - Input/Output
+     - SDIO data D2.
+   * - P19
+     - SDIO_D3_1V8
+     - Input/Output
+     - SDIO data D3.
+   * - P21
+     - IRQ_WL_1V8_Option1
+     - Output
+     -  Default pin for Active Low interrupt request signal from CC33X1 to host for Wi-Fi |trade| activity. (refer to 0 ohm resistor R7 seen in the :ref:`M2-CC33X1_Hardware_Features` section).
+   * - P23
+     - nRESET_Option2
+     - Input
+     - Alternative pin to HOST_nRESET line for CC33X1. Used to enable/disable (Active Low) from host for Wi-Fi |trade| activity. (refer to 0 ohm resistor R9 seen in the :ref:`M2-CC33X1_Hardware_Features` section).
+   * - P25-P31
+     - N/A
+     - Key E
+     - Pins reserved for Key E.
+   * - P33
+     - GND
+     - GND
+     - Board ground.
+   * - P35
+     - NC
+     - N/A
+     - Not connected.
+   * - P37
+     - NC
+     - N/A
+     - Not connected.
+   * - P39
+     - GND
+     - GND
+     - Board ground.
+   * - P41
+     - NC
+     - N/A
+     - Not connected.
+   * - P43
+     - NC
+     - N/A
+     - Not connected.
+   * - P45
+     - GND
+     - GND
+     - Board ground.
+   * - P47
+     - NC
+     - N/A
+     - Not connected.
+   * - P49
+     - NC
+     - N/A
+     - Not connected.
+   * - P51
+     - GND
+     - GND
+     - Board ground.
+   * - P53
+     - NC
+     - N/A
+     - Not connected.
+   * - P55
+     - NC
+     - N/A
+     - Not connected.
+   * - P57
+     - GND
+     - GND
+     - Board ground.
+   * - P59
+     - NC
+     - N/A
+     - Not connected.
+   * - P61
+     - NC
+     - N/A
+     - Not connected.
+   * - P63
+     - GND
+     - GND
+     - Board ground.
+   * - P65
+     - NC
+     - N/A
+     - Not connected.
+   * - P67
+     - NC
+     - N/A
+     - Not connected.
+   * - P69
+     - GND
+     - GND
+     - Board ground.
+   * - P71
+     - NC
+     - N/A
+     - Not connected.
+   * - P73
+     - NC
+     - N/A
+     - Not connected.
+   * - P75
+     - GND
+     - GND
+     - Board ground.
+
+.. _J5B pin assignment:
+
+.. list-table:: Bottom M.2 Connector Pins (J5B)
+   :widths: 3 10 10 40
+   :header-rows: 1
+
+   * - Pins (on J5B)
+     - M2-CC33X1 Net
+     - Type/ Direction
+     - Description
+   * - P2
+     - 3V3
+     - Input/VCC
+     - Power provided to the board and LDO
+   * - P4
+     - 3V3
+     - Input/VCC
+     - Power provided to the board and LDO
+   * - P6
+     - NC
+     - N/A
+     - Not connected
+   * - P8
+     - NC
+     - N/A
+     - Not connected
+   * - P10
+     - NC
+     - N/A
+     - Not connected
+   * - P12
+     - NC
+     - N/A
+     - Not connected
+   * - P14
+     - NC
+     - N/A
+     - Not connected
+   * - P16
+     - NC
+     - N/A
+     - Not connected
+   * - P18
+     - NC
+     - N/A
+     - Not connected
+   * - P20
+     - IRQ_BLE_1V8
+     - Output
+     - Pin for Interrupt request from CC33X1 to host for BLE activity.
+   * - P22
+     - UART_TX
+     - Output
+     - The CC33X1 UART TX to host for BLE host controller interface
+   * - P24-P30
+     - N/A
+     - Key E
+     - Pins reserved for Key E
+   * - P32
+     - UART_RX
+     - Input
+     - The CC33X1 UART RX from host for BLE host controller interface
+   * - P34
+     - UART_RTS
+     - Output
+     - UART RTS from CC33X1 to host for BLE HCI flow control
+   * - P36
+     - UART_CTS
+     - Input
+     - UART CTS to CC33X1 from host for BLE HCI flow control
+   * - P38
+     - NC
+     - N/A
+     - Not connected
+   * - P40
+     - NC
+     - N/A
+     - Not connected
+   * - P42
+     - NC
+     - N/A
+     - Not connected
+   * - P44
+     - NC
+     - N/A
+     - Not connected
+   * - P46
+     - NC
+     - N/A
+     - Not connected
+   * - P48
+     - NC
+     - N/A
+     - Not connected
+   * - P50
+     - NC
+     - N/A
+     - Not connected
+   * - P52
+     - NC
+     - N/A
+     - Not connected
+   * - P54
+     - NC
+     - N/A
+     - Not connected
+   * - P56
+     - nRESET_Option1
+     - Input
+     - Default pin to HOST_nRESET line for CC33X1. Used to enable/ disable (Active Low) and Driven by host. (Refer to 0 ohm resistor R8 seen in the :ref:`M2-CC33X1_Hardware_Features` section)
+   * - P58
+     - NC
+     - N/A
+     - Not connected
+   * - P60
+     - NC
+     - N/A
+     - Not connected
+   * - P62
+     - IRQ_WL_1V8_Option2
+     - Output
+     - Alternative pin for Active Low interrupt request signal from CC33X1 to host for Wi-Fi |trade| activity. (Refer to 0 ohm resistor R10 seen in the :ref:`M2-CC33X1_Hardware_Features` section)
+   * - P64
+     - NC
+     - N/A
+     - Not connected
+   * - P66
+     - NC
+     - N/A
+     - Not connected
+   * - P68
+     - NC
+     - N/A
+     - Not connected
+   * - P70
+     - NC
+     - N/A
+     - Not connected
+   * - P72
+     - 3V3
+     - Input/VCC
+     - Power provided to the board and LDO
+   * - P74
+     - 3V3
+     - Input/VCC
+     - Power provided to the board and LDO
+
+
+.. _M2CC33X1 Clocks:
+
+M2-CC33X1 Clocks
+-----------------
+
+The M2-CC33X1 is designed for two clock inputs (see :ref:`M2-CC33X1_Hardware_Features` ):
+
+* The Y1 is a 40 MHz crystal for fast clock input
+* The optional Y2 is for a 32.768 kHz oscillator for slow clock input
+
+ Since the CC33XX already has an internal Slow Clock it is optional to populate the component (Y2). The tradeoff of populating an externally generated oscillator (Y2) is optimal power consumption.
+
+Performing Conducted Testing on M2-CC33X1
+----------------------------------------------
+
+As seen in the :ref:`M2-CC33X1_Hardware_Features`, the EVM has an onboard UF.L connector and chip antenna. The UF.L connector (J1) provides a way for performing conducted testing measurements. Alternately, footprint for an SMA connector (J2) is provided onboard to replace the UF.L connector (J1) and provide a way to test in the lab using a compatible cable. 
+
+Rework will be needed before using the connector (J1/J2) for conducted testing. This involves swapping the position of the existing 0 Ohm resistor to lead the transmission line to the desired connection, see Figure below.
+
+.. _M2-CC33X1_RF_paths:
+
+.. figure:: resources/M2CC33X1/M2-CC33X1_RFpaths.png
+    :align: center
+    :scale: 80
+    :alt: M2-CC33X1_RF_options
+
+    M2-CC33X1 RF paths
+
+Using Logger with M2-CC33X1
+----------------------------
+
+The table below lists the features shown in :ref:`M2-CC33X1_Hardware_Features` that are needed to capture logs, refer to `CC33XX Logger User Guide`_ for explanation on using Logger.
+
+.. list-table:: Logger
+   :widths: 3 5 5 35
+   :header-rows: 1
+
+   * - Reference
+     - Pin
+     - M2-CC33X1 Net Name
+     - Description 
+   * - LOG
+     - Test Point
+     - LOGGER_1V8
+     - The Test point by silkscreen LOG, is directly conected to the device Logger pin. This is the device UART TX debug logger output. 
+   * - 2x1 header (J3)
+     - J3.2
+     - GND
+     - Pin 2 on the J3 header is dirrectly connected to the Board Ground. Refer to :ref:`M2-CC33X1_Hardware_MoreFeatures`
+
+
+

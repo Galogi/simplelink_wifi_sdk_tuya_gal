@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_common_x_x_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>AESCommonXXF3_Object</compoundname>
+    <includes refid="_a_e_s_common_x_x_f3_8h" local="no">AESCommonXXF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a90741906f1c6b422b60c0900f02f9fd6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCommonXXF3_Object::semaphoreTimeout</definition>
+        <argsstring></argsstring>
+        <name>semaphoreTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="145" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1ae14d653156bfcfbb29fc6d8c8db9846e" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref></type>
+        <definition>CryptoKey AESCommonXXF3_Object::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="146" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a41447d1e2026df43d2548e0ab202397a" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>volatile int_fast16_t AESCommonXXF3_Object::returnStatus</definition>
+        <argsstring></argsstring>
+        <name>returnStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="147" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a6680906e6d1926c33cd76900d8fdbafa" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_common_8h_1a2820f6d52c454af5c0d7b20215e4a448" kindref="member">AES_ReturnBehavior</ref></type>
+        <definition>AES_ReturnBehavior AESCommonXXF3_Object::returnBehavior</definition>
+        <argsstring></argsstring>
+        <name>returnBehavior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="148" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1ae4c63d1c3323f31788b5c510d8ecf4bb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCommonXXF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="149" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a64667a16253c36d0de0c5921fe2d0162" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool AESCommonXXF3_Object::cryptoResourceLocked</definition>
+        <argsstring></argsstring>
+        <name>cryptoResourceLocked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="150" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a3f232c6b7f0d8832cd9dc3b69b70c536" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool AESCommonXXF3_Object::operationInProgress</definition>
+        <argsstring></argsstring>
+        <name>operationInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="151" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___object_1a03de5dabf5e24ead77da23e0e0e95105" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool AESCommonXXF3_Object::powerConstraintSet</definition>
+        <argsstring></argsstring>
+        <name>powerConstraintSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="152" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCommonXXF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="80">
+        <label>AESCommonXXF3_Object</label>
+        <link refid="struct_a_e_s_common_x_x_f3___object"/>
+        <childnode refid="81" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="82" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="82">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="83">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="144" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="143" bodyend="153"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a64667a16253c36d0de0c5921fe2d0162" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>cryptoResourceLocked</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1ae4c63d1c3323f31788b5c510d8ecf4bb" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>isOpen</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1ae14d653156bfcfbb29fc6d8c8db9846e" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>key</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a3f232c6b7f0d8832cd9dc3b69b70c536" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>operationInProgress</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a03de5dabf5e24ead77da23e0e0e95105" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>powerConstraintSet</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a6680906e6d1926c33cd76900d8fdbafa" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>returnBehavior</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a41447d1e2026df43d2548e0ab202397a" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>returnStatus</name></member>
+      <member refid="struct_a_e_s_common_x_x_f3___object_1a90741906f1c6b422b60c0900f02f9fd6" prot="public" virt="non-virtual"><scope>AESCommonXXF3_Object</scope><name>semaphoreTimeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

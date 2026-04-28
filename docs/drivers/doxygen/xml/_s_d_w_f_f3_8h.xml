@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>SDWFF3.h</compoundname>
+    <innerclass refid="struct_s_d_w_f_f3___object" prot="public">SDWFF3_Object</innerclass>
+    <innerclass refid="struct_s_d_w_f_f3___hw_attrs" prot="public">SDWFF3_HwAttrs</innerclass>
+    <innerclass refid="struct_s_d_w_f_f3___param" prot="public">SDWFF3_Param</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3" prot="public" static="no">
+        <name>Event_Type</name>
+        <enumvalue id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a7e7cf4bcf534d9a72ebc52fadc7dd762" prot="public">
+          <name>SDWFF3_NULL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a3bd645477332d6f8d40d87fb224e031f" prot="public">
+          <name>SDWFF3_CARD_INSERTED</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a6bfb241d860426bb94fb71570d9ab65d" prot="public">
+          <name>SDWFF3_CARD_REMOVED</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a1fc07f49716982c81a02208b2b3d46da" prot="public">
+          <name>SDWFF3_CARD_WRITE_PROTECTED</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3ac9b93ddd5b5bf54e86162570917a0763" prot="public">
+          <name>SDWFF3_STATUS_ERR</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="417" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="416" bodyend="423"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_w_f_f3_8h_1a9f07f2fb6cbf9a689773d773a309e2bd" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SDWFF3_EventCB) (uint8_t event)</definition>
+        <argsstring>)(uint8_t event)</argsstring>
+        <name>SDWFF3_EventCB</name>
+        <briefdescription>
+<para>Callback function supplied by the application. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="229" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_s_d_w_f_f3_8h_1a34e1bb88b96ac3dab300af515a6d3994" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref></type>
+        <definition>const SD_FxnTable SDWFF3_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>SDWFF3_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="588" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1a230ee27e3084387e1aaab2dbc1dd4b4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDWFF3_close</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SDWFF3_close</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a SD peripheral specified by the SD handle. </para>        </briefdescription>
+        <detaileddescription>
+<para>The functions are based on <ref refid="_s_d_8h" kindref="compound">SD.h</ref> Descriptions will appear there, and expanded here where relevant for WFF3.</para><para>======== SDWFF3_close ======== When closing the peripheral, IOs will be reset to what is configured by SysConfig. If power-off while sleep defined in Sys-Config then card must be initialized too.</para><para><simplesect kind="pre"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> had to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="447" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1ac6a0475301818ffb02214920fe81c70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDWFF3_control</definition>
+        <argsstring>(SD_Handle handle, uint_fast16_t cmd, void *arg)</argsstring>
+        <name>SDWFF3_control</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint_fast16_t</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Function for setting control parameters of the SDWFF3 driver after it has been opened. </para>        </briefdescription>
+        <detaileddescription>
+<para>======== SDWFF3_control ======== <simplesect kind="pre"><para><ref refid="_s_d_w_f_f3_8h_1a4912f42538cb2bd7211768b5a710d29b" kindref="member">SDWFF3_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A SDWFF3 handle returned from <ref refid="_s_d_w_f_f3_8h_1a4912f42538cb2bd7211768b5a710d29b" kindref="member">SDWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command to execute, supported commands are: <table rows="3" cols="3"><row>
+<entry thead="yes"><para>Command </para></entry><entry thead="yes"><para>SD_STATUS_SUCCESS </para></entry><entry thead="yes"><para>SD_STATUS_ERROR  </para></entry></row>
+<row>
+<entry thead="no"><para>SDWFF3_CMD_IS_CARD_CONNECTED </para></entry><entry thead="no"><para>Card is connected </para></entry><entry thead="no"><para>Card is NOT connected </para></entry></row>
+<row>
+<entry thead="no"><para>SDWFF3_CMD_IS_CARD_WRITE_PROTECTED</para></entry><entry thead="no"><para>Card is write protected</para></entry><entry thead="no"><para>Card is write protected </para></entry></row>
+</table>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used in SDWFF3.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Status code </para></simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The call was successful. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The call was unsuccessful. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="470" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1a983d62ae0f409b9f87ce19dd9b429501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint_fast32_t</type>
+        <definition>uint_fast32_t SDWFF3_getNumSectors</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SDWFF3_getNumSectors</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to obtain the total number of sectors on the SD card. Note: Total Card capacity is the (NumberOfSectors * SectorSize). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD Card has been initialized using <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of sectors on the SD card, or 0 if an error occurred.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="485" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1aa758c95f18084b44198570b970697ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint_fast32_t</type>
+        <definition>uint_fast32_t SDWFF3_getSectorSize</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SDWFF3_getSectorSize</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The sector size of SD card is always 512 bytes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="490" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1a0c9036643969e7b118af9a74eecc8e78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDWFF3_init</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SDWFF3_init</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This function initializes the SD driver. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The #SD_config[] array must exist and be persistent before this function can be called. This function must also be called before any other SD driver APIs. This function call does not modify any peripheral registers.</para></simplesect>
+<simplesect kind="note"><para>For initializing the driver correctly, review the example for using the driver above. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="502" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1a032f33b9b54eebdf5610d117e0191d70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDWFF3_initialize</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SDWFF3_initialize</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the SD card. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the initialization, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="514" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1a4912f42538cb2bd7211768b5a710d29b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+        <definition>SD_Handle SDWFF3_open</definition>
+        <argsstring>(SD_Handle handle, SD_Params *params)</argsstring>
+        <name>SDWFF3_open</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to open the SD peripheral with the index and parameters specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been initialized using <ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>There is one SDWFF3 so index = 0.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a <ref refid="struct_s_d_w_f_f3___param" kindref="compound">SDWFF3_Param</ref> block. SDWFF3CallbackFxn - call-back function for the application. The function must be SDWFF3EventCB type. See example above for template. minDmaTransferSize - Define the threshold for using DMA in transaction. If the number of sector is bigger than minDmaTransferSize, DMA will be used.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1ae7f98db7753385361e0f7927b1771c41" kindref="member">SD_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="537" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1aa4da5912b02dd93c5a04a36e3b746841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDWFF3_read</definition>
+        <argsstring>(SD_Handle handle, void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SDWFF3_read</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>sector</declname>
+        </param>
+        <param>
+          <type>uint_fast32_t</type>
+          <declname>secCount</declname>
+        </param>
+        <briefdescription>
+<para>Function that reads the specified sectors from the SD card. The destination is specified by <emphasis>buf</emphasis>. The starting sector is specified by <emphasis>sector</emphasis> and the total number of sectors to read is provided by <emphasis>secCount</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened and initialized by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> followed by <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer to read data into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting sector on the disk to read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of sectors to be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="561" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_w_f_f3_8h_1af0c53a479c2ae02b495b2ff014177203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDWFF3_write</definition>
+        <argsstring>(SD_Handle handle, const void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SDWFF3_write</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>sector</declname>
+        </param>
+        <param>
+          <type>uint_fast32_t</type>
+          <declname>secCount</declname>
+        </param>
+        <briefdescription>
+<para>Function that writes data to the specified sectors of the SD card. The source is specified by <emphasis>buf</emphasis>. The starting sector to write is specified by <emphasis>sector</emphasis> and the total number of sectors to write is provided by <emphasis>secCount</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened and initialized by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> followed by <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer containing data to write to disk.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting sector on the disk to write to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of sectors to be written.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="585" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDWFF3.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>SDWFF3<sp/>driver<sp/>implementation<sp/>for<sp/>a<sp/>Wi-Fi<sp/>F3<sp/>device.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDWFF3<sp/>controller<sp/>using<sp/>the<sp/>DMA<sp/>controller<sp/>or<sp/>Core.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>#<sp/>Driver<sp/>include<sp/>#</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>The<sp/>SDWFF3<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>@code</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>#include<sp/>&lt;ti/drivers/SD.h&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>#include<sp/>&lt;ti/drivers/sd/SDWFF3.h&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>#include<sp/>&lt;ti/drivers/dma/DMAWFF3.h&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>Refer<sp/>to<sp/>@ref<sp/>SD.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>Note<sp/>that<sp/>the<sp/>user<sp/>also<sp/>needs<sp/>to<sp/>include<sp/>the<sp/>DMAWFF3.h<sp/>driver<sp/>since<sp/>the<sp/>SDWFF3</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>uses<sp/>DMA<sp/>in<sp/>order<sp/>to<sp/>improve<sp/>throughput.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>The<sp/>general<sp/>SD<sp/>API<sp/>should<sp/>be<sp/>used<sp/>in<sp/>application<sp/>code,<sp/>i.e.<sp/>#SD_open()</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>should<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>#SDWFF3_open().<sp/>The<sp/>board<sp/>file<sp/>will<sp/>define<sp/>the</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>device<sp/>specific<sp/>config,<sp/>and<sp/>casting<sp/>in<sp/>the<sp/>general<sp/>API<sp/>will<sp/>ensure<sp/>that<sp/>the</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>correct<sp/>device<sp/>specific<sp/>functions<sp/>are<sp/>called.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>#<sp/>General<sp/>Behavior<sp/>#</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>Before<sp/>using<sp/>SDWFF3<sp/>on<sp/>Wi-Fi<sp/>F3<sp/>devices:</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDWFF3<sp/>driver<sp/>is<sp/>initialized<sp/>by<sp/>calling<sp/>#SD_init().</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDWFF3<sp/>HW<sp/>is<sp/>configured<sp/>and<sp/>flags<sp/>system<sp/>dependencies<sp/>(e.g.<sp/>IOs,<sp/>power,</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>etc.)<sp/>by<sp/>calling<sp/>#SD_open().</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDWFF3<sp/>driver<sp/>makes<sp/>use<sp/>of<sp/>DMA<sp/>in<sp/>order<sp/>to<sp/>optimize<sp/>throughput.<sp/>This<sp/>is</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>handled<sp/>directly<sp/>by<sp/>the<sp/>SDWFF3<sp/>driver,<sp/>so<sp/>the<sp/>application<sp/>should<sp/>never<sp/>make</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>any<sp/>calls<sp/>directly<sp/>to<sp/>the<sp/>DMAWFF3.h<sp/>driver.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>After<sp/>SDWFF3<sp/>HW<sp/>IP<sp/>initialized,<sp/>card<sp/>must<sp/>be<sp/>initialized<sp/>too.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>The<sp/>application<sp/>must<sp/>make<sp/>sure<sp/>that<sp/>the<sp/>card<sp/>is<sp/>connected.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>It<sp/>is<sp/>recommended<sp/>to<sp/>check<sp/>with<sp/>#SD_control()<sp/>with<sp/>command<sp/>SDWFF3_CMD_IS_CARD_CONNECTED</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>before<sp/>using<sp/>#SD_initialize().</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>note:<sp/>The<sp/>driver<sp/>will<sp/>indicate<sp/>to<sp/>the<sp/>application<sp/>if<sp/>the<sp/>card<sp/>is<sp/>connected<sp/>or<sp/>not,</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>using<sp/>call-back<sp/>function<sp/>that<sp/>define<sp/>in<sp/>the<sp/>Parameters<sp/>of<sp/>#SD_open().</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>#SD_read()<sp/>and<sp/>#SD_write()<sp/>can<sp/>be<sp/>called<sp/>only<sp/>after<sp/>the<sp/>HW<sp/>IP<sp/>and<sp/>the<sp/>card<sp/>are<sp/>initiated.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>After<sp/>SDWFF3<sp/>operation<sp/>has<sp/>ended:</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Release<sp/>system<sp/>dependencies<sp/>for<sp/>SD<sp/>by<sp/>calling<sp/>#SD_close().</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>The<sp/>SDWFF3.h<sp/>driver<sp/>is<sp/>setting<sp/>a<sp/>power<sp/>constraint<sp/>during<sp/>transfers<sp/>to</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>keep<sp/>the<sp/>device<sp/>out<sp/>of<sp/>sleep.<sp/>When<sp/>the<sp/>transfer<sp/>has<sp/>finished,<sp/>the<sp/>power</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>constraint<sp/>is<sp/>released.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>##<sp/>Power<sp/>voltage<sp/>#</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>This<sp/>driver<sp/>supports<sp/>a<sp/>card<sp/>voltage<sp/>of<sp/>3.3V<sp/>only.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>In<sp/>case<sp/>the<sp/>pins<sp/>of<sp/>the<sp/>SD<sp/>card<sp/>are<sp/>defined<sp/>as<sp/>1.8V,<sp/>the<sp/>user<sp/>must<sp/>use<sp/>external</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>level-shifter<sp/>and<sp/>supply<sp/>3.3V<sp/>to<sp/>the<sp/>card.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>##<sp/>Data<sp/>Frames<sp/>#</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>SDWFF3<sp/>data<sp/>frames<sp/>is<sp/>fixed<sp/>on<sp/>32-bits<sp/>(4-bytes)</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>##<sp/>Bit<sp/>Rate<sp/>##</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>When<sp/>the<sp/>connected<sp/>card<sp/>is<sp/>UHS-1<sp/>then<sp/>the<sp/>maximum<sp/>bit<sp/>rate<sp/>is<sp/>40MHz.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>Else<sp/>the<sp/>maximum<sp/>bit<sp/>rate<sp/>is<sp/>20MHz.</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>###<sp/>Transfer<sp/>Size<sp/>Limit<sp/>#</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>The<sp/>DMA<sp/>controller<sp/>only<sp/>supports<sp/>data<sp/>transfers<sp/>of<sp/>up<sp/>to<sp/>16383<sp/>bytes.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>A<sp/>transfer<sp/>with<sp/>more<sp/>than<sp/>16383<sp/>bytes<sp/>will<sp/>be<sp/>transmitted/received<sp/>in</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>multiple<sp/>16383<sp/>sized<sp/>portions<sp/>until<sp/>all<sp/>data<sp/>has<sp/>been<sp/>transmitted/received.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/>##<sp/>Polling<sp/>SDWFF3<sp/>transfers<sp/>#</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>When<sp/>using<sp/>#SD_read()<sp/>or<sp/>#SD_write()<sp/>with<sp/>small<sp/>number<sp/>of<sp/>sectors<sp/>the<sp/>transmit<sp/>can<sp/>be<sp/>done<sp/>by<sp/>polling</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>the<sp/>peripheral<sp/>&amp;<sp/>sending<sp/>data<sp/>sector-by-sector.<sp/>A<sp/>controller<sp/>device<sp/>can</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>perform<sp/>the<sp/>transfer<sp/>immediately<sp/>and<sp/>return,<sp/>but<sp/>a<sp/>peripheral<sp/>will<sp/>block</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>until<sp/>it<sp/>receives<sp/>the<sp/>number<sp/>of<sp/>sectors<sp/>specified<sp/>in<sp/>the<sp/>#SD_read()<sp/>or<sp/>#SD_write()<sp/>call.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>The<sp/>minDmaTransferSize<sp/>field<sp/>in<sp/>the<sp/>hardware<sp/>attributes<sp/>is<sp/>the<sp/>threshold;<sp/>if</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>the<sp/>transaction<sp/>count<sp/>is<sp/>below<sp/>the<sp/>threshold<sp/>a<sp/>polling<sp/>transfer<sp/>is</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/>performed;<sp/>otherwise<sp/>a<sp/>DMA<sp/>transfer<sp/>is<sp/>done.<sp/><sp/>This<sp/>is<sp/>intended<sp/>to<sp/>reduce<sp/>the</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>overhead<sp/>of<sp/>setting<sp/>up<sp/>a<sp/>DMA<sp/>transfer<sp/>to<sp/>only<sp/>send<sp/>a<sp/>few<sp/>data<sp/>sectors.</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>#<sp/>Supported<sp/>Functions<sp/>#</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>Generic<sp/>API<sp/>function<sp/><sp/><sp/>|<sp/>WFF3<sp/>API<sp/>function<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>-----------------------|-----------------------<sp/>-|------------------------------------------------------------</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>#SD_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initializes<sp/>the<sp/>SD<sp/>driver</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>#SD_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Open<sp/>the<sp/>SD<sp/>peripheral<sp/>with<sp/>the<sp/>parameters<sp/>specified</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>#SD_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Close<sp/>a<sp/>SD<sp/>peripheral</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>#SD_initialize()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_initialize()<sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>the<sp/>SD<sp/>card</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>#SD_control()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_control()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Performs<sp/>implementation<sp/>specific<sp/>features</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>#SD_write()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_write()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Writes<sp/>data<sp/>to<sp/>the<sp/>specified<sp/>sectors<sp/>of<sp/>the<sp/>SD<sp/>card</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>#SD_read()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_read()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Reads<sp/>the<sp/>specified<sp/>sectors<sp/>from<sp/>the<sp/>SD<sp/>card</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>#SD_getNumSectors()<sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_getNumSectors()<sp/>|<sp/>Obtain<sp/>the<sp/>total<sp/>number<sp/>of<sp/>sectors<sp/>on<sp/>the<sp/>SD<sp/>card</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>#SD_getSectorSize()<sp/><sp/><sp/><sp/>|<sp/>#SDWFF3_getSectorSize()<sp/>|<sp/>Obtain<sp/>the<sp/>sector<sp/>size<sp/>used<sp/>to<sp/>access<sp/>the<sp/>SD<sp/>card</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@note<sp/>All<sp/>calls<sp/>should<sp/>go<sp/>through<sp/>the<sp/>generic<sp/>API</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>#<sp/>SysConfig<sp/>#</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>The<sp/>output<sp/>of<sp/>SysConfig<sp/>will<sp/>supply<sp/>#SD_Config,<sp/>#SDWFF3_Object<sp/>and<sp/>#SDWFF3_HwAttrs</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>for<sp/>the<sp/>driver<sp/>usage.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>A<sp/>sample<sp/>#SDWFF3_HwAttrs<sp/>structure<sp/>is<sp/>shown<sp/>below:</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>SDWFF3_HwAttrs<sp/>SDWFF3_hwAttrs[CONFIG_SD_COUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.baseAddr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDMMC_BASE,</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_EVT_SDMMC_PUB_REQ,</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.intPriority<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(~0),</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.powerID<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>PowerWFF3_PERIPH_SDMMC,</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.DmaChannel<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.clkPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>14,</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.clkPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cmdPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>15,</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cmdPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data0Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>13,</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data0PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data1Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>12,</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data1PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data2Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data2PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data3Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.data3PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cdPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cdPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.wpPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.wpPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.powPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.powPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.numData<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.divClk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cdEnable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.cdPolHigh<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.wpEnable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.wpPolHigh<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.powEnable<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>.powerOffInSleep<sp/><sp/><sp/><sp/>=<sp/>false</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/><sp/>},</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/>};</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*---------------------------------------------------------------------*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>An<sp/>example<sp/>for<sp/>using<sp/>SDWFF3<sp/>driver<sp/>correctly<sp/>on<sp/>Wi-Fi<sp/>F3<sp/>devices</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*---------------------------------------------------------------------*</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/>Customer<sp/>should<sp/>provide<sp/>a<sp/>callback<sp/>function<sp/>by<sp/>#SDWFF3_Param<sp/>that<sp/>is<sp/>sent<sp/>to<sp/>#SD_open().</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/>SDWFF3<sp/>will<sp/>indicate<sp/>the<sp/>application<sp/>for<sp/>any<sp/>event<sp/>in<sp/>Event_Type<sp/>enum</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/>//function<sp/>scratch</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/>void<sp/>SDWFF3_callBack(uint8_t<sp/>event){</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(event<sp/>==<sp/>SD_CARD_INSERTED){</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>do<sp/>something</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/>//Variable<sp/>declaration<sp/>for<sp/>driver<sp/>usage<sp/>-<sp/>can<sp/>be<sp/>declare<sp/>with<sp/>any<sp/>name</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>SDWFF3_Param<sp/>SDWFF3_param;</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/>//Initiate<sp/>#SDWFF3_Param<sp/>-<sp/>for<sp/>more<sp/>details<sp/>about<sp/>the<sp/>params,<sp/>please<sp/>review<sp/>#SDWFF3_open<sp/>description</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/><sp/>SDWFF3_param.SDWFF3CallbackFxn<sp/>=<sp/>SDWFF3_callBack;</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/>SDWFF3_param.minDmaTransferSize<sp/>=<sp/>(uint32_t)num;</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/>//To<sp/>start<sp/>using<sp/>SD<sp/>driver,<sp/>the<sp/>driver<sp/>must<sp/>be<sp/>initialized</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/>SD_init();</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/>//Then<sp/>the<sp/>SD<sp/>host<sp/>controller<sp/>peripheral<sp/>must<sp/>be<sp/>open<sp/>using<sp/>#SDWFF3_param</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/>SD_handle<sp/>=<sp/>SD_open(0,<sp/>(SD_Params<sp/>*)&amp;SDWFF3_param);</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/>//The<sp/>last<sp/>initialization<sp/>is<sp/>for<sp/>the<sp/>card<sp/>-<sp/>IF<sp/>CONNECTED!!</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/>SD_initialize(SD_handle);</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>the<sp/>return<sp/>from<sp/>#SD_initialize()<sp/>is<sp/>SD_STATUS_SUCCESS,<sp/>read<sp/>and<sp/>write<sp/>to<sp/>the<sp/>card<sp/>is<sp/>allowed</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_sd_SDWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_sd_SDWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_types.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/dma.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_memmap.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_iomux.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_sdmmc.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_ints.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_d_8h" kindref="compound">ti/drivers/SD.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_hwi_p_8h" kindref="compound">ti/drivers/dpl/HwiP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_clock_p_8h" kindref="compound">ti/drivers/dpl/ClockP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_semaphore_p_8h" kindref="compound">ti/drivers/dpl/SemaphoreP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229" refid="_s_d_w_f_f3_8h_1a9f07f2fb6cbf9a689773d773a309e2bd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_s_d_w_f_f3_8h_1a9f07f2fb6cbf9a689773d773a309e2bd" kindref="member">SDWFF3_EventCB</ref>)(uint8_t<sp/>event);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="preprocessor">#define<sp/>SDWFF3_CMD_IS_CARD_CONNECTED<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(SD_CMD_RESERVED<sp/>+<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDWFF3_CMD_IS_CARD_WRITE_PROTECTED<sp/>(SD_CMD_RESERVED<sp/>+<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="struct_s_d_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245" refid="struct_s_d_w_f_f3___object_1aff3f901f243e7d7fcf4487dc107a350e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___object_1aff3f901f243e7d7fcf4487dc107a350e" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="struct_s_d_w_f_f3___object_1a72cd5fd1451376e26c95cbefd7edab51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___object_1a72cd5fd1451376e26c95cbefd7edab51" kindref="member">cardInitiated</ref>;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="struct_s_d_w_f_f3___object_1a0bc19d87abb40dcfd2c98f49df44bef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" kindref="member">SD_CardType</ref><sp/><ref refid="struct_s_d_w_f_f3___object_1a0bc19d87abb40dcfd2c98f49df44bef2" kindref="member">cardType</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="struct_s_d_w_f_f3___object_1afcc370905b9428374435e8aaa29df52d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___object_1afcc370905b9428374435e8aaa29df52d" kindref="member">card_inserted</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="struct_s_d_w_f_f3___object_1aedcdc4dd0bfe745551a614f63a45a781" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___object_1aedcdc4dd0bfe745551a614f63a45a781" kindref="member">write_protected</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="struct_s_d_w_f_f3___object_1ab45849eb1c33a6054f739839c8f456f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>cid[4];</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="struct_s_d_w_f_f3___object_1af401763e5e5d272a3d0f659a2a31df02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1af401763e5e5d272a3d0f659a2a31df02" kindref="member">rca</ref>;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="struct_s_d_w_f_f3___object_1a449c548acb95f374c6221242d5de1228" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>csd[4];</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="struct_s_d_w_f_f3___object_1a1f76f5ef8db5ea15f8d9508a8eb51d8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>scr[2];</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="struct_s_d_w_f_f3___object_1ada2d7e86bf6cdceb1685f4d96ca041fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___object_1ada2d7e86bf6cdceb1685f4d96ca041fb" kindref="member">tranSpeed</ref>;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="struct_s_d_w_f_f3___object_1a1b26ae0471c2434a86d72073bc8fde8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a1b26ae0471c2434a86d72073bc8fde8c" kindref="member">curBlockSize</ref>;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278" refid="struct_s_d_w_f_f3___object_1a5a7d28ee96e67db02f04fcb3649d60b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a5a7d28ee96e67db02f04fcb3649d60b9" kindref="member">maxBlockSize</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="struct_s_d_w_f_f3___object_1a59fb3e9cf1ba8a77f44483aad00124fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a59fb3e9cf1ba8a77f44483aad00124fd" kindref="member">numSectors</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="struct_s_d_w_f_f3___object_1a65616b8f7df31a11d059e7b0bedc4801" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a65616b8f7df31a11d059e7b0bedc4801" kindref="member">dataBlockCount</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="struct_s_d_w_f_f3___object_1abc3653f211a561608ab101dd87fe0bb2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___object_1abc3653f211a561608ab101dd87fe0bb2" kindref="member">partialBlock</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="struct_s_d_w_f_f3___object_1a37f6ccfacabe8160154f026c89878c1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a37f6ccfacabe8160154f026c89878c1e" kindref="member">maxBusWidth</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="struct_s_d_w_f_f3___object_1aca85ccc41188b0b84aa0a43dd278a68c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1aca85ccc41188b0b84aa0a43dd278a68c" kindref="member">clockDiv</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="struct_s_d_w_f_f3___object_1a3552b1814607bfbaf2022c2ce53c2dff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___object_1a3552b1814607bfbaf2022c2ce53c2dff" kindref="member">SDminDmaTransferSize</ref>;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="struct_s_d_w_f_f3___object_1a855f7e3147ffa0b4c8419333612ca1f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a9f07f2fb6cbf9a689773d773a309e2bd" kindref="member">SDWFF3_EventCB</ref><sp/><ref refid="struct_s_d_w_f_f3___object_1a855f7e3147ffa0b4c8419333612ca1f4" kindref="member">SDWFF3_CB_function</ref>;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302" refid="struct_s_d_w_f_f3___object_1a211286d6c170674ab86bee4437253091" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_hwi_p___params" kindref="compound">HwiP_Params</ref><sp/><ref refid="struct_s_d_w_f_f3___object_1a211286d6c170674ab86bee4437253091" kindref="member">SDhwiPrms</ref>;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="struct_s_d_w_f_f3___object_1a35c0e3406cece684bbd335742d871881" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref><sp/><ref refid="struct_s_d_w_f_f3___object_1a35c0e3406cece684bbd335742d871881" kindref="member">SDhwiStruct</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}<sp/><ref refid="struct_s_d_w_f_f3___object" kindref="compound">SDWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309" refid="struct_s_d_w_f_f3___hw_attrs" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="312" refid="struct_s_d_w_f_f3___hw_attrs_1ad254114330606f4784ea81c84d614801" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ad254114330606f4784ea81c84d614801" kindref="member">baseAddr</ref>;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="struct_s_d_w_f_f3___hw_attrs_1a314f40564e9fe72d8f23f10a9159552c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a314f40564e9fe72d8f23f10a9159552c" kindref="member">intNum</ref>;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318" refid="struct_s_d_w_f_f3___hw_attrs_1a4aa3864ffd595efed94d6cd85b57c824" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a4aa3864ffd595efed94d6cd85b57c824" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="struct_s_d_w_f_f3___hw_attrs_1a5aea0d14c1374a920dd034c9e7adf10e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>PowerWFF3_Resource<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a5aea0d14c1374a920dd034c9e7adf10e" kindref="member">powerID</ref>;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324" refid="struct_s_d_w_f_f3___hw_attrs_1a5a5df6d1b65a56d0ace48a9d40c02cf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a5a5df6d1b65a56d0ace48a9d40c02cf6" kindref="member">DmaChannel</ref>;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327" refid="struct_s_d_w_f_f3___hw_attrs_1a6945dc799b7de010be06ed3732b3cbf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a6945dc799b7de010be06ed3732b3cbf1" kindref="member">clkPin</ref>;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="struct_s_d_w_f_f3___hw_attrs_1a0d417194206ed0ba42c69183b755d66b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a0d417194206ed0ba42c69183b755d66b" kindref="member">clkPinMux</ref>;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333" refid="struct_s_d_w_f_f3___hw_attrs_1a27d15a1066f03b16f184aa4983f24cd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a27d15a1066f03b16f184aa4983f24cd5" kindref="member">cmdPin</ref>;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="struct_s_d_w_f_f3___hw_attrs_1a23dcb210157583884e1063409d7ef900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a23dcb210157583884e1063409d7ef900" kindref="member">cmdPinMux</ref>;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339" refid="struct_s_d_w_f_f3___hw_attrs_1ad69c926ebcd1903521bec77feeeaf505" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ad69c926ebcd1903521bec77feeeaf505" kindref="member">data0Pin</ref>;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342" refid="struct_s_d_w_f_f3___hw_attrs_1afc15e323127b2cce9ced42da54664a49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1afc15e323127b2cce9ced42da54664a49" kindref="member">data0PinMux</ref>;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345" refid="struct_s_d_w_f_f3___hw_attrs_1a2f418ba570e7d44fb011167768b70a10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a2f418ba570e7d44fb011167768b70a10" kindref="member">data1Pin</ref>;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348" refid="struct_s_d_w_f_f3___hw_attrs_1a6c6115ed407d5715d58fd7ccfd6e19ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a6c6115ed407d5715d58fd7ccfd6e19ce" kindref="member">data1PinMux</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351" refid="struct_s_d_w_f_f3___hw_attrs_1a649c908d0df1e6c01b061f784e453b77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a649c908d0df1e6c01b061f784e453b77" kindref="member">data2Pin</ref>;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="struct_s_d_w_f_f3___hw_attrs_1ac88722ddbbd41eec40c33aab6545f50a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ac88722ddbbd41eec40c33aab6545f50a" kindref="member">data2PinMux</ref>;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357" refid="struct_s_d_w_f_f3___hw_attrs_1a37ca4e99b71981becf38c1c4beff88d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a37ca4e99b71981becf38c1c4beff88d5" kindref="member">data3Pin</ref>;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="struct_s_d_w_f_f3___hw_attrs_1a381b460f7ba76a333a0a68b4b7c8ec02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a381b460f7ba76a333a0a68b4b7c8ec02" kindref="member">data3PinMux</ref>;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363" refid="struct_s_d_w_f_f3___hw_attrs_1ace849967f6b679a237010a970d56c948" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ace849967f6b679a237010a970d56c948" kindref="member">cdPin</ref>;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="struct_s_d_w_f_f3___hw_attrs_1afa8c5d472fbccd0d0914fac634ae8048" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1afa8c5d472fbccd0d0914fac634ae8048" kindref="member">cdPinMux</ref>;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369" refid="struct_s_d_w_f_f3___hw_attrs_1af54179cba7f3b08a8f657c10a822d15a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1af54179cba7f3b08a8f657c10a822d15a" kindref="member">wpPin</ref>;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372" refid="struct_s_d_w_f_f3___hw_attrs_1ae81209ff949a9e2edc4eb955483ca558" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ae81209ff949a9e2edc4eb955483ca558" kindref="member">wpPinMux</ref>;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375" refid="struct_s_d_w_f_f3___hw_attrs_1a3c8ab3e9a0bc9e329386150a49c47af3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a3c8ab3e9a0bc9e329386150a49c47af3" kindref="member">powPin</ref>;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378" refid="struct_s_d_w_f_f3___hw_attrs_1ae4ccb7bf5175d4cc63feec6dd12f09b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1ae4ccb7bf5175d4cc63feec6dd12f09b7" kindref="member">powPinMux</ref>;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381" refid="struct_s_d_w_f_f3___hw_attrs_1a113856374e6c65f5ff3804e37f0d3dee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a113856374e6c65f5ff3804e37f0d3dee" kindref="member">numData</ref>;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="struct_s_d_w_f_f3___hw_attrs_1aedaba197e2c671eae38797d82196f8d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1aedaba197e2c671eae38797d82196f8d7" kindref="member">divClk</ref>;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387" refid="struct_s_d_w_f_f3___hw_attrs_1a08d3047b5292ee335bf14b9470990a70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a08d3047b5292ee335bf14b9470990a70" kindref="member">cdEnable</ref>;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390" refid="struct_s_d_w_f_f3___hw_attrs_1a50791a927124a2bcb60f30c641e65417" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a50791a927124a2bcb60f30c641e65417" kindref="member">cdPolHigh</ref>;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393" refid="struct_s_d_w_f_f3___hw_attrs_1a5fbdd660fb904c3e559b57cc6208f123" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a5fbdd660fb904c3e559b57cc6208f123" kindref="member">wpEnable</ref>;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396" refid="struct_s_d_w_f_f3___hw_attrs_1a67716a82481b80795aef2b658cfe274d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a67716a82481b80795aef2b658cfe274d" kindref="member">wpPolHigh</ref>;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399" refid="struct_s_d_w_f_f3___hw_attrs_1a1e1ba874dbbdb2a764fa768b9eb8684e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1a1e1ba874dbbdb2a764fa768b9eb8684e" kindref="member">powEnable</ref>;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402" refid="struct_s_d_w_f_f3___hw_attrs_1aabffa63a2a8c46eecbf891b1827269de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_w_f_f3___hw_attrs_1aabffa63a2a8c46eecbf891b1827269de" kindref="member">powerOffInSleep</ref>;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">}<sp/><ref refid="struct_s_d_w_f_f3___hw_attrs" kindref="compound">SDWFF3_HwAttrs</ref>;</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406" refid="struct_s_d_w_f_f3___param" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="409" refid="struct_s_d_w_f_f3___param_1ac2c0ded6bd0b20ab28bb6e7a92408d84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_w_f_f3___param_1ac2c0ded6bd0b20ab28bb6e7a92408d84" kindref="member">SDWFF3CallbackFxn</ref>;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412" refid="struct_s_d_w_f_f3___param_1afc7c98757a96983218f5ff2e8d7bffcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_w_f_f3___param_1afc7c98757a96983218f5ff2e8d7bffcd" kindref="member">minDmaTransferSize</ref>;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal">}<sp/><ref refid="struct_s_d_w_f_f3___param" kindref="compound">SDWFF3_Param</ref>;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="418" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a7e7cf4bcf534d9a72ebc52fadc7dd762" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a7e7cf4bcf534d9a72ebc52fadc7dd762" kindref="member">SDWFF3_NULL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="419" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a3bd645477332d6f8d40d87fb224e031f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a3bd645477332d6f8d40d87fb224e031f" kindref="member">SDWFF3_CARD_INSERTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="420" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a6bfb241d860426bb94fb71570d9ab65d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a6bfb241d860426bb94fb71570d9ab65d" kindref="member">SDWFF3_CARD_REMOVED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="421" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a1fc07f49716982c81a02208b2b3d46da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3a1fc07f49716982c81a02208b2b3d46da" kindref="member">SDWFF3_CARD_WRITE_PROTECTED</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="422" refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3ac9b93ddd5b5bf54e86162570917a0763" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3ac9b93ddd5b5bf54e86162570917a0763" kindref="member">SDWFF3_STATUS_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>4</highlight></codeline>
+<codeline lineno="423"><highlight class="normal">}<sp/><ref refid="_s_d_w_f_f3_8h_1a159abd6aedeb54388e72338301bf70c3" kindref="member">Event_Type</ref>;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>==========================================================================<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Function<sp/>Declarations<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>==========================================================================<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_w_f_f3_8h_1a230ee27e3084387e1aaab2dbc1dd4b4e" kindref="member">SDWFF3_close</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_d_w_f_f3_8h_1ac6a0475301818ffb02214920fe81c70a" kindref="member">SDWFF3_control</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle,<sp/>uint_fast16_t<sp/>cmd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal">uint_fast32_t<sp/><ref refid="_s_d_w_f_f3_8h_1a983d62ae0f409b9f87ce19dd9b429501" kindref="member">SDWFF3_getNumSectors</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal">uint_fast32_t<sp/><ref refid="_s_d_w_f_f3_8h_1aa758c95f18084b44198570b970697ccc" kindref="member">SDWFF3_getSectorSize</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_w_f_f3_8h_1a0c9036643969e7b118af9a74eecc8e78" kindref="member">SDWFF3_init</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_d_w_f_f3_8h_1a032f33b9b54eebdf5610d117e0191d70" kindref="member">SDWFF3_initialize</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/><ref refid="_s_d_w_f_f3_8h_1a4912f42538cb2bd7211768b5a710d29b" kindref="member">SDWFF3_open</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle,<sp/><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref><sp/>*<ref refid="_driver___init_8h_1af93f10d4f7393a01dff58c92f91d8cbc" kindref="member">params</ref>);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_d_w_f_f3_8h_1aa4da5912b02dd93c5a04a36e3b746841" kindref="member">SDWFF3_read</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="585"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_d_w_f_f3_8h_1af0c53a479c2ae02b495b2ff014177203" kindref="member">SDWFF3_write</ref>(<ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>SDWFF3<sp/>function<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref><sp/><ref refid="_s_d_w_f_f3_8h_1a34e1bb88b96ac3dab300af515a6d3994" kindref="member">SDWFF3_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_sd_SDWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/sd/SDWFF3.h"/>
+  </compounddef>
+</doxygen>

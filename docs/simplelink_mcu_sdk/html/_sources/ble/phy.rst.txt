@@ -1,0 +1,186 @@
+.. _sec-phy:
+
+Physical Layer (PHY)
+--------------------
+
+Introduction
+^^^^^^^^^^^^
+
+The physical layer (:term:`PHY`) is the lowest layer of the Bluetooth low
+energy protocol stack. It configures the physical parameters of the radio
+transmission and reception. It determines how a bit (and its value) are
+represented over the air. By switching the PHY, the physical properties of the
+RF signal is changed.
+
+The supported PHYs include LE 1M, 2M, and Coded PHY
+
+LE 2M PHY
+^^^^^^^^^
+
+The CC33x1 device supports transferring data over the mandatory symbol rate of 1
+megasymbol per second (Msym/s) where 1 symbol represents 1 bit.
+This results in a bit rate of 1 megabit per second (Mb/s), which is referred to
+as LE 1M PHY.
+
+The stack also supports an optional symbol rate of 2 Msym/s, with a
+bit rate of 2 Mb/s, which is referred to as LE 2M PHY.
+
+.. _sec-phy_coded:
+
+LE Coded PHY
+^^^^^^^^^^^^
+
+LE Coded PHY allows the ability to have the signal range increase up to nearly
+quadruple the range of LE 1M PHY. This is achieved by coding the signal, so the
+Tx power stays the same. This means that the power consumption per time stays
+the same. On the other hand, this coding entails a lower data throughput.
+
+
+.. _phy_coded-s2-s8:
+
+LE Coded S2 and S8
+""""""""""""""""""
+
+The LE Coded :term:`PHY` can be operated with two data rates:
+
+-   **S2** : In LE Coded S=2 mode, each bit is represented by two symbols. Thus,
+    the data rate is 500kbps. In this mode the range is roughly doubled compared
+    to the LE 1M PHY.
+-   **S8**: In LE Coded S=8, each bit is represented by eight symbols. This
+    gives a data rate of 125kbps. In this mode the range is roughly quadrupled
+    compared to the LE 1M PHY.
+
+Every packet sent on LE Coded PHY contains a coding indicator (:term:`CI`),
+which indicates the coding of the packet. Thus, when a packet is being received
+on the LE Coded PHY, the receiver uses the coding indicator to determine the
+coding of the packet. The full packet format of packets sent on LE Coded PHY is
+found in the |CORESPEC|, Vol 6, Part B, Chapter 2.2 PACKET FORMAT FOR THE
+LE CODED PHY.
+
+Link Budget
+"""""""""""
+
+The LE Coded :term:`PHY` gives a higher sensitivity than the LE 1M PHY. The
+receiver sensitivity is defined by how weak signals the receiver can receive
+compared to the level of interfering RF power received simultaneously. If no
+interference is present, the sensitivity level is determined by the thermal
+background noise and will correspond to the sensitivity specified in the
+datasheet.
+
+In an operating RF link, the transmitter will transmit at a specified RF power
+level, and a (usually very tiny) fraction of that RF power will be picked up by
+the receiving antenna and fed to the receiver.  If that fraction is too small,
+the received power level will drop below the receiver sensitivity level and the
+link will fail.
+
+The link budget is the ratio between transmitted power and the Rx sensitivity
+level. For convenience, the link budget (LB) is usually denoted in a
+logarithmic scale (dB). Output power and sensitivity are usually denoted in a
+logarithmic scale relative to 1mW (dBm). This means that:
+
+.. math::
+
+  \textrm{LB}_{\textrm{dBm}} = \textrm{Tx Power} (\textrm{dBm}) - \textrm{Rx Sensitivity Level} (\textrm{dBm})
+
+There are two ways to improve the link budget:
+
+  1) Increase the output power
+  2) Improve (reduce) the receiver sensitivity level
+
+Increasing the output power is fairly straight forward, but it comes at the cost
+of (sometimes significantly) increased power consumption. In addition, all
+regulatory jurisdictions have limits on RF emission levels and unwanted spurious
+emissions, both of which will increase if the transmit power is increased.
+
+The other option, improving receiver sensitivity, is the path chosen by the
+Bluetooth SIG when Bluetooth 5 was adopted with the intention of offering four
+times the RF range. This was also chosen to provide the longest range Bluetooth
+Low Energy solutions at lowest power consumption. In free space, a doubling of
+the range requires a quadrupling of the link budget (or 6 dB increase). This
+means that four times the range requires 12 dB better sensitivity for the LE
+Coded PHY, when compared with the LE 1M PHY. The reference for LE 1M PHY is set
+to -93 dBm. (Note that -93 dBm was chosen as a reference point for a standard
+radio at the time the spec was written.) Since the reference for LE 1M PHY is 
+-93 dBm, the LE Coded PHY needs a sensitivity of -105 dBm in order to achieve 
+four times the range.
+
+The link budget increase is achieved through a two-way approach:
+
+-   The biggest improvement comes simply from the fact that the data rate is
+    reduced to 1/8th, which means that every bit carries eight times more energy
+    for any given power level. Theoretically, this allows the receiver to
+    receive signals at 9 dB lower power levels and still accumulate the same
+    energy per bit as before.
+-   The last 3 dB can be achieved due to the coding employed. The -93 dBm
+    comparison level (for 1Mpbs) assumed a standard differential demodulator,
+    where each received symbol (1 symbol per bit) is determined to be "1" or
+    "0" based on a comparison with the previous symbol. The Coded PHYs
+    facilitate a semi-coherent receiver where eight symbols make up 1 bit, and
+    correlators can search for these known symbol sequences. This is called
+    Forward Error Correction (:term:`FEC`).
+
+It is worth noting that even though the Tx power is the same for LE Coded PHY
+as for LE 1M PHY, the data rate is lower, thus the device will spend a longer
+time to send the same amount of data. This will give a higher power consumption
+for sending the same amount of data on LE Coded PHY compared to LE 1M PHY.
+
+You can read more about how the LE Coded PHY in this blog: `How does Bluetooth®
+5 increase the achievable range of a Bluetooth Low Energy connection? <https://
+e2e.ti.com/blogs_/b/connecting_wirelessly/archive/2017/01/30/how-does-bluetooth
+-5-increase-the-achievable-range-of-a-bluetooth-low-energy-connection>`_
+
+PHY Comparison
+^^^^^^^^^^^^^^
+
+A comparison of the Bluetooth Low Energy PHYs is given below:
+
+.. table:: Comparison of the PHYs.
+
+  +------------------+--------------+-------+--------------+--------------+
+  | Parameter        | LE 1M        | LE 2M | LE Coded S=2 | LE Coded S=8 |
+  +==================+==============+=======+==============+==============+
+  | Symbol Rate      | 1Msps        | 2Msps | 1Msps        | 1Msps        |
+  +------------------+--------------+-------+--------------+--------------+
+  | Data Rate        | 1Mbps        | 2Mbps | 500kbps      | 125kbps      |
+  +------------------+--------------+-------+--------------+--------------+
+  | Error Correction | None         | None  | :term:`FEC`  | :term:`FEC`  |
+  +------------------+--------------+-------+--------------+--------------+
+  | Range Multiplier | 1            | ~0.8  | ~2           | ~4           |
+  +------------------+--------------+-------+--------------+--------------+
+
+LE 2M PHY vs LE 1M PHY
+""""""""""""""""""""""
+
+The LE 2M PHY feature uses the same transmit power as the LE 1M PHY, the only
+change is in the modulation of data in the PHY. Using the LE 2M PHY, the energy
+consumption decreases due to higher data modulation at the same output power.
+The following table lists some of the differences between the two PHYs:
+
+.. _PHY_tradeoffs:
+.. table:: Tradeoff between 1M and 2M PHYs
+
+   +------------------------------------------+----------------------------------------------------------------------------+
+   |     Parameter                            |     Comparison                                                             |
+   +==========================================+============================================================================+
+   |     Power consumption                    |     Energy consumption is reduced using the same transmit power.           |
+   +------------------------------------------+----------------------------------------------------------------------------+
+   |     Data Rate                            |     LE 2M PHY is 2x faster to transmit data than LE 1M PHY.                |
+   +------------------------------------------+----------------------------------------------------------------------------+
+   |     Receive Sensitivity                  |     The link budget will be lower relative to LE 1M PHY, due to            |
+   |                                          |     the increased symbol rate.                                             |
+   +------------------------------------------+----------------------------------------------------------------------------+
+   |     Transmit Power                       |     The output power is same for both PHYs.                                |
+   +------------------------------------------+----------------------------------------------------------------------------+
+
+The main advantage to use the LE 2M PHY is for high throughput applications to
+transfer data at a higher speed.
+
+LE Coded PHY vs LE 1M PHY
+"""""""""""""""""""""""""
+
+The LE Coded :term:`PHY` feature uses the same transmit power as the LE 1M PHY,
+the only change is in the modulation of data in the PHY. Using the LE Coded
+PHY, the energy consumption increases because the radio is in Tx longer. Thus
+the main application for LE Coded PHY should be applications that need a long
+range, but a low data rate. According to the Bluetooth spec, there are
+limitations on what packets can be sent on the LE Coded PHY.

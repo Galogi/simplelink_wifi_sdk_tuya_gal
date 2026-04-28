@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_x_m_e_m___params" kind="struct" language="C++" prot="public">
+    <compoundname>XMEM_Params</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_x_m_e_m___params_1af06812644eae0087e1016d6edc393e5f" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEM_Params::regionBase</definition>
+        <argsstring></argsstring>
+        <name>regionBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>physical Offset from base of Ext flash </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="386" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m___params_1ab56062569fd321e23af61dcd4b2d3caa" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEM_Params::regionStartAddr</definition>
+        <argsstring></argsstring>
+        <name>regionStartAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The regionBase translated to logical address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="387" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m___params_1a7d4ae35531eb28f862affe094befebc9" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEM_Params::regionSize</definition>
+        <argsstring></argsstring>
+        <name>regionSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The size of the region in bytes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="388" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m___params_1aa00e316780a93dcf1a06f3dfa4b034b1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t XMEM_Params::deviceNum</definition>
+        <argsstring></argsstring>
+        <name>deviceNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FLASH/PSRAM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="389" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parameters for opening an XMEM region. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure defines the parameters used when opening an XMEM region with <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref>. It specifies the region&apos;s location, size, and the associated hardware device. </para>    </detaileddescription>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="385" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="384" bodyend="390"/>
+    <listofallmembers>
+      <member refid="struct_x_m_e_m___params_1aa00e316780a93dcf1a06f3dfa4b034b1" prot="public" virt="non-virtual"><scope>XMEM_Params</scope><name>deviceNum</name></member>
+      <member refid="struct_x_m_e_m___params_1af06812644eae0087e1016d6edc393e5f" prot="public" virt="non-virtual"><scope>XMEM_Params</scope><name>regionBase</name></member>
+      <member refid="struct_x_m_e_m___params_1a7d4ae35531eb28f862affe094befebc9" prot="public" virt="non-virtual"><scope>XMEM_Params</scope><name>regionSize</name></member>
+      <member refid="struct_x_m_e_m___params_1ab56062569fd321e23af61dcd4b2d3caa" prot="public" virt="non-virtual"><scope>XMEM_Params</scope><name>regionStartAddr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

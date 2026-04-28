@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Over the Air Update (OTA) &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="examples-index.html" />
+    <link rel="prev" title="The Hardware Security Module (HSM)" href="../security/hsm.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx ota";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Over the Air Update (OTA)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ota-container-states">OTA Container States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ota-process">OTA Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#important-arguments-explained">Important Arguments Explained</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-ota">Enabling OTA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ota-nvs-region">OTA &amp; NVS Region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ota-limitations">OTA Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Over the Air Update (OTA)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="over-the-air-update-ota">
+<h1>Over the Air Update (OTA)<a class="headerlink" href="#over-the-air-update-ota" title="Permalink to this headline">¶</a></h1>
+<p>The CC35xx device leverages ARM PSA (Platform Security Architecture) libraries to perform OTA updates. PSA is the new standard for
+OTA security in ARM devices, read more about it at <a class="reference external" href="https://www.psacertified.org/">https://www.psacertified.org/</a>
+The CC35xx follows the Firmware Update (FWU) specifications and APIs created by ARM. <a class="reference external" href="https://arm-software.github.io/psa-api/fwu/">https://arm-software.github.io/psa-api/fwu/</a>
+The following is the flow of an Over the Air Update.</p>
+<div class="section" id="ota-container-states">
+<h2>OTA Container States<a class="headerlink" href="#ota-container-states" title="Permalink to this headline">¶</a></h2>
+<p>To support OTA updates, two slots are allocated for most entities stored on the flash (e.g. TI bootloader, application, TI wireless firmware, etc). The primary slot will contain the active version of the entity and the secondary slot is reserved for storing new copies that are loaded during the OTA process (for validating and testing). This enables a reliable OTA solution where the device is always able to return to the current working version if the OTA is interrupted or fails.
+You can choose to only update one entity or multiple at the same time via OTA.</p>
+<p>The picture below depicts the format of the image and servicepack containers.
+The image container holds the application code and the servicepack container holds the TI wireless firmware. Each will have a primary and
+secondary slot (4 total).</p>
+<p>Note that the image container addresses are shown in <a class="reference external" href="../memory/memory.html">Memory Overview</a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/GPE-slot.png"><img alt="../_images/GPE-slot.png" src="../_images/GPE-slot.png" style="width: 545.0px; height: 497.0px;" /></a>
+</div>
+<ul class="simple">
+<li>Additional Details:<ul>
+<li>Container Manifest: Has metadata about a GPE image and includes header and version</li>
+<li>Vendor TLVs: Type-Length-Value but we do not support this yet</li>
+<li>Container Trailer: Records update progress, swap status, and slot status</li>
+</ul>
+</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OTA Container State</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ready</td>
+<td>The second container slot is ready for a new Firmware
+update to be started</td>
+</tr>
+<tr class="row-odd"><td>Writing</td>
+<td>When writing is complete, the image becomes a Candidate for
+installation</td>
+</tr>
+<tr class="row-even"><td>Candidate</td>
+<td>Container slot has been filled, it can now be set to be the
+next active image</td>
+</tr>
+<tr class="row-odd"><td>Staged</td>
+<td>Container Slot has been set to be the active image,
+next time the device reboots</td>
+</tr>
+<tr class="row-even"><td>Trial</td>
+<td>The Update is now the active image running in trial mode.
+It requires the trial to be explicitly accepted to make the
+update permanent. If rejected the container is marked
+and image is reverted to previous container</td>
+</tr>
+<tr class="row-odd"><td>Failed/Rejected</td>
+<td>An update to a new image has been attempted, but has failed,
+or been cancelled for some reason</td>
+</tr>
+<tr class="row-even"><td>Updated</td>
+<td>New image has passed trial and container slot becomes the
+new valid image while the previous is cleaned</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ota-process">
+<h2>OTA Process<a class="headerlink" href="#ota-process" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/OTA-flow.png"><img alt="../_images/OTA-flow.png" src="../_images/OTA-flow.png" style="width: 633.0px; height: 708.0px;" /></a>
+</div>
+<p>The graphic above shows a state machine of the OTA process.</p>
+<ul class="simple">
+<li>First a call to the function <cite>psa_fwu_init(void)</cite> must be done to set the secondary slot to the <cite>Ready</cite> state.</li>
+<li>If there is an update available and the slot is <cite>Ready</cite> (can be checked with <cite>psa_fwu_query</cite>), <cite>psa_fwu_start(component, *manifest, manifest_size)</cite> will begin the OTA process and validate the Container Manifest</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Call <cite>psa_fwu_clean(component)</cite> before any <cite>psa_fwu_start</cite> call</p>
+</div>
+<ul class="simple">
+<li>If the start command passes, we can then move onto <cite>psa_fwu_write(component, image_offset, *block, size_t block_size)</cite> which writes a firmware image (or part of a firmware image) to the slot. This will move the container to the <cite>Writing stage</cite>. Once writing is complete,
+calling the function <cite>psa_fwu_finish(component)</cite> will move the Container onto the <cite>Candidate</cite> stage and mark the firmware image in the GPE slot as ready for installation.</li>
+<li>In the <cite>Candidate</cite> stage can now choose to stage this container to be used as the next active image by calling <cite>psa_fwu_install(void)</cite>. This will move
+the Container to the <cite>Staged</cite> state</li>
+<li>Once <cite>Staged</cite> the CC35xx device will require a reboot to load the newly updated container. This is done by calling <cite>fwu_request_reboot()</cite>. Rebooting
+will move the Container to the <cite>Trial</cite> stage.</li>
+<li>In the <cite>Trial</cite> stage the device is tested by the vendor. If rejected, the Container slot will become invalid and a reboot will revert to the previous Container
+slot and image. If accepted, the Container slot will be set to be the new primary slot and move to the <cite>Updated</cite> stage on the next reboot by calling <cite>fwu_request_reboot(void)</cite>.
+The previous container slot becomes the secondary slot and needs to be cleaned with <cite>psa_fwu_clean(component)</cite>.</li>
+</ul>
+<p>To see what state of the OTA process the container is at anytime call the <cite>psa_fwu_query(component, *info)</cite> command. The OTA process can be rejected at any stage with
+<cite>psa_fwu_cancel(component)</cite> once the update has begun till the time it is <cite>Updated</cite>, in which the GPE firmware image update status will be marked as <cite>FAILED</cite>. When you are in the trial stage,
+you cannot cancel the “update” unless you trigger self reboot, in which you would then call <cite>psa_fwu_cancel(component)</cite>.</p>
+<div class="section" id="important-arguments-explained">
+<h3>Important Arguments Explained<a class="headerlink" href="#important-arguments-explained" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><cite>psa_fwu_component_t component</cite>:<ul>
+<li>either the primary or secondary vendor slot</li>
+</ul>
+</li>
+<li><cite>psa_fwu_component_info_t *info</cite>:<ul>
+<li>the output value that gives you information about the component ie. state, whether it is primary or secondary slot etc.</li>
+</ul>
+</li>
+<li><cite>const void *manifest</cite>:<ul>
+<li>contains GPE header, version etc.</li>
+</ul>
+</li>
+<li><cite>size_t image_offset</cite>:<ul>
+<li>the offset of the data block in the whole image (see <cite>XMEMWFF3_write</cite> in <cite>psa_fwu.c</cite>)</li>
+</ul>
+</li>
+<li><cite>const void *block</cite>:<ul>
+<li>data block</li>
+</ul>
+</li>
+<li><cite>size_t manifest_size</cite>:<ul>
+<li>Size of the manifest defined by <cite>TI_FWU_MANIFEST_SIZE</cite> which refers to the size of the <cite>PSA_FWU_GPESlot_t</cite> struct declared in <cite>psa_fwu.h</cite></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="enabling-ota">
+<h2>Enabling OTA<a class="headerlink" href="#enabling-ota" title="Permalink to this headline">¶</a></h2>
+<p>To enable OTA in your project you must change the following setting in the <cite>Memory Map</cite> section of the sysconfig file.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ota_syscfg.png"><img alt="../_images/ota_syscfg.png" src="../_images/ota_syscfg.png" style="width: 943.8px; height: 436.8px;" /></a>
+</div>
+<p>For a 4MB Flash, enabling this checkbox will create space for a second container, however, it will configure each container image size to 1078KB from the original 2752KB.
+This will also automatically update the slots addresses in the <cite>ti_flash_map_config.c</cite>. You can find more information in the Memory section of the user guide.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>When using a 8MB, 16MB, or 32MB Flash, OTA is automatically enabled and the setting in SYSCFG will be locked.</p>
+<div class="last figure align-center">
+<img alt="../_images/ota_setting_syscfg.png" src="../_images/ota_setting_syscfg.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ota-nvs-region">
+<h2>OTA &amp; NVS Region<a class="headerlink" href="#ota-nvs-region" title="Permalink to this headline">¶</a></h2>
+<p>Content stored in the NVS region may be modified during an OTA, but the NVS region is not designed to be updated as a complete unit. Therefore, only a single region in the flash is allocated for the NVS and the application is responsible for managing it (i.e. performing create, read, write, delete operations). For more information on updating the NVS region via the NVOCMP driver, please see <a class="reference external" href="../memory/cc35xx-nvs.html">here</a>.</p>
+</div>
+<div class="section" id="ota-limitations">
+<h2>OTA Limitations<a class="headerlink" href="#ota-limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You cannot redefine flash sizes or PSRAM presence ie. cannot start with “no PSRAM” configured on a stacked device and then OTA to “enable PSRAM”, nor can you indicate a larger or smaller flash chip size</li>
+<li>You cannot OTA different interface settings between the CC35xx and flash chip</li>
+<li>You cannot OTA a different OTFDE to redefine what is and isn’t encrypted in the flash region</li>
+<li>You cannot redefine if code is allocated to secure or non-secure calable region</li>
+<li>You cannot change flash partitions via OTA (i.e. flash map and entity sizes are fixed forever)</li>
+<li>You cannot OTA the boot sector</li>
+<li>If a device currently does not support factory image restoration, you cannot OTA this capability when it is supported afterwards because you are OTA-ing a functionality that was previously programmed based on an SDK that could not handle factory image restoration</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples-index.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../security/hsm.html" class="btn btn-neutral float-left" title="The Hardware Security Module (HSM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

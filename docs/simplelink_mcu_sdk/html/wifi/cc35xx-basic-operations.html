@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Operations &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HTTP Client and Server" href="cc35xx-http.html" />
+    <link rel="prev" title="Overview &amp; Features" href="cc35xx-overview.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug wifi cc35xx-basic-operations";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-wifi.html">Wi-Fi User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview &amp; Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-start">wlan_start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-stop">wlan_stop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-sta-role-up">wlan_sta_role_up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-sta-role-down">wlan_sta_role_down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-ap-role-up">wlan_ap_role_up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-ap-role-down">wlan_ap_role_down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-scan">wlan_scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-connect">wlan_connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-disconnect">wlan_disconnect</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-and-set">GET and SET</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-get-fw">wlan_get_fw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-get-mac">wlan_get_mac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-set-mac">wlan_set_mac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-get-ps">wlan_get_ps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-set-ps">wlan_set_ps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-set-pm">wlan_set_pm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wlan-set-lsi">wlan_set_LSI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-http.html">HTTP Client and Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sockets.html">Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-network-addresses.html">Network Address - Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sntp.html">SNTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-throughput-test.html">Throughput Testing Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-p2p.html">Peer to Peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-power-management.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-wifi.html">Wi-Fi User’s Guide</a> &raquo;</li>
+        
+      <li>Basic Operations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-operations">
+<span id="sec-wifi-basic-operations"></span><h1>Basic Operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h1>
+<p>Each of these WLAN commands eventually calls an API in the lower layer that is represented by the <code class="docutils literal notranslate"><span class="pre">wlan_if.c</span></code> file.
+This file is part of the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library.
+Following is a detailed explanation of each WLAN command and its API in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library.</p>
+<div class="section" id="wlan-start">
+<h2>wlan_start<a class="headerlink" href="#wlan-start" title="Permalink to this headline">¶</a></h2>
+<p>This command turns on the WLAN device, initialize the several threads (like CME, transport, event, etc), and initialize the host interface.
+During the process, the containers (FW, bootloader and configuration binaries) are loaded from the NVMEM and programmed to the MAC layer.
+This step should be the first, otherwise there will be no communication with the device.</p>
+<p>An eventHandler Callback must be passed as a parameter, see the example below.</p>
+<p>The API to start WLAN in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">WlanStackEventHandler</span><span class="p">(</span><span class="n">WlanEvent_t</span> <span class="o">*</span><span class="n">pWlanEvent</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">void</span> <span class="o">*</span><span class="n">staif</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">pWlanEvent</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">pWlanEvent</span><span class="o">-&gt;</span><span class="n">Id</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">case</span> <span class="nl">WLAN_EVENT_CONNECT</span><span class="p">:</span>
+                <span class="p">{</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="nl">WLAN_EVENT_DISCONNECT</span><span class="p">:</span>
+                <span class="p">{</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="nl">WLAN_EVENT_SCAN_RESULT</span><span class="p">:</span>
+                <span class="p">{</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+                <span class="k">default</span><span class="o">:</span>
+                <span class="p">{</span>
+                        <span class="n">UART_PRINT</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[WLAN EVENT HANDLER] Unexpected event [%d]</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span>
+                                <span class="n">pWlanEvent</span><span class="o">-&gt;</span><span class="n">Id</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Start</span><span class="p">(</span><span class="n">WlanStackEventHandler</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="n">OSI_OK</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Wlan start success!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Wlan start failed: %d. please refer errors.h </span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-stop">
+<h2>wlan_stop<a class="headerlink" href="#wlan-stop" title="Permalink to this headline">¶</a></h2>
+<p>This command turns off the WLAN device and deactivates the host interface.
+During the process, the threads are deleted and queues and semaphores destroyed.
+This step should be the last.
+The API to stop WLAN in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Stop</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">ret</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">   Wlan stop success!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">   Wlan stop failed: %d. please refer errors.h</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-sta-role-up">
+<h2>wlan_sta_role_up<a class="headerlink" href="#wlan-sta-role-up" title="Permalink to this headline">¶</a></h2>
+<p>This command adds and starts a station role.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to call the correct Wlan_Set(WLAN_SET_STA_WIFI_BAND, &amp;sta_wifi_band) to select 5GHz or else 5GHz will not work!</p>
+</div>
+<p>The API to add a network interface in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">RoleUpStaCmd_t</span> <span class="n">RoleUpStaParams</span><span class="p">;</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">RoleUpStaParams</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">RoleUpStaCmd_t</span><span class="p">));</span>
+
+<span class="c1">//Set 2.4G and 5G</span>
+<span class="kt">uint8_t</span> <span class="n">sta_wifi_band</span> <span class="o">=</span>  <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">BAND_SEL_BOTH</span><span class="p">;</span>
+<span class="n">Wlan_Set</span><span class="p">(</span><span class="n">WLAN_SET_STA_WIFI_BAND</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sta_wifi_band</span><span class="p">);</span>
+
+<span class="n">RoleUpStaParams</span><span class="p">.</span><span class="n">wpsDisabled</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span> <span class="cm">/* WPS is enabled by default */</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_RoleUp</span><span class="p">(</span><span class="n">WLAN_ROLE_STA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">RoleUpStaParams</span><span class="p">,</span> <span class="n">WLAN_WAIT_FOREVER</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-sta-role-down">
+<h2>wlan_sta_role_down<a class="headerlink" href="#wlan-sta-role-down" title="Permalink to this headline">¶</a></h2>
+<p>This command stops and removes a station role.
+If the station is connected to an AP, the connection is first terminated.
+During the process, a network interface is removed from the network stack (LwIP) and eventually a station role is removed.</p>
+<p>The API to remove a network interface in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">connected</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Disconnect</span><span class="p">(</span><span class="n">WLAN_ROLE_STA</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">OSI_OK</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;WlanDisconnect() failed&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_RoleDown</span><span class="p">(</span><span class="n">WLAN_ROLE_STA</span><span class="p">,</span> <span class="n">WLAN_WAIT_FOREVER</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-ap-role-up">
+<h2>wlan_ap_role_up<a class="headerlink" href="#wlan-ap-role-up" title="Permalink to this headline">¶</a></h2>
+<p>This command adds and starts an AP role.
+During the process, a network interface is added to the network stack (LwIP) and eventually an AP role is added.</p>
+<p>The API to add a network interface in the <code class="docutils literal notranslate"><span class="pre">network_lwip.c</span></code>  library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="o">::</span> <span class="n">c</span>
+</pre></div>
+</div>
+<blockquote>
+<div>void network_stack_add_if_ap()</div></blockquote>
+<p>The API in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span>      <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">RoleUpApCmd_t</span> <span class="n">RoleUpApParams</span><span class="p">;</span>
+
+<span class="cm">/* Call the command parser */</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">RoleUpApParams</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">RoleUpApParams</span><span class="p">));</span>
+
+<span class="cm">/* Set default parameters */</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">sta_limit</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">hidden</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">tx_pow</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">sae_pwe</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">hidden</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+
+<span class="c1">//prepare configuration for WPS connection</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">deviceName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_modelName</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">configMethods</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_wpsConfigMethods</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">manufacturer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_manufacturer</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">modelName</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_modelName</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">modelNumber</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_modelNumber</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">serialNumber</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_serialNumber</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_uuid_string</span><span class="p">;</span>
+<span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">wpsParams</span><span class="p">.</span><span class="n">deviceType</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">g_primaryDeviceType</span><span class="p">;</span>
+
+<span class="n">Report</span><span class="p">(</span><span class="s">&quot;AP %s channel: %d&quot;</span><span class="p">,</span> <span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">ssid</span><span class="p">,</span><span class="n">RoleUpApParams</span><span class="p">.</span><span class="n">channel</span><span class="p">);</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_RoleUp</span><span class="p">(</span><span class="n">WLAN_ROLE_AP</span><span class="p">,</span><span class="o">&amp;</span><span class="n">RoleUpApParams</span> <span class="p">,</span> <span class="n">OSI_WAIT_FOR_SECOND</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-ap-role-down">
+<h2>wlan_ap_role_down<a class="headerlink" href="#wlan-ap-role-down" title="Permalink to this headline">¶</a></h2>
+<p>This command stops and removes an AP role.
+During the process, a network interface is removed from the network stack (LwIP) and eventually an AP role is removed.</p>
+<p>The API to remove a network interface in the <code class="docutils literal notranslate"><span class="pre">network_lwip.c</span></code>  library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="o">::</span> <span class="n">c</span>
+</pre></div>
+</div>
+<blockquote>
+<div>void network_stack_remove_if_ap()</div></blockquote>
+<p>The API in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_RoleDown</span><span class="p">(</span><span class="n">WLAN_ROLE_AP</span><span class="p">,</span> <span class="n">WLAN_WAIT_FOREVER</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-scan">
+<h2>wlan_scan<a class="headerlink" href="#wlan-scan" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to retrieve scan results from network processor.
+During the process, the application initiates a scan request in an unsolicited manner.
+When the scan results are ready, a scan event is triggered back to the application through an event callback registration.</p>
+<p>The following is the API for WLAN scan in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ScanCmd_t</span> <span class="n">ScanParams</span><span class="p">;</span>
+<span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="cm">/* Call the command parser */</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ScanParams</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ScanParams</span><span class="p">));</span>
+<span class="n">ScanParams</span><span class="p">.</span><span class="n">numOfentries</span> <span class="o">=</span> <span class="n">MAX_SSID_ENTRIES</span><span class="p">;</span>
+
+<span class="cm">/* Clear the results buffer */</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">app_CB</span><span class="p">.</span><span class="n">gDataBuffer</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">app_CB</span><span class="p">.</span><span class="n">gDataBuffer</span><span class="p">));</span>
+<span class="n">scanCommon_t</span> <span class="n">scanCommo</span><span class="p">;</span>
+<span class="n">WlanRole_e</span>      <span class="n">role</span><span class="p">;</span>
+
+<span class="n">os_memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">scanCommo</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">scanCommon_t</span><span class="p">));</span>
+<span class="n">scanCommo</span><span class="p">.</span><span class="n">Band</span> <span class="o">=</span> <span class="n">BAND_SEL_BOTH</span><span class="p">;</span><span class="c1">//options are BAND_SEL_ONLY_2_4GHZ , BAND_SEL_ONLY_5GHZ , BAND_SEL_BOTH</span>
+
+<span class="n">role</span> <span class="o">=</span> <span class="n">WLAN_ROLE_STA</span><span class="p">;</span>
+<span class="n">ScanParams</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Scan</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">scanCommo</span><span class="p">,</span> <span class="n">ScanParams</span><span class="p">.</span><span class="n">numOfentries</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-connect">
+<h2>wlan_connect<a class="headerlink" href="#wlan-connect" title="Permalink to this headline">¶</a></h2>
+<p>This command initiates WLAN connection to an AP.
+The parameters required for connection are the SSID, security type and the password.
+The demos have a blocking timeout where the default is 40 seconds but can be modified by the application (via the <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_TOUT</span></code> define).
+The expected events are triggered back to the application through an event callback registration.
+Events could be <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_CONNECT</span></code> when initially disconnected and <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_DISCONNECT</span></code> prior to <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_CONNECT</span></code> when already connected.</p>
+<p>The following is the API for WLAN connect in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">ConnectCmd_t</span> <span class="n">ConnectParams</span><span class="p">;</span>
+<span class="n">ConnectParams</span><span class="p">.</span><span class="n">secParams</span><span class="p">.</span><span class="n">Type</span> <span class="o">=</span> <span class="n">WLAN_SEC_TYPE_OPEN</span><span class="p">;</span>
+
+<span class="n">ConnectParams</span><span class="p">.</span><span class="n">ssid</span> <span class="o">=</span> <span class="n">ssid</span><span class="p">;</span>
+
+<span class="cm">/* Connect to AP */</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Connect</span><span class="p">((</span><span class="k">const</span> <span class="kt">signed</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">ConnectParams</span><span class="p">.</span><span class="n">ssid</span><span class="p">),</span>
+                <span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">ConnectParams</span><span class="p">.</span><span class="n">ssid</span><span class="p">)),</span>
+                <span class="n">ConnectParams</span><span class="p">.</span><span class="n">bssid</span><span class="p">,</span><span class="c1">//macAddr, empty by default</span>
+                <span class="n">ConnectParams</span><span class="p">.</span><span class="n">secParams</span><span class="p">.</span><span class="n">Type</span><span class="p">,</span>
+                <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)(</span><span class="n">ConnectParams</span><span class="p">.</span><span class="n">secParams</span><span class="p">.</span><span class="n">Key</span><span class="p">),</span>
+                <span class="p">((</span><span class="n">ConnectParams</span><span class="p">.</span><span class="n">secParams</span><span class="p">.</span><span class="n">Key</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">?</span> <span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">ConnectParams</span><span class="p">.</span><span class="n">secParams</span><span class="p">.</span><span class="n">Key</span><span class="p">)</span> <span class="o">:</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-disconnect">
+<h2>wlan_disconnect<a class="headerlink" href="#wlan-disconnect" title="Permalink to this headline">¶</a></h2>
+<p>This command initiates WLAN disconnection from an AP.
+The expected event is triggered back to the application through an event callback registration.
+Events should be <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_DISCONNECT</span></code>.</p>
+<p>The following is the API for WLAN disconnect in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">Connected</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Disconnect</span><span class="p">(</span><span class="n">WLAN_ROLE_STA</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-and-set">
+<h1>GET and SET<a class="headerlink" href="#get-and-set" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="wlan-get-fw">
+<h2>wlan_get_fw<a class="headerlink" href="#wlan-get-fw" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to retrieve the FW version of the radio core.</p>
+<p>The following is the API for WLAN get in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">WlanFWVersions_t</span> <span class="n">wlanFwVersions</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="n">status</span> <span class="o">=</span> <span class="n">Wlan_Get</span><span class="p">(</span><span class="n">WLAN_GET_FWVERSION</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">wlanFwVersions</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">UART_PRINT</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> MAC:  %d.%d.%d.%d&quot;</span><span class="p">,</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">major_version</span><span class="p">,</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">minor_version</span><span class="p">,</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">api_version</span><span class="p">,</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">build_version</span><span class="p">);</span>
+
+<span class="n">UART_PRINT</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> PHY:  %d.%d.%d.%d&quot;</span><span class="p">,</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+       <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">wlanFwVersions</span><span class="p">.</span><span class="n">phy_version</span><span class="p">[</span><span class="mi">7</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-get-mac">
+<h2>wlan_get_mac<a class="headerlink" href="#wlan-get-mac" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to retrieve the mac address of the device.
+The mac address is different for each role and the role needs to be up in order for this command to execute.</p>
+<p>The following is the API for WLAN get in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">WlanMacAddress_t</span> <span class="n">macAddressParams</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int8_t</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">;</span>
+
+<span class="cm">/* Print device Mac address */</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">Wlan_Get</span><span class="p">(</span><span class="n">WLAN_GET_MACADDRESS</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">macAddressParams</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">UART_PRINT</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> MAC address: %02x:%02x:%02x:%02x:%02x:%02x&quot;</span><span class="p">,</span>
+       <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+       <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+       <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-set-mac">
+<h2>wlan_set_mac<a class="headerlink" href="#wlan-set-mac" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to set the mac address of the device.
+The mac address is different for each role and the role needs to be up in order for this command to execute.</p>
+<p>The following is the API for WLAN set in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">WlanMacAddress_t</span> <span class="n">macAddressParams</span><span class="p">;</span>
+<span class="kt">int16_t</span>    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">macAddressParams</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">WlanMacAddress_t</span><span class="p">));</span>
+
+<span class="cm">/* Call the command parser */</span>
+<span class="kt">uint32_t</span> <span class="n">tmpRoleId</span><span class="p">;</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">ParseSetMacAddressCmd</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">macAddressParams</span><span class="p">.</span><span class="n">pMacAddress</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tmpRoleId</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">ret</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">macAddressParams</span><span class="p">.</span><span class="n">roleType</span> <span class="o">=</span> <span class="n">tmpRoleId</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Set</span><span class="p">(</span><span class="n">WLAN_SET_MACADDRESS</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">macAddressParams</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-get-ps">
+<h2>wlan_get_ps<a class="headerlink" href="#wlan-get-ps" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to retrieve the power save of the device.
+The power save can be either power save mode, Active mode or Automatic mode.</p>
+<p>The following is the API for WLAN get in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span>         <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">WlanPowerSave_e</span> <span class="n">currentPsMode</span><span class="p">;</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Get</span><span class="p">(</span><span class="n">WLAN_GET_POWER_SAVE</span><span class="p">,(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">currentPsMode</span><span class="p">);</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">psMode</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ret</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">currentPsMode</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="k">case</span> <span class="nl">WLAN_STATION_AUTO_PS_MODE</span><span class="p">:</span>
+<span class="p">{</span>
+        <span class="n">psMode</span> <span class="o">=</span> <span class="s">&quot;Auto Power save&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="nl">WLAN_STATION_ACTIVE_MODE</span><span class="p">:</span>
+<span class="p">{</span>
+        <span class="n">psMode</span> <span class="o">=</span> <span class="s">&quot;Active mode&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="nl">WLAN_STATION_POWER_SAVE_MODE</span><span class="p">:</span>
+<span class="p">{</span>
+        <span class="n">psMode</span> <span class="o">=</span> <span class="s">&quot;Power save mode&quot;</span><span class="p">;</span>
+<span class="p">}</span><span class="k">break</span><span class="p">;</span>
+<span class="k">default</span><span class="o">:</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Power save mode invalid!</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[PS MODE] current PS mode is %s&quot;</span><span class="p">,</span> <span class="n">psMode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-set-ps">
+<h2>wlan_set_ps<a class="headerlink" href="#wlan-set-ps" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to set the power save of the device.
+The power save can be either power save mode, Active mode or Automatic mode.</p>
+<p>The following is the API for WLAN set in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span>         <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">WlanPowerSave_e</span> <span class="n">PsMode</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Set</span><span class="p">(</span><span class="n">WLAN_SET_POWER_SAVE</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">PsMode</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[PS MODE] Failed to set PS mode %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">PsMode</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[PS MODE] Successfully set PS mode %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">PsMode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-set-pm">
+<h2>wlan_set_pm<a class="headerlink" href="#wlan-set-pm" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to set the power management mode of the device.
+The power save can be either ELP mode (Extreme Low Power), Active mode (fully awake) or Power Down mode (hybrid).</p>
+<p>The following is the API for WLAN set in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span>               <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">WlanPowerManagement_e</span> <span class="n">PmMode</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Set</span><span class="p">(</span><span class="n">WLAN_SET_POWER_MANAGEMENT</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">PmMode</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[PM MODE] Failed to set PM mode %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">PmMode</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[PM MODE] Successfully set PM mode %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">PmMode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wlan-set-lsi">
+<h2>wlan_set_LSI<a class="headerlink" href="#wlan-set-lsi" title="Permalink to this headline">¶</a></h2>
+<p>This command allows to set the LSI (Long Sleep Interval) mode of the device.
+In LSI mode, the device will only wake up for a single broadcast period within the time interval specified in this command.
+Therefore, the device is able to reduce power consumption with the tradeoff of possibly missing broadcast data on the network.</p>
+<p>The following is the API for WLAN set in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.a</span></code> library:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int16_t</span>               <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">WlanLongSleepInterval</span> <span class="n">LsiParams</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">Wlan_Set</span><span class="p">(</span><span class="n">WLAN_SET_LSI</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LsiParams</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[SET LSI] Failed to set LSI %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">LsiParams</span><span class="p">.</span><span class="n">ListenInterval</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="n">Report</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">[SET LSI] Successfully set LSI to %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">LsiParams</span><span class="p">.</span><span class="n">ListenInterval</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-http.html" class="btn btn-neutral float-right" title="HTTP Client and Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-overview.html" class="btn btn-neutral float-left" title="Overview &amp; Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

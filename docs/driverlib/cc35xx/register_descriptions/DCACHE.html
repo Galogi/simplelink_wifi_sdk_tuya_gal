@@ -1,0 +1,1713 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>DCACHE</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">DCACHE</A></H2>
+<P>This section provides information on the DCACHE Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">DCACHE Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="DCACHE"><A href="_.html"> </A>:DCACHE Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_MOD_VER">MOD_VER</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x6880 0800</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_CTRL">CTRL</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0b01xx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_STS">STS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0b0xxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_CAL">CAL</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0XXX</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_CAH">CAH</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0XXX</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_READ_COUNTER">READ_COUNTER</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_WRITE_COUNTER">WRITE_COUNTER</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_ADDRESS_LATCH">ADDRESS_LATCH</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_CACHE_FSM_STATE">CACHE_FSM_STATE</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_IRQSTATUS_RAW">IRQSTATUS_RAW</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0bxxxx xxxx xxxx xxxx xxxx xxxx xxxx xxx0</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0080</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_IRQSTATUS_MSK">IRQSTATUS_MSK</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0bxxxx xxxx xxxx xxxx xxxx xxxx xxxx xxx0</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0084</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_IRQENABLE_SET">IRQENABLE_SET</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0bxxxx xxxx xxxx xxxx xxxx xxxx xxxx xxx0</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0088</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_IRQENABLE_CLR">IRQENABLE_CLR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0bxxxx xxxx xxxx xxxx xxxx xxxx xxxx xxx0</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 008C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_CTRL1">CTRL1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0b00xx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 00C0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#DCACHE_STATUS1">STATUS1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0b000x xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 00C4</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">DCACHE Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">DCACHE Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:DCACHE Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_MOD_VER"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:MOD_VER</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Module and Version Register identifies the module identifier and revision of the L1 module.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SCHEME</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Module Scheme</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:28</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Module Business Unit</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>27:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MODULE_ID</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>L1 module ID.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x880</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RTL_VERSION</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>RTL Version.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x01</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MAJOR_REVISION</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Major Revision.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CUSTOM_REVISION</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Custom Revision.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MINOR_REVISION</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Minor Revision.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_CTRL"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:CTRL</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The control register defines the size of the remote cache data storage memory to use and whether the L1 is enabled.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CENABLE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~icenable field determines whether the L1 configuration is enabled or not.#br# 0: Disabled#br# 1: Enabled #br# This field is write protected when the t_cfg_lock_ipcfg input is high.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RENABLE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~irenable field determines if half the cache space is RAM or cache. #br# 0: No RAM 64K of cache#br# 1: RAM 32K of cache, 32K of RAM. This field is write protected when ~icenable is set or the t_cfg_lock_ipcfg input is high.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0bxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_STS"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:STS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Status register displays the state of the L1 module</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OK_TO_GO</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~iok_to_go status bit indicates the Tag/LRU Ram has been initialized and the cache is in an operable state.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0bxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_CAL"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:CAL</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The L1 Cache Address Low Register defines start of the L1 cacheable space. The L1 cache can cache up to a range of 8MB of of the target Flash as defined by CAL&amp;gt;=CachedRange&amp;lt;=CAH. This register is write protected when ~icenable is set or the t_cfg_lock_ipcfg input is high.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ADDR_LO</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~iaddr_lo defines the L1 low address[31:12] for the L1 to cache. The remaining bits 10:0 are assumed to be zero.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xXXX</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_CAH"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:CAH</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The L1 Cache Address High Register defines end of the L1 cacheable space. The L1 cache can cache up to a range of 8MB of of the target Flash as defined by CAL&amp;gt;=CachedRange&amp;lt;=CAH. This register is write protected when ~icenable is set or the t_cfg_lock_ipcfg input is high.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ADDR_HI</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~iaddr_hi defines the L1 high address[31:12] for the L1 to cache. The remaining bits 10:0 are assumed to be ones.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xXXX</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_READ_COUNTER"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:READ_COUNTER</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The L1 HIT Counter register holds the number of L1 Hits to the internal cache.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>READ_HIT_COUNTER</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The hit Counts the number of hits to the L1 cache.<BR>Writing zero to this register will clear its contents<BR>When one reach the max, the rest of the counters are halted too.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>READ_MISS_COUNTER</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The miss Counts the number of misses to the L1 cache.<BR>Writing zero to this register will clear its contents.<BR>When one reach the max, the rest of the counters are halted too.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_WRITE_COUNTER"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:WRITE_COUNTER</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The L1 MISS Counter register holds the number of L1 Misses to the internal cache.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WRITE_HIT_COUNTER</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The hit Counts the number of hits to the L1 cache.<BR>Writing zero to this register will clear its contents.<BR>When one reach the max, the rest of the counters are halted too.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WRITE_MISS_COUNTER</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The miss Counts the number of misses to the L1 cache.<BR>Writing zero to this register will clear its contents.<BR>When one reach the max, the rest of the counters are halted too</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_ADDRESS_LATCH"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:ADDRESS_LATCH</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>When having OTFDE AHB error, Latch the address accessed by D-cache</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ADDRESS_LATCH</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>When D-cache receive AHB error from the OTFDE it should latch the address accessed by D-cache.<BR>(OTFDE generates an error for write only)<BR>Writing zero to this register will clear its contents.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_CACHE_FSM_STATE"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:CACHE_FSM_STATE</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P></P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED5</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Dcache current FSM state</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FSM_STATE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Dcache current FSM state<BR>WIDLE    = 5'd0; - No access to D-cache<BR>WRAMWR   = 5'd1; - Data RAM Write<BR>WRAMRD   = 5'd2; - Data RAM Read<BR>WCREADT  = 5'd4; - Read Hit<BR>WCREADC  = 5'd5; - Read Miss<BR>WCWRITET = 5'd6; - Write Hit<BR>EVICT    = 5'd7; -Write back to PSRAM<BR>WR_ALLOC = 5'd8; - Write Allocate in write miss<BR>RD_WA = 5'd9; - Word aligned read for a byte aligned read<BR>WD = 5'd10; - Writing data to PSRAM<BR>RDATA_CACHE = 5'd3; Reading data RAM for eviction<BR>DEC_DIR = 5'd11; - Deciding direction<BR>RDATA_CACHE_FLUSH = 5'd12; Reading data from data RAM for flush<BR>RD_SET     = 5'd13; Reading TAG &amp; MRU<BR>DET_GRANT  = 5'd14;  Detecting the granted way to evict<BR>EVICT_FLUSH = 5'd15; Eviction during Flush<BR>WD_DEBUG = 5'd16; Writing data to PSRAM during a debugger access</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_IRQSTATUS_RAW"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:IRQSTATUS_RAW</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0080</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Interrupt Raw Status Register holds the raw status of the L1 error interrupts.<BR>Note: Read to the field of this register gives raw status of corresponding interrupt. S/W can set corresponding interrupt field for diagnostic purposes.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LOCK_CFG_WR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~ilock_cfg_wr bit indicates a write to a locked configuration register has occured. Write 1 to set the ~ilock_cfg_wr status for diagnostic purposes. Writing a 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>X</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>reserved</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_IRQSTATUS_MSK"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:IRQSTATUS_MSK</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0084</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Interrupt Masked Status Register holds the masked status for the L1 error interrupts. Writing to this register will EOI the interrupt, that is if another interrupt is pending, a new pulse interrupt will be generated.<BR>Note: Read to the field of this register gives masked status of corresponding interrupt. Writing 1 to the field of this register clears corresponding interrupt.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LOCK_CFG_WR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The ~ilock_cfg_wr bit indicates a write to a locked configuration register has occured. Write 1 to clear the ~ilock_cfg_wr status after interrupt has been serviced (raw status gets cleared, i.e. even if not enabled). Writing a 0 has no effect to this field.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>X</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>reserved</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_IRQENABLE_SET"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:IRQENABLE_SET</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0088</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Interrupt Enable Set Register holds the interrupt enable status of the L1 error interrupts.<BR>Note:Writing 1 to field of this register will not mask the corresponding interrupt. IRQSTATUS_RAW and IRQSTATUS_MSK status field gives the same status.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EN_LOCK_CFG_WR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Interrupt Enable Set for ~ilock_cfg_wr error bit. Writing a 1 will enable the interrupt, and set this bit as well as the corresponding Interrupt Enable Clear Register. Writing a 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>X</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>reserved</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_IRQENABLE_CLR"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:IRQENABLE_CLR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 008C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>The Interrupt Enable Clear Register holds the interrupt enable status of the L1 error interrupts.<BR>Note:Writing 1 to field of this register masks the corresponding interrupt. IRQSTATUS_RAW and IRQSTATUS_MSK status field gives the raw status and masked status respectively</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EN_LOCK_CFG_WR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Interrupt Enable Clear for ~ilock_cfg_wr error bit. Writing a 1 will disable the interrupt, and clear this bit as well as the corresponding Interrupt Enable Set Register. Writing a 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>X</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>reserved</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_CTRL1"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:CTRL1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 00C0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Flush and invalidates requests</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FLUSH</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>0x0 - Do nothing<BR>0x1 - Flush<BR>The bit is self cleared when flush completed</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>INVALIDATE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>0x0 - Do nothing<BR>0x1 - Invalidate<BR>This bit is self cleared when invalidate completed</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0bxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="DCACHE_STATUS1"><A href="_.html"></A>:<A href="#Top_IPBTag">DCACHE</A>:STATUS1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 00C4</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Flush and invalidates status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FLUSH_STATUS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit indicates that Flush as been completed<BR>( Bit is cleared when Flush request bit is asserted )</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>INVALIDATE_STATUS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit indicates that invalidate has been completed<BR>( Bit is cleared when flush request bit is asserted )</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FLUSH_FAIL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit indicates that Flush has failed<BR>( Bit is cleared when Flush request bit is asserted )</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>28:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0bx xxxx xxxx xxxx xxxx xxxx xxxx xxxx</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

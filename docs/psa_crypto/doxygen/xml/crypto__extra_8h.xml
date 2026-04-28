@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="crypto__extra_8h" kind="file" language="C++">
+    <compoundname>crypto_extra.h</compoundname>
+    <includes refid="crypto__types_8h" local="yes">crypto_types.h</includes>
+    <includedby refid="crypto_8h" local="yes">crypto.h</includedby>
+    <incdepgraph>
+      <node id="27">
+        <label>stdint.h</label>
+      </node>
+      <node id="26">
+        <label>crypto_types.h</label>
+        <link refid="crypto__types_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>crypto_extra.h</label>
+        <link refid="crypto__extra_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="31">
+        <label>crypto_struct.h</label>
+        <link refid="crypto__struct_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>crypto_helper.h</label>
+        <link refid="crypto__helper_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>crypto_extra.h</label>
+        <link refid="crypto__extra_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="crypto__extra_8h_1a5e7439c2905136366c3a876e62e5ddfc" prot="public" static="no">
+        <name>PSA_KEY_TYPE_DSA_PUBLIC_KEY</name>
+        <initializer>((<ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref>)0x4002U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DSA public key.</para><para>The import and export format is the representation of the public key <computeroutput>y = g^x mod p</computeroutput> as a big-endian byte string. The length of the byte string is the length of the base prime <computeroutput>p</computeroutput> in bytes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_extra.h" line="49" column="9" bodyfile="source/third_party/psa_crypto/include/psa/crypto_extra.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="crypto__extra_8h_1a7d4a45c147cb0ecb55d01d9c04bfed76" prot="public" static="no">
+        <name>PSA_KEY_TYPE_DSA_KEY_PAIR</name>
+        <initializer>((<ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref>)0x7002U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DSA key pair (private and public key).</para><para>The import and export format is the representation of the private key <computeroutput>x</computeroutput> as a big-endian byte string. The length of the byte string is the private key size in bytes (leading zeroes are not stripped).</para><para>Deterministic DSA key derivation with psa_generate_derived_key follows FIPS 186-4 <sect/>B.1.2: interpret the byte string as integer in big-endian order. Discard it if it is not in the range [0, <emphasis>N</emphasis> - 2] where <emphasis>N</emphasis> is the boundary of the private key domain (the prime <emphasis>p</emphasis> for Diffie-Hellman, the subprime <emphasis>q</emphasis> for DSA, or the order of the curve&apos;s base point for ECC). Add 1 to the resulting integer and use this as the private key <emphasis>x</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_extra.h" line="67" column="9" bodyfile="source/third_party/psa_crypto/include/psa/crypto_extra.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PSA cryptography module: Mbed TLS vendor extensions. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>This file may not be included directly. Applications must include <ref refid="crypto_8h" kindref="compound">psa/crypto.h</ref>.</para></simplesect>
+This file is reserved for vendor-specific definitions. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>The<sp/>Mbed<sp/>TLS<sp/>Contributors</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2024,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>for<sp/>Texas<sp/>Instruments<sp/>vendor-specific<sp/>definitions.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PSA_CRYPTO_EXTRA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSA_CRYPTO_EXTRA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>clang-format<sp/>off<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crypto__types_8h" kindref="compound">crypto_types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="crypto__extra_8h_1a5e7439c2905136366c3a876e62e5ddfc" refkind="member"><highlight class="preprocessor">#define<sp/>PSA_KEY_TYPE_DSA_PUBLIC_KEY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((psa_key_type_t)0x4002U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="crypto__extra_8h_1a7d4a45c147cb0ecb55d01d9c04bfed76" refkind="member"><highlight class="preprocessor">#define<sp/>PSA_KEY_TYPE_DSA_KEY_PAIR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((psa_key_type_t)0x7002U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PSA_CRYPTO_EXTRA_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_extra.h"/>
+  </compounddef>
+</doxygen>

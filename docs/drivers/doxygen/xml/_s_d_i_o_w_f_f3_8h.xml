@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_i_o_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>SDIOWFF3.h</compoundname>
+    <innerclass refid="struct_s_d_i_o_w_f_f3___object" prot="public">SDIOWFF3_Object</innerclass>
+    <innerclass refid="struct_s_d_i_o_w_f_f3___hw_attrs" prot="public">SDIOWFF3_HwAttrs</innerclass>
+    <innerclass refid="struct_s_d_i_o_w_f_f3___param" prot="public">SDIOWFF3_Param</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3" prot="public" static="no">
+        <name>SDIOWFF_eventIDX</name>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a60f5ad0c39e13d4a2cf8c0ecdf4a3b7f" prot="public">
+          <name>SDIOWFF3_DATA_IN_RX_FIFO</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3abc7b01a773760a4ca15e157e4bc942b5" prot="public">
+          <name>SDIOWFF3_CARD_INIT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a9c538e4b928b38aa4440f802e9d8b96b" prot="public">
+          <name>SDIOWFF3_CARD_DEINIT</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a00786bda0aa864c0b0de9d1fa5e6d58c" prot="public">
+          <name>SDIOWFF3_RX_CRC_ERROR</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a0d5565bfec09b0a02c81ba6c0ee00f1e" prot="public">
+          <name>SDIOWFF3_RX_BUFF_OVERRUN</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3aff0aa79bd3f71316cb62d06fe5607106" prot="public">
+          <name>SDIOWFF3_RX_BUFF_UNDERRUN</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a41911b88c2487501781dfc61c76db645" prot="public">
+          <name>SDIOWFF3_TX_BUFF_OVERRUN</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a095ef7c388cecf79839e2202085e4e8e" prot="public">
+          <name>SDIOWFF3_TX_BUFF_UNDERRUN</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a7330fad2f78aa22fee5773643dbe0c73" prot="public">
+          <name>SDIOWFF3_HOST_WRONG_ACCESS</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a4ee317bee7ecb494aade2cc931a186ae" prot="public">
+          <name>SDIOWFF3_HOST_SENT_MSG</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="234" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="233" bodyend="245"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SDIOWFF3EventCB) (SDIO_Handle handle, uint8_t eventIDX)</definition>
+        <argsstring>)(SDIO_Handle handle, uint8_t eventIDX)</argsstring>
+        <name>SDIOWFF3EventCB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="231" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_i_o_w_f_f3_8h_1a4d35ff3c94d1eddccba803ed1f9baf77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SDIOWFF3_isSdioInitialized</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDIOWFF3_isSdioInitialized</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Function to check if SDIO host already initialize SDIO peripheral SDIO initialize definition is: TRUE - after SDIO host enable SDIO functions FALSE - after SDIO host reset SDIO peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SDIO driver has been opened and initialized by calling <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref></para></simplesect>
+<simplesect kind="return"><para>True if the card is initialized </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="359" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>========<sp/>SDIOWFF3.h<sp/>========</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDIOWFF3.h</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>SDIO<sp/>driver<sp/>implementation<sp/>for<sp/>a<sp/>Wi-Fi<sp/>F3<sp/>device.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDIOWFF3<sp/>peripheral<sp/>using<sp/>the<sp/>DMA<sp/>controller<sp/>or<sp/>Core.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>#<sp/>Driver<sp/>include<sp/>#</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDIOWFF3<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/SDIO.h&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/sdio/SDIOWFF3.h&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>SDIO.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>The<sp/>general<sp/>SDIO<sp/>API<sp/>should<sp/>be<sp/>used<sp/>in<sp/>application<sp/>code,<sp/>i.e.<sp/>#SDIO_open()</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>should<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>#SDIO_open().<sp/>The<sp/>board<sp/>file<sp/>will<sp/>define<sp/>the</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>device<sp/>specific<sp/>config,<sp/>and<sp/>casting<sp/>in<sp/>the<sp/>general<sp/>API<sp/>will<sp/>ensure<sp/>that<sp/>the</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>correct<sp/>device<sp/>specific<sp/>functions<sp/>are<sp/>called.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>#<sp/>General<sp/>Behavior<sp/>#</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>Before<sp/>using<sp/>SDIOWFF3<sp/>on<sp/>Wi-Fi<sp/>F3<sp/>devices:</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDIOWFF3<sp/>driver<sp/>is<sp/>initialized<sp/>by<sp/>calling<sp/>#SDIO_init().</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDIOWFF3<sp/>HW<sp/>is<sp/>configured<sp/>and<sp/>flags<sp/>system<sp/>dependencies<sp/>(e.g.<sp/>IOs,<sp/>power,</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>etc.)<sp/>by<sp/>calling<sp/>#SDIO_open().</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>SDWFF3<sp/>driver<sp/>makes<sp/>use<sp/>of<sp/>DMA<sp/>in<sp/>order<sp/>to<sp/>optimize<sp/>throughput.<sp/>This<sp/>is</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>handled<sp/>directly<sp/>by<sp/>the<sp/>SDIOWFF3<sp/>driver,<sp/>so<sp/>the<sp/>application<sp/>should<sp/>never<sp/>make</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>any<sp/>calls<sp/>directly<sp/>to<sp/>the<sp/>DMAWFF3.h<sp/>driver.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>After<sp/>SDIOWFF3<sp/>HW<sp/>IP<sp/>initialized,<sp/>SDIO<sp/>peripheral<sp/>must<sp/>be<sp/>initialized<sp/>by<sp/>SDIO</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>controller<sp/>before<sp/>read<sp/>and<sp/>write.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>It<sp/>is<sp/>recommended<sp/>to<sp/>check<sp/>with<sp/>#SDIOWFF3_isSdioInitialized()<sp/>if<sp/>the<sp/>host</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>already<sp/>initialized<sp/>the<sp/>peripheral.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>note:<sp/>The<sp/>driver<sp/>will<sp/>indicate<sp/>to<sp/>the<sp/>application<sp/>if<sp/>the<sp/>SDIO</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>peripheral<sp/>is<sp/>initialized,<sp/>using<sp/>callback<sp/>function<sp/>that<sp/>define</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>Parameters<sp/>of<sp/>#SDIO_open().</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>After<sp/>SDIOWFF3<sp/>operation<sp/>has<sp/>ended:</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Release<sp/>system<sp/>dependencies<sp/>for<sp/>SDIO<sp/>by<sp/>calling<sp/>#SDIO_close().</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>The<sp/>SDIOWFF3.h<sp/>driver<sp/>is<sp/>setting<sp/>a<sp/>power<sp/>constraint<sp/>during<sp/>transfers<sp/>to</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>keep<sp/>the<sp/>device<sp/>out<sp/>of<sp/>sleep.<sp/>When<sp/>the<sp/>transfer<sp/>has<sp/>finished,<sp/>the<sp/>power</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>constraint<sp/>is<sp/>released.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Data<sp/>Frames<sp/>#</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3<sp/>data<sp/>frames<sp/>is<sp/>fixed<sp/>on<sp/>32-bits<sp/>(4-bytes)</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Transfer<sp/>Size<sp/>Limit<sp/>#</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>DMA<sp/>controller<sp/>only<sp/>supports<sp/>data<sp/>transfers<sp/>of<sp/>up<sp/>to<sp/>16383<sp/>bytes.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>A<sp/>transfer<sp/>with<sp/>more<sp/>than<sp/>16383<sp/>bytes<sp/>will<sp/>be<sp/>transmitted/received<sp/>in</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>multiple<sp/>16383<sp/>sized<sp/>portions<sp/>until<sp/>all<sp/>data<sp/>has<sp/>been<sp/>transmitted/received.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>#<sp/>Supported<sp/>Functions<sp/>#</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>API<sp/>function<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>------------------------------<sp/>|------------------------------------------------------------</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>#SDIO_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>This<sp/>function<sp/>initializes<sp/>the<sp/>SDIO<sp/>driver</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>#SDIO_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Function<sp/>to<sp/>open<sp/>the<sp/>SDIO<sp/>peripheral<sp/>with<sp/>the<sp/>parameters<sp/>specified</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>#SDIO_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Function<sp/>to<sp/>close<sp/>a<sp/>SDIO<sp/>peripheral</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>#SDIO_write()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Function<sp/>that<sp/>writes<sp/>data<sp/>to<sp/>Tx<sp/>FIFO</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>#SDIO_read()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Function<sp/>that<sp/>reads<sp/>the<sp/>transmitted<sp/>data<sp/>from<sp/>Rx<sp/>FIFO</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>#SDIOWFF3_isSdioInitialized()<sp/><sp/>|<sp/>Check<sp/>if<sp/>SDIO<sp/>host<sp/>init<sp/>SDIO<sp/>peripheral</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>#SDIO<sp/>Header#</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>To<sp/>provide<sp/>transaction<sp/>parameters<sp/>(such<sp/>as:<sp/>Direction,<sp/>number<sp/>of<sp/>bytes<sp/>etc.)</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>Host<sp/>SDIO<sp/>must<sp/>send<sp/>header<sp/>on<sp/>the<sp/>data<sp/>line.</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>The<sp/>header<sp/>length<sp/>must<sp/>be<sp/>divided<sp/>by<sp/>4<sp/>bytes.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>Threshold<sp/>on<sp/>the<sp/>Rx<sp/>FIFO<sp/>inside<sp/>SDIO<sp/>peripheral,<sp/>could<sp/>generate<sp/>an</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>IRQ<sp/>to<sp/>indicate<sp/>that<sp/>the<sp/>host<sp/>sent<sp/>a<sp/>header.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/>Once<sp/>the<sp/>threshold<sp/>IRQ<sp/>rose,<sp/>application<sp/>should<sp/>read<sp/>the<sp/>header.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>note:<sp/>SDIOWFF3<sp/>doesn&apos;t<sp/>familiar<sp/>with<sp/>the<sp/>header<sp/>protocol.</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>**Important**</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>With<sp/>getting<sp/>a<sp/>new<sp/>header<sp/>the<sp/>driver<sp/>mask<sp/>the<sp/>threshold<sp/>IRQ.</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>The<sp/>masking<sp/>will<sp/>be<sp/>removed<sp/>in<sp/>the<sp/>end<sp/>of<sp/>#SDIO_read().</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>header<sp/>define<sp/>writing<sp/>from<sp/>the<sp/>host<sp/>to<sp/>peripheral<sp/>then<sp/>the<sp/>masking</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>will<sp/>be<sp/>removed<sp/>by<sp/>#SDIO_read()</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>#<sp/>SDIO<sp/>callback<sp/>Function<sp/>#</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>With<sp/>using<sp/>#SDIO_open(),<sp/>the<sp/>application<sp/>must<sp/>provide<sp/>a<sp/>pointer<sp/>to<sp/>a</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>call-back<sp/>function.</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>The<sp/>driver<sp/>will<sp/>call<sp/>the<sp/>function<sp/>from<sp/>IRQ<sp/>function,<sp/>the<sp/>implementation<sp/>of</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>the<sp/>function<sp/>must<sp/>be<sp/>shortest<sp/>as<sp/>possible<sp/>SDIOWFF3<sp/>can<sp/>indicate<sp/>the</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>application<sp/>about<sp/>various<sp/>events:</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/>Event<sp/>enumeration<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|IDX|<sp/>Description</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/>--------------------------<sp/>|---|------------------------------------------------------------</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_DATA_IN_RX_FIFO<sp/><sp/><sp/>|<sp/>1<sp/>|<sp/>Received<sp/>new<sp/>SDIO<sp/>header</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_CARD_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>2<sp/>|<sp/>SDIO<sp/>host<sp/>initialized<sp/>SDIO<sp/>peripheral</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_CARD_DEINIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>3<sp/>|<sp/>SDIO<sp/>host<sp/>reset<sp/>SDIO<sp/>peripheral</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_RX_CRC_ERROR<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>4<sp/>|<sp/>Received<sp/>command<sp/>or<sp/>data<sp/>from<sp/>host<sp/>with<sp/>CRC<sp/>error</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_RX_BUFF_OVERRUN<sp/><sp/><sp/>|<sp/>5<sp/>|<sp/>Overrun<sp/>error<sp/>on<sp/>Rx<sp/>FIFO</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_RX_BUFF_UNDERRUN<sp/><sp/>|<sp/>6<sp/>|<sp/>Underrun<sp/>error<sp/>on<sp/>Rx<sp/>FIFO</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_TX_BUFF_OVERRUN<sp/><sp/><sp/>|<sp/>7<sp/>|<sp/>Overrun<sp/>error<sp/>on<sp/>Tx<sp/>FIFO</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_TX_BUFF_UNDERRUN<sp/><sp/>|<sp/>8<sp/>|<sp/>Underrun<sp/>error<sp/>on<sp/>Tx<sp/>FIFO</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_HOST_WRONG_ACCESS<sp/>|<sp/>9<sp/>|<sp/>Host<sp/>tried<sp/>to<sp/>access<sp/>to<sp/>wrong<sp/>address</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_HOST_SENT_MSG<sp/><sp/>|10<sp/>|<sp/>Host<sp/>sent<sp/>a<sp/>new<sp/>message</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>#<sp/>Sys-Config<sp/>#</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>The<sp/>output<sp/>of<sp/>the<sp/>sysconfig<sp/>will<sp/>supply<sp/>#SDIO_Config,<sp/>#SDIOWFF3_Object<sp/>and<sp/>#SDIOWFF3_HwAttrs</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>for<sp/>the<sp/>driver<sp/>usage.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>A<sp/>sample<sp/>#SDIOWFF3_HwAttrs<sp/>structure<sp/>is<sp/>shown<sp/>below:</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>SDIOWFF3_HwAttrs<sp/>SDIOWFF3_hwAttrs[CONFIG_SDIO_COUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.FN0baseAddr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDIO_CORE_BASE,</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.FN1baseAddr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SDIO_CARD_FN1_BASE,</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_SDIO_CARD_IRQ_REQ,</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.intPriority<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(~0),</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.powerID<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>PowerWFF3_PERIPH_SDIO,</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.rxDmaChannel<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.txDmaChannel<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.headerLen<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.clkPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>12,</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.clkPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>19,</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.cmdPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>13,</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.cmdPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>19,</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data0Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>33,</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data0PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>30,</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data1Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>32,</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data1PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>30,</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data2Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>31,</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data2PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>30,</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data3Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.data3PinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>19,</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.irqPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>17,</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>.irqPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>17</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*};</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/><sp/>function<sp/>scratch</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/>void<sp/>SDIOWFF3_callBack(SDIO_Handle<sp/>handle,<sp/>uint8_t<sp/>eventIDX,<sp/>uint32_t<sp/>*transHeader,<sp/>uint32_t<sp/>headerLen)</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>if(eventIDX<sp/>==<sp/>SSDIOWFF3_DATA_IN_RX_FIFO</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>else<sp/>if(eventIDX<sp/>==<sp/>SDIOWFF3_CARD_INIT)</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>else<sp/>if(eventIDX<sp/>==<sp/>SDIOWFF3_CRC_ERROR)</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*---------------------------------------------------------------------*</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/>An<sp/>example<sp/>for<sp/>using<sp/>SDIOWFF3<sp/>driver<sp/>correctly<sp/>on<sp/>Wi-Fi<sp/>F3<sp/>devices</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*---------------------------------------------------------------------*</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/>Firstly<sp/>the<sp/>application<sp/>must<sp/>generate<sp/>a<sp/>SDIOWFF3_Param<sp/>struct<sp/>and<sp/>define<sp/>the<sp/>callback<sp/>function.</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/>//Variable<sp/>declaration<sp/>for<sp/>driver<sp/>usage<sp/>-<sp/>can<sp/>be<sp/>declare<sp/>with<sp/>any<sp/>name</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_Param<sp/>SDIOWFF3_param;</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/>//Initiate<sp/>SDWFF3_Param</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/>SDIOWFF3_param.SDIOWFF3_CallbackFxn<sp/>=<sp/>SDIOWFF3_callBack;</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/>//To<sp/>start<sp/>using<sp/>SDIO<sp/>driver,<sp/>the<sp/>driver<sp/>must<sp/>be<sp/>initialized</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/><sp/>//SDIO_config<sp/>variable<sp/>is<sp/>generated<sp/>as<sp/>output<sp/>by<sp/>SysConfig</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/><sp/>SDIO_init(&amp;SDIO_config);</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/><sp/>//Then<sp/>the<sp/>SDIO<sp/>peripheral<sp/>must<sp/>be<sp/>open<sp/>using<sp/>*SDIOWFF3_param</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>ret<sp/>=<sp/>SDIO_open(0,<sp/>(SDIO_Params<sp/>*)&amp;SDIOWFF3_param);</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_sdio_SDIOWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_sdio_SDIOWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_types.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_sdio_card_fn1.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_sdio_core.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_memmap.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_iomux.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_ints.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_hwi_p_8h" kindref="compound">ti/drivers/dpl/HwiP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_clock_p_8h" kindref="compound">ti/drivers/dpl/ClockP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_d_i_o_8h" kindref="compound">ti/drivers/SDIO.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" kindref="member">SDIOWFF3EventCB</ref>)(<ref refid="struct_s_d_i_o___config__" kindref="compound">SDIO_Handle</ref><sp/>handle,<sp/>uint8_t<sp/>eventIDX);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a60f5ad0c39e13d4a2cf8c0ecdf4a3b7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a60f5ad0c39e13d4a2cf8c0ecdf4a3b7f" kindref="member">SDIOWFF3_DATA_IN_RX_FIFO</ref><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="236" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3abc7b01a773760a4ca15e157e4bc942b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3abc7b01a773760a4ca15e157e4bc942b5" kindref="member">SDIOWFF3_CARD_INIT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="237" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a9c538e4b928b38aa4440f802e9d8b96b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a9c538e4b928b38aa4440f802e9d8b96b" kindref="member">SDIOWFF3_CARD_DEINIT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="238" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a00786bda0aa864c0b0de9d1fa5e6d58c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a00786bda0aa864c0b0de9d1fa5e6d58c" kindref="member">SDIOWFF3_RX_CRC_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="239" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a0d5565bfec09b0a02c81ba6c0ee00f1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a0d5565bfec09b0a02c81ba6c0ee00f1e" kindref="member">SDIOWFF3_RX_BUFF_OVERRUN</ref><sp/><sp/><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="240" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3aff0aa79bd3f71316cb62d06fe5607106" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3aff0aa79bd3f71316cb62d06fe5607106" kindref="member">SDIOWFF3_RX_BUFF_UNDERRUN</ref><sp/><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="241" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a41911b88c2487501781dfc61c76db645" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a41911b88c2487501781dfc61c76db645" kindref="member">SDIOWFF3_TX_BUFF_OVERRUN</ref><sp/><sp/><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="242" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a095ef7c388cecf79839e2202085e4e8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a095ef7c388cecf79839e2202085e4e8e" kindref="member">SDIOWFF3_TX_BUFF_UNDERRUN</ref><sp/><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="243" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a7330fad2f78aa22fee5773643dbe0c73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a7330fad2f78aa22fee5773643dbe0c73" kindref="member">SDIOWFF3_HOST_WRONG_ACCESS</ref><sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="244" refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a4ee317bee7ecb494aade2cc931a186ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3a4ee317bee7ecb494aade2cc931a186ae" kindref="member">SDIOWFF3_HOST_SENT_MSG</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>10</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}<sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a6b2e5b14a77f913e832930e5bfcfd1b3" kindref="member">SDIOWFF_eventIDX</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250" refid="struct_s_d_i_o_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="253" refid="struct_s_d_i_o_w_f_f3___object_1a7ba6a5c338c71ec40cdfde7ebe8a607a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_i_o_w_f_f3___object_1a7ba6a5c338c71ec40cdfde7ebe8a607a" kindref="member">isInit</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="struct_s_d_i_o_w_f_f3___object_1a23c8a88fb04fb9ff29af5eefb32f0372" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_i_o_w_f_f3___object_1a23c8a88fb04fb9ff29af5eefb32f0372" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="struct_s_d_i_o_w_f_f3___object_1aa68615e8579f9247458d4771cee66ab6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_i_o_w_f_f3___object_1aa68615e8579f9247458d4771cee66ab6" kindref="member">cardInitiated</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}<sp/><ref refid="struct_s_d_i_o_w_f_f3___object" kindref="compound">SDIOWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="struct_s_d_i_o_w_f_f3___hw_attrs" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="266" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab4bd9b61bc93d08eaced82553275361b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab4bd9b61bc93d08eaced82553275361b" kindref="member">FN0baseAddr</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab43c40c4a3f607ce576e60a3921f3a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab43c40c4a3f607ce576e60a3921f3a73" kindref="member">FN1baseAddr</ref>;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae6d225188fa9ddc459fdcf9cd3217c39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae6d225188fa9ddc459fdcf9cd3217c39" kindref="member">intNum</ref>;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a877824dbae19eaba73192ae3434d1d19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a877824dbae19eaba73192ae3434d1d19" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a23f43b1927c9af2006c5e315fb4be5e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a23f43b1927c9af2006c5e315fb4be5e2" kindref="member">powerID</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1af584b79d5507d3b5d019a2f8d4301ecc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1af584b79d5507d3b5d019a2f8d4301ecc" kindref="member">rxDmaChannel</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a497d38cb1d293715e1e209a77565fcf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a497d38cb1d293715e1e209a77565fcf1" kindref="member">txDmaChannel</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a424cdd84d41fa866850c359fea1198d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a424cdd84d41fa866850c359fea1198d4" kindref="member">thresholdLen</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a21dc56a841ff46a5fa87cf73261ec536" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a21dc56a841ff46a5fa87cf73261ec536" kindref="member">clkPin</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a804ade90bfbb7e9fda6205c75d043967" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a804ade90bfbb7e9fda6205c75d043967" kindref="member">clkPinMux</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8d1fe0c9a415bf9019519392a76fdbe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8d1fe0c9a415bf9019519392a76fdbe8" kindref="member">cmdPin</ref>;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa6a3ec9aec3c5562b7ba4f9ade001e1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa6a3ec9aec3c5562b7ba4f9ade001e1f" kindref="member">cmdPinMux</ref>;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ad056bd1bd04ee055e37b58a49e203535" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ad056bd1bd04ee055e37b58a49e203535" kindref="member">data0Pin</ref>;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a1b112b4a07e62c9549472b49d97f1a32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a1b112b4a07e62c9549472b49d97f1a32" kindref="member">data0PinMux</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1abd35bf651f55622fb11c2b20464f8503" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1abd35bf651f55622fb11c2b20464f8503" kindref="member">data1Pin</ref>;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8a985d38caa4a70a19513e4bc38cc695" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8a985d38caa4a70a19513e4bc38cc695" kindref="member">data1PinMux</ref>;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ac1353c7c75cfd25cecb5f26c22e7562d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ac1353c7c75cfd25cecb5f26c22e7562d" kindref="member">data2Pin</ref>;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a06e569bce8424b65ebd956c36a6fcfff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a06e569bce8424b65ebd956c36a6fcfff" kindref="member">data2PinMux</ref>;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa46d080f646a97433dbb949a7358cd11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa46d080f646a97433dbb949a7358cd11" kindref="member">data3Pin</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae50f50743051012cafeb2ab18dc761b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae50f50743051012cafeb2ab18dc761b0" kindref="member">data3PinMux</ref>;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a0965aac1b3317d1820a439ea52903b66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a0965aac1b3317d1820a439ea52903b66" kindref="member">irqPin</ref>;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a44422bd335ca974c1dccb4f3db7bda76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a44422bd335ca974c1dccb4f3db7bda76" kindref="member">irqPinMux</ref>;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a02e3d176d4b1cc37d15119bc39e5b25d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_hwi_p___params" kindref="compound">HwiP_Params</ref><sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a02e3d176d4b1cc37d15119bc39e5b25d" kindref="member">hwiPrms</ref>;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a560c4a6df37b27211fe74a28a823104d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref><sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a560c4a6df37b27211fe74a28a823104d" kindref="member">hwiStruct</ref>;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338" refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a97c4b311bb5b40fb4f5ff3afd6d2990b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" kindref="member">SDIOWFF3EventCB</ref><sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a97c4b311bb5b40fb4f5ff3afd6d2990b" kindref="member">SDIOWFF3_CBFunction</ref>;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal">}<sp/><ref refid="struct_s_d_i_o_w_f_f3___hw_attrs" kindref="compound">SDIOWFF3_HwAttrs</ref>;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342" refid="struct_s_d_i_o_w_f_f3___param" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="345" refid="struct_s_d_i_o_w_f_f3___param_1a5d55c4328270a924e368267ed558bdd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" kindref="member">SDIOWFF3EventCB</ref><sp/><ref refid="struct_s_d_i_o_w_f_f3___param_1a5d55c4328270a924e368267ed558bdd4" kindref="member">SDIOWFF3_CallbackFxn</ref>;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal">}<sp/><ref refid="struct_s_d_i_o_w_f_f3___param" kindref="compound">SDIOWFF3_Param</ref>;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_s_d_i_o_w_f_f3_8h_1a4d35ff3c94d1eddccba803ed1f9baf77" kindref="member">SDIOWFF3_isSdioInitialized</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_sdio_SDIOWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/sdio/SDIOWFF3.h"/>
+  </compounddef>
+</doxygen>

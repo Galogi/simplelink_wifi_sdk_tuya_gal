@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bluetooth Low Energy User’s Guide &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview and Features" href="cc35xx-overview.html" />
+    <link rel="prev" title="Power Management" href="../wifi/cc35xx-power-management.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble cc35xx-ble";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bluetooth Low Energy User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Bluetooth Low Energy User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bluetooth-low-energy-user-s-guide">
+<span id="sec-ble"></span><h1>Bluetooth Low Energy User’s Guide<a class="headerlink" href="#bluetooth-low-energy-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the BLE operations available on the SimpleLink
+Wireless MCU family CC35xx from a general software developer’s point
+of view. Additional information and resources are also provided for
+further development.</p>
+<p class="rubric">Table of contents</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html#host-component">Host Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html#apis">APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#ble-application-structure"><strong>BLE Application Structure</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#initialization"><strong>Initialization</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#advertising"><strong>Advertising</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#scanning"><strong>Scanning</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#connecting-and-pairing"><strong>Connecting and Pairing</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gap.html">Generic Access Profile (GAP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gap-roles-1">GAP Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gap-advertiser">GAP Advertiser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gap-scanner">GAP Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html#gap-initiator">GAP Initiator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#gatt-services-and-profile">GATT Services and Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#gatt-server">GATT Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html#gatt-client">GATT Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phy.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html#le-2m-phy">LE 2M PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html#le-coded-phy">LE Coded PHY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html#phy-comparison">PHY Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#functional-overview">Functional Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#numerical-notation-conventions">Numerical Notation Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-overview">HCI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-interface-protocol">HCI Interface Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-commands">HCI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-events">HCI Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#vendor-specific-commands">Vendor Specific Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#vendor-specific-events">Vendor Specific Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#request-and-response-tunneling">Request and Response Tunneling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-extension-commands">HCI Extension Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html#hci-extension-events">HCI Extension Events</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-overview.html" class="btn btn-neutral float-right" title="Overview and Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../wifi/cc35xx-power-management.html" class="btn btn-neutral float-left" title="Power Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

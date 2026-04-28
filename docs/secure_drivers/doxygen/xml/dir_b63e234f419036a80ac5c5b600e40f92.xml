@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_b63e234f419036a80ac5c5b600e40f92" kind="dir">
+    <compoundname>psa</compoundname>
+    <innerfile refid="ti__psa__crypto_8h">ti_psa_crypto.h</innerfile>
+    <innerfile refid="ti__psa__crypto__aead_8h">ti_psa_crypto_aead.h</innerfile>
+    <innerfile refid="ti__psa__crypto__cipher_8h">ti_psa_crypto_cipher.h</innerfile>
+    <innerfile refid="ti__psa__crypto__hash_8h">ti_psa_crypto_hash.h</innerfile>
+    <innerfile refid="ti__psa__crypto__helper_8h">ti_psa_crypto_helper.h</innerfile>
+    <innerfile refid="ti__psa__crypto__mac_8h">ti_psa_crypto_mac.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/psa/"/>
+  </compounddef>
+</doxygen>

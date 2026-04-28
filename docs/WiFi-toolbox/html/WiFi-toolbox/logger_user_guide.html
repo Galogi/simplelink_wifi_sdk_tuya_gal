@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logger User Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="INI Composer User Guide" href="ini_composer_user_guide.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox logger_user_guide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logger User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-setup">Software Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#online-parser">Online Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#offline-parser">Offline Parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raw-recorder">Raw Recorder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Logger User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="logger-user-guide">
+<h1>Logger User Guide<a class="headerlink" href="#logger-user-guide" title="Permalink to this headline">¶</a></h1>
+<p>The Logger tool is used to collect logs from the device while it is operational. This is useful for understanding the behavior of the device should an operational fault occur.</p>
+<div class="figure align-center" id="figure-1">
+<span id="logger-tool-page"></span><a class="reference internal image-reference" href="../_images/logger_intro.png"><img alt="logger Page" src="../_images/logger_intro.png" style="width: 670.5999999999999px; height: 334.59999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Figure 22 </span><span class="caption-text">Logger Tool Page</span></p>
+</div>
+<div class="section" id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Permalink to this headline">¶</a></h2>
+<p>Hardware setup for Logger tool is simple. Connect a USB-UART transceiver, like a FTDI chip, or FTDI-based serial cable to the Windows machine.
+Use wires to connect the <code class="docutils literal notranslate"><span class="pre">RX</span></code> pin of the serial cable to the <code class="docutils literal notranslate"><span class="pre">LOGGER</span></code> pin on the CC35xx/CC33xx Evaluation Board (i.e. BP-CC3351 uses P2.34).
+Lastly, connect <code class="docutils literal notranslate"><span class="pre">GND</span></code> on the serial cable to <code class="docutils literal notranslate"><span class="pre">GND</span></code> of the board. A table of the connections is shown below.</p>
+<p>For visual guidance on connecting to the Logger of the device on your hardware refer to the <a class="reference external" href="../cc33xx/BP-CC33X1_HW_UserGuide.html">BP-CC33X1 Hardware User Guide</a> or <a class="reference external" href="../cc33xx/M2-CC33X1_HW_UserGuide.html">M2-CC33X1 Hardware User Guide</a>.</p>
+</div>
+<div class="section" id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="online-parser">
+<h3>Online Parser<a class="headerlink" href="#online-parser" title="Permalink to this headline">¶</a></h3>
+<p>The Logger tool uses Wireshark as the GUI and must be installed. Wireshark can be installed from <a class="reference external" href="https://www.wireshark.org/download.html">Wireshark.org</a>.</p>
+<p>Now, follow these steps to get started collecting logs:</p>
+<ol class="arabic">
+<li><p class="first">Start the Wi-Fi toolbox by double clicking on <code class="docutils literal notranslate"><span class="pre">simplelink-wifi-toolbox.exe</span></code> (refer to <a class="reference external" href="simplelink_wifi_toolbox_startup_guide.html">Wi-Fi Toolbox Startup User Guide</a> ).</p>
+</li>
+<li><p class="first">A web browser should automatically open. If it doesn’t, navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:7777/</span></code> in a browser.</p>
+</li>
+<li><p class="first">Start Logger Tool by clicking the <code class="docutils literal notranslate"><span class="pre">Logger</span></code> button on the Wireless Toolbox homepage.</p>
+</li>
+<li><p class="first">If this is the first time starting Logger, the <code class="docutils literal notranslate"><span class="pre">wLogger_dissector</span></code> lua script needs to be installed as a WireShark plugin.
+After pressing the <code class="docutils literal notranslate"><span class="pre">Start</span></code> button on logger a popup windown will appear with instructions.
+Follow the directions on screen, and be sure to open a Command Prompt line with Administrator privilege.</p>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/logger_dissector.png"><img alt="../_images/logger_dissector.png" src="../_images/logger_dissector.png" style="width: 657.65px; height: 298.9px;" /></a>
+<p class="caption"><span class="caption-number">Figure 23 </span><span class="caption-text">Logger Dissector Popup Window</span></p>
+</div>
+</li>
+<li><p class="first">Find the COM port of the serial cable in <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Manager</span></code> on the Windows PC.</p>
+</li>
+<li><p class="first">In the Logger Tool page, select the intended Device Part Number in the first drop down, and select the COM port of the serial cable. The log path is where the file will be saved and can be left as the default. Click <code class="docutils literal notranslate"><span class="pre">Start</span></code> (refer to <a class="reference internal" href="#logger-tool-page"><span class="std std-numref">Figure 22</span></a>).</p>
+</li>
+<li><p class="first">Wireshark should now start and logs will be collected from the CC33xx (refer to <a class="reference internal" href="#log-capture-in-wireshark"><span class="std std-numref">Figure 24</span></a>).</p>
+</li>
+</ol>
+<div class="figure align-center" id="figure-3">
+<span id="log-capture-in-wireshark"></span><a class="reference internal image-reference" href="../_images/wireshark.png"><img alt="../_images/wireshark.png" src="../_images/wireshark.png" style="width: 1321.0px; height: 545.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 24 </span><span class="caption-text">CC33xx LOG Capture in Wireshark</span></p>
+</div>
+</div>
+<div class="section" id="offline-parser">
+<h3>Offline Parser<a class="headerlink" href="#offline-parser" title="Permalink to this headline">¶</a></h3>
+<p>The Offline Parser will convert a binary dump log from the raw recorder into a readable csv file.</p>
+<ol class="arabic simple">
+<li>Choose the device or parser file to be used (Depending on the device being used a different <code class="docutils literal notranslate"><span class="pre">logger.bin</span></code> parser file will be used).</li>
+<li>Choose log.bin dump file that was generated from raw recorder to convert.</li>
+<li>Choose the log path in which the converted csv file will be saved.</li>
+</ol>
+<div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/logger_offline.png"><img alt="../_images/logger_offline.png" src="../_images/logger_offline.png" style="width: 876.0px; height: 483.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 25 </span><span class="caption-text">Offline Parser</span></p>
+</div>
+</div>
+<div class="section" id="raw-recorder">
+<h3>Raw Recorder<a class="headerlink" href="#raw-recorder" title="Permalink to this headline">¶</a></h3>
+<p>The Raw Recording will save the logs as a binary dump without any parsing done. Parsing the binary can be done later using the offline parser</p>
+<ol class="arabic simple">
+<li>Find the COM port of the serial cable in <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Manager</span></code> on the Windows PC.</li>
+<li>In the Logger Tool page, select the intended Device Part Number in the first drop down, and select the COM port of the serial cable.</li>
+<li>Choose where the binary file will be saved to.</li>
+<li>Choose the size limit of the binary file. The reccomended size is 12MB.</li>
+</ol>
+<div class="figure align-center" id="figure-5">
+<a class="reference internal image-reference" href="../_images/logger_raw.png"><img alt="../_images/logger_raw.png" src="../_images/logger_raw.png" style="width: 856.0px; height: 491.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 26 </span><span class="caption-text">Raw Recorder</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="ini_composer_user_guide.html" class="btn btn-neutral float-left" title="INI Composer User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

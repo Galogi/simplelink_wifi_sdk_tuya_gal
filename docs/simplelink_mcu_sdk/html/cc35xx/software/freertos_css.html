@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using FreeRTOS with CCS &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx software freertos_css";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using FreeRTOS with CCS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-freertos-with-ccs">
+<h1>Using FreeRTOS with CCS<a class="headerlink" href="#using-freertos-with-ccs" title="Permalink to this headline">¶</a></h1>
+<p>The FreeRTOS Kernel is configured through the SysConfig tool. This is used to enable and disable modules as well as configure device-specific settings. SysConfig will generate three files, and contribute to one more as part of the application project:</p>
+<ol class="arabic simple">
+<li><cite>ti_freertos_config.c</cite> : Contains the source code that is to be compiled for FreeRTOS. This is done by inserting preprocessor statements to <cite>#include</cite> the C files of all selected modules. The file
+also contains several hooks used to enable and disable FreeRTOS features such as Queue registration in TI code.</li>
+<li><cite>ti_freertos_portable_config.c</cite> : This file contains all C code for the application’s architecture and toolchain specific port.</li>
+<li><cite>ti_utils_build_linker.cmd.genlibs</cite> : The ports of some architecture and toolchain combinations use assembly files. We compile these into prebuilt libraries. This is because we cannot <cite>#include</cite> assembly files safely. These libraries are then added to the linker invocation through an entry in the ti_utils_build_linker.cmd.genlibs file.</li>
+</ol>
+<p>#.  <cite>FreeRTOSConfig.h</cite> : This is the standard FreeRTOS configuration header file that your application will typically <cite>#include</cite>. The entries in this file will change depending on the device and settings selected in SysConfig. You no longer need to edit FreeRTOSConfig.h
+yourself. SysConfig will maintain it for you.
+If you would like to change a FreeRTOS feature or setting that is not exposed in SysConfig, you can remove this file from SysConfig and maintain it yourself.</p>
+<div class="section" id="changing-the-freertos-configuration">
+<h2>Changing the FreeRTOS Configuration<a class="headerlink" href="#changing-the-freertos-configuration" title="Permalink to this headline">¶</a></h2>
+<p>As with all SysConfig modules, you can either edit their configuration via the SysConfig GUI or by editing the .syscfg file directly in a text editor.</p>
+<p>Since the FreeRTOS configuration is stored in a project’s .syscfg file, each project has its own FreeRTOS configuration. Changing one project’s configuration will not impact another project’s configuration.</p>
+<p>Why might you want to change the default FreeRTOS configuration?</p>
+<blockquote>
+<div><ul class="simple">
+<li>Reduce the code footprint. For example, you might decrease the heap size or disable Software Timers.</li>
+<li>Enable debug options. For example, you might add Assert checking to the configuration.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

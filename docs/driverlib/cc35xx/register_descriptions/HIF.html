@@ -1,0 +1,2421 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>HIF</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">HIF</A></H2>
+<P>This section provides information on the HIF Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+<P>HOST INTERFACE REGISTERS</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">HIF Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="HIF"><A href="_.html"> </A>:HIF Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_ICWRFIFO">ICWRFIFO</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_ICRDFIFO">ICRDFIFO</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0xEEEE EEEE</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_MOD">MOD</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_FIFOSTA">FIFOSTA</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0010 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_UNDER">UNDER</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_OVER">OVER</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_RST">RST</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_FSMSTA">FSMSTA</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_FIFOTH">FIFOTH</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0010 010F</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_IRQ">IRQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0001</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_IM">IM</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 003F</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NABRDY">NABRDY</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_CR">CR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0050</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_RXAON">RXAON</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0054</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_RXSTALAT">RXSTALAT</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0058</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NABHNTSTA">NABHNTSTA</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 005C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NAB">NAB</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0060</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NAB_SET">NAB_SET</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0064</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NAB_CLR">NAB_CLR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0068</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_HNTSTACLR">HNTSTACLR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 006C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NABHNT">NABHNT</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0070</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HIF_NABHNTCLR">NABHNTCLR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0074</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">HIF Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">HIF Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:HIF Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="HIF_ICWRFIFO"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:ICWRFIFO</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>INTERCONNECT WRITE FIFO<BR><BR>Host interface FIFO</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WORD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>WORD<BR>write opt<BR>IC to NAB write word</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_ICRDFIFO"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:ICRDFIFO</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>INTERCONNECT READ FIFO<BR><BR>Host interface FIFO</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WORD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>WORD<BR>read clear<BR>NAB to IC read word</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xEEEE EEEE</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_MOD"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:MOD</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>MODE<BR><BR>HIF Mode Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_MOD_CFG</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>CONFIG<BR>&quot;00&quot; - Direct Access WR<BR>&quot;01&quot; - DMA WR<BR>&quot;10&quot; - Direct Access RD<BR>&quot;11&quot; - DMA RD</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_FIFOSTA"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:FIFOSTA</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>HIF FIFO Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:22</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FULL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>FULL</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EMP</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>EMPTY</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>19:13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WRPTR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>WRITE POINTER</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RDPTR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>READ POINTER</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_UNDER"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:UNDER</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>UNDERFLOW<BR><BR>clear on read. <BR>H/W latch underflow and s/w clears it by reading.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>UNDER_RDCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>STATUS<BR>read clear<BR>FIFO Underflow - RD when FIFO is empty.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_OVER"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:OVER</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>OVERFLOW<BR><BR>clear on read. <BR>H/W latch overflow and s/w clears it by reading.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OVER_RDCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>STATUS<BR>read clear <BR>FIFO Overflow - WR when FIFO is full.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_RST"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:RST</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RESET<BR><BR>HIF FIFO set RESET</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FIFO</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>FIFO<BR>write clear<BR>Setting this bit clears the FIFO Controls.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_FSMSTA"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:FSMSTA</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>FSM STATUS</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:19</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>18:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RDNAB</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>READ NAB</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WRNAB</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>WRITE NAB</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HANDLER</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>HANDLER<BR> IDLE                            = 3'b000  <BR> DMA_BL_WR               = 3'b101 <BR> DMA_HOLD_WR          = 3'b110  <BR> DIRECT_ACCESS_WR  = 3'b111  <BR> NAB_WR                     = 3'b001  <BR> DMA_BL_RD               = 3'b010  <BR> DIRECT_ACCESS_RD  = 3'b011 ;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_FIFOTH"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:FIFOTH</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>HIF FIFO Threshold Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:29</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>28:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SZOCC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SIZE OCCUPIED<BR>indication of how many words have been written to FIFO<BR>0 - nothing was written<BR>1 - 1 word have been written<BR>...<BR>16 - 16 words have been written</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SZAVAIL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SIZE AVAILABLE<BR>indication of free space left at FIFO<BR>0 - FIFO full<BR>1 - 1 word can be written<BR>...<BR>16 - 16 words can be written</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x10</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RDTHRHIT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>READ THRESHOLD HIT<BR>indication if the read threshold hit</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WRTHRNTHIT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>WRITE THRESHOLD NOT HIT<BR>indication if the write threshold not hit</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_FIFOTH</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>THRESHOLD<BR>Sets the HIF threshold:<BR>for TX (DMA to NAB)-<BR>0 - if there is room for 1 word the req to DMA will be send<BR>...<BR>15 - if there is room for 16 words the req to DMA will be send<BR>for RX (NAB to DMA)-<BR>0 - if FIFO is occupied by at lest 1 word, the req to DMA will be send<BR>...<BR>15 - if FIFO is occupied by at lest 16 word, the req to DMA will be send</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xF</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_IRQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:IRQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>IRQ</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RIS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>RIS<BR>read clear<BR>bit[0] - empty<BR>bit[1] - full<BR>bit[2] - underflow<BR>bit[3] - overflow<BR>bit[4] - not empty with direct access read<BR>bit[5] - nab data receive done</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x01</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_IM"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:IM</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>IRQ MASK Config</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>STATUS<BR>bit[0] - empty<BR>bit[1] - full<BR>bit[2] - underflow<BR>bit[3] - overflow<BR>bit[4] - not empty with direct access read<BR>bit[5] - nab data receive done</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EVTBM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>EVENT BIT MASK<BR>'1' - Mask<BR>'0' - Do Not Mask<BR>bit[0] - empty<BR>bit[1] - full<BR>bit[2] - underflow<BR>bit[3] - overflow<BR>bit[4] - not empty with direct access read<BR>bit[5] - nab data receive done</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3F</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NABRDY"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NABRDY</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>NAB READY<BR><BR>HIF Mode Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FIFONEMPT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>NAB HOST FIFO NOT EMPTY<BR>indication when NAB FIFO not empty</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RCVDONEM2MIDL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>RECEIVE DONE AND M2M IDLE<BR>indication when NAB data recieve done and M2M FSM IDLE</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RCVDONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>RECEIVE DONE<BR>indication when NAB data recieve done</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>NABRDY_TO_RCV</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>TO RECEIVE<BR>indication when NAB is ready to receive data</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_CR"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:CR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0050</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>CORE<BR><BR>HIF Mode Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TMSTMP</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>TIMESTAMP</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_RXAON"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:RXAON</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0054</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RX AON</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>STATUS<BR>read clear<BR>This is not a regular clear-on-read register.<BR>A fresh status value from Rx sub system is being latch upon reading the register.<BR>The objective is for the device to have the last value the host has read</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_RXSTALAT"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:RXSTALAT</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0058</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RX STATUS LATCH</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXSTALAT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>VALUE<BR>Reflects the Rx status word current value (dynamic Read). <BR>and automatically latch the value in RXSTALAT_LATCHED.<BR>Usage:  SDIO Wrapper reads this location and send the read value toward the host.<BR>For bit field description refer to RXSTALAT.<BR>This register is valid only in BSD_BYPASS=1 (Osprey).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NABHNTSTA"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NABHNTSTA</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 005C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>NAB HINT STATUS</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BMVAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>BIT MASK VALUE<BR>Host interrupt status read register. non-intrusive read. Post mask (masked).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NAB"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NAB</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0060</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>NAB</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BMVAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>BIT MASK VALUE<BR>Read mask bitmap. <BR>Mask bit legend:<BR>'0' - do not mask the interrupt.<BR>'1' - Mask the related interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NAB_SET"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NAB_SET</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0064</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>HINT BIT MASK</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BMVAL_SET_WRCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>VALUE<BR>write clear<BR>Host interrupt mask register set<BR>Writing to this register will set to '1' the related interrupt mask bit.<BR>Mask bit legend:<BR>'0' - do not mask the interrupt.<BR>'1' - Mask the related interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NAB_CLR"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NAB_CLR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0068</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>HINT BIT MASK CLEAR</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BMVAL_CLR_WRCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>VALUE<BR>write clear<BR>Host interrupt mask register clear<BR>Writing to this register will clear the related interrupt mask bit.<BR>Mask bit legend:<BR>'0' - do not mask the interrupt.<BR>'1' - Mask the related interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_HNTSTACLR"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:HNTSTACLR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 006C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>HINT STATUS CLEAR</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>STATUS<BR>read clear <BR>Host interrupt status clear-on-read register<BR>Clears all bits of upon read.<BR>Usage: host reads the IRQ register which is automatically getting cleared by H/W<BR>Osprey Note: The endianness correction and word-size correction are done in SDIO(WSPI) H/W.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NABHNT"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NABHNT</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0070</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>NAB HINT</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SET</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SET <BR>write clear register<BR>Host interrupt set register</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HIF_NABHNTCLR"><A href="_.html"></A>:<A href="#Top_IPBTag">HIF</A>:NABHNTCLR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0074</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>NAB HINT CLEAR</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SET</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SET<BR>write clear register<BR>Host interrupt clear register</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

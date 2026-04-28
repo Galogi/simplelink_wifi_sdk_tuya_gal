@@ -1,0 +1,93 @@
+
+TI Drivers
+----------
+
+The SDK includes drivers for a number of peripherals. These drivers are provided in the
+`<SDK_INSTALL_DIR>/source/ti/drivers` directory. The driver examples show how to use these drivers.
+
+Some of the drivers are available only for certain target families. Some examples of drivers supported on several target families include GPIO, I2C, Power, SPI, UART, and Watchdog. There are many more. See the  [detailed reference information](../drivers/doxygen/html/index.html) for the complete list of TI Drivers for your target family along with full information about the APIs and configuration structures.
+
+Driver Framework
+^^^^^^^^^^^^^^^^
+
+TI drivers have a common framework for configuration and a set of APIs that all drivers implement. Applications interface with a TI driver using a top-level driver interface. This interface is configured via a set of data structures that specify one or more specific lower-level driver implementations. TI Drivers can be configured manually or using the SysConfig tool.
+
+TI drivers can be split into two categories: instance-based drivers and singleton drivers.
+
+Singleton drivers such as GPIO and Power only have a single instance for the entire application. They only need to be initialized with `Driver_init()` once and can then be called without the need for a handle.
+
+Instance based drivers support multiple instances of the same driver coexisting in the same application. These might each target their own hardware peripheral on the device such as UART or allow time-division multiplexed access to a single hardware peripheral by the driver. Such instance-based drivers support all the standard APIs given below.
+
+* `void Driver_init(void)`
+  - Initializes the driver. This function must be called only once and before any calls to the other driver APIs. Generally, this is done before the RTOS Kernel is started.
+* `void Driver_Params_init(Driver_Params *params)`
+  - Initializes the driver's parameter structure to default values. All instance-based drivers implement the Params structure. The Params structure is empty for some drivers.
+* `Driver_Handle Driver_open(uint_least8_t index, Driver_Params *params)`
+  - Opens the driver instance specified by the index with the params provided. If the params field is NULL, the driver uses default values. This function returns a handle that will be used by other driver APIs and should be saved. If there is an error opening the driver or the driver has already been opened, Driver_open() returns NULL.
+* `void Driver_close(Driver_Handle handle)`
+  - Closes the driver instance that was opened, specified by the driver handle returned during open. This function closes the driver immediately, without checking to see if the driver is currently in use. It is up to the application to determine when to call Driver_close() and to ensure it doesn't disrupt on-going driver activity.
+
+Drivers Porting Layer (DPL)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Drivers Porting Layer allows the TI drivers to work with any supported RTOS
+kernel.
+
+The TI Drivers use DPL APIs provided by various RTOS Kernels for clock,
+interrupt, mutex, semaphore, and other services. However, the DPL abstracts the
+RTOS kernel functionality used by the drivers so that the application is not
+dependent on any particular RTOS.
+
+Board Files
+^^^^^^^^^^^
+
+Unless you are using SysConfig, TI Driver examples contain a board-specific C file (and its companion header file). The filenames are
+`board.c` and `board.h`, where board is the name of the launchpad. All the TI Driver examples for a specific board use the same board files. These files are considered part of the example application, and you can modify them as needed.
+
+The board files perform board-specific configuration of the drivers provided by the SDK. For example, they typically configure the GPIO ports and pins and configure use of the board LEDs.
+
+SysConfig
+---------
+
+The SysConfig tool makes it easy to configure components like TI Drivers and device-specific components (such as the networking stack, EasyLink, and WiFi).
+
+For this release, SysConfig is used in the majority of the examples and is the recommended mechanism for configuring TI Drivers and device-specific components. Please note that SysConfig is not required though. A project can still use the previous board file approach. Please refer to the `rtos/<board>/drivers/empty_legacy` example to see this approach.
+
+You can choose to use SysConfig no matter what your choice is for the following:
+
+* Device: Supported for a range of SimpleLink devices and boards.
+* IDE: Supported for CCS Desktop, CCS Cloud, and as a standalone desktop tool
+* Compiler Toolchain: Supported for the TI and GCC toolchains.
+* RTOS: Supported for FreeRTOS
+
+This section focuses on configuring TI Drivers, since all devices support TI Drivers using a common configuration framework. For TI Drivers, the SysConfig tool generates source files--`ti_drivers_config.c` and `ti_drivers_config.h`--to be compiled and linked with the application during builds. Additional components, such as networking stacks, may be configurable using SysConfig for certain targets, and will cause additional source files to be generated. See the device-specific documentation for information about any additional components that SysConfig can be used to configure.
+
+.. figure:: ../resources/sysconfig_1.png
+   :align: center
+   :scale: 60
+
+As shown above, SysConfig provides descriptions and links to access reference documentation for the drivers and other modules you can configure.
+
+Besides the ease-of-use provided by SysConfig, the tool resolves conflicts on the fly. This ensures that you create a valid pin and TI Driver configuration. In addition, you can view diagrams of the pin configuration as you make changes.
+
+.. figure:: ../resources/sysconfig_3pins.png
+   :align: center
+   :scale: 60
+
+SysConfig settings are stored in a file called `<project>.syscfg`. Its output files are stored in a `syscfg` folder within the build folder. 
+
+.. figure:: ../resources/sysconfig_2.png
+   :align: center
+   :scale: 60 
+
+You open (with a simple double click) the `<project>.syscfg` file in SysConfig and modify it as needed. You can view the `ti_drivers_config.c` and `ti_drivers_config.h` file contents within SysConfig and see how configuration changes affect the generated code.
+
+When you save the `<project>.syscfg` file and build the project, the following actions occur:
+
+#. The `ti_drivers_config.c` and `ti_drivers_config.h` are generated from the `<project>.syscfg` file.
+#. The `ti_drivers_config.c` and `ti_drivers_config.h` are compiled to create a `ti_drivers_config.o` object file.
+#. The `ti_drivers_config.o` object is linked with the rest of the libraries to create the application.
+   
+Some users may choose to use SysConfig initially to generate the `ti_drivers_config.c`, `ti_drivers_config.h` (and other component configuration files) and then exclude the `*.syscfg` file from the build so that manual changes made to these files are not overwritten. Additionally user may want to add their custom board setup into SysConfig.
+
+Additional information for SysConfig can be found on http://www.ti.com/tool/sysconfig.

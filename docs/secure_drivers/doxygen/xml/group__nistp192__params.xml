@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__nistp192__params" kind="group">
+    <compoundname>nistp192_params</compoundname>
+    <title>NIST P192 curve params</title>
+    <innerclass refid="union_e_c_c___n_i_s_t_p192___param" prot="public">ECC_NISTP192_Param</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__nistp192__params_1ga8de957c198187459d02f1a281d19f010" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga186d0921074a84044ee9e00912be4e2b" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gabdb9420f92ed7a4423ed010baee3c305" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gaf9c740210fe2a87e26edc31cb65b4626" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP192 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga559a930c55e2ee66fac7f1d8e9be0722" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP192 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga9ddb6c516d78b87058d52a508f770c42" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga58bf0c3dd069484c315b13390ba55499" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gac6e252675b29080d4ab47485118f4394" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga0297eb27c6959e723b1cbcf5f47dc163" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="116" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__nistp192__params_1ga6637af56bd602f08ef416020d096394c" prot="public" static="no">
+        <name>ECCParams_NISTP192_LENGTH</name>
+        <initializer>24</initializer>
+        <briefdescription>
+<para>Length of NIST P192 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="60" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

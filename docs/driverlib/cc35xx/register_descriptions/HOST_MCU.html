@@ -1,0 +1,2090 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>HOST_MCU</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">HOST_MCU</A></H2>
+<P>This section provides information on the HOST_MCU Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">HOST_MCU Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="HOST_MCU"><A href="_.html"> </A>:HOST_MCU Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_TRACECFG">TRACECFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0002</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SPARE">SPARE</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_WRRARB">WRRARB</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0002</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_AGENT0CFG">AGENT0CFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0001 0004</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_AGENT1CFG">AGENT1CFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SWIRQ">SWIRQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_NSSWIRQ">NSSWIRQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_SWIRQCM3">SWIRQCM3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_ARBPOL">ARBPOL</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0003</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_DBGSS">DBGSS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_DBGSS_IF_LOCK">DBGSS_IF_LOCK</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_DBGSS_IF_LOCK_COND_MASK">DBGSS_IF_LOCK_COND_MASK</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOST_MCU_DBGSS_IF_LOCK_COND_STATUS">DBGSS_IF_LOCK_COND_STATUS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">HOST_MCU Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">HOST_MCU Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:HOST_MCU Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_TRACECFG"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:TRACECFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Trace Configuration.<BR><BR>Configuration register for CortexM3-TPIU (TRACE ports i/o unit)</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CLKDIVEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Set this register to load [CLKDIVVAL]</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Disable</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CLKDIVVAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Configure TRACE-CLOCK divider value, for (TPIU - input clock)<BR>[1]    - Divide by 2 - 'tpiu_trace_clk_in' = 40MHz<BR>[2]    - Divide by 4 - 'tpiu_trace_clk_in' = 20MHz (Default)<BR>[0,3] - are not supported (do not use)<BR>AFTER setting this value - set [CLKDIVEN] to active this value</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIV_2<BR>Divide by 2</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIV_4<BR>Divide by 4</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SPARE"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:SPARE</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Spare</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_SPARE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Spare</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_WRRARB"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:WRRARB</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WRR Arbiter Enable Register</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>POLICY</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to configure the priority policy<BR>0 - Fixed Priority<BR>1 - Round Robin (Default)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>FIXED<BR>Fixed priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ROUNDROBIN<BR>Round Robin (Default)</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_WRRARB</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to enable/select the arbitration logic<BR>0 - Disabled, use SIE-200 arbitration logic.<BR>1 - Enable, use wrapper arbitration logic.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Use SIE-200 arbitration logic</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Use wrapper arbitration logic</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_AGENT0CFG"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:AGENT0CFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WRR Arbiter - Agent 0 Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:29</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>28:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TRANSDLY</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Number of cycle before starting to serve next agent in line.<BR>Up to 32 cycles.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FIXPRI</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to select the fixed priority level<BR>0 - Highest<BR>1 - Medium<BR>2 - Lowest (default)<BR>3 - Not in Use</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_0<BR>Highest Priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_1<BR>Medium Priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_2<BR>Lowest priority (default)</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>NUMOFBLK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Number of words to be served in each arbitration grant.<BR>Up to 8,192 words (32KB).<BR>Value must be greater then 0.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0004</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_AGENT1CFG"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:AGENT1CFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WRR Arbiter - Agent 1 Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:29</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>28:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TRANSDLY</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Number of cycle before starting to serve next agent in line.<BR>Up to 32 cycles.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FIXPRI</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to select the fixed priority level<BR>0 - Highest<BR>1 - Medium<BR>2 - Lowest (default)<BR>3 - Not in Use</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_0<BR>Highest priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_1<BR>Medium priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_2<BR>Lowest priority (default)</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>NUMOFBLK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Number of words to be served in each arbitration grant.<BR>Up to 8,192 words (32KB).<BR>Value must be greater then 0.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0004</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SWIRQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:SWIRQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Software Timestamp Interrupt Register</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_SWIRQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to write timestamp for ET bus.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_NSSWIRQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:NSSWIRQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Non Secure Software Interrupt</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_NSSWIRQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Non Secure context of CM33 can use this register to interrupt secure context of CM33.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_SWIRQCM3"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:SWIRQCM3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Software Interrupt to CM3</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_SWIRQCM3</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Non Secure context of CM33 can use this register to interrupt CM3.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_ARBPOL"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:ARBPOL</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Arbiter Policy.<BR><BR>Arbiter Policy for the arbiters(x2) located just before MEMSS Portion A and Portion B</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_S1_PRIORITY_M1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit field takes affect when Fixed Priority is selected for the arbiter before MEMSS Portion B. This field is used to configure the priority of ocp.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_S1_PRIORITY_M0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit field takes affect when Fixed Priority is selected for the arbiter before MEMSS Portion B. This field is used to configure the priority of udma/sahb.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_S0_PRIORITY_M1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit field takes affect when Fixed Priority is selected for the arbiter before MEMSS Portion A. This field is used to configure the priority of ocp.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_S0_PRIORITY_M0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit field takes affect when Fixed Priority is selected for the arbiter before MEMSS Portion A. This field is used to configure the priority of udma/sahb.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_ROUND_ROBIN_S1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to select the arbitration policy of second arbiter (MEMSS Portion )<BR>1 -&gt; Round Robin is enabled <BR>0 -&gt; Fixed priority is enabled</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>FIXED<BR>Fixed priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ROUNDROBIN<BR>Round Robin priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_ROUND_ROBIN_S0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to select the arbitration policy of second arbiter (MEMSS Portion A)<BR>1 -&gt; Round Robin is enabled <BR> 0 -&gt; Fixed priority is enabled</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>FIXED<BR>Fixed priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ROUNDROBIN<BR>Round Robin priority</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_DBGSS"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:DBGSS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>DBGSS Control Register.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_HOST_DBGSS_PWRDWNDESIRED</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Non Secure context of CM33 can use this register to interrupt CM3.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_DBGSS_IF_LOCK"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:DBGSS_IF_LOCK</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>DBGSS Interface Lock.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DBGSS_IF_LOCK_WRDCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The method: Obtain lock by Read. Following are all s/w operation possibilities: <BR>When reading '1'  - lock is obtained. (i.e. no debugss request was active during the rd transaction).<BR>When reading '0'  - lock is not obtained. Try to read again. (i.e. at least debugss request event was active during the rd transaction).<BR>when writing '1'  - lock will be obtained regardless to debugss request status<BR>when writing '0'  - lock will be released.<BR>Type: Write/Read-Clear</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_DBGSS_IF_LOCK_COND_MASK"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:DBGSS_IF_LOCK_COND_MASK</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>DBGSS Interface Lock Condition Mask</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MEM_DBGSS_IF_LOCK_COND_MASK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Masks Debugss Force-active<BR>Set 1 - Mask request during lock check.<BR>Set 0 - O.W.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SET_0<BR>O.W</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SET_1<BR>Mask request during lock check</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOST_MCU_DBGSS_IF_LOCK_COND_STATUS"><A href="_.html"></A>:<A href="#Top_IPBTag">HOST_MCU</A>:DBGSS_IF_LOCK_COND_STATUS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>DBGSS Interface Lock Condition Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DBGSS_HOST_FORCEACTIVE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>DBGSS HOST Force Active</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLR<BR>Not in use</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SET<BR>Debugss host force active is set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DBGSS_HOST_CSYSPWRUPREQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>DBGSS HOST C SYS Power Request</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLR<BR>Not in use</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SET<BR>Debugss host c sys power requested</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

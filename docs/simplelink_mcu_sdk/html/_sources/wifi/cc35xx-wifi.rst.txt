@@ -1,0 +1,26 @@
+.. _sec-wifi:
+
+Wi-Fi User's Guide
+*******************
+
+This section describes the Wi-Fi operations available on the SimpleLink
+Wireless MCU family |DEVICE| from a general software developer's point
+of view. Additional information and resources are also provided for
+further development.
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /wifi/cc35xx-overview
+    /wifi/cc35xx-basic-operations
+    /wifi/cc35xx-http
+    /wifi/cc35xx-sockets
+    /wifi/cc35xx-network-addresses
+    /wifi/cc35xx-sntp
+    /wifi/cc35xx-wlan-features
+    /wifi/cc35xx-throughput-test
+    /wifi/cc35xx-p2p
+    /wifi/cc35xx-wps
+    /wifi/cc35xx-power-management

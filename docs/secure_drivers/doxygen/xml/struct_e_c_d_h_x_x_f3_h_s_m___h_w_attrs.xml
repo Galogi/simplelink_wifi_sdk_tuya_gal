@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_e_c_d_h_x_x_f3_h_s_m___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>ECDHXXF3HSM_HWAttrs</compoundname>
+    <includes refid="_e_c_d_h_x_x_f3_h_s_m_8h" local="no">ECDHXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___h_w_attrs_1a55235d6d4d570effb06a31e6868ddef7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ECDHXXF3HSM_HWAttrs::reserved1</definition>
+        <argsstring></argsstring>
+        <name>reserved1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="108" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hardware-specific configuration attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>ECDHXXF3HSM hardware attributes are used in the board file by the <ref refid="struct_e_c_d_h___config" kindref="compound">ECDH_Config</ref> struct. </para>    </detaileddescription>
+    <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="107" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="106" bodyend="109"/>
+    <listofallmembers>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___h_w_attrs_1a55235d6d4d570effb06a31e6868ddef7" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_HWAttrs</scope><name>reserved1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

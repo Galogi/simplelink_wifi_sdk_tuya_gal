@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_timer_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>GPTimerWFF3_HWAttrs</compoundname>
+    <includes refid="_g_p_timer_w_f_f3_8h" local="no">GPTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___h_w_attrs_1a6d17f903662c9351d3cdf1eb95189dbf" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPTimerWFF3_HWAttrs::baseAddr</definition>
+        <argsstring></argsstring>
+        <name>baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="747" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___h_w_attrs_1a4234ce18a0751a41482d160ec768c732" prot="public" static="no" mutable="no">
+        <type>PowerWFF3_Resource</type>
+        <definition>PowerWFF3_Resource GPTimerWFF3_HWAttrs::powerID</definition>
+        <argsstring></argsstring>
+        <name>powerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral&apos;s power resource ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="749" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="749" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___h_w_attrs_1a748fe68dacaba35260e13242b47429ed" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_g_p_timer_w_f_f3___channel_conf" kindref="compound">GPTimerWFF3_ChannelConf</ref></type>
+        <definition>GPTimerWFF3_ChannelConf GPTimerWFF3_HWAttrs::channelConfig[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>channelConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral channel selection for for pin and pin mux </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="751" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="751" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___h_w_attrs_1af85242bdcc9acd4f17c99cbbf939f273" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_HWAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral interrupt vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="753" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="753" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___h_w_attrs_1ae9c903085ba1a914974be9cbe84a57a7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral&apos;s interrupt priority </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="755" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="755" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPTimerWFF3 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the driver to set up underlying GPTimer driver statically. A sample structure is shown below making use of channel 2 in GPTIMER1:</para><para><programlisting><codeline><highlight class="normal">//<sp/>GPTimer<sp/>hardware<sp/>attributes,<sp/>one<sp/>per<sp/>supported<sp/>GPT<sp/>peripheral</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>GPTimerWFF3_HWAttrs<sp/>GPTimerWFF3HWAttrs[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/><sp/><sp/><sp/><sp/>=<sp/>GPTIMER1_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_GPTIMER_1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/><sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerId<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>PowerWFF3_PERIPH_GPTIMER1,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.channelConfig[0]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pin<sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinMux<sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPin<sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPinMux<sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.channelConfig[1]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pin<sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinMux<sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPin<sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPinMux<sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.channelConfig[2]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pin<sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_GPIO_GPTIMER_1_CH2,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinMux<sp/><sp/>=<sp/>9,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPin<sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPinMux<sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.channelConfig[3]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pin<sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.pinMux<sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPin<sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.nPinMux<sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="90">
+        <label>GPTimerWFF3_HWAttrs</label>
+        <link refid="struct_g_p_timer_w_f_f3___h_w_attrs"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>channelConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>GPTimerWFF3_ChannelConf</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_conf"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="745" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="744" bodyend="756"/>
+    <listofallmembers>
+      <member refid="struct_g_p_timer_w_f_f3___h_w_attrs_1a6d17f903662c9351d3cdf1eb95189dbf" prot="public" virt="non-virtual"><scope>GPTimerWFF3_HWAttrs</scope><name>baseAddr</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___h_w_attrs_1a748fe68dacaba35260e13242b47429ed" prot="public" virt="non-virtual"><scope>GPTimerWFF3_HWAttrs</scope><name>channelConfig</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___h_w_attrs_1af85242bdcc9acd4f17c99cbbf939f273" prot="public" virt="non-virtual"><scope>GPTimerWFF3_HWAttrs</scope><name>intNum</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___h_w_attrs_1ae9c903085ba1a914974be9cbe84a57a7" prot="public" virt="non-virtual"><scope>GPTimerWFF3_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___h_w_attrs_1a4234ce18a0751a41482d160ec768c732" prot="public" virt="non-virtual"><scope>GPTimerWFF3_HWAttrs</scope><name>powerID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

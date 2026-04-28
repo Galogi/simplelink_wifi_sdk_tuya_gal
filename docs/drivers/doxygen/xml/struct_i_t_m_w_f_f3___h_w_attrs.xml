@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_i_t_m_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>ITMWFF3_HWAttrs</compoundname>
+    <includes refid="_i_t_m_w_f_f3_8h" local="no">ITMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i_t_m_w_f_f3___h_w_attrs_1a1badea0d80846ae3dcd290a745f10268" prot="public" static="no" mutable="no">
+        <type>ITM_BASE_HWATTRS uint8_t</type>
+        <definition>ITM_BASE_HWATTRS uint8_t ITMWFF3_HWAttrs::swoPin</definition>
+        <argsstring></argsstring>
+        <name>swoPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number of SWO pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/itm/ITMWFF3.h" line="61" column="1" bodyfile="source/ti/drivers/itm/ITMWFF3.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/itm/ITMWFF3.h" line="59" column="1" bodyfile="source/ti/drivers/itm/ITMWFF3.h" bodystart="58" bodyend="62"/>
+    <listofallmembers>
+      <member refid="struct_i_t_m_w_f_f3___h_w_attrs_1a1badea0d80846ae3dcd290a745f10268" prot="public" virt="non-virtual"><scope>ITMWFF3_HWAttrs</scope><name>swoPin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

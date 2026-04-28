@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generic Access Profile (GAP) &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Generic Attribute Profile (GATT)" href="gatt.html" />
+    <link rel="prev" title="Running BLE Provisioning" href="cc35xx-running-ble-provisioning.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble gap";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Generic Access Profile (GAP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gap-roles-1">GAP Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-advertiser">GAP Advertiser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-scanner">GAP Scanner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gap-initiator">GAP Initiator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a> &raquo;</li>
+        
+      <li>Generic Access Profile (GAP)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generic-access-profile-gap">
+<span id="gap"></span><h1>Generic Access Profile (GAP)<a class="headerlink" href="#generic-access-profile-gap" title="Permalink to this headline">¶</a></h1>
+<p>The GAP layer is responsible for connection functionality. This layer handles the
+access modes and procedures of the device including device
+discovery, link establishment, link termination, initiation of
+security features, and device configuration. See <a class="reference internal" href="#gap-state-diagram"><span class="std std-ref">GAP State Diagram.</span></a> for
+more details.</p>
+<div class="figure align-center" id="figure-1">
+<span id="gap-state-diagram"></span><img alt="../_images/image72.jpeg" src="../_images/image72.jpeg" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">GAP State Diagram.</span></p>
+</div>
+<p>Based on the role for which the device is configured, <a class="reference internal" href="#gap-state-diagram"><span class="std std-ref">GAP State Diagram.</span></a>
+shows the states of the device. The following describes these states.</p>
+<ul class="simple">
+<li><strong>Standby</strong>: The device is in the initial idle state upon reset.</li>
+<li><strong>Advertiser</strong>: The device is advertising with specific data letting
+any initiating devices know that it is a connectable device (this
+advertisement contains the device address and can contain some
+additional data such as the device name).</li>
+<li><strong>Scanner</strong>: When receiving the advertisement, the scanning device
+sends a scan request to the advertiser. The advertiser responds
+with a scan response. This process is called device discovery.
+The scanning device is aware of the advertising device and can
+initiate a connection with it.</li>
+<li><strong>Initiator</strong>: When initiating, the initiator must specify a peer
+device address to which to connect. If an advertisement is
+received matching that address of the peer device, the initiating
+device then sends out a request to establish a connection (link) with the
+advertising device with the connection parameters described in
+<span class="xref std std-ref">connection_parameters</span>.</li>
+<li><strong>Peripheral/Central</strong>: When a connection is formed, the device functions
+as a Peripheral if it is the advertiser and a Central if it is the initiator.</li>
+</ul>
+<p>Bluetooth devices operate in one or more GAP roles based on the application use
+case. The GAP roles utilize one or more of the GAP states.
+Based on this configuration, many Bluetooth Low Energy protocol stack events
+are handled directly by the main application task and sometimes routed from the
+GAP Bond Manager. The application can register with the stack to be notified of
+certain events.</p>
+<div class="section" id="gap-roles-1">
+<span id="gap-roles"></span><h2>GAP Roles<a class="headerlink" href="#gap-roles-1" title="Permalink to this headline">¶</a></h2>
+<p>Based on the configuration of the device, the GAP layer always operates in one
+of four (4) roles as defined by the specification:</p>
+<ul class="simple">
+<li><strong>Broadcaster</strong> - The device is an advertiser that is non connectable.</li>
+<li><strong>Observer</strong> - The device scans for advertisements but cannot initiate
+connections.</li>
+<li><strong>Peripheral</strong> - The device is an advertiser that is connectable and operates as
+Peripheral in a single link-layer connection.</li>
+<li><strong>Central</strong> - The device scans for advertisements and initiates
+connections and operates as a Central in a single or multiple
+link-layer connections.</li>
+</ul>
+<p>The Bluetooth Core Specifications allows for certain combinations of multiple roles</p>
+</div>
+<div class="section" id="gap-advertiser">
+<h2>GAP Advertiser<a class="headerlink" href="#gap-advertiser" title="Permalink to this headline">¶</a></h2>
+<p>The following list describes how to configure the GAP for
+advertising. The <strong>network terminal</strong> example project will be used as an example.</p>
+<p id="sbp-gap-configuration-example"><strong>Configure Advertisement instance with</strong> <cite>ble_gap_ext_adv_configure()</cite></p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_ext_adv_configure</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">instance</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_ext_adv_params</span> <span class="o">*</span><span class="n">params</span><span class="p">,</span>
+                      <span class="kt">int8_t</span> <span class="o">*</span><span class="n">selected_tx_power</span><span class="p">,</span>
+                      <span class="n">ble_gap_event_fn</span> <span class="o">*</span><span class="n">cb</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">cb_arg</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The function takes the advertisement parameters which need to be filled out from the following struct</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="container-1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_adv_cfg()</strong> - Network Terminal advertising default parameters</span><a class="headerlink" href="#container-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>   <span class="k">struct</span> <span class="nc">ble_gap_ext_adv_params</span> <span class="n">params</span><span class="p">;</span>
+
+   <span class="n">params</span><span class="p">.</span><span class="n">legacy_pdu</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">legacy_pdu</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">connectable</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">scannable</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">include_tx_power</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="k">else</span>
+       <span class="p">{</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">connectable</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">scannable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">include_tx_power</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">directed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">high_duty_directed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">anonymous</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">scan_req_notif</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">directed</span> <span class="o">&amp;&amp;</span> <span class="n">params</span><span class="p">.</span><span class="n">legacy_pdu</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">params</span><span class="p">.</span><span class="n">scannable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+       <span class="p">}</span>
+
+       <span class="cm">/* Other adv parameters */</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">itvl_min</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">itvl_max</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">channel_map</span> <span class="o">=</span> <span class="mh">0x7</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">peer</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">BLE_OWN_ADDR_PUBLIC</span><span class="p">;</span>
+       <span class="n">os_memset</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">peer</span><span class="p">.</span><span class="n">val</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="n">BLE_DEV_ADDR_LEN</span><span class="p">);</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">own_addr_type</span> <span class="o">=</span> <span class="n">own_addr_type</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">filter_policy</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">tx_power</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">primary_phy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">secondary_phy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+       <span class="n">params</span><span class="p">.</span><span class="n">sid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Set Advertisers virtual address</strong></dt>
+<dd><p class="first">The application can set a predefined public address or
+choose to generate a random address to advertise (for added security).</p>
+<div class="literal-block-wrapper last docutils container" id="container-2">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_adv_cfg()</strong> - Network Terminal advertising address</span><a class="headerlink" href="#container-2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>   <span class="cm">/* Set adv Address */</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">own_addr_type</span> <span class="o">==</span> <span class="n">BLE_OWN_ADDR_PUBLIC</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_hs_id_copy_addr</span><span class="p">(</span><span class="n">BLE_ADDR_PUBLIC</span><span class="p">,</span> <span class="n">addr</span><span class="p">.</span><span class="n">val</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span> <span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">ERROR: fail to retrieves one of the device&#39;s identity addresses, with error code: %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">rc</span><span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_hs_id_gen_rnd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">addr</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span> <span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">ERROR: fail to generates a new random address, with error code: %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">rc</span><span class="p">);</span>
+       <span class="p">}</span>
+       <span class="cm">/* Set random address for advertising instance */</span>
+       <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_gap_ext_adv_set_addr</span><span class="p">(</span><span class="n">pAdvCfg</span><span class="o">-&gt;</span><span class="n">instance</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">addr</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span> <span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">ERROR: fail to set random address for configured advertising instance, with error code: %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">rc</span><span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</dd>
+<dt><strong>Load Advertisement and Scan Response data</strong></dt>
+<dd><p class="first">Advertising and scan response data is decoupled from the advertising set. That is, it is possible for multiple
+advertising instances to use the same memory for advertising/scan response data. An
+advertising set could also use the same memory for its advertising and scan
+response data. (Note that this requires diligence as there are some data types
+that are only allowed once in the advertisement and scan response data.)</p>
+<blockquote class="last">
+<div><p>Advertisement data is set with <cite>ble_gap_ext_adv_set_data()</cite></p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_ext_adv_set_data</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">instance</span><span class="p">,</span> <span class="k">struct</span> <span class="nc">os_mbuf</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The function needs the instance of the adv set this data will populate as well as the data.</p>
+<p>Using the function <cite>ble_hs_adv_set_fields_mbuf()</cite> you can get a buffer of data from setting the
+<cite>ble_hs_adv_fields</cite> struct.</p>
+<div class="literal-block-wrapper docutils container" id="container-3">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_adv_cfg()</strong> - Network Terminal advertising data</span><a class="headerlink" href="#container-3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>   <span class="k">struct</span> <span class="nc">ble_hs_adv_fields</span> <span class="n">adv_fields</span><span class="p">;</span>
+   <span class="k">struct</span> <span class="nc">os_mbuf</span> <span class="o">*</span><span class="n">adv_data</span><span class="p">;</span>
+
+    <span class="cm">/* Set ADV fields */</span>
+   <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">adv_fields</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">adv_fields</span><span class="p">));</span>
+   <span class="cm">/* General Discoverable and BrEdrNotSupported */</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_HS_ADV_F_DISC_GEN</span> <span class="o">|</span> <span class="n">BLE_HS_ADV_F_BREDR_UNSUP</span><span class="p">;</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">tx_pwr_lvl_is_present</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">tx_pwr_lvl</span> <span class="o">=</span> <span class="n">BLE_HS_ADV_TX_PWR_LVL_AUTO</span><span class="p">;</span>
+   <span class="cm">/* Set device name as instance name */</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">device_name</span><span class="p">;</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">name_len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">device_name</span><span class="p">);</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">name_is_complete</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="cm">/* Manufacturer specific data */</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">mfg_data</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">mgf_data</span><span class="p">;</span>
+   <span class="n">adv_fields</span><span class="p">.</span><span class="n">mfg_data_len</span> <span class="o">=</span> <span class="n">BLE_MGF_DATA_LEN</span><span class="p">;</span>
+   <span class="cm">/* Get Packet Header */</span>
+   <span class="cm">/* Default to legacy PDUs size, mbuf chain will be increased if needed */</span>
+   <span class="n">adv_data</span> <span class="o">=</span> <span class="n">os_msys_get_pkthdr</span><span class="p">(</span><span class="n">BLE_HCI_MAX_ADV_DATA_LEN</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="n">adv_data</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
+   <span class="p">{</span>
+       <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">ERROR: failed to allocate memory for adv data</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">);</span>
+       <span class="k">return</span> <span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="cm">/* Set ADV fields */</span>
+   <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_hs_adv_set_fields_mbuf</span><span class="p">(</span><span class="o">&amp;</span><span class="n">adv_fields</span><span class="p">,</span> <span class="n">adv_data</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+   <span class="p">{</span>
+       <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">ERROR: failed to set adv set fields, with error code: %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="p">);</span>
+       <span class="n">os_mbuf_free_chain</span><span class="p">(</span><span class="n">adv_data</span><span class="p">);</span>
+       <span class="k">return</span> <span class="p">(</span><span class="n">rc</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="cm">/* Set ADV Data */</span>
+   <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_gap_ext_adv_set_data</span><span class="p">(</span><span class="n">pAdvCfg</span><span class="o">-&gt;</span><span class="n">instance</span><span class="p">,</span> <span class="n">adv_data</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are more fields that can be set for advertisement data such as service UUIDs, however, this is what is used
+in the network terminal example</p>
+</div>
+<dl class="docutils">
+<dt><strong>Enable / Disable advertising.</strong></dt>
+<dd><p class="first">Calling <cite>ble_gap_ext_adv_start</cite> will start advertising.</p>
+<div class="literal-block-wrapper last docutils container" id="container-4">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_adv_enable()</strong> - Start advertising</span><a class="headerlink" href="#container-4" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>   <span class="kt">int</span> <span class="nf">ble_gap_ext_adv_start</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">instance</span><span class="p">,</span> <span class="kt">int</span> <span class="n">duration</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max_events</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</dd>
+</dl>
+<p>The above steps can be repeated to create multiple advertising sets. There is an
+upper limit of six advertising sets (defined in the controller). The heap may
+also restrict the number of advertising sets you can create in one application.</p>
+<p><strong>Changing advertising parameters</strong></p>
+<p>In order to change an individual parameter after advertising has been enabled,
+advertising must first be disabled. Re-enable advertising after the parameter is modified.</p>
+</div>
+<div class="section" id="gap-scanner">
+<span id="gapscanner"></span><h2>GAP Scanner<a class="headerlink" href="#gap-scanner" title="Permalink to this headline">¶</a></h2>
+<p>The GAP Scanner performs Extended Scanning and Legacy Scanning.</p>
+<p><strong>Set scan parameters.</strong>
+First we must set the set the <cite>ble_gap_ext_disc_params</cite> struct for each PHY</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure the scanning window is at least twice the length of the expected advertising interval to ensure at least 1 advertising event
+is captured in each scanning window. Otherwise, the scanning device may not find the advertising device.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="container-5">
+<div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_scan_enable()</strong> - Set Scanning Parameter</span><a class="headerlink" href="#container-5" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>       <span class="k">struct</span> <span class="nc">ble_gap_ext_disc_params</span> <span class="n">uncoded_params</span><span class="p">;</span>
+
+       <span class="n">uncoded_params</span><span class="p">.</span><span class="n">itvl</span> <span class="o">=</span> <span class="n">BLE_GAP_SCAN_ITVL_MS</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+       <span class="n">uncoded_params</span><span class="p">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">BLE_GAP_SCAN_ITVL_MS</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+       <span class="n">uncoded_params</span><span class="p">.</span><span class="n">passive</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><strong>Start scanning</strong>
+The function <cite>ble_gap_ext_disc()</cite> will initiate the discovery procedures</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember to reset scan results every time you start scanning.</p>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_ext_disc</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">own_addr_type</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">duration</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">period</span><span class="p">,</span>
+             <span class="kt">uint8_t</span> <span class="n">filter_duplicates</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">filter_policy</span><span class="p">,</span>
+             <span class="kt">uint8_t</span> <span class="n">limited</span><span class="p">,</span>
+             <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_ext_disc_params</span> <span class="o">*</span><span class="n">uncoded_params</span><span class="p">,</span>
+             <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_ext_disc_params</span> <span class="o">*</span><span class="n">coded_params</span><span class="p">,</span>
+             <span class="n">ble_gap_event_fn</span> <span class="o">*</span><span class="n">cb</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">cb_arg</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You will need to also choose the duration, period, filter_duplicate, filter policy</p>
+<div class="literal-block-wrapper docutils container" id="container-6">
+<div class="code-block-caption"><span class="caption-number">Listing 6 </span><span class="caption-text"><strong>nimble_host.c::nimble_host_ext_scan_enable()</strong> - Scanning Network Terminal Defaults</span><a class="headerlink" href="#container-6" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="n">ble_gap_ext_disc</span><span class="p">(</span><span class="n">own_addr_type</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pUncodedParams</span><span class="p">,</span> <span class="n">pCodedParams</span><span class="p">,</span> <span class="n">gap_event_cb</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>#. Advertisement Reports
+Note that during scanning, individual advertisements and scan responses are
+returned as <cite>BLE_GAP_EVENT_EXT_DISC</cite> in the GAP callback function.
+By default, duplicate reports are filtered such that only one event is returned to
+the application per peer device address.</p>
+<p>The maximum amount of scan responses that can be discovered during one scan can
+be set with the <cite>BLE_MAX_SCAN_RESULTS</cite></p>
+<p><strong>Obtain Advertising Fields from Advertising Report</strong></p>
+<p>The application can extract the advertising fields from the advertising report received in the callback function <cite>gap_event_cb</cite></p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="container-7">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text"><strong>nimble_host.c::gap_event_cb()</strong> - BLE_GAP_EVENT_EXT_DISC</span><a class="headerlink" href="#container-7" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>     <span class="k">case</span> <span class="nl">BLE_GAP_EVENT_EXT_DISC</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span> <span class="o">&lt;</span> <span class="n">BLE_MAX_SCAN_RESULTS</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">rc</span> <span class="o">=</span> <span class="n">ble_hs_adv_parse_fields</span><span class="p">(</span><span class="o">&amp;</span><span class="n">adv_fields</span><span class="p">,</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">ext_disc</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">ext_disc</span><span class="p">.</span><span class="n">length_data</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span> <span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">console_printf</span><span class="p">(</span><span class="s">&quot;ERROR: failed to parse adv fields with error code: %d</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+                <span class="k">return</span>  <span class="n">rc</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// Store partial adv report data</span>
+            <span class="n">os_memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">addr</span><span class="p">,</span><span class="o">&amp;</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">ext_disc</span><span class="p">.</span><span class="n">addr</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ble_addr_t</span><span class="p">));</span>
+            <span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">prim_phy</span> <span class="o">=</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">ext_disc</span><span class="p">.</span><span class="n">prim_phy</span><span class="p">;</span>
+            <span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">rssi</span> <span class="o">=</span> <span class="n">event</span><span class="o">-&gt;</span><span class="n">ext_disc</span><span class="p">.</span><span class="n">rssi</span><span class="p">;</span>
+            <span class="n">os_memcpy</span><span class="p">(</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">local_name</span><span class="p">,</span><span class="n">no_local_name</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">adv_fields</span><span class="p">.</span><span class="n">name</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">adv_fields</span><span class="p">.</span><span class="n">name_len</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">BLE_DEVICE_LOCAL_NAME_LEN</span><span class="mi">-1</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">os_memcpy</span><span class="p">(</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">local_name</span><span class="p">,</span> <span class="n">adv_fields</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">adv_fields</span><span class="p">.</span><span class="n">name_len</span><span class="p">);</span>
+                    <span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResults</span><span class="p">[</span><span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="p">].</span><span class="n">local_name</span><span class="p">[</span><span class="n">adv_fields</span><span class="p">.</span><span class="n">name_len</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsCount</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">extScanCB</span><span class="p">.</span><span class="n">extScanResultsTotal</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><strong>Filtering</strong></p>
+<p>The GAP Scanner module provides 5 different types of filter to reduce the amount of advertising
+report notifications to the application and eventually save memory and power consumption.
+The result of the filtering affects both advertising reports and advertising report recording.
+The packets filtered out by the filter configurations are discarded and will
+neither be reported nor recorded.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="container-8">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text"><strong>nimble_host.c::gap_event_cb()</strong> - BLE_GAP_EVENT_EXT_DISC</span><a class="headerlink" href="#container-8" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Scanning</span> <span class="n">filter</span> <span class="n">policy</span>
+<span class="o">*</span>  <span class="nl">NO_WL</span><span class="p">:</span>
+<span class="o">*</span>      <span class="n">Scanner</span> <span class="n">processes</span> <span class="n">all</span> <span class="n">advertising</span> <span class="n">packets</span> <span class="p">(</span><span class="n">white</span> <span class="n">list</span> <span class="n">not</span> <span class="n">used</span><span class="p">)</span> <span class="n">except</span>
+<span class="o">*</span>      <span class="n">directed</span><span class="p">,</span> <span class="n">connectable</span> <span class="n">advertising</span> <span class="n">packets</span> <span class="n">not</span> <span class="n">sent</span> <span class="n">to</span> <span class="n">the</span> <span class="n">scanner</span><span class="p">.</span>
+<span class="o">*</span>  <span class="nl">USE_WL</span><span class="p">:</span>
+<span class="o">*</span>      <span class="n">Scanner</span> <span class="n">processes</span> <span class="n">advertisements</span> <span class="n">from</span> <span class="n">white</span> <span class="n">list</span> <span class="n">only</span><span class="p">.</span> <span class="n">A</span> <span class="n">connectable</span><span class="p">,</span>
+<span class="o">*</span>      <span class="n">directed</span> <span class="n">advertisment</span> <span class="n">is</span> <span class="n">ignored</span> <span class="n">unless</span> <span class="n">it</span> <span class="n">contains</span> <span class="n">scanners</span> <span class="n">address</span><span class="p">.</span>
+<span class="o">*</span>  <span class="nl">NO_WL_INITA</span><span class="p">:</span>
+<span class="o">*</span>      <span class="n">Scanner</span> <span class="n">process</span> <span class="n">all</span> <span class="n">advertising</span> <span class="n">packets</span> <span class="p">(</span><span class="n">white</span> <span class="n">list</span> <span class="n">not</span> <span class="n">used</span><span class="p">).</span> <span class="n">A</span>
+<span class="o">*</span>      <span class="n">connectable</span><span class="p">,</span> <span class="n">directed</span> <span class="n">advertisement</span> <span class="n">shall</span> <span class="n">not</span> <span class="n">be</span> <span class="n">ignored</span> <span class="k">if</span> <span class="n">the</span> <span class="n">InitA</span>
+<span class="o">*</span>      <span class="n">is</span> <span class="n">a</span> <span class="n">resolvable</span> <span class="n">private</span> <span class="n">address</span><span class="p">.</span>
+<span class="o">*</span>  <span class="nl">USE_WL_INITA</span><span class="p">:</span>
+<span class="o">*</span>      <span class="n">Scanner</span> <span class="n">process</span> <span class="n">advertisements</span> <span class="n">from</span> <span class="n">white</span> <span class="n">list</span> <span class="n">only</span><span class="p">.</span> <span class="n">A</span> <span class="n">connectable</span><span class="p">,</span>
+<span class="o">*</span>      <span class="n">directed</span> <span class="n">advertisement</span> <span class="n">shall</span> <span class="n">not</span> <span class="n">be</span> <span class="n">ignored</span> <span class="k">if</span> <span class="n">the</span> <span class="n">InitA</span> <span class="n">is</span> <span class="n">a</span>
+<span class="o">*</span>      <span class="n">resolvable</span> <span class="n">private</span> <span class="n">address</span><span class="p">.</span>
+
+<span class="cp">#define BLE_HCI_SCAN_FILT_NO_WL             (0)</span>
+<span class="cp">#define BLE_HCI_SCAN_FILT_USE_WL            (1)</span>
+<span class="cp">#define BLE_HCI_SCAN_FILT_NO_WL_INITA       (2)</span>
+<span class="cp">#define BLE_HCI_SCAN_FILT_USE_WL_INITA      (3)</span>
+<span class="cp">#define BLE_HCI_SCAN_FILT_MAX               (3)</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="gap-initiator">
+<h2>GAP Initiator<a class="headerlink" href="#gap-initiator" title="Permalink to this headline">¶</a></h2>
+<p>The initiator module is used to initiate the connection to a peripheral device.
+An initiator generally scans for advertisements then connects to a specific
+device. The initiator is a short lived state that transitions to the Central
+Role after a connection is established.</p>
+<p>To begin a connection the following function must be called</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="container-9">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><strong>ble_gap.h::ble_gap_ext_connect()</strong> - Connect function</span><a class="headerlink" href="#container-9" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_ext_connect</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">own_addr_type</span><span class="p">,</span> <span class="k">const</span> <span class="n">ble_addr_t</span> <span class="o">*</span><span class="n">peer_addr</span><span class="p">,</span>
+                <span class="kt">int32_t</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">phy_mask</span><span class="p">,</span>
+                <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_conn_params</span> <span class="o">*</span><span class="n">phy_1m_conn_params</span><span class="p">,</span>
+                <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_conn_params</span> <span class="o">*</span><span class="n">phy_2m_conn_params</span><span class="p">,</span>
+                <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_conn_params</span> <span class="o">*</span><span class="n">phy_coded_conn_params</span><span class="p">,</span>
+                <span class="n">ble_gap_event_fn</span> <span class="o">*</span><span class="n">cb</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">cb_arg</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p><strong>Connection Parameters</strong></p>
+<p>This section describes the connection parameters which are sent by
+the initiating device with the connection request</p>
+<ul class="simple">
+<li><strong>Connection Interval</strong> - In Bluetooth Low Energy connections, a
+frequency-hopping scheme is used. The two devices each send and
+receive data from one another only on a specific channel at a
+specific time. These devices meet a specific amount of time later
+at a new channel (the link layer of the Bluetooth Low Energy
+protocol stack handles the channel switching). This meeting
+where the two devices send and receive data is known as a
+<code class="docutils literal notranslate"><span class="pre">connection</span> <span class="pre">event</span></code>. If there is no application data to be sent or
+received, the two devices exchange link layer data with empty
+application payload to maintain the connection.
+The connection interval is the amount of time
+between two connection events in units of 1.25 ms. The connection
+interval can range from a minimum value of 6 (7.5 ms) to a
+maximum of 3200 (4.0 s). See <a class="reference internal" href="#gap-connection-event"><span class="std std-ref">Connection Event and Interval</span></a> for more details.</li>
+</ul>
+<div class="figure align-center" id="figure-2">
+<span id="gap-connection-event"></span><img alt="../_images/image73.jpeg" src="../_images/image73.jpeg" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Connection Event and Interval</span></p>
+</div>
+<ul class="simple">
+<li><strong>Peripheral Latency</strong> - Formerly known as ‘Slave Latency’.
+This parameter gives the Peripheral
+device the option of skipping a number of connection events. This
+ability gives the peripheral device some flexibility. If the
+peripheral does not have any data to send, it can skip connection
+events, stay asleep, and save power. The peripheral device
+selects whether to wake or not on a per connection event basis.
+The peripheral can skip connection events but must not skip more
+than allowed by the Peripheral latency parameter or the connection
+fails. See picture below for more details.</li>
+</ul>
+<img alt="../_images/ditaa-5f06dc792da5d8b1218db683c31456d39f99e7e3.png" src="../_images/ditaa-5f06dc792da5d8b1218db683c31456d39f99e7e3.png" />
+<ul class="simple">
+<li><strong>Supervision Time-out</strong> - This time-out is the maximum amount of
+time between two successful connection events. If this time
+passes without a successful connection event, the device
+terminates the connection and returns to an unconnected state.
+This parameter value is represented in units of 10 ms. The
+supervision time-out value can range from a minimum of 10 (100
+ms) to 3200 (32.0 s). The time-out must be larger than the
+effective connection interval (see <span class="xref std std-ref">effective_connection_interval</span> for
+more details).</li>
+</ul>
+<p id="effective-connection-interval"><strong>Effective Connection Interval</strong></p>
+<p>The effective connection interval is equal to the amount of time
+between two connection events, assuming that the Peripheral skips the
+maximum number of possible events if Peripheral latency is allowed (the
+effective connection interval is equal to the actual connection
+interval if Peripheral latency is set to 0).</p>
+<p>The Peripheral Latency value represents the maximum number of events that
+can be skipped. This number can range from a minimum value of 0
+(meaning that no connection events can be skipped) to a maximum of
+499. The maximum value must not make the effective connection
+interval (see the following formula) greater than 16 s. The interval
+can be calculated using the following formula:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">Effective</span> <span class="pre">Connection</span> <span class="pre">Interval</span> <span class="pre">=</span> <span class="pre">(Connection</span> <span class="pre">Interval)</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">[Peripheral</span> <span class="pre">Latency])</span></code></div></blockquote>
+<p>Consider the following example:</p>
+<ul class="simple">
+<li>Connection Interval: 80 (100 ms)</li>
+<li>Peripheral Latency: 4</li>
+<li>Effective Connection Interval: (100 ms) * (1 + 4) = 500 ms</li>
+</ul>
+<p>When no data is being sent from the Peripheral to the Central, the Peripheral
+transmits during a connection event once every 500 ms.</p>
+<p id="connection-parameter-considerations"><strong>Connection Parameter Considerations</strong></p>
+<p>In many applications, the Peripheral skips the maximum number of
+connection events. Consider the effective connection interval when
+selecting or requesting connection parameters. Selecting the correct
+group of connection parameters plays an important role in power
+optimization of the Bluetooth Low Energy device. The following list
+gives a general summary of the trade-offs in connection parameter
+settings.</p>
+<p>Reducing the connection interval does as follows:</p>
+<ul class="simple">
+<li>Increases the power consumption for both devices</li>
+<li>Increases the throughput in both directions</li>
+<li>Reduces the time for sending data in either direction</li>
+</ul>
+<p>Increasing the connection interval does as follows:</p>
+<ul class="simple">
+<li>Reduces the power consumption for both devices</li>
+<li>Reduces the throughput in both directions</li>
+<li>Increases the time for sending data in either direction</li>
+</ul>
+<p>Reducing the Peripheral latency (or setting it to zero) does as follows:</p>
+<ul class="simple">
+<li>Increases the power consumption for the peripheral device</li>
+<li>Reduces the time for the peripheral device to receive the data sent
+from a central device</li>
+</ul>
+<p>Increasing the Peripheral latency does as follows:</p>
+<ul class="simple">
+<li>Reduces power consumption for the peripheral during periods when the
+peripheral has no data to send to the central device</li>
+<li>Increases the time for the peripheral device to receive the data sent
+from the central device</li>
+</ul>
+<p><strong>Connection Parameter Update</strong></p>
+<p>In some cases, the central device requests a connection with a
+peripheral device containing connection parameters that are
+unfavorable to the peripheral device. In other cases, a peripheral
+device might have the desire to change connection parameters in the middle of a
+connection, based on the peripheral application.</p>
+<p>This can be done with <cite>ble_gap_update_params()</cite></p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="container-10">
+<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><strong>ble_gap.h::le_gap_update_params()</strong> - Update Connection Parameters</span><a class="headerlink" href="#container-10" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_update_params</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">conn_handle</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gap_upd_params</span> <span class="o">*</span><span class="n">params</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+<p>The <cite>le_gap_upd_params</cite> contains six parameters:</p>
+<div class="literal-block-wrapper docutils container" id="container-11">
+<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text"><strong>ble_gap.h::le_gap_update_params()</strong> - Update Connection Parameters</span><a class="headerlink" href="#container-11" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">ble_gap_upd_params</span> <span class="p">{</span>
+    <span class="cm">/** Minimum value for connection interval in 1.25ms units */</span>
+    <span class="kt">uint16_t</span> <span class="n">itvl_min</span><span class="p">;</span>
+
+    <span class="cm">/** Maximum value for connection interval in 1.25ms units */</span>
+    <span class="kt">uint16_t</span> <span class="n">itvl_max</span><span class="p">;</span>
+
+    <span class="cm">/** Connection latency */</span>
+    <span class="kt">uint16_t</span> <span class="n">latency</span><span class="p">;</span>
+
+    <span class="cm">/** Supervision timeout in 10ms units */</span>
+    <span class="kt">uint16_t</span> <span class="n">supervision_timeout</span><span class="p">;</span>
+
+    <span class="cm">/** Minimum length of connection event in 0.625ms units */</span>
+    <span class="kt">uint16_t</span> <span class="n">min_ce_len</span><span class="p">;</span>
+
+    <span class="cm">/** Maximum length of connection event in 0.625ms units */</span>
+    <span class="kt">uint16_t</span> <span class="n">max_ce_len</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>Sending a Connection Parameter Update Request is optional and it is not
+required for the central device to accept or apply the requested
+parameters. Some applications try to establish a connection at a
+faster connection interval to allow for a faster service discovery
+and initial setup. These applications later request a longer
+(slower) connection interval for optimal power usage.</p>
+<p><strong>Connection Event Callback</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>eventType</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BLE_GAP_EVENT_CONNECT</td>
+<td>This event is returned when connection is established. When this
+returns, the eventCount will be 0.</td>
+</tr>
+<tr class="row-odd"><td>BLE_GAP_EVENT_CONN_UPDATE</td>
+<td>This event is returned when connection parameters are updated</td>
+</tr>
+<tr class="row-even"><td>BLE_GAP_EVENT_DISCONNECT</td>
+<td>This event occurs on disconnections from either side</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Connection Termination</strong></p>
+<p>Either the Central or the Peripheral can terminate a connection for any
+reason. One side initiates termination and the other side must
+respond before both devices exit the connected state.</p>
+<p>To disconnect call <cite>ble_gap_terminate</cite></p>
+<div class="literal-block-wrapper docutils container" id="container-12">
+<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text"><strong>ble_gap.h:: ble_gap_terminate()</strong> - Terminate connection</span><a class="headerlink" href="#container-12" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gap_terminate</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">conn_handle</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">hci_reason</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gatt.html" class="btn btn-neutral float-right" title="Generic Attribute Profile (GATT)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-running-ble-provisioning.html" class="btn btn-neutral float-left" title="Running BLE Provisioning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2283 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>SOC_IC</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">SOC_IC</A></H2>
+<P>This section provides information on the SOC_IC Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">SOC_IC Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="SOC_IC"><A href="_.html"> </A>:SOC_IC Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_PRIO0">PRIO0</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x16A6 CCD1</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_PRIO0_1">PRIO0_1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x1C46 468B</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_PRIO0_2">PRIO0_2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x1176 AB19</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_PRIO0_3">PRIO0_3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x2C86 2B1C</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 000C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_PRIO0_4">PRIO0_4</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 001A</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ERRSTA1">ERRSTA1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ERRSTA2">ERRSTA2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRCFG1">ADDRCFG1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRCFG2">ADDRCFG2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRCFG3">ADDRCFG3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRCFG4">ADDRCFG4</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRSTA1">ADDRSTA1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_ADDRSTA2">ADDRSTA2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_TOMSTCFG">TOMSTCFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0001 0084</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#SOC_IC_TOSLVCFG">TOSLVCFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0001 0088</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0038</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">SOC_IC Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">SOC_IC Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:SOC_IC Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_PRIO0"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:PRIO0</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>SOC Interconnect priority registers. Define the priority in which master will be arbitered toward each slave.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:27</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUI2S</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>26:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x6</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x5</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3HSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x5</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3I2S</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3HMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x6</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3DMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3DMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>L3WSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_PRIO0_1"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:PRIO0_1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>SOC Interconnect priority registers. Define the priority in which master will be arbitered toward each slave.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:27</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>COREHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>26:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>COREHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>COREDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>COREDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_PRIO0_2"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:PRIO0_2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>SOC Interconnect priority registers. Define the priority in which master will be arbitered toward each slave.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:27</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HSMDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>26:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HSMDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HSMWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20:19</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HDMAHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>18:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HDMAHOSTMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16:15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HDMAWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>XIPHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>XIPHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x5</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>XIPDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>XIPDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>XIPWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_PRIO0_3"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:PRIO0_3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 000C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>SOC Interconnect priority registers. Define the priority in which master will be arbitered toward each slave.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:30</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>29:27</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x5</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>26:24</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>23:21</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>20:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONWSOCIC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HMCUHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>A2NHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>A2NHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x5</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>A2NDMAWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>A2NDMARD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HSMHMCU</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_PRIO0_4"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:PRIO0_4</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>SOC Interconnect priority registers. Define the priority in which master will be arbitered toward each slave.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONHSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CAONI2S</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P><Slave-name&gt;<Master-name&gt;<BR>Set the priority for specific Master transaction toward a specific slave.<BR>priority values:<BR>0 - N.A<BR>1 - Lowest priority<BR>2 - Higher priority<BR>3- ...<BR>N - Highest priority<BR>where N is NUM_OF_MASTERS</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ERRSTA1"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ERRSTA1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>OCP Slave serror and Time-out Status 1.<BR><BR>status bits when ocp slave response with serror<BR>clear on write<BR>sticky - catch the first error, until register is cleared to 0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>status bits when ocp slave response with serror<BR>clear on write<BR>sticky - catch the first error, until register is cleared to 0<BR>[31:0] - maddr<BR>*note - can only clear on write to 32'b0 <BR>writing 1 byte will clear all 4 bytes</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ERRSTA2"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ERRSTA2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>OCP Slave serror and Time-out Status 2.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>status bits when ocp slave response with serror or timeout:<BR>clear on write<BR>sticky - catch the first error, until register is cleared to 0<BR>for serror and timeout handeling:<BR>[9:6] cause<BR>[5:4] mcmd - command type: 2=RD ; 1=WR<BR>[3:0] masterid<BR>cause mapping:<BR>0 - masters<BR>1 - core aon<BR>2 - hsm <BR>3 - host xip<BR>4 - host dma<BR>5 - host mcu<BR>6 - shared periph<BR>7 - app2nab<BR>8 - core wsocic<BR>9 - l3 slaves<BR>if cuase is 'masters' - masterid mapped as it mapped in [TOMSTCFG.SEL].<BR>else - masterid mapping:<BR>0   - M33NS<BR>1   - M33S<BR>6   - Core (wsoc_ic)<BR>8   - I2S/HSM M33NS access<BR>9   - I2S/HSM M33S access<BR>10 - I2S/HSM Core access<BR>12 - DMA M33NS access<BR>13 - DMA M33S access<BR>14 - DMA Core access<BR>*note - can only clear on write to 10'b0<BR>writing 1 byte will clear all 2 bytes</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRCFG1"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRCFG1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Configuration 1.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SEL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>select which slave port of ocp_ic is checked in  address-watch:<BR>0 -  core_aon<BR>1 -  hsm<BR>2 -  host_xip_cfg<BR>3 -  host_dma<BR>4 -  host_mcu<BR>5 -  shared_periph (all shared peripheral I2C,UART,I2S,SDMMC,SPI,CAN,PDM,GPTIMERS,AFA,ADC,SDIO) <BR>6 -  app2nab<BR>7 -  core_wsocic<BR>8 -  all l3 peripherals under bridge (COEX,IOMUX,PRCM,SCRTCHPAD,PRCM_AON,CKM,FUSE_FARM,GPADC_CTRL,DEBUGSS,<BR>      SOC_IC,SOC_AON_SECURED/NON_SECURED,RTC,OCLA,MEMSS_GLOBALPORT,HOST_AON,SYSREASOURCES,SYSTIMER)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRCFG2"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRCFG2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Configuration 2.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LOW</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>lower maddr threshold for address-watch<BR>addr_hit = (maddr &gt;= thr_low) &amp; (maddr <= thr_high)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRCFG3"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRCFG3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Configuration 3.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>HIGH</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>upper maddr threshold for address-watch<BR>addr_hit = (maddr &gt;= thr_low) &amp; (maddr <= thr_high)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRCFG4"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRCFG4</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Configuration 4.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MSTIDRD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>each bit enables check on MCMD=RD per MASTERID<BR>for example value of 0x0120 will enable check of masterid=5 and masterid=8<BR>if check_wr=0x0000 and check_rd=0x0000 then the clock for address-watch is disabled locally to save power</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>MSTIDWR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>each bit enables check on MCMD=WR per MASTERID<BR>for example value of 0x0120 will enable check of masterid=5 and masterid=8<BR>if check_wr=0x0000 and check_rd=0x0000 then the clock for address-watch is disabled locally to save power</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRSTA1"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRSTA1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Status 1.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OCP_IC_ADDRSTA1_WROPT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>keep when hit - Clear on Write<BR>[31:0] - maddr</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_ADDRSTA2"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:ADDRSTA2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Address Watch Status 2.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OCP_IC_ADDRSTA2_WROPT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>keep when hit - Clear on Write<BR>[4]     - command type: 0=RD ; 1=WR<BR>[3:0] - masterid<BR>masterid mapping:<BR>0   - M33NS<BR>1   - M33S<BR>6   - Core (wsoc_ic)<BR>8   - I2S/HSM M33NS access<BR>9   - I2S/HSM M33S access<BR>10 - I2S/HSM Core access<BR>12 - DMA M33NS access<BR>13 - DMA M33S access<BR>14 - DMA Core access</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_TOMSTCFG"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:TOMSTCFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Time-out Masters Configuration.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0004</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13:10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SEL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>select master for timeout by masterid.<BR>0x0. M33NS<BR>0x1. M33S<BR>0x6. Core (wsoc_ic)<BR>0x8. I2S/HSM M33NS access<BR>0x9. I2S/HSM M33S access<BR>0xA. I2S/HSM Core access<BR>0xC. DMA M33NS access<BR>0xD. DMA M33S access<BR>0xE. DMA Core access</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>value for timeout for all slaves:<BR>valid value - 0x0- 0x1F<BR>if value is 0 timeout feature is disabled for all slaves<BR>Granulation is double word (64b): 1 - means 16 clocks period, 2 - means 32 clocks period...<BR>in h/w the value in FIELD is shifted left 4 times (x16). example: 0x08 =&gt;  0x80 (8 means 128)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x08</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="SOC_IC_TOSLVCFG"><A href="_.html"></A>:<A href="#Top_IPBTag">SOC_IC</A>:TOSLVCFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Time-out Slave Configuration.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0080</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>value for timeout for all slaves:<BR>valid value - 0x0- 0x1F<BR>if value is 0 timeout feature is disabled for all slaves<BR>Granulation is double word (64b): 1 - means 16 clocks period, 2 - means 32 clocks period...<BR>in h/w the value in FIELD is shifted left 4 times (x16). example: 0x08 =&gt;  0x80 (8 means 128)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x08</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x8</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

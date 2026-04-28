@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sockets &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Network Address - Addressing" href="cc35xx-network-addresses.html" />
+    <link rel="prev" title="HTTP Client and Server" href="cc35xx-http.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug wifi cc35xx-sockets";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-wifi.html">Wi-Fi User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview &amp; Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#get-and-set">GET and SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-http.html">HTTP Client and Server</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sockets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bsd-style-apis">BSD style APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#netconn-style-apis">Netconn style APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#socket-apis-used-in-sdk-examples">Socket APIs used in SDK examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-examples">Code examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-network-addresses.html">Network Address - Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sntp.html">SNTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-throughput-test.html">Throughput Testing Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-p2p.html">Peer to Peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-power-management.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-wifi.html">Wi-Fi User’s Guide</a> &raquo;</li>
+        
+      <li>Sockets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sockets">
+<span id="sec-wifi-sockets"></span><h1>Sockets<a class="headerlink" href="#sockets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>LwIP network stack includes built-in support BSD style sockets, allowing developers to use the familiar socket programming API.
+Using familiar socket APIs abstract the inner implementation from the user, allowing migration of networking code more easily.
+In LwIP there are two main types of sockets, BSD sockets API and Netconn APIs.
+There is also a RAW socket API that is used mostly when in no-OS mode but this would not be covered.</p>
+</div>
+<div class="section" id="bsd-style-apis">
+<h2>BSD style APIs<a class="headerlink" href="#bsd-style-apis" title="Permalink to this headline">¶</a></h2>
+<p>This is a high-level API that provides a familiar interface for network programming, similar to what you’d find in standard Unix/Linux systems.
+The BSD sockets API provides a more standard, POSIX-like interface, than Netconn.</p>
+<p>The APIs for using BSD sockets are mainly under <code class="docutils literal notranslate"><span class="pre">socket.h</span></code> header file.
+These BSD socket APIs would call <code class="docutils literal notranslate"><span class="pre">lwip_xxx()</span></code> with the <code class="docutils literal notranslate"><span class="pre">xxx</span></code> defined as the API operation itself.
+To enable LwIP sockets, user must define label <code class="docutils literal notranslate"><span class="pre">LWIP_SOCKET</span></code> in <code class="docutils literal notranslate"><span class="pre">lwipopts.h</span></code>.</p>
+<p>The full set of BSD Socket APIs can be found at <a class="reference external" href="https://www.nongnu.org/lwip/2_1_x/group__socket.html">socket.html</a>.</p>
+</div>
+<div class="section" id="netconn-style-apis">
+<h2>Netconn style APIs<a class="headerlink" href="#netconn-style-apis" title="Permalink to this headline">¶</a></h2>
+<p>lwIP uses the Netconn API to implement the BSD Sockets API internally, but it can also be called directly from applications.
+The Netconn API is a higher-level, lwIP-specific interface for socket programming, and as such, it is not portable as a BSD socket API.</p>
+<p>The APIs for using Netconn start with <code class="docutils literal notranslate"><span class="pre">netconn_xxx()</span></code>.
+To enable LwIP sockets and also Netconn support, user must define label <code class="docutils literal notranslate"><span class="pre">LWIP_SOCKET</span></code> and <code class="docutils literal notranslate"><span class="pre">LWIP_NETCONN</span></code> in <code class="docutils literal notranslate"><span class="pre">lwipopts.h</span></code>.</p>
+<p>The full set of Netconn APIs can be found at <a class="reference external" href="https://www.nongnu.org/lwip/2_1_x/group__netconn.html">netconn.html</a>.</p>
+</div>
+<div class="section" id="socket-apis-used-in-sdk-examples">
+<h2>Socket APIs used in SDK examples<a class="headerlink" href="#socket-apis-used-in-sdk-examples" title="Permalink to this headline">¶</a></h2>
+<p>The SDK includes currently two examples, <code class="docutils literal notranslate"><span class="pre">CC35xx_network_terminal</span></code> and <code class="docutils literal notranslate"><span class="pre">CC35xx_MQTT_client</span></code>
+<code class="docutils literal notranslate"><span class="pre">CC35xx_network_terminal</span></code> example uses the <code class="docutils literal notranslate"><span class="pre">lwip_xxx()</span></code> which are eventually calling the <code class="docutils literal notranslate"><span class="pre">netconn_xxx()</span></code> APIs.
+It can be seen that the default configuration in <code class="docutils literal notranslate"><span class="pre">lwipopts.h</span></code> includes both, <code class="docutils literal notranslate"><span class="pre">LWIP_SOCKET</span></code> and <code class="docutils literal notranslate"><span class="pre">LWIP_NETCONN</span></code>.
+<code class="docutils literal notranslate"><span class="pre">CC35xx_MQTT_client</span></code> example, like other built-in protocols, exposes protocol specific APIs so there is no need to call directly any socket APIs.
+In MQTT example specifically, LwIP provides some specific MQTT APIs (starting with <code class="docutils literal notranslate"><span class="pre">mqtt_xxx()</span></code>), which handle the socket internally and transparently.
+More specifically, it uses ALTCP layer (Application Layered TCP) which is an abstraction layer that prevents applications linking directly against the tcp.h.
+This way, an application can make use of other application layer protocols on top of TCP without knowing the details. A good example is the TLS implementation with mbedTLS stack.
+The ALTCP is used internally in MQTT as well as in HTTP and applications can also use it.</p>
+</div>
+<div class="section" id="code-examples">
+<h2>Code examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h2>
+<p>The following code snippet illustrates a TCP server allowing connection from a peer device, receiving and printing the received message and sending a pre-defined response.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;lwip/sockets.h&quot;</span>
+
+<span class="c1">#define SERVER_PORT 8080</span>
+<span class="c1">#define BUFFER_SIZE 1024</span>
+
+void tcp_server<span class="o">(</span>void *arg<span class="o">)</span> <span class="o">{</span>
+    int server_fd, client_fd<span class="p">;</span>
+    struct sockaddr_in server_addr, client_addr<span class="p">;</span>
+    socklen_t <span class="nv">addr_len</span> <span class="o">=</span> sizeof<span class="o">(</span>client_addr<span class="o">)</span><span class="p">;</span>
+    char buffer<span class="o">[</span>BUFFER_SIZE<span class="o">]</span><span class="p">;</span>
+
+    // Create socket
+    <span class="nv">server_fd</span> <span class="o">=</span> lwip_socket<span class="o">(</span>AF_INET, SOCK_STREAM, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">if</span> <span class="o">(</span>server_fd &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        printf<span class="o">(</span><span class="s2">&quot;Socket creation failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    // Bind socket to port
+    server_addr.sin_family <span class="o">=</span> AF_INET<span class="p">;</span>
+    server_addr.sin_port <span class="o">=</span> htons<span class="o">(</span>SERVER_PORT<span class="o">)</span><span class="p">;</span>
+    server_addr.sin_addr.s_addr <span class="o">=</span> INADDR_ANY<span class="p">;</span>
+
+    <span class="k">if</span> <span class="o">(</span>lwip_bind<span class="o">(</span>server_fd, <span class="o">(</span>struct sockaddr*<span class="o">)</span><span class="p">&amp;</span>server_addr, sizeof<span class="o">(</span>server_addr<span class="o">))</span> &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        printf<span class="o">(</span><span class="s2">&quot;Bind failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+        lwip_close<span class="o">(</span>server_fd<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    // Listen <span class="k">for</span> connections
+    <span class="k">if</span> <span class="o">(</span>lwip_listen<span class="o">(</span>server_fd, <span class="m">5</span><span class="o">)</span> &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        printf<span class="o">(</span><span class="s2">&quot;Listen failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+        lwip_close<span class="o">(</span>server_fd<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    printf<span class="o">(</span><span class="s2">&quot;Server listening on port %d\n&quot;</span>, SERVER_PORT<span class="o">)</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">{</span>
+        // Accept client connection
+        <span class="nv">client_fd</span> <span class="o">=</span> lwip_accept<span class="o">(</span>server_fd, <span class="o">(</span>struct sockaddr*<span class="o">)</span><span class="p">&amp;</span>client_addr, <span class="p">&amp;</span>addr_len<span class="o">)</span><span class="p">;</span>
+        <span class="k">if</span> <span class="o">(</span>client_fd &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+            printf<span class="o">(</span><span class="s2">&quot;Accept failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="o">}</span>
+
+        printf<span class="o">(</span><span class="s2">&quot;Client connected\n&quot;</span><span class="o">)</span><span class="p">;</span>
+
+        // Receive data
+        int <span class="nv">len</span> <span class="o">=</span> lwip_recv<span class="o">(</span>client_fd, buffer, BUFFER_SIZE, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+        <span class="k">if</span> <span class="o">(</span>len &gt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+            buffer<span class="o">[</span>len<span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;\0&#39;</span><span class="p">;</span>
+            printf<span class="o">(</span><span class="s2">&quot;Received: %s\n&quot;</span>, buffer<span class="o">)</span><span class="p">;</span>
+
+            // Send response
+            lwip_send<span class="o">(</span>client_fd, <span class="s2">&quot;Hello from server&quot;</span>, <span class="m">17</span>, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+        <span class="o">}</span>
+
+        // Close client connection
+        lwip_close<span class="o">(</span>client_fd<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    lwip_close<span class="o">(</span>server_fd<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The following code snippet illustrates a TCP client connecting to a server, sending a pre-defined data, receiving a response and presenting it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;lwip/sockets.h&quot;</span>
+
+<span class="c1">#define SERVER_IP &quot;192.168.1.100&quot;</span>
+<span class="c1">#define SERVER_PORT 8080</span>
+
+void tcp_client<span class="o">(</span>void *arg<span class="o">)</span> <span class="o">{</span>
+    int client_fd<span class="p">;</span>
+    struct sockaddr_in server_addr<span class="p">;</span>
+    char buffer<span class="o">[</span><span class="m">1024</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Hello from client&quot;</span><span class="p">;</span>
+
+    // Create socket
+    <span class="nv">client_fd</span> <span class="o">=</span> lwip_socket<span class="o">(</span>AF_INET, SOCK_STREAM, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">if</span> <span class="o">(</span>client_fd &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        printf<span class="o">(</span><span class="s2">&quot;Socket creation failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    // Server address
+    server_addr.sin_family <span class="o">=</span> AF_INET<span class="p">;</span>
+    server_addr.sin_port <span class="o">=</span> htons<span class="o">(</span>SERVER_PORT<span class="o">)</span><span class="p">;</span>
+    server_addr.sin_addr.s_addr <span class="o">=</span> inet_addr<span class="o">(</span>SERVER_IP<span class="o">)</span><span class="p">;</span>
+
+    // Connect to server
+    <span class="k">if</span> <span class="o">(</span>lwip_connect<span class="o">(</span>client_fd, <span class="o">(</span>struct sockaddr*<span class="o">)</span><span class="p">&amp;</span>server_addr, sizeof<span class="o">(</span>server_addr<span class="o">))</span> &lt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        printf<span class="o">(</span><span class="s2">&quot;Connection failed\n&quot;</span><span class="o">)</span><span class="p">;</span>
+        lwip_close<span class="o">(</span>client_fd<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    // Send data
+    lwip_send<span class="o">(</span>client_fd, buffer, strlen<span class="o">(</span>buffer<span class="o">)</span>, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+
+    // Receive response
+    int <span class="nv">len</span> <span class="o">=</span> lwip_recv<span class="o">(</span>client_fd, buffer, sizeof<span class="o">(</span>buffer<span class="o">)</span>, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
+    <span class="k">if</span> <span class="o">(</span>len &gt; <span class="m">0</span><span class="o">)</span> <span class="o">{</span>
+        buffer<span class="o">[</span>len<span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;\0&#39;</span><span class="p">;</span>
+        printf<span class="o">(</span><span class="s2">&quot;Received: %s\n&quot;</span>, buffer<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    // Close socket
+    lwip_close<span class="o">(</span>client_fd<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-network-addresses.html" class="btn btn-neutral float-right" title="Network Address - Addressing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-http.html" class="btn btn-neutral float-left" title="HTTP Client and Server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+.. _sec-wifi-network-addresses:
+
+Network Address - Addressing
+============================
+
+Introduction
+------------
+
+LwIP network stack includes built-in support for managing network interfaces and assigning them IP addresses.
+A network address refers to the IP address assigned to a network interface (netif), which can be configured statically, dynamically via DHCP, or automatically via AUTOIP.
+A netif represents a physical or logical network interface, such as an Wi-Fi, Ethernet or PPP connection.
+
+## Adding the netif interfaces
+
+To create a new network interface, the user should allocate space for a new ``struct netif`` and call ``netif_add()``.
+The user specifies an IP address for the interface, its net mask, and gateway address. These can be changed later regardless of the assigning method.
+
+.. code-block:: bash
+
+      netif_add(struct netif *netif,
+        const ip4_addr_t *ipaddr, const ip4_addr_t *netmask, const ip4_addr_t *gw,
+        void *state, netif_init_fn init, netif_input_fn input)
+
+Address assignment method
+-------------------------
+
+Static IP addresses
+^^^^^^^^^^^^^^^^^^^
+
+Static IP address does not rely on any servers to assign the device its IP address. Users that choose this method should know their
+network topology to make sure no duplicate IP addresses exist in the network.
+After adding the netif interface, and before bringing the interface up, the IP address should be configured.
+This can be done by calling ``netif_set_addr()`` or ``netif_set_ipaddr()``, or by configuring it during the ``netif_add()``.
+To bring the interface up, the user should call ``netif_set_up()``. To bring the interface down, call ``netif_set_down()``.
+
+DHCP
+^^^^
+
+DHCP is commonly used to get an IP address dynamically from a DHCP server. Every Access Point has the ability to assign IP addresses
+from a pool. The main advantage over a static assignment is that the maintenance is done by the Access Point so the network designer
+only needs to allocate the pools and not worry of duplicate IP addresses (although most of the clients also use gratuitous ARP to check that an assigned IP address is not in use).
+To start DHCP, the user should call ``dhcp_start()`` and to stop DHCP, the user should call ``dhcp_stop()``.
+Unlike a static IP address, a dynamic address cannot be assigned if a connection is not made. In case of Wi-Fi, a connection to the
+Access Point needs to be made first during the ``WLAN_EVENT_CONNECT`` event.
+The recommended way to start the DHCP is by setting a callback to when the link is changing via the ``netif_set_link_callback()``.
+This callback can be set during adding the netif interface. This callback would get triggered when the link becomes up via invoking ``netif_set_link_up()`` (called during ``WLAN_EVENT_CONNECT`` event).
+Same applies for the other direction where the IP address is released.
+To have DHCP support with LwIP, the user need to enable the ``LWIP_DHCP`` in ``lwipopt.h`` header file.
+
+Automatic IP
+^^^^^^^^^^^^
+
+Automatic IP is also referred to as Automatic Private IP Addressing and serves a different purpose than DHCP does (although in both, an IP address is assigned dynamically).
+Automatic IP is used when no DHCP server is available. The device is then self-assigned an IP in the range 169.254.x.x. It then uses gratuitous ARP to check for conflicts before the assignment is finalized.
+To start Automatic IP, the user should call ``autoip_start()`` and to stop, ``autoip_stop()``.
+A good practice is to use a fallback mechanism from DHCP to AutoIP.
+To have Automatic IP support with LwIP, the user need to enable the ``LWIP_AUTOIP`` in ``lwipopt.h`` header file.
+
+Addressing used in SDK examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two examples in the SDK, ``CC35xx_network_terminal`` and ``CC35xx_MQTT_client``. For both examples, DHCP addressing is used.
+In ``CC35xx_MQTT_client`` example, WIFI_IF_init() is used to create a netif interface and set a callback, ``cb_addInterfaceCompleteInd()``, where the interface callback (``cb_interfaceStatusInd()``) and link callback (``cb_linkStatusInd()``) functions are set.
+These callback are invoked when the state of the interface or link is changed. After a Wi-Fi connection is established, the link can be changed to UP so the DHCP procedure can start.
+This happens during the ``OnWifiDriverEvent()`` handler and specifically under the ``WLAN_EVENT_CONNECT`` event, where ``TCPIP_IF_notifyLinkChange()`` is invoked.
+In ``CC35xx_network_terminal`` example, when setting a station role to UP, ``network_stack_add_if_sta()`` is used to create a netif interface and set a callback, ``_role_sta_up()``, where the interface callback (``status_callback()``) and link callback (``link_callback()``) functions are set.
+These callback are invoked when the state of the interface or link is changed. After a Wi-Fi connection is established, the link can be changed to UP so the DHCP procedure can start.
+This happens during the ``WlanStackEventHandler()`` handler and specifically under the ``WLAN_EVENT_CONNECT`` event, where ``network_set_up()`` is invoked.
+
+.. note::
+    Automatic IP is currently not used in any example of the SDK.
+
+Summary
+^^^^^^^
+To summarize the difference between the three methods, see the following table.
+
+.. list-table:: Network Addressing Comparison
+    :header-rows: 1
+    :align: center
+
+    * - Features
+      - Static
+      - DHCP
+      - AutoIP
+    * - Requires server?
+      - No
+      - Yes
+      - No
+    * - IP range
+      - Any
+      - Set by the DHCP server
+      - 169.254.x.x/16
+    * - Gateway/DNS support
+      - No
+      - Yes
+      - No
+    * - Use cases
+      - Proprietary networks
+      - Managed networks
+      - Small or ad-hoc networks
+    * - IP assignment method
+      - Self-assigned
+      - Server based
+      - Self-assigned

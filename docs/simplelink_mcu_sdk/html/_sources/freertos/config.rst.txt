@@ -1,0 +1,202 @@
+
+.. _sec-freertos-config:
+
+Kernel Configuration
+--------------------
+
+The FreeRTOS kernel is configured by FreeRTOSConfig.h file which can be found
+in ``{SDK_INSTALL_DIR}\kernel\freertos\builds\{DEVICE}\release\pregenerated_configuration``,
+you can change the configuration file so that the kernel will be tailored to your application.
+For more information about kernel configuration, please see |FreeRTOS KERNEL CONFIGURATION|.
+
+In the |SDK|, all FreeRTOS application routines are abstracted using the following:
+
+- A POSIX layer, which was designed for use with this |SDK|
+- A Driver Porting Layer (DPL) for use by the TI Drivers
+
+You can find example FreeRTOS projects that use the |SDK| in the ``examples/rtos/``
+folder for all supported IDEs.
+
+No native FreeRTOS examples are provided in this |SDK|. If you want to use the native
+FreeRTOS routines without the abstractions provided by the |SDK|, documentation is provided
+on the |FREERTOS_WEB|.
+
+.. ifconfig:: device != 'cc23xx' and doctarget=='ble5'
+
+  .. note::
+
+      At this moment, the only example with FreeRTOS support is ``multi_role`` inside the SimpleLink_Lowpower_F2 SDK.
+
+POSIX Support
+-------------
+
+Portable Operating System Interface (POSIX) is an IEEE industry API standard for
+OS compatibility. The |SDK| provides support for POSIX APIs on top of
+FreeRTOS. For a more detailed description of the POSIX
+support in the |SDK|, please refer to the
+`POSIX Overview Workshop <https://dev.ti.com/tirex/explore/node?node=ACzypa9NTyZS--.cZMxD.g__BSEc4rl__LATEST>`_
+
+Driver Porting Layer (DPL)
+--------------------------
+
+The TI Drivers (e.g. UART2, I2C, Power Management, etc.) are written to be used
+with the Driver Porting Layer (DPL). The |SDK| includes a DPL
+implementation for FreeRTOS
+
+
+        .. figure:: resources/driver_levels_dpl.png
+            :align: center
+
+Using FreeRTOS with CCS
+-----------------------
+
+In order to use FreeRTOS within CCS, you must specify the location of the FreeRTOS
+installation. To do this, follow these steps:
+
+.. only:: sdk_includes_ble
+
+  1. In CCS, choose Window |rarr| Preferences from the menus.
+  2. Select the General |rarr| Workspace |rarr| Linked Resource category.
+  3. Click New and add a link with the following settings.
+
+      * Name: ``FREERTOS_INSTALL_DIR``
+      * Value: The location of your FreeRTOS installation
+
+          .. figure:: resources/freertos_install_dir.png
+              :align: center
+
+  These steps only need to be performed once per CCS workspace that you create.
+
+.. ifconfig:: device != 'cc23xx'
+
+  Using FreeRTOS with IAR
+  -----------------------
+
+  The Quick Start guide has step-by-step instructions for building SDK Projects
+  with IAR. Once these steps are followed, the user still needs to give IAR the
+  location of the FREERTOS_INSTALL_DIR in the Custom Argvars:
+
+  1. Open Tools -> Configure Custom Argument Variables
+  2. Open the Global SDK paths.
+  3. Configure the FREERTOS_INSTALL_DIR variable to match your install directory.
+
+      .. figure:: resources/configure_iar.png
+          :align: center
+          :width: 600px
+
+
+.. ifconfig:: device != 'cc23xx' and doctarget=='ble5'
+
+  .. _freertos_examples:
+
+  FreeRTOS examples
+  -----------------
+
+  As mentioned before, only the ``multi_role`` example supports FreeRTOS and
+  it needs to be used with the gcc compiler, therefore please import the
+  project located in ``multi_role/freertos/gcc``.
+
+          .. figure:: resources/freertos_project_import.png
+              :align: center
+
+  Two projects will get imported:
+
+          .. figure:: resources/multi_role_freertos_import.png
+              :align: center
+
+
+FreeRTOS modules
+-----------------------------
+
+The application and the ICall layer communicate using events to call the
+OS and made context switch. The table below shows the modules that are used by FreeRTOS.
+
+.. _tbl-freertos-modules:
+.. table:: FreeRTOS modules
+
+    +----------------------------+-------------------------------------+
+    | **Example flow**           | **FreeRTOS modules**                |
+    +----------------------------+-------------------------------------+
+    | 1. *Application Thread*    | SemaphoreP (used through DPL layer) |
+    | Listen (pend) on event     | and mq_send / mq_receive *Blocking* |
+    | number                     | Mqueue (POSIX queues)               |
+    |                            |                                     |
+    |                            |                                     |
+    +----------------------------+-------------------------------------+
+    | 2. *Stack Thread*          | TimersP (used through DPL layer)    |
+    | Doing whatever he asked    |                                     |
+    | to do by the app called    |                                     |
+    |                            |                                     |
+    |                            |                                     |
+    +----------------------------+-------------------------------------+
+    | 3. *Stack Thread*          | mq_send / mq_receive *NON-Blocking* |
+    | Push a message (or number  | Mqueue (POSIX queues)               |
+    | of messages) into the      |                                     |
+    | queue and post an event    |                                     |
+    | Queue                      |                                     |
+    +----------------------------+-------------------------------------+
+    | 4. *Application Thread*    | mq_send / mq_receive *NON-Blocking* |
+    | OS wakes the application   | Mqueue (POSIX queues)               |
+    | thread and the application |                                     |
+    | pulls the message from the |                                     |
+    | Non-OS queue               |                                     |
+    +----------------------------+-------------------------------------+
+    | 5. *Application Thread*    | mq_send / mq_receive *Blocking*     |
+    | Listen (pend) on event     | Mqueue (POSIX queues)               |
+    | number - cycle has         |                                     |
+    | completed                  |                                     |
+    |                            |                                     |
+    +----------------------------+-------------------------------------+
+
+.. only:: sdk_includes_ble
+
+    icall_POSIX
+    -----------
+
+    The file ICall_POSIX is based on POSIX, DPL and FreeRTOS bare APIs
+    calls. This implementation should allow us to support different Operating Systems if
+    required. In order to do this, all the ``#ifdef FreeRTOS`` on the current ICall_POSIX
+    could be changed to support a different OS.
+
+    Here are some of the places where these defines are used (``icall_POSIX.c``):
+
+       .. code-block:: c
+         :caption: ``ical_POSIX.c - Includes``
+         :emphasize-lines: 1, 2, 3, 4
+
+         #ifdef FREERTOS
+         #include <FreeRTOS.h>
+         #include <task.h>
+         #endif
+
+       .. code-block:: c
+         :caption: ``ical_POSIX.c - ICall_taskSelf()``
+         :emphasize-lines: 4, 5, 6
+
+         Task_Handle ICall_taskSelf(void)
+         {
+           Task_Handle task = NULL;
+         #ifdef FREERTOS
+           task = (Task_Handle) xTaskGetCurrentTaskHandle();
+         #else
+           task = <handler need to be returned according to the chosen OS>;
+         #endif // FREERTOS
+           return (task);
+         }
+
+       .. code-block:: c
+         :caption: ``ical_POSIX.c``
+         :emphasize-lines: 9-10
+
+         #ifndef FREERTOS
+         #if defined(HEAPMGR_CONFIG) && ((HEAPMGR_CONFIG == 0) || (HEAPMGR_CONFIG == 0x80))
+         #include <rtos_heaposal.h>
+         #elif defined(HEAPMGR_CONFIG) && ( (HEAPMGR_CONFIG == 1) || (HEAPMGR_CONFIG == 0x81))
+         #include <rtos_heapmem.h>
+         #elif defined(HEAPMGR_CONFIG) && ( (HEAPMGR_CONFIG == 2) || (HEAPMGR_CONFIG == 0x82))
+         #include <rtos_heaptrack.h>
+         #else
+         static ICall_CSState ICall_heapCSState;
+         #include <rtos_heaposal.h>
+         #endif
+         #endif // !FREERTOS

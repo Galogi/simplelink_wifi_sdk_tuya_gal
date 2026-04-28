@@ -1,0 +1,53 @@
+.. _Radio Configuration:
+
+
+Radio Configuration
+-------------------
+
+The CC35xx allows the configuration of radio parameters via the `cc35xx_conf.bin`. This file can be 
+created with the `Simplelink Wifi Toolbox <https://www.ti.com/tool/SIMPLELINK-WIFI-TOOLBOX>`_, using the INI Composer.
+
+.. figure:: resources/ini_composer.png
+    :align: center
+    :width: 90%
+
+.. note::
+
+    Reference the `Wifi Toolbox User Guide` for more information on how to generate the conf files and detailed information on parameters
+
+Once the `cc35xx_conf.bin` file has been created it must be converted to a C array
+
+This can be done with the following
+
+..  tabs::
+    .. tab:: Unix
+
+        Open a terminal and input the following to create a .c file filled with the c array
+
+        .. code:: c
+        
+            xxd -i path_to_cc35xx_conf.bin > gINIbuffer.c
+
+    .. tab:: Windows
+
+        There are multiple ways to achieve this on windows but unfortunately none natively, You will have to install a Bin2C tool or python script.
+        Segger has a free Bin2C utility that you can leverage which will create a .c file with the array inside
+
+        .. figure:: resources/Segger_array.png
+                    :align: center
+                    :width: 45%
+
+This hex dump will be exchanged inside the `containers.h` file located inside the `Simplelink Wifi SDK`. The `containers.h` file holds 2 C arrays, `gFWbuffer` and `gINIbuffer`.
+These arrays hold the `cc35xx_fw.bin` and `cc35xx_conf.bin` respectively. These `gINIbuffer` array  is loaded onto the device during initialization with `wlan_start()` 
+
+.. code:: c
+
+    Default location:   C:\ti\simplelink_wifi_sdk_XX_XX_XX_XX\tools\TI_Containers
+
+The newly generated `cc35xx_conf.bin` hex dump will replace the `gINIbuffer` located at the bottom of the file.
+
+.. figure:: resources/INIbuffer.png
+    :align: center
+    :width: 75%
+
+The application image must then be recompiled using the new modified `containers.h` for the changed parameters to take effect

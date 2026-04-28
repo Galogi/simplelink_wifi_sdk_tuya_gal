@@ -1,0 +1,1108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_e_c_c_params_x_x_f3_h_s_m_8h" kind="file" language="C++">
+    <compoundname>ECCParamsXXF3HSM.h</compoundname>
+    <includedby refid="_e_c_c_params_8h" local="no">ECCParams.h</includedby>
+    <invincdepgraph>
+      <node id="296">
+        <label>ECDH.h</label>
+        <link refid="_e_c_d_h_8h"/>
+        <childnode refid="297" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>EDDSAXXF3HSM.h</label>
+        <link refid="_e_d_d_s_a_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="294">
+        <label>ECCParamsXXF3HSM.h</label>
+        <link refid="_e_c_c_params_x_x_f3_h_s_m_8h"/>
+        <childnode refid="295" relation="include">
+        </childnode>
+      </node>
+      <node id="295">
+        <label>ECCParams.h</label>
+        <link refid="_e_c_c_params_8h"/>
+        <childnode refid="296" relation="include">
+        </childnode>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="301" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+      <node id="297">
+        <label>ECDHXXF3HSM.h</label>
+        <link refid="_e_c_d_h_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="301">
+        <label>EDDSA.h</label>
+        <link refid="_e_d_d_s_a_8h"/>
+        <childnode refid="302" relation="include">
+        </childnode>
+      </node>
+      <node id="298">
+        <label>ti_psa_crypto_helper.h</label>
+        <link refid="ti__psa__crypto__helper_8h"/>
+      </node>
+      <node id="300">
+        <label>ECDSAXXF3HSM.h</label>
+        <link refid="_e_c_d_s_a_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="299">
+        <label>ECDSA.h</label>
+        <link refid="_e_c_d_s_a_8h"/>
+        <childnode refid="300" relation="include">
+        </childnode>
+        <childnode refid="298" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="union_e_c_c___n_i_s_t_p192___param" prot="public">ECC_NISTP192_Param</innerclass>
+    <innerclass refid="union_e_c_c___n_i_s_t_p384___param" prot="public">ECC_NISTP384_Param</innerclass>
+    <innerclass refid="union_e_c_c___n_i_s_t_p521___param" prot="public">ECC_NISTP521_Param</innerclass>
+    <innerclass refid="union_e_c_c___brainpool_p256_r1___param" prot="public">ECC_BrainpoolP256R1_Param</innerclass>
+    <innerclass refid="union_e_c_c___brainpool_p384_r1___param" prot="public">ECC_BrainpoolP384R1_Param</innerclass>
+    <innerclass refid="union_e_c_c___brainpool_p512_r1___param" prot="public">ECC_BrainpoolP512R1_Param</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_c_c_params_x_x_f3_h_s_m_8h_1a236ae77dc55c11c39ef2b3de8b3780ff" prot="public" static="no">
+        <name>HSM_PADDED_PARAM_BYTES</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="43" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_x_x_f3_h_s_m_8h_1a4c6fb6e5413e1f3bfaa53dccd319f5d2" prot="public" static="no">
+        <name>PADDING_BYTES_EVEN</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="49" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_c_params_x_x_f3_h_s_m_8h_1aa41a81b148b1770bd2ebc9dbbf1c8b62" prot="public" static="no">
+        <name>PADDING_BYTES_ODD</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="50" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__nistp192__params_1ga6637af56bd602f08ef416020d096394c" prot="public" static="no">
+        <name>ECCParams_NISTP192_LENGTH</name>
+        <initializer>24</initializer>
+        <briefdescription>
+<para>Length of NIST P192 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="60" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__nistp384__params_1ga9f83c0733522625e071ac93d16c3fd31" prot="public" static="no">
+        <name>ECCParams_NISTP384_LENGTH</name>
+        <initializer>48</initializer>
+        <briefdescription>
+<para>Length of NIST P384 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="128" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__nistp521__params_1ga44f08f1390d90127f0decb3c08c82664" prot="public" static="no">
+        <name>ECCParams_NISTP521_LENGTH</name>
+        <initializer>66</initializer>
+        <briefdescription>
+<para>Length of NIST P521 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="196" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__nistp521__params_1ga2057d370f6def14eec5b7065c33b071c" prot="public" static="no">
+        <name>ECC_NISTP521_PARAM_LENGTH_WITH_PADDED_BYTES</name>
+        <initializer>(<ref refid="group__nistp521__params_1ga44f08f1390d90127f0decb3c08c82664" kindref="member">ECCParams_NISTP521_LENGTH</ref> + <ref refid="_e_c_c_params_x_x_f3_h_s_m_8h_1a236ae77dc55c11c39ef2b3de8b3780ff" kindref="member">HSM_PADDED_PARAM_BYTES</ref>)</initializer>
+        <briefdescription>
+<para>Length in bytes of NISTP521 curve parameters including the padded 0s so that the HSM is provided curve parameters with length that is divisible by 4, per its requirements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="203" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___brainpool_p256_r1__params_1gac8e29fecd21ddc0b0d1768bf1a40075b" prot="public" static="no">
+        <name>ECCParams_BrainpoolP256R1_LENGTH</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>Length of BrainpoolP256R1 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="271" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___brainpool_p384_r1__params_1gaae4e89fe2581b93ac755d9551dea18a1" prot="public" static="no">
+        <name>ECCParams_BrainpoolP384R1_LENGTH</name>
+        <initializer>48</initializer>
+        <briefdescription>
+<para>Length of BrainpoolP384R1 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="339" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___brainpool_p512_r1__params_1gad93b2f35c2a0d2768b7d0a5f9ce9b1e1" prot="public" static="no">
+        <name>ECCParams_BrainpoolP512R1_LENGTH</name>
+        <initializer>64</initializer>
+        <briefdescription>
+<para>Length of BrainpoolP512R1 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="407" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__nistp192__params_1ga8de957c198187459d02f1a281d19f010" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga186d0921074a84044ee9e00912be4e2b" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gabdb9420f92ed7a4423ed010baee3c305" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gaf9c740210fe2a87e26edc31cb65b4626" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP192 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga559a930c55e2ee66fac7f1d8e9be0722" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP192 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga9ddb6c516d78b87058d52a508f770c42" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga58bf0c3dd069484c315b13390ba55499" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1gac6e252675b29080d4ab47485118f4394" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp192__params_1ga0297eb27c6959e723b1cbcf5f47dc163" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref></type>
+        <definition>const ECC_NISTP192_Param ECC_NISTP192_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP192_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP192 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga7495c1d492f60e12c1cf367c19d250e6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="142" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga9c39db25d1336870ff1ba8c8cae25b6d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="147" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga32acbe88f04741c597f917d2c653a53c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga63f1eb00822a6ee1598c96758079c7fd" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP384 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga365d02290375ce2d8c9c3b0c6983df17" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP384 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga356f94c7e9d0e0c5db2fc5b03acf1c4d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="169" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga2919779a7131a2b7a6d3cb4dd029e164" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="174" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga983529c374f7a1c55d27a6d5f05dd0c1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga5348d3067bf45713572e347ea0e5a9c6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gaa159829dce65ddc9fce3b4a7e67f9b10" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gaa8245cfe0c79e12656ac1ac40e4c595c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gac1b67c95937466831c2a88d811dfbc4c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="227" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga790db98986ab13df6026ece1ce2f2040" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP521 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="233" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gadc4ae2d61a5ee00e68f4c5450722834c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP521 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="239" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga83c4ce4900f8d45d1df332ca9b27bf4e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga03b2368e0bae4c1a058375565b5239e2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="249" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gae18546e7922208d3df29f60ce9d68a76" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="254" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga7c278f7dd4df10780ee35825dac0e3d0" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gaf5f0030a8ec3510508100a61f6572c4c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="285" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga2a2e1f223ec34a3474818bc8a9cf0177" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="290" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga7ee96457fbf965dbb4f45883a30879ad" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="295" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga4ffd0d8eb0504924338b7cca8a039f35" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_BrainpoolP256R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="301" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga9724a88a1b569cf4c1de8c31d588efe8" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_BrainpoolP256R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="307" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga8a50791606d8a2564d10a3b1e4b818e2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="312" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gafd614a05787569cc657ed90c8900f17f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="317" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gab88cc1e7bad7a21bc0d5e04087cdd705" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="322" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gab57ba97ba3de4538fd57e2426d96d48e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="327" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1gaae088d4409c8d273feb9c1d20b872509" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="353" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1gaf9a762723140da99dff1f995ae30af76" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="358" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1ga11920cbb6ba083bf6a5724dae70ae171" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="363" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1gac48e2640a5f388c792c1f4af7a23eb82" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_BrainpoolP384R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="369" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1ga66a491ac9fc1ea243415de449f88776f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_BrainpoolP384R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="375" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1ga5bcae53ff3e2c1508f699b6079b11eed" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="380" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1ga275e4c45a0be15cace1c4e5961e608f1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="385" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1ga3d8a6fa549d077d0ab148c2d157312d9" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="390" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p384_r1__params_1gaa61f7a8ddb2d58a2aaba46c3d8047a1c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP384R1_Param ECC_BrainpoolP384R1_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP384R1_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_BrainpoolP384R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="395" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga00ac3a7141ae0bcd727a4f698027ec17" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="421" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga4a7cba518b001e6dc2a8f1924b722818" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="426" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga6603d7a8902a12baa255fdada31d899f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="431" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga4c73c601a5f74a3262eecc16e966521d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_BrainpoolP512R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="437" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gaaa9394a583362d0c4be3cc86687bd2e3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_BrainpoolP512R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="443" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gaffbae9c85ab758bbd18d8378178c5613" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="448" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gab2b3ef544d95e60259f3f55c5439217d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="453" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gad107efa512f76ca905285e44e7b21f9a" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="458" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gac5570ba04040d151124de1f8b5e33f77" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="463" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2024-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>========<sp/>ECCParamsXXF3HSM.h<sp/>========</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>file<sp/>contains<sp/>structure<sp/>declarations<sp/>for<sp/>various<sp/>ECC<sp/>curves<sp/>for<sp/>use</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/>on<sp/>CC27XX<sp/>devices.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>For<sp/>curves<sp/>with<sp/>parameter<sp/>lengths<sp/>that<sp/>are<sp/>not<sp/>divisible<sp/>by<sp/>4<sp/>(which</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>is<sp/>only<sp/>the<sp/>case<sp/>on<sp/>NISTP521<sp/>curves),<sp/>2<sp/>bytes<sp/>of<sp/>0s<sp/>must<sp/>be<sp/>added<sp/>to</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>the<sp/>parameter<sp/>buffers</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_e_c_c_params_x_x_f3_h_s_m_8h_1a236ae77dc55c11c39ef2b3de8b3780ff" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HSM_PADDED_PARAM_BYTES<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>HSM<sp/>requires<sp/>base<sp/>points<sp/>of<sp/>ECC<sp/>multiplications<sp/>to<sp/>have<sp/>padding<sp/>bytes</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>between<sp/>the<sp/>X<sp/>and<sp/>Y<sp/>components,<sp/>depending<sp/>on<sp/>the<sp/>number<sp/>of<sp/>words<sp/>that<sp/>are</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>required<sp/>per<sp/>component.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_e_c_c_params_x_x_f3_h_s_m_8h_1a4c6fb6e5413e1f3bfaa53dccd319f5d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PADDING_BYTES_EVEN<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_e_c_c_params_x_x_f3_h_s_m_8h_1aa41a81b148b1770bd2ebc9dbbf1c8b62" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PADDING_BYTES_ODD<sp/><sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__nistp192__params_1ga6637af56bd602f08ef416020d096394c" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_NISTP192_LENGTH<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="union_e_c_c___n_i_s_t_p192___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67" refid="union_e_c_c___n_i_s_t_p192___param_1a6328a3f9b6a5deec90abde1a1bfee717" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group__nistp192__params_1ga6637af56bd602f08ef416020d096394c" kindref="member">ECCParams_NISTP192_LENGTH</ref>];</highlight></codeline>
+<codeline lineno="68" refid="union_e_c_c___n_i_s_t_p192___param_1a30b2e5f64a3681ab64bacc556f5ec4ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group__nistp192__params_1ga6637af56bd602f08ef416020d096394c" kindref="member">ECCParams_NISTP192_LENGTH</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga8de957c198187459d02f1a281d19f010" kindref="member">ECC_NISTP192_generatorX</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga186d0921074a84044ee9e00912be4e2b" kindref="member">ECC_NISTP192_generatorY</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1gabdb9420f92ed7a4423ed010baee3c305" kindref="member">ECC_NISTP192_prime</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1gaf9c740210fe2a87e26edc31cb65b4626" kindref="member">ECC_NISTP192_a</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga559a930c55e2ee66fac7f1d8e9be0722" kindref="member">ECC_NISTP192_b</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga9ddb6c516d78b87058d52a508f770c42" kindref="member">ECC_NISTP192_order</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga58bf0c3dd069484c315b13390ba55499" kindref="member">ECC_NISTP192_k_mont</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1gac6e252675b29080d4ab47485118f4394" kindref="member">ECC_NISTP192_a_mont</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p192___param" kindref="compound">ECC_NISTP192_Param</ref><sp/><ref refid="group__nistp192__params_1ga0297eb27c6959e723b1cbcf5f47dc163" kindref="member">ECC_NISTP192_b_mont</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>nistp192_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="group__nistp384__params_1ga9f83c0733522625e071ac93d16c3fd31" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_NISTP384_LENGTH<sp/>48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="union_e_c_c___n_i_s_t_p384___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135" refid="union_e_c_c___n_i_s_t_p384___param_1a096271dc9c5adfc1d6e57ccbb0152c75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group__nistp384__params_1ga9f83c0733522625e071ac93d16c3fd31" kindref="member">ECCParams_NISTP384_LENGTH</ref>];</highlight></codeline>
+<codeline lineno="136" refid="union_e_c_c___n_i_s_t_p384___param_1aa93a764cbdf7c869c024e3b2acb5f13b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group__nistp384__params_1ga9f83c0733522625e071ac93d16c3fd31" kindref="member">ECCParams_NISTP384_LENGTH</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}<sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga7495c1d492f60e12c1cf367c19d250e6" kindref="member">ECC_NISTP384_generatorX</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga9c39db25d1336870ff1ba8c8cae25b6d" kindref="member">ECC_NISTP384_generatorY</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga32acbe88f04741c597f917d2c653a53c" kindref="member">ECC_NISTP384_prime</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga63f1eb00822a6ee1598c96758079c7fd" kindref="member">ECC_NISTP384_a</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga365d02290375ce2d8c9c3b0c6983df17" kindref="member">ECC_NISTP384_b</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga356f94c7e9d0e0c5db2fc5b03acf1c4d" kindref="member">ECC_NISTP384_order</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga2919779a7131a2b7a6d3cb4dd029e164" kindref="member">ECC_NISTP384_k_mont</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga983529c374f7a1c55d27a6d5f05dd0c1" kindref="member">ECC_NISTP384_a_mont</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref><sp/><ref refid="group__nistp384__params_1ga5348d3067bf45713572e347ea0e5a9c6" kindref="member">ECC_NISTP384_b_mont</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>nistp384_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="group__nistp521__params_1ga44f08f1390d90127f0decb3c08c82664" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_NISTP521_LENGTH<sp/>66</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="group__nistp521__params_1ga2057d370f6def14eec5b7065c33b071c" refkind="member"><highlight class="preprocessor">#define<sp/>ECC_NISTP521_PARAM_LENGTH_WITH_PADDED_BYTES<sp/>(ECCParams_NISTP521_LENGTH<sp/>+<sp/>HSM_PADDED_PARAM_BYTES)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="union_e_c_c___n_i_s_t_p521___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210" refid="union_e_c_c___n_i_s_t_p521___param_1ac7b584a579a948c8ace0cee7826a6e5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group__nistp521__params_1ga2057d370f6def14eec5b7065c33b071c" kindref="member">ECC_NISTP521_PARAM_LENGTH_WITH_PADDED_BYTES</ref>];</highlight></codeline>
+<codeline lineno="211" refid="union_e_c_c___n_i_s_t_p521___param_1a09a131aa133781bcf48d400793c72692" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group__nistp521__params_1ga2057d370f6def14eec5b7065c33b071c" kindref="member">ECC_NISTP521_PARAM_LENGTH_WITH_PADDED_BYTES</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}<sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1gaa159829dce65ddc9fce3b4a7e67f9b10" kindref="member">ECC_NISTP521_generatorX</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1gaa8245cfe0c79e12656ac1ac40e4c595c" kindref="member">ECC_NISTP521_generatorY</ref>;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1gac1b67c95937466831c2a88d811dfbc4c" kindref="member">ECC_NISTP521_prime</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1ga790db98986ab13df6026ece1ce2f2040" kindref="member">ECC_NISTP521_a</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1gadc4ae2d61a5ee00e68f4c5450722834c" kindref="member">ECC_NISTP521_b</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1ga83c4ce4900f8d45d1df332ca9b27bf4e" kindref="member">ECC_NISTP521_order</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1ga03b2368e0bae4c1a058375565b5239e2" kindref="member">ECC_NISTP521_k_mont</ref>;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1gae18546e7922208d3df29f60ce9d68a76" kindref="member">ECC_NISTP521_a_mont</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref><sp/><ref refid="group__nistp521__params_1ga7c278f7dd4df10780ee35825dac0e3d0" kindref="member">ECC_NISTP521_b_mont</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>nistp521_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="group___brainpool_p256_r1__params_1gac8e29fecd21ddc0b0d1768bf1a40075b" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_BrainpoolP256R1_LENGTH<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="union_e_c_c___brainpool_p256_r1___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278" refid="union_e_c_c___brainpool_p256_r1___param_1a8165b0f1d1081f8873f9c576e2bd856b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group___brainpool_p256_r1__params_1gac8e29fecd21ddc0b0d1768bf1a40075b" kindref="member">ECCParams_BrainpoolP256R1_LENGTH</ref>];</highlight></codeline>
+<codeline lineno="279" refid="union_e_c_c___brainpool_p256_r1___param_1a04aa1cbdc50465cb78bd021d286faf98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group___brainpool_p256_r1__params_1gac8e29fecd21ddc0b0d1768bf1a40075b" kindref="member">ECCParams_BrainpoolP256R1_LENGTH</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}<sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1gaf5f0030a8ec3510508100a61f6572c4c" kindref="member">ECC_BrainpoolP256R1_generatorX</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1ga2a2e1f223ec34a3474818bc8a9cf0177" kindref="member">ECC_BrainpoolP256R1_generatorY</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1ga7ee96457fbf965dbb4f45883a30879ad" kindref="member">ECC_BrainpoolP256R1_prime</ref>;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1ga4ffd0d8eb0504924338b7cca8a039f35" kindref="member">ECC_BrainpoolP256R1_a</ref>;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1ga9724a88a1b569cf4c1de8c31d588efe8" kindref="member">ECC_BrainpoolP256R1_b</ref>;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1ga8a50791606d8a2564d10a3b1e4b818e2" kindref="member">ECC_BrainpoolP256R1_order</ref>;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1gafd614a05787569cc657ed90c8900f17f" kindref="member">ECC_BrainpoolP256R1_k_mont</ref>;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1gab88cc1e7bad7a21bc0d5e04087cdd705" kindref="member">ECC_BrainpoolP256R1_a_mont</ref>;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref><sp/><ref refid="group___brainpool_p256_r1__params_1gab57ba97ba3de4538fd57e2426d96d48e" kindref="member">ECC_BrainpoolP256R1_b_mont</ref>;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>BrainpoolP256R1_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339" refid="group___brainpool_p384_r1__params_1gaae4e89fe2581b93ac755d9551dea18a1" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_BrainpoolP384R1_LENGTH<sp/>48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344" refid="union_e_c_c___brainpool_p384_r1___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346" refid="union_e_c_c___brainpool_p384_r1___param_1a4cb1510e3be9a5142ddf37c4865442a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group___brainpool_p384_r1__params_1gaae4e89fe2581b93ac755d9551dea18a1" kindref="member">ECCParams_BrainpoolP384R1_LENGTH</ref>];</highlight></codeline>
+<codeline lineno="347" refid="union_e_c_c___brainpool_p384_r1___param_1abc00357457bba09c6969cef1e53e3a4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group___brainpool_p384_r1__params_1gaae4e89fe2581b93ac755d9551dea18a1" kindref="member">ECCParams_BrainpoolP384R1_LENGTH</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">}<sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1gaae088d4409c8d273feb9c1d20b872509" kindref="member">ECC_BrainpoolP384R1_generatorX</ref>;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1gaf9a762723140da99dff1f995ae30af76" kindref="member">ECC_BrainpoolP384R1_generatorY</ref>;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1ga11920cbb6ba083bf6a5724dae70ae171" kindref="member">ECC_BrainpoolP384R1_prime</ref>;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1gac48e2640a5f388c792c1f4af7a23eb82" kindref="member">ECC_BrainpoolP384R1_a</ref>;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1ga66a491ac9fc1ea243415de449f88776f" kindref="member">ECC_BrainpoolP384R1_b</ref>;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1ga5bcae53ff3e2c1508f699b6079b11eed" kindref="member">ECC_BrainpoolP384R1_order</ref>;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1ga275e4c45a0be15cace1c4e5961e608f1" kindref="member">ECC_BrainpoolP384R1_k_mont</ref>;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1ga3d8a6fa549d077d0ab148c2d157312d9" kindref="member">ECC_BrainpoolP384R1_a_mont</ref>;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p384_r1___param" kindref="compound">ECC_BrainpoolP384R1_Param</ref><sp/><ref refid="group___brainpool_p384_r1__params_1gaa61f7a8ddb2d58a2aaba46c3d8047a1c" kindref="member">ECC_BrainpoolP384R1_b_mont</ref>;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>BrainpoolP384R1_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="group___brainpool_p512_r1__params_1gad93b2f35c2a0d2768b7d0a5f9ce9b1e1" refkind="member"><highlight class="preprocessor">#define<sp/>ECCParams_BrainpoolP512R1_LENGTH<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412" refid="union_e_c_c___brainpool_p512_r1___param" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="414" refid="union_e_c_c___brainpool_p512_r1___param_1a64c2bacc1d6eb3e12e9de8fbff331bbe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>byte[<ref refid="group___brainpool_p512_r1__params_1gad93b2f35c2a0d2768b7d0a5f9ce9b1e1" kindref="member">ECCParams_BrainpoolP512R1_LENGTH</ref>];</highlight></codeline>
+<codeline lineno="415" refid="union_e_c_c___brainpool_p512_r1___param_1a0899b4d332695a880a8f9265c6e63eb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>word[<ref refid="group___brainpool_p512_r1__params_1gad93b2f35c2a0d2768b7d0a5f9ce9b1e1" kindref="member">ECCParams_BrainpoolP512R1_LENGTH</ref><sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t)];</highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}<sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref>;</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1ga00ac3a7141ae0bcd727a4f698027ec17" kindref="member">ECC_BrainpoolP512R1_generatorX</ref>;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1ga4a7cba518b001e6dc2a8f1924b722818" kindref="member">ECC_BrainpoolP512R1_generatorY</ref>;</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1ga6603d7a8902a12baa255fdada31d899f" kindref="member">ECC_BrainpoolP512R1_prime</ref>;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1ga4c73c601a5f74a3262eecc16e966521d" kindref="member">ECC_BrainpoolP512R1_a</ref>;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1gaaa9394a583362d0c4be3cc86687bd2e3" kindref="member">ECC_BrainpoolP512R1_b</ref>;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1gaffbae9c85ab758bbd18d8378178c5613" kindref="member">ECC_BrainpoolP512R1_order</ref>;</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1gab2b3ef544d95e60259f3f55c5439217d" kindref="member">ECC_BrainpoolP512R1_k_mont</ref>;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1gad107efa512f76ca905285e44e7b21f9a" kindref="member">ECC_BrainpoolP512R1_a_mont</ref>;</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref><sp/><ref refid="group___brainpool_p512_r1__params_1gac5570ba04040d151124de1f8b5e33f77" kindref="member">ECC_BrainpoolP512R1_b_mont</ref>;</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>BrainpoolP512R1_params<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_w_m_timer_w_f_f3___hw_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>PWMTimerWFF3_HwAttrs</compoundname>
+    <includes refid="_p_w_m_timer_w_f_f3_8h" local="no">PWMTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___hw_attrs_1a64b159c7efc51dfe7acc4fe4644925a6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PWMTimerWFF3_HwAttrs::gpTimerInstance</definition>
+        <argsstring></argsstring>
+        <name>gpTimerInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer unit index (0, 1) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="152" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___hw_attrs_1a1b6b442de1c4421f76af73ed03851ee5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t PWMTimerWFF3_HwAttrs::preScalerDivision</definition>
+        <argsstring></argsstring>
+        <name>preScalerDivision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer prescaler divider </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="153" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PWMTimerWFF3 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the driver to set up the underlying GPTimer driver statically. </para>    </detaileddescription>
+    <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="151" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="150" bodyend="154"/>
+    <listofallmembers>
+      <member refid="struct_p_w_m_timer_w_f_f3___hw_attrs_1a64b159c7efc51dfe7acc4fe4644925a6" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_HwAttrs</scope><name>gpTimerInstance</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___hw_attrs_1a1b6b442de1c4421f76af73ed03851ee5" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_HwAttrs</scope><name>preScalerDivision</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

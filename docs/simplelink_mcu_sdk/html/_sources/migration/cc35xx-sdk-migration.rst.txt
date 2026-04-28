@@ -1,0 +1,136 @@
+ALL VERSIONS
+============
+
+For each SDK release, do the following steps to update SDK version on existing projects
+
+.. attention::
+    If you have an already activated device, you will need to perform “Factory Programming” with the toolbox provided in the sdk before being flashing via CCS.
+
+
+.. tabs::
+    .. tab:: Code Composer Studio
+
+        1.  Open CCS and verify that the latest versions of ``SimpleLink Wifi Toolbox``, ``SimpleLink Wi-Fi SDK``, and ``SysConfig`` are detected as a product
+
+            This can be done by going to ``File`` |rarr| ``Preferences`` |rarr| ``Code Composer Studio Settings``
+
+            .. figure:: resources/Theia_CCSSettings.png
+                :align: center
+                :width: 45%
+
+                Code Composer Settings
+            
+            Next go into ``General`` |rarr| ``Products``
+
+            .. figure:: resources/Theia_Products.png
+                :align: center
+                :width: 45%
+
+                Products
+
+        2.  Import Project from the new SDK by going to ``File`` |rarr| ``Import Projects``
+            
+            .. figure:: resources/Theia_Import.png
+                :align: center
+                :width: 45%
+
+                Import Project
+
+            Browse for the example
+
+            .. figure:: resources/Theia_Browse.png
+                :align: center
+                :width: 45%
+
+                Browse Examples
+
+        3.  Verify ``SimpleLink Wifi Toolbox``, ``SimpleLink Wi-Fi SDK``, and ``SysConfig`` is in the product dependencies. 
+            Right click on the Project and navigate to ``Properties``
+
+            .. figure:: resources/Theia_Properties.png
+                :align: center
+                :width: 45%
+
+                Project Properties
+
+            In the Project Properties go to ``General`` |rarr| ``Dependencies`` |rarr| ``Product Dependencies``
+
+            .. figure:: resources/Theia_Dependencies.png
+                :align: center
+                :width: 45%
+
+                Product Dependencies
+            
+            If the ``SimpleLink Wifi Toolbox`` is not in the list. Click on the Plus icon and select the 
+            ``SimpleLink Wifi Toolbox`` and latest version.
+
+            .. figure:: resources/Theia_AddProduct.png
+                :align: center
+                :width: 45%
+
+                Add Product Reference
+
+    .. tab:: Code Composer Studio (12.8 and Older)
+
+            1.  Open CCS and verify that the latest versions of ``SimpleLink Wifi Toolbox``, ``SimpleLink Wi-Fi SDK``, and ``SysConfig`` are detected as a product
+
+                    This can be done by going to ``File`` |rarr| ``Preferences`` |rarr| ``Code Composer Studio Settings``
+
+                .. _fig-import-1:
+
+                .. figure:: resources/import-1.png
+                    :align: center
+                    :width: 45%
+
+                    Click on Preferences
+
+
+                .. _fig-import-2:
+
+                .. figure:: resources/import-2.png
+                    :align: center
+                    :width: 45%
+
+                    Refresh Products
+
+            2. Import Project from the new SDK by going to ``File`` |rarr| ``Import Projects``
+
+                .. _fig-import-3:
+
+                .. figure:: resources/import-3.png
+                    :align: center
+                    :width: 45%
+
+                    Import projects
+
+                - On pop up dialog select **"Code Composer Studio"** and then **"CCS Project"** and **"Next"**.
+
+                .. _fig-import-4:
+
+                .. figure:: resources/import-4.png
+                    :align: center
+                    :width: 45%
+
+                    CCS Project
+
+                -  Click on **"Browse ..."** and navigate into examples.
+                    - ``SDK_INSTALL_DIR/examples``
+                        1. ``/rtos/CC35X1_LAUNCHXL`` for driver examples
+                        2. ``/CC35xx_network_terminal`` for the WiFi network terminal example
+
+                - Click **"Select Folder"** and selected projects should appear in **"Discovered projects"**. Make sure **"Copy projects into workspace"** is checked before clicking **"Finish"**.
+
+                .. _fig-import-5:
+
+                .. figure:: resources/import-5.png
+                    :align: center
+                    :width: 35%
+
+                    Select Project
+
+            3.  Verify ``SimpleLink Wifi Toolbox``, ``SimpleLink Wi-Fi SDK``, and ``SysConfig`` is in the product dependencies. 
+
+            Right click on the Project and navigate to ``Properties``
+
+            If the ``SimpleLink Wifi Toolbox`` is not in the list. Click on the Plus icon and select the 
+            ``SimpleLink Wifi Toolbox`` and latest version.

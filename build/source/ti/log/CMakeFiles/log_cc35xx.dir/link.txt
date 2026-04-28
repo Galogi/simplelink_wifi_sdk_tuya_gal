@@ -1,0 +1,1 @@
+C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmar.exe qc lib/ticlang/m33f/log_cc35xx/log_cc35xx.a CMakeFiles/log_cc35xx.dir/LogSinkBuf.c.obj CMakeFiles/log_cc35xx.dir/LogSinkUART.c.obj CMakeFiles/log_cc35xx.dir/LogSinkITM.c.obj

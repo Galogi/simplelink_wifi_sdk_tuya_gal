@@ -1,0 +1,20 @@
+#################################
+SimpleLink Wi-Fi SDK User's Guide
+#################################
+
+.. rubric:: Table of contents
+
+.. toctree::
+   :maxdepth: 2
+
+   index-platform
+   /wifi/cc35xx-wifi
+   /ble/cc35xx-ble
+   /cc35xx/activation
+   /memory/cc35xx-index
+   /security/cc35xx-index
+   /cc35xx/ota
+   /cc35xx/examples-index
+   /building/cc35xx-index
+   /freertos/freertos-index
+   /migration/cc35xx-index

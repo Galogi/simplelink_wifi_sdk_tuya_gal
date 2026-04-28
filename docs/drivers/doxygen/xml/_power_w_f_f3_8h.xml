@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_power_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>PowerWFF3.h</compoundname>
+    <includes refid="_hwi_p_8h" local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes refid="_clock_p_8h" local="no">ti/drivers/dpl/ClockP.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <incdepgraph>
+      <node id="334">
+        <label>stdbool.h</label>
+      </node>
+      <node id="331">
+        <label>PowerWFF3.h</label>
+        <link refid="_power_w_f_f3_8h"/>
+        <childnode refid="332" relation="include">
+        </childnode>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+      </node>
+      <node id="333">
+        <label>stdint.h</label>
+      </node>
+      <node id="340">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+      </node>
+      <node id="335">
+        <label>stddef.h</label>
+      </node>
+      <node id="332">
+        <label>ti/drivers/dpl/HwiP.h</label>
+        <link refid="_hwi_p_8h"/>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+      <node id="336">
+        <label>ti/drivers/dpl/ClockP.h</label>
+        <link refid="_clock_p_8h"/>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+      <node id="339">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="337">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+      </node>
+      <node id="338">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="333" relation="include">
+        </childnode>
+        <childnode refid="334" relation="include">
+        </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_power_w_f_f3___config" prot="public">PowerWFF3_Config</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a0bb5ea6c1aebfedc41420ab2c60fb55a" prot="public" static="no">
+        <name>PowerWFF3_RESUMETIMESLEEP</name>
+        <initializer>15000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The latency to reserve for resume from Sleep (usec) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="65" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a6654e00f20097f1e895f672a9e6165fd" prot="public" static="no">
+        <name>PowerWFF3_TOTALTIMESLEEP</name>
+        <initializer>16000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The total latency to reserve for entry to and exit from Sleep (usec) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="68" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a01887aca4b67ffb343cc78524a139e4d" prot="public" static="no">
+        <name>PowerWFF3_WAKEDELAYSLEEP</name>
+        <initializer>15000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The initial delay when waking from Sleep (usec) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="71" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1aa2ce463601d6a9e9217aa3b156cb4b8c" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_DCAN</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: DCAN </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="76" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a71d7ed2b2a16b7e4965895af2fef03c2" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_GPTIMER0</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: GPTIMER 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="79" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1ab973ee51502344e0fd2da15789a8710c" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_GPTIMER1</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: GPTIMER 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="82" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a4c7f1e52386fb5787ae8ac10b8ebfc2a" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_I2C0</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: I2C 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="85" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1ac7f036454d05eb3eb6b0576a0f5d2cdf" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_I2C1</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: I2C 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="88" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a3624d05e361326dab71edd96dee4cd17" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_I2S</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: I2S </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="91" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a610c7f7b567674a3af8a69ce51839290" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_SDMMC</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: SDMMC </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="94" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a8eb3e21bd26e3ae80731de9083938533" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_SPI0</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: SPI 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="97" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a861b78104fd8d170a2b8f9f29603dc7b" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_SPI1</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: SPI 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="100" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a067558bc67fc8f3ea958035a5032ba8f" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_SYSTIMER</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: SysTimer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="103" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a44d98c58d5313994b84bf60a6cd77236" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_UARTLIN0</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: UARTLIN 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="106" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1acb2ed5e8e844087a3dc5f0466a55a14f" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_UARTLIN1</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: UARTLIN 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="109" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a5bafe244ddc3d44792cd6b64b92b3580" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_SDIO</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: SDIO </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="112" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a60fe78808b3eb5f3b60596758c838e2f" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_ADC0</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: ADC </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="115" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a4a894ec1e2ee5211faca8a18a731ef4c" prot="public" static="no">
+        <name>PowerWFF3_PERIPH_UARTLIN2</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resource ID: UARTLIN 2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="118" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1ac151b2670dd51697b576fe649ea3ea76" prot="public" static="no">
+        <name>PowerWFF3_SLEEP</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The SLEEP state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="126" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1acf5a9becf96cfe254e620327b7afd24b" prot="public" static="no">
+        <name>PowerWFF3_DISALLOW_SHUTDOWN</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constraint: Disallow a transition to the SHUTDOWN state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="141" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a889e8b3846d7813f8bd88c7d50ce0bce" prot="public" static="no">
+        <name>PowerWFF3_DISALLOW_SLEEP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constraint: Disallow a transition to the SLEEP state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="144" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a3f6c4a969360c209ae2d7c3633e8449c" prot="public" static="no">
+        <name>PowerWFF3_DISALLOW_IDLE</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constraint: Disallow a transition to the IDLE state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="147" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1afae3425160fac14bd74989df372e2f25" prot="public" static="no">
+        <name>PowerWFF3_ENTERING_SLEEP</name>
+        <initializer>(1 &lt;&lt; 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power event: The device is entering the SLEEP state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="162" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a264b13452e3a6406d57044b5ad97c75b" prot="public" static="no">
+        <name>PowerWFF3_ENTERING_SHUTDOWN</name>
+        <initializer>(1 &lt;&lt; 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power event: The device is entering the SHUTDOWN state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="165" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_power_w_f_f3_8h_1a3bcd3a5627b6c0e12ceab352fbf8154c" prot="public" static="no">
+        <name>PowerWFF3_AWAKE_SLEEP</name>
+        <initializer>(1 &lt;&lt; 2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power event: The device is waking up from the SLEEP state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="168" column="9" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" prot="public" static="no">
+        <name>PowerWFF3_ResetReason</name>
+        <enumvalue id="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8a9669ff05ab1cd68759dc1857da3c76de" prot="public">
+          <name>PowerWFF3_RESET_PIN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Device reset due to pin reset </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8ae9342e0d6bb71e5f092344d181d09529" prot="public">
+          <name>PowerWFF3_RESET_POR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Device booted due to power on reset </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Reasons the device has booted or rebooted. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="223" column="1" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="222" bodyend="228"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_power_w_f_f3_8h_1aada14a3353349686dfc252b679312900" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PowerWFF3_doWFI</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerWFF3_doWFI</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The wait for interrupt (WFI) policy. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is a lightweight Power Policy which simply invokes CPU wait for interrupt.</para><para>This policy can be selected statically via the policyFxn pointer in the <ref refid="struct_power_w_f_f3___config" kindref="compound">PowerWFF3_Config</ref> structure, or dynamically at runtime, via <ref refid="_power_8h_1aa4af0d238813058bf6146df6021df8cc" kindref="member">Power_setPolicy()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="240" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" kindref="member">PowerWFF3_ResetReason</ref></type>
+        <definition>static PowerWFF3_ResetReason PowerWFF3_getResetReason</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerWFF3_getResetReason</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns the reason for the most recent reset or wakeup. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" kindref="member">PowerWFF3_ResetReason</ref> </para></simplesect>
+<simplesect kind="pre"><para><ref refid="_power_8h_1a311d085ba6ecbeea0e279c52995892a5" kindref="member">Power_shutdown()</ref> </para></simplesect>
+<simplesect kind="post"><para>PowerWFF3_releaseLatches() </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="249" column="1" bodyfile="source/ti/drivers/power/PowerWFF3.h" bodystart="249" bodyend="253"/>
+        <references refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8a9669ff05ab1cd68759dc1857da3c76de" compoundref="_power_w_f_f3_8h" startline="225">PowerWFF3_RESET_PIN</references>
+        <references refid="_power_w_f_f3_8h_1ab3dae9020e614b23d8e7bbba989e1586">PowerWFF3_schedulerDisable</references>
+        <references refid="_power_w_f_f3_8h_1a2da4aa5a3efa067974e9751642174256">PowerWFF3_schedulerRestore</references>
+        <references refid="_power_w_f_f3_8h_1a481549556cf82e616668f77183d63e5c">PowerWFF3_sleepPolicy</references>
+      </memberdef>
+      <memberdef kind="function" id="_power_w_f_f3_8h_1a481549556cf82e616668f77183d63e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PowerWFF3_sleepPolicy</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerWFF3_sleepPolicy</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The SLEEP Power Policy. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is an aggressive Power Policy, which considers active constraints, SLEEP state transition latencies, and time until the next scheduled work, and automatically transitions the device into the lowest power state possible.</para><para>The first goal is to enter SLEEP; if that is not appropriate given current conditions (e.g., the SLEEP transition latency is greater greater than the time until the next scheduled Clock event), then the secondary goal is the IDLE state; if that is disallowed (e.g., if the PowerWFF3_DISALLOW_IDLE constraint is declared), then the policy will fallback and simply invoke WFI, to clock gate the CPU until the next interrupt.</para><para>In order for this policy to run, it must be selected as the Power Policy (either by being specified as the &apos;policyFxn&apos; in the <ref refid="struct_power_w_f_f3___config" kindref="compound">PowerWFF3_Config</ref> structure, or specified at runtime with <ref refid="_power_8h_1aa4af0d238813058bf6146df6021df8cc" kindref="member">Power_setPolicy()</ref>), and the Power Policy must be enabled (either via &apos;enablePolicy&apos; in the <ref refid="struct_power_w_f_f3___config" kindref="compound">PowerWFF3_Config</ref> structure, or via a call to <ref refid="_power_8h_1ae8d6092a8fb35b6db52a69a35fcc327f" kindref="member">Power_enablePolicy()</ref> at runtime). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="278" column="1"/>
+        <referencedby refid="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" compoundref="_power_w_f_f3_8h" startline="249" endline="253">PowerWFF3_getResetReason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_power_w_f_f3_8h_1ab3dae9020e614b23d8e7bbba989e1586" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PowerWFF3_schedulerDisable</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerWFF3_schedulerDisable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="279" column="1"/>
+        <referencedby refid="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" compoundref="_power_w_f_f3_8h" startline="249" endline="253">PowerWFF3_getResetReason</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_power_w_f_f3_8h_1a2da4aa5a3efa067974e9751642174256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PowerWFF3_schedulerRestore</definition>
+        <argsstring>(void)</argsstring>
+        <name>PowerWFF3_schedulerRestore</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/power/PowerWFF3.h" line="280" column="1"/>
+        <referencedby refid="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" compoundref="_power_w_f_f3_8h" startline="249" endline="253">PowerWFF3_getResetReason</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Power manager interface for WFF3 devices. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The Power header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/Power.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_power_8h" kindref="compound">Power.h</ref> for a complete description of APIs.</para><para><heading level="2">Implementation</heading>
+</para><para>This header file defines the power resources, constraints, events, sleep states and transition latencies for WFF3 devices. <hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2022-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_power_PowerWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_power_PowerWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_hwi_p_8h" kindref="compound">ti/drivers/dpl/HwiP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_clock_p_8h" kindref="compound">ti/drivers/dpl/ClockP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_power_w_f_f3_8h_1a0bb5ea6c1aebfedc41420ab2c60fb55a" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_RESUMETIMESLEEP<sp/>15000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="_power_w_f_f3_8h_1a6654e00f20097f1e895f672a9e6165fd" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_TOTALTIMESLEEP<sp/>16000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_power_w_f_f3_8h_1a01887aca4b67ffb343cc78524a139e4d" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_WAKEDELAYSLEEP<sp/>15000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Resource<sp/>IDs<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="_power_w_f_f3_8h_1aa2ce463601d6a9e9217aa3b156cb4b8c" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_DCAN<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="_power_w_f_f3_8h_1a71d7ed2b2a16b7e4965895af2fef03c2" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_GPTIMER0<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_power_w_f_f3_8h_1ab973ee51502344e0fd2da15789a8710c" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_GPTIMER1<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_power_w_f_f3_8h_1a4c7f1e52386fb5787ae8ac10b8ebfc2a" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_I2C0<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_power_w_f_f3_8h_1ac7f036454d05eb3eb6b0576a0f5d2cdf" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_I2C1<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="_power_w_f_f3_8h_1a3624d05e361326dab71edd96dee4cd17" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_I2S<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="_power_w_f_f3_8h_1a610c7f7b567674a3af8a69ce51839290" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_SDMMC<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_power_w_f_f3_8h_1a8eb3e21bd26e3ae80731de9083938533" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_SPI0<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_power_w_f_f3_8h_1a861b78104fd8d170a2b8f9f29603dc7b" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_SPI1<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_power_w_f_f3_8h_1a067558bc67fc8f3ea958035a5032ba8f" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_SYSTIMER<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_power_w_f_f3_8h_1a44d98c58d5313994b84bf60a6cd77236" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_UARTLIN0<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_power_w_f_f3_8h_1acb2ed5e8e844087a3dc5f0466a55a14f" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_UARTLIN1<sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="_power_w_f_f3_8h_1a5bafe244ddc3d44792cd6b64b92b3580" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_SDIO<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_power_w_f_f3_8h_1a60fe78808b3eb5f3b60596758c838e2f" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_ADC0<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="_power_w_f_f3_8h_1a4a894ec1e2ee5211faca8a18a731ef4c" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_PERIPH_UARTLIN2<sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>resources<sp/>in<sp/>database.</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_NUMRESOURCES<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="_power_w_f_f3_8h_1ac151b2670dd51697b576fe649ea3ea76" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_SLEEP<sp/><sp/><sp/>0x1<sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Internal<sp/>flags<sp/>for<sp/>enabling/disabling<sp/>resources<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_ENABLE<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_DISABLE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Constraints</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/>Constraints<sp/>restrict<sp/>a<sp/>specific<sp/>system<sp/>behavior<sp/>from<sp/>occurring<sp/>or<sp/>guarantee</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/>a<sp/>specified<sp/>effect<sp/>until<sp/>released.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>TODO:<sp/>Update<sp/>list<sp/>of<sp/>constraints<sp/>for<sp/>WFF3</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="_power_w_f_f3_8h_1acf5a9becf96cfe254e620327b7afd24b" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_DISALLOW_SHUTDOWN<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="_power_w_f_f3_8h_1a889e8b3846d7813f8bd88c7d50ce0bce" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_DISALLOW_SLEEP<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="_power_w_f_f3_8h_1a3f6c4a969360c209ae2d7c3633e8449c" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_DISALLOW_IDLE<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_NUMCONSTRAINTS<sp/>3<sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>constraints<sp/>supported<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>Events</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/>Each<sp/>event<sp/>must<sp/>be<sp/>a<sp/>power<sp/>of<sp/>two<sp/>and<sp/>must<sp/>be<sp/>sequential</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>without<sp/>any<sp/>gaps.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>TODO:<sp/>Update<sp/>list<sp/>of<sp/>events<sp/>for<sp/>WFF3</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="_power_w_f_f3_8h_1afae3425160fac14bd74989df372e2f25" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_ENTERING_SLEEP<sp/>(1<sp/>&lt;&lt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="_power_w_f_f3_8h_1a264b13452e3a6406d57044b5ad97c75b" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_ENTERING_SHUTDOWN<sp/>(1<sp/>&lt;&lt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="_power_w_f_f3_8h_1a3bcd3a5627b6c0e12ceab352fbf8154c" refkind="member"><highlight class="preprocessor">#define<sp/>PowerWFF3_AWAKE_SLEEP<sp/>(1<sp/>&lt;&lt;<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PowerWFF3_NUMEVENTS<sp/>3<sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>events<sp/>supported<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\cond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/>PowerWFF3_Resource;<sp/></highlight><highlight class="comment">/*<sp/>Power<sp/>resource<sp/>identifier<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>\endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="struct_power_w_f_f3___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187" refid="struct_power_w_f_f3___config_1a00a0f8e8360d8908e650037b54c18c93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_8h_1a435fdeb71d13ea6be86f599c9b6a0d78" kindref="member">Power_PolicyInitFxn</ref><sp/><ref refid="struct_power_w_f_f3___config_1a00a0f8e8360d8908e650037b54c18c93" kindref="member">policyInitFxn</ref>;</highlight></codeline>
+<codeline lineno="216" refid="struct_power_w_f_f3___config_1ab20812736d93a92d69ac2463e77fedbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_8h_1a333038d1e9cd5f93dda7b83f8a1afa8b" kindref="member">Power_PolicyFxn</ref><sp/><ref refid="struct_power_w_f_f3___config_1ab20812736d93a92d69ac2463e77fedbc" kindref="member">policyFxn</ref>;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}<sp/><ref refid="struct_power_w_f_f3___config" kindref="compound">PowerWFF3_Config</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225" refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8a9669ff05ab1cd68759dc1857da3c76de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8a9669ff05ab1cd68759dc1857da3c76de" kindref="member">PowerWFF3_RESET_PIN</ref><sp/>=<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>PMCTL_RSTSTA_RESETSRC_PINRESET,<sp/>//<sp/>TODO:<sp/>Implement<sp/>for<sp/>WFF3</highlight></codeline>
+<codeline lineno="227" refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8ae9342e0d6bb71e5f092344d181d09529" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8ae9342e0d6bb71e5f092344d181d09529" kindref="member">PowerWFF3_RESET_POR</ref><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>PMCTL_RSTSTA_RESETSRC_PWRON,<sp/>//<sp/>TODO:<sp/>Implement<sp/>for<sp/>WFF3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}<sp/><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" kindref="member">PowerWFF3_ResetReason</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1aada14a3353349686dfc252b679312900" kindref="member">PowerWFF3_doWFI</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8" kindref="member">PowerWFF3_ResetReason</ref><sp/><ref refid="_power_w_f_f3_8h_1a022fd12df02a98df2a2c0795e00708b4" kindref="member">PowerWFF3_getResetReason</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Implement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1a4ae67ef27e4a78d376458c55e8a395e8a9669ff05ab1cd68759dc1857da3c76de" kindref="member">PowerWFF3_RESET_PIN</ref>;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1a481549556cf82e616668f77183d63e5c" kindref="member">PowerWFF3_sleepPolicy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1ab3dae9020e614b23d8e7bbba989e1586" kindref="member">PowerWFF3_schedulerDisable</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_power_w_f_f3_8h_1a2da4aa5a3efa067974e9751642174256" kindref="member">PowerWFF3_schedulerRestore</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_power_PowerWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/power/PowerWFF3.h"/>
+  </compounddef>
+</doxygen>

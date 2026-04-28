@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_w_m_timer_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>PWMTimerWFF3_Object</compoundname>
+    <includes refid="_p_w_m_timer_w_f_f3_8h" local="no">PWMTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1ab5957dbd8f39806d7e6391f5e8a43686" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PWMTimerWFF3_Object::periodValue</definition>
+        <argsstring></argsstring>
+        <name>periodValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current period value in unit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="167" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a6108d1afa2dd458ade9952a7d4db2777" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PWMTimerWFF3_Object::periodCounts</definition>
+        <argsstring></argsstring>
+        <name>periodCounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current period in raw timer counts </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="168" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a4043ff210109275ab750cced7f592c52" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PWMTimerWFF3_Object::dutyValue</definition>
+        <argsstring></argsstring>
+        <name>dutyValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current duty cycle value in unit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="169" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a217cd8caa3be62c21e97643e36fcbd18" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PWMTimerWFF3_Object::dutyCounts</definition>
+        <argsstring></argsstring>
+        <name>dutyCounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current duty in raw timer counts </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="170" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a2ac0d94693618153e060256b8937517c" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a745cd59897ce215b82e9460d8c784236" kindref="member">GPTimerWFF3_Handle</ref></type>
+        <definition>GPTimerWFF3_Handle PWMTimerWFF3_Object::hTimer</definition>
+        <argsstring></argsstring>
+        <name>hTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle to underlying GPTimer peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="171" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1ac3895b58822714476a38edf5a094bc45" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1a11aa442e82549992c98729216d64fd63" kindref="member">PWM_Period_Units</ref></type>
+        <definition>PWM_Period_Units PWMTimerWFF3_Object::periodUnit</definition>
+        <argsstring></argsstring>
+        <name>periodUnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current period unit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="172" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a0019fa7c079ffe32d1687593bc0940a7" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1abc7bc5565f2767cf9f06c1572044a8ee" kindref="member">PWM_Duty_Units</ref></type>
+        <definition>PWM_Duty_Units PWMTimerWFF3_Object::dutyUnit</definition>
+        <argsstring></argsstring>
+        <name>dutyUnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current duty cycle unit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="173" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1ac2634e251c47641d3108346995f389ac" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1aac23c68018b879858b6ed73e791f5b0a" kindref="member">GPTimerWFF3_ChannelNo</ref></type>
+        <definition>GPTimerWFF3_ChannelNo PWMTimerWFF3_Object::chNumber</definition>
+        <argsstring></argsstring>
+        <name>chNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPTimer peripheral channel number selected for PWM output signal </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="174" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1abf673cdc264d9493c489bcb2a5e0a0b0" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1a5a40c7014745d15b0c1a604dae5593f9" kindref="member">PWM_IdleLevel</ref></type>
+        <definition>PWM_IdleLevel PWMTimerWFF3_Object::idleLevel</definition>
+        <argsstring></argsstring>
+        <name>idleLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PWM idle level when stopped / not started </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="175" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1a39ef59d2355a4b2f97fefee05cb487bc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PWMTimerWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>open flag used to check if PWM is opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="176" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_timer_w_f_f3___object_1ab932eda7647ab0f5d278ead766667b7c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PWMTimerWFF3_Object::isRunning</definition>
+        <argsstring></argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>running flag, set if the output is active </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="177" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PWMTimerWFF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the driver to store and modify PWM configuration during run-time. The application must not edit any member variables of this structure. Appplications should also not access member variables of this structure as backwards compatibility is not guaranteed. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="218">
+        <label>GPTimerWFF3_HWAttrs</label>
+        <link refid="struct_g_p_timer_w_f_f3___h_w_attrs"/>
+        <childnode refid="219" relation="usage">
+          <edgelabel>channelConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="219">
+        <label>GPTimerWFF3_ChannelConf</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_conf"/>
+      </node>
+      <node id="217">
+        <label>GPTimerWFF3_ChannelProp</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_prop"/>
+      </node>
+      <node id="213">
+        <label>GPTimerWFF3_Object</label>
+        <link refid="struct_g_p_timer_w_f_f3___object"/>
+        <childnode refid="214" relation="usage">
+          <edgelabel>postNotify</edgelabel>
+        </childnode>
+        <childnode refid="216" relation="usage">
+          <edgelabel>hwi</edgelabel>
+        </childnode>
+        <childnode refid="212" relation="usage">
+          <edgelabel>hwiCallbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="217" relation="usage">
+          <edgelabel>channelProperty</edgelabel>
+        </childnode>
+      </node>
+      <node id="214">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="215" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="215">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="215" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="216">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+      <node id="211">
+        <label>PWMTimerWFF3_Object</label>
+        <link refid="struct_p_w_m_timer_w_f_f3___object"/>
+        <childnode refid="212" relation="usage">
+          <edgelabel>hTimer</edgelabel>
+        </childnode>
+      </node>
+      <node id="212">
+        <label>GPTimerWFF3_Config</label>
+        <link refid="struct_g_p_timer_w_f_f3___config"/>
+        <childnode refid="213" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="218" relation="usage">
+          <edgelabel>hwAttrs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/pwm/PWMTimerWFF3.h" line="166" column="1" bodyfile="source/ti/drivers/pwm/PWMTimerWFF3.h" bodystart="165" bodyend="178"/>
+    <listofallmembers>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1ac2634e251c47641d3108346995f389ac" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>chNumber</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a217cd8caa3be62c21e97643e36fcbd18" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>dutyCounts</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a0019fa7c079ffe32d1687593bc0940a7" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>dutyUnit</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a4043ff210109275ab750cced7f592c52" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>dutyValue</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a2ac0d94693618153e060256b8937517c" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>hTimer</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1abf673cdc264d9493c489bcb2a5e0a0b0" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>idleLevel</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a39ef59d2355a4b2f97fefee05cb487bc" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>isOpen</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1ab932eda7647ab0f5d278ead766667b7c" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>isRunning</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1a6108d1afa2dd458ade9952a7d4db2777" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>periodCounts</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1ac3895b58822714476a38edf5a094bc45" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>periodUnit</name></member>
+      <member refid="struct_p_w_m_timer_w_f_f3___object_1ab5957dbd8f39806d7e6391f5e8a43686" prot="public" virt="non-virtual"><scope>PWMTimerWFF3_Object</scope><name>periodValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

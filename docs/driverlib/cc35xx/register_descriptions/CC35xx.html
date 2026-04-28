@@ -1,0 +1,614 @@
+<BODY class=duologBody>
+<H1 class=duologProductTitle><A name="Top">CC35xx MEMORY MAP</A></H1>
+<P>This document presents a summary of the hardware interface for the CC35xx product. Each module instance within the design is shown below, together with the module register map and bit definitions for each bitfield.</P>
+<H2 class="duologInstanceSummaryTitle">CC35xx Blocks Summary</H2>
+<P>The table below shows the base address and address space for the CC350xx blocks</P>
+<TABLE cellspacing=0 class="magillemRegisterSummaryTable">
+    <TR class="rowHead">
+        <TD class="cellTopCol1">
+            <P>Module Name</P>
+        </TD>
+        <TD  class="cellTopCol2">
+            <P>CORE Base Address</P>
+        </TD>
+        <TD  class="cellTopCol3">
+            <P>HOST Base Address</P>
+        </TD>
+        <TD  class="cellTopCol4">
+            <P>Size</P>
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SOC_DEBUGSS.html">SOC_DEBUGSS</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x00020000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x00020000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HIF.html">HIF</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x408A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x408A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="PRCM_AON.html">PRCM_AON</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41090000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41090000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="PRCM_SCRATCHPAD.html">PRCM_SCRATCHPAD</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41098000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41098000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="PLL_SHARING.html">PLL_SHARING</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x410A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x410A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SOC_DEBUGSS_DSSM_MDB.html">SOC_DEBUGSS_DSSM_MDB</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x410D0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x410D0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SOC_IC.html">SOC_IC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x410F0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x410F0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SOC_AON.html">SOC_AON</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41100000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41100000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SOC_AAON.html">SOC_AAON</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41104000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41104000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="RTC.html">RTC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41108000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41108000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="IOMUX.html">IOMUX</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41140000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41140000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="WSOC_OCLA.html">WSOC_OCLA</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x411C0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x411C0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HOSTMCU_AON.html">HOSTMCU_AON</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x411D0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x411D0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SYSRESOURCES.html">SYSRESOURCES</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x411E0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x411E0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SYSTIM.html">SYSTIM</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x411E2000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x411E2000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="I2C.html">I2C0</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41200000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41200000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="I2C.html">I2C1</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41210000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41210000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SPI.html">SPI0</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41220000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41220000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SPI.html">SPI1</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41230000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41230000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="UARTLIN.html">UARTLIN0</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41240000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41240000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="UARTLIN.html">UARTLIN1</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41250000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41250000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="GPTIMER.html">GPTIMER0</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41260000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41260000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="GPTIMER.html">GPTIMER1</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41268000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41268000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="I2S.html">I2S</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41270000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41270000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="PDM.html">PDM</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41280000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41280000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="DCAN.html">DCAN</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x412A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x412A0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="ADC.html">ADC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x412B0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x412B0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SDMMC.html">SDMMC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x412C0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x412C0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="SDIO_CORE.html">SDIO_CORE</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x412E0000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x412E0000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="UARTLIN.html">UARTLIN2</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41300000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41300000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HOST_MCU.html">HOST_MCU</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41900000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41900000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="ICACHE.html">ICACHE</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41902000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41902000
+        </TD>
+        <TD class="cellCol3">
+            <P>1  KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="DCACHE.html">DCACHE</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41902400
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41902400
+        </TD>
+        <TD class="cellCol3">
+            <P>1  KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HOST_MCU_SEC.html">HOST_MCU_SEC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41903000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41903000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="OSPI.html">OSPI</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41910000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41910000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HOST_XIP.html">HOST_XIP</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41912000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41912000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HOST_DMA.html">HOST_DMA</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41A00000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41A00000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HSM.html">HSM</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41B00000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41B00000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HSM_NON_SEC.html">HSM_NON_SEC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41B04000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41B04000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="HSM_SEC.html">HSM_SEC</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x41B05000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41B05000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="COEX.html">COEX</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x45850000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x40850000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+    <TR class="row">
+        <TD class="cellCol1">
+            <P><A href="CORE_AON.html">CORE_AON</P>
+        </TD>
+        <TD class="cellCol2">
+            <P>0x45870000
+        </TD>
+        <TD class="cellCol3">
+            <P>0x41E00000
+        </TD>
+        <TD class="cellCol3">
+            <P>64 KB
+        </TD>
+    </TR>
+</TABLE>
+<BR>
+<BR>
+<hr><table class="footer"><tr><td>&copy; 2023 - 2024. Texas Instruments | All Rights Reserved</td></tr></table>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">

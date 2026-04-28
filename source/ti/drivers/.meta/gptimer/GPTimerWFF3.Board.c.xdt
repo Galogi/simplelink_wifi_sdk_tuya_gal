@@ -1,0 +1,194 @@
+%%{
+/*
+ * Copyright (c) 2024, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+ *  ======== GPTimerWFF3.Board.c.xdt ========
+ */
+
+    let Common    = system.getScript("/ti/drivers/Common.js");
+    let GPTimer  = args[0];
+    let instances = GPTimer.$instances;
+
+    if (instances.length == 0) return;
+
+    let declarations = Common.genBoardDeclarations(instances);
+
+    /* CONFIG_XXXCOUNT string, derived from defaultInstanceName */
+    let countDef = GPTimer.defaultInstanceName + "COUNT";
+
+    /* Localize the object names with this device ID */
+    let devId = system.deviceData.deviceId;
+
+    /* Get name of device-specific include directory */
+    let devicesDir = Common.device2DevicesDir(devId);
+
+%%}
+/*
+ *  =============== GPTimer ===============
+ */
+
+#include <ti/drivers/timer/GPTimerWFF3.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/devices/`devicesDir`/inc/hw_memmap.h>
+#include <ti/devices/`devicesDir`/inc/hw_ints.h>
+
+#define `countDef` `instances.length`
+
+/*
+ *  ======== GPTimerWFF3_objects ========
+ */
+GPTimerWFF3_Object GPTimerWFF3_objects[`countDef`];
+
+/*
+ *  ======== GPTimerWFF3_hwAttrs ========
+ */
+static const GPTimerWFF3_HWAttrs GPTimerWFF3_hwAttrs[`countDef`] = {
+% for (let i = 0; i < instances.length; i++) {
+%     let inst        = instances[i];
+%     let timer       = inst.timer;
+%     let solution    = timer.$solution;
+%     let peripheral  = system.deviceData.peripherals[solution.peripheralName];
+%     let gptInstanceNumber = parseInt(peripheral.name.replace("GPT", ""));
+%     let gptInstanceName   = 'GPTIMER' + gptInstanceNumber;
+%     let gptInterruptName  = 'GPTIMER_' + gptInstanceNumber + '_EVT_CPU_IRQ';
+%
+%     let ch0PinName     = 'GPIO_INVALID_INDEX';
+%     let ch0PinMuxMode  = 'GPIO_MUX_GPIO_INTERNAL';
+%     let ch0NPinName    = 'GPIO_INVALID_INDEX';
+%     let ch0NPinMuxMode = 'GPIO_MUX_GPIO_INTERNAL';
+%
+%     let ch1PinName     = 'GPIO_INVALID_INDEX';
+%     let ch1PinMuxMode  = 'GPIO_MUX_GPIO_INTERNAL';
+%     let ch1NPinName    = 'GPIO_INVALID_INDEX';
+%     let ch1NPinMuxMode = 'GPIO_MUX_GPIO_INTERNAL';
+%
+%     let ch2PinName     = 'GPIO_INVALID_INDEX';
+%     let ch2PinMuxMode  = 'GPIO_MUX_GPIO_INTERNAL';
+%     let ch2NPinName    = 'GPIO_INVALID_INDEX';
+%     let ch2NPinMuxMode = 'GPIO_MUX_GPIO_INTERNAL';
+%
+%     let ch3PinName     = 'GPIO_INVALID_INDEX';
+%     let ch3PinMuxMode  = 'GPIO_MUX_GPIO_INTERNAL';
+%     let ch3NPinName    = 'GPIO_INVALID_INDEX';
+%     let ch3NPinMuxMode = 'GPIO_MUX_GPIO_INTERNAL';
+%
+%     if ('ch0PinInstance' in inst) {
+%         ch0PinName = inst.ch0PinInstance.$name;
+%         ch0PinMuxMode = inst.timer.ch0Pin.$solution.muxMode;
+%     }
+%
+%     if ('ch1PinInstance' in inst) {
+%        ch1PinName = inst.ch1PinInstance.$name;
+%        ch1PinMuxMode = inst.timer.ch1Pin.$solution.muxMode;
+%     }
+%
+%     if ('ch2PinInstance' in inst) {
+%         ch2PinName = inst.ch2PinInstance.$name;
+%         ch2PinMuxMode = inst.timer.ch2Pin.$solution.muxMode;
+%     }
+%
+%     if ('ch3PinInstance' in inst) {
+%         ch3PinName = inst.ch3PinInstance.$name;
+%         ch3PinMuxMode = inst.timer.ch3Pin.$solution.muxMode;
+%     }
+%
+%     if ('ch0NPinInstance' in inst) {
+%         ch0NPinName = inst.ch0NPinInstance.$name;
+%         ch0NPinMuxMode = inst.timer.ch0NPin.$solution.muxMode;
+%     }
+%
+%     if ('ch1NPinInstance' in inst) {
+%        ch1NPinName = inst.ch1NPinInstance.$name;
+%        ch1NPinMuxMode = inst.timer.ch1NPin.$solution.muxMode;
+%     }
+%
+%     if ('ch2NPinInstance' in inst) {
+%         ch2NPinName = inst.ch2NPinInstance.$name;
+%         ch2NPinMuxMode = inst.timer.ch2NPin.$solution.muxMode;
+%     }
+%
+%     if ('ch3NPinInstance' in inst) {
+%         ch3NPinName = inst.ch3NPinInstance.$name;
+%         ch3NPinMuxMode = inst.timer.ch3NPin.$solution.muxMode;
+%     }
+%
+  {
+    .baseAddr           = `gptInstanceName`_BASE,
+    .intNum             = INT_`gptInterruptName`,
+    .intPriority        = `Common.intPriority2Hex(inst.interruptPriority)`,
+    .powerID            = PowerWFF3_PERIPH_`gptInstanceName`,
+    .channelConfig[0]   = {
+        .pin     = `ch0PinName`,
+        .pinMux  = `ch0PinMuxMode`,
+        .nPin    = `ch0NPinName`,
+        .nPinMux = `ch0NPinMuxMode`,
+    },
+    .channelConfig[1]   = {
+        .pin     = `ch1PinName`,
+        .pinMux  = `ch1PinMuxMode`,
+        .nPin    = `ch1NPinName`,
+        .nPinMux = `ch1NPinMuxMode`,
+    },
+    .channelConfig[2]   = {
+        .pin     = `ch2PinName`,
+        .pinMux  = `ch2PinMuxMode`,
+        .nPin    = `ch2NPinName`,
+        .nPinMux = `ch2NPinMuxMode`,
+    },
+    .channelConfig[3]   = {
+        .pin     = `ch3PinName`,
+        .pinMux  = `ch3PinMuxMode`,
+        .nPin    = `ch3NPinName`,
+        .nPinMux = `ch3NPinMuxMode`,
+    },
+  },
+% }
+};
+
+/*
+ *  ======== GPTimer_config ========
+ */
+const GPTimerWFF3_Config GPTimerWFF3_config[`countDef`] = {
+% for (let i = 0; i < instances.length; i++) {
+%     let inst = instances[i];
+    {   /* `inst.$name` */
+        .object      = &GPTimerWFF3_objects[`inst.$name`],
+        .hwAttrs     = &GPTimerWFF3_hwAttrs[`inst.$name`]
+    },
+% }
+};
+
+`declarations`
+const uint_least8_t GPTimerWFF3_count = `countDef`;

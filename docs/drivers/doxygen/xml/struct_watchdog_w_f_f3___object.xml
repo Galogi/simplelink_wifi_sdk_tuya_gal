@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_watchdog_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>WatchdogWFF3_Object</compoundname>
+    <includes refid="_watchdog_w_f_f3_8h" local="no">WatchdogWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_watchdog_w_f_f3___object_1a33a3adc0222b773a67bc3f32fe6caa6d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WatchdogWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/watchdog/WatchdogWFF3.h" line="190" column="1" bodyfile="source/ti/drivers/watchdog/WatchdogWFF3.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Watchdog Object for WFF3. </para>    </briefdescription>
+    <detaileddescription>
+<para>Not to be accessed by the user. </para>    </detaileddescription>
+    <location file="source/ti/drivers/watchdog/WatchdogWFF3.h" line="189" column="1" bodyfile="source/ti/drivers/watchdog/WatchdogWFF3.h" bodystart="188" bodyend="191"/>
+    <listofallmembers>
+      <member refid="struct_watchdog_w_f_f3___object_1a33a3adc0222b773a67bc3f32fe6caa6d" prot="public" virt="non-virtual"><scope>WatchdogWFF3_Object</scope><name>isOpen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

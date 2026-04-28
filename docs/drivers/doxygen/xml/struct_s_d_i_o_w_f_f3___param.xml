@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_i_o_w_f_f3___param" kind="struct" language="C++" prot="public">
+    <compoundname>SDIOWFF3_Param</compoundname>
+    <includes refid="_s_d_i_o_w_f_f3_8h" local="no">SDIOWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___param_1a5d55c4328270a924e368267ed558bdd4" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" kindref="member">SDIOWFF3EventCB</ref></type>
+        <definition>SDIOWFF3EventCB SDIOWFF3_Param::SDIOWFF3_CallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>SDIOWFF3_CallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application callback function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="345" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="243">
+        <label>SDIO_Config_</label>
+        <link refid="struct_s_d_i_o___config__"/>
+      </node>
+      <node id="242">
+        <label>SDIOWFF3_Param</label>
+        <link refid="struct_s_d_i_o_w_f_f3___param"/>
+        <childnode refid="243" relation="usage">
+          <edgelabel>SDIOWFF3_CallbackFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="343" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="342" bodyend="347"/>
+    <listofallmembers>
+      <member refid="struct_s_d_i_o_w_f_f3___param_1a5d55c4328270a924e368267ed558bdd4" prot="public" virt="non-virtual"><scope>SDIOWFF3_Param</scope><name>SDIOWFF3_CallbackFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

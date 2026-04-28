@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['clockp_5fconstruct',['ClockP_construct',['../_clock_p_8h.html#a78a546df2ea3d317ddf07236a4d1ab1c',1,'ClockP.h']]],
+  ['clockp_5fcreate',['ClockP_create',['../_clock_p_8h.html#a4b5539d012f41ca5d7b158ca99832e63',1,'ClockP.h']]],
+  ['clockp_5fdelete',['ClockP_delete',['../_clock_p_8h.html#aeb6405246f431b6589e3ee4649f615f0',1,'ClockP.h']]],
+  ['clockp_5fdestruct',['ClockP_destruct',['../_clock_p_8h.html#a4dc26d25988f0b2ef4d4129b42962f38',1,'ClockP.h']]],
+  ['clockp_5fgetcpufreq',['ClockP_getCpuFreq',['../_clock_p_8h.html#ac0ac5819c6679eea45298919b789a48b',1,'ClockP.h']]],
+  ['clockp_5fgetsystemtickperiod',['ClockP_getSystemTickPeriod',['../_clock_p_8h.html#a7ff85ce33fc4a61138cee66126b59b96',1,'ClockP.h']]],
+  ['clockp_5fgetsystemticks',['ClockP_getSystemTicks',['../_clock_p_8h.html#a02c63ebcef1a5ed8f4f655f8d9a0c9d7',1,'ClockP.h']]],
+  ['clockp_5fgetsystemticks64',['ClockP_getSystemTicks64',['../_clock_p_8h.html#abd04c2c92d6d89504917a85b645eb89d',1,'ClockP.h']]],
+  ['clockp_5fgetticksuntilinterrupt',['ClockP_getTicksUntilInterrupt',['../_clock_p_8h.html#ac0fa9213cb4a7bfb92d0a16b3f18cc44',1,'ClockP.h']]],
+  ['clockp_5fgettimeout',['ClockP_getTimeout',['../_clock_p_8h.html#ad0f7856a666906276db9d6dd3d9d8b35',1,'ClockP.h']]],
+  ['clockp_5fisactive',['ClockP_isActive',['../_clock_p_8h.html#af8971b941bf7c9d9261fee8fd64c75c2',1,'ClockP.h']]],
+  ['clockp_5fparams_5finit',['ClockP_Params_init',['../_clock_p_8h.html#a666e9ded465c969456e6c4ef95e849f4',1,'ClockP.h']]],
+  ['clockp_5fsetfunc',['ClockP_setFunc',['../_clock_p_8h.html#a2e3573def138bf3a341f47355bb7456b',1,'ClockP.h']]],
+  ['clockp_5fsetperiod',['ClockP_setPeriod',['../_clock_p_8h.html#a550124ef3ae43fdac55622ad5bf25f91',1,'ClockP.h']]],
+  ['clockp_5fsettimeout',['ClockP_setTimeout',['../_clock_p_8h.html#a2d967475214bade8b3651f0633b1ecff',1,'ClockP.h']]],
+  ['clockp_5fsleep',['ClockP_sleep',['../_clock_p_8h.html#a44c15f99499caf08795011fcc8b6db7b',1,'ClockP.h']]],
+  ['clockp_5fstart',['ClockP_start',['../_clock_p_8h.html#ac4a1abafab221d989e19458af7d88a63',1,'ClockP.h']]],
+  ['clockp_5fstop',['ClockP_stop',['../_clock_p_8h.html#a08cf2cb4bfea18be3a21e8cc553eff51',1,'ClockP.h']]],
+  ['clockp_5fusleep',['ClockP_usleep',['../_clock_p_8h.html#a686ba37559969d4a69af02147a9b5081',1,'ClockP.h']]],
+  ['commonresourcexxf3_5facquirelock',['CommonResourceXXF3_acquireLock',['../_common_resource_x_x_f3_8h.html#a2703c3d60b7d7a5d53a9c4dc7c488797',1,'CommonResourceXXF3.h']]],
+  ['commonresourcexxf3_5facquirelockwithdelay',['CommonResourceXXF3_acquireLockWithDelay',['../_common_resource_x_x_f3_8h.html#a9eb1e48bd00c7626c2bbfd08d0e39cec',1,'CommonResourceXXF3.h']]],
+  ['commonresourcexxf3_5fconstructrtosobjects',['CommonResourceXXF3_constructRTOSObjects',['../_common_resource_x_x_f3_8h.html#a7219cd42a88dace31ace4e527472c8f5',1,'CommonResourceXXF3.h']]],
+  ['commonresourcexxf3_5freleaselock',['CommonResourceXXF3_releaseLock',['../_common_resource_x_x_f3_8h.html#adaea712f21cbadd607ae5d6ba309763f',1,'CommonResourceXXF3.h']]]
+];

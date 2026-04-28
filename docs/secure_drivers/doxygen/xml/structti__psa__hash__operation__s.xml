@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structti__psa__hash__operation__s" kind="struct" language="C++" prot="public">
+    <compoundname>ti_psa_hash_operation_s</compoundname>
+    <includes refid="ti__psa__crypto__hash_8h" local="no">ti_psa_crypto_hash.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structti__psa__hash__operation__s_1aa210fb3cc358655636c0be661abb38a9" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref></type>
+        <definition>SHA2_Config ti_psa_hash_operation_s::sha2Config</definition>
+        <argsstring></argsstring>
+        <name>sha2Config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="63" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__hash__operation__s_1a65b652805b04f8cffee8701d84b5f9db" prot="public" static="no" mutable="no">
+        <type>SHA2XXF3HSM_Object</type>
+        <definition>SHA2XXF3HSM_Object ti_psa_hash_operation_s::sha2Object</definition>
+        <argsstring></argsstring>
+        <name>sha2Object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="66" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__hash__operation__s_1acf27f73daba2fe6c70feab439af76c43" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_hash_operation_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="71" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" prot="public" static="no" mutable="no">
+        <type>psa_algorithm_t</type>
+        <definition>psa_algorithm_t ti_psa_hash_operation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="73" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="352">
+        <label>SHA2_Config</label>
+        <link refid="struct_s_h_a2___config"/>
+      </node>
+      <node id="351">
+        <label>ti_psa_hash_operation_s</label>
+        <link refid="structti__psa__hash__operation__s"/>
+        <childnode refid="352" relation="usage">
+          <edgelabel>sha2Config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="61" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="60" bodyend="74"/>
+    <listofallmembers>
+      <member refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" prot="public" virt="non-virtual"><scope>ti_psa_hash_operation_s</scope><name>alg</name></member>
+      <member refid="structti__psa__hash__operation__s_1acf27f73daba2fe6c70feab439af76c43" prot="public" virt="non-virtual"><scope>ti_psa_hash_operation_s</scope><name>id</name></member>
+      <member refid="structti__psa__hash__operation__s_1aa210fb3cc358655636c0be661abb38a9" prot="public" virt="non-virtual"><scope>ti_psa_hash_operation_s</scope><name>sha2Config</name></member>
+      <member refid="structti__psa__hash__operation__s_1a65b652805b04f8cffee8701d84b5f9db" prot="public" virt="non-virtual"><scope>ti_psa_hash_operation_s</scope><name>sha2Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

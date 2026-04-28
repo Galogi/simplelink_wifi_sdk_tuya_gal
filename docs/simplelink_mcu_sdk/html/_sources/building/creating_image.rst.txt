@@ -1,0 +1,195 @@
+Creating and Flashing Image
+===========================
+
+The following section explains how to build and flash an image onto the |DEVICE| using either Code Composer Studio or through the WiFi Toolbox Command Line Interface (CLI)
+
+.. tabs::
+        .. tab:: CCS
+
+            **Code Composer Studio CCS**
+
+            First import a Project by going to `File` |rarr| `Import Projects`
+                        
+            .. figure:: resources/Theia_Import.png
+                :align: center
+                :width: 45%
+
+                Import Project
+
+            Browse for the example
+
+            .. figure:: resources/Theia_Browse.png
+                :align: center
+                :width: 45%
+
+                Browse Examples
+
+            Make sure to select `workspace` as the `import destination`
+
+            Verify the correct version of `SimpleLink Wifi Toolbox`, `Sysconfig`, and `Simplelink_Wifi_SDK` are in the product dependencies. 
+                        Right click on the Project and navigate to `Properties`
+
+            .. figure:: resources/Theia_Properties.png
+                :align: center
+                :width: 45%
+
+                Project Properties
+
+            In the Project Properties go to `General` |rarr| `Dependencies` |rarr| `Product Dependencies`
+
+            .. figure:: resources/Theia_Dependencies.png
+                :align: center
+                :width: 45%
+
+                Product Dependencies
+
+            Build the Imported Project by right clicking on the project and clicking on `Build Projects`
+
+            .. figure:: resources/Theia_Build.png
+                :align: center
+                :width: 45%
+
+                Building Project
+
+            Debug the Project by clicking on the debug Icon
+
+            .. figure:: resources/Theia_StartDebug.png
+                :align: center
+                :width: 50%
+
+                Start Debug
+
+            Then choose the correct project from the drop down list and press the Green play icon
+
+            .. figure:: resources/Theia_GreenPlay.png
+                :align: center
+                :width: 45%
+
+                Start debugging instance.
+
+            This will begin flashing the device with the image and start the debugger
+
+        .. tab:: CLI
+            
+            **Simplelink Wifi Toolbox CLI**
+
+            The Wi-Fi toolbox command line interface provides commands that allow you to build programming image binary files, activate your device etc.
+
+            For any command that requires activation type, signing module etc, please note that the activation_type default setting is "sdk_example_key" and the signing_module will only be used for activation type 
+            "vendor_key" and has a default path "flash-images-builder/signing_module/sign.py", so you have to specify the path if the script is a different name or somewhere else.
+
+            If you haven't updated the signing module Python script when needed, you will see this warning:
+
+            .. figure:: resources/cli-warning.png
+                :align: center
+
+            Here is the factory programming command. If successful, the device will be running network terminal.
+
+            .. figure:: resources/cli-factory-programming.png
+                :align: center
+
+            .. code:: 
+
+                ./simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 <XDS110 NUMBER> factory_programming --flash_type 'IS25WJ032F' --activation_type 'sdk_example_key'
+
+            Flash erase command:
+
+            .. figure:: resources/cli-flash-erase.png
+                :align: center
+
+            .. code:: 
+
+                ./simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 <XDS110 NUMBER> full_flash_erase --flash_type 'IS25WJ032F' --activation_type 'sdk_example_key'
+
+            **Below are examples of commands to conduct certain operations for a CC35xx device that was activated using the 'sdk_example_key' and developing with the network terminal.**
+
+            The following code will build and sign the programming image with the files created by `Syscfg`
+
+            .. code::
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build programming_image --flash_memory_config "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/external_memory_configurator.json" --fuses_programming_instructions "`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/activation_and_initial_programming/jsons/authentication_bypass/fuse_prog_inst_param.CC35XXE.json" --activation_type 'sdk_example_key' --signing_module `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign programming_image --unsign_image workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_instructions_image.unsign.bin --activation_type 'sdk_vendor_key' --signing_module `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py --dir_out_path workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox
+
+
+            The following code will send the CC35xx action requests that will allow programming and debugging the MCU
+
+            .. code::
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type programming --params_json "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/action_params.json" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_action_request.unsign.bin" --activation_type 'sdk_vendor_key' --signing_module "`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type debug --params_json "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/action_params.json" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/debug_action_request.unsign.bin" --activation_type 'sdk_vendor_key' --signing_module "`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+
+            The following code will build and sign overall vendor image
+
+            .. code::
+                
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build vendor_image --vendor_out_file "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/network_terminal_LP_EM_CC35X1_freertos_ticlang.out" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox" --version "$(primary_vendor_image_version)" --output_file_name "primary_vendor_image.bin"
+
+                `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign vendor_image --unsign_image "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_vendor_image.unsign.bin" --activation_type 'sdk_vendor_key' --signing_module "`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py" --dir_out_path "workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox"
+
+
+
+.. Building programming image binary:
+
+.. .. figure:: resources/cli-activation.png
+..     :align: center
+
+.. .. code:: ""
+    
+..     simplelink-wifi-toolbox.exe flash-images-builder build programming_image -h
+
+
+.. To explore other commands, start with ./simplelink-wifi-toolbox.exe -h (.exe for Windows) and navigate your way through all of the other options
+
+.. For flash image builder, the private_key and public_key are optional. Activation_type will be added and for "VENDOR_KEY' user will be able provide specific path to signing module otherwise it 
+.. will use signing_module from flash-images-builder/signing_module.
+
+.. .. figure:: resources/cli-image-build.png
+..     :align: center
+
+.. .. code:: ""
+
+..     simplelink-wifi-toolbox.exe flash-images-builder sign vendor_image -h
+
+.. A great place to look is the makefile found in `toolbox-install-dir/scripts/makefile` which runs every toolbox command it needs when you click debug in CCS. 
+.. If you want to only run one of the commands, you can identify where the command gets executed in the makefile and then simply ensure that all the previous commands have already been run, or
+.. at least all the required arguments have been fulfilled.
+
+.. To program the device with the tool_settings.json (the json contains paths to vendor image etc.), an example is shown below:
+
+.. .. code::""
+..     ./simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 LS4204H2 programming --tool_settings programmer\programming\jsons\tool_settings.json
+
+.. .. note::""
+..     Make sure that the programming request, action request, debug action request, and signed vendor image are all properly set up
+
+.. EXTERNAL_MEMORY_CONFIGURATOR := $(SYSCONFIG_ARTIFACT)/external_memory_configurator.json
+
+.. ACTIONS_PARAMS := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/action_params.json
+
+.. FUSES_PROGRAMMING_INSTRUCTIONS := $(TOOLBOX_DIR)/programmer/activation_and_initial_programming/jsons/authentication_bypass/fuse_prog_inst_param.CC35XXE.json
+
+.. SIGNING_MODULE = `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py
+
+.. TOOLBOX_ARTIFACTS_DIR := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox
+
+.. BUILD_DIR := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug
+
+.. SYSCONFIG_ARTIFACT := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg
+
+.. workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/network_terminal_LP_EM_CC35X1_freertos_ticlang.out
+
+.. PROGRAMMING_INST_UNSIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_instructions_image.unsign.bin
+.. PROGRAMMING_INST_SIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_instructions_image.sign.bin
+.. PROGRAMMING_ACTION_UNSIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_action_request.unsign.bin
+.. PROGRAMMING_ACTION_SIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_action_request.sign.bin
+.. DEBUG_ACTION_UNSIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/debug_action_request.unsign.bin
+.. DEBUG_ACTION_SIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/debug_action_request.sign.bin
+.. PRIMARY_VENDOR_IMAGE_UNSIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_vendor_image.unsign.bin
+.. PRIMARY_VENDOR_IMAGE_SIGN := workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_vendor_image.sign.bin

@@ -1,0 +1,543 @@
+/*
+ * Copyright (c) 2024-2025, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+ *  ======== LP_EM_CC35X1.syscfg.json ========
+ */
+{
+    "name"        : "LP_EM_CC35X1",
+    "displayName" : "CC3501 LaunchPad",
+    "gpn": "CC3551E",
+    "pkg": "VQFN (RSH)",
+    "variant": "Default",
+    "headers"     : [
+        {
+            "type": "BoosterPack 40 pin",
+            "default": true,
+            "name": "boosterpack",
+            "displayName": "BoosterPack Standard Header",
+            "dimensions": {
+                "columns": [
+                    { "top":  1, "bottom": 10 },
+                    { "top": 21, "bottom": 30 },
+
+                    { "blank": true },
+
+                    { "top": 40, "bottom": 31 },
+                    { "top": 20, "bottom": 11 }
+                ]
+            },
+            "pins": [
+                {
+                    "number" : 1,
+                    "name"   : "3V3"
+                },
+                {
+                    /* Marked in schematics as: (Analog_In) */
+                    "number" : 2,
+                    "name"   : "NC"  // Mounting option: R5 (default=NC), R5!=NC SLOW_CLK_IN (32.768kHz)
+                },
+                {
+                    /* Marked in schematics as: UART0_RX (LP_UART_RX) */
+                    "number" : 3,
+                    "ball"   : "28",
+                    "name"   : "GPIO18"
+                },
+                {
+                    /* Marked in schematics as: UART0_TX (LP_UART_TX) */
+                    "number" : 4,
+                    "ball"   : "29",
+                    "name"   : "GPIO17"
+                },
+                {
+                    /* Marked in schematics as: I2C1_DATA (GPIO !) */
+                    "number" : 5,
+                    "ball"   : "36",
+                    "name"   : "GPIO10"  // Mounting option: R66 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: I2C1_CLK (Analog In) */
+                    "number" : 6,
+                    "ball"   : "35",
+                    "name"   : "GPIO11"  // Mounting option: R14 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: SPI0_CLK (SPI_CLK) */
+                    "number" : 7,
+                    "ball"   : "18",
+                    "name"   : "GPIO27",  // Mounting option: R82 (default=0 ohm)
+                    "preferredType": [
+                        "SPI_SCLK"
+                    ]
+                },
+                {
+                     /* Marked in schematics as: SPI1_CLK (GPIO !) */
+                    "number" : 8,
+                    "ball"   : "32",
+                    "name"   : "GPIO14"  // Mounting option: R19 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: I2C0_CLK (I2C_SCL) */
+                    "number" : 9,
+                    "ball"   : "11",
+                    "name"   : "GPIO33",
+                    "preferredType": [
+                        "I2C_SCL"
+                    ]
+                },
+                {
+                    /* Marked in schematics as: I2C0_DATA (I2C_SDA) */
+                    "number" : 10,
+                    "ball"   : "12",
+                    "name"   : "GPIO32",
+                    "preferredType": [
+                        "I2C_SDA"
+                    ]
+                },
+                {
+                    /* Marked in schematics as: SPI1_POCI (GPIO !) */
+                    "number" : 11,
+                    "ball"   : "31",
+                    "name"   : "GPIO15"  // Mounting option: R28 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: SPI1_CS (SPI_CS/GPIO !) */
+                    "number" : 12,
+                    "ball"   : "34",
+                    "name"   : "GPIO12"  // Mounting option: R25 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: SPI1_PICO (SPI_CS/GPIO !) */
+                    "number" : 13,
+                    "ball"   : "33",
+                    "name"   : "GPIO13"  // Mounting option: R22 (default=0 ohm)
+                },
+                {
+                    /* Marked in schematics as: SPI0_POCI (SPI_MISO) */
+                    "number" : 14,
+                    "ball"   : "17",
+                    "name"   : "GPIO28",  // Mounting option: R61 (default=0 ohm)
+                    "preferredType": [
+                        "SPI_POCI"
+                    ]
+                },
+                {
+                    /* Marked in schematics as: SPI0_PICO (SPI_MPSI) */
+                    "number" : 15,
+                    "ball"   : "16",
+                    "name"   : "GPIO29",  // Mounting option: R16 (default=0 ohm)
+                    "preferredType": [    // Info: GPIO29 can also be connected to BP.28 when mounting R20
+                        "SPI_PICO"
+                    ]
+                },
+                {
+                    "number" : 16,
+                    "name"   : "NC"  // Jumper J9 options: BP.16=NC, BP.16=3V3 which is also connected to device RESET pin (ball: 49)
+                },
+                {
+                    /* Marked in schematics as: GPT1 (GPIO) */
+                    /* Controls GREEN_LED if jumper J19 is enabled */
+                    "number" : 17,
+                    "ball"   : "14",
+                    "name"   : "GPIO30"  // Mounting option: R11 (default=0 ohm)
+                                         // Info: GPIO30 can also be connected to BP.29 when mounting R23
+                                         // Info: GPIO30 can also be connected to BP.32 when mounting R24
+                },
+                {
+                    /* Marked in schematics as: SPI0_CS (GPIO !) */
+                    "number" : 18,
+                    "ball"   : "19",
+                    "name"   : "GPIO26",  // Mounting option: R9 (default=0 ohm)
+                    "preferredType":      // Info: GPIO26 can also be connected to BP.27 when mounting R17
+                        ["SPI_CSN"]
+                },
+                {
+                    /* Marked in schematics as: COEX_REQ (PWM/GPIO !) */
+                    /* Conected to button1 (SW1) */
+                    "number" : 19,
+                    "ball"   : "46",
+                    "name"   : "GPIO2"  // Mounting option: R99 (default=0 ohm)
+                },
+                {
+                    "number" : 20,
+                    "name"   : "GND"
+                },
+                {
+                    "number" : 21,
+                    "name"   : "5V"
+                },
+                {
+                    "number" : 22,
+                    "name"   : "GND"
+                },
+                {
+                    /* Marked in schematics as: ADC2 (Analog_In) */
+                    "number" : 23,
+                    "name"   : "NC"  // Mounting options: R7 (default=0 0hm)
+                                     // Jumper J4 options: BP.23=NC, BP.23=GPIO6 through ADC2 driver
+                                     // Info: The ADC2 driver can be passed by mounting R71
+                                     // Info: If R21 is mounted, this BP will also be connected to BP.33
+                },
+                {
+                    /* Marked in schematics as: ADC3 (Analog_In) */
+                    "number" : 24,
+                    "name"   : "NC"  // Mounting option: R10 (default=0 0hm)
+                                     // Jumper J6 options: BP.24=NC, BP.24=GPIO5 through ADC3 driver
+                                     // Info: The ADC3 driver can be passed by mounting R79
+                                     // Info: If R18 is mounted, this BP will also be connected to BP.34
+                },
+                {
+                    /* Marked in schematics as: ADC4 (Analog_In) */
+                    "number" : 25,
+                    "ball"   : "43",
+                    "name"   : "GPIO4"  // Mounting option: R12 (default=0 ohm)
+                                        // Info: This BP is connected to GPIO4 (ball 42) through ADC4 driver
+                                        // Info: The ADC4 driver can be passed by mounting R70
+                                        // Info: If R6 is mounted, GPIO4 will also be connected to BP.39
+                },
+                {
+                    /* Marked in schematics as: ADC5 (Analog_In) */
+                    "number" : 26,
+                    "ball"   : "44",
+                    "name"   : "GPIO3"  // Mounting option: R15 (default=0 ohm)
+                                        // Info: This BP is connected to GPIO3 (ball 44) through ADC5 driver
+                                        // Info: The ADC5 driver can be passed by mounting R78
+                 },
+                {
+                    /* Marked in schematics as: I2S_WCLK (Analog_In/I2S_WS) */
+                    "number" : 27,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R17=NC, R17 != 0 ohm, R17=0 ohm
+                                     // Note: If R17 != NC, this BP pin gets connected to GPIO26 ball 19 through R17
+                                     // Info: GPIO26 ball 19 is by default connected to BP.18
+                },
+                {
+                    /* Marked in schematics as: I2S_BCLK/MCLK (Analog_In/I2S_SCLK) */
+                    "number" : 28,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R20=NC, R20 != 0 ohm, R20=0 ohm
+                                     // Note: If R20 != NC, this BP pin gets connected to GPIO29 ball 16 through R20
+                                     // Info: GPIO29 ball 16 is by default connected to BP.15
+                },
+                {
+                    /* Marked in schematics as: I2S_DATA0 (Analog_Out/I2S_SDout) */
+                    "number" : 29,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R23=NC, R23 != 0 ohm, R23=0 ohm
+                                     // Note: If R23 != NC, this BP pin gets connected to GPIO30 ball 14 through R23
+                                     // Info: GPIO30 ball 14 is by default connected to BP.17
+                },
+                {
+                    /* Marked in schematics as: I2S_DATA1 (Analog_Out/I2S_SDin) */
+                    "number" : 30,
+                    "ball"   : "13",
+                    "name"   : "GPIO31"  // Mounting option: [DEFAULT] R26=NC, R26 != 0 ohm, R26=0 ohm
+                                         // Note: If R26 != NC, this BP pin also gets connected to GPIO35 ball 8
+                                         // Info: GPIO35 ball 8 is by default connected to BP.36
+                },
+                {
+                    /* Controls RED_LED if jumper J19 is enabled */
+                    "number" : 31,
+                    "ball"   : "9",
+                    "name"   : "GPIO34"
+                },
+                {
+                    /* Marked in schematics as: DCAN_TX (GPIO !) */
+                    "number" : 32,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R24=NC, R24 != 0 ohm, R24=0 ohm
+                                     // Note: If R24 != NC, this BP pin gets connected to GPIO30 ball 14 through R24
+                                     // Info: GPIO30 ball 14 is by default connected to BP.17
+                },
+                {
+                    /* Marked in schematics as: UART1_RX (GPIO !) */
+                    "number" : 33,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R21=NC, R21 != 0 ohm, R21=0 ohm
+                                     // Note: If R21 != NC, this BP pin gets connected to BP.23
+                },
+                {
+                    /* Marked in schematics as: UART1_TX (GPIO !) */
+                    "number" : 34,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R18=NC, R18 != 0 ohm, R18=0 ohm
+                                     // Note: If R18 != NC, this BP pin gets connected to BP.24
+                },
+                {
+                    /* Marked in schematics as: LOGGER (Timer_Cap/GPIO !) */
+                    "number" : 35,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R2/R3=NC, R2/R3!=NC
+                                     // Note: If R2/R3!=NC, this BP pin gets connected to TESTP ball 53
+                },
+                {
+                    /* Marked in schematics as: GPT0 (Timer_Cap/GPIO !) */
+                    /* Controls BLUE_LED if jumper J19 is enabled */
+                    "number" : 36,
+                    "ball"   : "8",
+                    "name"   : "GPIO35"
+                },
+                {
+                    /* Marked in schematics as: UART0_RTS (PWM/GPIO !) */
+                    "number" : 37,
+                    "ball"   : "30",
+                    "name"   : "GPIO16"
+                },
+                {
+                    /* Marked in schematics as: UART0_CTS (PWM/GPIO !) */
+                    "number" : 38,
+                    "ball"   : "27",
+                    "name"   : "GPIO19"
+                },
+                {
+                    /* Marked in schematics as: COEX_PRIOR (PWM/GPIO !) */
+                    "number" : 39,
+                    "name"   : "NC"  // Mounting option: [DEFAULT] R6=NC, R6 != 0 ohm, R6=0 ohm
+                                     // Note: If R6 != NC, this BP pin gets connected to BP.25
+                },
+                {
+                    /* Marked in schematics as: COEX_GRANT (PWM/GPIO !) */
+                    "number" : 40,
+                    "ball"   : "53",
+                    "name"   : "GPIO36"
+                }
+            ]
+        }
+    ],
+
+     "components": {
+        "LED_RED": {
+            "displayName" : "LaunchPad LED (Red)",
+            "definition"  : "/ti/boards/components/led_dimmable.json",
+            "connections" : {
+                "OUTPUT": "9" /* GPIO34, BP.31 */
+            }
+        },
+        "LED_GREEN": {
+            "displayName" : "LaunchPad LED (Green)",
+            "definition"  : "/ti/boards/components/led_dimmable.json",
+            "connections" : {
+                "OUTPUT": "14" /* GPIO30, BP.17 */
+            }
+        },
+        "LED_BLUE": {
+            "displayName" : "LaunchPad LED (Blue)",
+            "definition"  : "/ti/boards/components/led_dimmable.json",
+            "connections" : {
+                "OUTPUT": "8" /* GPIO35, BP.36 */
+            }
+        },
+
+        /* symbolic links/aliases for LED portability between LaunchPads */
+        "LED": {
+            "link" : "LED_RED"
+        },
+        "LED1_DIMMABLE": {
+            "link" : "LED_GREEN"
+        },
+        "LED2_DIMMABLE": {
+            "link" : "LED_BLUE"
+        },
+        "LED0": {
+            "link": "LED_RED"
+        },
+        "LED1": {
+            "link": "LED_GREEN"
+        },
+        "LED2": {
+            "link": "LED_BLUE"
+        },
+        "LED1_PWM" : {
+            "link" : "LED1"
+        },
+        "LED2_PWM" : {
+            "link" : "LED2"
+        },
+
+        "BTN-1": {
+            "displayName" : "LaunchPad Button BTN-1 (Left)",
+            "definition"  : "/ti/boards/components/button.json",
+            "longDescription" : "BTN-1 (Left) LaunchPad button with no external pull.",
+            "settings": {
+                "DIN": {
+                    "pull": "Internal",
+                    "polarity": "Active High"
+                }
+            },
+            "connections" : {
+                "INPUT": "46" /* GPIO2, BP.19 */
+            }
+        },
+        "BTN-2": {
+            "displayName" : "LaunchPad Button BTN-2 (Right)",
+            "definition"  : "/ti/boards/components/button.json",
+            "longDescription" : "BTN-2 (Right) LaunchPad button with no external pull.",
+            "settings": {
+                "DIN": {
+                    "pull": "Internal",
+                    "polarity": "Active High"
+                }
+            },
+            "connections" : {
+                "INPUT": "53" /* GPIO36, BP.40 */
+            }
+        },
+
+        /* symbolic links/aliases for BUTTON portability between LaunchPads */
+        "BUTTON0": {
+            "link": "BTN-1"
+        },
+        "BUTTON1": {
+            "link": "BTN-2"
+        },
+
+        "LP_SPI0_BUS": {
+            "displayName" : "LaunchPad SPI Bus",
+            "description" : "Standard BoosterPack header SPI",
+            "longDescription" : "Standard BoosterPack header SPI",
+            "definition"  : "/ti/boards/components/spiBus.json",
+            "connections" : {
+                "SCLK": "18", /* GPIO27 */
+                "PICO": "16", /* GPIO29 */
+                "POCI": "17"  /* GPIO28 */
+            }
+        },
+
+        "LP_SPI0": {
+            "displayName" : "LaunchPad SPI Bus with Chip Select",
+            "description" : "Standard BoosterPack header SPI with Chip Select",
+            "longDescription" : "Standard BoosterPack header SPI with Chip Select",
+            "definition"  : "/ti/boards/components/spiDevice.json",
+            "subComponents": {
+                "SPI": {
+                    "link": "LP_SPI0_BUS"
+                },
+                "SELECT": {
+                    "displayName" : "LaunchPad SPI Bus Chip Select",
+                    "description" : "Standard BoosterPack header SPI Chip Select",
+                    "longDescription" : "Standard BoosterPack header SPI Chip Select",
+                    "connections" : {
+                        "CSN": "19" /* GPIO26 */
+                    }
+                }
+            }
+        },
+
+        "LP_SPI1_BUS": {
+            "displayName" : "LaunchPad SPI Bus",
+            "description" : "Standard BoosterPack header SPI",
+            "longDescription" : "Standard BoosterPack header SPI",
+            "definition"  : "/ti/boards/components/spiBus.json",
+            "connections" : {
+                "SCLK": "32", /* GPIO14 */
+                "PICO": "33", /* GPIO13 */
+                "POCI": "31"  /* GPIO15 */
+            }
+        },
+
+        "LP_SPI1": {
+            "displayName" : "LaunchPad SPI Bus with Chip Select",
+            "description" : "Standard BoosterPack header SPI with Chip Select",
+            "longDescription" : "Standard BoosterPack header SPI with Chip Select",
+            "definition"  : "/ti/boards/components/spiDevice.json",
+            "subComponents": {
+                "SPI": {
+                    "link": "LP_SPI1_BUS"
+                },
+                "SELECT": {
+                    "displayName" : "LaunchPad SPI Bus Chip Select",
+                    "description" : "Standard BoosterPack header SPI Chip Select",
+                    "longDescription" : "Standard BoosterPack header SPI Chip Select",
+                    "connections" : {
+                        "CSN": "34" /* GPIO12 */
+                    }
+                }
+            }
+        },
+
+        "XDS110UART": {
+            "definition": "/ti/boards/components/xds110Uart.json",
+            "connections": {
+                "RXD": "41", /* GPIO6 */
+                "TXD": "42"  /* GPIO5 */
+            }
+        },
+
+        "LP_I2C0": {
+            "displayName": "LaunchPad I2C bus",
+            "description": "LaunchPad I2C bus",
+            "longDescription": "LaunchPad I2C bus",
+            "definition": "/ti/boards/components/i2c.json",
+            "connections": {
+                "SDA": "12", /* GPIO32 */
+                "SCL": "11"  /* GPIO33 */
+            }
+        },
+
+        "LP_I2C1": {
+            "displayName": "LaunchPad I2C bus",
+            "description": "LaunchPad I2C bus",
+            "longDescription": "LaunchPad I2C bus",
+            "definition": "/ti/boards/components/i2c.json",
+            "connections": {
+                "SDA": "36", /* GPIO10 */
+                "SCL": "35"  /* GPIO11 */
+            }
+        },
+
+        "BMA280": {
+            "type": "BMA280",
+            "displayName": "BMA280 Accelerometer",
+            "description": "BMA280 Digital Output MEMS Accelerometer",
+            "longDescription": "The [__BMA280__](https://static6.arrow.com/aropdfconversion/be39992f9fc2c2fc0186eb6fd22efe2e252849e5/bst-bma280-ds000.pdf) is an ultralow power, 3-axis MEMS accelerometer with intelligenton-chip motion-triggered interrupt controller.",
+            "settings": {
+                "address":  "24",   /* 0x18 */
+                "maxSpeed": "400"   /* 400 kHz */
+            },
+            "subComponents": {
+                "I2C": {
+                    "link": "LP_I2C1"
+                }
+            }
+        },
+
+        "TMP1075DRL": {
+            "type": "TMP1075DRL",
+            "displayName": "TMP1075DRL Temperature Sensor",
+            "description": "TMP1075DRL Temperature Sensor With I2C and SMBus Interface",
+            "longDescription": "The [__TMP1075DRL__](https://www.ti.com/product/TMP1075) is an ultralow power, temperature sensor with I2C and SMBus Interface and a temperature range of -40°C to +125°C.",
+            "settings": {
+                "address":  "72",   /* 0x48 */
+                "maxSpeed": "2850"  /* 2850 kHz */
+            },
+            "subComponents": {
+                "I2C": {
+                    "link": "LP_I2C1"
+                }
+            }
+        }
+    }
+}

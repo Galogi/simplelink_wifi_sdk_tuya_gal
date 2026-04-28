@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Programmer User Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Radio Tool User’s Guide" href="radio_tool_user_guide.html" />
+    <link rel="prev" title="SimpleLink Wi-Fi Toolbox Startup Guide" href="simplelink_wifi_toolbox_startup_guide.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox programmer_user_guide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Programmer User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="programmer-user-guide">
+<h1>Programmer User Guide<a class="headerlink" href="#programmer-user-guide" title="Permalink to this headline">¶</a></h1>
+<p>The Programmer tool is used to activate and program the CC35XX family of devices. It is currently still in development
+with new features being added</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Please note that throughout the activation and initial programming the window should <strong>NOT be refreshed at any
+point</strong>. Additionally, the activation and initial programming process <strong>should only be done ONCE</strong> for each new CC35xx.</p>
+</div>
+<p>In the home page click on the <strong>Programmer</strong> tool.</p>
+<blockquote>
+<div><div class="figure align-center" id="figure-1">
+<span id="fig-activation-1"></span><a class="reference internal image-reference" href="../_images/activation-1.png"><img alt="../_images/activation-1.png" src="../_images/activation-1.png" style="width: 956.0px; height: 466.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">Toolbox Application Home Page</span></p>
+</div>
+</div></blockquote>
+<p>This will open a window that will allow you to see any XDS connected device.
+Select the connected XDS110 device from a drop-down list of XDS-devices
+connected to the PC.</p>
+<blockquote>
+<div><div class="figure align-center" id="figure-2">
+<span id="fig-activation-2"></span><a class="reference internal image-reference" href="../_images/activation-2.png"><img alt="../_images/activation-2.png" src="../_images/activation-2.png" style="width: 957.5px; height: 471.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">XDS110 Select Page</span></p>
+</div>
+</div></blockquote>
+<p>Next select the flash option</p>
+<blockquote>
+<div><div class="figure align-center" id="figure-3">
+<a class="reference internal image-reference" href="../_images/flash-options.png"><img alt="../_images/flash-options.png" src="../_images/flash-options.png" style="width: 957.5px; height: 418.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">Flash Select</span></p>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using a Revision A Launchpad, select IS25WJ064F. For Launchpads Revision E4 or earlier revisions, select IS25WJ032F</p>
+</div>
+<p>After, select the appropriate PSRAM connected to the device</p>
+<blockquote>
+<div><div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/psram-options.png"><img alt="../_images/psram-options.png" src="../_images/psram-options.png" style="width: 960.0px; height: 436.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 6 </span><span class="caption-text">PSRAM Select</span></p>
+</div>
+</div></blockquote>
+<p>There will also be an Enable OTA and Custom Memory Map checkbox</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/programmer-checkboxes.png"><img alt="../_images/programmer-checkboxes.png" src="../_images/programmer-checkboxes.png" style="width: 958.5px; height: 470.0px;" /></a>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>The <cite>Enable OTA</cite> checkbox will configure the memory map to make room for 2 image slots. Currently this option is only available for 4MB flash, the 8MB flash is enabled by default.</li>
+<li>The  <cite>Custom Memory Map</cite> checkbox will allow changing the size of NVS, Key Storage, and any extra Vendor dedicated memory region</li>
+</ul>
+<p>Based on the CC35xx state (activated or deactivated) you will have different options</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+Deactivated</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+Activated</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>Before your device is activated, you are presented three options in the Wi-Fi Toolbox:</p>
+<div class="figure align-center">
+<img alt="../_images/deactivated-toolbox.png" src="../_images/deactivated-toolbox.png" />
+</div>
+<p>You can choose to activate the device, set the fuses, or conduct a calibrator test. Note that if you decide to activate the device, you will end up needing to program the fuses as well.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-1-0 docutils container">
+<div class="docutils container">
+Activation</div>
+</div>
+<div class="item sphinx-data-tab-1-1 docutils container">
+<div class="docutils container">
+Fuses</div>
+</div>
+<div class="item sphinx-data-tab-1-2 docutils container">
+<div class="docutils container">
+Calibrator Test</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-0 active docutils container">
+<p>The following step will require you to select the activation method.
+There are 3 options for activating the device:</p>
+<ul class="simple">
+<li><strong>Vendor Key</strong> - Images will be verified using Vendors personal key</li>
+<li><strong>SDK Example Key</strong> - Emulate the full vendor operation using an emulation key (TI-provided ‘debug’ key).</li>
+<li><strong>Authentication Bypass</strong> - Enable the vendor to load and execute unauthenticated images.</li>
+</ul>
+<div class="figure align-center" id="fig-activation-3">
+<a class="reference internal image-reference" href="../_images/activation-options.png"><img alt="../_images/activation-options.png" src="../_images/activation-options.png" style="width: 537.0px; height: 270.5px;" /></a>
+</div>
+<p>Activation Type Page</p>
+<p><strong>Vendor Key</strong></p>
+<p>Choosing <cite>Vendor Key</cite> will require to do a onetime setup in the <cite>sign.py</cite> script located
+in <cite>simplelink_wifi_toolbox_x_x_x/flash-images-builder/signing_module</cite></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives.serialization</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_pem_public_key</span><span class="p">,</span>
+    <span class="n">Encoding</span><span class="p">,</span>
+    <span class="n">PublicFormat</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">OpenSSL.crypto</span> <span class="kn">import</span> <span class="n">FILETYPE_PEM</span>
+<span class="kn">from</span> <span class="nn">OpenSSL.crypto</span> <span class="kn">import</span> <span class="n">sign</span><span class="p">,</span> <span class="n">load_privatekey</span>
+
+<span class="n">PUBLIC_KEY</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">PRIVATE_KEY</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">buffer_sign</span><span class="p">(</span><span class="n">buffer_for_sign</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">PRIVATE_KEY</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">PRIVATE_KEY</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">priv_key_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="n">pkey</span> <span class="o">=</span> <span class="n">load_privatekey</span><span class="p">(</span><span class="n">FILETYPE_PEM</span><span class="p">,</span> <span class="n">priv_key_data</span><span class="p">)</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="n">sign</span><span class="p">(</span><span class="n">pkey</span><span class="p">,</span> <span class="n">buffer_for_sign</span><span class="p">,</span> <span class="s2">&quot;sha256&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">signature</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This script is used by the Wi-Fi toolbox each time it programs the CC35xx device that was activated via “vendor key”.</p>
+<p>You will see a PUBLIC_KEY and PRIVATE_KEY field and there are two options to set that up.</p>
+<ol class="arabic simple">
+<li>Provide the public and private keys to the script</li>
+<li>Update the signing buffer and public key retrieval functions such that they can access these keys (or a signed application image altogether) from somewhere else (ie. server via API call, etc). How you choose to implement this is up to you.</li>
+</ol>
+<p>This is what you will see when choosing the “Vendor Key” without the proper key setup.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/update-vendor-sign.png"><img alt="../_images/update-vendor-sign.png" src="../_images/update-vendor-sign.png" style="width: 540.0px; height: 348.5px;" /></a>
+</div>
+<p><strong>SDK Example Key</strong></p>
+<p>Since the SDK example key was selected the “Root of Trust” key will be pre-selected.
+The key is not pre-selected if the Authentication Bypass activation method is chosen.</p>
+<div class="figure align-center" id="figure-5">
+<span id="fig-activation-4"></span><a class="reference internal image-reference" href="../_images/activation-4.png"><img alt="../_images/activation-4.png" src="../_images/activation-4.png" style="width: 959.5px; height: 453.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 8 </span><span class="caption-text">Activation Page</span></p>
+</div>
+<p>At the end of the activation process the tool will report a summary for review.
+In case of failed RoT fuse-programming, the activation/programming process
+will be halted.</p>
+<div class="figure align-center" id="figure-6">
+<span id="fig-activation-5"></span><a class="reference internal image-reference" href="../_images/activation-5.png"><img alt="../_images/activation-5.png" src="../_images/activation-5.png" style="width: 905.0px; height: 434.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 9 </span><span class="caption-text">Review Page</span></p>
+</div>
+<p><strong>Initial Programming</strong></p>
+<p>Once the activation process has concluded, the Initial Programming process will start
+automatically in the next window. During this process you will download
+an example image to the CC35xx
+in addition to flash configuration. As a reminder, please be sure <strong>not to refresh the page</strong> during this process.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">During early access, initial programming will be done with predefined
+images and configurations. You will not be able to change the
+pre-selected inputs.</p>
+</div>
+<ul class="simple">
+<li><strong>Image selectionBoot Sector</strong> - Flash partition, calibration, and flash high-speed configuration.</li>
+<li><strong>TI Bootloader</strong> - RAM-bootloader (2nd stage BL provided by TI).</li>
+<li><strong>Vendor Demo Image</strong> - for FCS versions the image will program the Network Terminal example.</li>
+</ul>
+<blockquote id="fig-programming-1">
+<div><div class="figure align-center" id="figure-7">
+<img alt="../_images/programming-1.png" src="../_images/programming-1.png" />
+<p class="caption"><span class="caption-number">Figure 10 </span><span class="caption-text">Initial Programming Page</span></p>
+</div>
+</div></blockquote>
+<p>Press the program button to begin Initial Programming. Once programmed you will be met with the following screen.</p>
+<div class="figure align-center" id="figure-8">
+<img alt="../_images/programming-2.png" src="../_images/programming-2.png" />
+<p class="caption"><span class="caption-number">Figure 11 </span><span class="caption-text">Initial Programming Page</span></p>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-1 docutils container">
+<p>Before you program your device for the first time, there fuse settings you must configure before they are locked in place and can never be altered again.</p>
+<ul class="simple">
+<li>Authentication Enable</li>
+<li>Flash Reset Type</li>
+<li>Restrict INI</li>
+<li>App OTP</li>
+<li>Country Code</li>
+<li>MAC Address Override</li>
+<li>Wi-Fi 6 Configuration</li>
+</ul>
+<p>The images below show the default values of the fuses based on activation type. The authentication enable and flash reset type settings <strong>must NOT be changed,</strong>
+but you are free to tinker with anything else.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-2-0 docutils container">
+<div class="docutils container">
+Vendor Key</div>
+</div>
+<div class="item sphinx-data-tab-2-1 docutils container">
+<div class="docutils container">
+SDK Example Key</div>
+</div>
+<div class="item sphinx-data-tab-2-2 docutils container">
+<div class="docutils container">
+Authentication Bypass</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-0 active docutils container">
+<div class="figure align-center">
+<img alt="../_images/vendor-key-fuses.png" src="../_images/vendor-key-fuses.png" />
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-1 docutils container">
+<div class="figure align-center">
+<img alt="../_images/sdk-key-fuses.png" src="../_images/sdk-key-fuses.png" />
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-2 docutils container">
+<div class="figure align-center">
+<img alt="../_images/auth-bypass-fuses.png" src="../_images/auth-bypass-fuses.png" />
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the above images are only presented when you choose to activate your device. If you decide to undergo partial fuse programming, you will only see the five fuses that you are allowed to change as presented below.
+Once you set the fuses here, you cannot change them again during the activation process.</p>
+</div>
+<div class="figure align-center">
+<img alt="../_images/separate-fuse-programming.png" src="../_images/separate-fuse-programming.png" />
+</div>
+<p>Use cases of the fuses that you can customize:</p>
+<ul class="simple">
+<li>Restrict INI: Gives users the opportunity to require authorization (key) to update RF and regulatory settings.</li>
+<li>App OTP: Reserve section for storing vendor defined data in the OTP.</li>
+<li>Country Code: Restricts the device to only accept a conf file with the corresponding country code.</li>
+<li>MAC Address Override: Gives users the opportunity to program the device with their own MAC address.</li>
+<li>Wi-Fi 6 Configuration: Gives users a one-time decision to either enable or disable Wi-Fi 6.</li>
+</ul>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-2 docutils container">
+<p>If you choose calibrator test (optional but good practice), you can either calibrate the flash or the PSRAM as shown below. The purpose of the xSPI Memory calibration
+is performed to validate memory connection and integrity to the CC35xxE devices.</p>
+<div class="figure align-center">
+<img alt="../_images/calibrator-test-options.png" src="../_images/calibrator-test-options.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p>After your device is activated, you may choose to program it via either the Wi-Fi toolbox or using CCS.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-3-0 docutils container">
+<div class="docutils container">
+Wi-Fi Toolbox</div>
+</div>
+<div class="item sphinx-data-tab-3-1 docutils container">
+<div class="docutils container">
+CCS</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-3-0 active docutils container">
+<p>When connecting your toolbox to an activated device, you may see and fill out a menu like this:</p>
+<div class="figure align-center">
+<img alt="../_images/connect-to-device.png" src="../_images/connect-to-device.png" />
+</div>
+<p>Please note the “Activate By” field. What you set there must match how your device was activated.</p>
+<p>You will then be taking to the Programming Page</p>
+<div class="figure align-center" id="figure-9">
+<a class="reference internal image-reference" href="../_images/ProgrammingHome.png"><img alt="../_images/ProgrammingHome.png" src="../_images/ProgrammingHome.png" style="width: 956.0px; height: 473.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 12 </span><span class="caption-text">Programming Top Level Screen</span></p>
+</div>
+<p>The default binaries will be selected which will program the <cite>Network Terminal</cite> example. The option
+to load custom binaries is available by pressing on the <cite>+</cite> sign on the right of each binary. The following
+pop ups will appear. Starting with Vendor Image</p>
+<div class="figure align-center" id="figure-10">
+<a class="reference internal image-reference" href="../_images/custom_image.png"><img alt="../_images/custom_image.png" src="../_images/custom_image.png" style="width: 956.0px; height: 454.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 13 </span><span class="caption-text">Adding custom vendor image</span></p>
+</div>
+<p>If OTA is enabled, you will have the option to save the image in either Slot 0 or Slot 1. If you would like to have
+the image be unsecured choose the <cite>Vendor Activation Bypass</cite> otherwise use the SDK Example Key. This assumes the devices was activated with the default key,
+if it was not, select the pre-built image option with an image created using the vendor key.</p>
+<p>Changing <cite>TI Wireless Firmware</cite></p>
+<div class="figure align-center" id="figure-11">
+<a class="reference internal image-reference" href="../_images/custom_fw.png"><img alt="../_images/custom_fw.png" src="../_images/custom_fw.png" style="width: 953.5px; height: 454.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 14 </span><span class="caption-text">Adding custom firmware image</span></p>
+</div>
+<p>If OTA is enabled, you will have the option to save the image in either Slot 0 or Slot 1. To switch FW version, find the <cite>cc35xx_fw.bin</cite> you would like to use.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is a dependency between the Wifi Driver and the <cite>cc35xx_fw.bin</cite>. Make sure you only load the firmware that came with the SDK from which
+the driver is being used.</p>
+</div>
+<p>Other binaries should be kept to default binaries.
+If all the images have been chosen and the device is ready to be programmed, click on the <cite>Program</cite> button on the bottom right corner.
+Once the Programming process has been completed you will be met with a summary for review</p>
+<div class="figure align-center" id="figure-12">
+<a class="reference internal image-reference" href="../_images/ProgrammingEnd.png"><img alt="../_images/ProgrammingEnd.png" src="../_images/ProgrammingEnd.png" style="width: 954.0px; height: 465.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 15 </span><span class="caption-text">Programming End</span></p>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-3-1 docutils container">
+<p>If using CCS, you must select the correct activation type in SYSCFG based on how you activated your device as shown below:</p>
+<div class="figure align-center">
+<img alt="../_images/ccs-set-activation-type.png" src="../_images/ccs-set-activation-type.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="radio_tool_user_guide.html" class="btn btn-neutral float-right" title="Radio Tool User’s Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="simplelink_wifi_toolbox_startup_guide.html" class="btn btn-neutral float-left" title="SimpleLink Wi-Fi Toolbox Startup Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

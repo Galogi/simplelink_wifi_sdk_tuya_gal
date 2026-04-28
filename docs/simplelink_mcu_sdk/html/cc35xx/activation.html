@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Device Activation &amp; Fuses &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Memory Overview" href="../memory/cc35xx-index.html" />
+    <link rel="prev" title="Vendor Specific HCI Commands" href="../ble/hci/hci.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx activation";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Device Activation &amp; Fuses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fuses">Fuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#future-programming">Future Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wi-fi-toolbox-cli">Wi-Fi Toolbox CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Device Activation &amp; Fuses</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="device-activation-fuses">
+<span id="sec-activation"></span><h1>Device Activation &amp; Fuses<a class="headerlink" href="#device-activation-fuses" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The CC35xx utilizes the Wi-Fi toolbox to assist in signing images and flashing them into the device, allowing for maximum security and prevention of malicious people from programming the device.
+To achieve this, customers must “activate” the device, or install a root of trust (and configuring other settings), which will be used to validate any images that are to be programmed to the device.</p>
+<p>The customer also needs to be aware of certain settings that can only be configured during the activation stage of the device. These include Wi-Fi 6 usage, MAC address updates etc. These attributes
+<strong>cannot</strong> be changed after the activation stage is complete.</p>
+</div>
+<div class="section" id="fuses">
+<h2>Fuses<a class="headerlink" href="#fuses" title="Permalink to this headline">¶</a></h2>
+<p>There are additional settings referred to as fuses; these configurations cannot be changed after activation.</p>
+<p>These are:</p>
+<ul class="simple">
+<li><strong>Authentication Enable:</strong> Enable or Disabled.</li>
+<li><strong>Flash Reset Type:</strong> In Band vs Physical Interrupt.</li>
+<li><strong>Restrict INI:</strong> Gives users the opportunity to require authorization (key) to update RF and regulatory settings.</li>
+<li><strong>App OTP:</strong> Reserve section for storing vendor defined data in the OTP.</li>
+<li><strong>Country Code:</strong> Restricts the device to only accept a conf file with the corresponding country code.</li>
+<li><strong>MAC Address Override:</strong> Gives users the opportunity to program the device with their own MAC address.</li>
+<li><strong>Wi-Fi 6 Configuration:</strong> Gives users a one-time decision to either enable or disable Wi-Fi 6.</li>
+</ul>
+</div>
+<div class="section" id="future-programming">
+<h2>Future Programming<a class="headerlink" href="#future-programming" title="Permalink to this headline">¶</a></h2>
+<p>When programming the device in the future after activation, you may see and fill out a menu like this:</p>
+<div class="figure align-center">
+<img alt="../_images/connect-to-device.png" src="../_images/connect-to-device.png" />
+</div>
+<p>Please note the “Activate By” field. It must match what you set for the device during activation.</p>
+<p>If using CCS, you must apply this change in SYSCFG as shown below:</p>
+<div class="figure align-center">
+<img alt="../_images/ccs-set-activation-type.png" src="../_images/ccs-set-activation-type.png" />
+</div>
+<p>If you haven’t updated the signing module when needed, you will see this:</p>
+<div class="figure align-center">
+<img alt="../_images/ccs-warning.png" src="../_images/ccs-warning.png" />
+</div>
+</div>
+<div class="section" id="wi-fi-toolbox-cli">
+<h2>Wi-Fi Toolbox CLI<a class="headerlink" href="#wi-fi-toolbox-cli" title="Permalink to this headline">¶</a></h2>
+<p>These are some options when running the script, but please note that the activation_type default setting is “sdk_example_key” and the signing_module will only be used for activation type
+“vendor_key” and has a default path “flash-images-builder/signing_module/sign.py”, so you have to specify it if the script is a different name or somewhere else</p>
+<div class="figure align-center">
+<img alt="../_images/cli-activation.png" src="../_images/cli-activation.png" />
+</div>
+<p>For factory programming, based on “–activation_type” programmer will use the correct signing process, For “VENDOR_KEY’ user will be able provide specific path to signing module otherwise
+it will use signing_module from flash-images-builder/signing_module. Do not forget to specify the correct activation type.</p>
+<div class="figure align-center">
+<img alt="../_images/cli-factory-programming1.png" src="../_images/cli-factory-programming1.png" />
+</div>
+<p>For flash erase, based on “–activation_type” programmer will use the correct signing process, For “VENDOR_KEY’ user will be able provide specific path to signing module otherwise it will
+use signing_module from flash-images-builder/signing_module. This setting is used for redefining the flash size</p>
+<div class="figure align-center">
+<img alt="../_images/cli-flash-erase1.png" src="../_images/cli-flash-erase1.png" />
+</div>
+<p>For flash image builder, private_key and public_key are optional. Activation_type will be added and for “VENDOR_KEY’ user will be able provide specific path to signing module otherwise it
+will use signing_module from flash-images-builder/signing_module</p>
+<div class="figure align-center">
+<img alt="../_images/cli-image-build.png" src="../_images/cli-image-build.png" />
+</div>
+<p>If you haven’t updated the signing module when needed, you will see this:</p>
+<div class="figure align-center">
+<img alt="../_images/cli-warning1.png" src="../_images/cli-warning1.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../memory/cc35xx-index.html" class="btn btn-neutral float-right" title="Memory Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ble/hci/hci.html" class="btn btn-neutral float-left" title="Vendor Specific HCI Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

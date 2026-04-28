@@ -1,0 +1,1 @@
+C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmar.exe qc lib/ticlang/m33f/display_cc35xx/display_cc35xx.a CMakeFiles/display_cc35xx.dir/Display.c.obj CMakeFiles/display_cc35xx.dir/DisplayHost.c.obj CMakeFiles/display_cc35xx.dir/DisplayUart2.c.obj

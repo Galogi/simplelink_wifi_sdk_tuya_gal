@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_e_c_d_h_x_x_f3_h_s_m___object" kind="struct" language="C++" prot="public">
+    <compoundname>ECDHXXF3HSM_Object</compoundname>
+    <includes refid="_e_c_d_h_x_x_f3_h_s_m_8h" local="no">ECDHXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a897a9e48c9a5c4ebe03df40e1906928f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>const CryptoKey* ECDHXXF3HSM_Object::privateKey</definition>
+        <argsstring></argsstring>
+        <name>privateKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="127" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad979046462dc0b8fe7be31237e91e72c" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>CryptoKey* ECDHXXF3HSM_Object::publicKey</definition>
+        <argsstring></argsstring>
+        <name>publicKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="128" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a363de9b2a1f500081581e14b812bdede" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>CryptoKey* ECDHXXF3HSM_Object::sharedSecret</definition>
+        <argsstring></argsstring>
+        <name>sharedSecret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="129" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a5d51ea87243d7859d75e27f4e0cb465b" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1a06029cbd3a1bfe5825fc6138909c8445" kindref="member">ECDH_CurveType</ref></type>
+        <definition>ECDH_CurveType ECDHXXF3HSM_Object::curveType</definition>
+        <argsstring></argsstring>
+        <name>curveType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="130" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a95e4a27ab19c17b0d12194e87f12c17c" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1ab67d0210e84bd2f01118fa72da607cc3" kindref="member">ECDH_CurveLength</ref></type>
+        <definition>ECDH_CurveLength ECDHXXF3HSM_Object::curveLength</definition>
+        <argsstring></argsstring>
+        <name>curveLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="131" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae674aa332005cae021bd3e1927e517c2" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_x_x_f3_h_s_m_8h_1a04e86fc0dae1afe678a844609ddc78f7" kindref="member">ECDH_DomainID</ref></type>
+        <definition>ECDH_DomainID ECDHXXF3HSM_Object::domainId</definition>
+        <argsstring></argsstring>
+        <name>domainId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="132" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1aea6b6c302089ec19fff9f67259c3a9ef" prot="public" static="no" mutable="no">
+        <type>Eip130Domain_ECCurveFamily_t</type>
+        <definition>Eip130Domain_ECCurveFamily_t ECDHXXF3HSM_Object::curveFamily</definition>
+        <argsstring></argsstring>
+        <name>curveFamily</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="133" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae9f3e820deb24be667c385a4a5d6fe98" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1a978c9e16d670371e7c0c50793fc4ec04" kindref="member">ECDH_CallbackFxn</ref></type>
+        <definition>ECDH_CallbackFxn ECDHXXF3HSM_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="134" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad3f5376ea4d0b6beb47f94670007e3ee" prot="public" static="no" mutable="no">
+        <type><ref refid="union_e_c_d_h___operation" kindref="compound">ECDH_Operation</ref> *</type>
+        <definition>ECDH_Operation* ECDHXXF3HSM_Object::operation</definition>
+        <argsstring></argsstring>
+        <name>operation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="135" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a84604082f503750e287e7192192cacdc" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1a99b8a8bbad4e932870174c38dec46490" kindref="member">ECDH_OperationType</ref></type>
+        <definition>ECDH_OperationType ECDHXXF3HSM_Object::operationType</definition>
+        <argsstring></argsstring>
+        <name>operationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="136" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad2e8d0e10f56778dd5a67de141ab1025" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1a95326e8fc727d9426a57cf4a6bb2f670" kindref="member">ECDH_ReturnBehavior</ref></type>
+        <definition>ECDH_ReturnBehavior ECDHXXF3HSM_Object::returnBehavior</definition>
+        <argsstring></argsstring>
+        <name>returnBehavior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="137" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1aa73fcfa285f12bc15b2f32d98669a5a3" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_c_d_h_8h_1a8880579dac7ee8d0f2c3ddf2306ca9fb" kindref="member">ECDH_KeyMaterialEndianness</ref></type>
+        <definition>ECDH_KeyMaterialEndianness ECDHXXF3HSM_Object::keyMaterialEndianness</definition>
+        <argsstring></argsstring>
+        <name>keyMaterialEndianness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="138" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae5212366521a5621490c2962d61f9c9e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::accessTimeout</definition>
+        <argsstring></argsstring>
+        <name>accessTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="139" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ac0814d3af3e8c242b2222c5a13e0af99" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t ECDHXXF3HSM_Object::returnStatus</definition>
+        <argsstring></argsstring>
+        <name>returnStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="140" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a2109da985988deea4807a6e04aeb649d" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t ECDHXXF3HSM_Object::hsmStatus</definition>
+        <argsstring></argsstring>
+        <name>hsmStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="141" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a9d56fc349398e3837cd1719ddc8d1186" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::privateKeyAssetID</definition>
+        <argsstring></argsstring>
+        <name>privateKeyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="142" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a67cdd26d731ab6f5bb302220a5df6bf7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::publicKeyAssetID</definition>
+        <argsstring></argsstring>
+        <name>publicKeyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="143" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a13576dfaede33162ce56c5795ed315ea" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::publicDataAssetID</definition>
+        <argsstring></argsstring>
+        <name>publicDataAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="144" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae4e60a467180a42412d1bdfaf0668ff5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::paramAssetID</definition>
+        <argsstring></argsstring>
+        <name>paramAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="145" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad94e3d822faa20625fe730ae3ce47e33" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* ECDHXXF3HSM_Object::curveParam</definition>
+        <argsstring></argsstring>
+        <name>curveParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="146" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1ac7a3dda1972572bc6aee37308c4ade3f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECDHXXF3HSM_Object::curveParamSize</definition>
+        <argsstring></argsstring>
+        <name>curveParamSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="147" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a762ca486a513c0ae1aa7bfc6c24946cc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ECDHXXF3HSM_Object::output[144]</definition>
+        <argsstring>[144]</argsstring>
+        <name>output</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="148" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a6065dd4e2ed4b485b8f5d9198943db3a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ECDHXXF3HSM_Object::driverCreatedKeyAsset</definition>
+        <argsstring></argsstring>
+        <name>driverCreatedKeyAsset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="149" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_c_d_h_x_x_f3_h_s_m___object_1a1df6e67d33ad32d4dea50bae867afaf6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ECDHXXF3HSM_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="150" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ECDHXXF3HSM Object. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>The application must not access any member variables of this structure! </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="224">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="225" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="226" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="228">
+        <label>ECDH_Config</label>
+        <link refid="struct_e_c_d_h___config"/>
+      </node>
+      <node id="222">
+        <label>ECDH_OperationGeneratePublicKey</label>
+        <link refid="struct_e_c_d_h___operation_generate_public_key"/>
+        <childnode refid="223" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="224" relation="usage">
+          <edgelabel>myPrivateKey</edgelabel>
+          <edgelabel>myPublicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="221">
+        <label>ECDH_Operation</label>
+        <link refid="union_e_c_d_h___operation"/>
+        <childnode refid="222" relation="usage">
+          <edgelabel>generatePublicKey</edgelabel>
+        </childnode>
+        <childnode refid="227" relation="usage">
+          <edgelabel>computeSharedSecret</edgelabel>
+        </childnode>
+      </node>
+      <node id="223">
+        <label>ECCParams_CurveParams</label>
+        <link refid="struct_e_c_c_params___curve_params"/>
+      </node>
+      <node id="225">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="220">
+        <label>ECDHXXF3HSM_Object</label>
+        <link refid="struct_e_c_d_h_x_x_f3_h_s_m___object"/>
+        <childnode refid="221" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+        <childnode refid="228" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="224" relation="usage">
+          <edgelabel>privateKey</edgelabel>
+          <edgelabel>publicKey</edgelabel>
+          <edgelabel>sharedSecret</edgelabel>
+        </childnode>
+      </node>
+      <node id="227">
+        <label>ECDH_OperationComputeSharedSecret</label>
+        <link refid="struct_e_c_d_h___operation_compute_shared_secret"/>
+        <childnode refid="223" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="224" relation="usage">
+          <edgelabel>theirPublicKey</edgelabel>
+          <edgelabel>myPrivateKey</edgelabel>
+          <edgelabel>sharedSecret</edgelabel>
+        </childnode>
+      </node>
+      <node id="226">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/ecdh/ECDHXXF3HSM.h" line="126" column="1" bodyfile="source/ti/drivers/ecdh/ECDHXXF3HSM.h" bodystart="125" bodyend="151"/>
+    <listofallmembers>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae5212366521a5621490c2962d61f9c9e" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>accessTimeout</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae9f3e820deb24be667c385a4a5d6fe98" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1aea6b6c302089ec19fff9f67259c3a9ef" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>curveFamily</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a95e4a27ab19c17b0d12194e87f12c17c" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>curveLength</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad94e3d822faa20625fe730ae3ce47e33" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>curveParam</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ac7a3dda1972572bc6aee37308c4ade3f" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>curveParamSize</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a5d51ea87243d7859d75e27f4e0cb465b" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>curveType</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae674aa332005cae021bd3e1927e517c2" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>domainId</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a6065dd4e2ed4b485b8f5d9198943db3a" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>driverCreatedKeyAsset</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a2109da985988deea4807a6e04aeb649d" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>hsmStatus</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a1df6e67d33ad32d4dea50bae867afaf6" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>isOpen</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1aa73fcfa285f12bc15b2f32d98669a5a3" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>keyMaterialEndianness</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad3f5376ea4d0b6beb47f94670007e3ee" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>operation</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a84604082f503750e287e7192192cacdc" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>operationType</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a762ca486a513c0ae1aa7bfc6c24946cc" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>output</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ae4e60a467180a42412d1bdfaf0668ff5" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>paramAssetID</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a897a9e48c9a5c4ebe03df40e1906928f" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>privateKey</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a9d56fc349398e3837cd1719ddc8d1186" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>privateKeyAssetID</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a13576dfaede33162ce56c5795ed315ea" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>publicDataAssetID</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad979046462dc0b8fe7be31237e91e72c" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>publicKey</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a67cdd26d731ab6f5bb302220a5df6bf7" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>publicKeyAssetID</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ad2e8d0e10f56778dd5a67de141ab1025" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>returnBehavior</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1ac0814d3af3e8c242b2222c5a13e0af99" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>returnStatus</name></member>
+      <member refid="struct_e_c_d_h_x_x_f3_h_s_m___object_1a363de9b2a1f500081581e14b812bdede" prot="public" virt="non-virtual"><scope>ECDHXXF3HSM_Object</scope><name>sharedSecret</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

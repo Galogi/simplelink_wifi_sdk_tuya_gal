@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_i2_s_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>I2SWFF3_HWAttrs</compoundname>
+    <includes refid="_i2_s_w_f_f3_8h" local="no">I2SWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a719165dd83120912bcfa9b23393d4832" prot="public" static="no" mutable="no">
+        <type><ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7" kindref="member">I2SWFF3_ClkSrc</ref></type>
+        <definition>I2SWFF3_ClkSrc I2SWFF3_HWAttrs::clkSrc</definition>
+        <argsstring></argsstring>
+        <name>clkSrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2S clock source. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="446" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="446" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1ab37b6fd38aa5160fcfe497de591b4fe1" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_i2_s_w_f_f3___a_d_f_s" kindref="compound">I2SWFF3_ADFS</ref></type>
+        <definition>I2SWFF3_ADFS I2SWFF3_HWAttrs::adfs</definition>
+        <argsstring></argsstring>
+        <name>adfs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADFS configuration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="447" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a7de0246f0d6755f431ecaed883340cf0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t I2SWFF3_HWAttrs::audioClkFreq</definition>
+        <argsstring></argsstring>
+        <name>audioClkFreq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Audio clock (ACLK) frequency. This is the output of ADFS, so it must match clkSrc and the adfs configuration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="448" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1ad8a2a7b5e6feb903602a3417cceb24da" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sd1Pin</definition>
+        <argsstring></argsstring>
+        <name>sd1Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SD1 signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="450" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="450" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1aa875f11f4e8ea925d80d7840de2d534e" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sd1PinMux</definition>
+        <argsstring></argsstring>
+        <name>sd1PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mux value used to mux the SD1 signal to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1ad8a2a7b5e6feb903602a3417cceb24da" kindref="member">sd1Pin</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="451" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a96b7a214019c22a316e7aecc24d2fb92" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sd0Pin</definition>
+        <argsstring></argsstring>
+        <name>sd0Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SD0 signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="452" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a7dd2becc04d3df006a36d715265822c0" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sd0PinMux</definition>
+        <argsstring></argsstring>
+        <name>sd0PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mux value used to mux the SD0 signal to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a96b7a214019c22a316e7aecc24d2fb92" kindref="member">sd0Pin</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="453" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="453" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a008c5637bd980c268a084ced4054a347" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sckPin</definition>
+        <argsstring></argsstring>
+        <name>sckPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for SCLK signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="454" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a649d6780a072a75ecc68c4caa8874457" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::sckPinMux</definition>
+        <argsstring></argsstring>
+        <name>sckPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mux value used to mux the SCLK signal to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a008c5637bd980c268a084ced4054a347" kindref="member">sckPin</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="455" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="455" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1abb54dfea5ab558abbf8009d7a19f0bcf" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::cclkPin</definition>
+        <argsstring></argsstring>
+        <name>cclkPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for CCLK signal. Not used in most of the applications. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="456" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a45665febc20b005404b9a32514397b79" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::cclkPinMux</definition>
+        <argsstring></argsstring>
+        <name>cclkPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mux value used to mux the CCLK signal to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1abb54dfea5ab558abbf8009d7a19f0bcf" kindref="member">cclkPin</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="457" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a909ac663b04e4f5ef70af42f033a3b63" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::wsPin</definition>
+        <argsstring></argsstring>
+        <name>wsPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pin used for WS signal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="458" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1a8a91f3b12eefb696eaee609d1b00d261" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t I2SWFF3_HWAttrs::wsPinMux</definition>
+        <argsstring></argsstring>
+        <name>wsPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mux value used to mux the WS signal to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a909ac663b04e4f5ef70af42f033a3b63" kindref="member">wsPin</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="459" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_s_w_f_f3___h_w_attrs_1ad68044689502cefacdfb98a3960ae371" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2SWFF3_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2S Peripheral&apos;s interrupt priority. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="460" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2S Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>intPriority is the I2S peripheral&apos;s interrupt priority, as defined by the RTOS kernel. This value is passed unmodified to <ref refid="_hwi_p_8h_1ae273d32875ecb4c74883c2310fd8af91" kindref="member">HwiP_construct()</ref>.</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>I2SWFF3_HWAttrs<sp/>i2sHWAttrs[CONFIG_TI_DRIVERS_I2S_COUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.clkSrc<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>I2SWFF3_CLK_SRC_SOC_PLL_CLK,<sp/>//<sp/>160<sp/>MHz</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.adfs<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{.tref<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>100000,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>((1THz)/160MHz)*16<sp/>=<sp/>6250*16<sp/>=<sp/>100000</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.div<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>13,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>div_temp1<sp/>=<sp/>floor(160MHz/12.288MHz)<sp/>=<sp/>13</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>div_temp2<sp/>=<sp/>ceil(160MHz/12.288MHz)<sp/>=<sp/>14</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>delta_temp1<sp/>=<sp/>(1THz)*(1/(12.288MHz*13))-(1/160MHz)<sp/>=<sp/>-437</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>delta_temp2<sp/>=<sp/>(1THz)*(1/(12.288MHz*14))-(1/160MHz)<sp/>=<sp/>10</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>abs(delta_temp2)<sp/>&lt;<sp/>abs<sp/>(delta_temp1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.delta<sp/><sp/><sp/><sp/><sp/>=<sp/>160,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>delta_temp2*16<sp/>=<sp/>160</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.deltaSign<sp/>=<sp/>0,},<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>delta_temp2<sp/>is<sp/>positive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.audioClkFreq<sp/>=<sp/><sp/>12288031,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>(1THz)/((((1THz)/160MHz)+(160/16))*13)<sp/>=<sp/>12288031</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sd1Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_ADI,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sd1PinMux<sp/><sp/><sp/><sp/>=<sp/><sp/>7,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sd0Pin<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_ADO,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sd0PinMux<sp/><sp/><sp/><sp/>=<sp/><sp/>7,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sckPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_BCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sckPinMux<sp/><sp/><sp/><sp/>=<sp/><sp/>7,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.cclkPin<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_CCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.cclkPinMux<sp/><sp/><sp/>=<sp/><sp/>8,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.wsPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>CONFIG_I2S_WCLK,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.wsPinMux<sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>7,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/><sp/>=<sp/><sp/>~0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="141">
+        <label>I2SWFF3_ADFS</label>
+        <link refid="struct_i2_s_w_f_f3___a_d_f_s"/>
+      </node>
+      <node id="140">
+        <label>I2SWFF3_HWAttrs</label>
+        <link refid="struct_i2_s_w_f_f3___h_w_attrs"/>
+        <childnode refid="141" relation="usage">
+          <edgelabel>adfs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/i2s/I2SWFF3.h" line="445" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="444" bodyend="461"/>
+    <listofallmembers>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1ab37b6fd38aa5160fcfe497de591b4fe1" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>adfs</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a7de0246f0d6755f431ecaed883340cf0" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>audioClkFreq</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1abb54dfea5ab558abbf8009d7a19f0bcf" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>cclkPin</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a45665febc20b005404b9a32514397b79" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>cclkPinMux</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a719165dd83120912bcfa9b23393d4832" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>clkSrc</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1ad68044689502cefacdfb98a3960ae371" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a008c5637bd980c268a084ced4054a347" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sckPin</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a649d6780a072a75ecc68c4caa8874457" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sckPinMux</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a96b7a214019c22a316e7aecc24d2fb92" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sd0Pin</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a7dd2becc04d3df006a36d715265822c0" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sd0PinMux</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1ad8a2a7b5e6feb903602a3417cceb24da" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sd1Pin</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1aa875f11f4e8ea925d80d7840de2d534e" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>sd1PinMux</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a909ac663b04e4f5ef70af42f033a3b63" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>wsPin</name></member>
+      <member refid="struct_i2_s_w_f_f3___h_w_attrs_1a8a91f3b12eefb696eaee609d1b00d261" prot="public" virt="non-virtual"><scope>I2SWFF3_HWAttrs</scope><name>wsPinMux</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

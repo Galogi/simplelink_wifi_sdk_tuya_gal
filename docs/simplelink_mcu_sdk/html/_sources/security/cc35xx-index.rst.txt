@@ -1,0 +1,14 @@
+.. _sec-cc35xx-security:
+
+Security
+********
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /security/network-security
+    /security/secure-boot
+    /security/secure-debug
+    /security/hsm

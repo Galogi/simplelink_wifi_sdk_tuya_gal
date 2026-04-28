@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__key__derivation__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_key_derivation_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1ad83383ca0a1c0a4310bba24e52bdbf6d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_key_derivation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="765" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="765" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a983c7e59a47ce9643ec33c1795ec0daf" prot="public" static="no" mutable="no">
+        <type><ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref></type>
+        <definition>mbedtls_svc_key_id_t psa_key_derivation_s::inputKey</definition>
+        <argsstring></argsstring>
+        <name>inputKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="766" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="766" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a7350ee502987592f9217fdaace39e3be" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t psa_key_derivation_s::fixedInputData[(224U - 20U)]</definition>
+        <argsstring>[(224U - 20U)]</argsstring>
+        <name>fixedInputData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="771" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="771" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a43a00f02e0246387c099ee29d40650e1" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_key_derivation_s::labelSize</definition>
+        <argsstring></argsstring>
+        <name>labelSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="772" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="772" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a8cdafab711def8902ed1fcd8c63c5294" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_key_derivation_s::contextSize</definition>
+        <argsstring></argsstring>
+        <name>contextSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="773" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="773" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1ab2d4f67e10d7aa506d9a0d84d640a88a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t psa_key_derivation_s::handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="774" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="774" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a989fb45628fadfd1ba48ebddd4a7e6c5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t psa_key_derivation_s::capacity</definition>
+        <argsstring></argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="775" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="775" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a3503baedd1838759e7f507c324b92388" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool psa_key_derivation_s::canDerive</definition>
+        <argsstring></argsstring>
+        <name>canDerive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="776" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="776" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__derivation__s_1a2df00e10e70f18a08a24ad15e1796d07" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool psa_key_derivation_s::capacitySet</definition>
+        <argsstring></argsstring>
+        <name>capacitySet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="777" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="777" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="25">
+        <label>mbedtls_svc_key_id_t</label>
+        <link refid="structmbedtls__svc__key__id__t"/>
+      </node>
+      <node id="24">
+        <label>psa_key_derivation_s</label>
+        <link refid="structpsa__key__derivation__s"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>inputKey</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="764" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="763" bodyend="778"/>
+    <listofallmembers>
+      <member refid="structpsa__key__derivation__s_1ad83383ca0a1c0a4310bba24e52bdbf6d" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>alg</name></member>
+      <member refid="structpsa__key__derivation__s_1a3503baedd1838759e7f507c324b92388" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>canDerive</name></member>
+      <member refid="structpsa__key__derivation__s_1a989fb45628fadfd1ba48ebddd4a7e6c5" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>capacity</name></member>
+      <member refid="structpsa__key__derivation__s_1a2df00e10e70f18a08a24ad15e1796d07" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>capacitySet</name></member>
+      <member refid="structpsa__key__derivation__s_1a8cdafab711def8902ed1fcd8c63c5294" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>contextSize</name></member>
+      <member refid="structpsa__key__derivation__s_1a7350ee502987592f9217fdaace39e3be" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>fixedInputData</name></member>
+      <member refid="structpsa__key__derivation__s_1ab2d4f67e10d7aa506d9a0d84d640a88a" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>handle</name></member>
+      <member refid="structpsa__key__derivation__s_1a983c7e59a47ce9643ec33c1795ec0daf" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>inputKey</name></member>
+      <member refid="structpsa__key__derivation__s_1a43a00f02e0246387c099ee29d40650e1" prot="public" virt="non-virtual"><scope>psa_key_derivation_s</scope><name>labelSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

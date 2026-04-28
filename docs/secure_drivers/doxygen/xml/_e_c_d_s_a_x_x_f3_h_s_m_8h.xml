@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_e_c_d_s_a_x_x_f3_h_s_m_8h" kind="file" language="C++">
+    <compoundname>ECDSAXXF3HSM.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_e_c_d_s_a_8h" local="no">ti/drivers/ECDSA.h</includes>
+    <incdepgraph>
+      <node id="338">
+        <label>stdbool.h</label>
+      </node>
+      <node id="337">
+        <label>stdint.h</label>
+      </node>
+      <node id="344">
+        <label>ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h</label>
+        <link refid="_e_c_c_params_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="342">
+        <label>ti/drivers/cryptoutils/ecc/ECCParams.h</label>
+        <link refid="_e_c_c_params_8h"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+      </node>
+      <node id="340">
+        <label>stddef.h</label>
+      </node>
+      <node id="343">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="341">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+      </node>
+      <node id="336">
+        <label>ECDSAXXF3HSM.h</label>
+        <link refid="_e_c_d_s_a_x_x_f3_h_s_m_8h"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+      </node>
+      <node id="339">
+        <label>ti/drivers/ECDSA.h</label>
+        <link refid="_e_c_d_s_a_8h"/>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="340" relation="include">
+        </childnode>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_e_c_d_s_a_x_x_f3_h_s_m___h_w_attrs" prot="public">ECDSAXXF3HSM_HWAttrs</innerclass>
+    <innerclass refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object" prot="public">ECDSAXXF3HSM_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a6b160c2f76fdcb223cc2b58061b4b29d" prot="public" static="no">
+        <name>ECDSAXXF3HSM_COMPONENT_VECTOR_LENGTH</name>
+        <initializer>144</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" line="73" column="9" bodyfile="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1ab43e55b84c83b3fd933974a97f224916" prot="public" static="no">
+        <name>ECDSAXXF3HSM_STATUS_NO_VALID_CURVE_TYPE_PROVIDED</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 0)</initializer>
+        <briefdescription>
+<para>The curve provided is not supported. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" line="78" column="9" bodyfile="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a467128d7da1723bdf248f080b0185d53" prot="public" static="no">
+        <name>ECDSAXXF3HSM_STATUS_INVALID_KEY_ENCODING</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 1)</initializer>
+        <briefdescription>
+<para>The key encoding is not HSM masked to signify an HSM operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" line="83" column="9" bodyfile="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a6cbc6dcd66e30256331484fe18504db3" prot="public" static="no">
+        <name>ECDSAXXF3HSM_STATUS_HARDWARE_ERROR</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 2)</initializer>
+        <briefdescription>
+<para>An error ocurred on the HW level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" line="88" column="9" bodyfile="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932c" prot="public" static="no">
+        <name>ECDSA_DomainID</name>
+        <enumvalue id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca18e1b5dd0a359206eaad3bd14cbefb13" prot="public">
+          <name>ECDSA_DOMAIN_ID_SEC</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca9311c93bbbcc7ece36c06020400bacd5" prot="public">
+          <name>ECDSA_DOMAIN_ID_BRP</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the curve domain id supported by the driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" line="105" column="1" bodyfile="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h" bodystart="104" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ECDSA HSM IP driver implementation for the Low Power F3 family. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>This file should only be included in the board file to fill the ECDSA_config struct.</para><para><heading level="1">Hardware and Implementation Details</heading>
+</para><para>The driver is backed by a software ECC library implementation.</para><para><heading level="1">Supported Curves</heading>
+</para><para>The driver implementation supports the following curves for ECDSA:</para><para><table rows="8" cols="1"><row>
+<entry thead="yes"><para>Curves Supported  </para></entry></row>
+<row>
+<entry thead="no"><para>NISTP256 </para></entry></row>
+<row>
+<entry thead="no"><para>NISTP224 </para></entry></row>
+<row>
+<entry thead="no"><para>NISTP2384 </para></entry></row>
+<row>
+<entry thead="no"><para>NISTP521 </para></entry></row>
+<row>
+<entry thead="no"><para>BRP256 </para></entry></row>
+<row>
+<entry thead="no"><para>BRP384 </para></entry></row>
+<row>
+<entry thead="no"><para>BRP512 </para></entry></row>
+</table>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2024-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_ecdsa_ECDSAXXF3HSM__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_ecdsa_ECDSAXXF3HSM__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_c_d_s_a_8h" kindref="compound">ti/drivers/ECDSA.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>largest<sp/>signature<sp/>will<sp/>be<sp/>for<sp/>NIST521<sp/>which<sp/>will<sp/>produce<sp/>72B<sp/>per<sp/>component<sp/>(S<sp/>and<sp/>R)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a6b160c2f76fdcb223cc2b58061b4b29d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECDSAXXF3HSM_COMPONENT_VECTOR_LENGTH<sp/>144</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1ab43e55b84c83b3fd933974a97f224916" refkind="member"><highlight class="preprocessor">#define<sp/>ECDSAXXF3HSM_STATUS_NO_VALID_CURVE_TYPE_PROVIDED<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a467128d7da1723bdf248f080b0185d53" refkind="member"><highlight class="preprocessor">#define<sp/>ECDSAXXF3HSM_STATUS_INVALID_KEY_ENCODING<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a6cbc6dcd66e30256331484fe18504db3" refkind="member"><highlight class="preprocessor">#define<sp/>ECDSAXXF3HSM_STATUS_HARDWARE_ERROR<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___h_w_attrs_1aaf5f192e94730312319beb2097435d82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___h_w_attrs_1aaf5f192e94730312319beb2097435d82" kindref="member">dummy</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___h_w_attrs" kindref="compound">ECDSAXXF3HSM_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca18e1b5dd0a359206eaad3bd14cbefb13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca18e1b5dd0a359206eaad3bd14cbefb13" kindref="member">ECDSA_DOMAIN_ID_SEC</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="107" refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca9311c93bbbcc7ece36c06020400bacd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932ca9311c93bbbcc7ece36c06020400bacd5" kindref="member">ECDSA_DOMAIN_ID_BRP</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/><ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932c" kindref="member">ECDSA_DomainID</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5af71b0c149cc31422ede6c7f71e5a26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*<ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5af71b0c149cc31422ede6c7f71e5a26" kindref="member">key</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ac3c319dd05bafd0a26407422c2bc240a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ac3c319dd05bafd0a26407422c2bc240a" kindref="member">keyAssetID</ref>;</highlight></codeline>
+<codeline lineno="119" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a45c5be4f728bf707376f737340146f2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a45c5be4f728bf707376f737340146f2d" kindref="member">paramAssetID</ref>;</highlight></codeline>
+<codeline lineno="120" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1afc2ff0e974d391527091aaece226e325" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1afc2ff0e974d391527091aaece226e325" kindref="member">publicObjAssetID</ref>;</highlight></codeline>
+<codeline lineno="121" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5f553903948f8e846dc112291040dc42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5f553903948f8e846dc112291040dc42" kindref="member">curveParamSize</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1abed0afb8ef1f743ef8c30d9217209385" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>signature[<ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1a6b160c2f76fdcb223cc2b58061b4b29d" kindref="member">ECDSAXXF3HSM_COMPONENT_VECTOR_LENGTH</ref>]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="123" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5c90ac5ec9d9ae5d79f0407c031b8b3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a5c90ac5ec9d9ae5d79f0407c031b8b3e" kindref="member">returnStatus</ref>;</highlight></codeline>
+<codeline lineno="124" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ab882aba85614a37d099d9c1e314bf7b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ab882aba85614a37d099d9c1e314bf7b8" kindref="member">hsmStatus</ref>;</highlight></codeline>
+<codeline lineno="125" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a9fbf3c9efa538b8bedfeebf4b9851514" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1a7095d19c4638c8e46234d85ed6f0f341" kindref="member">ECDSA_ReturnBehavior</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a9fbf3c9efa538b8bedfeebf4b9851514" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="126" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ad26252cdfba789dfb5640b7b6f7777d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ad26252cdfba789dfb5640b7b6f7777d9" kindref="member">accessTimeout</ref>;</highlight></codeline>
+<codeline lineno="127" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a8ac720b6b5423c1657aa3306b30396f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1acbeddeb9ec24f98c63b1cd6b622f644b" kindref="member">ECDSA_CurveType</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a8ac720b6b5423c1657aa3306b30396f1" kindref="member">curveType</ref>;</highlight></codeline>
+<codeline lineno="128" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1abf8b2a1a0e648e6de4b95b1214325e3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_x_x_f3_h_s_m_8h_1acd1fb77f42178662e52768b3e899932c" kindref="member">ECDSA_DomainID</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1abf8b2a1a0e648e6de4b95b1214325e3f" kindref="member">domainId</ref>;</highlight></codeline>
+<codeline lineno="129" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1af7c21eda2af0263d1ce88a15e897be9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1ab9761d927a1fe32d9771c7d38efbcd0f" kindref="member">ECDSA_CurveLength</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1af7c21eda2af0263d1ce88a15e897be9f" kindref="member">curveLength</ref>;</highlight></codeline>
+<codeline lineno="130" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a399ec7ea75867a59ef9afa15699c4c99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1acdd472b642ec5f6216de6ac747fc66c1" kindref="member">ECDSA_DigestLength</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a399ec7ea75867a59ef9afa15699c4c99" kindref="member">digestLength</ref>;</highlight></codeline>
+<codeline lineno="131" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a13cefe56926915501a2ac7a73d4081b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1a12591c66c1af7e332fb99f04f5c17ec9" kindref="member">ECDSA_OperationType</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a13cefe56926915501a2ac7a73d4081b3" kindref="member">operationType</ref>;</highlight></codeline>
+<codeline lineno="132" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ace5b9ae4255d2574dc8c7b386361aba2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_e_c_d_s_a___operation" kindref="compound">ECDSA_Operation</ref><sp/>*<ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ace5b9ae4255d2574dc8c7b386361aba2" kindref="member">operation</ref>;</highlight></codeline>
+<codeline lineno="133" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a54f312261bae9124ade103a1d337c5b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_c_d_s_a_8h_1a2969615c2ad61fa703031658001791a1" kindref="member">ECDSA_CallbackFxn</ref><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a54f312261bae9124ade103a1d337c5b6" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="134" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1aa7ddece9ac59afbc818336e916e052c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1aa7ddece9ac59afbc818336e916e052c6" kindref="member">curveParam</ref>;</highlight></codeline>
+<codeline lineno="135" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1afebd784cc12fbcf354085ed33627d833" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1afebd784cc12fbcf354085ed33627d833" kindref="member">input</ref>;</highlight></codeline>
+<codeline lineno="136" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ab700b32d59a1773ee7b9cd53aa29a784" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1ab700b32d59a1773ee7b9cd53aa29a784" kindref="member">driverCreatedKeyAsset</ref>;</highlight></codeline>
+<codeline lineno="137" refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a02a32d277ec9cc6aa52439faae5efa15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object_1a02a32d277ec9cc6aa52439faae5efa15" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}<sp/><ref refid="struct_e_c_d_s_a_x_x_f3_h_s_m___object" kindref="compound">ECDSAXXF3HSM_Object</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_ecdsa_ECDSAXXF3HSM__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/ecdsa/ECDSAXXF3HSM.h"/>
+  </compounddef>
+</doxygen>

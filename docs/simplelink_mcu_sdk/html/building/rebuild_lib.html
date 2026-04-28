@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making Choices for Your Application &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating and Flashing Image" href="creating_image.html" />
+    <link rel="prev" title="Radio Configuration" href="configuration.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug building rebuild_lib";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Your First Application from Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Radio Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Making Choices for Your Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choosing-a-development-environment">Choosing a Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choosing-a-driver-access-method">Choosing a Driver Access Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rebuilding-the-libraries">Rebuilding the Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-an-external-freertos-installation">Using an external FreeRTOS installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating_image.html">Creating and Flashing Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Your First Application from Scratch</a> &raquo;</li>
+        
+      <li>Making Choices for Your Application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-choices-for-your-application">
+<h1>Making Choices for Your Application<a class="headerlink" href="#making-choices-for-your-application" title="Permalink to this headline">¶</a></h1>
+<p>When using the SDK to create your own application, you should begin by making the following choices:
+* Choosing which hardware target to use?
+* Choosing which development environment to use?
+* Choosing which driver access method to use?</p>
+<div class="section" id="choosing-a-development-environment">
+<h2>Choosing a Development Environment<a class="headerlink" href="#choosing-a-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>Choose your preferred development environment. The SimpleLink MCU SDK supports all of the following development environments equally well:</p>
+<ul class="simple">
+<li>TI’s Code Composer Studio (CCS)</li>
+<li>Command Line Interface (CLI)</li>
+</ul>
+</div>
+<div class="section" id="choosing-a-driver-access-method">
+<h2>Choosing a Driver Access Method<a class="headerlink" href="#choosing-a-driver-access-method" title="Permalink to this headline">¶</a></h2>
+<p>You can choose a driver access method to fit the needs of that application. Factors that can be used to determine which method to use include:</p>
+<ul class="simple">
+<li>Does the application use FreeRTOS? FreeRTOS enables the use of TI Drivers.</li>
+<li>Do you want portability across MCUs? We recommend using the TI Drivers in this case.</li>
+<li>Would you like the method to provide resource allocation and abstracted power management? TI Drivers provides these features.</li>
+<li>Do you need to access device-specific features? Driverlib is recommended for device-specific programming. The Driverlib APIS are well-tested and are often available in ROM. They also provide an easy abstraction model for device-specific programming.</li>
+<li>If access to a desired feature is not available in Driverlib, or if you want full control over the registers, we recommend using the Register Access method.</li>
+</ul>
+<p>You can use a combination of access methods. For example, you can use TI Drivers and Driverlib together. However, be aware that power management and resource allocation differ between access methods. For this reason, resource conflicts can arise. As long as you remain aware of the issues when using multiple access methods, it is possible to use the best features of each one.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+TI Drivers</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+Driverlib</div>
+</div>
+<div class="item sphinx-data-tab-0-2 docutils container">
+<div class="docutils container">
+Register Access</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>The TI Drivers provide an API interface that is compatible across the supported MCUs. Your applications can use this API with the FreeRTOS kernel.</p>
+<p>In order to provide a cross-MCU compatible set of APIs, some device-specific features are not available in the TI Drivers. Instead, the focus is on ease of migration. The TI Drivers abstract the common features rather than providing feature-completeness.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p>Driverlib provides very low-level, device-specific APIs that abstract register and peripheral details. They are intended
+to ease TI Driver implementation and supplement TI Driver functionality for use cases that are too specific for a general
+driver.</p>
+<p>Users should check if the appropriate TI Driver solves their use case before attempting to use driverlib as that requires
+significantly deeper understanding of the target’s hardware.</p>
+<p>Since APIs and features are closely tied to the hardware, API compatibility across devices is not guaranteed.</p>
+<p>This API interface provides an abstracted way to configure hardware registers. This access method acts as a translation layer for setting/resetting a register bit or set of register bits.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
+<p>This access method configures hardware registers directly by setting/resetting specific bit combinations. This method provides 100% feature coverage with no abstraction at all.</p>
+<p>When using this method, refer to the <strong>Device Family Technical Reference Manual</strong> and the <strong>Device Datasheet</strong>. Set and reset specific bits in the registers using the definitions in the device header files included with the SDK.</p>
+</div>
+</div>
+</div>
+<div class="section" id="rebuilding-the-libraries">
+<h2>Rebuilding the Libraries<a class="headerlink" href="#rebuilding-the-libraries" title="Permalink to this headline">¶</a></h2>
+<p>You can rebuild many of the libraries in the SDK by following these steps:</p>
+<ol class="arabic">
+<li><p class="first">In the root directory of the SDK installation, edit the <cite>imports.mak</cite> file.</p>
+</li>
+<li><p class="first">Modify the directory paths as needed for the variables defined there. Some variables are optional, as described
+below.</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>To disable a specific compiler, keep the line defining the environment variable but leave the definition blank.</dt>
+<dd><p class="first">For example, to build only for <cite>ticlang</cite>:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>TICLANG_ARMCOMPILER    ?<span class="o">=</span> c:/ti/ccs/tools/compiler/ti-cgt-armllvm_&lt;version&gt;
+GCC_ARMCOMPILER        ?<span class="o">=</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first"><cite>CMAKE</cite> must be configured for most component library builds. It should point to the executable named <cite>cmake</cite>.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Go to the <cite>&lt;SDK_INSTALL_DIR&gt;</cite> directory. Notice that this directory contains a <cite>Makefile</cite>.</p>
+</li>
+<li><p class="first">Run <cite>make build</cite> to build all supported components. Code Composer Studio installs a copy of GNU make in
+<cite>&lt;CCS_INSTALL_DIR&gt;/ccs/utils/bin/gmake</cite></p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-an-external-freertos-installation">
+<h2>Using an external FreeRTOS installation<a class="headerlink" href="#using-an-external-freertos-installation" title="Permalink to this headline">¶</a></h2>
+<p>The SDK ships its own copy of the FreeRTOS kernel source files and builds
+libraries based on some of the assembly files contained therein.</p>
+<p>If you want to use your own installation of FreeRTOS, you can rebuild the
+libraries using this external installation as follows:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Set <cite>FREERTOS_INSTALL_DIR</cite> in imports.mak. <cite>FREERTOS_INSTALL_DIR</cite> must have a</dt>
+<dd>sub-directory structure of <cite>./source/third_party/freertos/Source/…</cite>. This
+directory structure is needed for CMake to find the right FreeRTOS files.</dd>
+</dl>
+</li>
+</ul>
+<p>Changing FreeRTOS versions or installations is not recommended. The SDK is only
+tested and validated using the FreeRTOS installation contained in the SDK.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="creating_image.html" class="btn btn-neutral float-right" title="Creating and Flashing Image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Radio Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

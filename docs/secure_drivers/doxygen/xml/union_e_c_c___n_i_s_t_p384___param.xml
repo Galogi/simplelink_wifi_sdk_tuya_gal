@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="union_e_c_c___n_i_s_t_p384___param" kind="union" language="C++" prot="public">
+    <compoundname>ECC_NISTP384_Param</compoundname>
+    <includes refid="_e_c_c_params_x_x_f3_h_s_m_8h" local="no">ECCParamsXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="union_e_c_c___n_i_s_t_p384___param_1a096271dc9c5adfc1d6e57ccbb0152c75" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ECC_NISTP384_Param::byte[48]</definition>
+        <argsstring>[48]</argsstring>
+        <name>byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="135" column="1" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_e_c_c___n_i_s_t_p384___param_1aa93a764cbdf7c869c024e3b2acb5f13b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ECC_NISTP384_Param::word[48/sizeof(uint32_t)]</definition>
+        <argsstring>[48/sizeof(uint32_t)]</argsstring>
+        <name>word</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="136" column="1" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Union to access ECC_NISTP384 curve params in bytes or words. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="134" column="1" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="133" bodyend="137"/>
+    <listofallmembers>
+      <member refid="union_e_c_c___n_i_s_t_p384___param_1a096271dc9c5adfc1d6e57ccbb0152c75" prot="public" virt="non-virtual"><scope>ECC_NISTP384_Param</scope><name>byte</name></member>
+      <member refid="union_e_c_c___n_i_s_t_p384___param_1aa93a764cbdf7c869c024e3b2acb5f13b" prot="public" virt="non-virtual"><scope>ECC_NISTP384_Param</scope><name>word</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

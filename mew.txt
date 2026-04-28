@@ -1,0 +1,16 @@
+C:/cmake-3.21.3/bin/cmake .. -G "Unix Makefiles" ^
+  -DCMAKE_TOOLCHAIN_FILE="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/cmake/toolchains/ticlang.cmake" ^
+  -DTICLANG_ARMCOMPILER="C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS" ^
+  -DTI_SYSCONFIG_TOOL="C:/ti/sysconfig_1.26.0/sysconfig_cli.bat" ^
+  -DCMAKE_MAKE_PROGRAM="C:/ti/ccs2031/ccs/utils/bin/gmake.exe"
+
+
+C:/cmake-3.21.3/bin/cmake --build .
+
+C:\cmake-3.21.3\bin\cmake -S . -B build -G "Unix Makefiles" ^
+  -DCMAKE_TOOLCHAIN_FILE="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/cmake/toolchains/ticlang.cmake" ^
+  -DTICLANG_ARMCOMPILER="C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS" ^
+  -DTI_SYSCONFIG_TOOL="C:/ti/sysconfig_1.26.0/sysconfig_cli.bat" ^
+  -DCMAKE_MAKE_PROGRAM="C:/ti/ccs2031/ccs/utils/bin/gmake.exe"
+
+  C:\cmake-3.21.3\bin\cmake --build build

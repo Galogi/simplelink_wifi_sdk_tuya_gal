@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="ti__psa__crypto__cipher_8h" kind="file" language="C++">
+    <compoundname>ti_psa_crypto_cipher.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">third_party/mbedtls/include/psa/crypto.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes refid="_a_e_s_e_c_b_x_x_f3_8h" local="no">ti/drivers/aesecb/AESECBXXF3.h</includes>
+    <incdepgraph>
+      <node id="425">
+        <label>stdbool.h</label>
+      </node>
+      <node id="427">
+        <label>ti/drivers/aesecb/AESECBXXF3.h</label>
+        <link refid="_a_e_s_e_c_b_x_x_f3_8h"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
+      </node>
+      <node id="422">
+        <label>stdint.h</label>
+      </node>
+      <node id="430">
+        <label>ti/drivers/cryptoutils/aes/AESCommonXXF3.h</label>
+        <link refid="_a_e_s_common_x_x_f3_8h"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+      </node>
+      <node id="434">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="423">
+        <label>third_party/mbedtls/include/psa/crypto.h</label>
+      </node>
+      <node id="421">
+        <label>stddef.h</label>
+      </node>
+      <node id="426">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="431">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="433">
+        <label>ti/drivers/cryptoutils/sharedresources/CryptoResourceXXF3.h</label>
+        <link refid="_crypto_resource_x_x_f3_8h"/>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="434" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+      </node>
+      <node id="432">
+        <label>DeviceFamily_constructPath(inc/hw_types.h)</label>
+      </node>
+      <node id="428">
+        <label>ti/drivers/AESECB.h</label>
+        <link refid="_a_e_s_e_c_b_8h"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+      </node>
+      <node id="424">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+      </node>
+      <node id="420">
+        <label>ti_psa_crypto_cipher.h</label>
+        <link refid="ti__psa__crypto__cipher_8h"/>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="427" relation="include">
+        </childnode>
+      </node>
+      <node id="429">
+        <label>ti/drivers/AESCommon.h</label>
+        <link refid="_a_e_s_common_8h"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structti__psa__cipher__operation__s" prot="public">ti_psa_cipher_operation_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ti__psa__crypto__cipher_8h_1aaf46c9a25524b256b407727233159ba5" prot="public" static="no">
+        <name>TI_PSA_CIPHER_OPERATION_INIT</name>
+        <initializer>(<ref refid="ti__psa__crypto__cipher_8h_1a120e83a01d1ecb054d08d539a64a1c4e" kindref="member">ti_psa_cipher_operation_t</ref>)      \
+    {                                \
+        0                            \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="88" column="9" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="ti__psa__crypto__cipher_8h_1a120e83a01d1ecb054d08d539a64a1c4e" prot="public" static="no">
+        <type>struct <ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref></type>
+        <definition>typedef struct ti_psa_cipher_operation_s ti_psa_cipher_operation_t</definition>
+        <argsstring></argsstring>
+        <name>ti_psa_cipher_operation_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="66" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref></type>
+        <definition>static struct ti_psa_cipher_operation_s ti_psa_cipher_operation_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>ti_psa_cipher_operation_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="66" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="93" bodyend="97"/>
+        <references refid="ti__psa__crypto__cipher_8h_1a704a82e45f095bc8a420a54499cf95de">ti_psa_cipher_abort</references>
+        <references refid="ti__psa__crypto__cipher_8h_1aa2d7b31dbb8e528ef68375a63a2e9a30">ti_psa_cipher_decrypt</references>
+        <references refid="ti__psa__crypto__cipher_8h_1a16d148da11f7fbc6244c41e3393f08b6">ti_psa_cipher_decrypt_setup</references>
+        <references refid="ti__psa__crypto__cipher_8h_1ab2a2c279b6e276b0d5b79c703eb3739b">ti_psa_cipher_encrypt</references>
+        <references refid="ti__psa__crypto__cipher_8h_1aea438c48fee56d6ae74c7c26724fae25">ti_psa_cipher_encrypt_setup</references>
+        <references refid="ti__psa__crypto__cipher_8h_1ab6e9c34b65aab1140443cab8a70d8470">ti_psa_cipher_finish</references>
+        <references refid="ti__psa__crypto__cipher_8h_1a4cff9df427ccb783578e6f47bf43e89c">ti_psa_cipher_generate_iv</references>
+        <references refid="ti__psa__crypto__cipher_8h_1aaf46c9a25524b256b407727233159ba5" compoundref="ti__psa__crypto__cipher_8h" startline="88">TI_PSA_CIPHER_OPERATION_INIT</references>
+        <references refid="ti__psa__crypto__cipher_8h_1a3387e225c6f6ad034b0d45cb4304e1a0">ti_psa_cipher_set_iv</references>
+        <references refid="ti__psa__crypto__cipher_8h_1a98c2564f802e9e0072fbb4d9430cf22a">ti_psa_cipher_update</references>
+        <references refid="ti__psa__crypto__cipher_8h_1ad9db5ebc212229fb89430360ab0a4e93">ti_psa_generate_random</references>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1ad9db5ebc212229fb89430360ab0a4e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_generate_random</definition>
+        <argsstring>(uint8_t *output, size_t output_size)</argsstring>
+        <name>ti_psa_generate_random</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="102" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1aea438c48fee56d6ae74c7c26724fae25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_encrypt_setup</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, mbedtls_svc_key_id_t key, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_cipher_encrypt_setup</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="107" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a16d148da11f7fbc6244c41e3393f08b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_decrypt_setup</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, mbedtls_svc_key_id_t key, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_cipher_decrypt_setup</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="111" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a4cff9df427ccb783578e6f47bf43e89c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_generate_iv</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, uint8_t *iv, size_t iv_size, size_t *iv_length)</argsstring>
+        <name>ti_psa_cipher_generate_iv</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>iv_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>iv_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="115" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a3387e225c6f6ad034b0d45cb4304e1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_set_iv</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, const uint8_t *iv, size_t iv_length)</argsstring>
+        <name>ti_psa_cipher_set_iv</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>iv_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="120" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1ab2a2c279b6e276b0d5b79c703eb3739b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_encrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_cipher_encrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="122" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1aa2d7b31dbb8e528ef68375a63a2e9a30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_decrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_cipher_decrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="130" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a98c2564f802e9e0072fbb4d9430cf22a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_update</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_cipher_update</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="138" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1ab6e9c34b65aab1140443cab8a70d8470" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_finish</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_cipher_finish</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="145" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__cipher_8h_1a704a82e45f095bc8a420a54499cf95de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_cipher_abort</definition>
+        <argsstring>(psa_cipher_operation_t *psa_operation)</argsstring>
+        <name>ti_psa_cipher_abort</name>
+        <param>
+          <type>psa_cipher_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="150" column="1"/>
+        <referencedby refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" compoundref="ti__psa__crypto__cipher_8h" startline="93" endline="97">ti_psa_cipher_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>The<sp/>Mbed<sp/>TLS<sp/>Contributors</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>by<sp/>Texas<sp/>Instruments<sp/>to<sp/>support<sp/>SimpleLink<sp/>device<sp/>crypto<sp/>hardware</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>drivers.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TI_PSA_CRYPTO_CIPHER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_CRYPTO_CIPHER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((TFM_ENABLED<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>!defined(TFM_BUILD))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/tfm/interface/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/mbedtls/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="_a_e_s_e_c_b_x_x_f3_8h" kindref="compound">ti/drivers/aesecb/AESECBXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC13X2_CC26X2)<sp/>||<sp/>\</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC13X4_CC26X3_CC26X4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;ti/drivers/aesecb/AESECBCC26XX.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structti__psa__cipher__operation__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="structti__psa__cipher__operation__s_1a167302f70482fcc6007f54e13624ad27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_common___config" kindref="compound">AESECB_Config</ref><sp/><ref refid="structti__psa__cipher__operation__s_1a167302f70482fcc6007f54e13624ad27" kindref="member">aesecbConfig</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structti__psa__cipher__operation__s_1a7aca20047e0326f038d84d011b0bfe9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_e_c_b_x_x_f3___object" kindref="compound">AESECBXXF3_Object</ref><sp/><ref refid="structti__psa__cipher__operation__s_1a7aca20047e0326f038d84d011b0bfe9a" kindref="member">aesecbObject</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC13X2_CC26X2)<sp/>||<sp/>\</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC13X4_CC26X3_CC26X4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESECBCC26XX_Object<sp/><ref refid="structti__psa__cipher__operation__s_1a7aca20047e0326f038d84d011b0bfe9a" kindref="member">aesecbObject</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="structti__psa__cipher__operation__s_1abe229170feb76c5956c9cab347aae79b" kindref="member">aesecb</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Add<sp/>other<sp/>driver<sp/>structs<sp/>here<sp/>as<sp/>needed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="structti__psa__cipher__operation__s_1af22617ff485b128d98e754bd4c95c85f" kindref="member">driver</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Used<sp/>to<sp/>mark<sp/>the<sp/>operation<sp/>struct<sp/>as<sp/>ready.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structti__psa__cipher__operation__s_1ab2c1e8ac1a83e8c3751a096c96c7134b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1ab2c1e8ac1a83e8c3751a096c96c7134b" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="59" refid="structti__psa__cipher__operation__s_1ad05b4cc760f5bf08d45c740a734d00ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1ad05b4cc760f5bf08d45c740a734d00ea" kindref="member">iv_required</ref>:1;</highlight></codeline>
+<codeline lineno="60" refid="structti__psa__cipher__operation__s_1a76a66a88f7e74ce2f8cc26cc7b9035ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1a76a66a88f7e74ce2f8cc26cc7b9035ce" kindref="member">iv_set</ref>:1;</highlight></codeline>
+<codeline lineno="61" refid="structti__psa__cipher__operation__s_1ae04c6d16a962e93c6456b0799478b9fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1ae04c6d16a962e93c6456b0799478b9fc" kindref="member">is_encrypt</ref>:1;</highlight></codeline>
+<codeline lineno="62" refid="structti__psa__cipher__operation__s_1a835004dacfb1cf94220044ec84cb5bab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1a835004dacfb1cf94220044ec84cb5bab" kindref="member">in_error_state</ref>:1;</highlight></codeline>
+<codeline lineno="63" refid="structti__psa__cipher__operation__s_1a8810cbc11eee0f509bbf19da6f044902" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1a8810cbc11eee0f509bbf19da6f044902" kindref="member">default_iv_length</ref>;</highlight></codeline>
+<codeline lineno="64" refid="structti__psa__cipher__operation__s_1a6e505b5cbb6c3a5b3f5e98f1ab09bf31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/><ref refid="structti__psa__cipher__operation__s_1a6e505b5cbb6c3a5b3f5e98f1ab09bf31" kindref="member">alg</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structti__psa__cipher__operation__s_1a5fa0212ba49918ce83a3ae1ba8514420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__cipher__operation__s_1a5fa0212ba49918ce83a3ae1ba8514420" kindref="member">unprocessed_len</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Buffer<sp/>for<sp/>data<sp/>that<sp/>has<sp/>not<sp/>been<sp/>processed<sp/>yet.<sp/>Word-aligned<sp/>for<sp/>max</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>performance<sp/>and<sp/>in<sp/>case<sp/>any<sp/>drivers<sp/>require<sp/>aligned<sp/>input<sp/>buffer.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Double-buffer<sp/>is<sp/>used<sp/>when<sp/>PSA<sp/>crypto<sp/>is<sp/>built<sp/>into<sp/>the<sp/>TFM<sp/>to<sp/>prevent</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>corruption<sp/>before<sp/>the<sp/>data<sp/>can<sp/>be<sp/>consumed<sp/>since<sp/>the<sp/>underlying<sp/>crypto</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>drivers<sp/>are<sp/>used<sp/>in<sp/>callback<sp/>mode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TFM_BUILD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structti__psa__cipher__operation__s_1a804a7b07ac9cb457856ba88434c7bf0a" kindref="member">unprocessed_data</ref>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE<sp/>*<sp/>2]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structti__psa__cipher__operation__s_1a804a7b07ac9cb457856ba88434c7bf0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structti__psa__cipher__operation__s_1a804a7b07ac9cb457856ba88434c7bf0a" kindref="member">unprocessed_data</ref>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TFM_BUILD<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pointer<sp/>to<sp/>the<sp/>current<sp/>unprocessed<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structti__psa__cipher__operation__s_1a485126bdae98985094752f59d7d5cd3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="structti__psa__cipher__operation__s_1a485126bdae98985094752f59d7d5cd3f" kindref="member">curr_unprocessed_data</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structti__psa__cipher__operation__s_1a8dbabf2069b4a38c2a902ee81e6d404b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><ref refid="structti__psa__cipher__operation__s_1a8dbabf2069b4a38c2a902ee81e6d404b" kindref="member">cryptoKey</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="ti__psa__crypto__cipher_8h_1a120e83a01d1ecb054d08d539a64a1c4e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref><sp/><ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_t</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="ti__psa__crypto__cipher_8h_1aaf46c9a25524b256b407727233159ba5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_CIPHER_OPERATION_INIT<sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(ti_psa_cipher_operation_t)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref><sp/><ref refid="ti__psa__crypto__cipher_8h_1a862cd2c622fd401328fbecfc7b28c3d9" kindref="member">ti_psa_cipher_operation_init</ref>(void)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__cipher__operation__s" kindref="compound">ti_psa_cipher_operation_s</ref><sp/>v<sp/>=<sp/><ref refid="ti__psa__crypto__cipher_8h_1aaf46c9a25524b256b407727233159ba5" kindref="member">TI_PSA_CIPHER_OPERATION_INIT</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(v);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Random<sp/>generation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1ad9db5ebc212229fb89430360ab0a4e93" kindref="member">ti_psa_generate_random</ref>(uint8_t<sp/>*output,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Symmetric<sp/>cryptography<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1aea438c48fee56d6ae74c7c26724fae25" kindref="member">ti_psa_cipher_encrypt_setup</ref>(psa_cipher_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1a16d148da11f7fbc6244c41e3393f08b6" kindref="member">ti_psa_cipher_decrypt_setup</ref>(psa_cipher_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1a4cff9df427ccb783578e6f47bf43e89c" kindref="member">ti_psa_cipher_generate_iv</ref>(psa_cipher_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*iv,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>iv_size,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*iv_length);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1a3387e225c6f6ad034b0d45cb4304e1a0" kindref="member">ti_psa_cipher_set_iv</ref>(psa_cipher_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*iv,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>iv_length);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1ab2a2c279b6e276b0d5b79c703eb3739b" kindref="member">ti_psa_cipher_encrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1aa2d7b31dbb8e528ef68375a63a2e9a30" kindref="member">ti_psa_cipher_decrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1a98c2564f802e9e0072fbb4d9430cf22a" kindref="member">ti_psa_cipher_update</ref>(psa_cipher_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1ab6e9c34b65aab1140443cab8a70d8470" kindref="member">ti_psa_cipher_finish</ref>(psa_cipher_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__cipher_8h_1a704a82e45f095bc8a420a54499cf95de" kindref="member">ti_psa_cipher_abort</ref>(psa_cipher_operation_t<sp/>*psa_operation);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TI_PSA_CRYPTO_CIPHER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h"/>
+  </compounddef>
+</doxygen>

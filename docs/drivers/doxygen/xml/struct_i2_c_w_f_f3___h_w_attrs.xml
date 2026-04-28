@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_i2_c_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>I2CWFF3_HWAttrs</compoundname>
+    <includes refid="_i2_c_w_f_f3_8h" local="no">I2CWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1a4fc55659a51b3a4dcba6fc04bd4aa412" prot="public" static="no" mutable="no">
+        <type>I2C_BASE_HWATTRS unsigned long</type>
+        <definition>I2C_BASE_HWATTRS unsigned long I2CWFF3_HWAttrs::powerMngrId</definition>
+        <argsstring></argsstring>
+        <name>powerMngrId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="185" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1a46fb05a40e374a01a01ee90c5a243b99" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t I2CWFF3_HWAttrs::swiPriority</definition>
+        <argsstring></argsstring>
+        <name>swiPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="191" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1ac8ba6260f01ed7772f080cf289354655" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CWFF3_HWAttrs::sdaPin</definition>
+        <argsstring></argsstring>
+        <name>sdaPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="193" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1acf0abcf6cd15695c2566b3d7f265dde4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CWFF3_HWAttrs::sdaPinMux</definition>
+        <argsstring></argsstring>
+        <name>sdaPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="194" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1a127acf88df3c7fe97f5e00129885fa51" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CWFF3_HWAttrs::sclPin</definition>
+        <argsstring></argsstring>
+        <name>sclPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="196" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_i2_c_w_f_f3___h_w_attrs_1a3ff6a807c0b28723b08eee708be8c285" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CWFF3_HWAttrs::sclPinMux</definition>
+        <argsstring></argsstring>
+        <name>sclPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2c/I2CWFF3.h" line="197" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2CWFF3 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>The baseAddr and intNum fields define the base address and the interrupt number of the I2C peripheral. These values are passed to driverlib APIs and therefore must be populated by driverlib macro definitions. These macros are found in the header files:<itemizedlist>
+<listitem><para>inc/hw_memmap.h</para></listitem><listitem><para>inc/hw_ints.h</para></listitem></itemizedlist>
+</para><para>The powerMngrId is the Power driver resource ID for the I2C peripheral. These macros are defined in the device specific Power include file.</para><para>intPriority is the I2C peripheral&apos;s interrupt priority. This value is passed unmodified to <ref refid="_hwi_p_8h_1ae273d32875ecb4c74883c2310fd8af91" kindref="member">HwiP_construct()</ref>.</para><para>swiPriority is the priority of a SwiP that the I2C driver constructs to finalize I2C transfers. See the documentation for the SwiP module for a description of Swi priorities.</para><para>sdaPin and sclPin define the SDA and SCL pin mapping, respectively. These are typically defined with a macro in a header file, which maps to a GPIO number. For example, when using sysconfig, ti_drivers_config.h defines CONFIG_GPIO_I2C_0_SDA to be 18 (for GPIO18).</para><para>sdaPinMux and sclPinMux are values drawn from the GPIO driver. They indicate the function for that specific DIO pin that select I2C mode.</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>I2CWFF3_HWAttrs<sp/>I2CWFF3_hwAttrs[CONFIG_I2C_COUNT]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/><sp/><sp/><sp/>=<sp/>I2C0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.powerMngrId<sp/>=<sp/>PowerWFF3_PERIPH_I2C0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_SP_I2C_0_INTREQ,<sp/>//<sp/>TODO:<sp/>Update<sp/>this<sp/>when<sp/>OSPREY_SILICON-1671<sp/>is<sp/>fixed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.swiPriority<sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclPin<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>17,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sclPinMux<sp/><sp/><sp/>=<sp/>6,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sdaPin<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>18,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sdaPinMux<sp/><sp/><sp/>=<sp/>6</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="source/ti/drivers/i2c/I2CWFF3.h" line="181" column="1" bodyfile="source/ti/drivers/i2c/I2CWFF3.h" bodystart="180" bodyend="198"/>
+    <listofallmembers>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1a4fc55659a51b3a4dcba6fc04bd4aa412" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>powerMngrId</name></member>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1a127acf88df3c7fe97f5e00129885fa51" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>sclPin</name></member>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1a3ff6a807c0b28723b08eee708be8c285" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>sclPinMux</name></member>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1ac8ba6260f01ed7772f080cf289354655" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>sdaPin</name></member>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1acf0abcf6cd15695c2566b3d7f265dde4" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>sdaPinMux</name></member>
+      <member refid="struct_i2_c_w_f_f3___h_w_attrs_1a46fb05a40e374a01a01ee90c5a243b99" prot="public" virt="non-virtual"><scope>I2CWFF3_HWAttrs</scope><name>swiPriority</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

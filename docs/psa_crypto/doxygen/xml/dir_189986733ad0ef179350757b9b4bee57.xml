@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_189986733ad0ef179350757b9b4bee57" kind="dir">
+    <compoundname>third_party</compoundname>
+    <innerdir refid="dir_e334c803ecb12309469b8b6317d0fbc9">psa_crypto</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/third_party/"/>
+  </compounddef>
+</doxygen>

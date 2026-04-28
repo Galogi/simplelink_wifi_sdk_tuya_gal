@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_timer_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>GPTimerWFF3_Object</compoundname>
+    <includes refid="_g_p_timer_w_f_f3_8h" local="no">GPTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1a2168c7fd7ae2f408a4ab0557da75b81c" prot="public" static="no" mutable="no">
+        <type><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref></type>
+        <definition>HwiP_Struct GPTimerWFF3_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware interrupt struct </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="775" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="775" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1a57f35bcf18a4e22b51b1e73b28d8981f" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1aa6a7db9273f7bd0e8c3027c98dd4125c" kindref="member">GPTimerWFF3_HwiFxn</ref></type>
+        <definition>GPTimerWFF3_HwiFxn GPTimerWFF3_Object::hwiCallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>hwiCallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware interrupt callback function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="777" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="777" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1a35c5a0a064450005e0d08965c2968e65" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj GPTimerWFF3_Object::postNotify</definition>
+        <argsstring></argsstring>
+        <name>postNotify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For Sleep reconfiguration </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="779" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="779" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1afbb4955d8e6de692b3aa2bea090ad7a0" prot="public" static="no" mutable="no">
+        <type>uintptr_t</type>
+        <definition>uintptr_t GPTimerWFF3_Object::arg</definition>
+        <argsstring></argsstring>
+        <name>arg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Arbritrary Argument </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="781" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="781" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1a4dfa67658d12c809cb4ed11be85b30b6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GPTimerWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Object is opened flag </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="783" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="783" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1ac171734d8e002daf787b01d5523b27dc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GPTimerWFF3_Object::intPhaseLate</definition>
+        <argsstring></argsstring>
+        <name>intPhaseLate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt phase early or late for TGT and ZERO interrupts </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="785" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="785" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1a7bbd7b1e071ae4bfdc8d40b7b3db50a0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_Object::prescalerDiv</definition>
+        <argsstring></argsstring>
+        <name>prescalerDiv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prescaler division factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="787" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1af19060031406d6c390b233b2ff6afff1" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a08d49756d6da25a0943fecd421ad000d" kindref="member">GPTimerWFF3_DebugMode</ref></type>
+        <definition>GPTimerWFF3_DebugMode GPTimerWFF3_Object::debugStallMode</definition>
+        <argsstring></argsstring>
+        <name>debugStallMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timer debug stall mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="789" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="789" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1ab141b49e55a7df937af0ec18f167ed37" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a1a2195fab415bfb0a3ee0c4b108aa763" kindref="member">GPTimerWFF3_ChannelCmpDir</ref></type>
+        <definition>GPTimerWFF3_ChannelCmpDir GPTimerWFF3_Object::counterDirChCompare</definition>
+        <argsstring></argsstring>
+        <name>counterDirChCompare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Counter direction required for triggering a channel compare </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="791" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="791" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___object_1afb4de58d076f073b181dba33d783d6e8" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_g_p_timer_w_f_f3___channel_prop" kindref="compound">GPTimerWFF3_ChannelProp</ref></type>
+        <definition>GPTimerWFF3_ChannelProp GPTimerWFF3_Object::channelProperty[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>channelProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel dependent properties </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="793" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="793" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPTimerWFF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>These fields are used by the driver to store and modify GPTimer configuration during run-time. The application must not edit any member variables of this structure. Appplications should also not access member variables of this structure as backwards compatibility is not guaranteed. An example structure is shown below: <programlisting><codeline><highlight class="normal">//<sp/>GPTimer<sp/>objects,<sp/>one<sp/>per<sp/>GPT<sp/>peripheral<sp/>(GPTIMER0,<sp/>GPTIMER1..)</highlight></codeline>
+<codeline><highlight class="normal">GPTimerWFF3_Object<sp/>GPTimerWFF3Objects[];</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="98">
+        <label>GPTimerWFF3_HWAttrs</label>
+        <link refid="struct_g_p_timer_w_f_f3___h_w_attrs"/>
+        <childnode refid="99" relation="usage">
+          <edgelabel>channelConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="99">
+        <label>GPTimerWFF3_ChannelConf</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_conf"/>
+      </node>
+      <node id="100">
+        <label>GPTimerWFF3_ChannelProp</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_prop"/>
+      </node>
+      <node id="93">
+        <label>GPTimerWFF3_Object</label>
+        <link refid="struct_g_p_timer_w_f_f3___object"/>
+        <childnode refid="94" relation="usage">
+          <edgelabel>postNotify</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>hwi</edgelabel>
+        </childnode>
+        <childnode refid="97" relation="usage">
+          <edgelabel>hwiCallbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="100" relation="usage">
+          <edgelabel>channelProperty</edgelabel>
+        </childnode>
+      </node>
+      <node id="94">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="95" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="95" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="96">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+      <node id="97">
+        <label>GPTimerWFF3_Config</label>
+        <link refid="struct_g_p_timer_w_f_f3___config"/>
+        <childnode refid="93" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="98" relation="usage">
+          <edgelabel>hwAttrs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="773" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="772" bodyend="794"/>
+    <listofallmembers>
+      <member refid="struct_g_p_timer_w_f_f3___object_1afbb4955d8e6de692b3aa2bea090ad7a0" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>arg</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1afb4de58d076f073b181dba33d783d6e8" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>channelProperty</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1ab141b49e55a7df937af0ec18f167ed37" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>counterDirChCompare</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1af19060031406d6c390b233b2ff6afff1" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>debugStallMode</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1a2168c7fd7ae2f408a4ab0557da75b81c" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>hwi</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1a57f35bcf18a4e22b51b1e73b28d8981f" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>hwiCallbackFxn</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1ac171734d8e002daf787b01d5523b27dc" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>intPhaseLate</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1a4dfa67658d12c809cb4ed11be85b30b6" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>isOpen</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1a35c5a0a064450005e0d08965c2968e65" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>postNotify</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___object_1a7bbd7b1e071ae4bfdc8d40b7b3db50a0" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Object</scope><name>prescalerDiv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

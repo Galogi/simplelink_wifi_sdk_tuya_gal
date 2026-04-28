@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__interruptible__hash" kind="group">
+    <compoundname>interruptible_hash</compoundname>
+    <title>Interruptible sign/verify hash</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__interruptible__hash_1ga70d97824771b5195a23236a135fabcc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t psa_hash_resume</definition>
+        <argsstring>(psa_hash_operation_t *operation, const uint8_t *hash_state, size_t hash_state_length)</argsstring>
+        <name>psa_hash_resume</name>
+        <param>
+          <type><ref refid="group__hash_1ga3c4205d2ce66c4095fc5c78c25273fab" kindref="member">psa_hash_operation_t</ref> *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash_state</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_state_length</declname>
+        </param>
+        <briefdescription>
+<para>Resume a previously suspended hash operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set up a multi-part hash operation using the hash suspend state from a previously suspended hash operation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation object to set up. It must have been initialized as per the documentation for psa_hash_operation_t and not yet in use. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">hash_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer containing the suspended hash state which is to be resumed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hash_state_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of <computeroutput>hash_state</computeroutput> in bytes.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga4cc859e2c66ca381c7418db3527a65e1" kindref="member">PSA_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga1dcc6d130633ed5db8942257581b55dd" kindref="member">PSA_ERROR_NOT_SUPPORTED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga933d40fa2a591004f2e93aa91e11db84" kindref="member">PSA_ERROR_BAD_STATE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation state is not valid: it must be inactive. The library has not been previously initialized by <ref refid="group__initialization_1ga2de150803fc2f7dc6101d5af7e921dd9" kindref="member">psa_crypto_init()</ref>. It is implementation-dependent whether a failure to initialize results in this error code. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto.h" line="4100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__interruptible__hash_1ga32b41f2790027e066b373552af2c5c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t psa_hash_suspend</definition>
+        <argsstring>(psa_hash_operation_t *operation, uint8_t *hash_state, size_t hash_state_size, size_t *hash_state_length)</argsstring>
+        <name>psa_hash_suspend</name>
+        <param>
+          <type><ref refid="group__hash_1ga3c4205d2ce66c4095fc5c78c25273fab" kindref="member">psa_hash_operation_t</ref> *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>hash_state</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_state_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>hash_state_length</declname>
+        </param>
+        <briefdescription>
+<para>Suspend an active hash operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Halt the hash operation and extract the intermediate state of the hash computation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active hash operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">hash_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer where the hash suspend state is to be written. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hash_state_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the hash_state buffer in bytes. This must be appropriate for the selected algorithm. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">hash_state_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On success, the number of bytes that make up the hash suspend state.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga4cc859e2c66ca381c7418db3527a65e1" kindref="member">PSA_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. The first (*hash_state_length) bytes of <computeroutput>hash_state</computeroutput> contain the intermediate hash state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga1dcc6d130633ed5db8942257581b55dd" kindref="member">PSA_ERROR_NOT_SUPPORTED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga695025f4ec11249aee7ea3d0f65e01c8" kindref="member">PSA_ERROR_BUFFER_TOO_SMALL</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the <computeroutput>hash_state</computeroutput> buffer is too small. You can determine a sufficient buffer size by calling <ref refid="crypto__sizes_8h_1a4ef62f02cb87e52e2c1d57e26aca67bd" kindref="member">PSA_HASH_SUSPEND_OUTPUT_SIZE</ref>(<computeroutput>alg</computeroutput>) where <computeroutput>alg</computeroutput> is the algorithm that was used to set up the operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="group__error_1ga933d40fa2a591004f2e93aa91e11db84" kindref="member">PSA_ERROR_BAD_STATE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation state is not valid: it must be active. The library has not been previously initialized by <ref refid="group__initialization_1ga2de150803fc2f7dc6101d5af7e921dd9" kindref="member">psa_crypto_init()</ref>. It is implementation-dependent whether a failure to initialize results in this error code. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto.h" line="4132" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

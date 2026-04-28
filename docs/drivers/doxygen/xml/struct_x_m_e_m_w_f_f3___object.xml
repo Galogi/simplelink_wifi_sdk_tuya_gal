@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_x_m_e_m_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>XMEMWFF3_Object</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1af77e1f7f0814ad73fd0ff184cd3a3854" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool XMEMWFF3_Object::opened</definition>
+        <argsstring></argsstring>
+        <name>opened</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Has this region been opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="332" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1ac2338f250b5a8fee694716de2a9a72ca" prot="public" static="no" mutable="no">
+        <type>uintptr_t</type>
+        <definition>uintptr_t XMEMWFF3_Object::mutexKey</definition>
+        <argsstring></argsstring>
+        <name>mutexKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Store the mutex key </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="333" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1a8d0ca1ba837421d78ecf5b2edeb27e0e" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEMWFF3_Object::regionBase</definition>
+        <argsstring></argsstring>
+        <name>regionBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset from base of Ext flash - fetched during init() </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="334" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1a776ff2d7562218e7612f51b9dce34401" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEMWFF3_Object::regionStartAddr</definition>
+        <argsstring></argsstring>
+        <name>regionStartAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The regionBase translated to logical address - fetched during init() </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="335" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1a0233c2ac6ea3432cea361d509897fd00" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEMWFF3_Object::regionSize</definition>
+        <argsstring></argsstring>
+        <name>regionSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The size of the region in bytes - fetched during init() </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="336" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m_w_f_f3___object_1a79b58cca945f3d16d9b356804900de29" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t XMEMWFF3_Object::deviceNum</definition>
+        <argsstring></argsstring>
+        <name>deviceNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FLASH/PSRAM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="337" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Runtime state object for the XMEMWFF3 driver instance. </para>    </briefdescription>
+    <detaileddescription>
+<para>Maintains state information for a XMEMWFF3 driver instance including memory region parameters and access control. </para>    </detaileddescription>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="331" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="330" bodyend="338"/>
+    <listofallmembers>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1a79b58cca945f3d16d9b356804900de29" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>deviceNum</name></member>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1ac2338f250b5a8fee694716de2a9a72ca" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>mutexKey</name></member>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1af77e1f7f0814ad73fd0ff184cd3a3854" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>opened</name></member>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1a8d0ca1ba837421d78ecf5b2edeb27e0e" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>regionBase</name></member>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1a0233c2ac6ea3432cea361d509897fd00" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>regionSize</name></member>
+      <member refid="struct_x_m_e_m_w_f_f3___object_1a776ff2d7562218e7612f51b9dce34401" prot="public" virt="non-virtual"><scope>XMEMWFF3_Object</scope><name>regionStartAddr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

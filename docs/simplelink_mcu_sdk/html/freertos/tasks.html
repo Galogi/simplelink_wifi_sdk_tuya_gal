@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tasks &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Software Timers" href="software-timers.html" />
+    <link rel="prev" title="Debugging FreeRTOS with Runtime Object View (ROV)" href="rov.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug freertos tasks";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#posix-support">POSIX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#driver-porting-layer-dpl">Driver Porting Layer (DPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#using-freertos-with-ccs">Using FreeRTOS with CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#freertos-modules">FreeRTOS modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html">Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rov.html">Debugging FreeRTOS with Runtime Object View (ROV)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#task-states">Task States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initializing-a-task">Initializing a Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-task-function">A Task Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software-timers.html">Software Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Tasks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tasks">
+<span id="freertos-tasks"></span><h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h1>
+<p>FreeRTOS is structured as a set of independent <em>Tasks</em>.
+Each task executes within its own context with no
+coincidental dependency on other tasks within the system or FreeRTOS
+scheduler itself. Additional details can be found in <a class="reference external" href="https://www.freertos.org/taskandcr.html">FreeRTOS Task Overview</a>.</p>
+<div class="section" id="task-states">
+<h2>Task States<a class="headerlink" href="#task-states" title="Permalink to this headline">¶</a></h2>
+<p>A task can exist in one of the following states:</p>
+<ul class="simple">
+<li><strong>Running</strong></li>
+<li><strong>Ready</strong></li>
+<li><strong>Blocked</strong></li>
+<li><strong>Suspended</strong></li>
+</ul>
+<p>Additional details can be found in <a class="reference external" href="https://www.freertos.org/RTOS-task-states.html">FreeRTOS Task States Overview</a>.</p>
+</div>
+<div class="section" id="initializing-a-task">
+<h2>Initializing a Task<a class="headerlink" href="#initializing-a-task" title="Permalink to this headline">¶</a></h2>
+<p>Each task requires RAM that is used to hold the task state, and used by the
+task as its stack (see <a class="reference external" href="https://www.freertos.org/FAQMem.html#StackSize">FreeRTOS How big should the stack be?</a>):</p>
+<ul class="simple">
+<li>If a task is created using <a class="reference external" href="https://www.freertos.org/a00125.html">xTaskCreate()</a> then the required RAM is
+automatically allocated from the FreeRTOS heap.</li>
+<li>If a task is created using <a class="reference external" href="https://www.freertos.org/xTaskCreateStatic.html">xTaskCreateStatic()</a> then the RAM is provided
+by the application writer, which requires a greater number of parameters,
+but allows the RAM to be statically allocated at compile time. Additional
+details can be found on <a class="reference external" href="https://www.freertos.org/Static_Vs_Dynamic_Memory_Allocation.html">FreeRTOS Static Vs Dynamic allocation page</a>.</li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="container-1">
+<span id="creating-freertos-task-listing"></span><div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text">Initialize a FreeRTOS task</span><a class="headerlink" href="#container-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;FreeRTOS.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;task.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdarg.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define TASK_PRIORITY 1</span>
+<span class="cp">#define TASK_STACK_SIZE 2048 </span><span class="cm">/* bytes */</span><span class="cp"></span>
+
+<span class="n">TaskHandle_t</span> <span class="n">taskHandle</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="cm">/* Task function */</span>
+<span class="hll"><span class="kt">void</span> <span class="nf">taskFunction</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">a0</span><span class="p">)</span>
+</span><span class="hll"><span class="p">{</span>
+</span><span class="hll">    <span class="cm">/* Local variables. Variables here go onto task stack!! */</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="cm">/* Run one-time code when task starts */</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="cm">/* Run loop forever (unless terminated) */</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="cm">/*</span>
+</span><span class="hll"><span class="cm">         * Block on a signal or for a duration. Examples:</span>
+</span><span class="hll"><span class="cm">         *  ``xSemaphoreTake()``</span>
+</span><span class="hll"><span class="cm">         *  ``xQueueReceive``</span>
+</span><span class="hll"><span class="cm">         *  ``vTaskDelay()``</span>
+</span><span class="hll"><span class="cm">         *</span>
+</span><span class="hll"><span class="cm">         * &quot;Process data&quot;</span>
+</span><span class="hll"><span class="cm">         */</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="cm">/* Tasks must not attempt to return from their implementing</span>
+</span><span class="hll"><span class="cm">    function or otherwise exit. If it is necessary for a task to</span>
+</span><span class="hll"><span class="cm">    exit then have the task call vTaskDelete( NULL ) to ensure</span>
+</span><span class="hll"><span class="cm">    its exit is clean. */</span>
+</span><span class="hll">    <span class="n">vTaskDelete</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">);</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">BaseType_t</span> <span class="n">xReturned</span><span class="p">;</span>
+
+    <span class="cm">/* Create the task, storing the handle. */</span>
+<span class="hll">    <span class="n">xReturned</span> <span class="o">=</span> <span class="n">xTaskCreate</span><span class="p">(</span>
+</span><span class="hll">            <span class="n">taskFxn</span><span class="p">,</span>                                <span class="cm">/* Function that implements the task. */</span>
+</span><span class="hll">            <span class="s">&quot;MY_NEW_TASK&quot;</span><span class="p">,</span>                          <span class="cm">/* Text name for the task. */</span>
+</span><span class="hll">            <span class="n">TASK_STACK_SIZE</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span>     <span class="cm">/* Stack size in words, not bytes. */</span>
+</span><span class="hll">            <span class="p">(</span> <span class="kt">void</span> <span class="o">*</span> <span class="p">)</span> <span class="mi">1</span><span class="p">,</span>                           <span class="cm">/* Parameter passed into the task. */</span>
+</span><span class="hll">            <span class="n">TASK_PRIORITY</span><span class="p">,</span>                          <span class="cm">/* Priority at which the task is created. */</span>
+</span><span class="hll">            <span class="o">&amp;</span><span class="n">taskHandle</span> <span class="p">);</span>                                <span class="cm">/* Used to pass out the created task&#39;s handle. */</span>
+</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">xReturned</span> <span class="o">==</span> <span class="n">errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/* Creation of FreeRTOS task failed */</span>
+        <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Start the FreeRTOS scheduler */</span>
+            <span class="n">vTaskStartScheduler</span><span class="p">();</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The task creation is done in the main() function, before the FreeRTOS Kernel’s
+scheduler is started by <code class="docutils literal notranslate"><span class="pre">vTaskStartScheduler()</span></code>.
+The task executes at its assigned priority level after the scheduler is started
+(see <a class="reference external" href="https://www.freertos.org/RTOS-task-priority.html">FreeRTOS Task Priorities Overview</a>).</p>
+</div>
+<div class="section" id="a-task-function">
+<h2>A Task Function<a class="headerlink" href="#a-task-function" title="Permalink to this headline">¶</a></h2>
+<p>The type <code class="docutils literal notranslate"><span class="pre">TaskFunction_t</span></code> is defined as a function that returns void and takes a
+void pointer as its only parameter. All functions that implement a task should
+be of this type. The parameter can be used to pass information of any type into
+the task - this is demonstrated by several of the <a class="reference external" href="https://www.freertos.org/a00102.html">FreeRTOS Demo Applications</a>.</p>
+<p>Task functions should never return so are typically implemented as a continuous
+loop. However, normally it is best to create tasks that are event-driven so as
+not to starve lower priority tasks of processing time (see <a class="reference external" href="https://www.freertos.org/single-core-amp-smp-rtos-scheduling.html#avoid-task-starvation">FreeRTOS Avoid Task Starvation</a>).</p>
+<p>Additional details can be found in <a class="reference external" href="https://www.freertos.org/implementing-a-FreeRTOS-task.html">FreeRTOS Task Implementation Overview</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software-timers.html" class="btn btn-neutral float-right" title="Software Timers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rov.html" class="btn btn-neutral float-left" title="Debugging FreeRTOS with Runtime Object View (ROV)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

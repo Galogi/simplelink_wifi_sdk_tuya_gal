@@ -1,0 +1,17 @@
+{
+    "programming_debug_and_ota_signed_components": {
+        "tbl_container_programming": null,
+        "programming_instructions": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_instructions_image.sign.bin",
+        "actions_req_paths": {
+            "programming": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_action_request.sign.bin",
+            "debug": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/debug_action_request.sign.bin"
+        },
+        "primary_vendor_image": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_vendor_image.sign.bin",
+        "secondary_vendor_image": "",
+        "boot_sector": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/boot_sector_image.bin",
+        "primary_tbl": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_tbl_image.bin",
+        "secondary_tbl": "",
+        "primary_ti_wsoc": "C:/ti/Tuya/simplelink_wifi_sdk_tuya/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_ti_wireless_fw_image.bin",
+        "secondary_ti_wsoc": ""
+    }
+}

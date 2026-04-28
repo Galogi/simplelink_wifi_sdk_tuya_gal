@@ -1,0 +1,78 @@
+.. _sec-wifi-sntp:
+
+SNTP
+========
+
+Introduction
+-------------
+
+SNTP (Simple Network Time Protocol) is a protocol used to synchronize the clocks of computers over a network. SNTP is designed for
+applications that do not require the full complexity of the Network Time Protocol (NTP) such as embedded devices and microcontrollers.
+SNTP uses a client-server model over UDP.
+
+SNTP Feature Description
+---------------
+
+Network Terminal Example project (``CC35xx_network_terminal``) included in the SDK uses SNTP. This example project uses SNTP
+to synchronize the device's clock with an NTP server. The APIs for SNTP are declared in the ``sntp_wrapper.h`` file and implemented
+in the ``sntp_wrapper.c`` file. To enable SNTP in the example, the user must define the label ``SNTP_SUPPORT`` in the project properties.
+Using the SNTP is a two step process where the first step is to configure the SNTP Servers and the second step is to update the Date and Time.
+
+SNTP APIs
+-------------------
+
+To configure the SNTP servers, the user can use ``sntpWrapper_store_servers()`` API. This API takes the number of servers (maximum 3) and an
+array of server addresses as input. To update the Date and Time from the SNTP servers, the user can use ``sntpWrapper_update_time()`` API.
+This API takes no input and returns 0 on success and -1 on failure. As discussed above, the SDK includes ``CC35xx_network_terminal``
+example project that demonstrates the use of these APIs.
+
+Code examples
+--------------
+
+The following code snippet illustrates the use of storing SNTP servers and updating the date and time from the SNTP servers.
+
+.. code-block:: bash
+
+    #ifdef SNTP_SUPPORT
+    #include "sntp_wrapper.h"
+    #endif
+
+
+    #ifdef SNTP_SUPPORT
+    int32_t cmdSntpConfigServers(void *arg)
+    {
+        int32_t ret  = 0;
+        char  *serverIp[3];
+        uint32_t numOfServers;
+        int i;
+        ret = ParseSntpConfigServersCmd(arg, &numOfServers,serverIp);
+        if(ret < 0)
+        {
+            printSntpConfigServersUsage(arg);
+            return(0);
+        }
+        sntpWrapper_store_servers(numOfServers,serverIp[0],serverIp[1], serverIp[2]);
+        for(i=0; i<numOfServers; i++)
+        {
+            os_free(serverIp[i]);
+        }
+        return ret;
+    }
+    // Command to update date and time from SNTP server
+    // It will start a task that runs in the background every 30 minutes to
+    // synchronize the local time with the actual time from SNTP server
+    int32_t cmdSntpUpdateDateTime(void *arg)
+    {
+        int32_t ret  = 0;
+
+        if (((!IS_BIT_SET(ActiveNetIfBitMap, NET_IF_STA_BIT)) || (!IS_STA_CONNECTED(app_CB.Status)))
+                && (!IS_BIT_SET(ActiveNetIfBitMap, NET_IF_AP_BIT)))
+        {
+            Report("\n\rSTA/AP role is not up or connected.\n\r");
+            return -1;
+        }
+
+        ret = sntpWrapper_updateDateTime();
+        return ret;
+    }
+    #endif

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_timer_w_f_f3___channel_prop" kind="struct" language="C++" prot="public">
+    <compoundname>GPTimerWFF3_ChannelProp</compoundname>
+    <includes refid="_g_p_timer_w_f_f3_8h" local="no">GPTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_prop_1a054c8f92a15670b517aa49f75ddf4830" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a2d42396e2ad55cb9badf9658fc946874" kindref="member">GPTimerWFF3_ChannelAction</ref></type>
+        <definition>GPTimerWFF3_ChannelAction GPTimerWFF3_ChannelProp::action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel action </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="613" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="613" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_prop_1ad9e72310d54e72f8a3416de5c916e29d" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a42b412ac274a082f67cefadbbdf41518" kindref="member">GPTimerWFF3_ChannelInputEdge</ref></type>
+        <definition>GPTimerWFF3_ChannelInputEdge GPTimerWFF3_ChannelProp::inputEdge</definition>
+        <argsstring></argsstring>
+        <name>inputEdge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel input edge type required for triggering a channel action of capture type </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="617" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPTimerWFF3 channel dependent properties struct. </para>    </briefdescription>
+    <detaileddescription>
+<para>GPTimer struct used by the <ref refid="struct_g_p_timer_w_f_f3___params" kindref="compound">GPTimerWFF3_Params</ref>. </para>    </detaileddescription>
+    <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="611" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="610" bodyend="618"/>
+    <listofallmembers>
+      <member refid="struct_g_p_timer_w_f_f3___channel_prop_1a054c8f92a15670b517aa49f75ddf4830" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelProp</scope><name>action</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___channel_prop_1ad9e72310d54e72f8a3416de5c916e29d" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelProp</scope><name>inputEdge</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

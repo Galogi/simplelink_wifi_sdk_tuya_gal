@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_common_x_x_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>AESCommonXXF3_HWAttrs</compoundname>
+    <includes refid="_a_e_s_common_x_x_f3_8h" local="no">AESCommonXXF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_common_x_x_f3___h_w_attrs_1a2f9b27cfa7ba515149181c1f0fe7479c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AESCommonXXF3_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+<para>Crypto Peripheral&apos;s interrupt priority. </para>        </briefdescription>
+        <detaileddescription>
+<para>The Low Power F3 devices use either three or two priority bits, depending on the device. That means ~0 has the same effect as (7 &lt;&lt; 5) or (3 &lt;&lt; 6), respectively.</para><para>Setting the priority to 0 is not supported by this driver.</para><para>HWI&apos;s with priority 0 ignore the HWI dispatcher to support zero-latency interrupts, thus invalidating the critical sections in this driver. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="135" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCommonXXF3 Hardware Attributes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" line="122" column="1" bodyfile="source/ti/drivers/cryptoutils/aes/AESCommonXXF3.h" bodystart="121" bodyend="136"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_common_x_x_f3___h_w_attrs_1a2f9b27cfa7ba515149181c1f0fe7479c" prot="public" virt="non-virtual"><scope>AESCommonXXF3_HWAttrs</scope><name>intPriority</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

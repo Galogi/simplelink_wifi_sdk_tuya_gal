@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Operations &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running BLE Provisioning" href="cc35xx-running-ble-provisioning.html" />
+    <link rel="prev" title="Overview and Features" href="cc35xx-overview.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble cc35xx-basic-operations";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble-application-structure"><strong>BLE Application Structure</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialization"><strong>Initialization</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advertising"><strong>Advertising</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scanning"><strong>Scanning</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-and-pairing"><strong>Connecting and Pairing</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a> &raquo;</li>
+        
+      <li>Basic Operations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-operations">
+<span id="sec-ble-basic-operations"></span><h1>Basic Operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ble-application-structure">
+<h2><strong>BLE Application Structure</strong><a class="headerlink" href="#ble-application-structure" title="Permalink to this headline">¶</a></h2>
+<p>The SimpleLink Wi-Fi Software Development Kit offers an easy way to begin BLE development with the use of the Nimble Host interface.
+The Nimble Host interface is the connection between user application code and the NimBLE stack, this allows developers to control and
+contain all aspects of BLE development inside one file, <code class="docutils literal notranslate"><span class="pre">nimble_host.c</span></code>. In this interface the developer can control the GATT Server
+and all event callbacks.</p>
+<p>The following section will explain how to use basic BLE functionality through the Nimble Host interface.</p>
+</div>
+<div class="section" id="initialization">
+<h2><strong>Initialization</strong><a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<p>Before any BLE functionality can be done you must first run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Wlan_Start<span class="o">(</span>WlanEventHandlerCB_t eventHandlerCB<span class="o">)</span>
+</pre></div>
+</div>
+<p>This command found in the <code class="docutils literal notranslate"><span class="pre">wifi_stack.lib</span></code> library, loads the containers (FW, bootloader and configuration binaries) from the NVMEM and programs them to the MAC layer.
+This step should be the first, otherwise there will be no communication with the device.</p>
+<p>Next you will need to enable BLE as it is not by default. To do so run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctrlCmdFw_EnableBLECmd<span class="o">(</span>void<span class="o">)</span>
+</pre></div>
+</div>
+<p>Once BLE is enabled, the next step would be to initialize and sync the Nimble Host Stack with the following functionality</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_start<span class="o">(</span>void<span class="o">)</span>
+</pre></div>
+</div>
+<p>This function will create the transport layer and the task that handles events from the Nimble stack.</p>
+</div>
+<div class="section" id="advertising">
+<h2><strong>Advertising</strong><a class="headerlink" href="#advertising" title="Permalink to this headline">¶</a></h2>
+<p>To begin advertising on the CC35xx the following commands should be run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_adv_cfg<span class="o">(</span>ExtAdvCfg_t *pAdvCfg<span class="o">)</span>
+</pre></div>
+</div>
+<p>This function will configure the advertising parameters specified in the <code class="docutils literal notranslate"><span class="pre">ExtAdvCfg</span></code> struct</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ExtAdvCfg
+    * instance<span class="p">;</span>
+    * legacy<span class="p">;</span>
+    * interval_ms<span class="p">;</span>
+    * prim_phy<span class="p">;</span>
+    * sec_phy<span class="p">;</span>
+</pre></div>
+</div>
+<p>After setting the parameters, you will then need to run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_adv_enable<span class="o">(</span>ExtAdvEnable_t *pAdvEnb<span class="o">)</span>
+</pre></div>
+</div>
+<p>This function will enable advertising in accordance to the given parameters</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ExtAdvEnable
+    * enable<span class="p">;</span>
+    * instance<span class="p">;</span>
+    * duration<span class="p">;</span>
+    * max_events<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scanning">
+<h2><strong>Scanning</strong><a class="headerlink" href="#scanning" title="Permalink to this headline">¶</a></h2>
+<p>Similarly to advertising, you will need to configure scan parameters then enable scanning.
+The following function should be run to configure a scan</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_scan_cfg<span class="o">(</span>ExtScanCfg_t *pScanCfg<span class="o">)</span>
+</pre></div>
+</div>
+<p>The parameters are</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ExtScanCfg
+    * scan_interval_ms<span class="p">;</span>
+    * scan_window_ms<span class="p">;</span>
+    * own_address_type<span class="p">;</span>
+    * filter_policy<span class="p">;</span>
+    * scan_type<span class="p">;</span>
+    * scan_phy<span class="p">;</span>
+</pre></div>
+</div>
+<p>Once the parameters are set, scanning can be enabled</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_scan_enable<span class="o">(</span>ExtScanEnable_t *pScanEnb<span class="o">)</span>
+</pre></div>
+</div>
+<p>This function will enable a scanning instance that lasts as long as specified.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ExtScanEnable
+    * duration<span class="p">;</span>
+    * uint16 period<span class="p">;</span>
+    * uint8 enable<span class="p">;</span>
+    * uint8 filter_duplicate<span class="p">;</span>
+</pre></div>
+</div>
+<p>When scanning is completed the following BLE_GAP_EVENT_DISC_COMPLETE event callback will be triggered.</p>
+</div>
+<div class="section" id="connecting-and-pairing">
+<h2><strong>Connecting and Pairing</strong><a class="headerlink" href="#connecting-and-pairing" title="Permalink to this headline">¶</a></h2>
+<p>To initialize a connection you will need to know the bluetooth address (bd_addr) and address type of the device
+you want to connect to, this information is received when scanning for devices.</p>
+<p>The following function is used to start a connection request</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_connect<span class="o">(</span>uint8_t* bd_addr, uint8_t addr_type<span class="o">)</span>
+</pre></div>
+</div>
+<p>Pairing is currently done automatically after connecting, this can be removed by changing the behavior
+in the BLE_GAP_EVENT_CONNECT GAP callback.</p>
+<p>To disconnect from a device the following function must be ctrlCmdFw_EnableBLECmd</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nimble_host_ext_disconnect<span class="o">(</span>uint8_t* bd_addr, uint8_t addr_type<span class="o">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not input any bd_addr, the device will disconnect from all parameters</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-running-ble-provisioning.html" class="btn btn-neutral float-right" title="Running BLE Provisioning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-overview.html" class="btn btn-neutral float-left" title="Overview and Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,996 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_flash_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>FlashWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/xip.h)</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/ospi.h)</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/debug.h)</includes>
+    <incdepgraph>
+      <node id="110">
+        <label>stdint.h</label>
+      </node>
+      <node id="109">
+        <label>FlashWFF3.h</label>
+        <link refid="_flash_w_f_f3_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>DeviceFamily_constructPath(driverlib/xip.h)</label>
+      </node>
+      <node id="115">
+        <label>DeviceFamily_constructPath(driverlib/debug.h)</label>
+      </node>
+      <node id="114">
+        <label>DeviceFamily_constructPath(driverlib/ospi.h)</label>
+      </node>
+      <node id="112">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="111">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1abc0073a02970392b54588171b217ab0d" prot="public" static="no">
+        <name>FLASH_STATUS_SUCCESS</name>
+        <initializer>0x00000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function completed successfully </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="59" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a299a7fc4b842c6630077e91850faf1fb" prot="public" static="no">
+        <name>FLASH_TIMEOUT_REACHED_ERROR</name>
+        <initializer>(-1300)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>timeout status error </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="60" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1ad84d7129ed49e47206fc234ee2966379" prot="public" static="no">
+        <name>PSRAM_XIP_OFFSET</name>
+        <initializer>(0x100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Offset for PSRAM XIP Configuration </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="61" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1aaf3bf5ec1aabc529b404b8352d8d1e0b" prot="public" static="no">
+        <name>DEVICE_SWITCH_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="62" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a185a462f1e27eef6a624369c938619a6" prot="public" static="no">
+        <name>FLASH_WR_BOUND_SIZE_IN_BYTES</name>
+        <initializer>64U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; UDMA Data movement boundary for write command (page program) Internal memory to External memory UDMA Data movement boundary for read command External memory to Internal memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="68" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1ac6dc332a2da341fa82fffdc3b1a84b75" prot="public" static="no">
+        <name>FLASH_RD_BOUND_SIZE_IN_BYTES</name>
+        <initializer>256U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="70" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a0bf463e52055762e1896885ef43b0986" prot="public" static="no">
+        <name>__IF__</name>
+        <param><defname>x</defname></param>
+        <initializer>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="73" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a4867b955dff431b275abaa893a317093" prot="public" static="no">
+        <name>__THEN__</name>
+        <param><defname>x</defname></param>
+        <initializer>? (x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="74" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1aa57f68e4a4e88ab66e21b31f98c3e3c7" prot="public" static="no">
+        <name>__ELSE__</name>
+        <param><defname>x</defname></param>
+        <initializer>: (x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="75" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a1de71d93b31fec803d96ec07eadb8eb2" prot="public" static="no">
+        <name>__ELSE_IF__</name>
+        <param><defname>x</defname></param>
+        <initializer>: (x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="76" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a298ff6ad080943ff90caa088c25f4587" prot="public" static="no">
+        <name>OSPI_IDLE_XSPI_COUNTER_BEFORE_TIMEOUT</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="78" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" prot="public" static="no">
+        <name>BITMASK_x_0</name>
+        <param><defname>x</defname></param>
+        <initializer>(<ref refid="_flash_w_f_f3_8h_1a0bf463e52055762e1896885ef43b0986" kindref="member">__IF__</ref>((x) == 31)               /* For x==31, we immediately return 0xFFFFFFFF */ \
+     __THEN__(0xFFFFFFFF)            /* For other x, we return 2^(x+1) - 1.         */ \
+     __ELSE__((1 &lt;&lt; ((x) + 1)) - 1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0()</ref> returns a bit mask of &quot;1&quot; from Bits[x:0]</para><para>E.g., for x=5</para><para><ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0(5)</ref> = ........111111 Bits[5:0] = &quot;111111&quot; <ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0(0)</ref> = .............1 Bits[0:0] = &quot;000001&quot; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="88" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a9e0a4dd3f259a7af64b823862cb2a952" prot="public" static="no">
+        <name>BITMASK_x_y</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer>(<ref refid="_flash_w_f_f3_8h_1a0bf463e52055762e1896885ef43b0986" kindref="member">__IF__</ref>((y) == 0)                               /* For y==0, we return Bits[x:0]               */ \
+     <ref refid="_flash_w_f_f3_8h_1a4867b955dff431b275abaa893a317093" kindref="member">__THEN__</ref>(<ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0</ref>(x))                       /* For y&gt; 0, we return Bits[x:0] - Bits[y-1:0] */ \
+     <ref refid="_flash_w_f_f3_8h_1aa57f68e4a4e88ab66e21b31f98c3e3c7" kindref="member">__ELSE__</ref>(<ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0</ref>(x) - <ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0</ref>((y)-1)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_flash_w_f_f3_8h_1a9e0a4dd3f259a7af64b823862cb2a952" kindref="member">BITMASK_x_y()</ref> returns a bit mask of &quot;1&quot; from Bits[x:y] (naturally, x &gt;= y should be enforces by the caller!!)</para><para>E.g., for x=5, y=2</para><para><ref refid="_flash_w_f_f3_8h_1a9e0a4dd3f259a7af64b823862cb2a952" kindref="member">BITMASK_x_y(5,5)</ref> = ......1..... Bits[5:5] = &quot;100000&quot; <ref refid="_flash_w_f_f3_8h_1a9e0a4dd3f259a7af64b823862cb2a952" kindref="member">BITMASK_x_y(5,2)</ref> = ......1111.. Bits[5:0] = &quot;111100&quot; <ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0(5,1)</ref> = ......11111. Bits[5:1] = &quot;111110&quot; <ref refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" kindref="member">BITMASK_x_0(5,0)</ref> = ......111111 Bits[5:0] = &quot;111111&quot; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="105" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a7bd6dd76bdcc8c08d489373f94a7f1ea" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_ENTER</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="131" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a89b6437da77d4ac6e011c8f56de73d09" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_EXIT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="132" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1aec2d2f68903b4cab07fcb9cd968ec4d9" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_PRE_READ</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="133" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a3cd2dd707c0bb5a8c48e3e5c47520b55" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_EXECUTE_READ</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="134" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a6953aeeabafd55529069414c75e31891" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_POST_READ</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="135" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a290fc5cd5f30b3f4028924dbd2d08b07" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_PRE_WRITE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="136" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a321a91d2c4d5fe55b4ecf90357224b0a" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_EXECUTE_WRITE</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="137" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a6b68f339358f0a4405085fd1d3b035b7" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_POST_WRITE</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="138" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a3c48c28761a7b76bf091fd61db46d5cd" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_PRE_ERASE</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="139" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a62e9ff524ef79e949238ce6e4fab06fb" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_EXECUTE_ERASE</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="140" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flash_w_f_f3_8h_1a86a323a52425a5da40cf634f14c8a6ac" prot="public" static="no">
+        <name>FLASH_STIG_CONFIG_POST_ERASE</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="141" column="9" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6" prot="public" static="no">
+        <name>FlashOtfdeStateSet</name>
+        <enumvalue id="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6abbeb11c85b6498bcc10506fbf4f3e4ce" prot="public">
+          <name>FLASH_OTFDE_DISABLE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bit configuration to disable OTFDE control over XSPI </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6a9822b0ea54c46f0655bfb598b1678e24" prot="public">
+          <name>FLASH_OTFDE_ENABLE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bit configuration to enable OTFDE control over XSPI </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="111" column="1" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="110" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="enum" id="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70" prot="public" static="no">
+        <name>FlashUdmaJobStatus</name>
+        <enumvalue id="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a6bca52d63956666972f7b21e3747c874" prot="public">
+          <name>FLASH_UDMA_JOB_DONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UDMA job completed successfully </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a8644d9fdc9b10a771d9ac5dd1805f3b7" prot="public">
+          <name>FLASH_UDMA_JOB_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>UDMA job did not completed successfully </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="117" column="1" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="116" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="enum" id="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" prot="public" static="no">
+        <name>FlashStigStatus</name>
+        <enumvalue id="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" prot="public">
+          <name>FLASH_STIG_DONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>STIG command completed successfully </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" prot="public">
+          <name>FLASH_STIG_TIMEOUT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>STIG command completed with timeout </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" prot="public">
+          <name>FLASH_STIG_ERROR</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>STIG command did not completed successfully </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="124" column="1" bodyfile="source/ti/drivers/xmem/flash/FlashWFF3.h" bodystart="123" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1aa43065eb9fa3b4997277d1636aa1b014" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlashRead</definition>
+        <argsstring>(uint32_t *readFromAddr, uint32_t *writeToAddr, uint32_t length)</argsstring>
+        <name>FlashRead</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>readFromAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>writeToAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Read from external memory. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function call to #XIPStartUDMATransaction() in order to execute copy transaction from external memory to internal memory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readFromAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the external memory source data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">writeToAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the internal memory destination data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the number of bytes to transfer.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Tested with flash only (did not test with PSRAM) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a6b16c1d482a7e99d230da05a5cd10b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashReadSTIG</definition>
+        <argsstring>(uint32_t readStartAddr, uint32_t *writeToAddr, uint8_t DeviceNum)</argsstring>
+        <name>FlashReadSTIG</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>readStartAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>writeToAddr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>DeviceNum</declname>
+        </param>
+        <briefdescription>
+<para>Read from external memory using STIG command. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function call to <ref refid="_flash_w_f_f3_8h_1a833024dba3c4c60977a12c2ce054c914" kindref="member">FlashExecuteReadSTIGCommand()</ref> in order to Execute read Flash based on STIG command.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readFromAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the external memory source data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">writeToAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the internal memory destination data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">DeviceNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device identifier (XMEM_FLASH or XMEM_PSRAM).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG erase command failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="176" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a833024dba3c4c60977a12c2ce054c914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashExecuteReadSTIGCommand</definition>
+        <argsstring>(uint32_t srcReadAddr, uint32_t *writeToAddr)</argsstring>
+        <name>FlashExecuteReadSTIGCommand</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>srcReadAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>writeToAddr</declname>
+        </param>
+        <briefdescription>
+<para>Execute read of one word from Flash based on STIG write command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">srcReadAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the data to read from external memory.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">writeToAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the internal memory destination data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG command failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1aea4204db9526ad097b183b4468d85c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlashWrite</definition>
+        <argsstring>(uint32_t *readFromAddr, uint32_t *writeToAddr, uint32_t length)</argsstring>
+        <name>FlashWrite</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>readFromAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>writeToAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Write to external memory. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function call to #XIPStartUDMATransaction() in order to execute copy transaction from internal memory to external memory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readFromAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the internal memory source data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">writeToAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the external memory destination data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the number of bytes to transfer. Maximum configurable job size - 1 Mega byte (256K Words).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Tested with flash only (did not test with PSRAM) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="206" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a6440b7b3f002d7a5fb6bb6fb7a3d46d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashWriteSTIG</definition>
+        <argsstring>(uint32_t *readFromAddr, uint32_t *writeToAddr, uint8_t DeviceNum)</argsstring>
+        <name>FlashWriteSTIG</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>readFromAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>writeToAddr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>DeviceNum</declname>
+        </param>
+        <briefdescription>
+<para>Write to external memory using STIG command. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function call to <ref refid="_flash_w_f_f3_8h_1a89c7526edb5e16e8af066d5016380136" kindref="member">FlashExecuteWriteSTIGCommand()</ref> in order to Execute write Flash based on STIG command.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readFromAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the internal memory source data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">writeToAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a pointer to the external memory destination data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">DeviceNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device identifier (XMEM_FLASH or XMEM_PSRAM).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG erase command failed.</para></simplesect>
+<simplesect kind="note"><para>Tested with flash only (did not test with PSRAM) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="225" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a89c7526edb5e16e8af066d5016380136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashExecuteWriteSTIGCommand</definition>
+        <argsstring>(uint32_t srcWriteData, uint32_t srcWriteAddrPhy)</argsstring>
+        <name>FlashExecuteWriteSTIGCommand</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>srcWriteData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>srcWriteAddrPhy</declname>
+        </param>
+        <briefdescription>
+<para>Execute write to Flash based on STIG write command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">srcWriteAddrPhy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the address of the external memory destination data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srcWriteData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the data to write to external memory.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG command failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="240" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1acb9ba49d8e095c90bd79770cf8bcfcbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlashSetOTFDE</definition>
+        <argsstring>(uint8_t setState)</argsstring>
+        <name>FlashSetOTFDE</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>setState</declname>
+        </param>
+        <briefdescription>
+<para>Enable/Disable the OTFDE. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">setState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the required state to configure <ref refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6" kindref="member">FlashOtfdeStateSet</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="247" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1aba6e105f4972ba4ce65ae07d1f9817d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashExecutePolling</definition>
+        <argsstring>(void)</argsstring>
+        <name>FlashExecutePolling</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>read flash status register until WIP (write in process) indication is free. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function can be called by nay function that execute on going process such as <ref refid="_flash_w_f_f3_8h_1a8f8933429a3fd3b5965fdd9691bddeb8" kindref="member">FlashSectorErase()</ref>, <ref refid="_flash_w_f_f3_8h_1a6b16c1d482a7e99d230da05a5cd10b5b" kindref="member">FlashReadSTIG()</ref>, <ref refid="_flash_w_f_f3_8h_1a6440b7b3f002d7a5fb6bb6fb7a3d46d8" kindref="member">FlashWriteSTIG()</ref>.</para><para>If transaction will not complete before timeout reatched <simplesect kind="return"><para>status transaction complete: <ref refid="_flash_w_f_f3_8h_1abc0073a02970392b54588171b217ab0d" kindref="member">FLASH_STATUS_SUCCESS</ref> - Trasaction successfuly completed. <ref refid="_flash_w_f_f3_8h_1a299a7fc4b842c6630077e91850faf1fb" kindref="member">FLASH_TIMEOUT_REACHED_ERROR</ref> - Timeout, transaction failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a15ec4ca73807379dd3aa4a33635b2f29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashExecuteEraseSTIGCommand</definition>
+        <argsstring>(uint32_t EraseAddr_en, uint32_t srcEraseAddr)</argsstring>
+        <name>FlashExecuteEraseSTIGCommand</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>EraseAddr_en</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>srcEraseAddr</declname>
+        </param>
+        <briefdescription>
+<para>Execute erase Flash based on STIG command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">EraseAddr_en</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set in case the STIG command needs to use #srcEraseAddr.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srcEraseAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from where to start the flash erase.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG command failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="275" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a8f8933429a3fd3b5965fdd9691bddeb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref></type>
+        <definition>FlashStigStatus FlashSectorErase</definition>
+        <argsstring>(uint32_t eraseStartAddr, uint8_t DeviceNum)</argsstring>
+        <name>FlashSectorErase</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>eraseStartAddr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>DeviceNum</declname>
+        </param>
+        <briefdescription>
+<para>Execute erase Flash based on STIG command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eraseStartAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from where to start the sector erase.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">DeviceNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device identifier (XMEM_FLASH or XMEM_PSRAM).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref> of STIG execution command: <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref> - STIG command done. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref> - STIG command not completed, finish with timeout. <ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref> - STIG command failed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="290" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a34240dacf52a5eb26e7fdc42121983d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlashSetTickPeriod</definition>
+        <argsstring>(uint32_t TickPeriod)</argsstring>
+        <name>FlashSetTickPeriod</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>TickPeriod</declname>
+        </param>
+        <briefdescription>
+<para>Store the ClockP period internally. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>TickPeriod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Periodic interval in ClockP ticks </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="298" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_flash_w_f_f3_8h_1a7784adbe493818b7045fb5d1f7b51aec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashIsXspiIdle</definition>
+        <argsstring>()</argsstring>
+        <name>FlashIsXspiIdle</name>
+        <briefdescription>
+<para>xSPI (accessible) idle check before STIG execution. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/flash/FlashWFF3.h" line="303" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(c)<sp/>2024-2025<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>1)<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>2)<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>3)<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>the<sp/>copyright<sp/>holder<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>==========<sp/>FlashWFF3.h<sp/>==========</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_nvs_flash_FlashWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_nvs_flash_FlashWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/xip.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/ospi.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/debug.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//*****************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>If<sp/>building<sp/>with<sp/>a<sp/>C++<sp/>compiler,<sp/>make<sp/>all<sp/>of<sp/>the<sp/>definitions<sp/>in<sp/>this<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>have<sp/>a<sp/>C<sp/>binding.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//*****************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>Values<sp/>that<sp/>can<sp/>be<sp/>returned<sp/>from<sp/>the<sp/>API<sp/>functions</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_flash_w_f_f3_8h_1abc0073a02970392b54588171b217ab0d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000000<sp/></highlight></codeline>
+<codeline lineno="60" refid="_flash_w_f_f3_8h_1a299a7fc4b842c6630077e91850faf1fb" refkind="member"><highlight class="preprocessor">#define<sp/>FLASH_TIMEOUT_REACHED_ERROR<sp/><sp/>(-1300)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="_flash_w_f_f3_8h_1ad84d7129ed49e47206fc234ee2966379" refkind="member"><highlight class="preprocessor">#define<sp/>PSRAM_XIP_OFFSET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x100)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="_flash_w_f_f3_8h_1aaf3bf5ec1aabc529b404b8352d8d1e0b" refkind="member"><highlight class="preprocessor">#define<sp/>DEVICE_SWITCH_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>Configuration<sp/>values<sp/>that<sp/>should<sp/>be<sp/>passed<sp/>to<sp/>#XIPStartUDMATransaction()</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>as<sp/>the<sp/>directionMode<sp/>parameter.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="68" refid="_flash_w_f_f3_8h_1a185a462f1e27eef6a624369c938619a6" refkind="member"><highlight class="preprocessor">#define<sp/>FLASH_WR_BOUND_SIZE_IN_BYTES<sp/>64U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_flash_w_f_f3_8h_1ac6dc332a2da341fa82fffdc3b1a84b75" refkind="member"><highlight class="preprocessor">#define<sp/>FLASH_RD_BOUND_SIZE_IN_BYTES<sp/>256U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>supports<sp/>bit<sp/>manipulation<sp/>macros<sp/>#BITMASK_x_0()<sp/>&amp;<sp/>#BITMASK_x_y()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="_flash_w_f_f3_8h_1a0bf463e52055762e1896885ef43b0986" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__IF__(x)<sp/><sp/><sp/>(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="_flash_w_f_f3_8h_1a4867b955dff431b275abaa893a317093" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__THEN__(x)<sp/>?<sp/>(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_flash_w_f_f3_8h_1aa57f68e4a4e88ab66e21b31f98c3e3c7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ELSE__(x)<sp/><sp/><sp/><sp/><sp/>:<sp/>(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="_flash_w_f_f3_8h_1a1de71d93b31fec803d96ec07eadb8eb2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ELSE_IF__(x)<sp/><sp/>:<sp/>(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_flash_w_f_f3_8h_1a298ff6ad080943ff90caa088c25f4587" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OSPI_IDLE_XSPI_COUNTER_BEFORE_TIMEOUT<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_flash_w_f_f3_8h_1a5f1d83de4ed7f82f5fadae417105ff3f" refkind="member"><highlight class="preprocessor">#define<sp/>BITMASK_x_0(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(__IF__((x)<sp/>==<sp/>31)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>x==31,<sp/>we<sp/>immediately<sp/>return<sp/>0xFFFFFFFF<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>__THEN__(0xFFFFFFFF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>other<sp/>x,<sp/>we<sp/>return<sp/>2^(x+1)<sp/>-<sp/>1.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>__ELSE__((1<sp/>&lt;&lt;<sp/>((x)<sp/>+<sp/>1))<sp/>-<sp/>1))<sp/>//<sp/>MACRO<sp/>BITMASK_x_0()<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="_flash_w_f_f3_8h_1a9e0a4dd3f259a7af64b823862cb2a952" refkind="member"><highlight class="preprocessor">#define<sp/>BITMASK_x_y(x,<sp/>y)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(__IF__((y)<sp/>==<sp/>0)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>y==0,<sp/>we<sp/>return<sp/>Bits[x:0]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>__THEN__(BITMASK_x_0(x))<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>y&gt;<sp/>0,<sp/>we<sp/>return<sp/>Bits[x:0]<sp/>-<sp/>Bits[y-1:0]<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>__ELSE__(BITMASK_x_0(x)<sp/>-<sp/>BITMASK_x_0((y)-1)))<sp/>//<sp/>MACRO<sp/>BITMASK_x_y().<sp/>//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112" refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6abbeb11c85b6498bcc10506fbf4f3e4ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6abbeb11c85b6498bcc10506fbf4f3e4ce" kindref="member">FLASH_OTFDE_DISABLE</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="113" refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6a9822b0ea54c46f0655bfb598b1678e24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6a9822b0ea54c46f0655bfb598b1678e24" kindref="member">FLASH_OTFDE_ENABLE</ref><sp/><sp/>=<sp/>1<sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}<sp/><ref refid="_flash_w_f_f3_8h_1a21e26aba8bf7ee82ad1e2d3431440bf6" kindref="member">FlashOtfdeStateSet</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118" refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a6bca52d63956666972f7b21e3747c874" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a6bca52d63956666972f7b21e3747c874" kindref="member">FLASH_UDMA_JOB_DONE</ref><sp/><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="119" refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a8644d9fdc9b10a771d9ac5dd1805f3b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70a8644d9fdc9b10a771d9ac5dd1805f3b7" kindref="member">FLASH_UDMA_JOB_ERROR</ref><sp/>=<sp/>1<sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}<sp/><ref refid="_flash_w_f_f3_8h_1aaaa47ebdd4d53c391c62aa9ccc8dde70" kindref="member">FlashUdmaJobStatus</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>STIG<sp/>status<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125" refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaadf5e8279ce95cd6e7421fec58825f042" kindref="member">FLASH_STIG_DONE</ref><sp/><sp/><sp/><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="126" refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaa771dc2e7c3c716dfe3c64552eaef4c54" kindref="member">FLASH_STIG_TIMEOUT</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="127" refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfaae549a399bd868db66ffc6cfd04e31807" kindref="member">FLASH_STIG_ERROR</ref><sp/><sp/><sp/>=<sp/>2<sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}<sp/><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>STIG<sp/>configuration<sp/>operation<sp/>types<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="_flash_w_f_f3_8h_1a7bd6dd76bdcc8c08d489373f94a7f1ea" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_ENTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="_flash_w_f_f3_8h_1a89b6437da77d4ac6e011c8f56de73d09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_EXIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="_flash_w_f_f3_8h_1aec2d2f68903b4cab07fcb9cd968ec4d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_PRE_READ<sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="_flash_w_f_f3_8h_1a3cd2dd707c0bb5a8c48e3e5c47520b55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_EXECUTE_READ<sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="_flash_w_f_f3_8h_1a6953aeeabafd55529069414c75e31891" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_POST_READ<sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="_flash_w_f_f3_8h_1a290fc5cd5f30b3f4028924dbd2d08b07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_PRE_WRITE<sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="_flash_w_f_f3_8h_1a321a91d2c4d5fe55b4ecf90357224b0a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_EXECUTE_WRITE<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="_flash_w_f_f3_8h_1a6b68f339358f0a4405085fd1d3b035b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_POST_WRITE<sp/><sp/><sp/><sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="_flash_w_f_f3_8h_1a3c48c28761a7b76bf091fd61db46d5cd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_PRE_ERASE<sp/><sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="_flash_w_f_f3_8h_1a62e9ff524ef79e949238ce6e4fab06fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_EXECUTE_ERASE<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="_flash_w_f_f3_8h_1a86a323a52425a5da40cf634f14c8a6ac" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLASH_STIG_CONFIG_POST_ERASE<sp/><sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*Functions</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_flash_w_f_f3_8h_1aa43065eb9fa3b4997277d1636aa1b014" kindref="member">FlashRead</ref>(uint32_t<sp/>*readFromAddr,<sp/>uint32_t<sp/>*writeToAddr,<sp/>uint32_t<sp/>length);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a6b16c1d482a7e99d230da05a5cd10b5b" kindref="member">FlashReadSTIG</ref>(uint32_t<sp/>readStartAddr,<sp/>uint32_t<sp/>*writeToAddr,<sp/>uint8_t<sp/>DeviceNum);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a833024dba3c4c60977a12c2ce054c914" kindref="member">FlashExecuteReadSTIGCommand</ref>(uint32_t<sp/>srcReadAddr,<sp/>uint32_t<sp/>*writeToAddr);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_flash_w_f_f3_8h_1aea4204db9526ad097b183b4468d85c11" kindref="member">FlashWrite</ref>(uint32_t<sp/>*readFromAddr,<sp/>uint32_t<sp/>*writeToAddr,<sp/>uint32_t<sp/>length);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a6440b7b3f002d7a5fb6bb6fb7a3d46d8" kindref="member">FlashWriteSTIG</ref>(uint32_t<sp/>*readFromAddr,<sp/>uint32_t<sp/>*writeToAddr,<sp/>uint8_t<sp/>DeviceNum);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a89c7526edb5e16e8af066d5016380136" kindref="member">FlashExecuteWriteSTIGCommand</ref>(uint32_t<sp/>srcWriteData,<sp/>uint32_t<sp/>srcWriteAddrPhy);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_flash_w_f_f3_8h_1acb9ba49d8e095c90bd79770cf8bcfcbd" kindref="member">FlashSetOTFDE</ref>(uint8_t<sp/>setState);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal">uint32_t<sp/><ref refid="_flash_w_f_f3_8h_1aba6e105f4972ba4ce65ae07d1f9817d4" kindref="member">FlashExecutePolling</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a15ec4ca73807379dd3aa4a33635b2f29" kindref="member">FlashExecuteEraseSTIGCommand</ref>(uint32_t<sp/>EraseAddr_en,<sp/>uint32_t<sp/>srcEraseAddr);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><ref refid="_flash_w_f_f3_8h_1a442e512968e543758ac37a54f3071bfa" kindref="member">FlashStigStatus</ref><sp/><ref refid="_flash_w_f_f3_8h_1a8f8933429a3fd3b5965fdd9691bddeb8" kindref="member">FlashSectorErase</ref>(uint32_t<sp/>eraseStartAddr,<sp/>uint8_t<sp/>DeviceNum);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_flash_w_f_f3_8h_1a34240dacf52a5eb26e7fdc42121983d4" kindref="member">FlashSetTickPeriod</ref>(uint32_t<sp/>TickPeriod);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal">uint32_t<sp/><ref refid="_flash_w_f_f3_8h_1a7784adbe493818b7045fb5d1f7b51aec" kindref="member">FlashIsXspiIdle</ref>();</highlight></codeline>
+<codeline lineno="307"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_nvs_flash_FlashWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/xmem/flash/FlashWFF3.h"/>
+  </compounddef>
+</doxygen>

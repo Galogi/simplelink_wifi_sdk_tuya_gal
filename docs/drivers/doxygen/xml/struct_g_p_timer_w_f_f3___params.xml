@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_timer_w_f_f3___params" kind="struct" language="C++" prot="public">
+    <compoundname>GPTimerWFF3_Params</compoundname>
+    <includes refid="_g_p_timer_w_f_f3_8h" local="no">GPTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1af9fc7d8c712d5818ac51f775fdfde0d9" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1aa6a7db9273f7bd0e8c3027c98dd4125c" kindref="member">GPTimerWFF3_HwiFxn</ref></type>
+        <definition>GPTimerWFF3_HwiFxn GPTimerWFF3_Params::hwiCallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>hwiCallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware interrupt callback function. This pointer is optional and is only required if <ref refid="_g_p_timer_w_f_f3_8h_1ac0b58f8799c31bfc444bd600d9065220" kindref="member">GPTimerWFF3_enableInterrupt()</ref> is called. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="667" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1a3bbcc8d5b5f01b2db565e269e4129079" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GPTimerWFF3_Params::intPhaseLate</definition>
+        <argsstring></argsstring>
+        <name>intPhaseLate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt phase early or late for TGT and ZERO interrupts </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="669" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="669" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1abced522f50509653bb0af663b42518df" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_Params::prescalerDiv</definition>
+        <argsstring></argsstring>
+        <name>prescalerDiv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prescaler division factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="671" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="671" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1a34a5650e372791deb2a45d54dbbcb368" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a08d49756d6da25a0943fecd421ad000d" kindref="member">GPTimerWFF3_DebugMode</ref></type>
+        <definition>GPTimerWFF3_DebugMode GPTimerWFF3_Params::debugStallMode</definition>
+        <argsstring></argsstring>
+        <name>debugStallMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timer debug stall mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="673" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1a89f2ac8ac11f779d067f9c501b46be90" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_timer_w_f_f3_8h_1a1a2195fab415bfb0a3ee0c4b108aa763" kindref="member">GPTimerWFF3_ChannelCmpDir</ref></type>
+        <definition>GPTimerWFF3_ChannelCmpDir GPTimerWFF3_Params::counterDirChCompare</definition>
+        <argsstring></argsstring>
+        <name>counterDirChCompare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timer counter direction for channel compare. Covers all channels </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="675" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___params_1a3866c82f64b82c3e96882647402e56d5" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_g_p_timer_w_f_f3___channel_prop" kindref="compound">GPTimerWFF3_ChannelProp</ref></type>
+        <definition>GPTimerWFF3_ChannelProp GPTimerWFF3_Params::channelProperty[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>channelProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel action and input edge type required for triggering a channel action of capture type </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="679" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="679" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPTimerWFF3 Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>GPTimer parameters are used by the <ref refid="_g_p_timer_w_f_f3_8h_1ae5767106151945adae0008f7450f67aa" kindref="member">GPTimerWFF3_open()</ref> call. Default values for these parameters are set using <ref refid="_g_p_timer_w_f_f3_8h_1a8f5ae2415fe54f6ad0f6afdc4d490015" kindref="member">GPTimerWFF3_Params_init()</ref>.</para><para><simplesect kind="note"><para>The prescalerDiv parameter determines the division factor of the system clock being input to the timer counter:<itemizedlist>
+<listitem><para>0x00: Divide by 1</para></listitem><listitem><para>0x01: Divide by 2</para></listitem><listitem><para>...</para></listitem><listitem><para>0xFF: Divide by 256</para></listitem></itemizedlist>
+</para></simplesect>
+<simplesect kind="note"><para>The intPhaseLate parameter which determines if the <ref refid="_g_p_timer_w_f_f3_8h_1a80181e39fff10254403f4a9a290d8df4a2f5aa149678a51f68aad2ce5def289b4" kindref="member">GPTimerWFF3_INT_TGT</ref> and <ref refid="_g_p_timer_w_f_f3_8h_1a80181e39fff10254403f4a9a290d8df4a2415956ff87e2f793d7d9b590c8698b5" kindref="member">GPTimerWFF3_INT_ZERO</ref> interrupt status flags will be set early or late, is specified as follows:<itemizedlist>
+<listitem><para>false: Interrupt status flags are set one system clock cycle after counter = TARGET/ZERO.</para></listitem><listitem><para>true : Interrupt status flags are set one timer clock cycle after counter = TARGET/ZERO.</para></listitem></itemizedlist>
+</para></simplesect>
+Please note that if the value of the intPhaseLate parameter is set to false while the prescalerDiv parameter value is high and either the <ref refid="_g_p_timer_w_f_f3_8h_1a80181e39fff10254403f4a9a290d8df4a2f5aa149678a51f68aad2ce5def289b4" kindref="member">GPTimerWFF3_INT_TGT</ref> or <ref refid="_g_p_timer_w_f_f3_8h_1a80181e39fff10254403f4a9a290d8df4a2415956ff87e2f793d7d9b590c8698b5" kindref="member">GPTimerWFF3_INT_ZERO</ref> interrupts are enabled, these interrupts might occur multiple times back-to-back when the interrupts are first triggered. While the counter is active, the timer will hold the state of the counter for one clock period of the timer clock before the counter gets updated. When the timer clock frequency is configured low by a high prescalerDiv parameter value, this hold time might be longer than it takes for the interrupt service routine to clear the interrupt status. This will cause a new interrupt to be immediatly generated. In order to avoid this situation, the intPhaseLate parameter value needs to be set to true. Then the interrupt will occur one timer clock cycle after the counter has reached the TARGET/ZERO value, meaning that the described hold time is reduced to 0.</para><para><simplesect kind="see"><para><ref refid="_g_p_timer_w_f_f3_8h_1a8f5ae2415fe54f6ad0f6afdc4d490015" kindref="member">GPTimerWFF3_Params_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="109">
+        <label>GPTimerWFF3_HWAttrs</label>
+        <link refid="struct_g_p_timer_w_f_f3___h_w_attrs"/>
+        <childnode refid="110" relation="usage">
+          <edgelabel>channelConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>GPTimerWFF3_ChannelConf</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_conf"/>
+      </node>
+      <node id="108">
+        <label>GPTimerWFF3_ChannelProp</label>
+        <link refid="struct_g_p_timer_w_f_f3___channel_prop"/>
+      </node>
+      <node id="104">
+        <label>GPTimerWFF3_Object</label>
+        <link refid="struct_g_p_timer_w_f_f3___object"/>
+        <childnode refid="105" relation="usage">
+          <edgelabel>postNotify</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>hwi</edgelabel>
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>hwiCallbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>channelProperty</edgelabel>
+        </childnode>
+      </node>
+      <node id="105">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="106">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="102">
+        <label>GPTimerWFF3_Params</label>
+        <link refid="struct_g_p_timer_w_f_f3___params"/>
+        <childnode refid="103" relation="usage">
+          <edgelabel>hwiCallbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>channelProperty</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+      <node id="103">
+        <label>GPTimerWFF3_Config</label>
+        <link refid="struct_g_p_timer_w_f_f3___config"/>
+        <childnode refid="104" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>hwAttrs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="662" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="661" bodyend="680"/>
+    <listofallmembers>
+      <member refid="struct_g_p_timer_w_f_f3___params_1a3866c82f64b82c3e96882647402e56d5" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>channelProperty</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___params_1a89f2ac8ac11f779d067f9c501b46be90" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>counterDirChCompare</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___params_1a34a5650e372791deb2a45d54dbbcb368" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>debugStallMode</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___params_1af9fc7d8c712d5818ac51f775fdfde0d9" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>hwiCallbackFxn</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___params_1a3bbcc8d5b5f01b2db565e269e4129079" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>intPhaseLate</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___params_1abced522f50509653bb0af663b42518df" prot="public" virt="non-virtual"><scope>GPTimerWFF3_Params</scope><name>prescalerDiv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

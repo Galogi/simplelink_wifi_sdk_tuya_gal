@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SimpleLink Wi-Fi Toolbox Startup Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Programmer User Guide" href="programmer_user_guide.html" />
+    <link rel="prev" title="Wi-Fi Toolbox User’s Guide" href="cc33xx-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox simplelink_wifi_toolbox_startup_guide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SimpleLink Wi-Fi Toolbox Startup Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simplelink-wi-fi-toolbox-installation">SimpleLink Wi-Fi Toolbox Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#run-simplelink-wi-fi-toolbox">Run SimpleLink Wi-Fi Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows-1">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu-1">Ubuntu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simplelink-wi-fi-toolbox-intro">SimpleLink Wi-Fi Toolbox Intro</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SimpleLink Wi-Fi Toolbox Startup Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simplelink-wi-fi-toolbox-startup-guide">
+<h1>SimpleLink Wi-Fi Toolbox Startup Guide<a class="headerlink" href="#simplelink-wi-fi-toolbox-startup-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>SimpleLink Wi-Fi Toolbox is a cross-platform software kit, that provides all required tools for fast and easy ramp-up of the CC33XX and CC35XX family of devices. SimpleLink Wi-Fi Toolbox provides as visual control as a command line control of the device.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Windows 10 64Bit</li>
+<li>Ubuntu 20 (or higher) 64 bit</li>
+<li>Latest Chrome Web Browser</li>
+</ul>
+</div>
+<div class="section" id="simplelink-wi-fi-toolbox-installation">
+<h2>SimpleLink Wi-Fi Toolbox Installation<a class="headerlink" href="#simplelink-wi-fi-toolbox-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>Double click on the installer file and follow the setup steps.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is recommended not to change “Installation Directory” from the default of <code class="docutils literal notranslate"><span class="pre">c:\ti\simplelink_wifi_toolbox_x.x.x</span></code></p>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>In some cases, execution permission for the Ubuntu installer is required to be added to the installer. To add such permission open the terminal in the installer file location and type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod +x simplelink_wifi_toolbox_x_x_x.run
+</pre></div>
+</div>
+<p>Execute the installer and follow the setup steps</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./simplelink_wifi_toolbox_x_x_x.run
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is recommended not to change “Installation Directory” from the default of <code class="docutils literal notranslate"><span class="pre">/home/${USER}/ti/simplelink_wifi_toolbox_x.x.x</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="run-simplelink-wi-fi-toolbox">
+<h2>Run SimpleLink Wi-Fi Toolbox<a class="headerlink" href="#run-simplelink-wi-fi-toolbox" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows-1">
+<h3>Windows<a class="headerlink" href="#windows-1" title="Permalink to this headline">¶</a></h3>
+<p>Open Windows File Explorer at <code class="docutils literal notranslate"><span class="pre">c:\ti\simplelink_wifi_toolbox_x.x.x</span></code> and double click on <code class="docutils literal notranslate"><span class="pre">simplelink_wifi_toolbox_x_x_x.exe</span></code>. The terminal will be opened and a couple of seconds after Chrome will be opened on URL <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:7777</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If Chrome isn’t the default browser on your PC we recommend closing opened default browser, opening  Chrome, and typing <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:7777</span></code> in the URL.</p>
+</div>
+</div>
+<div class="section" id="ubuntu-1">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu-1" title="Permalink to this headline">¶</a></h3>
+<p>Open Terminal and navigate into the SimpleLink Wi-Fi Toolbox installation folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/ti/simplelink_wifi_toolbox_x.x.x
+</pre></div>
+</div>
+<p>Execute SimpleLink Wi-Fi Toolbox</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./simplelink-wifi-toolbox
+</pre></div>
+</div>
+<p>After a couple of seconds, the Chrome web browser should open on <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:7777</span></code> in the URL.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If Chrome isn’t the default browser on your PC we recommend closing opened default browser, opening  Chrome, and typing <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:7777</span></code> in the URL.</p>
+</div>
+</div>
+</div>
+<div class="section" id="simplelink-wi-fi-toolbox-intro">
+<h2>SimpleLink Wi-Fi Toolbox Intro<a class="headerlink" href="#simplelink-wi-fi-toolbox-intro" title="Permalink to this headline">¶</a></h2>
+<p>The intro page of the toolbox displays all available tools for the current version.</p>
+<p>For the first time / each new version, a user should get a force to reload message. To continue user should hit the key combination depending on OS / Web Browser. This step will insure that users align to the latest update of the SimpleLink Wi-Fi Toolbox interface (refer to <a class="reference internal" href="#simplelink-wifi-toolbox-force-reload"><span class="std std-numref">Figure 1</span></a>).</p>
+<div class="figure align-center" id="figure-1">
+<span id="simplelink-wifi-toolbox-force-reload"></span><a class="reference internal image-reference" href="../_images/simplelink-wifi-toolbox_force_reload.png"><img alt="simplelink-wifi-toolbox_force_reload" src="../_images/simplelink-wifi-toolbox_force_reload.png" style="width: 960.0px; height: 484.5px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1 </span><span class="caption-text">SimpleLink Wi-Fi Toolbox hard Reload</span></p>
+</div>
+<p>After hitting the key combination for force reloading, a user should see the intro page of the SimpleLink Wi-Fi Toolbox (refer to <a class="reference internal" href="#simplelink-wifi-toolbox-intro"><span class="std std-numref">Figure 2</span></a>).</p>
+<div class="figure align-center" id="figure-2">
+<span id="simplelink-wifi-toolbox-intro"></span><a class="reference internal image-reference" href="../_images/activation-1.png"><img alt="simplelink-wifi-toolbox_intro" src="../_images/activation-1.png" style="width: 956.0px; height: 466.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">SimpleLink Wi-Fi Toolbox intro page</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="programmer_user_guide.html" class="btn btn-neutral float-right" title="Programmer User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc33xx-index.html" class="btn btn-neutral float-left" title="Wi-Fi Toolbox User’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

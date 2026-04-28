@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_i2_c_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>I2CWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_i2_c_8h" local="no">ti/drivers/I2C.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes refid="_swi_p_8h" local="no">ti/drivers/dpl/SwiP.h</includes>
+    <incdepgraph>
+      <node id="191">
+        <label>stdbool.h</label>
+      </node>
+      <node id="190">
+        <label>stdint.h</label>
+      </node>
+      <node id="197">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+      </node>
+      <node id="198">
+        <label>ti/drivers/dpl/SwiP.h</label>
+        <link refid="_swi_p_8h"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>stddef.h</label>
+      </node>
+      <node id="189">
+        <label>I2CWFF3.h</label>
+        <link refid="_i2_c_w_f_f3_8h"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="193">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>ti/drivers/I2C.h</label>
+        <link refid="_i2_c_8h"/>
+      </node>
+      <node id="194">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_i2_c_w_f_f3___h_w_attrs" prot="public">I2CWFF3_HWAttrs</innerclass>
+    <innerclass refid="struct_i2_c_w_f_f3___object" prot="public">I2CWFF3_Object</innerclass>
+    <briefdescription>
+<para>I2C driver implementation for a WiFi F3 device I2C controller. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><heading level="1">Driver Include</heading>
+</para><para>The I2C header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/I2C.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/i2c/I2CWFPF3.h&gt;</highlight></codeline>
+</programlisting></para><para><heading level="1">Overview</heading>
+</para><para>Refer to <ref refid="_i2_c_8h" kindref="compound">I2C.h</ref> for a complete description of APIs.</para><para><heading level="2">General Behavior</heading>
+</para><para>Before using the I2C in WFF3:<itemizedlist>
+<listitem><para>The I2C driver is initialized by calling <ref refid="_i2_c_8h_1a9ff51ddf1d325776fef90cce0223772b" kindref="member">I2C_init()</ref>.</para></listitem><listitem><para>The I2C HW is configured and system dependencies are declared (e.g. IOs, power, etc.) by calling <ref refid="_i2_c_8h_1a2db3461e1e956d9b86af414da2fb05f6" kindref="member">I2C_open()</ref>.</para></listitem></itemizedlist>
+The following is true for receive operation:<itemizedlist>
+<listitem><para>RX is enabled by calling <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref>. The readCount of the <ref refid="struct_i2_c___transaction" kindref="compound">I2C_Transaction</ref> must be set to a non-zero value.</para></listitem><listitem><para>If the <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> succeeds, the I2C remains enabled.</para></listitem><listitem><para>The application must check the return value from <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> to verify that the transfer succeeded.</para></listitem></itemizedlist>
+The following apply for transmit operation:<itemizedlist>
+<listitem><para>TX is enabled by calling <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref>. The writeCount of the <ref refid="struct_i2_c___transaction" kindref="compound">I2C_Transaction</ref> must be set to a non-zero value.</para></listitem><listitem><para>If the <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> succeeds, the I2C remains enabled.</para></listitem><listitem><para>The application must check the return value from <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> to verify that the transfer succeeded.</para></listitem></itemizedlist>
+After I2C operation has ended:<itemizedlist>
+<listitem><para>Release system dependencies for I2C by calling <ref refid="_i2_c_8h_1a12c86d89a687f2ee1eb980d99c32326d" kindref="member">I2C_close()</ref>.</para></listitem></itemizedlist>
+</para><para><heading level="2">Error handling</heading>
+</para><para>If an error occurs during operation:<itemizedlist>
+<listitem><para>The I2C Controller transmits a stop bit and remains enabled.</para></listitem></itemizedlist>
+</para><para><heading level="2">Power Management</heading>
+</para><para>The I2CWFF3 driver sets a power constraint during transactions to keep the device out of sleep; so when all tasks are blocked, the device will enter idle mode instead of sleep. When the transactions have finished, the power constraint to prohibit sleep is released. The following statements are valid:<itemizedlist>
+<listitem><para>After <ref refid="_i2_c_8h_1a2db3461e1e956d9b86af414da2fb05f6" kindref="member">I2C_open()</ref> call: I2C is enabled, there are no active I2C transactions, the device can enter sleep.</para></listitem><listitem><para>After <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> call: active I2C transactions exist, the device might enter idle, but not sleep.</para></listitem><listitem><para>When <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> completes, either after success or error, I2C remains enabled, and the device can enter sleep.</para></listitem><listitem><para>After <ref refid="_i2_c_8h_1a12c86d89a687f2ee1eb980d99c32326d" kindref="member">I2C_close()</ref> call: I2C is disabled</para></listitem></itemizedlist>
+</para><para><heading level="2">Supported Functions</heading>
+</para><para><table rows="9" cols="2"><row>
+<entry thead="yes"><para>Generic API Function </para></entry><entry thead="yes"><para>Description  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1a9ff51ddf1d325776fef90cce0223772b" kindref="member">I2C_init()</ref> </para></entry><entry thead="no"><para>Initialize I2C driver </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1ab11636302074d67180207ab81ceb323c" kindref="member">I2C_Params_init()</ref> </para></entry><entry thead="no"><para>Initialize an <ref refid="struct_i2_c___params" kindref="compound">I2C_Params</ref> structure </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1a2db3461e1e956d9b86af414da2fb05f6" kindref="member">I2C_open()</ref> </para></entry><entry thead="no"><para>Initialize I2C HW and set system dependencies </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1a12c86d89a687f2ee1eb980d99c32326d" kindref="member">I2C_close()</ref> </para></entry><entry thead="no"><para>Disable I2C HW and release system dependencies </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1aa3bcddbe5d03aca5bee0c5f7b3e74399" kindref="member">I2C_setAddressMode()</ref> </para></entry><entry thead="no"><para>Set the address mode to be used in I2C transfers </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> </para></entry><entry thead="no"><para>Start I2C transfer </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1aaee4f0689acbe5f0596e35b18402abf3" kindref="member">I2C_transferTimeout()</ref> </para></entry><entry thead="no"><para>Start I2C transfer with a timeout </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h_1a8cad0c04a9eca0fffc0ffe5586a5179b" kindref="member">I2C_cancel()</ref> </para></entry><entry thead="no"><para>Cancels all I2C transfers </para></entry></row>
+</table>
+<heading level="2">Supported Bit Rates</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="_i2_c_8h_1ac954e3197f04c50293db466c4abb6fbea966fd2df13b3a9825615c50335cf1987" kindref="member">I2C_100kHz</ref></para></listitem><listitem><para><ref refid="_i2_c_8h_1ac954e3197f04c50293db466c4abb6fbea83cc3750242e6ae9194cd7ed94f764d9" kindref="member">I2C_400kHz</ref></para></listitem><listitem><para><ref refid="_i2_c_8h_1ac954e3197f04c50293db466c4abb6fbea38a2e32ba65eb0f67b928d181242befa" kindref="member">I2C_1000kHz</ref></para></listitem></itemizedlist>
+</para><para><heading level="2">Supported Address Modes</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="_i2_c_8h_1aa86181c7a2da2635a9b5fb3cb51432b2a357fdd83f27e2f1bc7d05bed59b704d9" kindref="member">I2C_ADDRESS_MODE_7_BIT</ref></para></listitem><listitem><para><ref refid="_i2_c_8h_1aa86181c7a2da2635a9b5fb3cb51432b2a0c80378115fca30e5a58d5d30bc4d2fc" kindref="member">I2C_ADDRESS_MODE_10_BIT</ref></para></listitem></itemizedlist>
+</para><para><heading level="2">Unsupported Functionality</heading>
+</para><para>The WFF3 I2C driver currently does not support:<itemizedlist>
+<listitem><para>Multi-controller mode</para></listitem><listitem><para>I2C target mode</para></listitem><listitem><para>DMA operation </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>I2CWFF3.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>I2C<sp/>driver<sp/>implementation<sp/>for<sp/>a<sp/>WiFi<sp/>F3<sp/>device<sp/>I2C</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controller.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Driver<sp/>Include<sp/>#</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>I2C<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/I2C.h&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/i2c/I2CWFPF3.h&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Refer<sp/>to<sp/>@ref<sp/>I2C.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>##<sp/>General<sp/>Behavior<sp/>##</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>Before<sp/>using<sp/>the<sp/>I2C<sp/>in<sp/>WFF3:</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>I2C<sp/>driver<sp/>is<sp/>initialized<sp/>by<sp/>calling<sp/>#I2C_init().</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>I2C<sp/>HW<sp/>is<sp/>configured<sp/>and<sp/>system<sp/>dependencies<sp/>are<sp/>declared<sp/>(e.g.<sp/>IOs,</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>power,<sp/>etc.)<sp/>by<sp/>calling<sp/>#I2C_open().</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>The<sp/>following<sp/>is<sp/>true<sp/>for<sp/>receive<sp/>operation:</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>RX<sp/>is<sp/>enabled<sp/>by<sp/>calling<sp/>#I2C_transfer().</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>The<sp/>readCount<sp/>of<sp/>the<sp/>#I2C_Transaction<sp/>must<sp/>be<sp/>set<sp/>to<sp/>a<sp/>non-zero<sp/>value.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>#I2C_transfer()<sp/>succeeds,<sp/>the<sp/>I2C<sp/>remains<sp/>enabled.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>application<sp/>must<sp/>check<sp/>the<sp/>return<sp/>value<sp/>from<sp/>I2C_transfer()</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>to<sp/>verify<sp/>that<sp/>the<sp/>transfer<sp/>succeeded.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>The<sp/>following<sp/>apply<sp/>for<sp/>transmit<sp/>operation:</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>TX<sp/>is<sp/>enabled<sp/>by<sp/>calling<sp/>#I2C_transfer().</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>The<sp/>writeCount<sp/>of<sp/>the<sp/>#I2C_Transaction<sp/>must<sp/>be<sp/>set<sp/>to<sp/>a<sp/>non-zero<sp/>value.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>If<sp/>the<sp/>#I2C_transfer()<sp/>succeeds,<sp/>the<sp/>I2C<sp/>remains<sp/>enabled.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>application<sp/>must<sp/>check<sp/>the<sp/>return<sp/>value<sp/>from<sp/>#I2C_transfer()</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>to<sp/>verify<sp/>that<sp/>the<sp/>transfer<sp/>succeeded.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/>.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>After<sp/>I2C<sp/>operation<sp/>has<sp/>ended:</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Release<sp/>system<sp/>dependencies<sp/>for<sp/>I2C<sp/>by<sp/>calling<sp/>I2C_close().</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>##<sp/>Error<sp/>handling<sp/>##</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>If<sp/>an<sp/>error<sp/>occurs<sp/>during<sp/>operation:</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>I2C<sp/>Controller<sp/>transmits<sp/>a<sp/>stop<sp/>bit<sp/>and<sp/>remains<sp/>enabled.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>##<sp/>Power<sp/>Management<sp/>##</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>I2CWFF3<sp/>driver<sp/>sets<sp/>a<sp/>power<sp/>constraint<sp/>during<sp/>transactions<sp/>to<sp/>keep</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>device<sp/>out<sp/>of<sp/>sleep;<sp/>so<sp/>when<sp/>all<sp/>tasks<sp/>are<sp/>blocked,<sp/>the<sp/>device<sp/>will</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>enter<sp/>idle<sp/>mode<sp/>instead<sp/>of<sp/>sleep.<sp/><sp/>When<sp/>the<sp/>transactions<sp/>have<sp/>finished,</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>power<sp/>constraint<sp/>to<sp/>prohibit<sp/>sleep<sp/>is<sp/>released.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>following<sp/>statements<sp/>are<sp/>valid:</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>After<sp/>I2C_open()<sp/>call:<sp/>I2C<sp/>is<sp/>enabled,<sp/>there<sp/>are<sp/>no<sp/>active<sp/>I2C</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>transactions,<sp/>the<sp/>device<sp/>can<sp/>enter<sp/>sleep.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>After<sp/>I2C_transfer()<sp/>call:<sp/>active<sp/>I2C<sp/>transactions<sp/>exist,<sp/>the<sp/>device</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>might<sp/>enter<sp/>idle,<sp/>but<sp/>not<sp/>sleep.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>When<sp/>I2C_transfer()<sp/>completes,<sp/>either<sp/>after<sp/>success<sp/>or<sp/>error,<sp/>I2C</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>remains<sp/>enabled,<sp/>and<sp/>the<sp/>device<sp/>can<sp/>enter<sp/>sleep.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>After<sp/>I2C_close()<sp/>call:<sp/>I2C<sp/>is<sp/>disabled</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>##<sp/>Supported<sp/>Functions<sp/>##</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>Generic<sp/>API<sp/>Function<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>|------------------------------|---------------------------------------------------|</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>I2C<sp/>driver<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_Params_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>an<sp/>#I2C_Params<sp/>structure<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>I2C<sp/>HW<sp/>and<sp/>set<sp/>system<sp/>dependencies<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Disable<sp/>I2C<sp/>HW<sp/>and<sp/>release<sp/>system<sp/>dependencies<sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_setAddressMode()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Set<sp/>the<sp/>address<sp/>mode<sp/>to<sp/>be<sp/>used<sp/>in<sp/>I2C<sp/>transfers<sp/><sp/>|</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_transfer()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Start<sp/>I2C<sp/>transfer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_transferTimeout()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Start<sp/>I2C<sp/>transfer<sp/>with<sp/>a<sp/>timeout<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#I2C_cancel()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Cancels<sp/>all<sp/>I2C<sp/>transfers<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>##<sp/>Supported<sp/>Bit<sp/>Rates<sp/>##</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#I2C_100kHz</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#I2C_400kHz</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#I2C_1000kHz</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>##<sp/>Supported<sp/>Address<sp/>Modes<sp/>##</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#I2C_ADDRESS_MODE_7_BIT</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#I2C_ADDRESS_MODE_10_BIT</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>##<sp/>Unsupported<sp/>Functionality<sp/>##</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>The<sp/>WFF3<sp/>I2C<sp/>driver<sp/>currently<sp/>does<sp/>not<sp/>support:</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Multi-controller<sp/>mode</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>I2C<sp/>target<sp/>mode</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>DMA<sp/>operation</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_i2c_I2CWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_i2c_I2CWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_i2_c_8h" kindref="compound">ti/drivers/I2C.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_swi_p_8h" kindref="compound">ti/drivers/dpl/SwiP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="struct_i2_c_w_f_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>I2C_BASE_HWATTRS</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>I2C<sp/>peripheral&apos;s<sp/>Power<sp/>driver<sp/>ID<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="struct_i2_c_w_f_f3___h_w_attrs_1a4fc55659a51b3a4dcba6fc04bd4aa412" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1a4fc55659a51b3a4dcba6fc04bd4aa412" kindref="member">powerMngrId</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>I2C<sp/>Swi<sp/>priority.</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/>The<sp/>higher<sp/>the<sp/>number,<sp/>the<sp/>higher<sp/>the<sp/>priority.</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="struct_i2_c_w_f_f3___h_w_attrs_1a46fb05a40e374a01a01ee90c5a243b99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1a46fb05a40e374a01a01ee90c5a243b99" kindref="member">swiPriority</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SDA<sp/>pin<sp/>index<sp/>and<sp/>mux<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="struct_i2_c_w_f_f3___h_w_attrs_1ac8ba6260f01ed7772f080cf289354655" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1ac8ba6260f01ed7772f080cf289354655" kindref="member">sdaPin</ref>;</highlight></codeline>
+<codeline lineno="194" refid="struct_i2_c_w_f_f3___h_w_attrs_1acf0abcf6cd15695c2566b3d7f265dde4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1acf0abcf6cd15695c2566b3d7f265dde4" kindref="member">sdaPinMux</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SCL<sp/>pin<sp/>index<sp/>and<sp/>mux<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="struct_i2_c_w_f_f3___h_w_attrs_1a127acf88df3c7fe97f5e00129885fa51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1a127acf88df3c7fe97f5e00129885fa51" kindref="member">sclPin</ref>;</highlight></codeline>
+<codeline lineno="197" refid="struct_i2_c_w_f_f3___h_w_attrs_1a3ff6a807c0b28723b08eee708be8c285" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs_1a3ff6a807c0b28723b08eee708be8c285" kindref="member">sclPinMux</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}<sp/><ref refid="struct_i2_c_w_f_f3___h_w_attrs" kindref="compound">I2CWFF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="struct_i2_c_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>I2C_BASE_OBJECT</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Swi<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="struct_i2_c_w_f_f3___object_1a59b6482c30dbf808b5a6cece626324d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_swi_p___struct" kindref="compound">SwiP_Struct</ref><sp/><ref refid="struct_i2_c_w_f_f3___object_1a59b6482c30dbf808b5a6cece626324d9" kindref="member">swi</ref>;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bitrate<sp/>of<sp/>the<sp/>I2C<sp/>module<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="struct_i2_c_w_f_f3___object_1aced7787c33c05c92224f60e9ce61793f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_c_8h_1ac954e3197f04c50293db466c4abb6fbe" kindref="member">I2C_BitRate</ref><sp/><ref refid="struct_i2_c_w_f_f3___object_1aced7787c33c05c92224f60e9ce61793f" kindref="member">bitRate</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Address<sp/>mode<sp/>of<sp/>the<sp/>I2C<sp/>module.</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Note,<sp/>this<sp/>is<sp/>the<sp/>driverlib<sp/>definition<sp/>of<sp/>address<sp/>mode<sp/>and<sp/>not<sp/>of<sp/>the<sp/>type</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>I2C_AddressMode.</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="struct_i2_c_w_f_f3___object_1ae87e1f9e95ede4f07eff4dd8f5f62339" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_i2_c_w_f_f3___object_1ae87e1f9e95ede4f07eff4dd8f5f62339" kindref="member">addressMode</ref>;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>I2C<sp/>power<sp/>notification<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="struct_i2_c_w_f_f3___object_1af2a8acdb1f9098f4f35e436b1e4e2d40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_i2_c_w_f_f3___object_1af2a8acdb1f9098f4f35e436b1e4e2d40" kindref="member">i2cPostFxn</ref>;</highlight></codeline>
+<codeline lineno="223" refid="struct_i2_c_w_f_f3___object_1a65c04d9e7b48184b51e05755dc5d0074" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref><sp/><ref refid="struct_i2_c_w_f_f3___object_1a65c04d9e7b48184b51e05755dc5d0074" kindref="member">i2cPostObj</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}<sp/><ref refid="struct_i2_c_w_f_f3___object" kindref="compound">I2CWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_i2c_I2CWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/i2c/I2CWFF3.h"/>
+  </compounddef>
+</doxygen>

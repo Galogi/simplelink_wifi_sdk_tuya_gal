@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t2_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>UART2WFF3_HWAttrs</compoundname>
+    <includes refid="_u_a_r_t2_w_f_f3_8h" local="no">UART2WFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1ae15e3b9c4769a33f4e2e7480f4d7e815" prot="public" static="no" mutable="no">
+        <type>UART2_BASE_HWATTRS uint32_t</type>
+        <definition>UART2_BASE_HWATTRS uint32_t UART2WFF3_HWAttrs::txDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>txDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA TX channel number </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="136" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a98f2ab3cfd56669f1a1804219a77e8e7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UART2WFF3_HWAttrs::rxDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>rxDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA RX channel number </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="137" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1aaf7413d6884a74208158ab5881de41d4" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t UART2WFF3_HWAttrs::txPinMux</definition>
+        <argsstring></argsstring>
+        <name>txPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX PIN mux value </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="138" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a8800ec5cd1d7a9134f7bc31f0e11674b" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t UART2WFF3_HWAttrs::rxPinMux</definition>
+        <argsstring></argsstring>
+        <name>rxPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RX PIN mux value </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="139" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a0e344ed80307b4c0e5e79b71021b482f" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t UART2WFF3_HWAttrs::ctsPinMux</definition>
+        <argsstring></argsstring>
+        <name>ctsPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CTS PIN mux value for flow control </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="140" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a7911402a20234b6125f08c99b02f424b" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t UART2WFF3_HWAttrs::rtsPinMux</definition>
+        <argsstring></argsstring>
+        <name>rtsPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RTS PIN mux value for flow control </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="141" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a31bb89e053b35841ced0904f5356b5e1" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_w_f_f3_8h_1a45223737ade982df1d2ba920fbe8b795" kindref="member">UART2WFF3_CodingScheme</ref></type>
+        <definition>UART2WFF3_CodingScheme UART2WFF3_HWAttrs::codingScheme</definition>
+        <argsstring></argsstring>
+        <name>codingScheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART TXD/RXD encoding/decoding scheme </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="142" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a44525e49b09aaa365a21ee1915acb174" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t UART2WFF3_HWAttrs::irLPClkDivider</definition>
+        <argsstring></argsstring>
+        <name>irLPClkDivider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clock divider for IR Low-Power mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="143" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a13694c320bb3431018cb475f91f7248f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t UART2WFF3_HWAttrs::powerID</definition>
+        <argsstring></argsstring>
+        <name>powerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power driver ID for this UART instance </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="144" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a8a4f1e6eb4205875f41642fd533c43a4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UART2WFF3_HWAttrs::concatenateFIFO</definition>
+        <argsstring></argsstring>
+        <name>concatenateFIFO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Concatenate RX and TX FIFO if write-only </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="145" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UART2WFF3 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>The baseAddr and intNum fields are used by driverlib APIs and therefore must be populated by driverlib macro definitions. These definitions are found under the device family in:<itemizedlist>
+<listitem><para>inc/hw_memmap.h</para></listitem><listitem><para>inc/hw_ints.h</para></listitem><listitem><para>driverlib/uart.h</para></listitem></itemizedlist>
+</para><para>intPriority is the UART peripheral&apos;s interrupt priority. This value is passed unmodified to <ref refid="_hwi_p_8h_1ae273d32875ecb4c74883c2310fd8af91" kindref="member">HwiP_construct()</ref>.</para><para>The WiFi F3 devices use three priority bits. That means ~0 has the same effect as (7 &lt;&lt; 5).</para><para>Setting the priority to 0 is not supported by this driver. HWI&apos;s with priority 0 ignore the HWI dispatcher to support zero-latency interrupts, thus invalidating the critical sections in this driver.</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>UART2WFF3_HWAttrs<sp/>UART2WFF3_hwAttrs[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>UARTLIN0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>INT_SP_UART_0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_GPIO_UART2_0_RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_GPIO_UART2_0_TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ctsPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rtsPin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_INVALID_INDEX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.flowControl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>UART2_FLOWCTRL_NONE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>5,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ctsPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rtsPinMux<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GPIO_MUX_GPIO_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxDmaChannel<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txDmaChannel<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.codingScheme<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>UART2WFF3_CODING_UART,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.concatenateFIFO<sp/><sp/><sp/><sp/>=<sp/>false,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para><para>To enable flow control, the .ctsPin and/or .rtsPin must be assigned. In addition, .flowControl must be set to UART2_FLOWCTRL_HARDWARE. </para>    </detaileddescription>
+    <location file="source/ti/drivers/uart2/UART2WFF3.h" line="134" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="133" bodyend="146"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a31bb89e053b35841ced0904f5356b5e1" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>codingScheme</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a8a4f1e6eb4205875f41642fd533c43a4" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>concatenateFIFO</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a0e344ed80307b4c0e5e79b71021b482f" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>ctsPinMux</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a44525e49b09aaa365a21ee1915acb174" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>irLPClkDivider</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a13694c320bb3431018cb475f91f7248f" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>powerID</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a7911402a20234b6125f08c99b02f424b" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>rtsPinMux</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a98f2ab3cfd56669f1a1804219a77e8e7" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>rxDmaChannel</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1a8800ec5cd1d7a9134f7bc31f0e11674b" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>rxPinMux</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1ae15e3b9c4769a33f4e2e7480f4d7e815" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>txDmaChannel</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___h_w_attrs_1aaf7413d6884a74208158ab5881de41d4" prot="public" virt="non-virtual"><scope>UART2WFF3_HWAttrs</scope><name>txPinMux</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

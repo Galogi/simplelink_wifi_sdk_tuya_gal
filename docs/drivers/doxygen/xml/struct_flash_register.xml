@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_flash_register" kind="struct" language="C++" prot="public">
+    <compoundname>FlashRegister</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_flash_register_1a2904565025582a6850829ca8702496b5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashRegister::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register address for flash operation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="229" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_register_1a599170b6834ee3e4844a4b10ca1dfa4a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashRegister::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data value to write to or read from the register </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="230" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Flash register structure for address-data pairs. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure used to define register address and data value pairs for STIG operations in flash memory. </para>    </detaileddescription>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="228" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="227" bodyend="231"/>
+    <listofallmembers>
+      <member refid="struct_flash_register_1a2904565025582a6850829ca8702496b5" prot="public" virt="non-virtual"><scope>FlashRegister</scope><name>address</name></member>
+      <member refid="struct_flash_register_1a599170b6834ee3e4844a4b10ca1dfa4a" prot="public" virt="non-virtual"><scope>FlashRegister</scope><name>data</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

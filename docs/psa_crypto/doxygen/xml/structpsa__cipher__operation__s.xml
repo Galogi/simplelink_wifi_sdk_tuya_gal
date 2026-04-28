@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__cipher__operation__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_cipher_operation_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a307f82881ac810a78720bbfc38956b9f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_cipher_operation_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique ID indicating which driver got assigned to do the operation. Since driver contexts are driver-specific, swapping drivers halfway through the operation is not supported. ID values are auto-generated in psa_crypto_driver_wrappers.h ID value zero means the context is not valid or not assigned to any driver (i.e. none of the driver contexts are active). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="568" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1ad4a5c7fc38866a853b2d9ec810bfd876" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_cipher_operation_s::iv_required</definition>
+        <argsstring></argsstring>
+        <name>iv_required</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="569" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="569" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a69a7c16d7536be8075127e3309b18aaa" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_cipher_operation_s::iv_set</definition>
+        <argsstring></argsstring>
+        <name>iv_set</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="570" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a5689f211a9c2b3523711132826d60f72" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_cipher_operation_s::is_encrypt</definition>
+        <argsstring></argsstring>
+        <name>is_encrypt</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="571" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a2df486210d5480840a254dc50bba3866" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_cipher_operation_s::in_error_state</definition>
+        <argsstring></argsstring>
+        <name>in_error_state</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="572" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="572" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a924811b565d7cf74d51d91a652e5aa45" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_cipher_operation_s::default_iv_length</definition>
+        <argsstring></argsstring>
+        <name>default_iv_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="573" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1ac7fde08fc06aaef4e6c099413360300d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_cipher_operation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="574" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="574" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a8ff6479fb4da7175392516ace775aee3" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_cipher_operation_s::unprocessed_len</definition>
+        <argsstring></argsstring>
+        <name>unprocessed_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of bytes that have not been processed yet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="577" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1acc612dc4fd0567764ba7b9f62985a88c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t psa_cipher_operation_s::unprocessed_data[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</definition>
+        <argsstring>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</argsstring>
+        <name>unprocessed_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="587" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="587" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1aae652f59f0fa017bdfafbb2ee76cca88" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* psa_cipher_operation_s::curr_unprocessed_data</definition>
+        <argsstring></argsstring>
+        <name>curr_unprocessed_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="591" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="591" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__cipher__operation__s_1a4ad03d71b7f1ffece92ff9ad1bf6e855" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">CryptoKey</ref></type>
+        <definition>CryptoKey psa_cipher_operation_s::cryptoKey</definition>
+        <argsstring></argsstring>
+        <name>cryptoKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="593" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="593" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="8">
+        <label>psa_cipher_operation_s</label>
+        <link refid="structpsa__cipher__operation__s"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>cryptoKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="561" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="560" bodyend="594"/>
+    <listofallmembers>
+      <member refid="structpsa__cipher__operation__s_1ac7fde08fc06aaef4e6c099413360300d" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>alg</name></member>
+      <member refid="structpsa__cipher__operation__s_1a4ad03d71b7f1ffece92ff9ad1bf6e855" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>cryptoKey</name></member>
+      <member refid="structpsa__cipher__operation__s_1aae652f59f0fa017bdfafbb2ee76cca88" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>curr_unprocessed_data</name></member>
+      <member refid="structpsa__cipher__operation__s_1a924811b565d7cf74d51d91a652e5aa45" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>default_iv_length</name></member>
+      <member refid="structpsa__cipher__operation__s_1a307f82881ac810a78720bbfc38956b9f" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>id</name></member>
+      <member refid="structpsa__cipher__operation__s_1a2df486210d5480840a254dc50bba3866" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>in_error_state</name></member>
+      <member refid="structpsa__cipher__operation__s_1a5689f211a9c2b3523711132826d60f72" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>is_encrypt</name></member>
+      <member refid="structpsa__cipher__operation__s_1ad4a5c7fc38866a853b2d9ec810bfd876" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>iv_required</name></member>
+      <member refid="structpsa__cipher__operation__s_1a69a7c16d7536be8075127e3309b18aaa" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>iv_set</name></member>
+      <member refid="structpsa__cipher__operation__s_1acc612dc4fd0567764ba7b9f62985a88c" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>unprocessed_data</name></member>
+      <member refid="structpsa__cipher__operation__s_1a8ff6479fb4da7175392516ace775aee3" prot="public" virt="non-virtual"><scope>psa_cipher_operation_s</scope><name>unprocessed_len</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

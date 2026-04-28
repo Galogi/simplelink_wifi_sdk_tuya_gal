@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>SDWFF3_Object</compoundname>
+    <includes refid="_s_d_w_f_f3_8h" local="no">SDWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1aff3f901f243e7d7fcf4487dc107a350e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the controller is opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="245" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a72cd5fd1451376e26c95cbefd7edab51" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_Object::cardInitiated</definition>
+        <argsstring></argsstring>
+        <name>cardInitiated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the card is initiated </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="248" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a0bc19d87abb40dcfd2c98f49df44bef2" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" kindref="member">SD_CardType</ref></type>
+        <definition>SD_CardType SDWFF3_Object::cardType</definition>
+        <argsstring></argsstring>
+        <name>cardType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type of card </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="251" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1afcc370905b9428374435e8aaa29df52d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_Object::card_inserted</definition>
+        <argsstring></argsstring>
+        <name>card_inserted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>define if the card is connected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="254" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1aedcdc4dd0bfe745551a614f63a45a781" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_Object::write_protected</definition>
+        <argsstring></argsstring>
+        <name>write_protected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>define if the card is write protected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="257" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1ab45849eb1c33a6054f739839c8f456f3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::cid[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>cid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Card identification register </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="260" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1af401763e5e5d272a3d0f659a2a31df02" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::rca</definition>
+        <argsstring></argsstring>
+        <name>rca</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Relative card address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="263" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a449c548acb95f374c6221242d5de1228" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::csd[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>csd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Card specific data </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="266" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a1f76f5ef8db5ea15f8d9508a8eb51d8b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::scr[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>scr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SD configuration register </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="269" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1ada2d7e86bf6cdceb1685f4d96ca041fb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_Object::tranSpeed</definition>
+        <argsstring></argsstring>
+        <name>tranSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transfer speed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="272" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a1b26ae0471c2434a86d72073bc8fde8c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::curBlockSize</definition>
+        <argsstring></argsstring>
+        <name>curBlockSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of bytes to be transferred per block </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="275" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a5a7d28ee96e67db02f04fcb3649d60b9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::maxBlockSize</definition>
+        <argsstring></argsstring>
+        <name>maxBlockSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max Number of bytes to be transferred per block that can be configured </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="278" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a59fb3e9cf1ba8a77f44483aad00124fd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::numSectors</definition>
+        <argsstring></argsstring>
+        <name>numSectors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of sectors - sector = 512B </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="281" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a65616b8f7df31a11d059e7b0bedc4801" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::dataBlockCount</definition>
+        <argsstring></argsstring>
+        <name>dataBlockCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data dec. block counter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="284" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1abc3653f211a561608ab101dd87fe0bb2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_Object::partialBlock</definition>
+        <argsstring></argsstring>
+        <name>partialBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Define if block length can be changed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="287" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a37f6ccfacabe8160154f026c89878c1e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::maxBusWidth</definition>
+        <argsstring></argsstring>
+        <name>maxBusWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Num of data line that the card supported </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="290" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1aca85ccc41188b0b84aa0a43dd278a68c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::clockDiv</definition>
+        <argsstring></argsstring>
+        <name>clockDiv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Variable to divide card clock, based on 40MHz </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="293" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a3552b1814607bfbaf2022c2ce53c2dff" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Object::SDminDmaTransferSize</definition>
+        <argsstring></argsstring>
+        <name>SDminDmaTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA transaction threshold </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="296" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a855f7e3147ffa0b4c8419333612ca1f4" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_w_f_f3_8h_1a9f07f2fb6cbf9a689773d773a309e2bd" kindref="member">SDWFF3_EventCB</ref></type>
+        <definition>SDWFF3_EventCB SDWFF3_Object::SDWFF3_CB_function</definition>
+        <argsstring></argsstring>
+        <name>SDWFF3_CB_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application call-back function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="299" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a211286d6c170674ab86bee4437253091" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_hwi_p___params" kindref="compound">HwiP_Params</ref></type>
+        <definition>HwiP_Params SDWFF3_Object::SDhwiPrms</definition>
+        <argsstring></argsstring>
+        <name>SDhwiPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HWI interrupt params </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="302" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___object_1a35c0e3406cece684bbd335742d871881" prot="public" static="no" mutable="no">
+        <type><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref></type>
+        <definition>HwiP_Struct SDWFF3_Object::SDhwiStruct</definition>
+        <argsstring></argsstring>
+        <name>SDhwiStruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HWI interrupt struct </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="305" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SDWFF3 driver object. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="249">
+        <label>HwiP_Params</label>
+        <link refid="struct_hwi_p___params"/>
+      </node>
+      <node id="247">
+        <label>SDWFF3_Object</label>
+        <link refid="struct_s_d_w_f_f3___object"/>
+        <childnode refid="248" relation="usage">
+          <edgelabel>SDhwiStruct</edgelabel>
+        </childnode>
+        <childnode refid="249" relation="usage">
+          <edgelabel>SDhwiPrms</edgelabel>
+        </childnode>
+      </node>
+      <node id="248">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/sd/SDWFF3.h" line="243" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="242" bodyend="307"/>
+    <listofallmembers>
+      <member refid="struct_s_d_w_f_f3___object_1afcc370905b9428374435e8aaa29df52d" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>card_inserted</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a72cd5fd1451376e26c95cbefd7edab51" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>cardInitiated</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a0bc19d87abb40dcfd2c98f49df44bef2" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>cardType</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1ab45849eb1c33a6054f739839c8f456f3" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>cid</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1aca85ccc41188b0b84aa0a43dd278a68c" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>clockDiv</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a449c548acb95f374c6221242d5de1228" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>csd</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a1b26ae0471c2434a86d72073bc8fde8c" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>curBlockSize</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a65616b8f7df31a11d059e7b0bedc4801" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>dataBlockCount</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1aff3f901f243e7d7fcf4487dc107a350e" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>isOpen</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a5a7d28ee96e67db02f04fcb3649d60b9" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>maxBlockSize</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a37f6ccfacabe8160154f026c89878c1e" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>maxBusWidth</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a59fb3e9cf1ba8a77f44483aad00124fd" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>numSectors</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1abc3653f211a561608ab101dd87fe0bb2" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>partialBlock</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1af401763e5e5d272a3d0f659a2a31df02" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>rca</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a1f76f5ef8db5ea15f8d9508a8eb51d8b" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>scr</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a211286d6c170674ab86bee4437253091" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>SDhwiPrms</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a35c0e3406cece684bbd335742d871881" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>SDhwiStruct</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a3552b1814607bfbaf2022c2ce53c2dff" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>SDminDmaTransferSize</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1a855f7e3147ffa0b4c8419333612ca1f4" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>SDWFF3_CB_function</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1ada2d7e86bf6cdceb1685f4d96ca041fb" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>tranSpeed</name></member>
+      <member refid="struct_s_d_w_f_f3___object_1aedcdc4dd0bfe745551a614f63a45a781" prot="public" virt="non-virtual"><scope>SDWFF3_Object</scope><name>write_protected</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

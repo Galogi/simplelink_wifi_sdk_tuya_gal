@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ALL VERSIONS &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Migration from 9.10.00.01 → 9.13.00.13" href="sdk-9-13-00-13.html" />
+    <link rel="prev" title="SimpleLink Wi-Fi SDK Migration Guide" href="cc35xx-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug migration cc35xx-sdk-migration";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ALL VERSIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk-9-13-00-13.html">Migration from 9.10.00.01 → 9.13.00.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk-9-13-01-04.html">Migration from 9.13.00.13 → 9.13.01.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk-9-20-00-07.html">Migration from 9.13.01.14 → 9.20.00.07</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk-9-21-00-09.html">Migration from 9.20.00.07 → 9.21.00.09</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a> &raquo;</li>
+        
+      <li>ALL VERSIONS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="all-versions">
+<h1>ALL VERSIONS<a class="headerlink" href="#all-versions" title="Permalink to this headline">¶</a></h1>
+<p>For each SDK release, do the following steps to update SDK version on existing projects</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">If you have an already activated device, you will need to perform “Factory Programming” with the toolbox provided in the sdk before being flashing via CCS.</p>
+</div>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+Code Composer Studio</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+Code Composer Studio (12.8 and Older)</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<ol class="arabic">
+<li><p class="first">Open CCS and verify that the latest versions of <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code>, <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wi-Fi</span> <span class="pre">SDK</span></code>, and <code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> are detected as a product</p>
+<p>This can be done by going to <code class="docutils literal notranslate"><span class="pre">File</span></code> → <code class="docutils literal notranslate"><span class="pre">Preferences</span></code> → <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Composer</span> <span class="pre">Studio</span> <span class="pre">Settings</span></code></p>
+<div class="figure align-center" id="figure-1">
+<a class="reference internal image-reference" href="../_images/Theia_CCSSettings.png"><img alt="../_images/Theia_CCSSettings.png" src="../_images/Theia_CCSSettings.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Code Composer Settings</span></p>
+</div>
+<p>Next go into <code class="docutils literal notranslate"><span class="pre">General</span></code> → <code class="docutils literal notranslate"><span class="pre">Products</span></code></p>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/Theia_Products.png"><img alt="../_images/Theia_Products.png" src="../_images/Theia_Products.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Products</span></p>
+</div>
+</li>
+<li><p class="first">Import Project from the new SDK by going to <code class="docutils literal notranslate"><span class="pre">File</span></code> → <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Projects</span></code></p>
+<div class="figure align-center" id="figure-3">
+<a class="reference internal image-reference" href="../_images/Theia_Import1.png"><img alt="../_images/Theia_Import1.png" src="../_images/Theia_Import1.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Import Project</span></p>
+</div>
+<p>Browse for the example</p>
+<div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/Theia_Browse1.png"><img alt="../_images/Theia_Browse1.png" src="../_images/Theia_Browse1.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Browse Examples</span></p>
+</div>
+</li>
+<li><p class="first">Verify <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code>, <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wi-Fi</span> <span class="pre">SDK</span></code>, and <code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> is in the product dependencies.
+Right click on the Project and navigate to <code class="docutils literal notranslate"><span class="pre">Properties</span></code></p>
+<div class="figure align-center" id="figure-5">
+<a class="reference internal image-reference" href="../_images/Theia_Properties1.png"><img alt="../_images/Theia_Properties1.png" src="../_images/Theia_Properties1.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Project Properties</span></p>
+</div>
+<p>In the Project Properties go to <code class="docutils literal notranslate"><span class="pre">General</span></code> → <code class="docutils literal notranslate"><span class="pre">Dependencies</span></code> → <code class="docutils literal notranslate"><span class="pre">Product</span> <span class="pre">Dependencies</span></code></p>
+<div class="figure align-center" id="figure-6">
+<a class="reference internal image-reference" href="../_images/Theia_Dependencies1.png"><img alt="../_images/Theia_Dependencies1.png" src="../_images/Theia_Dependencies1.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Product Dependencies</span></p>
+</div>
+<p>If the <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code> is not in the list. Click on the Plus icon and select the
+<code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code> and latest version.</p>
+<div class="figure align-center" id="figure-7">
+<a class="reference internal image-reference" href="../_images/Theia_AddProduct.png"><img alt="../_images/Theia_AddProduct.png" src="../_images/Theia_AddProduct.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Add Product Reference</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<ol class="arabic">
+<li><p class="first">Open CCS and verify that the latest versions of <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code>, <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wi-Fi</span> <span class="pre">SDK</span></code>, and <code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> are detected as a product</p>
+<blockquote>
+<div><p>This can be done by going to <code class="docutils literal notranslate"><span class="pre">File</span></code> → <code class="docutils literal notranslate"><span class="pre">Preferences</span></code> → <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Composer</span> <span class="pre">Studio</span> <span class="pre">Settings</span></code></p>
+</div></blockquote>
+<div class="figure align-center" id="figure-8">
+<span id="fig-import-1"></span><a class="reference internal image-reference" href="../_images/import-1.png"><img alt="../_images/import-1.png" src="../_images/import-1.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Click on Preferences</span></p>
+</div>
+<div class="figure align-center" id="figure-9">
+<span id="fig-import-2"></span><a class="reference internal image-reference" href="../_images/import-2.png"><img alt="../_images/import-2.png" src="../_images/import-2.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Refresh Products</span></p>
+</div>
+</li>
+<li><p class="first">Import Project from the new SDK by going to <code class="docutils literal notranslate"><span class="pre">File</span></code> → <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Projects</span></code></p>
+<blockquote>
+<div><div class="figure align-center" id="figure-10">
+<span id="fig-import-3"></span><a class="reference internal image-reference" href="../_images/import-3.png"><img alt="../_images/import-3.png" src="../_images/import-3.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Import projects</span></p>
+</div>
+<ul class="simple">
+<li>On pop up dialog select <strong>“Code Composer Studio”</strong> and then <strong>“CCS Project”</strong> and <strong>“Next”</strong>.</li>
+</ul>
+<div class="figure align-center" id="figure-11">
+<span id="fig-import-4"></span><a class="reference internal image-reference" href="../_images/import-4.png"><img alt="../_images/import-4.png" src="../_images/import-4.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">CCS Project</span></p>
+</div>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Click on <strong>“Browse …”</strong> and navigate into examples.</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">SDK_INSTALL_DIR/examples</span></code></dt>
+<dd><ol class="first last arabic">
+<li><code class="docutils literal notranslate"><span class="pre">/rtos/CC35X1_LAUNCHXL</span></code> for driver examples</li>
+<li><code class="docutils literal notranslate"><span class="pre">/CC35xx_network_terminal</span></code> for the WiFi network terminal example</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Click <strong>“Select Folder”</strong> and selected projects should appear in <strong>“Discovered projects”</strong>. Make sure <strong>“Copy projects into workspace”</strong> is checked before clicking <strong>“Finish”</strong>.</li>
+</ul>
+<div class="figure align-center" id="figure-12">
+<span id="fig-import-5"></span><a class="reference internal image-reference" href="../_images/import-5.png"><img alt="../_images/import-5.png" src="../_images/import-5.png" style="width: 35%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Select Project</span></p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Verify <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code>, <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wi-Fi</span> <span class="pre">SDK</span></code>, and <code class="docutils literal notranslate"><span class="pre">SysConfig</span></code> is in the product dependencies.</p>
+</li>
+</ol>
+<p>Right click on the Project and navigate to <code class="docutils literal notranslate"><span class="pre">Properties</span></code></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code> is not in the list. Click on the Plus icon and select the
+<code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">Wifi</span> <span class="pre">Toolbox</span></code> and latest version.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sdk-9-13-00-13.html" class="btn btn-neutral float-right" title="Migration from 9.10.00.01 → 9.13.00.13" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-index.html" class="btn btn-neutral float-left" title="SimpleLink Wi-Fi SDK Migration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

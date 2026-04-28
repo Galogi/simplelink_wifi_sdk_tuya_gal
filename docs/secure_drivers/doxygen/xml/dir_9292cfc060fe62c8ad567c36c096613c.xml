@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_9292cfc060fe62c8ad567c36c096613c" kind="dir">
+    <compoundname>hsm</compoundname>
+    <innerfile refid="_h_s_m_x_x_f3_8h">HSMXXF3.h</innerfile>
+    <innerfile refid="_h_s_m_x_x_f3_utility_8h">HSMXXF3Utility.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/cryptoutils/hsm/"/>
+  </compounddef>
+</doxygen>

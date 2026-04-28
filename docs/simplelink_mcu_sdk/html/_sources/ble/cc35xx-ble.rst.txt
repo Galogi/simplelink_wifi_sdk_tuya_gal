@@ -1,0 +1,22 @@
+.. _sec-ble: 
+
+Bluetooth Low Energy User's Guide
+*********************************
+
+This section describes the BLE operations available on the SimpleLink 
+Wireless MCU family |DEVICE| from a general software developer's point 
+of view. Additional information and resources are also provided for 
+further development.
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /ble/cc35xx-overview
+    /ble/cc35xx-basic-operations
+    /ble/cc35xx-running-ble-provisioning
+    /ble/gap
+    /ble/gatt
+    /ble/phy
+    /ble/hci/hci

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_6601dd3461743fe56a891f5eb3c21f71" kind="dir">
+    <compoundname>flash</compoundname>
+    <innerfile refid="_flash_w_f_f3_8h">FlashWFF3.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/xmem/flash/"/>
+  </compounddef>
+</doxygen>

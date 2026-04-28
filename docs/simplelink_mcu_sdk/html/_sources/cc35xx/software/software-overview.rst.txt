@@ -1,0 +1,88 @@
+.. _sec-cc35xx-sw-overview:
+.. _Activation and Fuses: activation.html
+
+Software Overview
+=================
+
+The |SDK| delivers components that enable engineers to develop applications on
+the Texas Instruments SimpleLink |DEVICE| family of wireless microcontroller
+(MCUs). This powerful software toolkit provides a cohesive and consistent
+software experience for all SimpleLink |DEVICE| wireless MCU users by packaging
+essential software components, such as a Bluetooth\ |reg| Low Energy (Bluetooth 
+LE) protocol stack supporting Bluetooth 5.4, and Wi-Fi 6 networking stack based on
+LwIP (https://savannah.nongnu.org/projects/lwip/), as well as the FreeRTOS kernel and TI
+Drivers in one easy-to-use software package along with example applications and
+exhaustive documentation.
+
+The SimpleLink MCU portfolio offers a single development environment that
+delivers flexible hardware, software and tool options for customers developing
+wired and wireless applications. With 100 percent code reuse across host MCUs,
+Wi-Fi\ |trade|, Bluetooth Low Energy, Sub-1GHz devices and more, choose the MCU
+or connectivity standard that fits your design. A one-time investment with the
+SimpleLink software development kit (SDK) allows you to reuse often, opening the
+door to create unlimited applications. For more information, visit
+`www.ti.com/simplelink
+<http://www.ti.com/simplelink>`_.
+
+
+SDK Components
+--------------
+
+The SDK components are used together to build applications. The SDK components relate to each other as shown in the following diagram.
+
+.. figure:: ../resources/overall_arch.png
+   :align: center
+   :scale: 100 
+
+Starting from the bottom of this architecture diagram, the components are as follows:
+
+- **Hardware Abstraction Layer** (HAL): C functions that abstract writes to hardware registers. This is the layer the drivers and OS kernel use to access hardware features. Certain hardware settings can be configured using the Sysconfig tool.
+- **OS/Kernel** : The kernel provides services such as timing and scheduling of tasks. TI SimpleLink SDKs come with the FreeRTOS kernel. Using a kernel is optional; 
+	- The **Driver Porting Layer** (DPL) abstracts driver interfaces. Drivers use RTOS features such as clocks, interrupts, mutexes, and semaphores. By abstracting this functionality, applications that use TI Drivers can use the FreeRTOS kernel.
+	- The **POSIX** layer abstracts the RTOS kernel functionality used by applications. The POSIX layer allows examples and user applications to be easily ported to use a different kernel. Using this layer is optional.
+* **TI Drivers API**: Exposes functionality of the hardware-specific drivers in the same way across all TI SimpleLink devices. Though the hardware implementation of the UART may be different on different chipsets, the TI Drivers API used to access its common functionality is the same. TI Drivers can be configured manually or using the Sysconfig tool.
+* **Middleware**: Add functionality on top of drivers. Communications stacks and graphics libraries are examples of middleware.
+* **Examples**: The SDK provides a wide range of examples. Their purpose is to make it easy to start writing applications. Each example comes with its own documentation and project files. Examples are provided that use the supported RTOS kernels. For certain SDKs, examples that do not use an RTOS are also provided.
+
+Directory Structure
+^^^^^^^^^^^^^^^^^^^
+The SDK is installed in `/ti` or `c:\ti` by default. This is also the installation location for any plug-ins that are installed alongside the SDK. This is the top-level directory structure of the SDK installation:
+
+.. figure:: ../resources/sdk_file_structure2.png
+   :align: center
+   :scale: 100 
+
+* The "docs" directory contains all the documentation files for the various SDK components.
+* The "examples" directory contains a number of example applications for each supported board.
+* The "kernel" directory contains the files required to use the FreeRTOS kernel. The kernels implement the DPL and POSIX layers, which allow an SDK application to switch between the supported kernels.
+* The "source" directory contains source code, libraries, and linker files used when building applications. This includes files for drivers, boards, devices, middleware, and more. For example, the source code for all the TI Drivers is provided here. See the following figure for more about the contents of this directory tree.
+
+Since the same directory structure is used across the different SDKs in the TI SimpleLink family, it is possible to move application code between the different devices without making significant changes to the file structure or include paths.
+
+The following figure shows a high-level view of the "source" directories that are common to all device types. The SDK provides additional features for specific device families.
+
+.. figure:: ../resources/packageStructure_narrow.png
+   :align: center
+   :scale: 100 
+
+
+The following figure similarly provides an overview of the "examples" directory contents that are common to all device types.
+
+.. figure:: ../resources/examples_structure.png
+   :align: center
+   :scale: 100 
+
+
+Tools and Utilities Included
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The SDK **does not contain** an IDE or code generation tools such as a compiler and linker. You should have one of the supported code generation tool suites available. The supported suites are Code Composer Studio with TI's Code Generation Tools, and the GNU Compiler Collection (gcc).
+
+Some versions of the SDK also offer functionality-specific tools, such as the WiFi Toolbox. 
+
+The CC35xx utilizes the Wi-Fi toolbox to assist in signing images and flashing them into the device, allowing for maximum security and prevention of malicious people from programming the device. 
+To achieve this, customers must "activate" the device, or install a root of trust (and configuring other settings), which will be used to validate any images that are to be programmed to the device. 
+
+For more information read `Activation and Fuses`_
+
+.. include:: ti_drivers.rst
+.. include:: freertos_css.rst

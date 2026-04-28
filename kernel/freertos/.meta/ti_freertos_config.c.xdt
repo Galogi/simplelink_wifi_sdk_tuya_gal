@@ -1,0 +1,259 @@
+%%{
+/*
+ * Copyright (c) 2023-2024, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+ *  ======== FreeRTOS_config.c.xdt ========
+ */
+    let kernel = system.modules["/freertos/FreeRTOS"].$static;
+    let hookModule = system.modules["/freertos/idleHooks"];
+    let exceptionModule = system.modules["/freertos/exception"].$static;
+
+    function getHandlerFxnName(handlerName) {
+        /* If a handler is hidden, it is not supported on this architecture. Use the
+        * configured default handler instead.
+        */
+        if (exceptionModule.$uiState[handlerName].hidden === true) {
+            if (exceptionModule.defaultHandler === "Custom") {
+                return exceptionModule.defaultHandlerCustomFxn;
+            }
+            else {
+                return exceptionModule.defaultHandler;
+            }
+        }
+        else {
+            if (exceptionModule[handlerName] === "Custom") {
+                return exceptionModule[handlerName + "CustomFxn"];
+            }
+            else {
+                return exceptionModule[handlerName];
+            }
+        }
+    }
+%%}
+/*
+ *  ======== ti_freertos_config.c ========
+ *  Configured FreeRTOS module definitions
+ *
+ *  DO NOT EDIT - This file is generated
+ *  by the SysConfig tool.
+ */
+
+#include <stddef.h>
+#include <stdint.h>
+
+#include "FreeRTOSConfig.h"
+
+% if (system.compiler == "gcc") {
+#pragma GCC diagnostic push
+/*
+ * We see two warnings in the GCC code generated when using FreeRTOS + portable implementation.
+ * Here we just disable the specific diagnostics that generate those warnings. Both have been
+ * reviewed in the kernel; it seems the issue is that GCC doesn't understand that semaphores
+ * are very special queues, so tries to evaluate code paths that will never execute
+ */
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#pragma GCC diagnostic ignored "-Wnonnull"
+
+% }
+%
+% /* compute a canonical order for the used modules */
+% let keys = Object.keys(system.modules).sort();
+% /* loop over all modules in the current configuration */
+% for (let i = 0; i < keys.length; i++) {
+%     let mod = system.modules[keys[i]];
+%     /* Find modules that contribute to the FreeRTOS configuration */
+%     if (mod.getCFiles) {
+/* C files contributed by `keys[i]` */
+%         if (mod.getCSrcPrelude) {
+%             let prelude = mod.getCSrcPrelude();
+%             if ((prelude != undefined) && (prelude != "")){
+`prelude`
+
+%             }
+%         }
+%         let files = mod.getCFiles(kernel);
+%         for (let index in files) {
+#include <`files[index]`>
+%         }
+
+%     }
+% }
+%
+% if (system.compiler == "gcc") {
+#pragma GCC diagnostic pop
+% }
+
+/* Wrapper functions for using the queue registry regardless of whether it is enabled or disabled */
+% if (kernel.rovQueueEnabled) {
+void vQueueAddToRegistryWrapper(QueueHandle_t xQueue, const char * pcQueueName)
+{
+    vQueueAddToRegistry(xQueue, pcQueueName);
+}
+
+void vQueueUnregisterQueueWrapper(QueueHandle_t xQueue)
+{
+    vQueueUnregisterQueue(xQueue);
+}
+% }
+% else {
+void vQueueAddToRegistryWrapper(QueueHandle_t xQueue, const char * pcQueueName)
+{
+    /* This function is intentionally left empty as the Queue Registry is disabled */
+}
+
+void vQueueUnregisterQueueWrapper(QueueHandle_t xQueue)
+{
+    /* This function is intentionally left empty as the Queue Registry is disabled */
+}
+% }
+
+% if (hookModule) {
+%     let instances = hookModule.$instances;
+/* Idle hook functions */
+%     for (let i = 0; i < instances.length; i++) {
+%         let inst = instances[i];
+%         if (inst.idleHookFunctionName != ""){
+extern void `inst.idleHookFunctionName`(void);
+%         }
+%     }
+
+void vApplicationIdleHook(void)
+{
+%     for (let i = 0; i < instances.length; i++) {
+%         let inst = instances[i];
+%         if (inst.idleHookFunctionName != ""){
+    `inst.idleHookFunctionName`();
+%         }
+%     }
+}
+% }
+
+% if (exceptionModule) {
+#include <exception/Exception.h>
+
+/* FreeRTOS handlers */
+extern void `getHandlerFxnName("svCallHandler")`(void);
+extern void `getHandlerFxnName("pendSvHandler")`(void);
+extern void `getHandlerFxnName("sysTickHandler")`(void);
+
+/* Custom handler functions */
+% /* Disable eslint for _ variable since SysConfig already imports lodash */
+% /* jslint nomen:true */
+% /* globals _ */
+% _.keys(exceptionModule).filter((key) => exceptionModule[key] === "Custom").forEach((key) => {
+void `exceptionModule[key + "CustomFxn"]`(void);
+% });
+
+% if (system.compiler === "iar") {
+/* The entry point for the application startup code */
+extern void __iar_program_start(void);
+
+/* Linker variable that marks the top of the stack */
+extern const void *STACK_TOP;
+
+/* Place something in the CSTACK segment to get the stack check feature
+ * to work as expected
+ */
+__root static void *dummy_stack @ ".stack";
+
+/* Initial vector table definition */
+__root void (*const __vector_table[])(void) @ ".resetVecs" = {
+    /* The initial stack pointer */
+    (void (*)(void)) & STACK_TOP,
+    /* The reset handler */
+    __iar_program_start,
+% }
+% else if (system.compiler === "ticlang") {
+/* The entry point for the application startup code */
+extern void resetISR(void);
+
+/* Linker variables that marks the top and bottom of the stack */
+extern unsigned long __STACK_END;
+
+/* Initial vector table definition */
+__attribute__((section(".resetVecs"), retain)) void (*const resetVectors[])(void) = {
+    /* The initial stack pointer */
+    (void (*)(void))((unsigned long)&__STACK_END),
+    /* The reset handler */
+    resetISR,
+% }
+% else if (system.compiler === "gcc") {
+/* The entry point for the application startup code */
+extern void resetISR(void);
+
+/* Linker variables that marks the top and bottom of the stack */
+extern void *__stack;
+extern unsigned long _stack_end;
+
+/* Initial vector table definition */
+__attribute__((section(".resetVecs"), used)) void (*const resetVectors[])(void) = {
+    /* The initial stack pointer */
+    (void (*)(void))((uint32_t)&_stack_end),
+    /* The reset handler */
+    resetISR,
+% }
+    /* The NMI handler */
+    `getHandlerFxnName("nmiHandler")`,
+    /* The hard fault handler */
+    `getHandlerFxnName("hardFaultHandler")`,
+    /* The MPU fault handler */
+    `getHandlerFxnName("mpuFaultHandler")`,
+    /* The bus fault handler */
+    `getHandlerFxnName("busFaultHandler")`,
+    /* The usage fault handler */
+    `getHandlerFxnName("usageFaultHandler")`,
+    /* The secure fault handler */
+    `getHandlerFxnName("secureFaultHandler")`,
+    /* Reserved */
+    `getHandlerFxnName("defaultHandler")`,
+    /* Reserved */
+    `getHandlerFxnName("defaultHandler")`,
+    /* Reserved */
+    `getHandlerFxnName("defaultHandler")`,
+    /* SVCall handler */
+    `getHandlerFxnName("svCallHandler")`,
+    /* Debug monitor handler */
+    `getHandlerFxnName("debugMonitorHandler")`,
+    /* Reserved */
+    `getHandlerFxnName("defaultHandler")`,
+    /* The PendSV handler */
+    `getHandlerFxnName("pendSvHandler")`,
+    /* The SysTick handler */
+    `getHandlerFxnName("sysTickHandler")`,
+% for (let i = 0; i < (kernel.interruptCount - 16); i++) {
+    /* Peripheral interrupt */
+    `getHandlerFxnName("defaultHandler")`,
+% }
+};
+% }

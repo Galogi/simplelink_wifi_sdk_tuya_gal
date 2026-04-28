@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>M2-CC33X1 Add-in Card Hardware User’s Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc33xx M2-CC33X1_HW_UserGuide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../WiFi-toolbox/cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WiFi-toolbox/logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../WiFi-toolbox/cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../WiFi-toolbox/cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>M2-CC33X1 Add-in Card Hardware User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="m2-cc33x1-add-in-card-hardware-user-s-guide">
+<h1>M2-CC33X1 Add-in Card Hardware User’s Guide<a class="headerlink" href="#m2-cc33x1-add-in-card-hardware-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="m2-cc33x1-overview-1">
+<span id="m2-cc33x1-overview"></span><h2>M2-CC33X1 Overview<a class="headerlink" href="#m2-cc33x1-overview-1" title="Permalink to this headline">¶</a></h2>
+<p>The SimpleLink ™ CC33XX Wi-Fi 6 and Bluetooth ® Low Energy devices enable affordable, reliable and secure connectivity in embedded applications with a processor host running Linux ® or an MCU host running RTOS. The CC33X1 M.2 card plug-in module is a test and development board that can be easily connected to TI processor boards or other processor boards with an M.2 Key E interface support; thus enabling rapid software development.</p>
+<p>This document is intended to serve as a hardware user’s guide to explain the various hardware configurations and features of the M2-CC3351.  The <a class="reference external" href="../WiFi-toolbox/radio_tool_user_guide.html">CC33XX Radio Tool User’s Guide</a> explains how use Radio Tool for RF evaluation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This guide may refer to a M2-CC33X1 to mention either the M2-CC3301 or M2-CC3351, since both are functionally similar. The M2-CC3351 differs by the addition of Dual-Band (2.4GHz and 5GHz) Wi-Fi 6 feature, as such the CC3351 companion device is populated and pin 38 (RF_A band for 5Ghz) is not grounded.</p>
+<dl class="last docutils">
+<dt><strong>Device Part Numbers</strong></dt>
+<dd><ul class="first last simple">
+<li>CC3300 - 2.4Ghz Wi-Fi 6</li>
+<li>CC3301 - 2.4Ghz Wi-Fi 6 and Bluetooth ® Low Energy</li>
+<li>CC3350 - 2.4/5Ghz (Dual-Band) Wi-Fi 6</li>
+<li>CC3351 - 2.4/5Ghz (Dual-Band) Wi-Fi 6 and Bluetooth ® Low Energy</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="figure align-center" id="figure-1">
+<a class="reference internal image-reference" href="../_images/TopViewM2-CC3351.png"><img alt="M2-CC33X51TopView" src="../_images/TopViewM2-CC3351.png" style="width: 360.0px; height: 490.0px;" /></a>
+<p class="caption"><span class="caption-text">Top View of M2-CC3351 Add-in Card</span></p>
+</div>
+<p>This Add-in card can be easily paired with the following processor boards:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ti.com/tool/SK-AM62B-P1">SK-AM62B-P1</a></li>
+<li><a class="reference external" href="https://www.ti.com/tool/SK-AM62A-LP">SK-AM62A-LP</a></li>
+<li><a class="reference external" href="https://www.ti.com/tool/SK-AM62-LP">SK-AM62-LP</a></li>
+</ul>
+<p>The M2-CC33X1 Add-In Card can also be used with other other processor boards with an M.2 Key E Connector.</p>
+<div class="section" id="m2-cc33x1-system-overview">
+<h3>M2-CC33X1 System Overview<a class="headerlink" href="#m2-cc33x1-system-overview" title="Permalink to this headline">¶</a></h3>
+<p>The M2-CC33X1 is a board designed to enable rapid and easy software and hardware development for the CC33XX device. Other components on the board are only populated for testing and support of this main device. The block diagram for the M2-CC33X1 is shown below.</p>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/M2-CC3351_BlockDiagram.png"><img alt="M2-CC3351_BlockDiagram" src="../_images/M2-CC3351_BlockDiagram.png" style="width: 799.2px; height: 362.7px;" /></a>
+<p class="caption"><span class="caption-text">M2-CC3351 Block diagram</span></p>
+</div>
+<ul class="simple">
+<li>SimpleLink ™ CC3351 Dual-Band (2.4GHz and 5GHz) Wi-Fi 6 and Bluetooth ® Low Energy combo device</li>
+<li>Gold pins for M.2 Type 2230 Key E interface (PCIE standard)</li>
+<li>Onboard chip dual-band antenna</li>
+<li>Optional RF path to U.FL connector for conducted RF testing</li>
+<li>Power from on board LDO (3.3 V to 1.8 V)</li>
+<li>For low power evaluation an optional 32 kHz oscillator may be populated</li>
+<li>Optional alternative paths for nReset and WLAN interrupt line via 0ohm resistors</li>
+</ul>
+</div>
+<div class="section" id="m2-cc33x1-hardware-features-1">
+<span id="m2-cc33x1-hardware-features"></span><h3>M2-CC33X1 Hardware Features<a class="headerlink" href="#m2-cc33x1-hardware-features-1" title="Permalink to this headline">¶</a></h3>
+<p>The figures below show the features on the Top and Bottom side of the M2-CC33X1 Add-in Card features, some of the features highlighted are described below:</p>
+<div class="figure align-center" id="figure-3">
+<span id="m2-cc33x1-hw-features"></span><a class="reference internal image-reference" href="../_images/M2-CC33X1_Features.png"><img alt="M2-CC33X1_Features" src="../_images/M2-CC33X1_Features.png" style="width: 927.0px; height: 387.75px;" /></a>
+<p class="caption"><span class="caption-text">M2-CC33X1 Features</span></p>
+</div>
+<ul class="simple">
+<li>The mounted 0 Ohm resistor can be swapped to a different position to do conducted testing with the connector on board (J1/J2), the default configuration allows use of the onboard chip antenna.</li>
+<li>The board provides a Test Point (LOG) to use the logger output from the device (UART TX debug logger).</li>
+<li>There is footprint for an SMA connector (J2) onboard to replace the onboard UF.L connector (J1) for performing conducted testing measurements with a compatible coaxial cable (refer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">M2-CC33X1_Hardware_MoreFeatures</span></code> ).</li>
+<li>There is an optional placement for a 32.768 kHz oscillator (Y2). The CC33XX has an internal Slow Clock, but the slow clock can be generated externally by an oscillator (Y2) for optimal power consumption.</li>
+<li>The optional 2 pin header (J3) can access or provide the 3.3V power source and the board’s ground.</li>
+<li>The M2-CC33X1 Gold finger Edge connector (J5) follows the PCIE M.2 form factor Type 2230 Key E, as such the board can be compatible with any host that has a 75-position host interface connector for type key E.  Refer to <a class="reference internal" href="#signal-assignment"><span class="std std-ref">Signal Assignment</span></a> for more information on the pin out.</li>
+</ul>
+<div class="figure align-center" id="figure-4">
+<span id="m2-cc33x1-hardware-morefeatures"></span><a class="reference internal image-reference" href="../_images/M2-CC33X1_MoreFeatures.png"><img alt="M2-CC33X1_MoreFeatures" src="../_images/M2-CC33X1_MoreFeatures.png" style="width: 928.5px; height: 387.75px;" /></a>
+<p class="caption"><span class="caption-text">M2-CC33X1 More Features</span></p>
+</div>
+<ul class="simple">
+<li>The onboard LDO (U2) is used to derive 1.8V from the provided 3.3V.</li>
+<li>There is an onboard Level Shifter (U3) to receive only 1.8V for the nRESET Net signal (Active Low).</li>
+<li>Important to note that the “Dual Inverter Buffer with Open-Drain Output” (U4) allows the device to output the interrupt lines (Active Low) and conform to the PCI Express M.2 Specification. Since the component is Open-Drain the host platform must have a 10k pull up, pads have been provided to add the resistor (R11 for IRQ_WL, and R12 for IRQ_BLE) in case that is not true.</li>
+<li>There are resistors to optionally change the pin used for the “HOST_nRESET” and “IRQ_WL_toHost” Net signals (refer to <a class="reference internal" href="#signal-assignment"><span class="std std-ref">Signal Assignment</span></a> ).</li>
+</ul>
+</div>
+<div class="section" id="led-s-on-m2-cc33x1">
+<span id="m2-cc33x1-leds"></span><h3>LED’s on M2-CC33X1<a class="headerlink" href="#led-s-on-m2-cc33x1" title="Permalink to this headline">¶</a></h3>
+<p>The Table below lists the function for the LED’s D1 and D2 seen in <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a></p>
+<table border="1" class="docutils" id="table-1">
+<caption><span class="caption-text">LEDs</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="6%" />
+<col width="10%" />
+<col width="10%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Reference</th>
+<th class="head">Color</th>
+<th class="head">Usage</th>
+<th class="head">Comments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>D1</td>
+<td>Red</td>
+<td>nReset</td>
+<td>The LED indicates the state of the nReset pin. When the LED is on it indicates that the nReset line is high and the device is functional.</td>
+</tr>
+<tr class="row-odd"><td>D2</td>
+<td>Green</td>
+<td>3.3V power</td>
+<td>The Green LED indicates the state of the 3.3v power rail on the device. When D2 is on the power rail is up.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="hardware-setup">
+<span id="m2-cc33x1-hw-setup"></span><h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Permalink to this headline">¶</a></h2>
+<p>The M2-CC33X1 must be inserted on the M.2 Key-E socket of the platform. The figure below shows the Add-in Card inserted in the M.2 Key E socket (J2 on the SK-AM62A-LP).</p>
+<div class="figure align-center" id="m2cc33x1-am62a">
+<a class="reference internal image-reference" href="../_images/SK-AM62A-LP_M2-CC33X1.png"><img alt="M2CC33X1 on SK-AM62A-LP" src="../_images/SK-AM62A-LP_M2-CC33X1.png" style="width: 888.3px; height: 541.0999999999999px;" /></a>
+<p class="caption"><span class="caption-text">Image of M2-CC33X1 on SK-AM62A-LP</span></p>
+</div>
+<div class="section" id="signal-assignment-1">
+<span id="signal-assignment"></span><h3>Signal Assignment<a class="headerlink" href="#signal-assignment-1" title="Permalink to this headline">¶</a></h3>
+<p>The M2-CC33X1 Add-in Card uses the interface signals from the PCIE standard “M.2 Type 2230 Key-E” and has 67 gold pins. The signal assignment for these pins is described in the following tables.</p>
+<span id="j5a-pin-assignment"></span><table border="1" class="docutils" id="table-2">
+<caption><span class="caption-text">Top M.2 Connector Pins (J5A)</span><a class="headerlink" href="#table-2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="5%" />
+<col width="16%" />
+<col width="16%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pins (on J5A)</th>
+<th class="head">M2-CC33X1 Net</th>
+<th class="head">Type/ Direction</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>P1</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground</td>
+</tr>
+<tr class="row-odd"><td>P3</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P5</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P7</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground</td>
+</tr>
+<tr class="row-even"><td>P9</td>
+<td>SDIO_CLK_1V8</td>
+<td>Input</td>
+<td>SDIO clock or SPI clock. Must be driven by host.</td>
+</tr>
+<tr class="row-odd"><td>P11</td>
+<td>SDIO_CMD_1V8</td>
+<td>Input/Output</td>
+<td>SDIO command or SPI PICO.</td>
+</tr>
+<tr class="row-even"><td>P13</td>
+<td>SDIO_D0_1V8</td>
+<td>Input/Output</td>
+<td>SDIO data D0.</td>
+</tr>
+<tr class="row-odd"><td>P15</td>
+<td>SDIO_D1_1V8</td>
+<td>Input/Output</td>
+<td>SDIO data D1.</td>
+</tr>
+<tr class="row-even"><td>P17</td>
+<td>SDIO_D2_1V8</td>
+<td>Input/Output</td>
+<td>SDIO data D2.</td>
+</tr>
+<tr class="row-odd"><td>P19</td>
+<td>SDIO_D3_1V8</td>
+<td>Input/Output</td>
+<td>SDIO data D3.</td>
+</tr>
+<tr class="row-even"><td>P21</td>
+<td>IRQ_WL_1V8_Option1</td>
+<td>Output</td>
+<td>Default pin for Active Low interrupt request signal from CC33X1 to host for Wi-Fi ™ activity. (refer to 0 ohm resistor R7 seen in the <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> section).</td>
+</tr>
+<tr class="row-odd"><td>P23</td>
+<td>nRESET_Option2</td>
+<td>Input</td>
+<td>Alternative pin to HOST_nRESET line for CC33X1. Used to enable/disable (Active Low) from host for Wi-Fi ™ activity. (refer to 0 ohm resistor R9 seen in the <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> section).</td>
+</tr>
+<tr class="row-even"><td>P25-P31</td>
+<td>N/A</td>
+<td>Key E</td>
+<td>Pins reserved for Key E.</td>
+</tr>
+<tr class="row-odd"><td>P33</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-even"><td>P35</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P37</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P39</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-odd"><td>P41</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P43</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P45</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-even"><td>P47</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P49</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P51</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-odd"><td>P53</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P55</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P57</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-even"><td>P59</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P61</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P63</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-odd"><td>P65</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P67</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P69</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+<tr class="row-even"><td>P71</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-odd"><td>P73</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected.</td>
+</tr>
+<tr class="row-even"><td>P75</td>
+<td>GND</td>
+<td>GND</td>
+<td>Board ground.</td>
+</tr>
+</tbody>
+</table>
+<span id="j5b-pin-assignment"></span><table border="1" class="docutils" id="table-3">
+<caption><span class="caption-text">Bottom M.2 Connector Pins (J5B)</span><a class="headerlink" href="#table-3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="5%" />
+<col width="16%" />
+<col width="16%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pins (on J5B)</th>
+<th class="head">M2-CC33X1 Net</th>
+<th class="head">Type/ Direction</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>P2</td>
+<td>3V3</td>
+<td>Input/VCC</td>
+<td>Power provided to the board and LDO</td>
+</tr>
+<tr class="row-odd"><td>P4</td>
+<td>3V3</td>
+<td>Input/VCC</td>
+<td>Power provided to the board and LDO</td>
+</tr>
+<tr class="row-even"><td>P6</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P8</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P10</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P12</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P14</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P16</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P18</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P20</td>
+<td>IRQ_BLE_1V8</td>
+<td>Output</td>
+<td>Pin for Interrupt request from CC33X1 to host for BLE activity.</td>
+</tr>
+<tr class="row-even"><td>P22</td>
+<td>UART_TX</td>
+<td>Output</td>
+<td>The CC33X1 UART TX to host for BLE host controller interface</td>
+</tr>
+<tr class="row-odd"><td>P24-P30</td>
+<td>N/A</td>
+<td>Key E</td>
+<td>Pins reserved for Key E</td>
+</tr>
+<tr class="row-even"><td>P32</td>
+<td>UART_RX</td>
+<td>Input</td>
+<td>The CC33X1 UART RX from host for BLE host controller interface</td>
+</tr>
+<tr class="row-odd"><td>P34</td>
+<td>UART_RTS</td>
+<td>Output</td>
+<td>UART RTS from CC33X1 to host for BLE HCI flow control</td>
+</tr>
+<tr class="row-even"><td>P36</td>
+<td>UART_CTS</td>
+<td>Input</td>
+<td>UART CTS to CC33X1 from host for BLE HCI flow control</td>
+</tr>
+<tr class="row-odd"><td>P38</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P40</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P42</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P44</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P46</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P48</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P50</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P52</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P54</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P56</td>
+<td>nRESET_Option1</td>
+<td>Input</td>
+<td>Default pin to HOST_nRESET line for CC33X1. Used to enable/ disable (Active Low) and Driven by host. (Refer to 0 ohm resistor R8 seen in the <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> section)</td>
+</tr>
+<tr class="row-odd"><td>P58</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P60</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P62</td>
+<td>IRQ_WL_1V8_Option2</td>
+<td>Output</td>
+<td>Alternative pin for Active Low interrupt request signal from CC33X1 to host for Wi-Fi ™ activity. (Refer to 0 ohm resistor R10 seen in the <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> section)</td>
+</tr>
+<tr class="row-even"><td>P64</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P66</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P68</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-odd"><td>P70</td>
+<td>NC</td>
+<td>N/A</td>
+<td>Not connected</td>
+</tr>
+<tr class="row-even"><td>P72</td>
+<td>3V3</td>
+<td>Input/VCC</td>
+<td>Power provided to the board and LDO</td>
+</tr>
+<tr class="row-odd"><td>P74</td>
+<td>3V3</td>
+<td>Input/VCC</td>
+<td>Power provided to the board and LDO</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m2-cc33x1-clocks">
+<span id="m2cc33x1-clocks"></span><h3>M2-CC33X1 Clocks<a class="headerlink" href="#m2-cc33x1-clocks" title="Permalink to this headline">¶</a></h3>
+<p>The M2-CC33X1 is designed for two clock inputs (see <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> ):</p>
+<ul class="simple">
+<li>The Y1 is a 40 MHz crystal for fast clock input</li>
+<li>The optional Y2 is for a 32.768 kHz oscillator for slow clock input</li>
+</ul>
+<blockquote>
+<div>Since the CC33XX already has an internal Slow Clock it is optional to populate the component (Y2). The tradeoff of populating an externally generated oscillator (Y2) is optimal power consumption.</div></blockquote>
+</div>
+<div class="section" id="performing-conducted-testing-on-m2-cc33x1">
+<h3>Performing Conducted Testing on M2-CC33X1<a class="headerlink" href="#performing-conducted-testing-on-m2-cc33x1" title="Permalink to this headline">¶</a></h3>
+<p>As seen in the <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a>, the EVM has an onboard UF.L connector and chip antenna. The UF.L connector (J1) provides a way for performing conducted testing measurements. Alternately, footprint for an SMA connector (J2) is provided onboard to replace the UF.L connector (J1) and provide a way to test in the lab using a compatible cable.</p>
+<p>Rework will be needed before using the connector (J1/J2) for conducted testing. This involves swapping the position of the existing 0 Ohm resistor to lead the transmission line to the desired connection, see Figure below.</p>
+<div class="figure align-center" id="figure-5">
+<span id="m2-cc33x1-rf-paths"></span><a class="reference internal image-reference" href="../_images/M2-CC33X1_RFpaths.png"><img alt="M2-CC33X1_RF_options" src="../_images/M2-CC33X1_RFpaths.png" style="width: 931.2px; height: 220.0px;" /></a>
+<p class="caption"><span class="caption-text">M2-CC33X1 RF paths</span></p>
+</div>
+</div>
+<div class="section" id="using-logger-with-m2-cc33x1">
+<h3>Using Logger with M2-CC33X1<a class="headerlink" href="#using-logger-with-m2-cc33x1" title="Permalink to this headline">¶</a></h3>
+<p>The table below lists the features shown in <a class="reference internal" href="#m2-cc33x1-hardware-features"><span class="std std-ref">M2-CC33X1 Hardware Features</span></a> that are needed to capture logs, refer to <a class="reference external" href="../WiFi-toolbox/logger_user_guide.html">CC33XX Logger User Guide</a> for explanation on using Logger.</p>
+<table border="1" class="docutils" id="table-4">
+<caption><span class="caption-text">Logger</span><a class="headerlink" href="#table-4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="6%" />
+<col width="10%" />
+<col width="10%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Reference</th>
+<th class="head">Pin</th>
+<th class="head">M2-CC33X1 Net Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LOG</td>
+<td>Test Point</td>
+<td>LOGGER_1V8</td>
+<td>The Test point by silkscreen LOG, is directly conected to the device Logger pin. This is the device UART TX debug logger output.</td>
+</tr>
+<tr class="row-odd"><td>2x1 header (J3)</td>
+<td>J3.2</td>
+<td>GND</td>
+<td>Pin 2 on the J3 header is dirrectly connected to the Board Ground. Refer to <a class="reference internal" href="#m2-cc33x1-hardware-morefeatures"><span class="std std-ref">M2-CC33X1 More Features</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

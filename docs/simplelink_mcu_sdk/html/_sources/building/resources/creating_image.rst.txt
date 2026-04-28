@@ -1,0 +1,97 @@
+Creating and Flashing Image
+===========================
+
+Using CCS
+---------
+
+First import a Project by going to `File` |rarr| `Import Projects`
+            
+.. figure:: resources/Theia_Import.png
+    :align: center
+    :width: 45%
+
+    Import Project
+
+Browse for the example
+
+.. figure:: resources/Theia_Browse.png
+    :align: center
+    :width: 45%
+
+    Browse Examples
+
+Make sure to select `workspace` as the `import destination`
+
+Verify the correct version of `SimpleLink Wifi Toolbox`, `Sysconfig`, and `Simplelink_Wifi_SDK` are in the product dependencies. 
+            Right click on the Project and navigate to `Properties`
+
+.. figure:: resources/Theia_Properties.png
+    :align: center
+    :width: 45%
+
+    Project Properties
+
+In the Project Properties go to `General` |rarr| `Dependencies` |rarr| `Product Dependencies`
+
+.. figure:: resources/Theia_Dependencies.png
+    :align: center
+    :width: 45%
+
+    Product Dependencies
+
+Build the Imported Project by right clicking on the project and clicking on `Build Projects`
+
+.. figure:: resources/Theia_Build.png
+    :align: center
+    :width: 45%
+
+    Building Project
+
+Debug the Project by clicking on the debug Icon
+
+.. figure:: resources/Theia_StartDebug.png
+    :align: center
+    :width: 20%
+
+    Start Debug
+
+Then choose the correct project from the drop down list and press the Green play icon
+
+.. figure:: resources/Theia_GreenPlay.png
+    :align: center
+    :width: 45%
+
+    Start debugging instance.
+
+This will begin flashing the device with the image and start the debugger
+
+Using `Simplelink Wifi Toolbox` CLI 
+-----------------------------------
+
+CC35xx images can be created via makefiles and will calling the following scripts found in the 
+`Simplelink Wifi Toolbox`
+
+.. note::
+    Replace paths to location where `Toolbox` and `Syscfg` installations are held
+
+
+The following code will build and sign the programming image with the files created by `Syscfg`
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build programming_image --flash_discovery_config_otfde `SYSCONFIG_TOOL_OUTPUT_DIR`/flash_disc_param_otfde.json --flash_discovery_config_ext_mem `SYSCONFIG_TOOL_OUTPUT_DIR`/external_memory_map.json --flash_discovery_config_xspi `SYSCONFIG_TOOL_OUTPUT_DIR`/flash_disc_param_xspi.json --fuses_programming_instructions `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/activation_and_initial_programming/jsons/ti_debug/fuse_prog_inst_param.json --dir_out_path `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign programming_image --unsign_image `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images/programming_instructions_image.unsign.bin --private_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_privKey.pem --public_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_pubKey.pem
+
+
+The following code will send the CC35xx action requests that will allow programming and debugging the MCU
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type programming --params_json `SYSCONFIG_TOOL_OUTPUT_DIR`/action_params.json --dir_out_path `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images/programming_action_request.unsign.bin --private_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_privKey.pem --public_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_pubKey.pem
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type debug --params_json `SYSCONFIG_TOOL_OUTPUT_DIR`/action_params.json --dir_out_path `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images/debug_action_request.unsign.bin --private_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_privKey.pem --public_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_pubKey.pem
+
+
+The following code will build and sign overall vendor image
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build vendor_image --vendor_out_file ${BuildArtifactFilePath} --dir_out_path `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images 
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign vendor_image --unsign_image `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/programming/images/vendor_image.unsign.bin --private_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_privKey.pem --public_key `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/keys/rootCA_pubKey.pem

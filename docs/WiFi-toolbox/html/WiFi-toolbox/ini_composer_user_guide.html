@@ -1,0 +1,1433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>INI Composer User Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logger User Guide" href="logger_user_guide.html" />
+    <link rel="prev" title="Radio Tool Command Line Interface User’s Guide" href="command_line_interface_basics.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox ini_composer_user_guide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">INI Composer User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-and-generating">Loading and Generating</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generate">Generate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load">Load</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ini-parameter-description">INI Parameter Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>INI Composer User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ini-composer-user-guide">
+<h1>INI Composer User Guide<a class="headerlink" href="#ini-composer-user-guide" title="Permalink to this headline">¶</a></h1>
+<p>The INI Composer tool is used to configure radio frequency parameters and modes
+specific to a CC33xx or CC35xx device. The tool will output either a <code class="docutils literal notranslate"><span class="pre">cc33xx-conf.bin</span></code>
+or a <code class="docutils literal notranslate"><span class="pre">cc35xx-conf.bin</span></code>. The <code class="docutils literal notranslate"><span class="pre">cc33xx-conf.bin</span></code> must be installed on embedded linux filesystems,
+while the <code class="docutils literal notranslate"><span class="pre">cc35xx-conf.bin</span></code> will be used for application development in the <cite>CC35xx SimpleLink WiFi SDK</cite>.
+See the Configuration steps in the documentation of the <cite>CC35xx SimpleLink WiFi SDK</cite> for more details.
+The binaries provided by this tool can also be used in RadioTool for radio testing and certification.</p>
+<div class="section" id="loading-and-generating">
+<h2>Loading and Generating<a class="headerlink" href="#loading-and-generating" title="Permalink to this headline">¶</a></h2>
+<p>The INI Composer tool can be used to both generate and load multiple file types
+with each type serving different purposes.</p>
+<div class="section" id="generate">
+<h3>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Generate</span></code> button is used to create different file types. The options
+are <strong>BIN</strong>, and <strong>TAR</strong>.</p>
+<ul class="simple">
+<li><strong>BIN</strong>: The output is <code class="docutils literal notranslate"><span class="pre">cc3xxx-conf.bin</span></code>. If using a CC33xx with a linux host, the file should be copied to <code class="docutils literal notranslate"><span class="pre">/lib/firmware/ti-connectivity/</span></code>.</li>
+<li><strong>TAR</strong>: An archive file containing the <code class="docutils literal notranslate"><span class="pre">cc33xx-conf.bin</span></code> and
+project settings. Preferred option for saving and loading.</li>
+</ul>
+</div>
+<div class="section" id="load">
+<h3>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h3>
+<p>Multiple file types can be used to change parameters from a previous session.
+After pressing the <code class="docutils literal notranslate"><span class="pre">Load</span></code> button, any one of the input options will populate
+the parameters in the INI Composer. Those options are <strong>BIN</strong>, <strong>TAR</strong>, <strong>CONF KEY</strong>, <strong>CUSTOM</strong>, <strong>DIR</strong>,
+and <strong>DEFAULT</strong>.</p>
+<ul class="simple">
+<li><strong>BIN</strong>: The same BIN file previously generated</li>
+<li><strong>TAR</strong>: The same TAR file previously generated</li>
+<li><strong>CONF KEY</strong>: Token for OTP configuration</li>
+<li><strong>DIR</strong>: A path to the uncompressed cc33conf folder. The path must be entered
+manually. For example, the string <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;user&gt;\Downloads\cc33conf</span></code> must
+be typed into the text box.</li>
+<li><strong>CUSTOM</strong>: Allows user to set the files individually.</li>
+<li><strong>DEFAULT</strong>: The default settings automatically provided by INI Composer</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ini-parameter-description">
+<h2>INI Parameter Description<a class="headerlink" href="#ini-parameter-description" title="Permalink to this headline">¶</a></h2>
+<p>The table below lists the parameters which can be defined in the INI file. All of the values here must be written in hexadecimal format.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+CC33xx</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+CC35xx</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<table border="1" class="docutils" id="table-1">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">INI Parameters</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="58%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuration Domain</th>
+<th class="head">Parameter Name (INI Name)</th>
+<th class="head">Description</th>
+<th class="head">Default Values [Hex]</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CORE</td>
+<td>EnableBle</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables BLE.</div>
+<div class="line">This configuration is only used for CC33x1 devices.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>BleUartBaudRate</td>
+<td><div class="first last line-block">
+<div class="line">Defines the baud rate for the UART interface used by BLE.</div>
+<div class="line"><br /></div>
+<div class="line">Possible values:</div>
+<div class="line">0x2520 (9504)</div>
+<div class="line">0x4800 (18432)</div>
+<div class="line">0x9600 (38400)</div>
+<div class="line">0xE100 (57600)</div>
+<div class="line">0x1C200 (115200)</div>
+<div class="line">0x38400 (230400)</div>
+<div class="line">0x70800 (460800)</div>
+<div class="line">0xE1000 (921600)</div>
+<div class="line">0x2DC6C0 (3000000)</div>
+</div>
+</td>
+<td>0x1C200</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>BleDefaultTxPower</td>
+<td><div class="first last line-block">
+<div class="line">Defines the default BLE TX power in dBm.</div>
+<div class="line"><br /></div>
+<div class="line">Possible values are index values from 0x00 to 0x06 which correlate to a specific power:</div>
+<div class="line">0xec (-20 dBm)</div>
+<div class="line">0xf6 (-10 dBm)</div>
+<div class="line">0xfb (-5 dBm)</div>
+<div class="line">0x00 (0 dBm)</div>
+<div class="line">0x05 (5 dBm)</div>
+<div class="line">0x0a (10 dBm)</div>
+<div class="line">0x14 (20 dBm)</div>
+</div>
+</td>
+<td>0x0a (10 dBm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>EnableUartFlowCtrl</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables flow control on UART interface for BLE.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>ListenInterval</td>
+<td><div class="first last line-block">
+<div class="line">Defines the number of DTIM beacons that the device will wake on in STA role. (NOTE: this configuration is only relevant when WakeUpEvent = 0x2).</div>
+<div class="line"><br /></div>
+<div class="line">Values range from 0x1 to 0xA (DTIM = 1 to DTIM = 10).</div>
+<div class="line"><br /></div>
+<div class="line">Note: set minimum DTIM value when trying to achieve optimal system latency</div>
+</div>
+</td>
+<td>0x2</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>WakeUpEvent</td>
+<td><div class="first last line-block">
+<div class="line">Defines if the device in STA mode wakes up with every beacon, DTIM, or nDTIM from the AP.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Beacon</div>
+<div class="line">0x1 : DTIM</div>
+<div class="line">0x2 : nDTIM (number of DTIMs is defined in INI parameter ListenInterval)</div>
+<div class="line"><br /></div>
+<div class="line">Note: Set configuration to beacon when trying to achieve optimal system latency</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>PowerLimitArray</td>
+<td><div class="first last line-block">
+<div class="line">Defines TX output power limits per WLAN channel.</div>
+<div class="line"><br /></div>
+<div class="line">2.4GHz channels: 1-14 (CH14 values can be configured but operation on CH14 is not supported)</div>
+<div class="line"><br /></div>
+<div class="line">5GHz channels: 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165, 169</div>
+<div class="line"><br /></div>
+<div class="line">Starting with WLAN CH1 (per-channel_power_limit 0), each WLAN channel has 13 individual settings:</div>
+<div class="line">0.      11b</div>
+<div class="line">1.      11g/n/ac</div>
+<div class="line">2.      11axTB [RU position 0]</div>
+<div class="line">3.      11axTB [RU position 1]</div>
+<div class="line">4.      11axTB [RU position 2-6]</div>
+<div class="line">5.      11axTB [RU position 7]</div>
+<div class="line">6.      11axTB [RU position 8]</div>
+<div class="line">7.      11axTB [RU position 9 (37)]</div>
+<div class="line">8.      11axTB [RU position 10-11 (38-39)]</div>
+<div class="line">9.      11axTB [RU position 12 (40)]</div>
+<div class="line">10.     11axTB [RU position 13 (53)]</div>
+<div class="line">11.     11axTB/ER upper [RU position 14 (54)]</div>
+<div class="line">12.     11axTB / ER full / SU / NDP [RU position 15 (61)]</div>
+<div class="line"><br /></div>
+<div class="line">For example, “per_channel_power_limit_0” is the first setting for CH1, “per_channel_power_limit_13” is the first setting for CH2, and so on.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the value of the power limit, take the decimal equivalent of the hex value and divide by 2 (for example “1A” would be 26 in decimal, divided by 2 is 13dBm, which is the set power limit).</div>
+</div>
+</td>
+<td>0x3F (max power)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>InternalSlowClkDrift_WakeupEarlier</td>
+<td><div class="first last line-block">
+<div class="line">Reserved - leave as default value.</div>
+</div>
+</td>
+<td>0x189C (6300 ppm)</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>InternalSlowClkDrift_OpenWindowLonger</td>
+<td><div class="first last line-block">
+<div class="line">Reserved - leave as default value.</div>
+</div>
+</td>
+<td>0x4588 (17800 ppm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>ExtSlowClkDrift_WakeupEarlier</td>
+<td><div class="first last line-block">
+<div class="line">Defines offset (in ppm) for earlier wake up to account for external slow clock drift.</div>
+</div>
+</td>
+<td>0x1F4 (500 ppm)</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>ExtSlowClkDrift_OpenWindowLonger</td>
+<td><div class="first last line-block">
+<div class="line">Defines offset (in ppm) for beacon window to account for external slow clock drift.</div>
+</div>
+</td>
+<td>0x1F4 (500 ppm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>DisableLogger</td>
+<td><div class="first last line-block">
+<div class="line">Used to disable logger prints (all except FW init logs)</div>
+<div class="line"><br /></div>
+<div class="line">0x0: Disable</div>
+<div class="line">0x1: Enable</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>MixedModeSupport</td>
+<td><div class="first last line-block">
+<div class="line">Enables connections to APs using WPA/WPA2 mixed mode configurations</div>
+<div class="line"><br /></div>
+<div class="line">0x1: Enable</div>
+<div class="line">0x2: Disable</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>XTAL_SettlingTime</td>
+<td><div class="first last line-block">
+<div class="line">Convert hex to decimal for value in uS.</div>
+<div class="line"><br /></div>
+<div class="line">Leave as default setting if using TI recommended crystal.</div>
+</div>
+</td>
+<td>6A5 (1701 uS)</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>SlowClk_SampledCycles</td>
+<td><div class="first last line-block">
+<div class="line">Defines the number of Slow CLK cycles to sample for the</div>
+<div class="line">power management and wakeup counter hardware.</div>
+</div>
+</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>MaxRxAmpduLen</td>
+<td><div class="first last line-block">
+<div class="line">Sets the maximum A-MPDU size that the device can receive</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 8K bytes</div>
+<div class="line">0x1: 16K bytes</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>Is_ExtSoC_Connected</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables external coexistence feature.</div>
+<div class="line">Enable if using an external SoC running a compatible protocol.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : No (Disable)</div>
+<div class="line">0x1 : Yes (Enable)</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_grant_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Grant signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active High</div>
+<div class="line">0x1 : Active Low</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_GRANT_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_priority_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Priority signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active Low</div>
+<div class="line">0x1 : Active High</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_PRIORITY_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_request_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Request signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active Low</div>
+<div class="line">0x1 : Active High</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_REQUEST_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_min_grant_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines minimum grant time for external SoC.</div>
+</div>
+</td>
+<td>0x96</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_max_grant_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC.</div>
+</div>
+</td>
+<td>3FFF</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_t2_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines the duration of priority time for external SoC.</div>
+</div>
+</td>
+<td>0x05</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_to_wifi_grant_delay</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC before switching back to internal Wi-Fi.</div>
+</div>
+</td>
+<td>0x1E</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_to_ble_grant_delay</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC before switching back to internal BLE.</div>
+</div>
+</td>
+<td>0x23</td>
+</tr>
+<tr class="row-odd"><td>CORE [IOMUX_CONFIGURATION]</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Used to configure IO pin pull value</div>
+<div class="line"><br /></div>
+<div class="line">0xff: Default - see CC33xx datasheet for default pin configuration</div>
+<div class="line">0x01: Pull up</div>
+<div class="line">0x02: Pull down</div>
+<div class="line">0x03: Pull disable</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0xff</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CORE [ANT_DIVERSITY]</td>
+<td>DefaultAntenna</td>
+<td><div class="first last line-block">
+<div class="line">Defines which default antenna path will be used:</div>
+<div class="line"><br /></div>
+<div class="line">0x0: primary antenna path</div>
+<div class="line">0x1: secondary antenna path</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>CountryCode</td>
+<td><div class="first last line-block">
+<div class="line">World wide country code denoted by two ascii hex letters</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x3030 (‘00’)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">InsertionLoss_2_4GHz</div>
+<div class="line">InsertionLoss_5GHz</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the expected insertion loss of the RF path.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the set value, convert the hex to decimal and divide by 8.</div>
+<div class="line">For example, a setting of “18” in hex would convert to 24 in decimal resulting in a final configuration of 3dB.</div>
+<div class="line"><br /></div>
+<div class="line">Configurable range is from 0dB to 7.875dB</div>
+<div class="line"><br /></div>
+<div class="line">0db to 7.5dB - 0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C, 0x20, 0x24, 0x28, 0x2C, 0x30, 0x34, 0x38, 0x3C</div>
+<div class="line"><br /></div>
+<div class="line">If multiple antennas are used “insertion_loss_2_4GHz_0” sets the value for the primary path and “insertion_loss_2_4GHz_1” sets the value for the secondary path.</div>
+</div>
+</td>
+<td>0x0000</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">AntGain_2_4GHz</div>
+<div class="line">AntGain_5GHz</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the expected gain of the antenna. Note: This parameter does not impact the TX power in any way.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the set value, convert the hex to decimal and divide by 8.</div>
+<div class="line">For example, a setting of “18” in hex would convert to 24 in decimal resulting in a final configuration of 3dB.</div>
+<div class="line"><br /></div>
+<div class="line">Configurable range is from -8dB to 7.875dB</div>
+<div class="line"><br /></div>
+<div class="line">0dB to 7.5dB - 0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C, 0x20, 0x24, 0x28, 0x2C, 0x30, 0x34, 0x38, 0x3C</div>
+<div class="line">-8dB to -0.5dB - 0x40, 0x44, 0x48, 0x4C, 0x50, 0x54, 0x58, 0x5C, 0x60, 0x64, 0x68, 0x6C, 0x70, 0x74, 0x78, 0x7C</div>
+<div class="line"><br /></div>
+<div class="line">If multiple antennas are used “AntGain_2_4GHz_0” sets the value for the primary path and “AntGain_2_4GHz_1” sets the value for the secondary path.</div>
+</div>
+</td>
+<td>0x0000</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">BleChLim1M</div>
+<div class="line">BleChLim2M</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the BLE power limits per channel for each PHY (1mbps &amp; 2mbps)</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the value of the power limit, take the decimal equivalent of the hex value and divide by 2 (for example “1A” would be 26 in decimal, divided by 2 is 13dBm, which is the set power limit).</div>
+</div>
+</td>
+<td>0x2A (max power)</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>OneTimeCalibrationOnly</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables One Time calibration.</div>
+<div class="line"><br /></div>
+<div class="line">Recommended to leave Periodic Calibration enabled.</div>
+<div class="line"><br /></div>
+<div class="line">One time calibration can be used for power-sensitive applications in temperature stable environments.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable (enable Periodic Calibration)</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>IsDiplexerPresent</td>
+<td><div class="first last line-block">
+<div class="line">Used to configure if a diplexer is used in the application to combine 2.4GHz and 5GHz signals.</div>
+<div class="line"><br /></div>
+<div class="line">0x00: Diplexer is not used</div>
+<div class="line">0x01: Diplexer is used</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>NumOfAntennas</td>
+<td><div class="first last line-block">
+<div class="line">Sets the number of antennas used in the application (used for device RX configuration).</div>
+<div class="line"><br /></div>
+<div class="line">0x01: Single antenna</div>
+<div class="line">0x02: Two antennas (used for antenna diversity)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x00</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>RegDomain</td>
+<td><div class="first last line-block">
+<div class="line">Configures the regional channel mapping.</div>
+<div class="line"><br /></div>
+<div class="line">0x00: World wide</div>
+<div class="line">0x01: FCC</div>
+<div class="line">0x02: ETSI</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>TxPsatCompensation_2_4GHz</td>
+<td><div class="first last line-block">
+<div class="line">Can be used to reduce power in the 2.4GHz band by up to 1 dB in designs with excessive power.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 0 dB</div>
+<div class="line">0x1: 0.5 dB</div>
+<div class="line">0x2: 1 dB</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>TxPsatCompensation_5GHz</td>
+<td><div class="first last line-block">
+<div class="line">Can be used to reduce power in the 5GHz band by up to 1 dB in designs with excessive power.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 0 dB</div>
+<div class="line">0x1: 0.5 dB</div>
+<div class="line">0x2: 1 dB</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>Product_type</td>
+<td><div class="first last line-block">
+<div class="line">Used to automatically configure RF parameters based on the following product types:</div>
+<div class="line"><br /></div>
+<div class="line">0: CC33xx IC standalone device</div>
+<div class="line">1: TI CC33xxMOD</div>
+<div class="line"><br /></div>
+<div class="line">USERS OF TI CC33xxMOD MUST SET THIS BIT TO 1.</div>
+</div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>MAC</td>
+<td>PowerSaveScheme</td>
+<td><div class="first last line-block">
+<div class="line">Defines the power management protocol for the device in STA mode.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Legacy power scheme (802.11 standard)</div>
+<div class="line">0x1 : Unscheduled power save delivery (UPSD)</div>
+<div class="line">0x5 : No PSPOLL (NOPSPOLL)</div>
+<div class="line"><br /></div>
+<div class="line">Note: Use 0x0 to optimize latency with the least aggressive power scheme.  Use 0x5 for the most aggressive power save scheme.</div>
+</div>
+</td>
+<td>0x5</td>
+</tr>
+<tr class="row-odd"><td>MAC</td>
+<td>StaPowerSave</td>
+<td><div class="first last line-block">
+<div class="line">Force the power saving scheme to be always active or use the definition in PowerSaveScheme.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: Use behavior defined in PowerSaveScheme</div>
+<div class="line">0x1: Always active</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>MAC</td>
+<td>HE_Enable</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables Wi-Fi 6 (802.11ax) HE functions.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>MAC</td>
+<td>ApMaxNumStations</td>
+<td><div class="first last line-block">
+<div class="line">Defines the max number of stations that the device can connect to in AP mode.</div>
+<div class="line"><br /></div>
+<div class="line">0x4 : 4 stations</div>
+<div class="line">0x10 : 16 stations</div>
+</div>
+</td>
+<td>0x4</td>
+</tr>
+<tr class="row-even"><td>CRC_CONF</td>
+<td>IniCrc</td>
+<td><div class="first last line-block">
+<div class="line">32 bit CRC value over protected INI values</div>
+</div>
+</td>
+<td>0x000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<table border="1" class="docutils" id="table-2">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">INI Parameters</span><a class="headerlink" href="#table-2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="58%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuration Domain</th>
+<th class="head">Parameter Name (INI Name)</th>
+<th class="head">Description</th>
+<th class="head">Default Values [Hex]</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CORE</td>
+<td>EnableBle</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables BLE.</div>
+<div class="line">This configuration is only used for CC33x1 devices.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>BleUartBaudRate</td>
+<td><div class="first last line-block">
+<div class="line">Defines the baud rate for the UART interface used by BLE.</div>
+<div class="line"><br /></div>
+<div class="line">Possible values:</div>
+<div class="line">0x2520 (9504)</div>
+<div class="line">0x4800 (18432)</div>
+<div class="line">0x9600 (38400)</div>
+<div class="line">0xE100 (57600)</div>
+<div class="line">0x1C200 (115200)</div>
+<div class="line">0x38400 (230400)</div>
+<div class="line">0x70800 (460800)</div>
+<div class="line">0xE1000 (921600)</div>
+<div class="line">0x2DC6C0 (3000000)</div>
+</div>
+</td>
+<td>0x1C200</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>BleDefaultTxPower</td>
+<td><div class="first last line-block">
+<div class="line">Defines the default BLE TX power in dBm.</div>
+<div class="line"><br /></div>
+<div class="line">Possible values are index values from 0x00 to 0x06 which correlate to a specific power:</div>
+<div class="line">0xec (-20 dBm)</div>
+<div class="line">0xf6 (-10 dBm)</div>
+<div class="line">0xfb (-5 dBm)</div>
+<div class="line">0x00 (0 dBm)</div>
+<div class="line">0x05 (5 dBm)</div>
+<div class="line">0x0a (10 dBm)</div>
+<div class="line">0x14 (20 dBm)</div>
+</div>
+</td>
+<td>0x0a (10 dBm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>EnableUartFlowCtrl</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables flow control on UART interface for BLE.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>ListenInterval</td>
+<td><div class="first last line-block">
+<div class="line">Defines the number of DTIM beacons that the device will wake on in STA role. (NOTE: this configuration is only relevant when WakeUpEvent = 0x2).</div>
+<div class="line"><br /></div>
+<div class="line">Values range from 0x1 to 0xA (DTIM = 1 to DTIM = 10).</div>
+<div class="line"><br /></div>
+<div class="line">Note: set minimum DTIM value when trying to achieve optimal system latency</div>
+</div>
+</td>
+<td>0x2</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>WakeUpEvent</td>
+<td><div class="first last line-block">
+<div class="line">Defines if the device in STA mode wakes up with every beacon, DTIM, or nDTIM from the AP.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Beacon</div>
+<div class="line">0x1 : DTIM</div>
+<div class="line">0x2 : nDTIM (number of DTIMs is defined in INI parameter ListenInterval)</div>
+<div class="line"><br /></div>
+<div class="line">Note: Set configuration to beacon when trying to achieve optimal system latency</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>PowerLimitArray</td>
+<td><div class="first last line-block">
+<div class="line">Defines TX output power limits per WLAN channel.</div>
+<div class="line"><br /></div>
+<div class="line">2.4GHz channels: 1-14 (CH14 values can be configured but operation on CH14 is not supported)</div>
+<div class="line"><br /></div>
+<div class="line">5GHz channels: 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165, 169</div>
+<div class="line"><br /></div>
+<div class="line">Starting with WLAN CH1 (per-channel_power_limit 0), each WLAN channel has 13 individual settings:</div>
+<div class="line">0.      11b</div>
+<div class="line">1.      11g/n/ac</div>
+<div class="line">2.      11axTB [RU position 0]</div>
+<div class="line">3.      11axTB [RU position 1]</div>
+<div class="line">4.      11axTB [RU position 2-6]</div>
+<div class="line">5.      11axTB [RU position 7]</div>
+<div class="line">6.      11axTB [RU position 8]</div>
+<div class="line">7.      11axTB [RU position 9 (37)]</div>
+<div class="line">8.      11axTB [RU position 10-11 (38-39)]</div>
+<div class="line">9.      11axTB [RU position 12 (40)]</div>
+<div class="line">10.     11axTB [RU position 13 (53)]</div>
+<div class="line">11.     11axTB/ER upper [RU position 14 (54)]</div>
+<div class="line">12.     11axTB / ER full / SU / NDP [RU position 15 (61)]</div>
+<div class="line"><br /></div>
+<div class="line">For example, “per_channel_power_limit_0” is the first setting for CH1, “per_channel_power_limit_13” is the first setting for CH2, and so on.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the value of the power limit, take the decimal equivalent of the hex value and divide by 2 (for example “1A” would be 26 in decimal, divided by 2 is 13dBm, which is the set power limit).</div>
+</div>
+</td>
+<td>0x3F (max power)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>InternalSlowClkDrift_WakeupEarlier</td>
+<td><div class="first last line-block">
+<div class="line">Reserved - leave as default value.</div>
+</div>
+</td>
+<td>0x189C (6300 ppm)</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>InternalSlowClkDrift_OpenWindowLonger</td>
+<td><div class="first last line-block">
+<div class="line">Reserved - leave as default value.</div>
+</div>
+</td>
+<td>0x4588 (17800 ppm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>ExtSlowClkDrift_WakeupEarlier</td>
+<td><div class="first last line-block">
+<div class="line">Defines offset (in ppm) for earlier wake up to account for external slow clock drift.</div>
+</div>
+</td>
+<td>0x1F4 (500 ppm)</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>ExtSlowClkDrift_OpenWindowLonger</td>
+<td><div class="first last line-block">
+<div class="line">Defines offset (in ppm) for beacon window to account for external slow clock drift.</div>
+</div>
+</td>
+<td>0x1F4 (500 ppm)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>DisableLogger</td>
+<td><div class="first last line-block">
+<div class="line">Used to disable logger prints (all except FW init logs)</div>
+<div class="line"><br /></div>
+<div class="line">0x0: Disable</div>
+<div class="line">0x1: Enable</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>SlowClockSource</td>
+<td><div class="first last line-block">
+<div class="line">Select the 32kHz clock source to be internal or external to the cc35xx.</div>
+<div class="line"><br /></div>
+<div class="line">0: Internal Slow Clock</div>
+<div class="line">1: External Slow Clock</div>
+</div>
+</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>MixedModeSupport</td>
+<td><div class="first last line-block">
+<div class="line">Enables connections to APs using WPA/WPA2 mixed mode configurations</div>
+<div class="line"><br /></div>
+<div class="line">0x1: Enable</div>
+<div class="line">0x2: Disable</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>XTAL_SettlingTime</td>
+<td><div class="first last line-block">
+<div class="line">Convert hex to decimal for value in uS.</div>
+<div class="line"><br /></div>
+<div class="line">Leave as default setting if using TI recommended crystal.</div>
+</div>
+</td>
+<td>6A5 (1701 uS)</td>
+</tr>
+<tr class="row-odd"><td>CORE</td>
+<td>SlowClk_SampledCycles</td>
+<td><div class="first last line-block">
+<div class="line">Defines the number of Slow CLK cycles to sample for the</div>
+<div class="line">power management and wakeup counter hardware.</div>
+</div>
+</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>MaxRxAmpduLen</td>
+<td><div class="first last line-block">
+<div class="line">Sets the maximum A-MPDU size that the device can receive</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 8K bytes</div>
+<div class="line">0x1: 16K bytes</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>Is_ExtSoC_Connected</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables external coexistence feature.</div>
+<div class="line">Enable if using an external SoC running a compatible protocol.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : No (Disable)</div>
+<div class="line">0x1 : Yes (Enable)</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_grant_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Grant signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active High</div>
+<div class="line">0x1 : Active Low</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_GRANT_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_priority_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Priority signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active Low</div>
+<div class="line">0x1 : Active High</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_PRIORITY_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_request_polarity</td>
+<td><div class="first last line-block">
+<div class="line">Defines Co-ex Request signal polarity.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Active Low</div>
+<div class="line">0x1 : Active High</div>
+<div class="line"><br /></div>
+<div class="line">NOTE: Based on expected operation from external SoC, make sure the proper pin polarity and pull value are configured (pull value can be set using COEX_REQUEST_pull_val)</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_min_grant_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines minimum grant time for external SoC.</div>
+</div>
+</td>
+<td>0x96</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_max_grant_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC.</div>
+</div>
+</td>
+<td>3FFF</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_t2_time</td>
+<td><div class="first last line-block">
+<div class="line">Defines the duration of priority time for external SoC.</div>
+</div>
+</td>
+<td>0x05</td>
+</tr>
+<tr class="row-even"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_to_wifi_grant_delay</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC before switching back to internal Wi-Fi.</div>
+</div>
+</td>
+<td>0x1E</td>
+</tr>
+<tr class="row-odd"><td>CORE [COEX_CONFIGURATION]</td>
+<td>ExtSoC_to_ble_grant_delay</td>
+<td><div class="first last line-block">
+<div class="line">Defines maximum grant time for external SoC before switching back to internal BLE.</div>
+</div>
+</td>
+<td>0x23</td>
+</tr>
+<tr class="row-even"><td>CORE [IOMUX_CONFIGURATION]</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Used to configure IO pin pull value</div>
+<div class="line"><br /></div>
+<div class="line">0xff: Default - see CC33xx datasheet for default pin configuration</div>
+<div class="line">0x01: Pull up</div>
+<div class="line">0x02: Pull down</div>
+<div class="line">0x03: Pull disable</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0xff</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>CORE [ANT_DIVERSITY]</td>
+<td>DefaultAntenna</td>
+<td><div class="first last line-block">
+<div class="line">Defines which default antenna path will be used:</div>
+<div class="line"><br /></div>
+<div class="line">0x0: primary antenna path</div>
+<div class="line">0x1: secondary antenna path</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>CORE</td>
+<td>CountryCode</td>
+<td><div class="first last line-block">
+<div class="line">World wide country code denoted by two ascii hex letters</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x3030 (‘00’)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">InsertionLoss_2_4GHz</div>
+<div class="line">InsertionLoss_5GHz</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the expected insertion loss of the RF path.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the set value, convert the hex to decimal and divide by 8.</div>
+<div class="line">For example, a setting of “18” in hex would convert to 24 in decimal resulting in a final configuration of 3dB.</div>
+<div class="line"><br /></div>
+<div class="line">Configurable range is from 0dB to 7.875dB</div>
+<div class="line"><br /></div>
+<div class="line">0db to 7.5dB - 0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C, 0x20, 0x24, 0x28, 0x2C, 0x30, 0x34, 0x38, 0x3C</div>
+<div class="line"><br /></div>
+<div class="line">If multiple antennas are used “insertion_loss_2_4GHz_0” sets the value for the primary path and “insertion_loss_2_4GHz_1” sets the value for the secondary path.</div>
+</div>
+</td>
+<td>0x0000</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">AntGain_2_4GHz</div>
+<div class="line">AntGain_5GHz</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the expected gain of the antenna. Note: This parameter does not impact the TX power in any way.</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the set value, convert the hex to decimal and divide by 8.</div>
+<div class="line">For example, a setting of “18” in hex would convert to 24 in decimal resulting in a final configuration of 3dB.</div>
+<div class="line"><br /></div>
+<div class="line">Configurable range is from -8dB to 7.875dB</div>
+<div class="line"><br /></div>
+<div class="line">0dB to 7.5dB - 0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C, 0x20, 0x24, 0x28, 0x2C, 0x30, 0x34, 0x38, 0x3C</div>
+<div class="line">-8dB to -0.5dB - 0x40, 0x44, 0x48, 0x4C, 0x50, 0x54, 0x58, 0x5C, 0x60, 0x64, 0x68, 0x6C, 0x70, 0x74, 0x78, 0x7C</div>
+<div class="line"><br /></div>
+<div class="line">If multiple antennas are used “AntGain_2_4GHz_0” sets the value for the primary path and “AntGain_2_4GHz_1” sets the value for the secondary path.</div>
+</div>
+</td>
+<td>0x0000</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td><div class="first last line-block">
+<div class="line">BleChLim1M</div>
+<div class="line">BleChLim2M</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Defines the BLE power limits per channel for each PHY (1mbps &amp; 2mbps)</div>
+<div class="line"><br /></div>
+<div class="line">To calculate the value of the power limit, take the decimal equivalent of the hex value and divide by 2 (for example “1A” would be 26 in decimal, divided by 2 is 13dBm, which is the set power limit).</div>
+</div>
+</td>
+<td>0x2A (max power)</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>OneTimeCalibrationOnly</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables One Time calibration.</div>
+<div class="line"><br /></div>
+<div class="line">Recommended to leave Periodic Calibration enabled.</div>
+<div class="line"><br /></div>
+<div class="line">One time calibration can be used for power-sensitive applications in temperature stable environments.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable (enable Periodic Calibration)</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>IsDiplexerPresent</td>
+<td><div class="first last line-block">
+<div class="line">Used to configure if a diplexer is used in the application to combine 2.4GHz and 5GHz signals.</div>
+<div class="line"><br /></div>
+<div class="line">0x00: Diplexer is not used</div>
+<div class="line">0x01: Diplexer is used</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>NumOfAntennas</td>
+<td><div class="first last line-block">
+<div class="line">Sets the number of antennas used in the application (used for device RX configuration).</div>
+<div class="line"><br /></div>
+<div class="line">0x01: Single antenna</div>
+<div class="line">0x02: Two antennas (used for antenna diversity)</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x00</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>RegDomain</td>
+<td><div class="first last line-block">
+<div class="line">Configures the regional channel mapping.</div>
+<div class="line"><br /></div>
+<div class="line">0x00: World wide</div>
+<div class="line">0x01: FCC</div>
+<div class="line">0x02: ETSI</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">0x1</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>PHY</td>
+<td>TxPsatCompensation_2_4GHz</td>
+<td><div class="first last line-block">
+<div class="line">Can be used to reduce power in the 2.4GHz band by up to 1 dB in designs with excessive power.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 0 dB</div>
+<div class="line">0x1: 0.5 dB</div>
+<div class="line">0x2: 1 dB</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-odd"><td>PHY</td>
+<td>TxPsatCompensation_5GHz</td>
+<td><div class="first last line-block">
+<div class="line">Can be used to reduce power in the 5GHz band by up to 1 dB in designs with excessive power.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: 0 dB</div>
+<div class="line">0x1: 0.5 dB</div>
+<div class="line">0x2: 1 dB</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>MAC</td>
+<td>PowerSaveScheme</td>
+<td><div class="first last line-block">
+<div class="line">Defines the power management protocol for the device in STA mode.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Legacy power scheme (802.11 standard)</div>
+<div class="line">0x1 : Unscheduled power save delivery (UPSD)</div>
+<div class="line">0x5 : No PSPOLL (NOPSPOLL)</div>
+<div class="line"><br /></div>
+<div class="line">Note: Use 0x0 to optimize latency with the least aggressive power scheme.  Use 0x5 for the most aggressive power save scheme.</div>
+</div>
+</td>
+<td>0x5</td>
+</tr>
+<tr class="row-odd"><td>MAC</td>
+<td>StaPowerSave</td>
+<td><div class="first last line-block">
+<div class="line">Force the power saving scheme to be always active or use the definition in PowerSaveScheme.</div>
+<div class="line"><br /></div>
+<div class="line">0x0: Use behavior defined in PowerSaveScheme</div>
+<div class="line">0x1: Always active</div>
+</div>
+</td>
+<td>0x0</td>
+</tr>
+<tr class="row-even"><td>MAC</td>
+<td>HE_Enable</td>
+<td><div class="first last line-block">
+<div class="line">Enables or disables Wi-Fi 6 (802.11ax) HE functions.</div>
+<div class="line"><br /></div>
+<div class="line">0x0 : Disable</div>
+<div class="line">0x1 : Enable</div>
+</div>
+</td>
+<td>0x1</td>
+</tr>
+<tr class="row-odd"><td>MAC</td>
+<td>ApMaxNumStations</td>
+<td><div class="first last line-block">
+<div class="line">Defines the max number of stations that the device can connect to in AP mode.</div>
+<div class="line"><br /></div>
+<div class="line">0x4 : 4 stations</div>
+<div class="line">0x10 : 16 stations</div>
+</div>
+</td>
+<td>0x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="logger_user_guide.html" class="btn btn-neutral float-right" title="Logger User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="command_line_interface_basics.html" class="btn btn-neutral float-left" title="Radio Tool Command Line Interface User’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

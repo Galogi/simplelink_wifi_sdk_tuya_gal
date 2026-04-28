@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Peer to Peer &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power Management" href="cc35xx-power-management.html" />
+    <link rel="prev" title="Throughput Testing Guide" href="cc35xx-throughput-test.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug wifi cc35xx-p2p";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-wifi.html">Wi-Fi User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview &amp; Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html#get-and-set">GET and SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-http.html">HTTP Client and Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sockets.html">Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-network-addresses.html">Network Address - Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-sntp.html">SNTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-throughput-test.html">Throughput Testing Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Peer to Peer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminology">Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#p2p-device">P2P Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#p2p-group-owner-role">P2P Group Owner role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#p2p-client-role">P2P Client role</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#procedures">Procedures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#p2p-discovery">P2P Discovery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#p2p-go-negotiation">P2P GO Negotiation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wps-provisioning">WPS Provisioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#application-flow-example">Application Flow example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-power-management.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-wifi.html">Wi-Fi User’s Guide</a> &raquo;</li>
+        
+      <li>Peer to Peer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="peer-to-peer">
+<span id="sec-wifi-p2p"></span><h1>Peer to Peer<a class="headerlink" href="#peer-to-peer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>CC35xx Simplelink Wi-Fi family of devices supports P2P which is peer-to-peer connection. It is also referred to as Wi-Fi Direct
+and generally it is a decentralized communication where two or more parties interact directly with each other.
+The purpose of this section is to familiarize users with Wi-Fi Direct in general and the relevant procedure in particular.
+The set of p2p APIs available to the application are covered under the Basic Operations section.</p>
+</div>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>P2P</strong> – Peer to Peer or WiFi Direct</li>
+<li><strong>P2P Device</strong> – WiFi Direct device that manages P2P negotiation and capable of acting as both P2P GO and P2P Client</li>
+<li><strong>P2P GO</strong> – P2P Group Owner, an AP like entity</li>
+<li><strong>P2P Client</strong> – a Client that is connected to P2P Group Owner</li>
+<li><strong>P2P Group</strong> – a set of devices consisting of one P2P Group Owner and zero  or more Clients</li>
+<li><strong>Social Channels</strong> - subset of commonly available channels in the 2.4 GHz band (channels 1, 6, and 11)</li>
+<li><strong>Operating Channel</strong> – the channel on which P2P Group is operating</li>
+<li><strong>WSC</strong> - Wi-Fi Simple Configuration which is commonly associated with Wi-Fi Protected Setup (WPS)</li>
+</ul>
+<p>The P2P architecture consists of components that interact to support device-to-device communication.</p>
+<div class="section" id="p2p-device">
+<h3>P2P Device<a class="headerlink" href="#p2p-device" title="Permalink to this headline">¶</a></h3>
+<p>Supports both P2P Group Owner and P2P Client roles.
+Negotiates P2P Group Owner or P2P Client role. Supports WSC and P2P Discovery mechanism.
+May support WLAN and P2P concurrent operation.</p>
+</div>
+<div class="section" id="p2p-group-owner-role">
+<h3>P2P Group Owner role<a class="headerlink" href="#p2p-group-owner-role" title="Permalink to this headline">¶</a></h3>
+<p>“AP-like” entity that provides BSS functionality and services for associated Clients (P2P Clients or Legacy Clients).
+Provides WSC Internal Registrar functionality.
+May provide communication between associated Clients.
+May provide access to a simultaneous WLAN connection for its associated Clients.</p>
+</div>
+<div class="section" id="p2p-client-role">
+<h3>P2P Client role<a class="headerlink" href="#p2p-client-role" title="Permalink to this headline">¶</a></h3>
+<p>Implements non-AP STA functionality.
+Provides WSC Enrollee functionality.</p>
+</div>
+</div>
+<div class="section" id="procedures">
+<h2>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
+<p>P2P connection has to go through the following phases to form a Group:</p>
+<ol class="arabic simple">
+<li>P2P Device Discovery</li>
+<li>P2P GO Negotiation</li>
+<li>WPS Provisioning</li>
+<li>Address config</li>
+</ol>
+<p>Once Group is formatted, one device becomes AP-like (Group Owner) while the other becomes STA-like (P2P Client).</p>
+<p>The following figure illustrates the different phases.</p>
+<div class="figure align-center" id="p2p-phases">
+<img alt="../_images/p2p_phases.png" src="../_images/p2p_phases.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">P2P phases</span></p>
+</div>
+<div class="section" id="p2p-discovery">
+<h3>P2P Discovery<a class="headerlink" href="#p2p-discovery" title="Permalink to this headline">¶</a></h3>
+<p>P2P Discovery provides a set of actions to allow one device to find another, through <strong>Search</strong> and <strong>Listen</strong> Phases.
+During <strong>Find</strong> phase, a device would start scanning the social channels, active or passive.
+During <strong>Listen</strong> phase, a device would open its receiver on the listen channel.
+Since each device goes through both phases of <strong>Search</strong> and <strong>Listen</strong>, statistically it would get correlated at some point and hence find each other.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">During this phase, Probe Request frames from both devices should include two Information Elements (IEs), WPS IE and Wi-Fi Direct IE.</p>
+</div>
+</div>
+<div class="section" id="p2p-go-negotiation">
+<h3>P2P GO Negotiation<a class="headerlink" href="#p2p-go-negotiation" title="Permalink to this headline">¶</a></h3>
+<p>This is a 3-way frame exchange used to agree which of the devices will become P2P Group Owner.
+Both devices send their Intent value (0 – 15) in negotiation frames (via Wi-Fi management Action frames). Device with the highest intent value will become the P2P Group Owner.
+The Group channel is included as an attribute in the Wi-Fi Direct IE.</p>
+</div>
+<div class="section" id="wps-provisioning">
+<h3>WPS Provisioning<a class="headerlink" href="#wps-provisioning" title="Permalink to this headline">¶</a></h3>
+<p>After the negotiation is done, a P2P group is formed.
+The P2P Device selected as a P2P GO starts sending beacons using the operation channel indicated during Negotiation.
+P2P Client shall connect in two phases, WPS and then regular 4-way handshake.
+WPS (Wi-Fi Protected Setup) establishes a secure connection between devices without requiring the user to enter a password. Same as a regular WPS Connection.
+The P2P GO provides a WSC internal registrar functionality whereas the P2P Client provides a WSC Enrollee functionality.
+The supported methods are push button (PBC), PIN keypad and PIN display.</p>
+</div>
+</div>
+<div class="section" id="application-flow-example">
+<h2>Application Flow example<a class="headerlink" href="#application-flow-example" title="Permalink to this headline">¶</a></h2>
+<p>To demonstrates how to make a p2p connection using the existing cc35xx SDK, it is best to use the existing commands in <em>network_terminal</em> example.
+For the test, any device that supports p2p can be used. For this guide, an Asus tablet is used.</p>
+<ol class="arabic simple">
+<li><em>wlan_start</em> - starting the device by downloading the containers to the Wi-Fi MAC processor.</li>
+<li><em>p2p_role_up</em> - starting in station role in default configuration if no parameters are provided.</li>
+<li><em>p2p_set_channel</em> - setting p2p configuration. For example, to set the operating channel and class to 1 and 81 repectively, the listen channel and class to 6 and 81 respectively, and the P2P GO intent value to0:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>p2p_set_channel -c <span class="m">1</span> -o <span class="m">81</span> -s <span class="m">6</span> -m <span class="m">81</span> -i <span class="m">0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><em>p2p_find</em> - cc35xx goes into p2p negotiation phase (interlacing Search and Listen). For example, to scan up to 10 devices with the previous parameters where cc35xx listen on channel 6 and search on channels 1, 6 and 11:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>p2p_find -n <span class="m">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><em>p2p_connect</em> - actual connection to the peer device after the desired peer device appear in the scanned list. For example, assuming peer device with MAC address of 00:11:22:33:44:55 appears in the list, and a push button method is desired:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>p2p_connect -m <span class="m">00</span>:11:22:33:44:55 -w <span class="m">0</span> -p <span class="m">0</span>
+</pre></div>
+</div>
+<p>The expected events are triggered back to the application through an event callback registration.
+If already connected, first a <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_DISCONNECT</span></code> event would be triggered.
+Then, <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_CONNECTING</span></code>, <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_ASSOCIATED</span></code> and <code class="docutils literal notranslate"><span class="pre">WLAN_EVENT_P2P_GROUP_STARTED</span></code> events should get triggered.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cc35xx-power-management.html" class="btn btn-neutral float-right" title="Power Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-throughput-test.html" class="btn btn-neutral float-left" title="Throughput Testing Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="ti__psa__crypto__hash_8h" kind="file" language="C++">
+    <compoundname>ti_psa_crypto_hash.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">third_party/mbedtls/include/psa/crypto.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes refid="_s_h_a2_8h" local="no">ti/drivers/SHA2.h</includes>
+    <includes refid="_s_h_a2_x_x_f3_h_s_m_8h" local="no">ti/drivers/sha2/SHA2XXF3HSM.h</includes>
+    <includes local="no">ti/drivers/sha2/SHA2CC26X2.h</includes>
+    <incdepgraph>
+      <node id="442">
+        <label>stdbool.h</label>
+      </node>
+      <node id="441">
+        <label>ti/drivers/SHA2.h</label>
+        <link refid="_s_h_a2_8h"/>
+        <childnode refid="442" relation="include">
+        </childnode>
+        <childnode refid="437" relation="include">
+        </childnode>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="443" relation="include">
+        </childnode>
+      </node>
+      <node id="438">
+        <label>stdint.h</label>
+      </node>
+      <node id="445">
+        <label>ti/drivers/sha2/SHA2CC26X2.h</label>
+      </node>
+      <node id="439">
+        <label>third_party/mbedtls/include/psa/crypto.h</label>
+      </node>
+      <node id="437">
+        <label>stddef.h</label>
+      </node>
+      <node id="444">
+        <label>ti/drivers/sha2/SHA2XXF3HSM.h</label>
+        <link refid="_s_h_a2_x_x_f3_h_s_m_8h"/>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+        <childnode refid="441" relation="include">
+        </childnode>
+        <childnode refid="440" relation="include">
+        </childnode>
+      </node>
+      <node id="440">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="436">
+        <label>ti_psa_crypto_hash.h</label>
+        <link refid="ti__psa__crypto__hash_8h"/>
+        <childnode refid="437" relation="include">
+        </childnode>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="439" relation="include">
+        </childnode>
+        <childnode refid="440" relation="include">
+        </childnode>
+        <childnode refid="441" relation="include">
+        </childnode>
+        <childnode refid="444" relation="include">
+        </childnode>
+        <childnode refid="445" relation="include">
+        </childnode>
+      </node>
+      <node id="443">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structti__psa__hash__operation__s" prot="public">ti_psa_hash_operation_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ti__psa__crypto__hash_8h_1abc6c2b27e7b2c1bd3ec92c6c09ae543e" prot="public" static="no">
+        <name>PSA_HASH_SUSPEND_INPUT_LENGTH_FIELD_LENGTH</name>
+        <param><defname>alg</defname></param>
+        <initializer>(((alg == PSA_ALG_SHA_224) || (alg == PSA_ALG_SHA_256))   ? 8u  \
+     : ((alg == PSA_ALG_SHA_384) || (alg == PSA_ALG_SHA_512)) ? 16u \
+                                                              : 0u)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of bytes of the input length field for a SHA2 alg. Returns zero if the alg is not SHA2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="46" column="9" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ti__psa__crypto__hash_8h_1a3401abd7592898fa651d1a250d362c82" prot="public" static="no">
+        <name>PSA_HASH_SUSPEND_HASH_STATE_FIELD_LENGTH</name>
+        <param><defname>alg</defname></param>
+        <initializer>(((alg == PSA_ALG_SHA_224) || (alg == PSA_ALG_SHA_256))   ? 32u \
+     : ((alg == PSA_ALG_SHA_384) || (alg == PSA_ALG_SHA_512)) ? 64u \
+                                                              : 0u)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of bytes of the hash suspend state field for a SHA2 alg. Returns zero if the alg is not SHA2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="55" column="9" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ti__psa__crypto__hash_8h_1abe80175ed22351237faccc8f34ee2116" prot="public" static="no">
+        <name>TI_PSA_HASH_OPERATION_INIT</name>
+        <initializer>(<ref refid="ti__psa__crypto__hash_8h_1aeabc28c50caa363ae70cf0cefe132dd0" kindref="member">ti_psa_hash_operation_t</ref>)      \
+    {                              \
+        0                          \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="78" column="9" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="ti__psa__crypto__hash_8h_1aeabc28c50caa363ae70cf0cefe132dd0" prot="public" static="no">
+        <type>struct <ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref></type>
+        <definition>typedef struct ti_psa_hash_operation_s ti_psa_hash_operation_t</definition>
+        <argsstring></argsstring>
+        <name>ti_psa_hash_operation_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="49" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref></type>
+        <definition>static struct ti_psa_hash_operation_s ti_psa_hash_operation_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>ti_psa_hash_operation_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="49" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_hash.h" bodystart="83" bodyend="87"/>
+        <references refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" compoundref="ti__psa__crypto__hash_8h" startline="73">ti_psa_hash_operation_s::alg</references>
+        <references refid="ti__psa__crypto__hash_8h_1a7cc037595636568ef5e7cc5beb329677">ti_psa_hash_abort</references>
+        <references refid="ti__psa__crypto__hash_8h_1a550e1bda3ccfa6fe130105e983f9e3d2">ti_psa_hash_clone</references>
+        <references refid="ti__psa__crypto__hash_8h_1a7d5be4df3cf1f3284da06449a2a6e142">ti_psa_hash_compare</references>
+        <references refid="ti__psa__crypto__hash_8h_1a291f574f54f9007cfd56a86167712f0c">ti_psa_hash_compute</references>
+        <references refid="ti__psa__crypto__hash_8h_1abed2454d1975afe55717e63462eb3523">ti_psa_hash_finish</references>
+        <references refid="ti__psa__crypto__hash_8h_1abe80175ed22351237faccc8f34ee2116" compoundref="ti__psa__crypto__hash_8h" startline="78">TI_PSA_HASH_OPERATION_INIT</references>
+        <references refid="ti__psa__crypto__hash_8h_1ad37cd27db582a85c7736287346ecef9a">ti_psa_hash_resume</references>
+        <references refid="ti__psa__crypto__hash_8h_1a6e207918074d7e17a6b45d3759e3c7ba">ti_psa_hash_setup</references>
+        <references refid="ti__psa__crypto__hash_8h_1a0f2936ec6a7ff826745fbb1b31cec221">ti_psa_hash_suspend</references>
+        <references refid="ti__psa__crypto__hash_8h_1a94c1bd9fde6ecc621f55c5635e5ef092">ti_psa_hash_update</references>
+        <references refid="ti__psa__crypto__hash_8h_1aebcbfbb03ce103ac5075bfc33f85c1d6">ti_psa_hash_verify</references>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a7cc037595636568ef5e7cc5beb329677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_abort</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation)</argsstring>
+        <name>ti_psa_hash_abort</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="92" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1ad37cd27db582a85c7736287346ecef9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_resume</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, const uint8_t *hash_state, size_t hash_state_length)</argsstring>
+        <name>ti_psa_hash_resume</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash_state</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_state_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="94" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a6e207918074d7e17a6b45d3759e3c7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_setup</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_hash_setup</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="98" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a0f2936ec6a7ff826745fbb1b31cec221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_suspend</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, uint8_t *hash_state, size_t hash_state_size, size_t *hash_state_length)</argsstring>
+        <name>ti_psa_hash_suspend</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>hash_state</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_state_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>hash_state_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="100" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a94c1bd9fde6ecc621f55c5635e5ef092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_update</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, const uint8_t *input, size_t input_length)</argsstring>
+        <name>ti_psa_hash_update</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="105" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1abed2454d1975afe55717e63462eb3523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_finish</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, uint8_t *hash, size_t hash_size, size_t *hash_length)</argsstring>
+        <name>ti_psa_hash_finish</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>hash_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="107" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a550e1bda3ccfa6fe130105e983f9e3d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_clone</definition>
+        <argsstring>(const psa_hash_operation_t *source_operation, psa_hash_operation_t *target_operation)</argsstring>
+        <name>ti_psa_hash_clone</name>
+        <param>
+          <type>const psa_hash_operation_t *</type>
+          <declname>source_operation</declname>
+        </param>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>target_operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="115" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a7d5be4df3cf1f3284da06449a2a6e142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_compare</definition>
+        <argsstring>(psa_algorithm_t alg, const uint8_t *input, size_t input_length, const uint8_t *hash, size_t hash_length)</argsstring>
+        <name>ti_psa_hash_compare</name>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="117" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1a291f574f54f9007cfd56a86167712f0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_compute</definition>
+        <argsstring>(psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *hash, size_t hash_size, size_t *hash_length)</argsstring>
+        <name>ti_psa_hash_compute</name>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>hash_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="123" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__hash_8h_1aebcbfbb03ce103ac5075bfc33f85c1d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_hash_verify</definition>
+        <argsstring>(psa_hash_operation_t *psa_operation, const uint8_t *hash, size_t hash_length)</argsstring>
+        <name>ti_psa_hash_verify</name>
+        <param>
+          <type>psa_hash_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h" line="130" column="1"/>
+        <referencedby refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" compoundref="ti__psa__crypto__hash_8h" startline="83" endline="87">ti_psa_hash_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>The<sp/>Mbed<sp/>TLS<sp/>Contributors</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>by<sp/>Texas<sp/>Instruments<sp/>to<sp/>support<sp/>SimpleLink<sp/>device<sp/>crypto<sp/>hardware</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>drivers.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TI_PSA_CRYPTO_HASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_CRYPTO_HASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((TFM_ENABLED<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>!defined(TFM_BUILD))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/tfm/interface/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/mbedtls/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_h_a2_8h" kindref="compound">ti/drivers/SHA2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="_s_h_a2_x_x_f3_h_s_m_8h" kindref="compound">ti/drivers/sha2/SHA2XXF3HSM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#elif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;ti/drivers/sha2/SHA2CC26X2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="ti__psa__crypto__hash_8h_1abc6c2b27e7b2c1bd3ec92c6c09ae543e" refkind="member"><highlight class="preprocessor">#define<sp/>PSA_HASH_SUSPEND_INPUT_LENGTH_FIELD_LENGTH(alg)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((alg<sp/>==<sp/>PSA_ALG_SHA_224)<sp/>||<sp/>(alg<sp/>==<sp/>PSA_ALG_SHA_256))<sp/><sp/><sp/>?<sp/>8u<sp/><sp/>\</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>:<sp/>((alg<sp/>==<sp/>PSA_ALG_SHA_384)<sp/>||<sp/>(alg<sp/>==<sp/>PSA_ALG_SHA_512))<sp/>?<sp/>16u<sp/>\</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>0u)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="ti__psa__crypto__hash_8h_1a3401abd7592898fa651d1a250d362c82" refkind="member"><highlight class="preprocessor">#define<sp/>PSA_HASH_SUSPEND_HASH_STATE_FIELD_LENGTH(alg)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((alg<sp/>==<sp/>PSA_ALG_SHA_224)<sp/>||<sp/>(alg<sp/>==<sp/>PSA_ALG_SHA_256))<sp/><sp/><sp/>?<sp/>32u<sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>:<sp/>((alg<sp/>==<sp/>PSA_ALG_SHA_384)<sp/>||<sp/>(alg<sp/>==<sp/>PSA_ALG_SHA_512))<sp/>?<sp/>64u<sp/>\</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>0u)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structti__psa__hash__operation__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Driver<sp/>config<sp/>struct<sp/>-<sp/>pointer<sp/>to<sp/>this<sp/>is<sp/>referred<sp/>to<sp/>as<sp/>the<sp/>driver<sp/>handle<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structti__psa__hash__operation__s_1aa210fb3cc358655636c0be661abb38a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref><sp/><ref refid="structti__psa__hash__operation__s_1aa210fb3cc358655636c0be661abb38a9" kindref="member">sha2Config</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Driver<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structti__psa__hash__operation__s_1a65b652805b04f8cffee8701d84b5f9db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA2XXF3HSM_Object<sp/><ref refid="structti__psa__hash__operation__s_1a65b652805b04f8cffee8701d84b5f9db" kindref="member">sha2Object</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC13X4_CC26X3_CC26X4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>SHA2CC26X2_Object<sp/><ref refid="structti__psa__hash__operation__s_1a65b652805b04f8cffee8701d84b5f9db" kindref="member">sha2Object</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Used<sp/>to<sp/>mark<sp/>the<sp/>operation<sp/>struct<sp/>as<sp/>ready.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structti__psa__hash__operation__s_1acf27f73daba2fe6c70feab439af76c43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__hash__operation__s_1acf27f73daba2fe6c70feab439af76c43" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>alg<sp/>identifier<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/><ref refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" kindref="member">alg</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="ti__psa__crypto__hash_8h_1aeabc28c50caa363ae70cf0cefe132dd0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref><sp/><ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_t</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="ti__psa__crypto__hash_8h_1abe80175ed22351237faccc8f34ee2116" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_HASH_OPERATION_INIT<sp/>\</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(ti_psa_hash_operation_t)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref><sp/><ref refid="ti__psa__crypto__hash_8h_1abcd8b09fccb1f8fcd10a376c8798f6ea" kindref="member">ti_psa_hash_operation_init</ref>(void)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__hash__operation__s" kindref="compound">ti_psa_hash_operation_s</ref><sp/>v<sp/>=<sp/><ref refid="ti__psa__crypto__hash_8h_1abe80175ed22351237faccc8f34ee2116" kindref="member">TI_PSA_HASH_OPERATION_INIT</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(v);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Multi-step<sp/>hash<sp/>operations<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a7cc037595636568ef5e7cc5beb329677" kindref="member">ti_psa_hash_abort</ref>(psa_hash_operation_t<sp/>*psa_operation);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1ad37cd27db582a85c7736287346ecef9a" kindref="member">ti_psa_hash_resume</ref>(psa_hash_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*hash_state,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_state_length);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a6e207918074d7e17a6b45d3759e3c7ba" kindref="member">ti_psa_hash_setup</ref>(psa_hash_operation_t<sp/>*psa_operation,<sp/>psa_algorithm_t<sp/><ref refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" kindref="member">alg</ref>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a0f2936ec6a7ff826745fbb1b31cec221" kindref="member">ti_psa_hash_suspend</ref>(psa_hash_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*hash_state,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_state_size,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*hash_state_length);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a94c1bd9fde6ecc621f55c5635e5ef092" kindref="member">ti_psa_hash_update</ref>(psa_hash_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1abed2454d1975afe55717e63462eb3523" kindref="member">ti_psa_hash_finish</ref>(psa_hash_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*hash,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_size,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*hash_length);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>One-step<sp/>hash<sp/>operations<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a550e1bda3ccfa6fe130105e983f9e3d2" kindref="member">ti_psa_hash_clone</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_hash_operation_t<sp/>*source_operation,<sp/>psa_hash_operation_t<sp/>*target_operation);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a7d5be4df3cf1f3284da06449a2a6e142" kindref="member">ti_psa_hash_compare</ref>(psa_algorithm_t<sp/><ref refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" kindref="member">alg</ref>,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*hash,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_length);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1a291f574f54f9007cfd56a86167712f0c" kindref="member">ti_psa_hash_compute</ref>(psa_algorithm_t<sp/><ref refid="structti__psa__hash__operation__s_1a352dbab70272aae4a9620fc584397abf" kindref="member">alg</ref>,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*hash,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_size,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*hash_length);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__hash_8h_1aebcbfbb03ce103ac5075bfc33f85c1d6" kindref="member">ti_psa_hash_verify</ref>(psa_hash_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*hash,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_length);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TI_PSA_CRYPTO_HASH_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/psa/ti_psa_crypto_hash.h"/>
+  </compounddef>
+</doxygen>

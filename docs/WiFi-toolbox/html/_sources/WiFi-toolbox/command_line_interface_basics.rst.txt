@@ -1,0 +1,1002 @@
+**********************************************
+Radio Tool Command Line Interface User's Guide
+**********************************************
+
+Overview
+========
+
+The command line interface (CLI) provides a way to interact with RadioTool using only text based commands entered through a terminal or command prompt. You can see help text and optional arguments for the commands by adding "-h".
+
+To start navigate to the Simplelink Wi-Fi Toolbox install directory:
+
+* For Windows:
+    .. code-block:: bash
+
+      cd c:\ti\simplelink_wifi_toolbox_X.X.X
+
+* For Linux:
+    .. code-block:: bash
+
+      cd /home/YOUR_USER/ti/simplelink_wifi_toolbox_X.X.X
+
+* For Mac OS X:
+    .. code-block:: bash
+
+      cd /Users/YOUR_USER/ti/simplelink_wifi_toolbox_X.X.X
+
+.. note::
+  The install paths shown above are examples of the typical default path.  Make sure to edit the command to reflect the install path for your use case.
+
+
+.. _Loading Containers:
+
+Loading Containers
+==================
+
+.. note::
+
+  The command mentioned in this section is an example. Make sure to substitute parts of the commands depending on your setup. This can include the file path and the device part number (i.e. replace "CC33xx" with your specific part number). It is  especially important to substitute for your actual Debug Probe Serial Number instead of "12345678", refer to `Detect_XDS110_Serial_Number`_. 
+
+To load the firmware to the device use the command below;
+
+1. Load the device bootloader: 
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 auto common load_radio_tool --tbl <2nd_loader path> --firmware <fw path> --conf_bin <cc33xx-conf path> --device_family CC33XX --tbl_dl_index 23 --firmware_dl_index 1 --conf_bin_dl_index 1 --sleep_tbl_fw 0 --sleep_fw_confbin 0
+
+.. note::
+  If you are receiving errors, check the binary file paths. Make sure to change file path depending on simplelink_wifi_toolbox_X.X.X version and device (e.g. binaries/CC3301/cc33xx_fw.bin). 
+
+.. hint::
+  If you are using MAC or Linux, change the ".\" to "./" to execute commands.
+
+WLAN PLT
+========
+The CC35xx/CC33xx devices feature 2.4GHz & 5GHz Wi-Fi 6 with 20 MHz, single spatial stream, MAC, baseband, and RF transceiver supporting IEEE 802.11 b/g/n/ax. This section explains what CLI commands to use for testing Wi-Fi.
+
+Once the containers have been loaded to the device (refer to `Loading Containers`_) the commands below should be run before conducting Wi-Fi testing. 
+
+Turn on WLAN PLT:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan plt --on
+
+    .. code-block:: bash
+   
+      arguments:
+        --on        Enables PLT
+        --off       Disable PLT
+
+.. important::
+
+  It is required that WLAN PLT be ON before doing any WLAN testing
+
+.. _Tune and Calibrate:
+
+Tune and Calibrate 
+------------------
+
+For optimal performance it is important to Tune and Calibrate before transmitting every time the selected channel or band is changed.
+
+.. _Tune Channel:
+
+Tune channel
+^^^^^^^^^^^^
+To get optimal RF performance, use the Tune Channel command for the desired channel and band that will be tested.
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan channel_tune --channel "1" --band "b24Ghz"
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan channel_tune --channel "1" --band "b24Ghz"
+
+    .. code-block:: bash
+
+      --channel   Channel to tune
+      Options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]
+    
+      --band       Band of channel to tune, available choices: 
+      Options: ["b24Ghz", "b5Ghz"]
+
+.. note::
+  Make sure that your channel and band selection match correctly (Channels 1-13 are 2.4GHz channels, and Channels 36-165 are 5GHz channels)
+
+Calibration
+^^^^^^^^^^^
+To get optimal performance, use the calibrate command anytime the desired channel and band are changed.
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common calibration start --all
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common calibration start -h
+
+    .. code-block:: bash
+
+      arguments:
+          start         Starts calibration process
+          status        Get calibration status
+
+    .. code-block:: bash
+
+
+.. These arguments need further explanation in a future update
+
+      Arguments:
+          --tx_rfnl_and_dpd   Calibrate tx_rfnl_and_dpd
+          --tx_iqmm           Calibrate tx_iqmm
+          --tx_lol            Calibrate tx_lol
+          --tx_aux_rx_dc      Calibrate tx_aux_rx_dc
+          --rx_spur_canceler  Calibrate rx_spur_canceler
+          --rx_dc_correction  Calibrate rx_dc_correction
+          --rx_iqmm           Calibrate rx_iqmm
+          --all               Calibrate all (recommended option)
+
+.. hint::
+  The plt commands may have optional arguments to tune and calibrate before running.  If this option is used for those commands, calibration and channel tuning can be skipped.
+
+
+.. _Generating Transmit parameters:
+
+Generating Transmit parameters
+------------------------------
+
+To specify transmit parameters for the device, a .json file is needed. This file will alow the device to transmit according to the specified values, the command below is used to generate example files for each available preamble type option;  
+
+    .. code-block:: bash
+  
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx gen_tx_params_json --preamble_type "PREAMBLE_TYPE" --output_dir DESIRED_OUTPUT_PATH
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx gen_tx_params_json --preamble_type  "11b Short Preamble" 
+
+ Optional arguments for command 'wlan tx gen_tx_params_json'
+
+    .. code-block:: bash
+
+      Arguments:
+        --preamble_type   Used to select preamble type to generate tx parameters json
+          Options:
+            "11b Short Preamble"
+            "11b Long Preamble"
+            "11ag Legacy OFDM"
+            "11n Mixed Mode"
+            "11ac VHT"
+            "11ax SU"
+            "11ax SU ER"
+            "11ax TB"
+        --output_dir      To specify path to new generated json
+
+
+Example of generating transmit parameter .json file for preamble type "11b Long Preamble" ;
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx gen_tx_params_json --preamble_type "11b Long Preamble" --output_dir C:\ti\simplelink_wifi_toolbox_x.x.x
+  
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx gen_tx_params_json --preamble_type "11b Long Preamble" --output_dir C:\ti\simplelink_wifi_toolbox_x.x.x\Params
+
+.. _TxParameters:
+
+Contents of generated "tx_parameters_p_11b_long_preamble.json" file;
+
+    .. code-block:: bash
+
+
+      "bitmask": 4294967295,
+      "delay": 3000,
+      "packet_mode": "continuous",
+      "number_of_packets": 300,
+      "data_mode": "random_value",
+      "data_const_value": 85,
+      "src_addr": "22:22:33:44:55:66",
+      "dst_addr": "02:02:03:04:05:06",
+      "packet_length_start": 100,
+      "packet_length_end": 100,
+      "preamble_type": "p_11b_long_preamble",
+      "phy_rate": "r_1_mbps",
+      "tx_power": 0,
+      "enable_cca": true,
+      "_options_": 
+      {
+          "delay_options": "50 .. 1000000",
+          "packet_mode_options": [
+              "continuous",
+              "single_packet",
+              "multi_packet"
+          ],
+          "number_of_packets_options": "1 .. 10000",
+          "data_mode_options": [
+              "constant_value",
+              "increment",
+              "random_value"
+          ],
+          "data_const_value_options": "0 .. 255",
+          "packet_length_start_options": "0 .. 16000",
+          "packet_length_end_options": "0 .. 16000",
+          "phy_rate_options": [
+              "r_1_mbps",
+              "r_2_mbps",
+              "r_5p5_mbps",
+              "r_11_mbps"
+          ],
+          "tx_power_options": "-10 .. 21"
+      }
+
+.. note::
+  Once the parameter file is generated you may edit the file as needed. Reference the arguments mentioned after line `"_options_"` to modify according to the available settings.
+
+.. hint:: 
+    The generated .json file has many of the same parameters that can be exported from Radio Tool GUI directly. If unsure of what options to use, try exporting a file from RadioTool GUI with the desired settings to compare parameters.
+
+
+.. _Wi-Fi TX Commands:
+
+Wi-Fi TX
+--------
+
+Once the desired TX parameters file exists on a known path (refer to `Generating Transmit parameters`_), the device can be set to transmit.
+
+    .. code-block:: bash
+  
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx start --channel "1" --band "b24Ghz" --calibrate  --tx_parameters_file C:\ti\simplelink_wifi_toolbox_x.x.x/tx_parameters_p_11b_long_preamble.json
+
+
+You may repeat the commands shown as needed, make sure to stop current Wi-Fi TX test before doing a another Wi-Fi transmission.
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx stop
+    
+Once WLAN testing is complete, make sure to stop the test and turn PLT off.
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan plt --off
+
+
+..     simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx start --channel "1" --band b24Ghz --calibrate  --tx_parameters_file C:\ti\simplelink_wifi_toolbox_x.x.x/params/tx_parameters_p_11b_long_preamble.json
+
+ Optional arguments for command 'wlan tx'
+
+  .. code-block:: bash
+
+    Arguments:
+      start                       Start Transmitter Test
+      stop                        Stop Transmitter Test
+      gen_tx_params_json          Generate pre defined tx parameters json
+
+ Optional arguments for command 'wlan tx start' 
+
+  .. code-block:: bash
+
+    Arguments:
+      --tx_parameters_file  Path to tx parameters json file
+
+      --channel     Channel to transmit
+          Options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+              [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]
+
+      --band        Band of channel to tune before transmitting
+          Options: ["b24Ghz", "b5Ghz"]
+
+      --calibrate   Full calibration before transmitting
+
+
+.. changed phrasing from  before transmitter test start to before transmitting, plus  Path to transmitter parameters json file to  tx parameters json. Should notify Danil
+
+.. important::
+
+  It is required that WLAN PLT be ON before starting TX testing, and any previous testing is stopped before running another test. 
+
+  Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done when the optional arguments ``--channel``, ``--band``, and ``--calibrate`` are used in the command. The seperate Tune channel and calibrate commands can also be used (refer to `Tune and Calibrate`_ ).
+
+Wi-Fi RX
+--------
+RX testing is used for gathering Wi-Fi statistics within a specified channel. 
+
+Once the desired TX parameters file exists on a known path (refer to `Generating Transmit parameters`_), the commands below shows how to run the Wi-Fi RX test.
+
+Example of Starting Wi-Fi RX test for 2.4Ghz:
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx start --ack_disable --preamble_type "All"  --phy_rate "All" --mac_address  "FF:FF:FF:FF:FF:FF" --channel "1" --band "b24Ghz" --calibrate
+
+.. note::
+    When testing for 5Ghz the  Association Index must be specified by adding optiona argument ``--aid``.
+
+
+.. Starting Wi-Fi RX for 5Ghz:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx start --ack_disable --preamble_type "All"  --phy_rate "All" --mac_address  "FF:FF:FF:FF:FF:FF" --aid "0" --channel "36" --band "b5Ghz" --calibrate
+
+..  simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan channel_tune --channel 36 --band bb5Ghz --calibrate
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx start --ack_disable --preamble_type "All"  --phy_rate "All" --mac_address  "FF:FF:FF:FF:FF:FF" --aid "0" --channel "36" --band "b5Ghz" --calibrate
+
+
+.. important::
+
+  It is required that WLAN PLT be ON before starting Wi-Fi RX test, and any previous testing should stopped before running another test. 
+
+  Before doing receiver testing the device should always be tuned to the desired channel and band, then calibrated. This can be done when the optional arguments ``--channel``, ``--band``, and ``--calibrate`` are used in the command. The separate Tune channel and calibrate commands can also be used (refer to `Tune and Calibrate`_ ).
+
+ 
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx start -e -aid 0 -addr FF:FF:FF:FF:FF:FF -pt p_11b_short_preamble -pr r_1_mbps -ch 6 -b b24Ghz -s rf_set_0
+
+Optional arguments for command 'wlan rx'
+
+    .. code-block:: bash
+ 
+      arguments:
+        start             Start Receiver Test
+        stop              Stop Receiver Test
+        stats             Read Receiver Statistics
+
+Optional arguments for command 'wlan rx start'
+
+    .. code-block:: bash
+
+      Arguments:
+        --ack_enable     Response with ACK
+
+        --ack_disable    Don not respond with ACK 
+
+        --preamble_type  Choose preamble Type
+            Options:
+                "All" (recommended option)
+                "11b Short Preamble"
+                "11b Long Preamble"
+                "11ag Legacy OFDM"
+                "11n Mixed Mode"
+                "11ac VHT"
+                "11ax SU"
+                "11ax SU ER"
+                "11ax TB"
+
+        --phy_rate      Choose the Phy Rate
+            Options: [All (recommended option) , 1Mbps, 2Mbps, 5p5Mbps, 11Mbps, 6Mbps, 9Mbps, 12Mbps, 18Mbps,
+                      24Mbps, 36Mbps, 48Mbps, 54Mbps, MCS0, MCS1, MCS2, MCS3, MCS4, MCS5, MCS6, MCS7]
+
+        --mac_address    MAC Address, Default: FF:FF:FF:FF:FF:FF
+
+        --aid            Association Index, Default: 65535
+
+        --channel        Channel to tune before receiver test starts
+            Options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+              [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]
+
+        --band      Band of channel to tune before receiver test start 
+            Options: ["b24Ghz", "b5Ghz"]
+
+        --calibrate      Full calibration before receiver test start
+
+.. typo fixed from --ack_disable    Don't response with ACK, note to Danil
+
+Optional arguments for command 'wlan rx stats'
+
+    .. code-block:: bash
+ 
+      Arguments:
+        --get           Read current statistics data
+        
+        --reset         Reset statistics data
+
+        --interval_sec  Read statistics every specified interval, in seconds
+
+        --samples       Read statistics a specified amount of times
+
+.. note to danil changed --samples description 
+
+Example command to read statistics;
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx stats --get --interval_sec "1" --samples "1"
+
+
+Example output from the "wlan rx stats" command.
+
+  .. code-block:: bash
+
+      Sample [1/1]
+      Requesting For Statistics ...
+
+      +-----------------------------+-------+
+      | Key                         | Value |
+      +-----------------------------+-------+
+      | total_packet_number         |     1 |
+      | fcs_error_packet_number     |     0 |
+      | addr_mismatch_packet_number |     0 |
+      | good_packet_number          |     1 |
+      | average_data_ctrl_rssi      |   -73 |
+      +-----------------------------+-------+
+      Statistics got successfully
+      In order to stop this task press on CTRL+C or wait for all samples done.
+
+
+You may repeat the commands shown as needed, make sure to stop current Wi-Fi RX test before doing another Wi-Fi test.
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan rx stop
+
+Once WLAN testing is complete, make sure to stop the test and turn PLT off.
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan plt --off
+
+
+Wi-Fi TX Tone
+--------------
+
+When using the following command the user may create and transmit the Carrier Wave of a signal with selected tone options. 
+
+Example of running the Wi-Fi TX Tone command;
+
+    .. code-block:: bash
+
+      $ ./simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx_tone start --mode single_tone --offset -10 --channel "1" --band "b24Ghz" --calibrate
+
+    .. code-block:: bash
+ 
+      Arguments:
+        start       Start TX Tone
+        stop        Stop TX Tone   
+
+    .. code-block:: bash
+
+      Arguments:
+        --mode         Tone mode
+            Options:"single_tone"
+
+        --offset       Tone offset, 
+            Options: -10[Mhz] to +10[Mhz], with steps of 0.25[Mhz]
+
+        --channel      Channel to tune before TX Tone start
+            Options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+              [36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165]
+
+        --band         Band of channel to tune before TX Tone starts
+            Options: ["b24Ghz"]
+
+        --calibrate    Full calibration before TX Tone start
+
+You may repeat the commands shown as needed, make sure to stop current TX Tone test before doing a different test. 
+
+Example for stopping the current Wi-Fi TX Tone test;
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan tx_tone stop
+
+Once testing is complete, make sure to stop the test and turn PLT off.
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 wlan plt --off
+
+.. important::
+
+  It is required that WLAN PLT be ON before starting RX, and any previous testing is stopped before running another test. 
+
+  Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done with seperate commands (refer to `Tune and Calibrate`_), but it is also done when the argument '--channel', '--band', and --calibrate are used with the appropiate commands.
+
+
+Antenna Select
+==============
+
+The following command is used to select the antenna
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common antenna_selection set --antenna_number "0"
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common antenna_selection get
+
+Optional arguments for command 'common antenna_selection'
+
+    .. code-block:: bash
+
+      Arguments:
+        set       Set transmit antenna number
+        get       Get transmit antenna number
+
+Optional arguments for command 'common antenna_selection set'
+
+    .. code-block:: bash
+
+      arguments:
+        --antenna_number  Antenna number]
+            Options: ["0", "1"]
+
+BLE PLT
+==========
+
+Bluetooth |reg| Low Energy 5.4 is only used with CC35x1/CC33x1 devices. This sections explains the CLI commands to use for testing BLE.
+
+Once the containers have been loaded to the device (refer to `Loading Containers`_) and the below commands are run you may start running BLE tests. 
+
+Enable the BLE Radio: 
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common ble_enable
+
+
+Turn on BLE PLT:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble plt --on
+
+.. note::
+
+  It is required that BLE PLT be ON before doing any testing
+
+.. _TX BLE Packets:
+
+Transmitting BLE Packets
+-------------------------
+The below commands are used to test BLE packet transmissions
+ 
+Example of starting BLE TX with parameters: 
+
+    .. code-block:: bash
+  
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx start --phy_mode "LE_1_Mbps" --tx_power 0 --channel 17 --no_whitening --packet_number 100 --packet_interval_ms 10 --sequence_number_enable --packet_type OZOZ --packet_length 37 --calibrate
+
+Example of starting BLE TX with infinite number of packets:
+
+    .. code-block:: bash
+ 
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx start --phy_mode LE_1_Mbps --tx_power 0 --channel 17 --whitening --packet_number 0 --packet_interval_ms 10 --sequence_number_enable --packet_type Hex --packet_payload_data "05 a2 11 22" --calibrate
+
+
+Optional arguments for command 'ble'
+
+    .. code-block:: bash
+   
+      Arguments:
+        plt                      Enable/Disable Production Line Test (PLT)
+        packet_tx                Packet Transmitter Test
+        packet_rx                Packet Receiver Test
+
+
+Optional arguments for command 'ble packet_tx'
+    .. code-block:: bash
+  
+      Arguments:
+        start            Start Packet Transmitter Test
+        stop             Stop Packet Transmitter Test
+        stat             Read Transmitter Statistics
+
+Optional arguments for command 'ble packet_tx start'
+
+
+    .. code-block:: bash
+
+      Arguments:
+        --phy_mode                Transmit PHY Mode
+            Options:  [LE_1_Mbps, LE_2_Mbps, LE_Coded_500_kbps, LE_Coded_125_kbps]
+
+        --tx_power                Transmit Power, between -10 and 22 dBm with 1 dBm available step
+
+        --channel                 Transmit channel number
+            Options:  [0 to 39]
+
+        --whitening               Scrambled packet payload before transmission
+
+        --no_whitening            Do not scramble packet payload before transmission
+
+        --packet_number           Number of packet to transmit, set 0 for infinite number of packets
+
+        --packet_type             Transmit packet type
+            Options:  [Text, Hex, PRBS9, FOFO, ZOZO, PRBS15, ALLONES, ALLZEROS, OFOF, OZOZ]
+
+        --packet_length           Packet length to transmit, in bytes, required for non 'Hex'/'Text' packet type
+
+        --packet_payload_data     Packet payload data, required for 'Hex'/'Text' packet type
+
+        --packet_interval_ms      Interval between transmitted packets, in mSec
+
+        --sequence_number_enable  Include sequence number as part of payload, will include as two first bytes in payload
+
+        --calibrate               Calibrate before transmission
+
+
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx start --phy_mode "LE 1 Mbps" --tx_power 0 --channel 17 --no_whitening --packet_number 100 --packet_interval_ms 10 --sequence_number_enable --packet_type ZOZO --packet_length 37 --packet_payload_data 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx start --phy_mode "LE 1 Mbps" --tx_power 0 --channel 17 --whitening --packet_number 100 --packet_interval_ms 10 --sequence_number_enable --packet_type Hex --packet_length 12 --packet_payload_data '05a2'
+
+
+Use this command to read transmitter statistics
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx stat --get --packet_type OZOZ
+ 
+
+    .. code-block:: bash
+
+      --get          Read current statistics data
+
+      --reset        Reset statistics data
+
+      --packet_type  Select transmitted packet type
+            Options:  ['Text', 'Hex', 'PRBS9', 'FOFO', 'ZOZO', 'PRBS15', 'ALLONES', 'ALLZEROS', 'OFOF', 'OZOZ']
+
+
+ Use the following command to stop transmission testing. This is needed before a different transmission can be started.
+
+.. code-block:: bash
+
+  $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_tx stop
+
+You can repeat the commands mentioned above with different parameters as desired. Once testing is complete, make sure to stop the test and turn PLT off.  
+
+.. code-block:: bash
+
+  $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble plt --off
+
+
+.. important::
+
+  It is required that BLE PLT be ON before any BLE testing, and any previous testing is stopped before running another test with different parameters. 
+
+  Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done with when the optional arguments ``--channel``, ``--band``, and ``--calibrate`` are used in the command. The separate Tune channel and calibrate commands can also be used (refer to `Tune and Calibrate`_).
+
+BLE Receive packets
+--------------------
+The below commands are used to test receiving BLE packets
+
+Optional arguments for command 'ble packet_rx'
+
+  .. code-block:: bash
+
+    Arguments:
+      start            Start Packet Receiver Test
+      stop             Stop Packet Receiver Test
+      stat             Read Receiver Statistics
+
+Example of starting BLE RX:
+
+  .. code-block:: bash
+    
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_rx start --phy_mode "LE_2_Mbps" --channel 11 --no_whitening --calibrate
+
+.. simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_rx start --phy_mode "LE 2 Mbps" --channel 11 --no_whitening --calibrate
+
+Optional arguments for command 'ble packet_rx start'
+
+    .. code-block:: bash
+
+      Arguments:
+        --phy_mode          Receive PHY Mode
+            Options:  [LE_1_Mbps, LE_2_Mbps, LE_Coded_500_kbps, LE_Coded_125_kbps]
+
+        --channel           Transmit channel number
+            Options:  [0 to 39]
+
+        --whitening        Packet payload was scrambled before transmission
+
+        --no_whitening     Packet payload was not scrambled before transmission
+
+        --access_address   Access address, default: 8e89bed6
+
+        --only_statistics  Collect packet statistics without packet payload
+
+        --calibrate        Calibrate before receiving packet
+
+Use the following command to stop transmission testing. This is needed before a different transmission can be started.
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_rx stop
+
+Use this command to geet BLE RX statistics:
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_rx stat --get
+
+Optional arguments for command 'ble packet_rx stat'
+
+  .. code-block:: bash
+
+    Arguments:
+      --get              Read current statistics data
+      --reset            Reset statistics data
+      --view_format      Display received payload as, available choices: ['Hex', 'Text']
+      --sequence_number  Contains sequence number in payload
+      --only_statistics  Statistics without packet payload
+
+
+
+You can repeat the commands mentioned above with different parameters as desired. Once testing is complete, make sure to stop the test and turn PLT off.
+
+  .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble packet_rx stop
+
+  .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 ble plt --off
+
+.. important::
+
+  It is required that BLE PLT be ON before testing, and any previous testing is stopped before running another test with different parameters. 
+
+  Before transmitting the device should be calibrated, this is done with the optional argument --calibrate.
+
+
+.. _Radio_Tool_CLI:
+
+More CLI Options
+==================
+
+When using CLI you can use the following help command: 
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe radio-tool -h
+
+Output: 
+
+  .. code-block:: bash
+
+    usage: .\simplelink-wifi-toolbox.exe radio-tool [-h] [--version] -i {XDS110} [-param1 INTERFACE_PARAMETER_1]
+                                                  [-param2 INTERFACE_PARAMETER_2]
+                                                  {firmware,phy,cpe,mce,mac_address,wlan,ble}
+
+    positional arguments:
+      {firmware,phy,cpe,mce,mac_address,wlan,ble}
+        firmware            Firmware
+        phy                 Phy
+        cpe                 CPE
+        mce                 MCE
+        mac_address         Mac Address
+        wlan                WLAN
+        ble                 BLE
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --version             show program's version number and exit
+      -i {XDS110}, --interface {XDS110}
+                            Interface
+      -param1 INTERFACE_PARAMETER_1, --interface_parameter_1 INTERFACE_PARAMETER_1
+                            Interface
+      -param2 INTERFACE_PARAMETER_2, --interface_parameter_2 INTERFACE_PARAMETER_2
+                            Interface
+
+.. _Info_commands:
+
+Device Information Commands
+----------------------------
+Bellow are command examples to get the version from device for firmware, PHY, CPE, and MCE 
+
+Get Firmware version:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 firmware -v
+
+Get PHY version:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 phy  -v
+
+Get CPE version:
+
+    .. code-block:: bash
+  
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 cpe  -v
+
+Get MCE version:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 mce  -v
+
+Get device MAC address:
+
+    .. code-block:: bash
+
+      $ .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 mac_address -a
+
+.. _Communicator:
+
+Communicator Commands
+----------------------
+
+.. .\simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 communicator general device_reset
+
+
+To use the communicator (XDS110) with CLI you can use the following help command: 
+
+  .. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe communicator -h
+
+Outputs: 
+
+  .. code-block:: bash
+
+    usage: .\simplelink-wifi-toolbox.exe communicator [-h] [--version] -i {XDS110} -param1 INTERFACE_PARAMETER_1 [-param2 INTERFACE_PARAMETER_2]
+                                                    {container,general,memory_read,memory_write,rma} ...
+
+    positional arguments:
+      {container,general,memory_read,memory_write,rma}
+        container           Download container from binary file
+        general             Get general information from Jtag
+        memory_read         Read from memory space using M3
+        memory_write        Write into memory space using M3
+        rma                 Rma command
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --version             show program's version number and exit
+      -i {XDS110}, --interface {XDS110}
+                            Interface
+      -param1 INTERFACE_PARAMETER_1, --interface_parameter_1 INTERFACE_PARAMETER_1
+                            serial numberws interface
+      -param2 INTERFACE_PARAMETER_2, --interface_parameter_2 INTERFACE_PARAMETER_2
+                            Interface
+
+ 
+.. code-block:: bash
+  
+    $ .\simplelink-wifi-toolbox.exe communicator container -h
+
+Outputs;
+
+.. code-block:: bash
+
+    optional arguments:
+      -h, --help        show this help message and exit
+      --container_file  Path to container binary file
+      --timeout         Set timeout for error detection
+      --write_delay     Set delay between data send
+      --reset_device    Reset device before download container
+      --dwnld_speed     Configure download speed, avaliable options: ['low', 'mid', 'mid_high', 'high']
+        
+.. code-block:: bash
+
+    $ .\simplelink-wifi-toolbox.exe communicator general -h
+
+Outputs;
+
+.. code-block:: bash
+
+    positional arguments:
+      {device_reset,device_status,device_info}
+        device_reset                    get device status
+        device_status                   get device status
+        device_info                     get device information
+
+.. _How_to_Reset_CC33xx:
+
+Reset device
+^^^^^^^^^^^^
+Instead of power cycling the device you may use the following command to reset the device: 
+
+ .. code-block:: bash
+  
+  $ .\simplelink-wifi-toolbox.exe communicator -i XDS110 -param1 12345678 general device_reset
+      
+To verify that the device was reset the following command may be used to verify the current status of the device:
+
+ .. code-block:: bash
+
+  $ .\simplelink-wifi-toolbox.exe  communicator -i XDS110 -param1 12345678 general device_status
+
+
+It should output a table with remark "WAITING_FOR_CONTAINER", which means the device is waiting for the containers to be loaded ( refer to `Loading Containers`_ ).
+
+Example Output below:
+
+ .. code-block:: bash
+    
+    +-------------------+--------+-----------------+-----------------+-----------------------+
+    | Reg Name          | Offset | Reg Value (DEC) | Reg Value (HEX) |        Remark         |
+    +-------------------+--------+-----------------+-----------------+-----------------------+
+    | DEVICE_ID         | 0      | 196612143       | 0xbb8102f       |                       |
+    | DEVICE_USER_CODE  | 4      | 0               | 0x0             |                       |
+    | DEBUG_SS_VERSION  | 8      | 1073741968      | 0x40000090      |                       |
+    | SYS               | 12     | 0               | 0x0             |                       |
+    | BOOT_DIAG         | 16     | 11              | 0xb             | WAITING_FOR_CONTAINER |
+    | LIFE_CYCLE_STATE  | 20     | 3               | 0x3             |                       |
+    | DFT_EN            | 24     | 0               | 0x0             |                       |
+    | UNIQUE_DEVICE_ID0 | 40     | 287703744       | 0x112602c0      |                       |
+    | UNIQUE_DEVICE_ID1 | 44     | 337784908       | 0x1422304c      |                       |
+    +-------------------+--------+-----------------+-----------------+-----------------------+ 
+
+
+.. Need more details on why VBAT is always 0
+.. .. _GP ADC measurements:
+
+.. GP ADC Measurements
+.. =====================
+
+.. Command to request GPADC Measurements from the device.
+
+.. .. code-block:: c
+  :caption: Example for using "antenna_selection"
+  :emphasize-lines: 1
+  :linenos:
+
+..  simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 12345678 common gpadc get
+
+.. .. code-block:: c
+  :caption: "gpadc" Arguments:
+
+..  arguments:
+    get       Get gpadc Measurements
+
+
+.. _Detect_XDS110_Serial_Number:
+
+How to detect my XDS110 Serial Number
+=====================================
+
+When the XDS110 debug probe is connected to PC you may confirm the serial number by doing the following.
+
+Windows
+-------
+
+1. Open Windows Command Line ( CMD ) and navigate into the XDS110 updates directory with this command: 
+
+    .. code-block:: bash
+
+      cd c:\ti\simplelink_wifi_toolbox_x.x.x\utility\xds110
+
+2. Execute the following command to show information of connected devices.
+
+    .. code-block:: bash
+    
+      $ .\xdsdfu -e
+
+  output should look like this:
+
+.. _XDS110_Information:
+
+  .. figure:: resources/xdsdfu-e.png
+      :align: center
+      :scale: 60
+
+  Serial Number should be taken from "Serial Num:"
+
+
+Ubuntu
+------
+
+1. Open terminal and navigate into the XDS110 updates directory with this command:
+
+    .. code-block:: bash
+    
+      cd /home/${USER}/ti/simplelink_wifi_toolbox_x.x.x/utility/xds110
+
+2. Execute the xdsdfu application to see all connected devices
+
+    .. code-block:: bash
+    
+      ./xdsdfu -e
+
+  output should look like this:
+
+  .. figure:: resources/xdsdfu-e.png
+      :align: center
+      :scale: 60
+      :alt: xdsdfu-e
+
+  Serial Number should be taken from "Serial Num:"
+
+  

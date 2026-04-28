@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__nistp521__params" kind="group">
+    <compoundname>nistp521_params</compoundname>
+    <title>NIST P521 curve params</title>
+    <innerclass refid="union_e_c_c___n_i_s_t_p521___param" prot="public">ECC_NISTP521_Param</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__nistp521__params_1gaa159829dce65ddc9fce3b4a7e67f9b10" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gaa8245cfe0c79e12656ac1ac40e4c595c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gac1b67c95937466831c2a88d811dfbc4c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="227" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga790db98986ab13df6026ece1ce2f2040" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP521 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="233" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gadc4ae2d61a5ee00e68f4c5450722834c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP521 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="239" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga83c4ce4900f8d45d1df332ca9b27bf4e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga03b2368e0bae4c1a058375565b5239e2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="249" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1gae18546e7922208d3df29f60ce9d68a76" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="254" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp521__params_1ga7c278f7dd4df10780ee35825dac0e3d0" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p521___param" kindref="compound">ECC_NISTP521_Param</ref></type>
+        <definition>const ECC_NISTP521_Param ECC_NISTP521_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP521_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP521 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="259" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__nistp521__params_1ga44f08f1390d90127f0decb3c08c82664" prot="public" static="no">
+        <name>ECCParams_NISTP521_LENGTH</name>
+        <initializer>66</initializer>
+        <briefdescription>
+<para>Length of NIST P521 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="196" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__nistp521__params_1ga2057d370f6def14eec5b7065c33b071c" prot="public" static="no">
+        <name>ECC_NISTP521_PARAM_LENGTH_WITH_PADDED_BYTES</name>
+        <initializer>(<ref refid="group__nistp521__params_1ga44f08f1390d90127f0decb3c08c82664" kindref="member">ECCParams_NISTP521_LENGTH</ref> + <ref refid="_e_c_c_params_x_x_f3_h_s_m_8h_1a236ae77dc55c11c39ef2b3de8b3780ff" kindref="member">HSM_PADDED_PARAM_BYTES</ref>)</initializer>
+        <briefdescription>
+<para>Length in bytes of NISTP521 curve parameters including the padded 0s so that the HSM is provided curve parameters with length that is divisible by 4, per its requirements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="203" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

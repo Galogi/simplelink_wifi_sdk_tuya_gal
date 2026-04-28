@@ -1,0 +1,18 @@
+Secure Debug
+============
+
+The CC35xx device has a new security feature for secure debugging.
+Once the vendor ROT (Root Of Trust) is programmed onto the device, the 
+device debug will be locked in accordance to the vendor debug policy.
+
+The device debug interface will be open during boot only after valid and authenticated DSSM Debug REQ
+
+This is done via the WiFi Toolbox application
+
+.. code-block:: C
+
+    C:\ti\simplelink_wifi_toolbox_win_x.x.x.x/simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 auto debug --debug_action_req_path 
+    
+    C:\ti\simplelink_wifi_toolbox_win_x.x.x.x/programmer/programming/images/debug_action_request.sign.bin --verbose 2>&1
+
+Once the device is open for debugging, it will continue to stay open until a device reset

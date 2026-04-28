@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['ospi_5fcommand_5fce',['OSPI_COMMAND_CE',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba21e1ce10d1505c5ab2ffa052f0dc94b5',1,'ospi.h']]],
+  ['ospi_5fcommand_5ffast_5fread',['OSPI_COMMAND_FAST_READ',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba567b01712822e8feef1ec51273d5fd63',1,'ospi.h']]],
+  ['ospi_5fcommand_5fqdis',['OSPI_COMMAND_QDIS',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3bab73455b6d6ba73d913f9f61e9964f357',1,'ospi.h']]],
+  ['ospi_5fcommand_5fqen',['OSPI_COMMAND_QEN',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba4093efb53135b754767295528e45054f',1,'ospi.h']]],
+  ['ospi_5fcommand_5frdsr',['OSPI_COMMAND_RDSR',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3baa30ccac0ebd7bf9ed897fa31f8d737d9',1,'ospi.h']]],
+  ['ospi_5fcommand_5fread',['OSPI_COMMAND_READ',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3baf8d5a06990f12e53708c3fb38fc5eb65',1,'ospi.h']]],
+  ['ospi_5fcommand_5frst',['OSPI_COMMAND_RST',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba985c73cac07720ccfe6b372fb2dc5098',1,'ospi.h']]],
+  ['ospi_5fcommand_5frsten',['OSPI_COMMAND_RSTEN',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba03709a911afa59aa00d94d0e6adb58fc',1,'ospi.h']]],
+  ['ospi_5fcommand_5fse',['OSPI_COMMAND_SE',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba448b7c36177683873290ca7ff8c59e1b',1,'ospi.h']]],
+  ['ospi_5fcommand_5fwren',['OSPI_COMMAND_WREN',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3bacd772ef423081a8db98f61cfc4d021da',1,'ospi.h']]],
+  ['ospi_5fcommand_5fwrite',['OSPI_COMMAND_WRITE',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba7a25a88e15d199e29b91b8d8ea8f7f8a',1,'ospi.h']]],
+  ['ospi_5fcommand_5fwrsr',['OSPI_COMMAND_WRSR',['../group__ospi__api.html#gga98402360afa6b730a1a570503eb75f3ba2619415c0332b0576a7f96209ea0eab8',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fbp0',['OSPI_FLASH_STA_REG_BP0',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870ba26092807ed35a6db53b4f9f9171a9dcc',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fbp1',['OSPI_FLASH_STA_REG_BP1',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870baa04f4eaa70791a7bd0d3b3bfc7bfd28b',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fbp2',['OSPI_FLASH_STA_REG_BP2',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870ba66dfd679a76c58633201fa15b001b43b',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fbp3',['OSPI_FLASH_STA_REG_BP3',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870bab837e6e8adca386002573d312fa6817d',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fqe',['OSPI_FLASH_STA_REG_QE',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870ba3cbb9c41e406a1c7121c3d85451475c4',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fsrwd',['OSPI_FLASH_STA_REG_SRWD',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870ba55ed36a60c12d2e6ff90940b6cf7b342',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fwel',['OSPI_FLASH_STA_REG_WEL',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870ba22f5056acefb586e8d6b18be83627c47',1,'ospi.h']]],
+  ['ospi_5fflash_5fsta_5freg_5fwip',['OSPI_FLASH_STA_REG_WIP',['../group__ospi__api.html#gga7f9cee0a2ac72cb62c97e2467104870bad46f1c86d7db90caf6617944f0a6742b',1,'ospi.h']]],
+  ['ospi_5finstr_5ftype_5fdual_5fspi',['OSPI_INSTR_TYPE_DUAL_SPI',['../group__ospi__api.html#ggaaf982dce3d69802a04b3b8527d7951b7abc397c8f5bbde1b8bb8a24c1b8c1d99b',1,'ospi.h']]],
+  ['ospi_5finstr_5ftype_5foctal_5fio_5fspi',['OSPI_INSTR_TYPE_OCTAL_IO_SPI',['../group__ospi__api.html#ggaaf982dce3d69802a04b3b8527d7951b7ac2e9f2282f29bd7fd2012c3618c1b9cb',1,'ospi.h']]],
+  ['ospi_5finstr_5ftype_5fquad_5fio_5fspi',['OSPI_INSTR_TYPE_QUAD_IO_SPI',['../group__ospi__api.html#ggaaf982dce3d69802a04b3b8527d7951b7a3b1118331411ba0a91eca1e5731f0c0b',1,'ospi.h']]],
+  ['ospi_5finstr_5ftype_5fspi',['OSPI_INSTR_TYPE_SPI',['../group__ospi__api.html#ggaaf982dce3d69802a04b3b8527d7951b7ab9909296210f57152ec45c84ffd1368c',1,'ospi.h']]]
+];

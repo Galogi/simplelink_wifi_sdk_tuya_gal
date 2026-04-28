@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVariant value="50:Theia-based"/>
+	<ccsVersion value="70.4.0"/>
+	<deviceFamily value="TMS470"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<executableActions value=""/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<templateProperties value="id=network_terminal_LP_EM_CC35X1_freertos_ticlang.projectspec.network_terminal_LP_EM_CC35X1_freertos_ticlang,launch.loadSymbolsOnly=true,buildProfile=release,isHybrid=true"/>
+	<activeTargetConfiguration value="targetConfigs/CC35X1E.ccxml"/>
+	<isTargetConfigurationManual value="false"/>
+	<origin value="C:\ti\Tuya\simplelink_wifi_sdk_tuya\examples\rtos\LP_EM_CC35X1\demos\network_terminal\freertos\ticlang\network_terminal_LP_EM_CC35X1_freertos_ticlang.projectspec"/>
+	<filesToOpen value=""/>
+</projectOptions>

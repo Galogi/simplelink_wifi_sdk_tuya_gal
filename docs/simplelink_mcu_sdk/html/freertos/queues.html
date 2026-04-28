@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Queues &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thread Synchronization" href="synchronization.html" />
+    <link rel="prev" title="Software Timers" href="software-timers.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug freertos queues";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#posix-support">POSIX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#driver-porting-layer-dpl">Driver Porting Layer (DPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#using-freertos-with-ccs">Using FreeRTOS with CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#freertos-modules">FreeRTOS modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html">Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rov.html">Debugging FreeRTOS with Runtime Object View (ROV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-timers.html">Software Timers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Queues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#queue-characteristics">Queue Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initializing-a-queue">Initializing a Queue</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Queues</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="queues">
+<h1>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">¶</a></h1>
+<p>Queues are a way for tasks in FreeRTOS to safely pass information between one another.
+Queues ensures that data passed between tasks is not unexpectedly overwritten,
+corrupted or lost in the process of running multiple tasks.
+Additional details can be found in <a class="reference external" href="https://www.freertos.org/Embedded-RTOS-Queues.html">FreeRTOS Queue</a></p>
+<div class="section" id="queue-characteristics">
+<h2>Queue Characteristics<a class="headerlink" href="#queue-characteristics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>When a user puts data on a Queue in FreeRTOS, it’s passed by copy, not by reference or location.</li>
+<li>If a user wants to pass by reference or memory location, they can simply put a pointer on the Queue.</li>
+<li>Queues can store data of multiple types (even in the same Queue!)</li>
+</ul>
+</div>
+<div class="section" id="initializing-a-queue">
+<h2>Initializing a Queue<a class="headerlink" href="#initializing-a-queue" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="container-1">
+<div class="code-block-caption"><span class="caption-number">Listing 26 </span><span class="caption-text">Initialize a FreeRTOS task</span><a class="headerlink" href="#container-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;FreeRTOS.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdarg.h&gt;</span><span class="cp"></span>
+
+<span class="n">QueueHandle_t</span> <span class="n">myQueue</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="k">volatile</span> <span class="kt">uint8_t</span> <span class="n">data_received</span><span class="p">;</span>
+<span class="k">volatile</span> <span class="kt">uint8_t</span> <span class="n">my_data</span><span class="p">;</span>
+
+<span class="cm">/* Task function */</span>
+<span class="kt">void</span> <span class="nf">receivedFromQueueTaskFunction</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">a0</span><span class="p">){</span>
+  <span class="cm">/* Local variables. Variables here go onto task stack!! */</span>
+  <span class="kt">uint8_t</span> <span class="n">data_from_queue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">){</span> <span class="cm">/* Run loop forever (unless terminated) */</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">myQueue</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="p">){</span>
+      <span class="cm">/*Give 5 ticks to read the value in the queue.*/</span>
+<span class="hll">      <span class="k">if</span><span class="p">(</span> <span class="n">xQueueReceive</span><span class="p">(</span> <span class="n">myQueue</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span> <span class="n">data_from_queue</span> <span class="p">),</span> <span class="p">(</span> <span class="n">TickType_t</span> <span class="p">)</span> <span class="mi">5</span> <span class="p">)</span> <span class="o">==</span> <span class="n">pdPASS</span> <span class="p">){</span>
+</span>          <span class="cm">/*data_from_queue is ready for processing*/</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* Task function */</span>
+<span class="kt">void</span> <span class="nf">addToQueueTaskFunction</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">a0</span><span class="p">){</span>
+  <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="cm">/* Run loop forever (unless terminated) */</span>
+  <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">data_received</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span> <span class="n">myQueue</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">){</span>
+<span class="hll">        <span class="k">if</span><span class="p">(</span> <span class="n">xQueueSend</span><span class="p">(</span> <span class="n">myQueue</span><span class="p">,</span> <span class="p">(</span> <span class="kt">void</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">my_data</span><span class="p">,</span> <span class="p">(</span> <span class="n">TickType_t</span> <span class="p">)</span> <span class="mi">5</span> <span class="p">)</span> <span class="o">!=</span> <span class="n">pdPASS</span> <span class="p">){</span>
+</span>              <span class="cm">/* Unable to post the message after 5 ticks. */</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+          <span class="cm">/*Successfully posted the message*/</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/*Create a queue that&#39;s 5 bytes long*/</span>
+<span class="hll">    <span class="n">myQueue</span> <span class="o">=</span> <span class="n">xQueueCreate</span><span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span> <span class="kt">uint8_t</span> <span class="p">)</span> <span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>This code uses a queue to pass 8-bit integers from the addToQueueTaskFunction
+to the receivedFromQueueTaskFunction. Note the error handling ensures that
+if FreeRTOS isn’t able to add items to the queue in 5 ticks, it times out.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="synchronization.html" class="btn btn-neutral float-right" title="Thread Synchronization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="software-timers.html" class="btn btn-neutral float-left" title="Software Timers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

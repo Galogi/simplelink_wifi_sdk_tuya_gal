@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__hash__operation__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_hash_operation_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__hash__operation__s_1adb01b81793c1f6a600b90081ee1eb41c" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_hash_operation_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique ID indicating which driver got assigned to do the operation. Since driver contexts are driver-specific, swapping drivers halfway through the operation is not supported. ID values are auto-generated in psa_driver_wrappers.h. ID value zero means the context is not valid or not assigned to any driver (i.e. the driver context is not active, in use). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="544" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="544" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__hash__operation__s_1a4672bf63b1dde30ac9a27b7cca14cffe" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_hash_operation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="546" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="546" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="536" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="535" bodyend="547"/>
+    <listofallmembers>
+      <member refid="structpsa__hash__operation__s_1a4672bf63b1dde30ac9a27b7cca14cffe" prot="public" virt="non-virtual"><scope>psa_hash_operation_s</scope><name>alg</name></member>
+      <member refid="structpsa__hash__operation__s_1adb01b81793c1f6a600b90081ee1eb41c" prot="public" virt="non-virtual"><scope>psa_hash_operation_s</scope><name>id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

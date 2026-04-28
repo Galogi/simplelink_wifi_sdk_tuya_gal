@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_timer_w_f_f3___channel_conf" kind="struct" language="C++" prot="public">
+    <compoundname>GPTimerWFF3_ChannelConf</compoundname>
+    <includes refid="_g_p_timer_w_f_f3_8h" local="no">GPTimerWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_conf_1a42ccdae391dcffd6f5e26896ea6473bc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_ChannelConf::pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="691" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="691" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_conf_1af3e66ddfb42838ca5e01d988175ddc4f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_ChannelConf::pinMux</definition>
+        <argsstring></argsstring>
+        <name>pinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Channel pin mux </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="693" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="693" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_conf_1a0e773778740f4bd08ddaf0a0173e0cc6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_ChannelConf::nPin</definition>
+        <argsstring></argsstring>
+        <name>nPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Complementary channel pin </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="695" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="695" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_timer_w_f_f3___channel_conf_1a9bdf71720ee4a5b4c18e399839f0ed17" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t GPTimerWFF3_ChannelConf::nPinMux</definition>
+        <argsstring></argsstring>
+        <name>nPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Complementary channel pin mux </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="697" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="697" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPTimerWFF3 channel dependent pin configuration struct. </para>    </briefdescription>
+    <detaileddescription>
+<para>GPTimer struct used by the <ref refid="struct_g_p_timer_w_f_f3___h_w_attrs" kindref="compound">GPTimerWFF3_HWAttrs</ref>. </para>    </detaileddescription>
+    <location file="source/ti/drivers/timer/GPTimerWFF3.h" line="689" column="1" bodyfile="source/ti/drivers/timer/GPTimerWFF3.h" bodystart="688" bodyend="698"/>
+    <listofallmembers>
+      <member refid="struct_g_p_timer_w_f_f3___channel_conf_1a0e773778740f4bd08ddaf0a0173e0cc6" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelConf</scope><name>nPin</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___channel_conf_1a9bdf71720ee4a5b4c18e399839f0ed17" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelConf</scope><name>nPinMux</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___channel_conf_1a42ccdae391dcffd6f5e26896ea6473bc" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelConf</scope><name>pin</name></member>
+      <member refid="struct_g_p_timer_w_f_f3___channel_conf_1af3e66ddfb42838ca5e01d988175ddc4f" prot="public" virt="non-virtual"><scope>GPTimerWFF3_ChannelConf</scope><name>pinMux</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+.. _sec-device-overview:
+
+Introduction to the SimpleLink Wi-Fi SDK
+****************************************
+
+This section describes how to use the SimpleLink Wireless MCU family |DEVICE|
+from a general software developer's point of view. Additional information 
+and resources are also provided for further development.
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    /cc35xx/hardware/hardware-overview
+    /cc35xx/software/software-overview
+
+

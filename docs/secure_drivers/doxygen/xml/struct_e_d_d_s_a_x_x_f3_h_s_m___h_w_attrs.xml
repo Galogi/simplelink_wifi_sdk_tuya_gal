@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>EDDSAXXF3HSM_HWAttrs</compoundname>
+    <includes refid="_e_d_d_s_a_x_x_f3_h_s_m_8h" local="no">EDDSAXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs_1a5651770f6c0ff0ce7f49996ac0d1d0f8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EDDSAXXF3HSM_HWAttrs::reserved1</definition>
+        <argsstring></argsstring>
+        <name>reserved1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="100" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>EDDSAXXF3HSM Hardware Attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>EDDSAXXF3HSM hardware attributes should be included in the board file and pointed to by the EDDSA_config struct. </para>    </detaileddescription>
+    <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="99" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="98" bodyend="101"/>
+    <listofallmembers>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs_1a5651770f6c0ff0ce7f49996ac0d1d0f8" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_HWAttrs</scope><name>reserved1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

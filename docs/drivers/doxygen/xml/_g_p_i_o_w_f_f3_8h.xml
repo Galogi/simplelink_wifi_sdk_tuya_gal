@@ -1,0 +1,829 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_g_p_i_o_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>GPIOWFF3.h</compoundname>
+    <includes refid="_g_p_i_o_8h" local="no">ti/drivers/GPIO.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(inc/hw_iomux.h)</includes>
+    <includedby refid="_s_p_i_w_f_f3_d_m_a_8h" local="no">SPIWFF3DMA.h</includedby>
+    <incdepgraph>
+      <node id="130">
+        <label>stdint.h</label>
+      </node>
+      <node id="132">
+        <label>ti/drivers/gpio/GPIOCC26XX.h</label>
+      </node>
+      <node id="128">
+        <label>GPIOWFF3.h</label>
+        <link refid="_g_p_i_o_w_f_f3_8h"/>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>DeviceFamily_constructPath(inc/hw_iomux.h)</label>
+      </node>
+      <node id="131">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="129">
+        <label>ti/drivers/GPIO.h</label>
+        <link refid="_g_p_i_o_8h"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="134">
+        <label>GPIOWFF3.h</label>
+        <link refid="_g_p_i_o_w_f_f3_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>SPIWFF3DMA.h</label>
+        <link refid="_s_p_i_w_f_f3_d_m_a_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="user-defined">
+      <header>WiFi F3 Device-Specific Mux Macros</header>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a885ef9f050dbd7b48a627c63a19d56c9" prot="public" static="no">
+        <name>GPIOWFF3_MUX_ANALOG</name>
+        <briefdescription>
+<para>Mux IO to analog signal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each IO supporting analog signals has a single analog signal associated with it. With this mux setting, the IO will be muxed to that analog signal.</para><para><simplesect kind="warning"><para>The IO must be configured as <ref refid="group___g_p_i_o___pin_config_settings_1ga311d775bf95eca7f4bca0772ec10f865" kindref="member">GPIO_CFG_NO_DIR</ref> when using this mux setting.</para></simplesect>
+<simplesect kind="warning"><para>Only use this mux setting for IOs supporting analog signals.</para></simplesect>
+<simplesect kind="note"><para>Only the least significant bits are written to the IOMUX registers to select the muxing. This results in the digital IO being muxed to &quot;Hi-Z&quot; as if <ref refid="group___g_p_i_o___pin_config_settings_1ga6349902253d167b88fc5cd3e7138d529" kindref="member">GPIO_MUX_GPIO</ref> is used. Bit 8 is used to inform the GPIO driver that the analog switch of the IO shall be controlled by the analog peripheral. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="113" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>WiFi F3 Device-Specific GPIO_PinConfig Macros</header>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a78eef7a7beb044d26fd5d6c7f49f88b4" prot="public" static="no">
+        <name>GPIOWFF3_DO_NOT_CONFIG</name>
+        <briefdescription>
+<para>Do not configure this pin. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_g_p_i_o_8h_1a015b75143cc3b8914cc298c5c4fc097e" kindref="member">GPIO_setConfig</ref> and <ref refid="_g_p_i_o_8h_1a53cc86d668c93f510dc3de7332410ebd" kindref="member">GPIO_setConfigAndMux</ref> calls will return immediately. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="127" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Macros Used Internally by WiFi F3 GPIO Driver.</header>
+      <description><para>Do not use any of these macros. </para></description>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1abf8782a0a9a99f5d551cf444a5507f2a" prot="public" static="no">
+        <name>GPIO_CFG_DO_NOT_CONFIG_INTERNAL</name>
+        <initializer><ref refid="_g_p_i_o_w_f_f3_8h_1a78eef7a7beb044d26fd5d6c7f49f88b4" kindref="member">GPIOWFF3_DO_NOT_CONFIG</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="139" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a73eb225e352f4d78174163f585dd7d4b" prot="public" static="no">
+        <name>GPIO_MUX_GPIO_INTERNAL</name>
+        <initializer>(0x0D)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="141" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a085cd3bfde06f3cf79cd5d4d3c62a941" prot="public" static="no">
+        <name>GPIOWFF3_MUX_ANALOG_INTERNAL</name>
+        <initializer>(0x100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="142" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" prot="public" static="no">
+        <name>GPIOWFF3_CFG_CFG_S</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="159" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1af538bc46e2bdb38f2a5ba8156d187aa9" prot="public" static="no">
+        <name>GPIOWFF3_CFG_CFG_M</name>
+        <initializer>((IOMUX_GPIO2CFG_IE_M | IOMUX_GPIO2CFG_OUTDIS_M | IOMUX_GPIO2CFG_OUTDISOVREN_M | IOMUX_GPIO20CFG_IOSTR_M) \
+     &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="160" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" prot="public" static="no">
+        <name>GPIOWFF3_CFG_PULLCTL_S</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="164" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1af99f222a8e1c3ac3152d8c55f998ff96" prot="public" static="no">
+        <name>GPIOWFF3_CFG_PULLCTL_M</name>
+        <initializer>((IOMUX_GPIO2PCTL_CTL_M) &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" kindref="member">GPIOWFF3_CFG_PULLCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="165" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" prot="public" static="no">
+        <name>GPIOWFF3_CFG_CTL_S</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="167" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a313d5d66d0b9b4740d7a52016c1a0eef" prot="public" static="no">
+        <name>GPIOWFF3_CFG_CTL_M</name>
+        <initializer>((IOMUX_GPIO2CTL_OUTOVREN_M | IOMUX_GPIO2CTL_OUT_M) &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" kindref="member">GPIOWFF3_CFG_CTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="168" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" prot="public" static="no">
+        <name>GPIOWFF3_CFG_EVTCTL_S</name>
+        <initializer>(16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="170" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a229d77b5523bce0a1debb6fae3496101" prot="public" static="no">
+        <name>GPIOWFF3_CFG_EVTCTL_M</name>
+        <initializer>((IOMUX_GPIO37ECTL_EVTDETCFG_M | IOMUX_GPIO2ECTL_TRGLVL_M) &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="171" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1aa15e9add3857dc8922f8dd98fc678bf9" prot="public" static="no">
+        <name>GPIOWFF3_CFG_IOMUX_COMB_M</name>
+        <initializer>(<ref refid="_g_p_i_o_w_f_f3_8h_1af538bc46e2bdb38f2a5ba8156d187aa9" kindref="member">GPIOWFF3_CFG_CFG_M</ref> | <ref refid="_g_p_i_o_w_f_f3_8h_1af99f222a8e1c3ac3152d8c55f998ff96" kindref="member">GPIOWFF3_CFG_PULLCTL_M</ref> | <ref refid="_g_p_i_o_w_f_f3_8h_1a313d5d66d0b9b4740d7a52016c1a0eef" kindref="member">GPIOWFF3_CFG_CTL_M</ref> | <ref refid="_g_p_i_o_w_f_f3_8h_1a229d77b5523bce0a1debb6fae3496101" kindref="member">GPIOWFF3_CFG_EVTCTL_M</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="173" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a466d59e26108015b451fd48f96cd0aaa" prot="public" static="no">
+        <name>GPIOWFF3_CFG_INTERNAL_M</name>
+        <initializer>~<ref refid="_g_p_i_o_w_f_f3_8h_1aa15e9add3857dc8922f8dd98fc678bf9" kindref="member">GPIOWFF3_CFG_IOMUX_COMB_M</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="186" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a95addfbe8da68e77ce585f646ccb05aa" prot="public" static="no">
+        <name>GPIO_CFG_NO_DIR_INTERNAL</name>
+        <initializer>((IOMUX_GPIO2CFG_OUTDISOVREN_DISABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>) | (IOMUX_GPIO2CFG_IE_DISABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="191" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1adc7eeeda1042b0455f478ecb8335345e" prot="public" static="no">
+        <name>GPIO_CFG_INPUT_INTERNAL</name>
+        <initializer>((IOMUX_GPIO2CFG_OUTDISOVREN_DISABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>) | (IOMUX_GPIO2CFG_IE_ENABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="197" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1ae5d8a20d9e4e528447b238c51d89c8a5" prot="public" static="no">
+        <name>GPIO_CFG_OUTPUT_INTERNAL</name>
+        <initializer>((IOMUX_GPIO2CFG_OUTDISOVREN_ENABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>) |                                               \
+     (IOMUX_GPIO2CFG_OUTDIS_ENABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>) | (IOMUX_GPIO2CFG_IE_ENABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>) | \
+     (IOMUX_GPIO2CTL_OUTOVREN_ENABLE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" kindref="member">GPIOWFF3_CFG_CTL_S</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="205" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1af0f93f3027375178da26486ea149933c" prot="public" static="no">
+        <name>GPIO_CFG_OUTPUT_DEFAULT_HIGH_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2CTL_OUT_HIGH &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" kindref="member">GPIOWFF3_CFG_CTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="211" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1aa89de9be1a6d982e302932566ce3aa89" prot="public" static="no">
+        <name>GPIO_CFG_OUTPUT_DEFAULT_LOW_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2CTL_OUT_LOW &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" kindref="member">GPIOWFF3_CFG_CTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="212" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a96ee862c1436a776a88c2fb43311eca8" prot="public" static="no">
+        <name>GPIO_CFG_PULL_NONE_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2PCTL_CTL_IPCTRL &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" kindref="member">GPIOWFF3_CFG_PULLCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="215" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1ada3bf4183f78014c9501aa79635fcd0b" prot="public" static="no">
+        <name>GPIO_CFG_PULL_UP_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2PCTL_CTL_UP &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" kindref="member">GPIOWFF3_CFG_PULLCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="218" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1ae83cd1b00a07245f1287671de139122b" prot="public" static="no">
+        <name>GPIO_CFG_PULL_DOWN_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2PCTL_CTL_DOWN &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" kindref="member">GPIOWFF3_CFG_PULLCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="219" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1ac0eefe27013507e2b22b8a52101eb319" prot="public" static="no">
+        <name>GPIO_CFG_INT_NONE_INTERNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="222" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a34ded46245911bfdcdffe6fbf3caceba" prot="public" static="no">
+        <name>GPIO_CFG_INT_FALLING_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2ECTL_EVTDETCFG_NEG_EDGE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="227" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1acd8012d5f5e958a2afbc4b6e849ffad7" prot="public" static="no">
+        <name>GPIO_CFG_INT_RISING_INTERNAL</name>
+        <initializer>(IOMUX_GPIO2ECTL_EVTDETCFG_POS_EDGE &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="232" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a676f577ce0d580f90f888ac28b8bba67" prot="public" static="no">
+        <name>GPIO_CFG_INT_LOW_INTERNAL</name>
+        <initializer>((IOMUX_GPIO2ECTL_EVTDETCFG_LEVEL &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>) | (IOMUX_GPIO2ECTL_TRGLVL_LOW &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="237" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a9522d146f8955fd229d3f6a30a7c2195" prot="public" static="no">
+        <name>GPIO_CFG_INT_HIGH_INTERNAL</name>
+        <initializer>((IOMUX_GPIO2ECTL_EVTDETCFG_LEVEL &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>) | \
+     (IOMUX_GPIO2ECTL_TRGLVL_HIGH &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" kindref="member">GPIOWFF3_CFG_EVTCTL_S</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="243" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a5e615b11715ab698ae570e4d4391ee83" prot="public" static="no">
+        <name>GPIO_CFG_DRVSTR_LOW_INTERNAL</name>
+        <initializer>(IOMUX_GPIO20CFG_IOSTR_LOW &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="251" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a9c37a801020e0f97469e4043992ed43f" prot="public" static="no">
+        <name>GPIO_CFG_DRVSTR_HIGH_INTERNAL</name>
+        <initializer>(IOMUX_GPIO20CFG_IOSTR_HIGH &lt;&lt; <ref refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" kindref="member">GPIOWFF3_CFG_CFG_S</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="252" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1ac75df95185e1d12f711347c803da9813" prot="public" static="no">
+        <name>GPIO_CFG_SHUTDOWN_WAKE_OFF_INTERNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="255" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a340279bfd6694cdf5d0d9057160971ee" prot="public" static="no">
+        <name>GPIO_CFG_SHUTDOWN_WAKE_HIGH_INTERNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="256" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a331d41b47048765c493e34112a2a0a44" prot="public" static="no">
+        <name>GPIO_CFG_SHUTDOWN_WAKE_LOW_INTERNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="257" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a4a5dd8dbe8de763faa2c713fe8a6cf2a" prot="public" static="no">
+        <name>GPIO_CFG_INT_ENABLE_INTERNAL</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="265" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a9b3a4ceb0a5f5cd4285bbd2ac1e77684" prot="public" static="no">
+        <name>GPIO_CFG_INT_DISABLE_INTERNAL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="266" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a3cfd6d99eac21a7426724fad3639275a" prot="public" static="no">
+        <name>GPIO_CFG_OUTPUT_OPEN_DRAIN_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="276" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a457fd4a8bb8535fb8f857f82d60992b2" prot="public" static="no">
+        <name>GPIO_CFG_OUT_OPEN_SOURCE_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="277" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1adb7beb37f51e0e378159785d2155cdc3" prot="public" static="no">
+        <name>GPIO_CFG_INT_BOTH_EDGES_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="279" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a9efeff0c44ab06b5f02b82e08c4c31d2" prot="public" static="no">
+        <name>GPIO_CFG_DRVSTR_MED_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="281" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a11eeb0bcf128a8bee0ed0e51d5010aaa" prot="public" static="no">
+        <name>GPIO_CFG_INVERT_OFF_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="283" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a33e588215af3b913092d601cb18d2f1a" prot="public" static="no">
+        <name>GPIO_CFG_INVERT_ON_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="284" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a7c38ca709d8914b91c827908f312186d" prot="public" static="no">
+        <name>GPIO_CFG_HYSTERESIS_OFF_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="285" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a92193a08470fd0e23ae2ac6838c7bab0" prot="public" static="no">
+        <name>GPIO_CFG_HYSTERESIS_ON_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="286" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1aa639287217c2213b274ad609eb9876f9" prot="public" static="no">
+        <name>GPIO_CFG_SLEW_NORMAL_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="287" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_g_p_i_o_w_f_f3_8h_1a0d49c7114300f31ef5d2e1cc5e969f4b" prot="public" static="no">
+        <name>GPIO_CFG_SLEW_REDUCED_INTERNAL</name>
+        <initializer>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/gpio/GPIOWFF3.h" line="288" column="9" bodyfile="source/ti/drivers/gpio/GPIOWFF3.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPIO driver implementation for WiFi F3 devices. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><heading level="1">Overview</heading>
+</para><para>The GPIO header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/GPIO.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/gpio/GPIOWFF3.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_g_p_i_o_8h" kindref="compound">GPIO.h</ref> for a complete description of the GPIO driver APIs provided and examples of their use.</para><para>There are some WiFi F3 device-specific configuration values that can be used when calling <ref refid="_g_p_i_o_8h_1a015b75143cc3b8914cc298c5c4fc097e" kindref="member">GPIO_setConfig</ref> or <ref refid="_g_p_i_o_8h_1a53cc86d668c93f510dc3de7332410ebd" kindref="member">GPIO_setConfigAndMux</ref>, listed below. All other macros should be used directly from <ref refid="_g_p_i_o_8h" kindref="compound">GPIO.h</ref>.</para><para>There are some WiFi F3 device-specific mux values that can be used when calling <ref refid="_g_p_i_o_8h_1a53cc86d668c93f510dc3de7332410ebd" kindref="member">GPIO_setConfigAndMux</ref> listed below.</para><para><heading level="1">IO Multiplexing</heading>
+</para><para>If an IO is multiplexed to an output signal or an analog signal, the IO must be configured with <ref refid="group___g_p_i_o___pin_config_settings_1ga311d775bf95eca7f4bca0772ec10f865" kindref="member">GPIO_CFG_NO_DIR</ref>. The output will automatically be enabled when needed. If an IO is multiplexed to a digital input or bi-directional signal, the IO must be configured as an input using <ref refid="group___g_p_i_o___pin_config_settings_1ga874e34de3bef2d9415b4311dd6bed234" kindref="member">GPIO_CFG_INPUT</ref>, <ref refid="group___g_p_i_o___pin_config_settings_1ga4fb7b60751481b6988049fe8fa94a7d7" kindref="member">GPIO_CFG_IN_PU</ref> etc. to ensure that the input buffer of the IO is enabled.</para><para>For IOs supporting analog signals, an additional mux setting <ref refid="_g_p_i_o_w_f_f3_8h_1a885ef9f050dbd7b48a627c63a19d56c9" kindref="member">GPIOWFF3_MUX_ANALOG</ref> can be used with <ref refid="_g_p_i_o_8h_1a53cc86d668c93f510dc3de7332410ebd" kindref="member">GPIO_setConfigAndMux()</ref>.</para><para><heading level="1">Software Controlled IO</heading>
+</para><para>Independently of the muxing, the IO can also be controlled/overriden by software. This means that if the IO is configured as an output (for example using <ref refid="group___g_p_i_o___pin_config_settings_1gaad0c4b9c093f1d57fd03061b7456193a" kindref="member">GPIO_CFG_OUTPUT</ref>), then the output state of the IO is controlled by the software. The signal the IO is muxed to is ignored. This is useful for some scenarios, for example setting the sleep state of the IO before entering sleep. When the IO is only intended to be used as a software controlled IO, it is recommended to use the <ref refid="group___g_p_i_o___pin_config_settings_1ga6349902253d167b88fc5cd3e7138d529" kindref="member">GPIO_MUX_GPIO</ref> mux setting. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>GPIOWFF3.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>GPIO<sp/>driver<sp/>implementation<sp/>for<sp/>WiFi<sp/>F3<sp/>devices</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>GPIO<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/GPIO.h&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/gpio/GPIOWFF3.h&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>GPIO.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>the<sp/>GPIO</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>driver<sp/>APIs<sp/>provided<sp/>and<sp/>examples<sp/>of<sp/>their<sp/>use.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>There<sp/>are<sp/>some<sp/>WiFi<sp/>F3<sp/>device-specific<sp/>configuration<sp/>values<sp/>that<sp/>can<sp/>be<sp/>used</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>when<sp/>calling<sp/>@ref<sp/>GPIO_setConfig<sp/>or<sp/>@ref<sp/>GPIO_setConfigAndMux,<sp/>listed<sp/>below.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>All<sp/>other<sp/>macros<sp/>should<sp/>be<sp/>used<sp/>directly<sp/>from<sp/>GPIO.h.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>There<sp/>are<sp/>some<sp/>WiFi<sp/>F3<sp/>device-specific<sp/>mux<sp/>values<sp/>that<sp/>can<sp/>be<sp/>used</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>when<sp/>calling<sp/>@ref<sp/>GPIO_setConfigAndMux<sp/>listed<sp/>below.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>IO<sp/>Multiplexing<sp/>#</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>an<sp/>IO<sp/>is<sp/>multiplexed<sp/>to<sp/>an<sp/>output<sp/>signal<sp/>or<sp/>an<sp/>analog<sp/>signal,<sp/>the<sp/>IO<sp/>must</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>be<sp/>configured<sp/>with<sp/>@ref<sp/>GPIO_CFG_NO_DIR.<sp/>The<sp/>output<sp/>will<sp/>automatically<sp/>be</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>enabled<sp/>when<sp/>needed.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>an<sp/>IO<sp/>is<sp/>multiplexed<sp/>to<sp/>a<sp/>digital<sp/>input<sp/>or<sp/>bi-directional<sp/>signal,<sp/>the<sp/>IO</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>must<sp/>be<sp/>configured<sp/>as<sp/>an<sp/>input<sp/>using<sp/>@ref<sp/>GPIO_CFG_INPUT,</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>@ref<sp/>GPIO_CFG_IN_PU<sp/>etc.<sp/>to<sp/>ensure<sp/>that<sp/>the<sp/>input<sp/>buffer<sp/>of<sp/>the<sp/>IO<sp/>is</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>enabled.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>For<sp/>IOs<sp/>supporting<sp/>analog<sp/>signals,<sp/>an<sp/>additional<sp/>mux<sp/>setting</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>@ref<sp/>GPIOWFF3_MUX_ANALOG<sp/>can<sp/>be<sp/>used<sp/>with<sp/>@ref<sp/>GPIO_setConfigAndMux().</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Software<sp/>Controlled<sp/>IO<sp/>#</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>Independently<sp/>of<sp/>the<sp/>muxing,<sp/>the<sp/>IO<sp/>can<sp/>also<sp/>be<sp/>controlled/overriden<sp/>by</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>software.<sp/>This<sp/>means<sp/>that<sp/>if<sp/>the<sp/>IO<sp/>is<sp/>configured<sp/>as<sp/>an<sp/>output<sp/>(for<sp/>example</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>using<sp/>@ref<sp/>GPIO_CFG_OUTPUT),<sp/>then<sp/>the<sp/>output<sp/>state<sp/>of<sp/>the<sp/>IO<sp/>is<sp/>controlled<sp/>by</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>software.<sp/>The<sp/>signal<sp/>the<sp/>IO<sp/>is<sp/>muxed<sp/>to<sp/>is<sp/>ignored.<sp/>This<sp/>is<sp/>useful<sp/>for</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>some<sp/>scenarios,<sp/>for<sp/>example<sp/>setting<sp/>the<sp/>sleep<sp/>state<sp/>of<sp/>the<sp/>IO<sp/>before</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>entering<sp/>sleep.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>When<sp/>the<sp/>IO<sp/>is<sp/>only<sp/>intended<sp/>to<sp/>be<sp/>used<sp/>as<sp/>a<sp/>software<sp/>controlled<sp/>IO,<sp/>it<sp/>is</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>recommended<sp/>to<sp/>use<sp/>the<sp/>@ref<sp/>GPIO_MUX_GPIO<sp/>mux<sp/>setting.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_GPIOWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_GPIOWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_g_p_i_o_8h" kindref="compound">ti/drivers/GPIO.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_iomux.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="_g_p_i_o_w_f_f3_8h_1a885ef9f050dbd7b48a627c63a19d56c9" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOWFF3_MUX_ANALOG<sp/>(GPIOWFF3_MUX_ANALOG_INTERNAL<sp/>|<sp/>GPIO_MUX_GPIO_INTERNAL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="_g_p_i_o_w_f_f3_8h_1a78eef7a7beb044d26fd5d6c7f49f88b4" refkind="member"><highlight class="preprocessor">#define<sp/>GPIOWFF3_DO_NOT_CONFIG<sp/>0x80000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment">/*<sp/>Do<sp/>not<sp/>configure<sp/>this<sp/>pin.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="_g_p_i_o_w_f_f3_8h_1abf8782a0a9a99f5d551cf444a5507f2a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_DO_NOT_CONFIG_INTERNAL<sp/>GPIOWFF3_DO_NOT_CONFIG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="_g_p_i_o_w_f_f3_8h_1a73eb225e352f4d78174163f585dd7d4b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_MUX_GPIO_INTERNAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0x0D)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="_g_p_i_o_w_f_f3_8h_1a085cd3bfde06f3cf79cd5d4d3c62a941" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_MUX_ANALOG_INTERNAL<sp/>(0x100)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>We<sp/>don&apos;t<sp/>define<sp/>this<sp/>value<sp/>on<sp/>purpose<sp/>-<sp/>any<sp/>unsupported<sp/>values<sp/>will<sp/>cause<sp/>a</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/>compile-time<sp/>error.<sp/>If<sp/>your<sp/>compiler<sp/>tells<sp/>you<sp/>that<sp/>this<sp/>macro<sp/>is<sp/>missing,</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>you<sp/>are<sp/>trying<sp/>to<sp/>use<sp/>an<sp/>unsupported<sp/>option.</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>See<sp/>below<sp/>for<sp/>which<sp/>options<sp/>are<sp/>unsupported.</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>IO<sp/>configuration<sp/>for<sp/>WiFi<sp/>F3<sp/>devices<sp/>are<sp/>split<sp/>between<sp/>multiple</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>registers.<sp/>The<sp/>below<sp/>mask<sp/>and<sp/>shift<sp/>defines<sp/>are<sp/>used<sp/>to<sp/>split<sp/>the</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>configuration<sp/>data<sp/>between<sp/>registers.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>Note:<sp/>Most<sp/>bitmasks<sp/>are<sp/>from<sp/>GPIO2,<sp/>but<sp/>some<sp/>GPIOs<sp/>has<sp/>additional<sp/>fields,</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>and<sp/>the<sp/>bitmask<sp/>from<sp/>these<sp/>fields<sp/>are<sp/>from<sp/>a<sp/>different<sp/>GPIO.<sp/>For<sp/>example</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>GPIO20<sp/>is<sp/>used<sp/>for<sp/>the<sp/>drive<sp/>strength<sp/>bitmask.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="_g_p_i_o_w_f_f3_8h_1a825222aabe50776c5e60ff503bd6e2ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_CFG_S<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="_g_p_i_o_w_f_f3_8h_1af538bc46e2bdb38f2a5ba8156d187aa9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_CFG_M<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2CFG_IE_M<sp/>|<sp/>IOMUX_GPIO2CFG_OUTDIS_M<sp/>|<sp/>IOMUX_GPIO2CFG_OUTDISOVREN_M<sp/>|<sp/>IOMUX_GPIO20CFG_IOSTR_M)<sp/>\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="_g_p_i_o_w_f_f3_8h_1a4bbd769349517e7a214b1ed398d35d3b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_PULLCTL_S<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="_g_p_i_o_w_f_f3_8h_1af99f222a8e1c3ac3152d8c55f998ff96" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_PULLCTL_M<sp/>((IOMUX_GPIO2PCTL_CTL_M)<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_PULLCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="_g_p_i_o_w_f_f3_8h_1a45cd9cfbaefcff49a3ccf83fae6859cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_CTL_S<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="_g_p_i_o_w_f_f3_8h_1a313d5d66d0b9b4740d7a52016c1a0eef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_CTL_M<sp/>((IOMUX_GPIO2CTL_OUTOVREN_M<sp/>|<sp/>IOMUX_GPIO2CTL_OUT_M)<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="_g_p_i_o_w_f_f3_8h_1a3f548dee4fc9026dc779215f7dde5ab3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_EVTCTL_S<sp/>(16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="_g_p_i_o_w_f_f3_8h_1a229d77b5523bce0a1debb6fae3496101" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_EVTCTL_M<sp/>((IOMUX_GPIO37ECTL_EVTDETCFG_M<sp/>|<sp/>IOMUX_GPIO2ECTL_TRGLVL_M)<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="_g_p_i_o_w_f_f3_8h_1aa15e9add3857dc8922f8dd98fc678bf9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_IOMUX_COMB_M<sp/>\</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(GPIOWFF3_CFG_CFG_M<sp/>|<sp/>GPIOWFF3_CFG_PULLCTL_M<sp/>|<sp/>GPIOWFF3_CFG_CTL_M<sp/>|<sp/>GPIOWFF3_CFG_EVTCTL_M)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Throw<sp/>an<sp/>error<sp/>if<sp/>above<sp/>masks<sp/>are<sp/>overlapping<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((GPIOWFF3_CFG_CFG_M<sp/>+<sp/>GPIOWFF3_CFG_PULLCTL_M<sp/>+<sp/>GPIOWFF3_CFG_CTL_M<sp/>+<sp/>GPIOWFF3_CFG_EVTCTL_M)<sp/>!=<sp/>\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>GPIOWFF3_CFG_IOMUX_COMB_M)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>\</highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;GPIOWFF3_CFG_CFG_M,<sp/>GPIOWFF3_CFG_PULLCTL_M,<sp/>GPIOWFF3_CFG_CTL_M<sp/>and<sp/>GPIOWFF3_CFG_EVTCTL_M<sp/>have<sp/>overlapping<sp/>bits&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>remaining<sp/>unused<sp/>bits<sp/>will<sp/>be<sp/>used<sp/>for<sp/>configuration<sp/>options<sp/>not<sp/>directly</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/>handled<sp/>by<sp/>IOMUX.</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="_g_p_i_o_w_f_f3_8h_1a466d59e26108015b451fd48f96cd0aaa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIOWFF3_CFG_INTERNAL_M<sp/>~GPIOWFF3_CFG_IOMUX_COMB_M</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Disable<sp/>output<sp/>disable<sp/>override<sp/>(IP<sp/>can<sp/>control<sp/>OUTDIS)</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/>-<sp/>Disable<sp/>input</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="_g_p_i_o_w_f_f3_8h_1a95addfbe8da68e77ce585f646ccb05aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_NO_DIR_INTERNAL<sp/>\</highlight></codeline>
+<codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2CFG_OUTDISOVREN_DISABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)<sp/>|<sp/>(IOMUX_GPIO2CFG_IE_DISABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Disable<sp/>output<sp/>disable<sp/>override<sp/>(IP<sp/>can<sp/>control<sp/>OUTDIS)</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>-<sp/>Enable<sp/>input</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="_g_p_i_o_w_f_f3_8h_1adc7eeeda1042b0455f478ecb8335345e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INPUT_INTERNAL<sp/>\</highlight></codeline>
+<codeline lineno="198"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2CFG_OUTDISOVREN_DISABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)<sp/>|<sp/>(IOMUX_GPIO2CFG_IE_ENABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Enable<sp/>output<sp/>disable<sp/>override<sp/>(IP<sp/>cannot<sp/>control<sp/>OUTDIS)</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/>-<sp/>Enable<sp/>output<sp/>(clear<sp/>OUTDIS,<sp/>which<sp/>ENABLEs<sp/>the<sp/>pad)</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/>-<sp/>Enable<sp/>input<sp/>(to<sp/>be<sp/>able<sp/>to<sp/>read<sp/>the<sp/>current<sp/>pin<sp/>output<sp/>value)</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/>-<sp/>Enable<sp/>output<sp/>override</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="_g_p_i_o_w_f_f3_8h_1ae5d8a20d9e4e528447b238c51d89c8a5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_OUTPUT_INTERNAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="206"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2CFG_OUTDISOVREN_ENABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(IOMUX_GPIO2CFG_OUTDIS_ENABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)<sp/>|<sp/>(IOMUX_GPIO2CFG_IE_ENABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="208"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(IOMUX_GPIO2CTL_OUTOVREN_ENABLE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CTL_S))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Default<sp/>output<sp/>value<sp/>(only<sp/>has<sp/>an<sp/>affect<sp/>if<sp/>output<sp/>override<sp/>is<sp/>enabled)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="_g_p_i_o_w_f_f3_8h_1af0f93f3027375178da26486ea149933c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_OUTPUT_DEFAULT_HIGH_INTERNAL<sp/>(IOMUX_GPIO2CTL_OUT_HIGH<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="_g_p_i_o_w_f_f3_8h_1aa89de9be1a6d982e302932566ce3aa89" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_OUTPUT_DEFAULT_LOW_INTERNAL<sp/><sp/>(IOMUX_GPIO2CTL_OUT_LOW<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Use<sp/>IP<sp/>Pull<sp/>Control<sp/>(TODO:<sp/>Determine<sp/>if<sp/>this<sp/>is<sp/>a<sp/>good<sp/>solution<sp/>and<sp/>if<sp/>it<sp/>will<sp/>work<sp/>at<sp/>all)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="_g_p_i_o_w_f_f3_8h_1a96ee862c1436a776a88c2fb43311eca8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_PULL_NONE_INTERNAL<sp/>(IOMUX_GPIO2PCTL_CTL_IPCTRL<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_PULLCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Override<sp/>IP<sp/>pull<sp/>control<sp/>to<sp/>pull<sp/>up/down<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="_g_p_i_o_w_f_f3_8h_1ada3bf4183f78014c9501aa79635fcd0b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_PULL_UP_INTERNAL<sp/><sp/><sp/>(IOMUX_GPIO2PCTL_CTL_UP<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_PULLCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="_g_p_i_o_w_f_f3_8h_1ae83cd1b00a07245f1287671de139122b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_PULL_DOWN_INTERNAL<sp/>(IOMUX_GPIO2PCTL_CTL_DOWN<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_PULLCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>configurations*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="_g_p_i_o_w_f_f3_8h_1ac0eefe27013507e2b22b8a52101eb319" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_NONE_INTERNAL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Enable<sp/>edge<sp/>detection</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*<sp/>-<sp/>Set<sp/>edge<sp/>direction<sp/>to<sp/>falling</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="_g_p_i_o_w_f_f3_8h_1a34ded46245911bfdcdffe6fbf3caceba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_FALLING_INTERNAL<sp/>(IOMUX_GPIO2ECTL_EVTDETCFG_NEG_EDGE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Enable<sp/>edge<sp/>detection</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*<sp/>-<sp/>Set<sp/>edge<sp/>direction<sp/>to<sp/>rising</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="_g_p_i_o_w_f_f3_8h_1acd8012d5f5e958a2afbc4b6e849ffad7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_RISING_INTERNAL<sp/>(IOMUX_GPIO2ECTL_EVTDETCFG_POS_EDGE<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Enable<sp/>level<sp/>detection</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*<sp/>-<sp/>Trigger<sp/>event<sp/>when<sp/>IO<sp/>level<sp/>is<sp/>low</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="_g_p_i_o_w_f_f3_8h_1a676f577ce0d580f90f888ac28b8bba67" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_LOW_INTERNAL<sp/>\</highlight></codeline>
+<codeline lineno="238"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2ECTL_EVTDETCFG_LEVEL<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S)<sp/>|<sp/>(IOMUX_GPIO2ECTL_TRGLVL_LOW<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-<sp/>Enable<sp/>level<sp/>detection</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/>*<sp/>-<sp/>Trigger<sp/>event<sp/>when<sp/>IO<sp/>level<sp/>is<sp/>high</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="_g_p_i_o_w_f_f3_8h_1a9522d146f8955fd229d3f6a30a7c2195" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_HIGH_INTERNAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="244"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((IOMUX_GPIO2ECTL_EVTDETCFG_LEVEL<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S)<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="245"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(IOMUX_GPIO2ECTL_TRGLVL_HIGH<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_EVTCTL_S))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Drive<sp/>strengths<sp/>configurations</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/>*<sp/>Note:<sp/>GPIO20<sp/>is<sp/>used<sp/>instead<sp/>of<sp/>GPIO2,<sp/>because<sp/>GPIO2<sp/>do<sp/>not<sp/>have<sp/>a<sp/>drive</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/>*<sp/>strength<sp/>field.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="_g_p_i_o_w_f_f3_8h_1a5e615b11715ab698ae570e4d4391ee83" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_DRVSTR_LOW_INTERNAL<sp/><sp/>(IOMUX_GPIO20CFG_IOSTR_LOW<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="_g_p_i_o_w_f_f3_8h_1a9c37a801020e0f97469e4043992ed43f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_DRVSTR_HIGH_INTERNAL<sp/>(IOMUX_GPIO20CFG_IOSTR_HIGH<sp/>&lt;&lt;<sp/>GPIOWFF3_CFG_CFG_S)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>TODO:<sp/>Implement<sp/>shutdown<sp/>wake<sp/>up<sp/>(if<sp/>supported)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="_g_p_i_o_w_f_f3_8h_1ac75df95185e1d12f711347c803da9813" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_SHUTDOWN_WAKE_OFF_INTERNAL<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="_g_p_i_o_w_f_f3_8h_1a340279bfd6694cdf5d0d9057160971ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_SHUTDOWN_WAKE_HIGH_INTERNAL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="_g_p_i_o_w_f_f3_8h_1a331d41b47048765c493e34112a2a0a44" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_SHUTDOWN_WAKE_LOW_INTERNAL<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Configuration<sp/>values<sp/>stored<sp/>in<sp/>internally<sp/>used<sp/>bits.<sp/>Any<sp/>configuration</highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/>*<sp/>options<sp/>not<sp/>directly<sp/>handled<sp/>by<sp/>IOMUX<sp/>need<sp/>to<sp/>be<sp/>stored<sp/>inside<sp/>the<sp/>internal</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/>*<sp/>bits<sp/>(\ref<sp/>GPIOWFF3_CFG_INTERNAL_MASK)</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>enable<sp/>is<sp/>in<sp/>the<sp/>GPIO<sp/>module<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265" refid="_g_p_i_o_w_f_f3_8h_1a4a5dd8dbe8de763faa2c713fe8a6cf2a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_ENABLE_INTERNAL<sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="_g_p_i_o_w_f_f3_8h_1a9b3a4ceb0a5f5cd4285bbd2ac1e77684" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_DISABLE_INTERNAL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Make<sp/>sure<sp/>configuration<sp/>options<sp/>not<sp/>directly<sp/>handled<sp/>by<sp/>IOMUX<sp/>is<sp/>only<sp/>stored</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>internally<sp/>used<sp/>bits.</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(((GPIO_CFG_INT_ENABLE_INTERNAL<sp/>|<sp/>GPIOWFF3_DO_NOT_CONFIG)<sp/>|<sp/>GPIOWFF3_CFG_INTERNAL_M)<sp/>!=<sp/>GPIOWFF3_CFG_INTERNAL_M)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>&quot;Internal<sp/>configurations<sp/>values<sp/>are<sp/>not<sp/>stored<sp/>in<sp/>GPIOWFF3_CFG_INTERNAL_M&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Not<sp/>supported<sp/>features<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="_g_p_i_o_w_f_f3_8h_1a3cfd6d99eac21a7426724fad3639275a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_OUTPUT_OPEN_DRAIN_INTERNAL<sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277" refid="_g_p_i_o_w_f_f3_8h_1a457fd4a8bb8535fb8f857f82d60992b2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_OUT_OPEN_SOURCE_INTERNAL<sp/><sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="_g_p_i_o_w_f_f3_8h_1adb7beb37f51e0e378159785d2155cdc3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INT_BOTH_EDGES_INTERNAL<sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="_g_p_i_o_w_f_f3_8h_1a9efeff0c44ab06b5f02b82e08c4c31d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_DRVSTR_MED_INTERNAL<sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="_g_p_i_o_w_f_f3_8h_1a11eeb0bcf128a8bee0ed0e51d5010aaa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INVERT_OFF_INTERNAL<sp/><sp/><sp/><sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="_g_p_i_o_w_f_f3_8h_1a33e588215af3b913092d601cb18d2f1a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_INVERT_ON_INTERNAL<sp/><sp/><sp/><sp/><sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="_g_p_i_o_w_f_f3_8h_1a7c38ca709d8914b91c827908f312186d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_HYSTERESIS_OFF_INTERNAL<sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="_g_p_i_o_w_f_f3_8h_1a92193a08470fd0e23ae2ac6838c7bab0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_HYSTERESIS_ON_INTERNAL<sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="_g_p_i_o_w_f_f3_8h_1aa639287217c2213b274ad609eb9876f9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_SLEW_NORMAL_INTERNAL<sp/><sp/><sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288" refid="_g_p_i_o_w_f_f3_8h_1a0d49c7114300f31ef5d2e1cc5e969f4b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_CFG_SLEW_REDUCED_INTERNAL<sp/><sp/><sp/>GPIOWFF3_CFG_OPTION_NOT_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_GPIOWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/gpio/GPIOWFF3.h"/>
+  </compounddef>
+</doxygen>

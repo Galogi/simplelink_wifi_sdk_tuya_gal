@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__core__key__attributes__t" kind="struct" language="C++" prot="public">
+    <compoundname>psa_core_key_attributes_t</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1ac3a6bba1f319c1fbd0d1b1d98098957a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref></type>
+        <definition>psa_key_type_t psa_core_key_attributes_t::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="159" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="159" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1ae4fb812af4f57aa1ad85e335a865b918" compoundref="crypto__struct_8h" startline="310" endline="314">psa_get_key_type</referencedby>
+        <referencedby refid="crypto__struct_8h_1a6857ef0ecb3fa844d4536939d9c64025" compoundref="crypto__struct_8h" startline="303" endline="308">psa_set_key_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1a843888109cf8a9b9fb3d07bc1aa10a61" prot="public" static="no" mutable="no">
+        <type><ref refid="crypto__struct_8h_1a57270c808928ab5d7c9cfc7cb1e5735d" kindref="member">psa_key_bits_t</ref></type>
+        <definition>psa_key_bits_t psa_core_key_attributes_t::bits</definition>
+        <argsstring></argsstring>
+        <name>bits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="160" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="160" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1a5bee85c2164ad3d4c0d42501241eeb06" compoundref="crypto__struct_8h" startline="326" endline="330">psa_get_key_bits</referencedby>
+        <referencedby refid="crypto__struct_8h_1af61683ac87f87687a40262b5afbfa018" compoundref="crypto__struct_8h" startline="316" endline="324">psa_set_key_bits</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1a8f9e0448c0d824bd0b54d084b99a2fec" prot="public" static="no" mutable="no">
+        <type><ref refid="group__key__lifetimes_1ga6821ff6dd39dc2bc370ded760ad8b0cf" kindref="member">psa_key_lifetime_t</ref></type>
+        <definition>psa_key_lifetime_t psa_core_key_attributes_t::lifetime</definition>
+        <argsstring></argsstring>
+        <name>lifetime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="161" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="161" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1a9ea8eae1b81e480cc56dec858859aff9" compoundref="crypto__struct_8h" startline="265" endline="269">psa_get_key_lifetime</referencedby>
+        <referencedby refid="crypto__struct_8h_1a7085a16b7b3d1642cb9fe9bf4a91e561" compoundref="crypto__struct_8h" startline="229" endline="248">psa_set_key_id</referencedby>
+        <referencedby refid="crypto__struct_8h_1ac03ccf09ca6d36cc3d5b43f8303db6f7" compoundref="crypto__struct_8h" startline="256" endline="263">psa_set_key_lifetime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1a0ca305dd527c5849d5874343362d959c" prot="public" static="no" mutable="no">
+        <type><ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref></type>
+        <definition>mbedtls_svc_key_id_t psa_core_key_attributes_t::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="162" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="162" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1add35bbb9e3aea14934cb61c396a3e6f1" compoundref="crypto__struct_8h" startline="250" endline="254">psa_get_key_id</referencedby>
+        <referencedby refid="crypto__struct_8h_1a7085a16b7b3d1642cb9fe9bf4a91e561" compoundref="crypto__struct_8h" startline="229" endline="248">psa_set_key_id</referencedby>
+        <referencedby refid="crypto__struct_8h_1ac03ccf09ca6d36cc3d5b43f8303db6f7" compoundref="crypto__struct_8h" startline="256" endline="263">psa_set_key_lifetime</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1abafc302d087e94d69d1bc0542bc48a94" prot="public" static="no" mutable="no">
+        <type><ref refid="crypto__struct_8h_1af553efd409845b6d09ff25ce2ba36607" kindref="member">psa_key_policy_t</ref></type>
+        <definition>psa_key_policy_t psa_core_key_attributes_t::policy</definition>
+        <argsstring></argsstring>
+        <name>policy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="163" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1ac255da850a00bbed925390044f016b34" compoundref="crypto__struct_8h" startline="290" endline="294">psa_get_key_algorithm</referencedby>
+        <referencedby refid="crypto__struct_8h_1aa1af20f142ca722222c6d98678a0c448" compoundref="crypto__struct_8h" startline="278" endline="282">psa_get_key_usage_flags</referencedby>
+        <referencedby refid="crypto__struct_8h_1aeb8341ca52baa0279475ea3fd3bcdc98" compoundref="crypto__struct_8h" startline="284" endline="288">psa_set_key_algorithm</referencedby>
+        <referencedby refid="crypto__struct_8h_1a42a65b3c4522ce9b67ea5ea7720e17de" compoundref="crypto__struct_8h" startline="271" endline="276">psa_set_key_usage_flags</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__core__key__attributes__t_1abe0b4367681ed664d8b83659d7318e5c" prot="public" static="no" mutable="no">
+        <type><ref refid="crypto__struct_8h_1a71ff48e6c5d3dd77cc1e4c89d105106b" kindref="member">psa_key_attributes_flag_t</ref></type>
+        <definition>psa_key_attributes_flag_t psa_core_key_attributes_t::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="164" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="14">
+        <label>psa_key_policy_s</label>
+        <link refid="structpsa__key__policy__s"/>
+      </node>
+      <node id="15">
+        <label>mbedtls_svc_key_id_t</label>
+        <link refid="structmbedtls__svc__key__id__t"/>
+      </node>
+      <node id="13">
+        <label>psa_core_key_attributes_t</label>
+        <link refid="structpsa__core__key__attributes__t"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>policy</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="158" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="157" bodyend="165"/>
+    <listofallmembers>
+      <member refid="structpsa__core__key__attributes__t_1a843888109cf8a9b9fb3d07bc1aa10a61" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>bits</name></member>
+      <member refid="structpsa__core__key__attributes__t_1abe0b4367681ed664d8b83659d7318e5c" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>flags</name></member>
+      <member refid="structpsa__core__key__attributes__t_1a0ca305dd527c5849d5874343362d959c" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>id</name></member>
+      <member refid="structpsa__core__key__attributes__t_1a8f9e0448c0d824bd0b54d084b99a2fec" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>lifetime</name></member>
+      <member refid="structpsa__core__key__attributes__t_1abafc302d087e94d69d1bc0542bc48a94" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>policy</name></member>
+      <member refid="structpsa__core__key__attributes__t_1ac3a6bba1f319c1fbd0d1b1d98098957a" prot="public" virt="non-virtual"><scope>psa_core_key_attributes_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

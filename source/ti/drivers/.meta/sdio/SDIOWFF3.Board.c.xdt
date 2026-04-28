@@ -1,0 +1,132 @@
+%%{
+/*
+ * Copyright (c) 2025, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/*
+ *  ======== SDIOWFF3.Board.c.xdt ========
+ */
+
+    let Common    = system.getScript("/ti/drivers/Common.js");
+    let SDIO      = args[0];
+    let instances = SDIO.$instances;
+
+    if (instances.length == 0) return;
+
+    /* CONFIG_XXXCOUNT string, derived from defaultInstanceName */
+    let countDef = SDIO.defaultInstanceName + "COUNT";
+
+    /* localize the object names with this device ID */
+    let devId = system.deviceData.deviceId;
+
+    /* Get name of device specific include directory */
+    let devicesDir = Common.device2DevicesDir(devId);
+
+    let driver = 'SDIOWFF3';
+
+%%}
+/*
+ *  =============================== SDIO ===============================
+ */
+
+#include <ti/drivers/SDIO.h>
+#include <ti/drivers/sdio/SDIOWFF3.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerWFF3.h>
+#include <ti/drivers/dma/DMAWFF3.h>
+#include <ti/devices/`devicesDir`/inc/hw_memmap.h>
+#include <ti/devices/`devicesDir`/inc/hw_ints.h>
+#include <ti/devices/`devicesDir`/inc/hw_soc_aon.h>
+
+#define `countDef` `instances.length`
+
+`driver`_Object `driver`_object[`countDef`] = {
+  {
+   .isOpen             = false,
+   .cardInitiated      = false
+  },
+};
+
+`driver`_HwAttrs `driver`_hwAttrs[`countDef`] = {
+% for (let i = 0; i < instances.length; i++) {
+%     let inst        = instances[i];
+%     let dmaRXDevicePinName = inst.sdio.dmaRxChannel.$solution.devicePinName;
+%     let dmaTXDevicePinName = inst.sdio.dmaTxChannel.$solution.devicePinName;
+%
+%     let sdioInstanceName   = 'SDIO';
+%     let sdioInterruptName  = 'SDIO' + '_CARD_IRQ_REQ';
+%
+  {
+    .FN0baseAddr        = SDIO_CORE_BASE,
+    .FN1baseAddr        = SDIO_CARD_FN1_BASE,
+    .intNum             = INT_`sdioInterruptName`,
+    .intPriority        = `Common.intPriority2Hex(inst.interruptPriority)`,
+    .powerID            = PowerWFF3_PERIPH_`sdioInstanceName`,
+    .rxDmaChannel       = `dmaRXDevicePinName.slice(6, dmaRXDevicePinName.length)`,
+    .txDmaChannel       = `dmaTXDevicePinName.slice(6, dmaTXDevicePinName.length)`,
+    .thresholdLen       = `inst.thresholdLen`,
+    .clkPin             = `inst.sdio.clkPin.$solution.devicePinName.replace("GPIO", "")`,
+    .clkPinMux          = `inst.sdio.clkPin.$solution.muxMode`,
+    .cmdPin             = `inst.sdio.cmdPin.$solution.devicePinName.replace("GPIO", "")`,
+    .cmdPinMux          = `inst.sdio.cmdPin.$solution.muxMode`,
+    .data0Pin           = `inst.sdio.data0Pin.$solution.devicePinName.replace("GPIO", "")`,
+    .data0PinMux        = `inst.sdio.data0Pin.$solution.muxMode`,
+    .data1Pin           = `inst.sdio.data1Pin.$solution.devicePinName.replace("GPIO", "")`,
+    .data1PinMux        = `inst.sdio.data1Pin.$solution.muxMode`,
+    .data2Pin           = `inst.sdio.data2Pin.$solution.devicePinName.replace("GPIO", "")`,
+    .data2PinMux        = `inst.sdio.data2Pin.$solution.muxMode`,
+    .data3Pin           = `inst.sdio.data3Pin.$solution.devicePinName.replace("GPIO", "")`,
+    .data3PinMux        = `inst.sdio.data3Pin.$solution.muxMode`,
+%if(inst.irqSignal == 'Out-of-band'){
+    .irqPin             = `inst.sdio.obiPin.$solution.devicePinName.replace("GPIO", "")`,
+    .irqPinMux          = `inst.sdio.obiPin.$solution.muxMode`
+%}
+%else{
+    .irqPin             = GPIO_INVALID_INDEX,
+    .irqPinMux          = GPIO_MUX_GPIO_INTERNAL
+%}
+  },
+% }
+};
+
+const SDIO_Config SDIO_config[`countDef`] = {
+% for (let i = 0; i < instances.length; i++) {
+%     let inst    = instances[i];
+    {   /* `inst.$name` */
+        .object      = &`driver`_object[`i`],
+        .hwAttrs     = &`driver`_hwAttrs[`i`]
+    },
+% }
+};
+
+const uint_least8_t SDIO_count = `countDef`;

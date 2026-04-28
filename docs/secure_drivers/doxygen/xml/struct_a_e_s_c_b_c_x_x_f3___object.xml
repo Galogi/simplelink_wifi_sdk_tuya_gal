@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_c_b_c_x_x_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>AESCBCXXF3_Object</compoundname>
+    <includes refid="_a_e_s_c_b_c_x_x_f3_8h" local="no">AESCBCXXF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a2fcb5b3ed304c986c987c48ecf3fabf2" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref></type>
+        <definition>AESCommonXXF3_Object AESCBCXXF3_Object::common</definition>
+        <argsstring></argsstring>
+        <name>common</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="93" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a049d1c4ec5735a41e6f26011afade0de" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t AESCBCXXF3_Object::iv[AES_IV_LENGTH_BYTES/4]</definition>
+        <argsstring>[AES_IV_LENGTH_BYTES/4]</argsstring>
+        <name>iv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="94" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a10e1efd172196940f3217660f25eb68b" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* AESCBCXXF3_Object::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="95" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a864500604046e61aae45d7576f4148c4" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* AESCBCXXF3_Object::output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="96" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a97c616c397a2d9c0c4ed35bafb067ddb" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1ad3c538c1ce2d9aa37bd538a90f278b45" kindref="member">AESCBC_CallbackFxn</ref></type>
+        <definition>AESCBC_CallbackFxn AESCBCXXF3_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="97" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a2b1c30773e85ee4b4a0cff8660d97fa2" prot="public" static="no" mutable="no">
+        <type><ref refid="union_a_e_s_c_b_c___operation_union" kindref="compound">AESCBC_OperationUnion</ref> *</type>
+        <definition>AESCBC_OperationUnion* AESCBCXXF3_Object::operation</definition>
+        <argsstring></argsstring>
+        <name>operation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="98" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a7be32fb5443b63acc120335d23bfa3ab" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" kindref="member">AESCBC_OperationType</ref></type>
+        <definition>AESCBC_OperationType AESCBCXXF3_Object::operationType</definition>
+        <argsstring></argsstring>
+        <name>operationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="99" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a85856821f603c53df1c234ac8332255a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCXXF3_Object::threadSafe</definition>
+        <argsstring></argsstring>
+        <name>threadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="100" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1ad6229e34df07354ed0f94862d5fc2e96" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t AESCBCXXF3_Object::inputLength</definition>
+        <argsstring></argsstring>
+        <name>inputLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="102" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a5507e28866d6fa2be304afb8b27d5e9b" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBCXXF3_Object::hsmStatus</definition>
+        <argsstring></argsstring>
+        <name>hsmStatus</name>
+        <briefdescription>
+<para>The status of the HSM Boot up process if HSMXXF3_STATUS_SUCCESS, the HSM booted properly. if HSMXXF3_STATUS_ERROR, the HSM did not boot properly. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="108" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1ab439639f9fe10ea77de497ef0f804b28" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCBCXXF3_Object::keyAssetID</definition>
+        <argsstring></argsstring>
+        <name>keyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="109" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1a6367e545ebca38e1b7a4972b7b25424e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCBCXXF3_Object::keyLocation</definition>
+        <argsstring></argsstring>
+        <name>keyLocation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="115" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_b_c_x_x_f3___object_1ad0a69e321dd58489e64a86302f592c72" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCBCXXF3_Object::segmentedOperationInProgress</definition>
+        <argsstring></argsstring>
+        <name>segmentedOperationInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="117" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCBCXXF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="26">
+        <label>AESCommonXXF3_Object</label>
+        <link refid="struct_a_e_s_common_x_x_f3___object"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>AESCBC_OperationUnion</label>
+        <link refid="union_a_e_s_c_b_c___operation_union"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>oneStepOperation</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>segmentedOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>AESCBC_SegmentedOperation</label>
+        <link refid="struct_a_e_s_c_b_c___segmented_operation"/>
+      </node>
+      <node id="21">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>AESCBC_OneStepOperation</label>
+        <link refid="struct_a_e_s_c_b_c___one_step_operation"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="18">
+        <label>AESCBCXXF3_Object</label>
+        <link refid="struct_a_e_s_c_b_c_x_x_f3___object"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>common</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>AESCommon_Config</label>
+        <link refid="struct_a_e_s_common___config"/>
+      </node>
+      <node id="23">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/aescbc/AESCBCXXF3.h" line="91" column="1" bodyfile="source/ti/drivers/aescbc/AESCBCXXF3.h" bodystart="90" bodyend="119"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a97c616c397a2d9c0c4ed35bafb067ddb" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a2fcb5b3ed304c986c987c48ecf3fabf2" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>common</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a5507e28866d6fa2be304afb8b27d5e9b" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>hsmStatus</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a10e1efd172196940f3217660f25eb68b" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>input</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1ad6229e34df07354ed0f94862d5fc2e96" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>inputLength</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a049d1c4ec5735a41e6f26011afade0de" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>iv</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1ab439639f9fe10ea77de497ef0f804b28" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>keyAssetID</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a6367e545ebca38e1b7a4972b7b25424e" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>keyLocation</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a2b1c30773e85ee4b4a0cff8660d97fa2" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>operation</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a7be32fb5443b63acc120335d23bfa3ab" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>operationType</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a864500604046e61aae45d7576f4148c4" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>output</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1ad0a69e321dd58489e64a86302f592c72" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>segmentedOperationInProgress</name></member>
+      <member refid="struct_a_e_s_c_b_c_x_x_f3___object_1a85856821f603c53df1c234ac8332255a" prot="public" virt="non-virtual"><scope>AESCBCXXF3_Object</scope><name>threadSafe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

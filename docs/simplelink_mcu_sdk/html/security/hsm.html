@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Hardware Security Module (HSM) &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Over the Air Update (OTA)" href="../cc35xx/ota.html" />
+    <link rel="prev" title="Secure Debug" href="secure-debug.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug security hsm";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="network-security.html">Network Layer Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-boot.html">Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-debug.html">Secure Debug</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Hardware Security Module (HSM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hsm-feature-overview">HSM Feature Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simplelink-crypto-driver">SimpleLink Crypto Driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simplelink-crypto-driver-usage">SimpleLink Crypto Driver Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#psa-module">PSA Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#psa-module-usage">PSA Module Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-storage-in-the-hsm">Key Storage in the HSM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Security</a> &raquo;</li>
+        
+      <li>The Hardware Security Module (HSM)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-hardware-security-module-hsm">
+<span id="hsm-programming-guide-cc27xx"></span><span id="sec-hsm-overview"></span><h1>The Hardware Security Module (HSM)<a class="headerlink" href="#the-hardware-security-module-hsm" title="Permalink to this headline">¶</a></h1>
+<p>The CC35xx includes an integrated Hardware Security Module (HSM) which
+supports an isolated environment for cryptographic, key management, secure
+counters, and random number generation operations. The HSM allows developers to
+develop secure and future-proof IoT applications using energy efficient
+accelerators and RNG functions.</p>
+<div class="section" id="hsm-feature-overview">
+<h2>HSM Feature Overview<a class="headerlink" href="#hsm-feature-overview" title="Permalink to this headline">¶</a></h2>
+<p>Supported cryptograhpic algorithms are listed below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Functions</th>
+<th class="head">Supported Algorithms</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Key Agreement Schemes</td>
+<td>ECDH</td>
+</tr>
+<tr class="row-odd"><td>Key Derivation Methods</td>
+<td>Random (DRBG)</td>
+</tr>
+<tr class="row-even"><td>Signature Processing</td>
+<td>ECDSA, pureEdDSA</td>
+</tr>
+<tr class="row-odd"><td>Message Authentication Codes</td>
+<td>AES CBC-MAC, AES CMAC, HMAC with SHA2-224, SHA2-256, SHA2-384, and SHA2-512</td>
+</tr>
+<tr class="row-even"><td>Block Cipher Modes of Operation</td>
+<td>AES CCM, GCM, ECB, CBC, CTR</td>
+</tr>
+<tr class="row-odd"><td>Hash Algorithms</td>
+<td>SHA2 (224, 256, 384, 512)</td>
+</tr>
+<tr class="row-even"><td>Random Number Generation</td>
+<td>NIST SP 800-90B Compliant TRNG, AES-CTR DRBG</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">SHA 3 is not yet supported by the Cryptographic driver. But, it is supported by the HSM HW module.
+Future SDK release will support this feature.</p>
+</div>
+<p>Supported Cryptographic key sizes and types include:</p>
+<ul class="simple">
+<li>Advanced Encryption Standard (AES) key sizes of 128, 192, and 256 bits.</li>
+<li>Diffie-Hellman key sizes of 2048-bits and 3072-bits</li>
+<li>Ellipetic Curve Support<ul>
+<li>Short Weierstrass<ul>
+<li>NIST-P224, NIST-P256, NIST-P384, NIST-P521</li>
+</ul>
+</li>
+<li>Montgomery<ul>
+<li>Curve25519</li>
+</ul>
+</li>
+<li>Twisted Edwards form<ul>
+<li>Ed25519</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="simplelink-crypto-driver">
+<h2>SimpleLink Crypto Driver<a class="headerlink" href="#simplelink-crypto-driver" title="Permalink to this headline">¶</a></h2>
+<p>The SimpleLink crypto driver supports several features for our
+cryptographic operations. The CC35XX device family includes a dedicated
+on-chip hardware accelerators that may be used to perform cryptograhpic
+operations (HSM). The SimpleLink driver layer extends support for HSM.</p>
+<p>The first on-chip hardware accelerator is a symmetric operations focused
+accelerator that performs only AES-128 operations called the LAES engine.
+The on-chip hardware accelerator (HSM) offers support for cryptographic
+operations including AES-128/192/256, SHA2 hashing, asymmetric
+operations, and random number generation.</p>
+<p>The SimpleLink layer consists of different drivers performing algorithm-specific
+cryptographic operations.</p>
+</div>
+<div class="section" id="simplelink-crypto-driver-usage">
+<h2>SimpleLink Crypto Driver Usage<a class="headerlink" href="#simplelink-crypto-driver-usage" title="Permalink to this headline">¶</a></h2>
+<p>The following code utilizes the HSM engine.</p>
+<div class="highlight-C notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/AESCCM.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</span><span class="cp"></span>
+
+<span class="n">AESCCM_Params</span> <span class="n">params</span><span class="p">;</span>
+<span class="n">AESCCM_Handle</span> <span class="n">handle</span><span class="p">;</span>
+<span class="n">CryptoKey</span> <span class="n">cryptoKey</span><span class="p">;</span>
+<span class="kt">int_fast16_t</span> <span class="n">encryptionResult</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">nonce</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;Thisisanonce&quot;</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">aad</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;This string will be authenticated but not encrypted.&quot;</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">plaintext</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;This string will be encrypted and authenticated.&quot;</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">mac</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+<span class="kt">uint8_t</span> <span class="n">ciphertext</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)];</span>
+<span class="kt">uint8_t</span> <span class="n">keyingMaterial</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span>
+                              <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0x0A</span><span class="p">,</span> <span class="mh">0x0B</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">,</span> <span class="mh">0x0D</span><span class="p">,</span> <span class="mh">0x0E</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span>
+                              <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x13</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0x17</span><span class="p">,</span>
+                              <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x1C</span><span class="p">,</span> <span class="mh">0x1D</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">};</span>
+<span class="n">AESCCM_Params_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">)</span>
+<span class="n">params</span><span class="p">.</span><span class="n">returnBehavior</span> <span class="o">=</span> <span class="n">AESCCM_RETURN_BEHAVIOR_POLLING</span><span class="p">;</span>
+<span class="n">handle</span> <span class="o">=</span> <span class="n">AESCCM_open</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">params</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">handle</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* If the handle is returned as NULL, this indicates that the HSM</span>
+<span class="cm">     * firmware has not been flashed.</span>
+<span class="cm">     */</span>
+    <span class="c1">// handle error</span>
+<span class="p">}</span>
+
+<span class="cm">/* This uses the HSM. */</span>
+<span class="n">CryptoKeyPlaintextHSM_initKey</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cryptoKey</span><span class="p">,</span> <span class="n">keyingMaterial</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">keyingMaterial</span><span class="p">));</span>
+
+<span class="n">AESCCM_OneStepOperation</span> <span class="n">operation</span><span class="p">;</span>
+<span class="hll"><span class="n">AESCCM_OneStepOperation_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">operation</span><span class="p">);</span>
+</span><span class="n">operation</span><span class="p">.</span><span class="n">key</span>           <span class="o">=</span> <span class="o">&amp;</span><span class="n">cryptoKey</span><span class="p">;</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">aad</span>           <span class="o">=</span> <span class="n">aad</span><span class="p">;</span>
+<span class="hll"><span class="n">operation</span><span class="p">.</span><span class="n">aadLength</span>     <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">aad</span><span class="p">);</span>
+</span><span class="n">operation</span><span class="p">.</span><span class="n">input</span>         <span class="o">=</span> <span class="n">plaintext</span><span class="p">;</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">output</span>        <span class="o">=</span> <span class="n">ciphertext</span><span class="p">;</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">inputLength</span>   <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">plaintext</span><span class="p">);</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">nonce</span>         <span class="o">=</span> <span class="n">nonce</span><span class="p">;</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">nonceLength</span>   <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">nonce</span><span class="p">);</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">mac</span>           <span class="o">=</span> <span class="n">mac</span><span class="p">;</span>
+<span class="n">operation</span><span class="p">.</span><span class="n">macLength</span>     <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mac</span><span class="p">);</span>
+<span class="n">encryptionResult</span> <span class="o">=</span> <span class="n">AESCCM_oneStepEncrypt</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">operation</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">encryptionResult</span> <span class="o">!=</span> <span class="n">AESCCM_STATUS_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle error</span>
+<span class="p">}</span>
+<span class="n">AESCCM_close</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>System Architecture for SimpleLink Crypto Drivers is shown below.</p>
+<div class="figure align-center" id="fig-psa-hsm-breakdown">
+<img alt="../_images/psa_hsm_breakdown.png" src="../_images/psa_hsm_breakdown.png" />
+</div>
+</div>
+<div class="section" id="psa-module">
+<h2>PSA Module<a class="headerlink" href="#psa-module" title="Permalink to this headline">¶</a></h2>
+<p>The PSA module is a wrapper around the SimpleLink cryptography drivers that
+conform to the PSA specification. This API serves to be portable across hardware
+that conforms to the PSA specification, and is the API that offers the most
+security. However, the security that it offers comes at the cost of higher memory
+usage and higher latency.</p>
+</div>
+<div class="section" id="psa-module-usage">
+<h2>PSA Module Usage<a class="headerlink" href="#psa-module-usage" title="Permalink to this headline">¶</a></h2>
+<p>The code below shows how to setup an ECC operation for signature verification.</p>
+<div class="highlight-C notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="cp"></span>
+
+<span class="cm">/* Driver Header files */</span>
+<span class="cp">#include</span> <span class="cpf">&lt;third_party/psa_crypto/include/psa/crypto.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/drivers/cryptoutils/hsm/HSMLPF3.h&gt;</span><span class="cp"></span>
+
+<span class="cm">/* Driver configuration */</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ti_drivers_config.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#define KEY_BITS 256</span>
+<span class="cp">#define KEY_TYPE PSA_KEY_TYPE_ECC_KEY_PAIR(PSA_ECC_FAMILY_SECP_R1)</span>
+<span class="cp">#define KEY_ALG  PSA_ALG_ECDSA(PSA_ALG_SHA_256)</span>
+
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">message</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">mainThread</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">psa_status_t</span> <span class="n">status</span><span class="p">;</span>
+    <span class="kt">int_fast16_t</span> <span class="n">ret</span><span class="p">;</span>
+
+    <span class="cm">/** Initialize PSA **/</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_crypto_init</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+        <span class="cm">/* If this occurs, it indicates that the HSM has not been flashed. */</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Provision the hardware unique key **/</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">HSMLPF3_provisionHUK</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">HSMLPF3_STATUS_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+        <span class="cm">/* If this occurs, it indicates that the HSM has not been flashed. */</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**** ECDSA Key Generation ****/</span>
+    <span class="n">psa_key_id_t</span> <span class="n">key_id</span><span class="p">;</span>
+
+    <span class="cm">/* To store generated public key */</span>
+    <span class="kt">uint8_t</span> <span class="n">public_key</span><span class="p">[</span><span class="n">PSA_KEY_EXPORT_ECC_PUBLIC_KEY_MAX_SIZE</span><span class="p">(</span><span class="n">KEY_BITS</span><span class="p">)];</span>
+    <span class="kt">size_t</span> <span class="n">public_key_length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">psa_key_attributes_t</span> <span class="n">attributes</span> <span class="o">=</span> <span class="n">PSA_KEY_ATTRIBUTES_INIT</span><span class="p">;</span>
+
+    <span class="cm">/* Since we want to sign messages, we need PSA_KEY_USAGE_SIGN_HASH */</span>
+    <span class="n">psa_set_key_usage_flags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attributes</span><span class="p">,</span> <span class="n">PSA_KEY_USAGE_SIGN_HASH</span><span class="p">);</span>
+
+    <span class="cm">/* We are using these keys for ECDSA, and the hashing algorithm used is SHA-256 */</span>
+    <span class="n">psa_set_key_algorithm</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attributes</span><span class="p">,</span> <span class="n">KEY_ALG</span><span class="p">);</span>
+
+    <span class="cm">/* This is where we are setting out curve */</span>
+    <span class="n">psa_set_key_type</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attributes</span><span class="p">,</span> <span class="n">KEY_TYPE</span><span class="p">);</span>
+
+    <span class="cm">/* This is the bit size of the hash algorithm we are using (SHA-256) */</span>
+    <span class="n">psa_set_key_bits</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attributes</span><span class="p">,</span> <span class="n">KEY_BITS</span><span class="p">);</span>
+
+    <span class="cm">/* This will generate our key */</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_generate_key</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attributes</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">key_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Now we want to export our PUBLIC key */</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_export_public_key</span><span class="p">(</span><span class="n">key_id</span><span class="p">,</span> <span class="n">public_key</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">public_key</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">public_key_length</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+    <span class="p">}</span>
+    <span class="cm">/**** ECDSA Key Generation Done ****/</span>
+
+    <span class="cm">/**** ECDSA Signing ****/</span>
+    <span class="cm">/** Our buffer to hold the signature **/</span>
+    <span class="kt">uint8_t</span> <span class="n">signature</span><span class="p">[</span><span class="n">PSA_SIGN_OUTPUT_SIZE</span><span class="p">(</span><span class="n">KEY_TYPE</span><span class="p">,</span> <span class="n">KEY_BITS</span><span class="p">,</span> <span class="n">KEY_ALG</span><span class="p">)];</span>
+    <span class="kt">size_t</span> <span class="n">signature_length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_sign_message</span><span class="p">(</span><span class="n">key_id</span><span class="p">,</span>
+                              <span class="n">KEY_ALG</span><span class="p">,</span>
+                              <span class="n">message</span><span class="p">,</span>
+                              <span class="mi">6</span><span class="p">,</span>
+                              <span class="n">signature</span><span class="p">,</span>
+                              <span class="n">PSA_SIGN_OUTPUT_SIZE</span><span class="p">(</span><span class="n">KEY_TYPE</span><span class="p">,</span> <span class="n">KEY_BITS</span><span class="p">,</span> <span class="n">KEY_ALG</span><span class="p">),</span>
+                              <span class="o">&amp;</span><span class="n">signature_length</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+    <span class="p">}</span>
+    <span class="cm">/**** ECDSA Signing Done ****/</span>
+
+    <span class="cm">/**** Import ECDSA Public Key ****/</span>
+    <span class="n">psa_key_id_t</span> <span class="n">p_key_id</span> <span class="o">=</span> <span class="n">PSA_KEY_ID_USER_MIN</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">psa_key_attributes_t</span> <span class="n">p_attributes</span> <span class="o">=</span> <span class="n">PSA_KEY_ATTRIBUTES_INIT</span><span class="p">;</span>
+
+    <span class="cm">/* the public key is used to verify */</span>
+    <span class="n">psa_set_key_usage_flags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p_attributes</span><span class="p">,</span> <span class="n">PSA_KEY_USAGE_VERIFY_HASH</span><span class="p">);</span>
+
+    <span class="cm">/* We are using these keys for ECDSA, and the hashing algorithm used is SHA-256 */</span>
+    <span class="n">psa_set_key_algorithm</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p_attributes</span><span class="p">,</span> <span class="n">KEY_ALG</span><span class="p">);</span>
+
+    <span class="cm">/* This is where we are setting out curve */</span>
+    <span class="n">psa_set_key_type</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p_attributes</span><span class="p">,</span> <span class="n">PSA_KEY_TYPE_ECC_PUBLIC_KEY</span><span class="p">(</span><span class="n">PSA_ECC_FAMILY_SECP_R1</span><span class="p">));</span>
+
+    <span class="cm">/* Key bits of the curve type */</span>
+    <span class="n">psa_set_key_bits</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p_attributes</span><span class="p">,</span> <span class="n">KEY_BITS</span><span class="p">);</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_import_key</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p_attributes</span><span class="p">,</span> <span class="n">public_key</span><span class="p">,</span> <span class="n">public_key_length</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p_key_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+    <span class="p">}</span>
+    <span class="cm">/**** Import ECDSA Public Key Done ****/</span>
+
+    <span class="cm">/**** Verify message ****/</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">psa_verify_message</span><span class="p">(</span><span class="n">p_key_id</span><span class="p">,</span>
+                              <span class="n">KEY_ALG</span><span class="p">,</span>
+                              <span class="n">message</span><span class="p">,</span>
+                              <span class="mi">6</span><span class="p">,</span>
+                              <span class="n">signature</span><span class="p">,</span>
+                              <span class="n">signature_length</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">!=</span> <span class="n">PSA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Error handling.</span>
+    <span class="p">}</span>
+    <span class="cm">/**** Verify message done ****/</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="key-storage-in-the-hsm">
+<h2>Key Storage in the HSM<a class="headerlink" href="#key-storage-in-the-hsm" title="Permalink to this headline">¶</a></h2>
+<p>A keystore is a secure storage mechanism for cryptographic keys and certificates.
+It is used to store, manage, and protect private keys and public keys, often required
+for encryption and authentication in software systems. Keys stored in the HSM cannot be
+exported back to the application, and are only accessible inside the HSM. Keys that are
+stored in the HSM will be used for cryptographic operations internal to the HSM. This
+prevents private keys from being exposed to the application, and thus, to an attacker.</p>
+<p>HUK (Hardware Unique Key) is a 256-bit key that is used to encrypt a key or derive a
+Trusted Derive Key (TKDK) or Trusted Wrap Key (TKEK).   TKDK is used to derive a key and
+TKEK is to encrypt/decrypt a key.</p>
+<p>One HUK is allowed per device and HSMXXF3_provisionHUK( ) is the API to provision a HUK.
+This API generates a 256-bit random number and programs it to OTP, which is a special
+flash region that is only accessible by the HSM.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Note that HUK is not required for any crypto operations except:</p>
+<ul class="last simple">
+<li>TKDK Key Derivation</li>
+<li>Key Encryption/decryption</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cc35xx/ota.html" class="btn btn-neutral float-right" title="Over the Air Update (OTA)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="secure-debug.html" class="btn btn-neutral float-left" title="Secure Debug" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

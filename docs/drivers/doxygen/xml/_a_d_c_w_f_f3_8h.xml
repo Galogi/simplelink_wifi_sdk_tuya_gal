@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_d_c_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>ADCWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_a_d_c_8h" local="no">ti/drivers/ADC.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/adc.h)</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>stdbool.h</label>
+      </node>
+      <node id="15">
+        <label>DeviceFamily_constructPath(driverlib/adc.h)</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+      </node>
+      <node id="12">
+        <label>stddef.h</label>
+      </node>
+      <node id="13">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="10">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ti/drivers/ADC.h</label>
+        <link refid="_a_d_c_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ADCWFF3.h</label>
+        <link refid="_a_d_c_w_f_f3_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_d_c_w_f_f3___h_w_attrs" prot="public">ADCWFF3_HWAttrs</innerclass>
+    <innerclass refid="struct_a_d_c_w_f_f3___object" prot="public">ADCWFF3_Object</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2e" prot="public" static="no">
+        <name>ADCWFF3_ReferenceSource</name>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea001baaa7790e945cb2ecd503052ba8be" prot="public">
+          <name>ADCWFF3_INTERNAL_REFERENCE</name>
+          <initializer>= ADC_INTERNAL_REFERENCE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea2cdd75ec45f5794135654ca22fe6c378" prot="public">
+          <name>ADCWFF3_VDDA_REFERENCE</name>
+          <initializer>= ADC_VDDA_REFERENCE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea85a29c99545451b8886ec598603dfb72" prot="public">
+          <name>ADCWFF3_EXTERNAL_REFERENCE</name>
+          <initializer>= ADC_EXTERNAL_REFERENCE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Specifies the source of the ADC reference voltage. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The actual reference values are slightly different for each device and are higher than the values specified above. This gain is saved in the eFuse. The function <ref refid="_a_d_c_8h_1aa1cd6feaa85ea5409dbe1769586bff20" kindref="member">ADC_convertToMicroVolts()</ref> must be used to derive actual voltage values. Do not attempt to compare raw values between devices or derive a voltage from them yourself. The results of doing so will only be approximately correct.</para></simplesect>
+<simplesect kind="warning"><para>Refer to the datasheet to make sure the input voltage to the ADC never exceeds the specified limits. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="83" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cd" prot="public" static="no">
+        <name>ADCWFF3_SampleClockSource</name>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda335eb1a00b705c5abebb1077efabbddc" prot="public">
+          <name>ADCWFF3_SAMPLE_CLK_SOC_CLK</name>
+          <initializer>= ADC_SAMPLE_CLK_SOC_CLK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>System-on-Chip clock, 80 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda18e2d8c40a538d47f4ed3f0091343b39" prot="public">
+          <name>ADCWFF3_SAMPLE_CLK_HFXT</name>
+          <initializer>= ADC_SAMPLE_CLK_HFXT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High-Frequency Crystal clock, 40 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda1068f11c27ed971c3a19c0a1f6194a2f" prot="public">
+          <name>ADCWFF3_SAMPLE_CLK_SOC_PLL_CLK_DIV</name>
+          <initializer>= ADC_SAMPLE_CLK_SOC_PLL_CLK_DIV</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Divided Phase-Locked Loop clock, 80 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADC sample clock source. </para>        </briefdescription>
+        <detaileddescription>
+<para>This sets the sampling clock source. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="95" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="94" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412d" prot="public" static="no">
+        <name>ADCWFF3_ClockDivider</name>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2b5958442b9ac118bd27ac8379069710" prot="public">
+          <name>ADCWFF3_CLKDIV_1</name>
+          <initializer>= ADC_CLOCK_DIVIDER_1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dafba00644e9d02286cb391fe5853aca37" prot="public">
+          <name>ADCWFF3_CLKDIV_2</name>
+          <initializer>= ADC_CLOCK_DIVIDER_2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2bfc54c4c0b127202ae6bd8ffc8289ee" prot="public">
+          <name>ADCWFF3_CLKDIV_4</name>
+          <initializer>= ADC_CLOCK_DIVIDER_4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da748c95eeef1f4a628f0191734eb51a20" prot="public">
+          <name>ADCWFF3_CLKDIV_8</name>
+          <initializer>= ADC_CLOCK_DIVIDER_8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412daae8d42f46c1541fa9be074d1f5c20745" prot="public">
+          <name>ADCWFF3_CLKDIV_16</name>
+          <initializer>= ADC_CLOCK_DIVIDER_16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da556704c1192fa9396d4c95b907d4a7f2" prot="public">
+          <name>ADCWFF3_CLKDIV_24</name>
+          <initializer>= ADC_CLOCK_DIVIDER_24</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da4f680a72ee73aae1e0f973d5e7683eb9" prot="public">
+          <name>ADCWFF3_CLKDIV_32</name>
+          <initializer>= ADC_CLOCK_DIVIDER_32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dadc5833f98b529404ddb718e42d2e724c" prot="public">
+          <name>ADCWFF3_CLKDIV_48</name>
+          <initializer>= ADC_CLOCK_DIVIDER_48</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADC clock-divider. </para>        </briefdescription>
+        <detaileddescription>
+<para>This sets the sample clock divider value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="110" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="109" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9d" prot="public" static="no">
+        <name>ADCWFF3_FullScaleRange</name>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da612cf6296f65172dcfd46a5f83e2e168" prot="public">
+          <name>ADCWFF3_FULL_SCALE_RANGE_0V0_3V3</name>
+          <initializer>= ADC_FULL_SCALE_RANGE_0V0_3V3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da298deaadf07b3f2d3f3736d3ef2c687d" prot="public">
+          <name>ADCWFF3_FULL_SCALE_RANGE_0V1_3V3</name>
+          <initializer>= ADC_FULL_SCALE_RANGE_0V1_3V3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da3f9cc5bd13527ccade29dd652c951d38" prot="public">
+          <name>ADCWFF3_FULL_SCALE_RANGE_0V0_3V2</name>
+          <initializer>= ADC_FULL_SCALE_RANGE_0V0_3V2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9dac68a43cab61f9d6828287f90b7168a26" prot="public">
+          <name>ADCWFF3_FULL_SCALE_RANGE_0V0_1V8</name>
+          <initializer>= ADC_FULL_SCALE_RANGE_0V0_1V8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADC full scale range. </para>        </briefdescription>
+        <detaileddescription>
+<para>This sets the voltage range the ADC can measure </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="127" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="126" bodyend="132"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_a_d_c_w_f_f3_8h_1a14df0c390b0814e5e102098500ea5c7d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_a_d_c___fxn_table" kindref="compound">ADC_FxnTable</ref></type>
+        <definition>const ADC_FxnTable ADCWFF3_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>ADCWFF3_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="135" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ADC driver implementation for the ADC peripheral on Wi-Fi F3 devices. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>This ADC driver implementation is designed to operate on a ADC peripheral for Wi-Fi F3 devices.</para><para>Refer to <ref refid="_a_d_c_8h" kindref="compound">ADC.h</ref> for a complete description of APIs &amp; example of use.</para><para><heading level="1">Limitations</heading>
+</para><para><heading level="2"><ref refid="struct_a_d_c___params" kindref="compound">ADC_Params</ref> Attributes Limitations</heading>
+</para><para>Some attributes in the <ref refid="struct_a_d_c___params" kindref="compound">ADC_Params</ref> structure have a limited set of supported values. These limitations are described below:<itemizedlist>
+<listitem><para><ref refid="struct_a_d_c___params_1afcfab4dda63383c2dcf0bb21fe519c53" kindref="member">ADC_Params.isProtected</ref><itemizedlist>
+<listitem><para>Must be true. If this is false, <ref refid="_a_d_c_8h_1a1bfe07e93650e1288ba5fc6acc212c46" kindref="member">ADC_open()</ref> will fail and return NULL. </para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2024-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADCWFF3.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>ADC<sp/>driver<sp/>implementation<sp/>for<sp/>the<sp/>ADC<sp/>peripheral<sp/>on<sp/>Wi-Fi<sp/>F3</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>devices</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>ADC<sp/>driver<sp/>implementation<sp/>is<sp/>designed<sp/>to<sp/>operate<sp/>on<sp/>a<sp/>ADC<sp/>peripheral</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>for<sp/>Wi-Fi<sp/>F3<sp/>devices.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>ADC.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs<sp/>&amp;<sp/>example<sp/>of<sp/>use.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>#<sp/>Limitations<sp/>#</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>##<sp/>#ADC_Params<sp/>Attributes<sp/>Limitations<sp/>##</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Some<sp/>attributes<sp/>in<sp/>the<sp/>#ADC_Params<sp/>structure<sp/>have<sp/>a<sp/>limited<sp/>set<sp/>of<sp/>supported</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>values.<sp/>These<sp/>limitations<sp/>are<sp/>described<sp/>below:</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>#ADC_Params.isProtected</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>Must<sp/>be<sp/>true.<sp/>If<sp/>this<sp/>is<sp/>false,<sp/>#ADC_open()<sp/>will<sp/>fail<sp/>and<sp/>return<sp/>NULL.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_adc_ADCWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_adc_ADCWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_d_c_8h" kindref="compound">ti/drivers/ADC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/adc.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84" refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea001baaa7790e945cb2ecd503052ba8be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea001baaa7790e945cb2ecd503052ba8be" kindref="member">ADCWFF3_INTERNAL_REFERENCE</ref><sp/>=<sp/>ADC_INTERNAL_REFERENCE,</highlight></codeline>
+<codeline lineno="85" refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea2cdd75ec45f5794135654ca22fe6c378" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea2cdd75ec45f5794135654ca22fe6c378" kindref="member">ADCWFF3_VDDA_REFERENCE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>ADC_VDDA_REFERENCE,</highlight></codeline>
+<codeline lineno="86" refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea85a29c99545451b8886ec598603dfb72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2ea85a29c99545451b8886ec598603dfb72" kindref="member">ADCWFF3_EXTERNAL_REFERENCE</ref><sp/>=<sp/>ADC_EXTERNAL_REFERENCE</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/><ref refid="_a_d_c_w_f_f3_8h_1ae44bdf330e62d30d17320cd852544f2e" kindref="member">ADCWFF3_ReferenceSource</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97" refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda335eb1a00b705c5abebb1077efabbddc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda335eb1a00b705c5abebb1077efabbddc" kindref="member">ADCWFF3_SAMPLE_CLK_SOC_CLK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ADC_SAMPLE_CLK_SOC_CLK,</highlight></codeline>
+<codeline lineno="99" refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda18e2d8c40a538d47f4ed3f0091343b39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda18e2d8c40a538d47f4ed3f0091343b39" kindref="member">ADCWFF3_SAMPLE_CLK_HFXT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ADC_SAMPLE_CLK_HFXT,</highlight></codeline>
+<codeline lineno="101" refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda1068f11c27ed971c3a19c0a1f6194a2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cda1068f11c27ed971c3a19c0a1f6194a2f" kindref="member">ADCWFF3_SAMPLE_CLK_SOC_PLL_CLK_DIV</ref><sp/>=<sp/>ADC_SAMPLE_CLK_SOC_PLL_CLK_DIV</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}<sp/><ref refid="_a_d_c_w_f_f3_8h_1a38293603c6c44cb3098969955340d5cd" kindref="member">ADCWFF3_SampleClockSource</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2b5958442b9ac118bd27ac8379069710" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2b5958442b9ac118bd27ac8379069710" kindref="member">ADCWFF3_CLKDIV_1</ref><sp/><sp/>=<sp/>ADC_CLOCK_DIVIDER_1,</highlight></codeline>
+<codeline lineno="112" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dafba00644e9d02286cb391fe5853aca37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dafba00644e9d02286cb391fe5853aca37" kindref="member">ADCWFF3_CLKDIV_2</ref><sp/><sp/>=<sp/>ADC_CLOCK_DIVIDER_2,</highlight></codeline>
+<codeline lineno="113" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2bfc54c4c0b127202ae6bd8ffc8289ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da2bfc54c4c0b127202ae6bd8ffc8289ee" kindref="member">ADCWFF3_CLKDIV_4</ref><sp/><sp/>=<sp/>ADC_CLOCK_DIVIDER_4,</highlight></codeline>
+<codeline lineno="114" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da748c95eeef1f4a628f0191734eb51a20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da748c95eeef1f4a628f0191734eb51a20" kindref="member">ADCWFF3_CLKDIV_8</ref><sp/><sp/>=<sp/>ADC_CLOCK_DIVIDER_8,</highlight></codeline>
+<codeline lineno="115" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412daae8d42f46c1541fa9be074d1f5c20745" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412daae8d42f46c1541fa9be074d1f5c20745" kindref="member">ADCWFF3_CLKDIV_16</ref><sp/>=<sp/>ADC_CLOCK_DIVIDER_16,</highlight></codeline>
+<codeline lineno="116" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da556704c1192fa9396d4c95b907d4a7f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da556704c1192fa9396d4c95b907d4a7f2" kindref="member">ADCWFF3_CLKDIV_24</ref><sp/>=<sp/>ADC_CLOCK_DIVIDER_24,</highlight></codeline>
+<codeline lineno="117" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da4f680a72ee73aae1e0f973d5e7683eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412da4f680a72ee73aae1e0f973d5e7683eb9" kindref="member">ADCWFF3_CLKDIV_32</ref><sp/>=<sp/>ADC_CLOCK_DIVIDER_32,</highlight></codeline>
+<codeline lineno="118" refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dadc5833f98b529404ddb718e42d2e724c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412dadc5833f98b529404ddb718e42d2e724c" kindref="member">ADCWFF3_CLKDIV_48</ref><sp/>=<sp/>ADC_CLOCK_DIVIDER_48</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/><ref refid="_a_d_c_w_f_f3_8h_1a574fa832825bf106f31ddf6ac790412d" kindref="member">ADCWFF3_ClockDivider</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128" refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da612cf6296f65172dcfd46a5f83e2e168" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da612cf6296f65172dcfd46a5f83e2e168" kindref="member">ADCWFF3_FULL_SCALE_RANGE_0V0_3V3</ref><sp/>=<sp/>ADC_FULL_SCALE_RANGE_0V0_3V3,</highlight></codeline>
+<codeline lineno="129" refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da298deaadf07b3f2d3f3736d3ef2c687d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da298deaadf07b3f2d3f3736d3ef2c687d" kindref="member">ADCWFF3_FULL_SCALE_RANGE_0V1_3V3</ref><sp/>=<sp/>ADC_FULL_SCALE_RANGE_0V1_3V3,</highlight></codeline>
+<codeline lineno="130" refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da3f9cc5bd13527ccade29dd652c951d38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9da3f9cc5bd13527ccade29dd652c951d38" kindref="member">ADCWFF3_FULL_SCALE_RANGE_0V0_3V2</ref><sp/>=<sp/>ADC_FULL_SCALE_RANGE_0V0_3V2,</highlight></codeline>
+<codeline lineno="131" refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9dac68a43cab61f9d6828287f90b7168a26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9dac68a43cab61f9d6828287f90b7168a26" kindref="member">ADCWFF3_FULL_SCALE_RANGE_0V0_1V8</ref><sp/>=<sp/>ADC_FULL_SCALE_RANGE_0V0_1V8</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/><ref refid="_a_d_c_w_f_f3_8h_1a401d4fe0ea8bcde74a7989f3a28bbb9d" kindref="member">ADCWFF3_FullScaleRange</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ADC<sp/>function<sp/>table<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_d_c___fxn_table" kindref="compound">ADC_FxnTable</ref><sp/><ref refid="_a_d_c_w_f_f3_8h_1a14df0c390b0814e5e102098500ea5c7d" kindref="member">ADCWFF3_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="struct_a_d_c_w_f_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a353fa4f89bd331de095d626422860894" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a353fa4f89bd331de095d626422860894" kindref="member">adcInputDIO</ref>;</highlight></codeline>
+<codeline lineno="148" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a0624f2b9c4079119fd25de2623a4a2ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a0624f2b9c4079119fd25de2623a4a2ed" kindref="member">internalChannel</ref>;</highlight></codeline>
+<codeline lineno="150" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a59e6dd3f6ea20802f7b4d7ea2bb62fb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCWFF3_ReferenceSource<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a59e6dd3f6ea20802f7b4d7ea2bb62fb4" kindref="member">refSource</ref>;</highlight></codeline>
+<codeline lineno="152" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a83960f919a02cc450a81bc925e29a238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a83960f919a02cc450a81bc925e29a238" kindref="member">samplingDuration</ref>;</highlight></codeline>
+<codeline lineno="154" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a081f8dad7d2db17afe55536d58df1777" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCWFF3_ClockDivider<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a081f8dad7d2db17afe55536d58df1777" kindref="member">adcClkDivider</ref>;</highlight></codeline>
+<codeline lineno="156" refid="struct_a_d_c_w_f_f3___h_w_attrs_1ae7228983360e656b9593f5e8b88088e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCWFF3_SampleClockSource<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1ae7228983360e656b9593f5e8b88088e4" kindref="member">sampleClkSrc</ref>;</highlight></codeline>
+<codeline lineno="158" refid="struct_a_d_c_w_f_f3___h_w_attrs_1a2d9be4fda8a8797d69a6b7c360023d98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCWFF3_FullScaleRange<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs_1a2d9be4fda8a8797d69a6b7c360023d98" kindref="member">fullScaleRange</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/><ref refid="struct_a_d_c_w_f_f3___h_w_attrs" kindref="compound">ADCWFF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="struct_a_d_c_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170" refid="struct_a_d_c_w_f_f3___object_1a776280f540a2fefc150553f2cc5048d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_d_c_w_f_f3___object_1a776280f540a2fefc150553f2cc5048d4" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="172" refid="struct_a_d_c_w_f_f3___object_1a98167759e728bd48d36d3ef5e388a6f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref><sp/><ref refid="struct_a_d_c_w_f_f3___object_1a98167759e728bd48d36d3ef5e388a6f0" kindref="member">postNotify</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}<sp/><ref refid="struct_a_d_c_w_f_f3___object" kindref="compound">ADCWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_adc_ADCWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/adc/ADCWFF3.h"/>
+  </compounddef>
+</doxygen>

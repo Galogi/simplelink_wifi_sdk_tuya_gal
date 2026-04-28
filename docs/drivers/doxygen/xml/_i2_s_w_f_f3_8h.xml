@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_i2_s_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>I2SWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_i2_s_8h" local="no">ti/drivers/I2S.h</includes>
+    <includes refid="_semaphore_p_8h" local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <includes refid="_hwi_p_8h" local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/i2s.h)</includes>
+    <incdepgraph>
+      <node id="209">
+        <label>stdbool.h</label>
+      </node>
+      <node id="208">
+        <label>stdint.h</label>
+      </node>
+      <node id="217">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+      </node>
+      <node id="211">
+        <label>stddef.h</label>
+      </node>
+      <node id="214">
+        <label>ti/drivers/dpl/HwiP.h</label>
+        <link refid="_hwi_p_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>ti/drivers/I2S.h</label>
+        <link refid="_i2_s_8h"/>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="215">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+        <link refid="_semaphore_p_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="207">
+        <label>I2SWFF3.h</label>
+        <link refid="_i2_s_w_f_f3_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="218">
+        <label>DeviceFamily_constructPath(driverlib/i2s.h)</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_i2_s_w_f_f3___a_d_f_s" prot="public">I2SWFF3_ADFS</innerclass>
+    <innerclass refid="struct_i2_s_w_f_f3___h_w_attrs" prot="public">I2SWFF3_HWAttrs</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7" prot="public" static="no">
+        <name>I2SWFF3_ClkSrc</name>
+        <enumvalue id="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ad7cc2de6469ddd9cc4f77c74fccbe633" prot="public">
+          <name>I2SWFF3_CLK_SRC_SOC_CLK</name>
+          <initializer>= I2S_CLK_SRC_SOC_CLK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>System-on-Chip clock, 80 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7a065ac0e4696c31825f9eacaf0fd8d086" prot="public">
+          <name>I2SWFF3_CLK_SRC_SOC_PLL_CLK</name>
+          <initializer>= I2S_CLK_SRC_SOC_PLL_CLK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Divided Phase-Locked Loop clock, 160 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ac20da138cd77d04677348951ac010433" prot="public">
+          <name>I2SWFF3_CLK_SRC_HFXT_CLK</name>
+          <initializer>= I2S_CLK_SRC_HFXT_CLK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High-Frequency Crystal clock, 40 Mhz. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Clock Source. </para>        </briefdescription>
+        <detaileddescription>
+<para>Option to select the clock source used by the I2S hardware module when the I2S driver is opened in Controller mode.</para><para><simplesect kind="see"><para><ref refid="_i2_s_w_f_f3_8h_1ti_drivers_i2s_I2SWFF3_CLK_SRC" kindref="member">Selecting the Clock Source</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/i2s/I2SWFF3.h" line="364" column="1" bodyfile="source/ti/drivers/i2s/I2SWFF3.h" bodystart="363" bodyend="371"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>I2S driver implementation for WFF3 devices. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para><heading level="1">Limitations</heading>
+</para><para><heading level="2">Supported <ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222" kindref="member">I2S_MemoryLength</ref> values</heading>
+</para><para>Only the following memory lengths are supported:<itemizedlist>
+<listitem><para><ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222aa95b67ba7278bcb1d9a64cba9a8e1bc8" kindref="member">I2S_MEMORY_LENGTH_16BITS</ref></para></listitem><listitem><para><ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222a926727054bff1f3cbe2540434d0fab42" kindref="member">I2S_MEMORY_LENGTH_32BITS</ref></para></listitem></itemizedlist>
+</para><para><heading level="2"><ref refid="struct_i2_s___params" kindref="compound">I2S_Params</ref> Attributes Limitations</heading>
+</para><para>Some attributes in the <ref refid="struct_i2_s___params" kindref="compound">I2S_Params</ref> structure have a limited set of supported values. These limitations are described below:<itemizedlist>
+<listitem><para><ref refid="struct_i2_s___params_1a040e104c9b7118fb5719b3007801a2cb" kindref="member">I2S_Params.isDMAUnused</ref><itemizedlist>
+<listitem><para>Must be false. All transmissions are always performed by the I2S module&apos;s own DMA.</para></listitem></itemizedlist>
+</para></listitem><listitem><para><ref refid="struct_i2_s___params_1aa6bc7fe594699bd27444b2b3b8aa17e4" kindref="member">I2S_Params.isMSBFirst</ref><itemizedlist>
+<listitem><para>Must be true. All samples are always transmitted MSB first.</para></listitem></itemizedlist>
+</para></listitem><listitem><para><ref refid="struct_i2_s___params_1a257e437c1d8fb08ddd7457c47c479db5" kindref="member">I2S_Params.memorySlotLength</ref><itemizedlist>
+<listitem><para>Must be one of the suported <ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222" kindref="member">I2S_MemoryLength</ref> values listed in the above section.</para></listitem></itemizedlist>
+</para></listitem><listitem><para><ref refid="struct_i2_s___params_1ae3241f138f3e247875ef9686622b4d43" kindref="member">I2S_Params.fixedBufferLength</ref><itemizedlist>
+<listitem><para>Additional restriction: Must be an even multiple of the number of bytes in a frame.</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para><para><hruler/>
+ <heading level="1">Sample Buffers</heading>
+</para><para>This section describes the structure and requirements for the sample buffers used in the <ref refid="struct_i2_s___transaction" kindref="compound">I2S_Transaction</ref> objects.</para><para>Sample words are read from or written to the sample buffers in little-endian byte order, meaning that the least significant byte (LSByte) is stored at the lower byte address, and the most significant byte (MSByte) is stored at the higher byte address.</para><para>The sample buffers are divided into frames which are further subdivided into channels, and if a channel is used by both SD0 and SD1 (where the direction of the two pins are the same), then that channel is further subdivided into a sample word for first SD0 and then SD1.</para><para><heading level="2">Buffer Size Requirements</heading>
+</para><para>The size of the buffers used in <ref refid="struct_i2_s___transaction" kindref="compound">I2S_Transaction</ref> objects must be an even multiple of the number of bytes per frame. I.e. the number of bytes in the buffers must be of the form: 2*n*k, where k is the size of a frame in bytes and n is an integer satisfying n&gt;=2. 2*n is the number of frames in the buffer.</para><para><heading level="2">General Sample Buffer Structure</heading>
+</para><para>Below code describes the general structure of a sample buffer if SD0 and SD1 are configured to the same direction.</para><para><programlisting><codeline><highlight class="normal">struct</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>SD0_USE_CHANNEL_0<sp/>||<sp/>SD1_USE_CHANNEL_0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD0_USE_CHANNEL_0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD1_USE_CHANNEL_0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd1SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>channel0;</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>SD0_USE_CHANNEL_1<sp/>||<sp/>SD1_USE_CHANNEL_1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD0_USE_CHANNEL_1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD1_USE_CHANNEL_1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd1SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>channel1;</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>SD0_USE_CHANNEL_8<sp/>||<sp/>SD1_USE_CHANNEL_8</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD0_USE_CHANNEL_8</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#if<sp/>SD1_USE_CHANNEL_8</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd1SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>channel8;</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>sampleBufferFrames[FRAMES_PER_BUFFER];</highlight></codeline>
+</programlisting></para><para>Notes:<itemizedlist>
+<listitem><para><computeroutput>SD0_USE_CHANNEL_n</computeroutput> should be true if SD0 uses channel n, otherwise false.</para></listitem><listitem><para><computeroutput>SD1_USE_CHANNEL_n</computeroutput> should be true if SD1 uses channel n, otherwise false.</para></listitem><listitem><para><computeroutput>BYTES_PER_WORD</computeroutput> is based on the configured memory length:<itemizedlist>
+<listitem><para><ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222aa95b67ba7278bcb1d9a64cba9a8e1bc8" kindref="member">I2S_MEMORY_LENGTH_16BITS</ref>: 2</para></listitem><listitem><para><ref refid="_i2_s_8h_1afc6b50bcb4c5bd0254c5efa0cdc14222a926727054bff1f3cbe2540434d0fab42" kindref="member">I2S_MEMORY_LENGTH_32BITS</ref>: 4</para></listitem></itemizedlist>
+</para></listitem><listitem><para><computeroutput>FRAMES_PER_BUFFER</computeroutput> must be divisible by 2</para></listitem><listitem><para><computeroutput>sampleBufferFrames</computeroutput> needs to be cast to an <computeroutput>uint8_t</computeroutput> pointer to be used with the I2S driver.</para></listitem></itemizedlist>
+</para><para>If SD0 and SD1 are not configured to the same direction (or only one is used) then the structure can be simplified as below: <programlisting><codeline><highlight class="normal">struct</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>USE_CHANNEL_0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>channel0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>USE_CHANNEL_1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>channel1SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>USE_CHANNEL_8</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>channel8SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>sampleBufferFrames[FRAMES_PER_BUFFER];</highlight></codeline>
+</programlisting></para><para>Notes:<itemizedlist>
+<listitem><para><computeroutput>USE_CHANNEL_n</computeroutput> should be true if channel n is used, otherwise false.</para></listitem></itemizedlist>
+</para><para><heading level="3">Sample Buffer Structure Example</heading>
+</para><para>If for example SD0 and SD1 are configured to the same direction and if channel 0 and 1 are used for SD0 and channel 0 is used for SD1, then the sample buffer would be structured as in the code below.</para><para><programlisting><codeline><highlight class="normal">struct</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd1SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>channel0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>sd0SampleWord[BYTES_PER_WORD];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>channel1;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>sampleBufferFrames[FRAMES_PER_BUFFER];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>//<sp/>Access<sp/>LSB<sp/>of<sp/>sample<sp/>10<sp/>of<sp/>channel<sp/>0<sp/>on<sp/>SD1</highlight></codeline>
+<codeline><highlight class="normal"><sp/>uint8_t<sp/>tmp<sp/>=<sp/>sampleBufferFrames[10].channel0.sd1SampleWord[0];</highlight></codeline>
+</programlisting></para><para><hruler/>
+ <heading level="1">Adaptive Digital Frequency Synthesizer (ADFS)</heading>
+</para><para>The I2S module uses an Adaptive Digital Frequency Synthesizer (ADFS) to divide a selected clock source and produce the audio clock (ACLK) frequency.</para><para>Using the ADFS it is possible to achieve an ACLK frequency that is a multiple of the most common sample rates, which can then be used to achieve the most common sample frequencies. It is also possible to configre the ADFS to use the selected clock source as the audio clock. This is not intended for any standard sample rate, but it can still be selected if desired.</para><para><anchor id="_i2_s_w_f_f3_8h_1ti_drivers_i2s_I2SWFF3_CLK_SRC"/><heading level="2">Selecting the Clock Source</heading>
+</para><para>Using <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a719165dd83120912bcfa9b23393d4832" kindref="member">I2SWFF3_HWAttrs.clkSrc</ref> it is possible to select the input clock to the ADFS. The selected input is the clock cource used by the ADFS used to generate the audio clock frequency.</para><para>The following clock sources are available:<itemizedlist>
+<listitem><para>I2SWFF3_CLK_SRC_SOC_CLK</para></listitem><listitem><para>I2S_CLK_SRC_SOC_PLL_CLK</para></listitem><listitem><para>I2SWFF3_CLK_SRC_HFXT_CLK</para></listitem></itemizedlist>
+</para><para>To achieve the best performance, it is suggested to use <ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7a065ac0e4696c31825f9eacaf0fd8d086" kindref="member">I2SWFF3_CLK_SRC_SOC_PLL_CLK</ref> as the clock source. This is because this clock is un-swallowed. Swallowing is a clock division technique that works by eliminating/delaying pulses, which has the downside of introducing jitter. Note that <ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ad7cc2de6469ddd9cc4f77c74fccbe633" kindref="member">I2SWFF3_CLK_SRC_SOC_CLK</ref> uses swallowing.</para><para>Another advantage of selecting the SOC PLL clock is its ability to produce the largest division factor in the ADFS due to its higher frequency. This also reduces jitter.</para><para><anchor id="_i2_s_w_f_f3_8h_1ti_drivers_i2s_I2SWFF3_ACLK"/><heading level="2">Selecting the Audio Clock Frequency</heading>
+</para><para>The audio clock (ACLK) is the output of the ADFS. This is used by the I2S hardware module when the I2S driver is opened in Controller mode (<ref refid="struct_i2_s___params_1a0774324bd379cbac6bba7aada9a3017b" kindref="member">I2S_Params.moduleRole</ref> == I2S_CONTROLLER). The I2S hardware module will divide the ACLK to generate the I2S clocks (BCLK (SCK), WCLK (Ws) and CCLK). The ACLK therefore directly determines the possible sample rates, i.e. the frequency of WCLK.</para><para>To achieve a desired sample frequency (f_s), the following requirements must be met, where f_aclk is the frequency of the ACLK:<itemizedlist>
+<listitem><para>f_aclk/f_s must be an integer. I.e. f_aclk = n * f_s, where n is an integer.</para></listitem><listitem><para>The total number of bits per frame must evenly divide into f_aclk/f_s</para></listitem></itemizedlist>
+</para><para>For example, if f_s = 44.1 kHz, then the first requirement is met if for example f_aclk = 11.2896 MHz = 256 * 44.1 kHz. The second requirement is met if for example the number of bits per frame is 32, because it evenly divides into 256.</para><para>If the requirements are not met, the closest possible sampling frequency to the desired sampling frequency will be used.</para><para>The frequencies most suited to be used with I2S are listed below:<itemizedlist>
+<listitem><para>12.288 MHz:<itemizedlist>
+<listitem><para>This can be used to achieve sample rates of 8 kHz, 16 kHz, 24 kHz, 32 kHz and 48 kHz.<itemizedlist>
+<listitem><para>For 8 kHz, 16 kHz and 32 kHz the number of bits per frame must be of the form: 2^n * 3^k, where n is an integer and k is either 0 or 1. The range of valid values of n for 8 kHz, 16 kHz and 32 kHz is [0-9], [0-8] and [0-7] respectively.</para></listitem><listitem><para>For 24 kHz and 48 kHz the number of bits per frame must be of the form: 2^n, where n is an integer. The range of valid values of n for 24 kHz and 48 kHz is [0-9] and [0-8] respectively.</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para></listitem><listitem><para>11.2896 MHz:<itemizedlist>
+<listitem><para>This can be used to achieve sample rates of 22.05 kHz and 44.1 kHz. The number of bits per frame must be of the form: 2^n, where n is an integer. The range of valid values of n for 22.05 kHz and 44.1 kHz is [0-9] and [0-8] respectively.</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para><para><anchor id="_i2_s_w_f_f3_8h_1ti_drivers_i2s_I2SWFF3_ADFS"/><heading level="2">Using the ADFS</heading>
+</para><para>The ADFS is used to generate an arbitrary clock frequency from a given input clock by division and adaptive swallowing. The resultant clock frequency mean is equal to the desired value although a significant jitter may occur. The best results are achieved when there is a large factor between the input clock frequency (Fref) and the desired output frequency (Freq).</para><para>In I2S, the ADFS is used to divide the clock source into an ACLK that is a multiple of the most common sample rates. To achieve this, the ADFS is configured with the following parameters:<itemizedlist>
+<listitem><para>tref: Freq period in picoseconds, represented as a fixed-point number with 17 integer bits and 4 fractional bits.</para></listitem><listitem><para>div: Divisor used to approximate the ratio between Fref and Freq. It is calculated to minimize the error (delta) between the actual and desired frequency ratios. Should be an integer higher or equal than 1.</para></listitem><listitem><para>delta: Error in picoseconds that quantifies how far the achieved period (using the chosen divider) deviates from the desired period. It is represented as a fixed-point number with 13 integer bits and 4 fractional bits.</para></listitem><listitem><para>deltaSign: Represents whether delta is negative (1) or non-negative (0).</para></listitem></itemizedlist>
+</para><para>The next equations can be used to compute the parameters:</para><para><programlisting><codeline><highlight class="normal">tref<sp/>=<sp/>floor((1<sp/>/<sp/>Fref)<sp/>*<sp/>16)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">div_temp1<sp/>=<sp/>floor(Fref<sp/>/<sp/>Freq);</highlight></codeline>
+<codeline><highlight class="normal">div_temp2<sp/>=<sp/>ceil(Fref<sp/>/<sp/>Freq);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">delta_temp1<sp/>=<sp/>((1/(Freq*div_temp1))-(1/Fref));</highlight></codeline>
+<codeline><highlight class="normal">delta_temp2<sp/>=<sp/>((1/(Freq*div_temp2))-(1/Fref));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(abs(delta_temp1)<sp/>&lt;<sp/>abs(delta_temp2))</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>div<sp/>=<sp/>div_temp1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>delta<sp/>=<sp/>delta_temp1;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">else</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>div<sp/>=<sp/>div_temp2;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>delta<sp/>=<sp/>delta_temp2;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">deltaSign<sp/>=<sp/>(delta<sp/>&lt;<sp/>0)<sp/>?<sp/>1<sp/>:<sp/>0;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">delta<sp/>=<sp/>floor(abs(delta)*16)</highlight></codeline>
+</programlisting></para><para>Populate the <ref refid="struct_i2_s_w_f_f3___a_d_f_s" kindref="compound">I2SWFF3_ADFS</ref> structure with the computed parameters in order to use the ADFS. The computation should be done using one of the supported clock sorces as <computeroutput>Fref</computeroutput> and the desired audio clock as <computeroutput>Freq</computeroutput>.</para><para>Due to rounding errors, the ADFS may not be able to achieve the desired audio clock frequency. To compute the actual output frequency in hertz use the following formula (Fref must be in hertz):</para><para><programlisting><codeline><highlight class="normal">if<sp/>(deltaSign<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adfsOutputFreq<sp/>=<sp/>1E12<sp/>/<sp/>(((1E12<sp/>/<sp/>Fref)<sp/>+<sp/>(delta/16))<sp/>*<sp/>div);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">else</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adfsOutputFreq<sp/>=<sp/>1E12<sp/>/<sp/>(((1E12<sp/>/<sp/>Fref)<sp/>-<sp/>(delta/16))<sp/>*<sp/>div);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>Assign the calculated <computeroutput>adfsOutputFreq</computeroutput> to <ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a7de0246f0d6755f431ecaed883340cf0" kindref="member">I2SWFF3_HWAttrs.audioClkFreq</ref> to specify the actual ACLK frequency used by the module. <hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="337"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_i2s_I2SWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_i2s_I2SWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_i2_s_8h" kindref="compound">ti/drivers/I2S.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_semaphore_p_8h" kindref="compound">ti/drivers/dpl/SemaphoreP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_hwi_p_8h" kindref="compound">ti/drivers/dpl/HwiP.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/i2s.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363" refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="366" refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ad7cc2de6469ddd9cc4f77c74fccbe633" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ad7cc2de6469ddd9cc4f77c74fccbe633" kindref="member">I2SWFF3_CLK_SRC_SOC_CLK</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>I2S_CLK_SRC_SOC_CLK,</highlight></codeline>
+<codeline lineno="368" refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7a065ac0e4696c31825f9eacaf0fd8d086" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7a065ac0e4696c31825f9eacaf0fd8d086" kindref="member">I2SWFF3_CLK_SRC_SOC_PLL_CLK</ref><sp/>=<sp/>I2S_CLK_SRC_SOC_PLL_CLK,</highlight></codeline>
+<codeline lineno="370" refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ac20da138cd77d04677348951ac010433" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7ac20da138cd77d04677348951ac010433" kindref="member">I2SWFF3_CLK_SRC_HFXT_CLK</ref><sp/><sp/><sp/><sp/>=<sp/>I2S_CLK_SRC_HFXT_CLK,</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">}<sp/><ref refid="_i2_s_w_f_f3_8h_1a1c4c48ff76858b29cc9a61f01f1321d7" kindref="member">I2SWFF3_ClkSrc</ref>;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380" refid="struct_i2_s_w_f_f3___a_d_f_s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="385" refid="struct_i2_s_w_f_f3___a_d_f_s_1a1db871d445f17da7e1c22d1226421df4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tref:21;</highlight></codeline>
+<codeline lineno="387" refid="struct_i2_s_w_f_f3___a_d_f_s_1af6825198628de9c9afb1177d133806f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>reserved0:11;</highlight></codeline>
+<codeline lineno="393" refid="struct_i2_s_w_f_f3___a_d_f_s_1a47c18e5f164022a2489b6e2cb1c1d4b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>delta:17;</highlight></codeline>
+<codeline lineno="395" refid="struct_i2_s_w_f_f3___a_d_f_s_1a29562d41aa203c35409c661e9c6a3022" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>deltaSign:1;</highlight></codeline>
+<codeline lineno="397" refid="struct_i2_s_w_f_f3___a_d_f_s_1a41274944279f87252f075766af0c3421" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>reserved1:2;</highlight></codeline>
+<codeline lineno="403" refid="struct_i2_s_w_f_f3___a_d_f_s_1abeed52254938b48f61129e26ccf0dd82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>div:10;</highlight></codeline>
+<codeline lineno="405" refid="struct_i2_s_w_f_f3___a_d_f_s_1a515433d7dd6d93a7372c9088c969e20e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>reserved2:2;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal">}<sp/><ref refid="struct_i2_s_w_f_f3___a_d_f_s" kindref="compound">I2SWFF3_ADFS</ref>;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444" refid="struct_i2_s_w_f_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="446" refid="struct_i2_s_w_f_f3___h_w_attrs_1a719165dd83120912bcfa9b23393d4832" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_ClkSrc<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a719165dd83120912bcfa9b23393d4832" kindref="member">clkSrc</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="447" refid="struct_i2_s_w_f_f3___h_w_attrs_1ab37b6fd38aa5160fcfe497de591b4fe1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_i2_s_w_f_f3___a_d_f_s" kindref="compound">I2SWFF3_ADFS</ref><sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1ab37b6fd38aa5160fcfe497de591b4fe1" kindref="member">adfs</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="448" refid="struct_i2_s_w_f_f3___h_w_attrs_1a7de0246f0d6755f431ecaed883340cf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a7de0246f0d6755f431ecaed883340cf0" kindref="member">audioClkFreq</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="450" refid="struct_i2_s_w_f_f3___h_w_attrs_1ad8a2a7b5e6feb903602a3417cceb24da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1ad8a2a7b5e6feb903602a3417cceb24da" kindref="member">sd1Pin</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="451" refid="struct_i2_s_w_f_f3___h_w_attrs_1aa875f11f4e8ea925d80d7840de2d534e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1aa875f11f4e8ea925d80d7840de2d534e" kindref="member">sd1PinMux</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="452" refid="struct_i2_s_w_f_f3___h_w_attrs_1a96b7a214019c22a316e7aecc24d2fb92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a96b7a214019c22a316e7aecc24d2fb92" kindref="member">sd0Pin</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="453" refid="struct_i2_s_w_f_f3___h_w_attrs_1a7dd2becc04d3df006a36d715265822c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a7dd2becc04d3df006a36d715265822c0" kindref="member">sd0PinMux</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="454" refid="struct_i2_s_w_f_f3___h_w_attrs_1a008c5637bd980c268a084ced4054a347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a008c5637bd980c268a084ced4054a347" kindref="member">sckPin</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="455" refid="struct_i2_s_w_f_f3___h_w_attrs_1a649d6780a072a75ecc68c4caa8874457" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a649d6780a072a75ecc68c4caa8874457" kindref="member">sckPinMux</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="456" refid="struct_i2_s_w_f_f3___h_w_attrs_1abb54dfea5ab558abbf8009d7a19f0bcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1abb54dfea5ab558abbf8009d7a19f0bcf" kindref="member">cclkPin</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="457" refid="struct_i2_s_w_f_f3___h_w_attrs_1a45665febc20b005404b9a32514397b79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a45665febc20b005404b9a32514397b79" kindref="member">cclkPinMux</ref>;<sp/></highlight></codeline>
+<codeline lineno="458" refid="struct_i2_s_w_f_f3___h_w_attrs_1a909ac663b04e4f5ef70af42f033a3b63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a909ac663b04e4f5ef70af42f033a3b63" kindref="member">wsPin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="459" refid="struct_i2_s_w_f_f3___h_w_attrs_1a8a91f3b12eefb696eaee609d1b00d261" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1a8a91f3b12eefb696eaee609d1b00d261" kindref="member">wsPinMux</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="460" refid="struct_i2_s_w_f_f3___h_w_attrs_1ad68044689502cefacdfb98a3960ae371" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs_1ad68044689502cefacdfb98a3960ae371" kindref="member">intPriority</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="461"><highlight class="normal">}<sp/><ref refid="struct_i2_s_w_f_f3___h_w_attrs" kindref="compound">I2SWFF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>numberOfChannelsUsed;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1accc9f53ca7fa3c96306f474cc0ade480" kindref="member">I2S_ChannelConfig</ref><sp/>channelsUsed;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a3b6754868d365f8e3ec9b67883bf1a7e" kindref="member">I2S_DataInterfaceUse</ref><sp/>interfaceConfig;<sp/></highlight></codeline>
+<codeline lineno="475"><highlight class="normal">}<sp/>I2SWFF3_DataInterface;</highlight></codeline>
+<codeline lineno="485"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>memoryStep;</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>delay;</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a011a6a344bae2163e24b811e75c76fde" kindref="member">I2S_Callback</ref><sp/>callback;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a7ce338dedc6f90e9b86705ad6a2e3eea" kindref="member">I2S_RegUpdate</ref><sp/>pointerSet;</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a518f25dc99f76453c3ef7bfdb7fc390c" kindref="member">I2S_StopInterface</ref><sp/>stopInterface;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_i2_s___transaction" kindref="compound">I2S_Transaction</ref><sp/>*activeTransfer;</highlight></codeline>
+<codeline lineno="506"><highlight class="normal">}<sp/>I2SWFF3_Interface;</highlight></codeline>
+<codeline lineno="519"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*I2SWFF3_PtrUpdate)(<ref refid="struct_i2_s___config" kindref="compound">I2S_Handle</ref><sp/>handle,<sp/>I2SWFF3_Interface<sp/>*<ref refid="doxygen__drivers_8txt_1a8222c14413241c99b87d1c8f5e91b61d" kindref="member">interface</ref>);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOpen;</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>invertWS;</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>memorySlotLength;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dataShift;</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>bitsPerWord;</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>beforeWordPadding;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>afterWordPadding;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>dmaBuffSizeConfig;</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1adf99b8155252f529a3089cee99c52a51" kindref="member">I2S_SamplingEdge</ref><sp/>samplingEdge;</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a54ce68790d113be856f3a6840bc3ebe0" kindref="member">I2S_Role</ref><sp/>moduleRole;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"></highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a5d9de87aff52f63eadf4a95560abd61f" kindref="member">I2S_PhaseType</ref><sp/>phaseType;</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>CCLKDivider;</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>SCKDivider;</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>WSDivider;</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>startUpDelay;</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_DataInterface<sp/>dataInterfaceSD0;</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_DataInterface<sp/>dataInterfaceSD1;</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="605"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>I2S<sp/>SYS/BIOS<sp/>objects</highlight></codeline>
+<codeline lineno="606"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref><sp/>hwi;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_PtrUpdate<sp/>ptrUpdateFxn;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_Interface<sp/>read;</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>I2SWFF3_Interface<sp/>write;</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_i2_s_8h_1a011a6a344bae2163e24b811e75c76fde" kindref="member">I2S_Callback</ref><sp/>errorCallback;</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="623"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>I2S<sp/>pre<sp/>and<sp/>post<sp/>notification<sp/>functions</highlight></codeline>
+<codeline lineno="624"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*i2sPreFxn;</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*i2sPostFxn;</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref><sp/>i2sPreObj;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref><sp/>i2sPostObj;</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>i2sPowerConstraint;</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal">}<sp/>I2SWFF3_Object;</highlight></codeline>
+<codeline lineno="645"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="646"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="648"><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_i2s_I2SWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/i2s/I2SWFF3.h"/>
+  </compounddef>
+</doxygen>

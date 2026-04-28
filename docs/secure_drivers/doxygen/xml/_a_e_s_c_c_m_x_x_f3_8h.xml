@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_c_c_m_x_x_f3_8h" kind="file" language="C++">
+    <compoundname>AESCCMXXF3.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_a_e_s_c_c_m_8h" local="no">ti/drivers/AESCCM.h</includes>
+    <includes refid="_a_e_s_common_x_x_f3_8h" local="no">ti/drivers/cryptoutils/aes/AESCommonXXF3.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <incdepgraph>
+      <node id="31">
+        <label>stdbool.h</label>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="37">
+        <label>ti/drivers/cryptoutils/aes/AESCommonXXF3.h</label>
+        <link refid="_a_e_s_common_x_x_f3_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ti/drivers/AESCCM.h</label>
+        <link refid="_a_e_s_c_c_m_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>stddef.h</label>
+      </node>
+      <node id="39">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="38">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="40">
+        <label>DeviceFamily_constructPath(inc/hw_types.h)</label>
+      </node>
+      <node id="36">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>AESCCMXXF3.h</label>
+        <link refid="_a_e_s_c_c_m_x_x_f3_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ti/drivers/AESCommon.h</label>
+        <link refid="_a_e_s_common_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_e_s_c_c_m_x_x_f3___object" prot="public">AESCCMXXF3_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_e_s_c_c_m_x_x_f3_8h_1ad7cbaef1fe694e7b80a59cdd6d056959" prot="public" static="no">
+        <name>AESCCMXXF3_AAD_BUFFER_SIZE</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aesccm/AESCCMXXF3.h" line="90" column="9" bodyfile="source/ti/drivers/aesccm/AESCCMXXF3.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_a_e_s_c_c_m_x_x_f3_8h_1a61f8734aced1959ac51cc6913ded729a" prot="public" static="no">
+        <type><ref refid="struct_a_e_s_common_x_x_f3___h_w_attrs" kindref="compound">AESCommonXXF3_HWAttrs</ref></type>
+        <definition>typedef AESCommonXXF3_HWAttrs AESCCMXXF3_HWAttrs</definition>
+        <argsstring></argsstring>
+        <name>AESCCMXXF3_HWAttrs</name>
+        <briefdescription>
+<para>AESCCMXXF3 Hardware Attributes. </para>        </briefdescription>
+        <detaileddescription>
+<para>AESCCMXXF3 hardware attributes should be included in the board file and pointed to by the AESCCM_config struct. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aesccm/AESCCMXXF3.h" line="98" column="1" bodyfile="source/ti/drivers/aesccm/AESCCMXXF3.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_a_e_s_c_c_m_x_x_f3_8h_1a9b58ea6c0442d7da0a08d0046bbbb008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCCMXXF3HSM_setMac</definition>
+        <argsstring>(AESCCM_Handle handle, const uint8_t *mac, size_t macLength)</argsstring>
+        <name>AESCCMXXF3HSM_setMac</name>
+        <param>
+          <type><ref refid="_a_e_s_c_c_m_8h_1aed94613dec497c0a0110c08a3ebaad57" kindref="member">AESCCM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>mac</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>macLength</declname>
+        </param>
+        <briefdescription>
+<para>Function to set the mac for an AES CCM segmented operation. This API needs to be called only when the subsequent <ref refid="_a_e_s_c_c_m_8h_1a07bf2f9a1aecf33d109af4661983e35b" kindref="member">AESCCM_addData()</ref> operation is processing all of the remaining data in a single call. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This API is only concerned with segmented decryption operations.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_a_e_s_c_c_m_8h_1af1d437ca38c617046b61501b0a9491b0" kindref="member">AESCCM_setupDecrypt()</ref>, <ref refid="_a_e_s_c_c_m_8h_1a2376b9edaffed9f9afff639ee421f9d6" kindref="member">AESCCM_setLengths()</ref>, or <ref refid="_a_e_s_c_c_m_8h_1a53440fa4ec513e2e4c873c5d549ff38e" kindref="member">AESCCM_addAAD()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CCM handle returned from <ref refid="_a_e_s_c_c_m_8h_1a37eee15ffa76522272907ab2f8e868dc" kindref="member">AESCCM_open()</ref> or <ref refid="_a_e_s_c_c_m_8h_1aad168bcba329aef8c1b77b032afb5823" kindref="member">AESCCM_construct()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mac</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the buffer containing the mac</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">macLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the mac in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_c_m_8h_1afde7b16d8daa5643d3d9e4c0ed9fe60d" kindref="member">AESCCM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_c_m_8h_1af5a6b56e602e7d8730b86ffd0ec46938" kindref="member">AESCCM_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_c_m_8h_1af58fa1294f47e145af3c184e9c9bd13b" kindref="member">AESCCM_STATUS_FEATURE_NOT_SUPPORTED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation is not supported in this device.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para><ref refid="_a_e_s_c_c_m_8h_1a07bf2f9a1aecf33d109af4661983e35b" kindref="member">AESCCM_addData()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aesccm/AESCCMXXF3.h" line="182" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCCM driver implementation for the Low Power F3 family. </para>    </briefdescription>
+    <detaileddescription>
+<para>==========================================================================</para><para><heading level="1">CCM Specification</heading>
+</para><para>This implementation follows NIST 800-38c - <ulink url="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38c.pdf">https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38c.pdf</ulink> All symbols used in the implementation for identifiers and in the comments including but not limited to B0, B1 and S0 are all adopted from this NIST 800-38c.</para><para><heading level="1">Hardware Accelerator</heading>
+</para><para>The Low Power F3 family of devices has dedicated hardware accelerators. CC23XX devices have one dedicated accelerator whereas CC27XX devices have two (Primary and Secondary). Combined they can perform AES encryption operations with 128-bit, 192-bit and 256-bit keys. CC35XX devices have only one dedicated hardware accelerator. Only one operation can be carried out on the accelerator at a time. Mutual exclusion is implemented at the driver level and coordinated between all drivers relying on the accelerator. It is transparent to the application and only noted to ensure sensible access timeouts are set.</para><para><heading level="1">Implementation Limitations</heading>
+</para><para><itemizedlist>
+<listitem><para>Only plaintext CryptoKeys are supported by this implementation.</para></listitem><listitem><para>Maximum AAD length is limited to 65279-bytes.</para></listitem></itemizedlist>
+</para><para>The following limitations apply to the AESCCMXXF3 Driver for CC27xx and CC35XX device families:<itemizedlist>
+<listitem><para>The <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> input must have the correct encoding, <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref>.</para></listitem><listitem><para>The application can only use one handle per driver. Concurrent dynamic instances will be supported in the future.</para></listitem><listitem><para>CCM driver only supports polling return behaviour. Blocking and callback return behaviours will be supported in the future.</para></listitem></itemizedlist>
+</para><para><heading level="1">Runtime Parameter Validation</heading>
+</para><para>The driver implementation does not perform runtime checks for most input parameters. Only values that are likely to have a stochastic element to them are checked (such as whether a driver is already open). Higher input parameter validation coverage is achieved by turning on assertions when compiling the driver. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_aesccm_AESCCMXXF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_aesccm_AESCCMXXF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_c_m_8h" kindref="compound">ti/drivers/AESCCM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_common_x_x_f3_8h" kindref="compound">ti/drivers/cryptoutils/aes/AESCommonXXF3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>!=<sp/>DeviceFamily_PARENT_CC35XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>DeviceFamily_constructPath(driverlib/aes.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_a_e_s_c_c_m_x_x_f3_8h_1ad7cbaef1fe694e7b80a59cdd6d056959" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AESCCMXXF3_AAD_BUFFER_SIZE<sp/>2U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="_a_e_s_c_c_m_x_x_f3_8h_1a61f8734aced1959ac51cc6913ded729a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_common_x_x_f3___h_w_attrs" kindref="compound">AESCommonXXF3_HWAttrs</ref><sp/><ref refid="_a_e_s_c_c_m_x_x_f3_8h_1a61f8734aced1959ac51cc6913ded729a" kindref="member">AESCCMXXF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="struct_a_e_s_c_c_m_x_x_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Common<sp/>member<sp/>first<sp/>to<sp/>allow<sp/>struct<sp/>to<sp/>be<sp/>cast<sp/>to<sp/>the<sp/>common<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a72224099c372ef072d497a613db5f271" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a72224099c372ef072d497a613db5f271" kindref="member">common</ref>;</highlight></codeline>
+<codeline lineno="109" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a43276996d3e859133db291e55ce19fb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a43276996d3e859133db291e55ce19fb9" kindref="member">aad</ref>;</highlight></codeline>
+<codeline lineno="110" refid="struct_a_e_s_c_c_m_x_x_f3___object_1afaff4899f5aac2c1bcd34289a41d3916" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1afaff4899f5aac2c1bcd34289a41d3916" kindref="member">input</ref>;</highlight></codeline>
+<codeline lineno="111" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a52836ad0a8d29cd736039b48f0b45854" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a52836ad0a8d29cd736039b48f0b45854" kindref="member">output</ref>;</highlight></codeline>
+<codeline lineno="112" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ab6f8aff7dbf91de95a8c2236771107f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1ab6f8aff7dbf91de95a8c2236771107f4" kindref="member">nonce</ref>;</highlight></codeline>
+<codeline lineno="113" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a677a5da90fae8e7754253c8e7b9accf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a677a5da90fae8e7754253c8e7b9accf3" kindref="member">mac</ref>;</highlight></codeline>
+<codeline lineno="114" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ae16313b819a1e988a1936b200b01a32e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>intermediateCounter[<ref refid="_a_e_s_common_x_x_f3_8h_1a76763bbf6b1d475f026fc3c8c36a48e0" kindref="member">AES_IV_LENGTH_BYTES</ref><sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="115" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ac8fa8ab78bd0ec758e887ecef22caff1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>intermediateTag[<ref refid="_a_e_s_common_x_x_f3_8h_1a05b7f39a091a394c8b1d9523b676ad32" kindref="member">AES_TAG_LENGTH_BYTES</ref><sp/>/<sp/>4];</highlight></codeline>
+<codeline lineno="116" refid="struct_a_e_s_c_c_m_x_x_f3___object_1aecba9a05b2f5245f9dacb9d7c196672f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_c_m_8h_1ad9f54d289ab9013555d4ce5e2cbd7411" kindref="member">AESCCM_CallbackFxn</ref><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1aecba9a05b2f5245f9dacb9d7c196672f" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="117" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a766b6b2c3dcc6226893087ec1e47ad0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_a_e_s_c_c_m___operation_union" kindref="compound">AESCCM_OperationUnion</ref><sp/>*<ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a766b6b2c3dcc6226893087ec1e47ad0f" kindref="member">operation</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a0f3ef414ae3e08062b1b745a7a13d60d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a0f3ef414ae3e08062b1b745a7a13d60d" kindref="member">inputLength</ref>;</highlight></codeline>
+<codeline lineno="119" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a69ffa29ed4d5762c1721c6f288782cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a69ffa29ed4d5762c1721c6f288782cba" kindref="member">inputCBCMACLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="120" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a5d111781a59d38c97c8ef0fe9ccc9cdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a5d111781a59d38c97c8ef0fe9ccc9cdc" kindref="member">inputCTRLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="121" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a5f1ce4171e7756615954e45b703e5710" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a5f1ce4171e7756615954e45b703e5710" kindref="member">totalAADLength</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a8f295413e9dbe5e4e671bf4d9d96d7d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a8f295413e9dbe5e4e671bf4d9d96d7d9" kindref="member">totalDataLength</ref>;</highlight></codeline>
+<codeline lineno="123" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a97eabb53521eb42020103f2077a7f29b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a97eabb53521eb42020103f2077a7f29b" kindref="member">aadBytesProcessed</ref>;</highlight></codeline>
+<codeline lineno="124" refid="struct_a_e_s_c_c_m_x_x_f3___object_1afb64e6ff9851757ab5084def13800267" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1afb64e6ff9851757ab5084def13800267" kindref="member">totalCBCMACLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="125" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a67fee8d112071a423e74623e9a4eb312" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a67fee8d112071a423e74623e9a4eb312" kindref="member">totalCTRLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="126" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ad5f353058ed5bf913519f9954be3200f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_c_m_8h_1a8b4c0474e73f047a2b920ba2acd5fed0" kindref="member">AESCCM_OperationType</ref><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1ad5f353058ed5bf913519f9954be3200f" kindref="member">operationType</ref>;</highlight></codeline>
+<codeline lineno="127" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a3222e70ab682a56b782e93a68b42e6f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>bufferedAAD[<ref refid="_a_e_s_c_c_m_x_x_f3_8h_1ad7cbaef1fe694e7b80a59cdd6d056959" kindref="member">AESCCMXXF3_AAD_BUFFER_SIZE</ref>];</highlight></codeline>
+<codeline lineno="128" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a3855595636a1c70db374c396fd326c30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a3855595636a1c70db374c396fd326c30" kindref="member">bufferedAADLength</ref>;</highlight></codeline>
+<codeline lineno="129" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a46a82a74df654298606e8e5c7405b7fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a46a82a74df654298606e8e5c7405b7fa" kindref="member">macLength</ref>;</highlight></codeline>
+<codeline lineno="130" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a74c238fc3de2e7bdeaf8c835f82f1fd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a74c238fc3de2e7bdeaf8c835f82f1fd4" kindref="member">nonceLength</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="struct_a_e_s_c_c_m_x_x_f3___object_1af10ecbbc43be324b934a001186520aa5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>KeyStore_keyingMaterial[<ref refid="_a_e_s_common_x_x_f3_8h_1acd405fc899517bab407ece17c5e1afa9" kindref="member">AESCommonXXF3_256_KEY_LENGTH_BYTES</ref>];</highlight></codeline>
+<codeline lineno="133" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ab565fed3e63813ecf2c548697927e01a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>inputFinalBlock[<ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref>];</highlight></codeline>
+<codeline lineno="134" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a807636531cf8231d65a287643d816676" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>aadFinalBlock[<ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref>];</highlight></codeline>
+<codeline lineno="135" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ae39ccfc520897e12b2521768fe276add" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>outputFinalBlock[<ref refid="_a_e_s_common_x_x_f3_8h_1af19ab913a847ad1e91c5291215116de1" kindref="member">AES_BLOCK_SIZE</ref>]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="136" refid="struct_a_e_s_c_c_m_x_x_f3___object_1ac228fa436890e520e9e12a9262043500" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1ac228fa436890e520e9e12a9262043500" kindref="member">aadLength</ref>;</highlight></codeline>
+<codeline lineno="137" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a837189279eaae321c5d618e7cd1ca6fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a837189279eaae321c5d618e7cd1ca6fc" kindref="member">totalDataLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="138" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a24475d18dec845f50e4e49b05caa41db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a24475d18dec845f50e4e49b05caa41db" kindref="member">totalAADLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="144" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a0ff1f561bbf140b13f32e92fd6b5610e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a0ff1f561bbf140b13f32e92fd6b5610e" kindref="member">hsmStatus</ref>;</highlight></codeline>
+<codeline lineno="145" refid="struct_a_e_s_c_c_m_x_x_f3___object_1aa5841f1e4dc35123c388954a4a6bf94a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1aa5841f1e4dc35123c388954a4a6bf94a" kindref="member">tempAssetID</ref>;</highlight></codeline>
+<codeline lineno="146" refid="struct_a_e_s_c_c_m_x_x_f3___object_1aca79fe7d1e8c8496fdf308c027f63490" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1aca79fe7d1e8c8496fdf308c027f63490" kindref="member">keyAssetID</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Intentionally<sp/>use<sp/>implementation-independent<sp/>uint32_t<sp/>datatype<sp/>for</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>keyLocation<sp/>to<sp/>avoid<sp/>user<sp/>dependencies<sp/>on<sp/>any<sp/>implementation-specific</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>headers<sp/>(e.g.<sp/>mbedTLS).<sp/>This<sp/>data<sp/>type<sp/>must<sp/>be<sp/>large<sp/>enough<sp/>to<sp/>hold<sp/>any</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>implementation-specific<sp/>keyLocation<sp/>data.</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a9c2ea1af332b185f4c45ade47759acb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a9c2ea1af332b185f4c45ade47759acb9" kindref="member">keyLocation</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>To<sp/>indicate<sp/>whether<sp/>a<sp/>segmented<sp/>operation<sp/>is<sp/>in<sp/>progress<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="struct_a_e_s_c_c_m_x_x_f3___object_1a152e0ba126dbfd87df46babf2264b03a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object_1a152e0ba126dbfd87df46babf2264b03a" kindref="member">segmentedOperationInProgress</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_c_m_x_x_f3___object" kindref="compound">AESCCMXXF3_Object</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>(DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC35XX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">int_fast16_t<sp/><ref refid="_a_e_s_c_c_m_x_x_f3_8h_1a9b58ea6c0442d7da0a08d0046bbbb008" kindref="member">AESCCMXXF3HSM_setMac</ref>(<ref refid="struct_a_e_s_common___config" kindref="compound">AESCCM_Handle</ref><sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*mac,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>macLength);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_aesccm_AESCCMXXF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/aesccm/AESCCMXXF3.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Radio Configuration &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Making Choices for Your Application" href="rebuild_lib.html" />
+    <link rel="prev" title="Your First Application from Scratch" href="cc35xx-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug building configuration";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Your First Application from Scratch</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Radio Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebuild_lib.html">Making Choices for Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_image.html">Creating and Flashing Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Your First Application from Scratch</a> &raquo;</li>
+        
+      <li>Radio Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="radio-configuration-1">
+<span id="radio-configuration"></span><h1>Radio Configuration<a class="headerlink" href="#radio-configuration-1" title="Permalink to this headline">¶</a></h1>
+<p>The CC35xx allows the configuration of radio parameters via the <cite>cc35xx_conf.bin</cite>. This file can be
+created with the <a class="reference external" href="https://www.ti.com/tool/SIMPLELINK-WIFI-TOOLBOX">Simplelink Wifi Toolbox</a>, using the INI Composer.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ini_composer.png"><img alt="../_images/ini_composer.png" src="../_images/ini_composer.png" style="width: 90%;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Reference the <cite>Wifi Toolbox User Guide</cite> for more information on how to generate the conf files and detailed information on parameters</p>
+</div>
+<p>Once the <cite>cc35xx_conf.bin</cite> file has been created it must be converted to a C array</p>
+<p>This can be done with the following</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+Unix</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+Windows</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>Open a terminal and input the following to create a .c file filled with the c array</p>
+<div class="code c highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">xxd</span> <span class="o">-</span><span class="n">i</span> <span class="n">path_to_cc35xx_conf</span><span class="p">.</span><span class="n">bin</span> <span class="o">&gt;</span> <span class="n">gINIbuffer</span><span class="p">.</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p>There are multiple ways to achieve this on windows but unfortunately none natively, You will have to install a Bin2C tool or python script.
+Segger has a free Bin2C utility that you can leverage which will create a .c file with the array inside</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/Segger_array.png"><img alt="../_images/Segger_array.png" src="../_images/Segger_array.png" style="width: 45%;" /></a>
+</div>
+</div>
+</div>
+<p>This hex dump will be exchanged inside the <cite>containers.h</cite> file located inside the <cite>Simplelink Wifi SDK</cite>. The <cite>containers.h</cite> file holds 2 C arrays, <cite>gFWbuffer</cite> and <cite>gINIbuffer</cite>.
+These arrays hold the <cite>cc35xx_fw.bin</cite> and <cite>cc35xx_conf.bin</cite> respectively. These <cite>gINIbuffer</cite> array  is loaded onto the device during initialization with <cite>wlan_start()</cite></p>
+<div class="code c highlight-c notranslate"><div class="highlight"><pre><span></span>Default location:   C:\ti\simplelink_wifi_sdk_XX_XX_XX_XX\tools\TI_Containers
+</pre></div>
+</div>
+<p>The newly generated <cite>cc35xx_conf.bin</cite> hex dump will replace the <cite>gINIbuffer</cite> located at the bottom of the file.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="building/resources/INIbuffer.png"><img alt="building/resources/INIbuffer.png" src="building/resources/INIbuffer.png" style="width: 75%;" /></a>
+</div>
+<p>The application image must then be recompiled using the new modified <cite>containers.h</cite> for the changed parameters to take effect</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rebuild_lib.html" class="btn btn-neutral float-right" title="Making Choices for Your Application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-index.html" class="btn btn-neutral float-left" title="Your First Application from Scratch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

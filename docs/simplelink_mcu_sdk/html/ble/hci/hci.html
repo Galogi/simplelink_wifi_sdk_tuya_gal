@@ -1,0 +1,3416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vendor Specific HCI Commands &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device Activation &amp; Fuses" href="../../cc35xx/activation.html" />
+    <link rel="prev" title="Physical Layer (PHY)" href="../phy.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble hci hci";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Vendor Specific HCI Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functional-overview">Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-notation-conventions">Numerical Notation Conventions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#standard-hexadecimal-notation">Standard Hexadecimal Notation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#colon-separated-hexadecimal-notation">Colon Separated Hexadecimal Notation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-overview">HCI Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-interface-protocol">HCI Interface Protocol</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-packet">Command Packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asynchronous-data-packet">Asynchronous Data Packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synchronous-data-packet">Synchronous Data Packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-packet">Event Packet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extended-command">Extended Command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-commands">HCI Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-events">HCI Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vendor-specific-commands">Vendor Specific Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vendor-specific-events">Vendor Specific Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-and-response-tunneling">Request and Response Tunneling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-extension-commands">HCI Extension Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-settxpowercmd">HCI_EXT_SetTxPowerCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-onepktperevtcmd">HCI_EXT_OnePktPerEvtCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-decryptcmd">HCI_EXT_DecryptCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setlocalsupportedfeaturescmd">HCI_EXT_SetLocalSupportedFeaturesCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setfasttxresptime">HCI_EXT_SetFastTxRespTime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setbdaddrcmd">HCI_EXT_SetBDADDRCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setscacmd">HCI_EXT_SetSCACmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setmaxdtmtxpowercmd">HCI_EXT_SetMaxDtmTxPowerCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-disconnectimmedcmd">HCI_EXT_DisconnectImmedCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-packeterrorratecmd">HCI_EXT_PacketErrorRateCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-resetsystemcmd">HCI_EXT_ResetSystemCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-numcomplpktslimitcmd">HCI_EXT_NumComplPktsLimitCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-getconninfocmd">HCI_EXT_GetConnInfoCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setmaxdatalencmd">HCI_EXT_SetMaxDataLenCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-readrandomaddresscmd">HCI_EXT_ReadRandomAddressCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-getactiveconnectioninfocmd">HCI_EXT_GetActiveConnectionInfoCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-getrxstatisticscmd">HCI_EXT_GetRxStatisticsCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-gettxstatisticscmd">HCI_EXT_GetTxStatisticsCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-getcoexstatisticscmd">HCI_EXT_GetCoexStatisticsCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-lesetextendedadvertisingdatacmd">HCI_EXT_LESetExtendedAdvertisingDataCmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-lesetextendedscanresponsedatacmd">HCI_EXT_LESetExtendedScanResponseDataCmd</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hci-extension-events">HCI Extension Events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setrxgaindone">HCI_EXT_SetRxGainDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-settxpowerdone">HCI_EXT_SetTxPowerDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-onepacketpereventdone">HCI_EXT_OnePacketPerEventDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-decryptcommanddone">HCI_EXT_DecryptCommandDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-writelocalfeaturesupportdone">HCI_EXT_WriteLocalFeatureSupportDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setfasttxresponsetimedone">HCI_EXT_SetFastTxResponseTimeDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setbdaddrdone">HCI_EXT_SetBDADDRDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setscadone">HCI_EXT_SetSCADone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-disconnectimmeddone">HCI_EXT_DisconnectImmedDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-per">HCI_EXT_PER</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-resetsystemdone">HCI_EXT_ResetSystemDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-numcomplpktslimitdone">HCI_EXT_NumComplPktsLimitDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-getconninfodone">HCI_EXT_GetConnInfoDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-setmaxdatalengthdone">HCI_EXT_SetMaxDataLengthDone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hci-ext-lltestmodedone">HCI_EXT_LLTestModeDone</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a> &raquo;</li>
+        
+      <li>Vendor Specific HCI Commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vendor-specific-hci-commands">
+<h1>Vendor Specific HCI Commands<a class="headerlink" href="#vendor-specific-hci-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this document is to describe the Texas Instruments Inc. (TI)
+vendor specific Host Controller Interface (HCI) for Bluetooth® low energy (BLE).</p>
+</div>
+<div class="section" id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Permalink to this headline">¶</a></h2>
+<p>In BLE, there is a logical distinction between the Host software (often referred
+to as the higher layer stack) and the Controller software as shown below.</p>
+<div class="figure align-center" id="figure-1">
+<span id="stack-layers"></span><img alt="../../_images/stack-layers.png" src="../../_images/stack-layers.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">BLE Protocol Stack Layers</span></p>
+</div>
+<p>These components can either exist on the same device (single-device
+configuration), or be placed on separate devices (dual-device configuration)
+utilizing a Host Controller Interface (HCI) for communication. In the single-device configuration,
+there is obviously only one device, and the application software would execute on top of the BLE profiles
+and stack.</p>
+<div class="figure align-center" id="figure-2">
+<span id="single-device"></span><img alt="../../_images/single-device.png" src="../../_images/single-device.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Single Device Configuration</span></p>
+</div>
+<p>In the dual-device configuration, the application software would also execute
+on top of the BLE profiles and stack, and only the controller would be located
+on a separate device.</p>
+<div class="figure align-center" id="figure-3">
+<span id="dual-device"></span><img alt="../../_images/dual-device.png" src="../../_images/dual-device.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Dual Device Configuration</span></p>
+</div>
+</div>
+<div class="section" id="numerical-notation-conventions">
+<h2>Numerical Notation Conventions<a class="headerlink" href="#numerical-notation-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Multiple-octets may be specified in hexadecimal notation in one of two ways:</p>
+<div class="section" id="standard-hexadecimal-notation">
+<h3>Standard Hexadecimal Notation<a class="headerlink" href="#standard-hexadecimal-notation" title="Permalink to this headline">¶</a></h3>
+<p>In this notation, a single hexadecimal radix indicator “0x” precedes the entire
+value. The octet order as read from left to right is from most significant octet
+to least significant octet. For example, for the value 0x123456ABCDEF, ’12’ is
+the most significant octet and ‘EF’ is the least significant octet.</p>
+</div>
+<div class="section" id="colon-separated-hexadecimal-notation">
+<h3>Colon Separated Hexadecimal Notation<a class="headerlink" href="#colon-separated-hexadecimal-notation" title="Permalink to this headline">¶</a></h3>
+<p>In this notation, the hexadecimal radix indicator “0x” is not used and octets
+are colon separated. The octet order as read from left to right is from least
+significant octet to most significant octet. For example, for the value
+12:34:56:AB:CD:EF, ’12’ is the least significant octet and ‘EF’ is the most
+significant octet.</p>
+</div>
+</div>
+<div class="section" id="hci-overview">
+<h2>HCI Overview<a class="headerlink" href="#hci-overview" title="Permalink to this headline">¶</a></h2>
+<p>The HCI is a standardized Bluetooth interface for sending commands, receiving
+events, and for sending and receiving data. It is typically realized as a serial
+interface, using either RS232 or USB communication devices. As the name implies,
+the HCI is used to bridge the Host and Controller devices. Commands and Events
+can either be specified, or can be vendor specific for extensibility. The
+following sections summarize the HCI protocol, the specification defined
+commands and events used by BLE, and a detailed description of the vendor
+specific commands and events defined by Texas Instruments Inc. For complete
+details on the HCI as specified by the Special Interest Group (SIG), please
+see the Core specification [1].</p>
+</div>
+<div class="section" id="hci-interface-protocol">
+<h2>HCI Interface Protocol<a class="headerlink" href="#hci-interface-protocol" title="Permalink to this headline">¶</a></h2>
+<p>The HCI supports four types of packets: Command Packet, Asynchronous Data
+Packet, Synchronous Data Packet, and Event Packet. The packet type is a one byte
+value that precedes the HCI packet. The packet type has the following values:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Packet</th>
+<th class="head">Packet Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Command</td>
+<td>0x01</td>
+</tr>
+<tr class="row-odd"><td>Asynchronous Data</td>
+<td>0x02</td>
+</tr>
+<tr class="row-even"><td>Synchronous Data</td>
+<td>0x03</td>
+</tr>
+<tr class="row-odd"><td>Event</td>
+<td>0x04</td>
+</tr>
+<tr class="row-even"><td>Extended Command</td>
+<td>0x09</td>
+</tr>
+</tbody>
+</table>
+<p>The contents of each packet are shown as follows (please see section 5.4 of
+[1], Vol. 2, Part E for additional details).</p>
+<div class="section" id="command-packet">
+<h3>Command Packet<a class="headerlink" href="#command-packet" title="Permalink to this headline">¶</a></h3>
+<p>The command packet is comprised of the opcode, the number of parameters, and
+parameters themselves.</p>
+<div class="figure align-center" id="figure-4">
+<span id="command-packet-1"></span><img alt="../../_images/command-packet.png" src="../../_images/command-packet.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Command Packet</span></p>
+</div>
+</div>
+<div class="section" id="asynchronous-data-packet">
+<h3>Asynchronous Data Packet<a class="headerlink" href="#asynchronous-data-packet" title="Permalink to this headline">¶</a></h3>
+<p>The asynchronous data packet is comprised of the connection handle, fragmentation
+bits, the number of data bytes, and the data bytes themselves.</p>
+<div class="figure align-center" id="figure-5">
+<span id="async-data-packet"></span><img alt="../../_images/async-data-packet.png" src="../../_images/async-data-packet.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Asynchronous Data Packet</span></p>
+</div>
+</div>
+<div class="section" id="synchronous-data-packet">
+<h3>Synchronous Data Packet<a class="headerlink" href="#synchronous-data-packet" title="Permalink to this headline">¶</a></h3>
+<p>This synchronous data packet is not used in BLE.</p>
+</div>
+<div class="section" id="event-packet">
+<h3>Event Packet<a class="headerlink" href="#event-packet" title="Permalink to this headline">¶</a></h3>
+<p>The event packet is comprised of the event code, the number of event parameters,
+and the event parameters themselves.</p>
+<div class="figure align-center" id="figure-6">
+<span id="event-packet-1"></span><img alt="../../_images/event-packet.png" src="../../_images/event-packet.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Event Packet</span></p>
+</div>
+</div>
+<div class="section" id="extended-command">
+<h3>Extended Command<a class="headerlink" href="#extended-command" title="Permalink to this headline">¶</a></h3>
+<p>This packet is used to allow more than the HCI limit of 256 bytes. It includes a
+two-byte length field which states the payload length:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Offset</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>packet type (0x09)</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>LSB opcode</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>MSB opcode</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>LSB payload length</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>MSB payload length</td>
+</tr>
+<tr class="row-odd"><td>5..(length-3)</td>
+<td>Payload</td>
+</tr>
+</tbody>
+</table>
+<p>See each individual command for payload formatting.</p>
+</div>
+</div>
+<div class="section" id="hci-commands">
+<h2>HCI Commands<a class="headerlink" href="#hci-commands" title="Permalink to this headline">¶</a></h2>
+<p>HCI commands use a 16-bit opcode for identification. The opcode is subdivided
+into two parts: a 10-bit Opcode Command Field (OCF) and a 6-bit Opcode Group
+Field (OGF).</p>
+<div class="figure align-center" id="figure-7">
+<span id="hci-command-opcode"></span><img alt="../../_images/hci-command-opcode.png" src="../../_images/hci-command-opcode.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">HCI Command Opcode</span></p>
+</div>
+<p>The OGF values are defined by the Bluetooth (BT) Core specification. The LE
+specification has its own OGF value. Also, there is an escape OGF value so that vendor specific OCF codes can be used. The following OGF values are valid for BLE:
+# Link Control Commands: 1
+# Link Policy Commands: 2
+# Controller and Baseband Commands: 3
+# Informational Parameters: 4
+# Status Parameters: 5
+# Testing Commands: 6
+# LE Only Commands: 8
+# Vendor Specific Commands: 63</p>
+<p>The following table, Table 2, lists all specification LE HCI commands and their opcodes. Note that while all commands can be sent by the application processor to the Network Processor using HCI, not all events will be returned as they will be trapped and possibly discarded by the Host layer of the BLE Stack. Therefore, it is not possible to support an external BLE Host in the Network Processor configuration. Network Processor based designs should use the respective Vendor Extension commands detailed in the following sections to implement an off-chip application.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="83%" />
+<col width="4%" />
+<col width="4%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">LE Commands</th>
+<th class="head">OGF</th>
+<th class="head">OCF</th>
+<th class="head">Opcdoe</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LE Set Event Mask</td>
+<td>8</td>
+<td>1</td>
+<td>0x2001</td>
+</tr>
+<tr class="row-odd"><td>LE Read Buffer Size</td>
+<td>8</td>
+<td>2</td>
+<td>0x2002</td>
+</tr>
+<tr class="row-even"><td>LE Read Local Supported Features</td>
+<td>8</td>
+<td>3</td>
+<td>0x2003</td>
+</tr>
+<tr class="row-odd"><td>LE Set Random Address</td>
+<td>8</td>
+<td>5</td>
+<td>0x2005</td>
+</tr>
+<tr class="row-even"><td>LE Set Advertising Parameters</td>
+<td>8</td>
+<td>6</td>
+<td>0x2006</td>
+</tr>
+<tr class="row-odd"><td>LE Read Advertising Channel TX Power</td>
+<td>8</td>
+<td>7</td>
+<td>0x2007</td>
+</tr>
+<tr class="row-even"><td>LE Set Advertising Data</td>
+<td>8</td>
+<td>8</td>
+<td>0x2008</td>
+</tr>
+<tr class="row-odd"><td>LE Set Scan Response Data</td>
+<td>8</td>
+<td>9</td>
+<td>0x2009</td>
+</tr>
+<tr class="row-even"><td>LE Set Advertise Enable</td>
+<td>8</td>
+<td>10</td>
+<td>0x200A</td>
+</tr>
+<tr class="row-odd"><td>LE Set Scan Parameters</td>
+<td>8</td>
+<td>11</td>
+<td>0x200B</td>
+</tr>
+<tr class="row-even"><td>LE Set Scan Enable</td>
+<td>8</td>
+<td>12</td>
+<td>0x200C</td>
+</tr>
+<tr class="row-odd"><td>LE Create Connection</td>
+<td>8</td>
+<td>13</td>
+<td>0x200D</td>
+</tr>
+<tr class="row-even"><td>LE Create Connection Cancel</td>
+<td>8</td>
+<td>14</td>
+<td>0x200E</td>
+</tr>
+<tr class="row-odd"><td>LE Read White List Size</td>
+<td>8</td>
+<td>15</td>
+<td>0x200F</td>
+</tr>
+<tr class="row-even"><td>LE Clear White Lis</td>
+<td>8</td>
+<td>16</td>
+<td>0x2010</td>
+</tr>
+<tr class="row-odd"><td>LE Add Device To White List</td>
+<td>8</td>
+<td>17</td>
+<td>0x2011</td>
+</tr>
+<tr class="row-even"><td>LE Remove Device From White List</td>
+<td>8</td>
+<td>18</td>
+<td>0x2012</td>
+</tr>
+<tr class="row-odd"><td>LE Connection Update</td>
+<td>8</td>
+<td>19</td>
+<td>0x2013</td>
+</tr>
+<tr class="row-even"><td>LE Set Host Channel Classification</td>
+<td>8</td>
+<td>20</td>
+<td>0x2014</td>
+</tr>
+<tr class="row-odd"><td>LE Read Channel Map</td>
+<td>8</td>
+<td>21</td>
+<td>0x2015</td>
+</tr>
+<tr class="row-even"><td>LE Read Remote Used Features</td>
+<td>8</td>
+<td>22</td>
+<td>0x2016</td>
+</tr>
+<tr class="row-odd"><td>LE Encrypt</td>
+<td>8</td>
+<td>23</td>
+<td>0x2017</td>
+</tr>
+<tr class="row-even"><td>LE Rand</td>
+<td>8</td>
+<td>24</td>
+<td>0x2018</td>
+</tr>
+<tr class="row-odd"><td>LE Start Encryption</td>
+<td>8</td>
+<td>25</td>
+<td>0x2019</td>
+</tr>
+<tr class="row-even"><td>LE Long Term Key Requested Reply</td>
+<td>8</td>
+<td>26</td>
+<td>0x201A</td>
+</tr>
+<tr class="row-odd"><td>LE Long Term Key Requested Negative Reply</td>
+<td>8</td>
+<td>27</td>
+<td>0x201B</td>
+</tr>
+<tr class="row-even"><td>LE Read Supported States</td>
+<td>8</td>
+<td>28</td>
+<td>0x201C</td>
+</tr>
+<tr class="row-odd"><td>LE Receiver Test</td>
+<td>8</td>
+<td>29</td>
+<td>0x201D</td>
+</tr>
+<tr class="row-even"><td>LE Transmitter Test</td>
+<td>8</td>
+<td>30</td>
+<td>0x201E</td>
+</tr>
+<tr class="row-odd"><td>LE Test End Command</td>
+<td>8</td>
+<td>31</td>
+<td>0x201F</td>
+</tr>
+<tr class="row-even"><td>LE Remote Connection Parameter Request Reply</td>
+<td>8</td>
+<td>32</td>
+<td>0x2020</td>
+</tr>
+<tr class="row-odd"><td>LE Remote Connection Parameter Request Negative Reply</td>
+<td>8</td>
+<td>33</td>
+<td>0x2021</td>
+</tr>
+<tr class="row-even"><td>LE Set Data Length</td>
+<td>8</td>
+<td>34</td>
+<td>0x2022</td>
+</tr>
+<tr class="row-odd"><td>LE Read Suggested Default Data Length</td>
+<td>8</td>
+<td>35</td>
+<td>0x2023</td>
+</tr>
+<tr class="row-even"><td>LE Write Suggested Default Data Length</td>
+<td>8</td>
+<td>36</td>
+<td>0x2024</td>
+</tr>
+<tr class="row-odd"><td>LE Read Local P256 Public Key 37 0x2025 LE Generate DHKey</td>
+<td>8</td>
+<td>38</td>
+<td>0x2026</td>
+</tr>
+<tr class="row-even"><td>LE Add Device to Resolving List</td>
+<td>8</td>
+<td>39</td>
+<td>0x2027</td>
+</tr>
+<tr class="row-odd"><td>LE Remove Device from Resolving List</td>
+<td>8</td>
+<td>40</td>
+<td>0x2028</td>
+</tr>
+<tr class="row-even"><td>LE Clear Resolving List</td>
+<td>8</td>
+<td>41</td>
+<td>0x2029</td>
+</tr>
+<tr class="row-odd"><td>LE Read Resolving List Size</td>
+<td>8</td>
+<td>42</td>
+<td>0x202A</td>
+</tr>
+<tr class="row-even"><td>LE Read Peer Resolvable Address</td>
+<td>8</td>
+<td>43</td>
+<td>0x202B</td>
+</tr>
+<tr class="row-odd"><td>LE Read Local Resolvable Address</td>
+<td>8</td>
+<td>44</td>
+<td>0x202C</td>
+</tr>
+<tr class="row-even"><td>LE Set Address Resolution Enable</td>
+<td>8</td>
+<td>45</td>
+<td>0x202D</td>
+</tr>
+<tr class="row-odd"><td>LE Set Resolvable Private Address Timeout</td>
+<td>8</td>
+<td>46</td>
+<td>0x202E</td>
+</tr>
+<tr class="row-even"><td>LE Read Maximum Data Length</td>
+<td>8</td>
+<td>47</td>
+<td>0x202F</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="79%" />
+<col width="5%" />
+<col width="5%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BT Commands for LE</th>
+<th class="head">OGF</th>
+<th class="head">OCF</th>
+<th class="head">Opcode</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Disconnect</td>
+<td>1</td>
+<td>6</td>
+<td>0x0406</td>
+</tr>
+<tr class="row-odd"><td>Read Remote Version Information</td>
+<td>1</td>
+<td>29</td>
+<td>0x041D</td>
+</tr>
+<tr class="row-even"><td>Set Event Mask</td>
+<td>3</td>
+<td>1</td>
+<td>0x0C01</td>
+</tr>
+<tr class="row-odd"><td>Reset</td>
+<td>3</td>
+<td>3</td>
+<td>0x0C03</td>
+</tr>
+<tr class="row-even"><td>Read Transmit Power Level</td>
+<td>3</td>
+<td>45</td>
+<td>0x0C2D</td>
+</tr>
+<tr class="row-odd"><td>Set Controller To Host Flow Control (optional)</td>
+<td>3</td>
+<td>49</td>
+<td>0x0C31</td>
+</tr>
+<tr class="row-even"><td>Host Buffer Size (optional)</td>
+<td>3</td>
+<td>51</td>
+<td>0x0C33</td>
+</tr>
+<tr class="row-odd"><td>Host Number Of Completed Packets (optional)</td>
+<td>3</td>
+<td>53</td>
+<td>0x0C35</td>
+</tr>
+<tr class="row-even"><td>Set Event Mask Page</td>
+<td>3</td>
+<td>63</td>
+<td>0x0C63</td>
+</tr>
+<tr class="row-odd"><td>Read Authenticated Payload Timeout</td>
+<td>4</td>
+<td>123</td>
+<td>0x0C7B</td>
+</tr>
+<tr class="row-even"><td>Write Authenticated Payload Timeout</td>
+<td>4</td>
+<td>124</td>
+<td>0x0C7C</td>
+</tr>
+<tr class="row-odd"><td>Read Local Version Information</td>
+<td>4</td>
+<td>1</td>
+<td>0x1001</td>
+</tr>
+<tr class="row-even"><td>Read Local Supported Commands (optional)</td>
+<td>4</td>
+<td>2</td>
+<td>0x1002</td>
+</tr>
+<tr class="row-odd"><td>Read Local Supported Features</td>
+<td>4</td>
+<td>3</td>
+<td>0x1003</td>
+</tr>
+<tr class="row-even"><td>Read BD_ADDR</td>
+<td>4</td>
+<td>9</td>
+<td>0x1009</td>
+</tr>
+<tr class="row-odd"><td>Read RSSI</td>
+<td>5</td>
+<td>5</td>
+<td>0x1405</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-events">
+<h2>HCI Events<a class="headerlink" href="#hci-events" title="Permalink to this headline">¶</a></h2>
+<p>HCI events use an 8-bit event code. All event codes are unique for BT and BLE.
+Only event code 255 is reserved for vendor specific events. There is only one
+event code for all LE events. The first event parameter is used as the subevent
+code to distinguish the LE event types.</p>
+<p>The following table lists all the BLE events and their event codes, and subevent
+codes when applicable:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="62%" />
+<col width="16%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">LE Events</th>
+<th class="head">Event Code</th>
+<th class="head">Subevent Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LE Connection Complete</td>
+<td>0x3E</td>
+<td>0x01</td>
+</tr>
+<tr class="row-odd"><td>LE Advertising Report</td>
+<td>0x3E</td>
+<td>0x02</td>
+</tr>
+<tr class="row-even"><td>LE Connection Update Complete</td>
+<td>0x3E</td>
+<td>0x03</td>
+</tr>
+<tr class="row-odd"><td>LE Read Remote Used Features Complete</td>
+<td>0x3E</td>
+<td>0x04</td>
+</tr>
+<tr class="row-even"><td>LE Long Term Key Requested</td>
+<td>0x3E</td>
+<td>0x05</td>
+</tr>
+<tr class="row-odd"><td>LE Remote Connection Parameter Request</td>
+<td>0x3E</td>
+<td>0x06</td>
+</tr>
+<tr class="row-even"><td>LE Data Length Change</td>
+<td>0x3E</td>
+<td>0x07</td>
+</tr>
+<tr class="row-odd"><td>LE Read Local P256 Public Key Complete</td>
+<td>0x3E</td>
+<td>0x08</td>
+</tr>
+<tr class="row-even"><td>LE Generate DHKey Complete</td>
+<td>0x3E</td>
+<td>0x09</td>
+</tr>
+<tr class="row-odd"><td>LE Enhanced Connection Complete</td>
+<td>0x3E</td>
+<td>0x0A</td>
+</tr>
+<tr class="row-even"><td>LE Direct Advertising Report</td>
+<td>0x3E</td>
+<td>0x0B</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="80%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">BT Events</th>
+<th class="head">Event Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Disconnection Complete</td>
+<td>0x05</td>
+</tr>
+<tr class="row-odd"><td>Encryption Change</td>
+<td>0x08</td>
+</tr>
+<tr class="row-even"><td>Read Remote Version Information Complete</td>
+<td>0x0C</td>
+</tr>
+<tr class="row-odd"><td>Command Complete</td>
+<td>0x0E</td>
+</tr>
+<tr class="row-even"><td>Command Status</td>
+<td>0x0F</td>
+</tr>
+<tr class="row-odd"><td>Hardware Error (optional)</td>
+<td>0x10</td>
+</tr>
+<tr class="row-even"><td>Number Of Completed Packets</td>
+<td>0x13</td>
+</tr>
+<tr class="row-odd"><td>Data Buffer Overflow</td>
+<td>0x1A</td>
+</tr>
+<tr class="row-even"><td>Encryption Key Refresh Complete</td>
+<td>0x30</td>
+</tr>
+<tr class="row-odd"><td>Authenticated Payload Timeout Expired</td>
+<td>0x57</td>
+</tr>
+</tbody>
+</table>
+<p>As mentioned, vendors can specify their own HCI commands and events by using the
+predefined vendor specific opcode and vendor specific event code.</p>
+</div>
+<div class="section" id="vendor-specific-commands">
+<h2>Vendor Specific Commands<a class="headerlink" href="#vendor-specific-commands" title="Permalink to this headline">¶</a></h2>
+<p>A vendor specific opcode is indicated by an OGF value of 63. The vendor can use
+the remaining 10 bits (i.e. the OCF) as they like. TI defines its vendor
+specific OCF values by subdividing the 10 bits into a 3 MSB Command Subgroup
+(CSG) and a 7 LSB Command (CMD). The CSG is used by the HCI to route the
+commands to a designated subsystem within the BLE stack. In this way, vendor
+specific commands can be specified for any BLE stack layer.</p>
+<div class="figure align-center" id="figure-8">
+<span id="vendor-specific-opcode-0-6"></span><img alt="../../_images/vendor-specific-opcode-0-6.png" src="../../_images/vendor-specific-opcode-0-6.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">HCI Vendor Specific Command Opcode, CSG=0..6</span></p>
+</div>
+<p>The Command Subgroups are defined as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CSG</th>
+<th class="head">Subgroup</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>HCI</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>L2CAP</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>ATT</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>GATT</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>GAP</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>UTIL</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>Reserved</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>User Profile</td>
+</tr>
+</tbody>
+</table>
+<p>For Command Subgroups 0 to 6, the remaining 7 bits of Command provide up to 128
+commands for each subgroup. For Subgroup 7, the remaining 7 bits specify one of
+128 profiles and indicates that the subsequent byte is to be used as the command
+for that particular profile (i.e. up to 256 commands per profile).</p>
+<div class="figure align-center" id="figure-9">
+<span id="vendor-specific-opcode-7"></span><img alt="../../_images/vendor-specific-opcode-7.png" src="../../_images/vendor-specific-opcode-7.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">HCI Vendor Specific Command Opcode, CSG=7</span></p>
+</div>
+</div>
+<div class="section" id="vendor-specific-events">
+<h2>Vendor Specific Events<a class="headerlink" href="#vendor-specific-events" title="Permalink to this headline">¶</a></h2>
+<p>A vendor specific event code is indicated by a value of 255. The vendor must
+then use event parameters (following the length byte) to specify vendor specific
+events. TI defines the following two bytes as the Event Opcode.</p>
+<div class="figure align-center" id="vendor-specific-event-1">
+<img alt="../../_images/vendor-specific-event-1.png" src="../../_images/vendor-specific-event-1.png" />
+</div>
+<p>The Event Opcode was chosen to mirror the Command Opcode by dividing it into
+two parts: a 6 bit Event Opcode Group Field (EOGF), and a 10 bit Event Opcode
+Event Field (EOEF).</p>
+<div class="figure align-center" id="vendor-specific-event-2">
+<img alt="../../_images/vendor-specific-event-2.png" src="../../_images/vendor-specific-event-2.png" />
+</div>
+<p>The EOEF is again chosen to mirror the Command OCF by dividing it into two
+parts: the Event Subgroup (ESG) and the Event.</p>
+<div class="figure align-center" id="vendor-specific-event-3">
+<img alt="../../_images/vendor-specific-event-3.png" src="../../_images/vendor-specific-event-3.png" />
+</div>
+<p>The EOGF is defined as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">EOGF</th>
+<th class="head">Group</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Embedded Opcode</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Core Opcode</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Profile Request</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Profile Response</td>
+</tr>
+<tr class="row-even"><td>4-63</td>
+<td>Reserved</td>
+</tr>
+</tbody>
+</table>
+<p>The ESG is defined as in Table 4. The Events are as defined in the following
+table. Please note that the value of the Events cannot be less than 0x400 as the
+first 1024 values are reserved. The reason for this has to do with
+Client/Server Request/Response Tunneling, which is described in the following
+section. Tunneling requires embedding Command Opcodes in HCI Events. When this
+is done, the EOGF is zero, and the remaining 10 bits is the Command Opcode. In
+order to prevent Command and Event Opcode overlap, the first 1024 values are
+reserved in the Event Opcode space. Also note that the Event Code (EC) is
+always 0xFF since normally only Controller events are returned via the HCI.</p>
+<p>You will note that there are two EOGF values for Profiles. At this time, no
+profiles are defined well enough to document here. These values are defined in
+anticipation of not only needing large numbers of profiles and their commands,
+but also of needing the direction the command is traveling when embedded in an
+HCI Command or Event. You can see that ATT does not have this issue as these
+commands are already defined using even values for commands and odd values for
+events, and thus, direction is distinguishable. For profiles, it is not yet
+known how the commands and events will be defined.</p>
+</div>
+<div class="section" id="request-and-response-tunneling">
+<h2>Request and Response Tunneling<a class="headerlink" href="#request-and-response-tunneling" title="Permalink to this headline">¶</a></h2>
+<p>In the Client/Server model defined and supported by the BLE stack, the Client
+sends Requests to the Server and the Server sends Responses back to the Client.
+The Requests sent by the Client may be handled by a Server on the same device,
+or they may travel OTA to the Server on another device. Similarly, the Response
+sent by the Server may be handled by a Client on the same device, or may be sent
+OTA to a Client on another device from which the request came. But in either
+case, as long as the Requests and Responses remain within the scope of the BLE
+stack software (i.e. the BLE Server database is on the device), the BLE stack
+remains unconcerned about whether the Requests and Responses are sent/received
+by the same device or are from another device.</p>
+<div class="figure align-center" id="figure-10">
+<span id="tunneling-1"></span><img alt="../../_images/tunneling-1.png" src="../../_images/tunneling-1.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Request/Response with Server Database in BLE Stack</span></p>
+</div>
+<p>However, when using the Network Processor Configuration with HCI such that the
+Server database is not located on the device, then Requests and Responses have to
+be mapped into HCI Commands and Events. The HCI is specified such that only
+Commands are sent from the Host to the Controller, and only Events are sent from
+the Controller to the Host. If the Server database is located on say a PC, then
+when an OTA Request is received by the Server device, it must be sent to the PC
+via the HCI. Even though the Request started out on one end as an HCI Command,
+it must be provided to the remote PC as an HCI event on the other. Similarly,
+when the PC sends the Response on one end, which will be an HCI Event to the
+remote PC on the other, it must be sent to the device as an HCI Command. Thus,
+the Request, which starts out as an HCI Command, must be embedded in an HCI
+Event when received by the remote PC, and the Response, which starts out as an
+HCI Command, must be embedded in an HCI Event when received by the remote PC.
+In this way, Requests and Responses are being tunneled in HCI Commands and
+Events.</p>
+<div class="figure align-center" id="figure-11">
+<span id="tunneling-2"></span><img alt="../../_images/tunneling-2.png" src="../../_images/tunneling-2.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Request/Response with Server Database not in BLE Stack</span></p>
+</div>
+</div>
+<div class="section" id="hci-extension-commands">
+<h2>HCI Extension Commands<a class="headerlink" href="#hci-extension-commands" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the BLE HCI commands, the following HCI Extension vendor specific commands are also available.</p>
+<div class="section" id="hci-ext-settxpowercmd">
+<h3>HCI_EXT_SetTxPowerCmd<a class="headerlink" href="#hci-ext-settxpowercmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC01</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set the RF transmitter output power.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">TX Power:</th><td class="field-body"><p class="first">Tx power to use.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">2</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>: 0 dBm</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>: 5 dBm</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>: 10 dBm</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>: 20 dBm</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetTxPowerDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-onepktperevtcmd">
+<h3>HCI_EXT_OnePktPerEvtCmd<a class="headerlink" href="#hci-ext-onepktperevtcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC02</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to configure the Link Layer to only allow one packet per connection event. This command can be used to trade^off throughput and power consumption during a connection. When enabled, power can be conserved during a connection by limiting the number of packets per connection event to one, at the expense of more limited throughput. When disabled, the number of packets transferred during a connection event is not limited, at the expense of higher power consumption. Note that when set, all connections will be restricted to one packet per event.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Control:</th><td class="field-body"><p class="first">Enable or disable allowing only one packet per event.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Disable</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Enable</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_OnePacketPerEventDone event shall be generated only if the state has changed.</p>
+</div>
+<div class="section" id="hci-ext-decryptcmd">
+<h3>HCI_EXT_DecryptCmd<a class="headerlink" href="#hci-ext-decryptcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC05</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to decrypt encrypted text using AES128.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Key:</th><td class="field-body"><p class="first">128 bit key for the decryption of the data given in the command. The most significant octet of the data corresponds to key[0] using the notation specified in FIPS 197.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">16 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">“BF:01:FB:9D:4E:F3:BC:36:D8:74:F5:39:41:38:68:4C”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 16 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Data:</th><td class="field-body"><p class="first">128 bit encrypted data to be decrypted. The most significant octet of the key corresponds to key[0] using the notation specified in FIPS 197.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">16 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">“66:C6:C2:27:8E:3B:8E:05:3E:7E:A3:26:52:1B:AD:99”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 16 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_DecryptCommandDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setlocalsupportedfeaturescmd">
+<h3>HCI_EXT_SetLocalSupportedFeaturesCmd<a class="headerlink" href="#hci-ext-setlocalsupportedfeaturescmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC06</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set the Controllers Local Supported Features. For a complete list of supported LE features, please see [1], Part B, Section 4.6. Note: This command can be issued either before or after one or more connections are formed. However, the local features set in this manner are only effective if performed before a Feature Exchange Procedure has been initiated by the Master. Once this control procedure has been completed for a particular connection, only the exchanged feature set for that connection will be used. Since the Link Layer may initiate the feature exchange procedure autonomously, it is best to use this command before the connection is formed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">FeatureSet:</th><td class="field-body"><p class="first">Write LL local supported features.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">8 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0x0000000000000001</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x0000000000000000</td>
+<td>No Events Specified</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000001</td>
+<td>Encryption</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000002</td>
+<td>Connection Parameters Request</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000004</td>
+<td>Reject Extended Indication</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000008</td>
+<td>Slave Features Exchange</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000010</td>
+<td>Ping</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000020</td>
+<td>Data Packet Length Extension</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000040</td>
+<td>Privacy</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000080</td>
+<td>Extended Scanner Filter Policies</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000100</td>
+<td>2M PHY</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000200</td>
+<td>Stable Modulation Index Tx</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000000400</td>
+<td>Stable Modulation Index Rx</td>
+</tr>
+<tr class="row-even"><td>0x0000000000000800</td>
+<td>Coded PHY</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000001000</td>
+<td>Extended Advertising</td>
+</tr>
+<tr class="row-even"><td>0x0000000000002000</td>
+<td>Periodic Advertising</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000004000</td>
+<td>Channel Selection Algorithm #2</td>
+</tr>
+<tr class="row-even"><td>0x0000000000008000</td>
+<td>LE Power Class 1</td>
+</tr>
+<tr class="row-odd"><td>0x0000000000010000</td>
+<td>Minimum Number of Used Channels</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_WriteLocalFeatureSupportDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setfasttxresptime">
+<h3>HCI_EXT_SetFastTxRespTime<a class="headerlink" href="#hci-ext-setfasttxresptime" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC07</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set whether transmit data is sent as soon as possible even when peripheral latency is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Control:</th><td class="field-body"><p class="first">Enable or disable allowing only one packet per event.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Disable</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Enable</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetFastTxRespTimeDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setbdaddrcmd">
+<h3>HCI_EXT_SetBDADDRCmd<a class="headerlink" href="#hci-ext-setbdaddrcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC0C</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set this devices BLE address (BDADDR). This address will override the devices address determined when the device is reset (i.e. a hardware reset, not an HCI Controller Reset). To restore the devices initialized address, issue this command with an invalid address. Note: This command is only allowed when the Controller is in the Standby state. Note: This command is intended to only be used during initialization. Changing the devices BDADDR after various BLE operations have already taken place may cause unexpected problems.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">BDADDR:</th><td class="field-body"><p class="first">BLE Public Address (MSB..LSB). Use “FF:FF:FF:FF:FF:FF” to restore the device address to that which was determined at initialization.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">6 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">“00:00:00:00:00:00”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 6 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetBDADDRDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setscacmd">
+<h3>HCI_EXT_SetSCACmd<a class="headerlink" href="#hci-ext-setscacmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC0D</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set this devices Sleep Clock Accuracy (SCA) value, in parts per million (PPM), from 0 to 500. For a Master device, the value is converted to one of eight ordinal values representing a SCA range (per [1], Volume 6, Part B, Section 2.3.3.1, Table 2.2), which will be used when a connection is created. For a Slave device, the value is directly used. The system default value for a Master and Slave device is 50ppm and 40ppm, respectively. Note: This command is only allowed when the device is not in a connection. Note: The devices SCA value remains unaffected by an HCI Reset.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">SCA:</th><td class="field-body"><p class="first">BLE Device Sleep Clock Accuracy (PPM).</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">“40”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">(0..500)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetSCADone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setmaxdtmtxpowercmd">
+<h3>HCI_EXT_SetMaxDtmTxPowerCmd<a class="headerlink" href="#hci-ext-setmaxdtmtxpowercmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC11</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set the RF transmitter output power when doing RF testing in PLT mode.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">TX Power:</th><td class="field-body"><p class="first">Tx power to use.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">2</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>: 0 dBm</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>: 5 dBm</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>: 10 dBm</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>: 20 dBm</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetTxPowerDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-disconnectimmedcmd">
+<h3>HCI_EXT_DisconnectImmedCmd<a class="headerlink" href="#hci-ext-disconnectimmedcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC13</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to disconnect a connection immediately. This command can be useful for when a connection needs to be ended without the latency associated with the normal BLE Controller Terminate control procedure. Note that the Host issuing the command will still receive the HCI Disconnection Complete event with a Reason status of 0x16 (i.e. Connection Terminated by Local Host), followed by an HCI Vendor Specific Event.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x0000</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0000 to 0x0EFF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_DisconnectImmedDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-packeterrorratecmd">
+<h3>HCI_EXT_PacketErrorRateCmd<a class="headerlink" href="#hci-ext-packeterrorratecmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC14</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to Reset or Read the Packet Error Rate counters for a connection. When Reset, the counters are cleared; when Read, the total number of packets received, the number of packets received with a CRC error, the number of events, and the number of missed events are returned. The system default value upon hardware reset is Reset. Note: The counters are only 16 bits. At the shortest connection interval, this provides a little over 8 minutes of data. Note: This command is only valid for a valid connection handle (i.e. for an active connection). It is therefore not possible to read the packet error rate data once the connection has ended.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x0000</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0000 to 0x0EFF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">PER Test Command:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Reset or Read the PER counters.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Reset PER Counters</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Read PER Counters</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_PER event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-resetsystemcmd">
+<h3>HCI_EXT_ResetSystemCmd<a class="headerlink" href="#hci-ext-resetsystemcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC1D</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to issue a hard or soft system reset. A hard reset is caused by setting the SYSRESET bit in the System Controller Reset Control register. The soft reset is currently not supported on the CC264x.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><p class="first">Reset Type</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x00</td>
+<td>Chip Reset</td>
+</tr>
+<tr class="row-odd"><td>0x01</td>
+<td>Soft Reset</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_ResetSystemDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-numcomplpktslimitcmd">
+<h3>HCI_EXT_NumComplPktsLimitCmd<a class="headerlink" href="#hci-ext-numcomplpktslimitcmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC1F</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set the limit on the minimum number of complete packets before a Number of Completed Packets event is returned by the Controller. If the limit is not reached by the end of a connection event, then the Number of Completed Packets event will be returned (if non^zero) based on the flushOnEvt flag. The limit can be set from one to the maximum number of HCI buffers (please see the LE Read Buffer Size command in the Bluetooth Core specification). The default limit is one; the default flushOnEvt flag is FALSE.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Limit:</th><td class="field-body"><p class="first">Set Number of Completed Packets Limit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x01 to the value returned from HCI_LE_ReadBufSizeCmd</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">flushOnEvt:</th><td class="field-body"><p class="first">Enable or disable flush of Number of Completed Packets at end of Event.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Disable</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Enable</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_NumComplPktsLimitDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-getconninfocmd">
+<h3>HCI_EXT_GetConnInfoCmd<a class="headerlink" href="#hci-ext-getconninfocmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC20</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command (which replaces Get Number Connections) is used to get the number of allocated connections, the number of active connections, and for each active connection, the connection handle, the connection role, the peer device address and peer device address type. The number of allocated connections is based on a default build value that can be changed in the project using MAX_NUM_BLE_CONNS (please see the software users guide for additional details). The number of active connections refers to active BLE connections. The information per connection is based on the structure hciConnInfo_t provided in hci.h. If all parameters are NULL, then the call to this command is considered a network processor call via a transport layer, and the results will be provided via a vendor specific command complete event.If any parameter is not NULL, then the call to this command is considered a direct function call and the valid pointers will be used to store the result. In this case, it is the users responsibility to ensure there is sufficient memory allocated! Note that partial results can be obtained by selective use of the pointers. For example, if only the number of active connections is desired, this can be obtained as follows:</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_GetConnInfoDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-setmaxdatalencmd">
+<h3>HCI_EXT_SetMaxDataLenCmd<a class="headerlink" href="#hci-ext-setmaxdatalencmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC21</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set the Data Length Extension internal variables supportedMaxTxOctets, supportedMaxTxTime, supportedMaxRxOctets and supportedMaxRxTime that are normally set exclusively by the Controller to the maximum data length and duration allowed by this device (default Tx and Rx Octets is 251; default Tx and Rx Time is 2120 us [but note that any future change to support PHYs could alter the default values of Time]).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Tx Octets:</th><td class="field-body"><p class="first">Maximum number of payload octets that the local Controller supports for transmission of a single Link Layer Data Channel PDU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x001B to 0x00FB</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Tx Time:</th><td class="field-body"><p class="first">Maximum time, in microseconds, that the local Controller supports for transmission of a single Link Layer Data Channel PDU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0148 to 0x0848</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rx Octets:</th><td class="field-body"><p class="first">Maximum number of payload octets that the local Controller supports for reception of a single Link Layer Data Channel PDU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x001B to 0x00FB</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rx Time:</th><td class="field-body"><p class="first">Maximum time, in microseconds, that the local Controller supports for reception of a single Link Layer Data Channel PDU.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0148 to 0x0848</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_SetMaxDataLengthDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-readrandomaddresscmd">
+<h3>HCI_EXT_ReadRandomAddressCmd<a class="headerlink" href="#hci-ext-readrandomaddresscmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC25</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to Read the controller’s own random device address</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<p>None</p>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_ReadRandomAddressDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-getactiveconnectioninfocmd">
+<h3>HCI_EXT_GetActiveConnectionInfoCmd<a class="headerlink" href="#hci-ext-getactiveconnectioninfocmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC2C</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to get connection information needed to track an active BLE connection.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">connID:</th><td class="field-body"><p class="first">Connection ID</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0000 to 0x0EFF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_GetActiveConnInfoDone shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-getrxstatisticscmd">
+<h3>HCI_EXT_GetRxStatisticsCmd<a class="headerlink" href="#hci-ext-getrxstatisticscmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC31</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to get RX statistics.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x0000</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0000 to 0x0EFF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body"><p class="first">Resets or Reads Statistic Counters</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Reset (Clears all Statistic Counters)</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Read (Reads Statistic Counters)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_GetRxStatsDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-gettxstatisticscmd">
+<h3>HCI_EXT_GetTxStatisticsCmd<a class="headerlink" href="#hci-ext-gettxstatisticscmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC32</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to get TX statistics.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x0000</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x0000 to 0x0EFF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body"><p class="first">Resets or Reads Statistc Counters</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Reset (Clears all Statistic Counters)</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Read (Reads Statisc Counters)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_GetTxStatsDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-getcoexstatisticscmd">
+<h3>HCI_EXT_GetCoexStatisticsCmd<a class="headerlink" href="#hci-ext-getcoexstatisticscmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC33</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to get Coexistence statistics.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Command:</th><td class="field-body"><p class="first">Resets or Reads Statistic Counters</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Reset (Clears all Statistic Counters)</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Read (Reads Statistic Counters)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_GetCoexStatsDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-lesetextendedadvertisingdatacmd">
+<h3>HCI_EXT_LESetExtendedAdvertisingDataCmd<a class="headerlink" href="#hci-ext-lesetextendedadvertisingdatacmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC71</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set extended ADV data.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x00</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x00 to 0xEF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Fragment:</th><td class="field-body"><p class="first">Allows the fragmentation of data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>The Controller may fragment all data</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>The Controller should not fragment data</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Data Length:</th><td class="field-body"><p class="first">The number of bytes in the Advertising Data parameter
+:Size: 1 byte(s)
+:Range: 0 to 251</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Advertsing Data:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">Data that will be set while Advertising
+:Size: N/A</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_LESetExtendedAdvertisingDataDone event shall be generated.</p>
+</div>
+<div class="section" id="hci-ext-lesetextendedscanresponsedatacmd">
+<h3>HCI_EXT_LESetExtendedScanResponseDataCmd<a class="headerlink" href="#hci-ext-lesetextendedscanresponsedatacmd" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0xFC72</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Command Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This command is used to set extended Scan Response.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Command Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Connection Handle:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Handle used to identify a connection</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body">0x00</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">0x00 to 0xEF</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Fragment:</th><td class="field-body"><p class="first">Allows the fragmentation of data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Default:</th><td class="field-body"><p class="first">0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>The Controller may fragment all data</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>The Controller should not fragment data</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Data Length:</th><td class="field-body"><p class="first">The number of bytes in the Advertising Data parameter
+:Size: 1 byte(s)
+:Range: 0 to 251</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Advertising Data:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">Data that will be set while Advertising
+:Size: N/A</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Events Generated</strong></p>
+<p>When this command has completed, an HCI_EXT_LESetExtendedScanResponseDataDone event shall be generated.</p>
+</div>
+</div>
+<div class="section" id="hci-extension-events">
+<h2>HCI Extension Events<a class="headerlink" href="#hci-extension-events" title="Permalink to this headline">¶</a></h2>
+<p>The HCI Extension vendor specific commands generate the following vendor specific events.</p>
+<div class="section" id="hci-ext-setrxgaindone">
+<h3>HCI_EXT_SetRxGainDone<a class="headerlink" href="#hci-ext-setrxgaindone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0400</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the RF receiver gain has been set, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-settxpowerdone">
+<h3>HCI_EXT_SetTxPowerDone<a class="headerlink" href="#hci-ext-settxpowerdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0401</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the RF transmitter power has been set, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-onepacketpereventdone">
+<h3>HCI_EXT_OnePacketPerEventDone<a class="headerlink" href="#hci-ext-onepacketpereventdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0402</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the One Packet Per Event feature has been enabled or disabled, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-decryptcommanddone">
+<h3>HCI_EXT_DecryptCommandDone<a class="headerlink" href="#hci-ext-decryptcommanddone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0405</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate Decryption has completed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Decrypted Data:</th><td class="field-body"><p class="first">128 bit decrypted data block. The most significant octet of plainTextData corresponds to plainTextData using the notation specified in FIPS 197.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">16 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">Any 16 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-writelocalfeaturesupportdone">
+<h3>HCI_EXT_WriteLocalFeatureSupportDone<a class="headerlink" href="#hci-ext-writelocalfeaturesupportdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0406</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Set Local Supported Features command has completed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-setfasttxresponsetimedone">
+<h3>HCI_EXT_SetFastTxResponseTimeDone<a class="headerlink" href="#hci-ext-setfasttxresponsetimedone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0407</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Set Fast Transmit Response Time feature has been enabled or disabled, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-setbdaddrdone">
+<h3>HCI_EXT_SetBDADDRDone<a class="headerlink" href="#hci-ext-setbdaddrdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x040C</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the devices BLE address has been set, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-setscadone">
+<h3>HCI_EXT_SetSCADone<a class="headerlink" href="#hci-ext-setscadone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x040D</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the devices SCA has been set, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-disconnectimmeddone">
+<h3>HCI_EXT_DisconnectImmedDone<a class="headerlink" href="#hci-ext-disconnectimmeddone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0413</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Disconnect Immediate command has completed, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-per">
+<h3>HCI_EXT_PER<a class="headerlink" href="#hci-ext-per" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0414</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Packet Error Rate Reset or Read command has completed, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">PER Command Type:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Read or Reset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>Reset PER Counters</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Read PER Counters</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">RX Pkts:</th><td class="field-body"><p class="first">Number of received packets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Condition:</th><td class="field-body">( cmdVal!=0x00 &amp;&amp; cmdStat==0x00)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 2 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">RX CRC Fails:</th><td class="field-body"><p class="first">Number of received packets with CRC error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Condition:</th><td class="field-body">( cmdVal!=0x00 &amp;&amp; cmdStat==0x00)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 2 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Events:</th><td class="field-body"><p class="first">Number of connection events.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Condition:</th><td class="field-body">( cmdVal!=0x00 &amp;&amp; cmdStat==0x00)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 2 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Missed Events:</th><td class="field-body"><p class="first">Number of missed connection events.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Condition:</th><td class="field-body">( cmdVal!=0x00 &amp;&amp; cmdStat==0x00)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Range:</th><td class="field-body">Any 2 byte value</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-resetsystemdone">
+<h3>HCI_EXT_ResetSystemDone<a class="headerlink" href="#hci-ext-resetsystemdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x041D</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Reset System command has completed, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-numcomplpktslimitdone">
+<h3>HCI_EXT_NumComplPktsLimitDone<a class="headerlink" href="#hci-ext-numcomplpktslimitdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x041F</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Number Completed Packets Limit command has completed, or that there was an error.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-getconninfodone">
+<h3>HCI_EXT_GetConnInfoDone<a class="headerlink" href="#hci-ext-getconninfodone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0420</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Get Connection Information command has completed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Alloc Conns:</th><td class="field-body"><p class="first">Total number of allocated connections</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Active Conns:</th><td class="field-body"><p class="first">Number of currently active connections</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>An array of size “numConn” will be returned containing the parameters starting here:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Conn Handle:</th><td class="field-body"><p class="first">Connection Handle</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Conn Role:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x22</td>
+<td>LMP/LL Response Timeout</td>
+</tr>
+<tr class="row-odd"><td>0x23</td>
+<td>LMP Error Transaction Collision</td>
+</tr>
+<tr class="row-even"><td>0x24</td>
+<td>LMP PDU Not Allowed</td>
+</tr>
+<tr class="row-odd"><td>0x25</td>
+<td>Encryption Mode Not Acceptable</td>
+</tr>
+<tr class="row-even"><td>0x26</td>
+<td>Link Key Can Not be Changed</td>
+</tr>
+<tr class="row-odd"><td>0x27</td>
+<td>Requested QoS Not Supported</td>
+</tr>
+<tr class="row-even"><td>0x28</td>
+<td>Instant Passed</td>
+</tr>
+<tr class="row-odd"><td>0x29</td>
+<td>Pairing With Unit Key Not Supported</td>
+</tr>
+<tr class="row-even"><td>0x2A</td>
+<td>Different Transaction Collision</td>
+</tr>
+<tr class="row-odd"><td>0x2B</td>
+<td>Reserved</td>
+</tr>
+<tr class="row-even"><td>0x2C</td>
+<td>QoS Unacceptable Parameter</td>
+</tr>
+<tr class="row-odd"><td>0x2D</td>
+<td>QoS Rejected</td>
+</tr>
+<tr class="row-even"><td>0x2E</td>
+<td>Channel Assessment Not Supported</td>
+</tr>
+<tr class="row-odd"><td>0x2F</td>
+<td>Insufficient Security</td>
+</tr>
+<tr class="row-even"><td>0x30</td>
+<td>Parameter Out Of Mandatory Range</td>
+</tr>
+<tr class="row-odd"><td>0x31</td>
+<td>Reserved</td>
+</tr>
+<tr class="row-even"><td>0x32</td>
+<td>Role Switch Pending</td>
+</tr>
+<tr class="row-odd"><td>0x33</td>
+<td>Reserved</td>
+</tr>
+<tr class="row-even"><td>0x34</td>
+<td>Reserved Slot Violation</td>
+</tr>
+<tr class="row-odd"><td>0x35</td>
+<td>Role Switch Failed</td>
+</tr>
+<tr class="row-even"><td>0x36</td>
+<td>Extended Inquiry Response Too Large</td>
+</tr>
+<tr class="row-odd"><td>0x37</td>
+<td>Simple Pairing Not Supported By Host</td>
+</tr>
+<tr class="row-even"><td>0x38</td>
+<td>Host Busy ^ Pairing</td>
+</tr>
+<tr class="row-odd"><td>0x39</td>
+<td>Connection Rejected Due To No Suitable Channel Found</td>
+</tr>
+<tr class="row-even"><td>0x3A</td>
+<td>Controller Busy</td>
+</tr>
+<tr class="row-odd"><td>0x3B</td>
+<td>Unacceptable Connection Interval</td>
+</tr>
+<tr class="row-even"><td>0x3C</td>
+<td>Directed Advertising Timeout</td>
+</tr>
+<tr class="row-odd"><td>0x3D</td>
+<td>Connection Terminated Due To MIC Failure</td>
+</tr>
+<tr class="row-even"><td>0x3E</td>
+<td>Connection Failed To Be Established</td>
+</tr>
+<tr class="row-odd"><td>0x3F</td>
+<td>MAC Connection Failed</td>
+</tr>
+<tr class="row-even"><td>0x40</td>
+<td>Coarse Clock Adjust Rejected</td>
+</tr>
+<tr class="row-odd"><td>0x41</td>
+<td>Type0 Submap Not Defined</td>
+</tr>
+<tr class="row-even"><td>0x42</td>
+<td>Unknown Advertising Identifier</td>
+</tr>
+<tr class="row-odd"><td>0x43</td>
+<td>Limit Reached</td>
+</tr>
+<tr class="row-even"><td>0x44</td>
+<td>Operation Cancelled by Host</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Peer Addr:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">6 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Peer Addr Type:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body"><p class="first">1 byte(s)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body"><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x00</td>
+<td>Public</td>
+</tr>
+<tr class="row-odd"><td>0x01</td>
+<td>Random</td>
+</tr>
+<tr class="row-even"><td>0x02</td>
+<td>Public Identity</td>
+</tr>
+<tr class="row-odd"><td>0x03</td>
+<td>Random Identity</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The array of parameters ends here.</p>
+</div>
+<div class="section" id="hci-ext-setmaxdatalengthdone">
+<h3>HCI_EXT_SetMaxDataLengthDone<a class="headerlink" href="#hci-ext-setmaxdatalengthdone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0421</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">This event is sent to indicate the Set Max Data Length command has completed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hci-ext-lltestmodedone">
+<h3>HCI_EXT_LLTestModeDone<a class="headerlink" href="#hci-ext-lltestmodedone" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Opcode:</th><td class="field-body">0x0470</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Event Description:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">LL Test Mode event.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Event Parameters</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">1 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Status Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command Opcode:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Size:</th><td class="field-body">2 byte(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Range:</th><td class="field-body">See Command Table</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../cc35xx/activation.html" class="btn btn-neutral float-right" title="Device Activation &amp; Fuses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../phy.html" class="btn btn-neutral float-left" title="Physical Layer (PHY)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3216 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>HOSTMCU_AON</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">HOSTMCU_AON</A></H2>
+<P>This section provides information on the HOSTMCU_AON Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+<P>HOST AON REGISTERS</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">HOSTMCU_AON Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="HOSTMCU_AON"><A href="_.html"> </A>:HOSTMCU_AON Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_WUCSKPCFG">WUCSKPCFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_CFGWICSNS">CFGWICSNS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_CFGWUTP">CFGWUTP</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 000C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_ELPTMREN">ELPTMREN</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0002</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_CFGTMRWU">CFGTMRWU</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_TMRWUREQ">TMRWUREQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_CFGWDT">CFGWDT</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x800E A600</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_WDTREQ">WDTREQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_GPWUAND">GPWUAND</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0xFFFF FFFF</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_GPWUOR">GPWUOR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0xFFFF FFFF</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_GPWUAND_1">GPWUAND_1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x000F FFFF</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_GPWUOR_1">GPWUOR_1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x000F FFFF</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_FCLKARM">FCLKARM</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_SLPTIMES">SLPTIMES</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_SLPTIMEF">SLPTIMEF</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_WUREQ">WUREQ</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_OREFCLK">OREFCLK</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0012</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0050</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#HOSTMCU_AON_WUC">WUC</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 005C</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">HOSTMCU_AON Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">HOSTMCU_AON Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:HOSTMCU_AON Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_WUCSKPCFG"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:WUCSKPCFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Wake up Control Skip Configuration</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SKPPDVLD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SKIP POWER DOMAIN VALID<BR>Enable skip precise duration for Power Domain if wake up event type is '0':<BR>'0' - don't skip<BR>'1' - skip</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Don't skip</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Skip</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SKPPRCMVLD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SKIP PRCM VALID<BR>Enable skip precise duration for PRCM Shared UP if wake up event type is '0':<BR>'0' - don't skip<BR>'1' - skip</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Don't Skip</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Skip</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_CFGWICSNS"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:CFGWICSNS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Configure WIC SENSE</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to control wake up source<BR>Set 1 - Enable wake up source.<BR>Set 0 - Disable wake up source.<BR>Bit 0   : ELP TMR Wake up request<BR>Bit 1   : GPIO wake up src 0 <BR>Bit 2   : GPIO wake up src 1<BR>Bit 3   : doorbell 0<BR>Bit 4   : doorbell 1<BR>Bit 5   : doorbell 2<BR>Bit 6   : doorbell 3<BR>Bit 7   : doorbell 4<BR>Bit 8   : doorbell 5<BR>Bit 9   : doorbell 6<BR>Bit 10 : doorbell 7<BR>Bit 11 : nab_host_irq<BR>Bit 12 : ble_rfc_gpo_8_irq<BR>Bit 13 : RTC<BR>Bit 14 : DebugSS Csyspwrupreq<BR>Bit 15 : DebugSS Forceactive<BR>Bit 16 : secured_error_irq<BR>Bit 17 : core wdt irq<BR>Note: GPIO wakeup src 0 is AND of wakeup sources and GPIO wakup src 1 is OR of wakeup sources</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Disable wakeup source</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0001</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>TMRREQ_EN<BR>ELP timer wakeup request</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0002</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC0_EN<BR>AND of wakeup sources</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0004</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC1_EN<BR>OR of wakeup sources</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0008</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL0_EN<BR>Doorbell 0</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0010</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL1_EN<BR>Doorbell 1</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0020</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL2_EN<BR>Doorbell 2</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0040</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL3_EN<BR>Doorbell 3</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0080</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL4_EN<BR>Doorbell 4</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0100</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL5_EN<BR>Doorbell 5</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0200</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL6_EN<BR>Doorbell 6</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0400</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL7_EN<BR>Doorbell 7</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0800</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>NAB_EN<BR>NAB host irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 1000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BLERFCGPO_EN<BR>BLE RFC GPO 9 irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 2000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RTC_EN<BR>RTC</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 4000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGPWRUP_EN<BR>Debugss Csyspwrupreq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 8000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGFRCACT_EN<BR>Debugss forecactive</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SECERR_EN<BR>Secure error irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>COREWDT_EN<BR>Core WDT request</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_CFGWUTP"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:CFGWUTP</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 000C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>ELP Wake-up Type Configuration.<BR><BR>Register to configure wake up type</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to configure wake up type <BR>Set 0 - Slow Wake up (precise WU).<BR>Set 1 - Fast Wake up (assume system is already active when event is triggered).<BR>Bit 0   : ELP TMR Wake up request<BR>Bit 1   : GPIO wake up src 0 <BR>Bit 2   : GPIO wake up src 1<BR>Bit 3   : doorbell 0<BR>Bit 4   : doorbell 1<BR>Bit 5   : doorbell 2<BR>Bit 6   : doorbell 3<BR>Bit 7   : doorbell 4<BR>Bit 8   : doorbell 5<BR>Bit 9   : doorbell 6<BR>Bit 10 : doorbell 7<BR>Bit 11 : nab_host_irq<BR>Bit 12 : ble_rfc_gpo_8_irq<BR>Bit 13 : RTC<BR>Bit 14 : DebugSS Csyspwrupreq<BR>Bit 15 : DebugSS Forceactive<BR>Bit 16 : secured_error_irq<BR>Bit 17 : core wdt irq<BR>Note: GPIO wakeup src 0 is AND of wakeup sources and GPIO wakup src 1 is OR of wakeup sources</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SLOW<BR>Slow wakeup(precise wakup)</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0001</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>TMRREQ<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0002</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC0<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0004</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC1<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0008</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL0<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0010</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL1<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0020</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL2<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0040</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL3<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0080</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL4<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0100</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL5<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0200</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL6<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0400</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL7<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 0800</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>NAB<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 1000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BLERFCGPO<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 2000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RTC<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 4000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGPWRUP<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0 8000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGFRCACT<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SECERR<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>COREWDT<BR>Fast Wake up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_ELPTMREN"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:ELPTMREN</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0010</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>ELP Timer Enable.<BR><BR>Register to configure ELP Timer enable</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ELPTMRLD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>ELP TIMER LOAD<BR>setting this bit will load the value 2 to the timer</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ELPTMRRST</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>ELP TIMER RESET<BR>setting this bit will stop the timer</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ELPTMRSET</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>ELP TIMER SET<BR>starts the timer</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TMRSWCTL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to configure the type of timer control</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>HW<BR>Hardware control</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SW<BR>Software control</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ELPTMREN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to enable ELP Timer</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Disable</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Enable</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_CFGTMRWU"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:CFGTMRWU</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0014</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Timer Wake-up Configuration.<BR><BR>Register to configure Timer wake up</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to enable timer wake up<BR>Set 1 - Enable BCN threshold IRQ.<BR>Set 0 - Otherwise.<BR>Timer is kicked upon moving from ACTIVE to POWER DOWN.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>otherwise</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Enable BCN threshold IRQ</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>THR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to configure the Threshold of timer wake up<BR>Upon reaching this value wake up event is generated towards the WUC (if not masked in WICSENSE).<BR>Resolution slow clock cycles.<BR>value must be greater than 1</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_TMRWUREQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:TMRWUREQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Timer Wake-up Request Clear.<BR><BR>Register to configure timer wake up request</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TMRWUREQ_WRCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to clear timer wake up request. Set this bit to clear</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_CFGWDT"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:CFGWDT</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Watch Dog Timer Configuration.<BR><BR>Register to configure watchdog timer</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to enable watchdog timer</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>30:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>THR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to configure watchdog timer threshold<BR>Upon reaching this value wake up event is generated towards the WUC (if not masked in WICSENSE).<BR>Resolution slow clock cycles (min val ~8ms).<BR>value must be greater than 1</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0EA6</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_WDTREQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:WDTREQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Watch Dog Timer Request Clear.<BR><BR>Register to clear watchdog timer request</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WDTREQ_WRCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to clear watchdog timer request. Set this bet to clear</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_GPWUAND"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:GPWUAND</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>GPIO Wake-up AND IRQ Configuration.<BR><BR>Field to configure *GPIO* wake up AND *IRQ* 0 to 31</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BM0T31</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to bit mask GPIO 0 to 31<BR>select 0-31 GPIOs as wake up source.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xFFFF FFFF</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_GPWUOR"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:GPWUOR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>GPIO Wake-up OR IRQ Configuration.<BR><BR>Field to configure *GPIO* wake up OR gate *IRQ*</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BM0T31</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to bit mask GPIO 0 to 31<BR>select 0-31 GPIOs as wake up source.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xFFFF FFFF</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_GPWUAND_1"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:GPWUAND_1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>GPIO Wake-up AND IRQ Configuration.<BR><BR>Field to configure *GPIO* wake up AND *IRQ* 32 to 44</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>&nbsp;</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 007F</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BM32T44</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to bit mask 32 to 44<BR>select 32-44 GPIOs as wake up source.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1FFF</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_GPWUOR_1"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:GPWUOR_1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>GPIO Wake-up OR IRQ Configuration.<BR><BR>Field to configure *GPIO* wake up OR *IRQ* 32 to 44</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 007F</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BM32T44</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to bit mask 32 to 44<BR>select 32-44 GPIOs as wake up source.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1FFF</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_FCLKARM"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:FCLKARM</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Fast Clock From ARM Command</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FCLKARM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Command<BR>Latched counter value reflecting the number of fast clocks (host_clk) from rise of SLEEPDEEP indication until ELP WUC start power down sequence.<BR>This value should capture the uncertainty of 2-3 slow clocks of synchronization of ARM CMD</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_SLPTIMES"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:SLPTIMES</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Sleep Time Slow Clock.<BR><BR>Register for sleep time on slow clock</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SLPTIMES_CLK_RDCL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Sleep time value from last ELP sleep entry (slow clock synced ARM CMD).<BR>Slow Clock - Reflects the number of slow clocks in ELP timer.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_SLPTIMEF"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:SLPTIMEF</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Sleep Time Fast Clock.<BR><BR>Register for sleep time on fast clock</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SLPTIMEF_CLK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Sleep time value from last ELP sleep entry (slow clock synced ARM CMD).<BR>Fast Clock - Reflects the number of fast clocks from last Slow clock rise until OCP Read.<BR>Note, fast counter value is latched upon OCP Read of SLPTIMES.<BR>Counts up t0 51 microsecond.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_WUREQ"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:WUREQ</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 004C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Wake up Request Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:18</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>17:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>VAL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field to show the event request<BR>Bit 0   : ELP TMR Wake up request<BR>Bit 1   : GPIO wake up src 0 <BR>Bit 2   : GPIO wake up src 1<BR>Bit 3   : doorbell 0<BR>Bit 4   : doorbell 1<BR>Bit 5   : doorbell 2<BR>Bit 6   : doorbell 3<BR>Bit 7   : doorbell 4<BR>Bit 8   : doorbell 5<BR>Bit 9   : doorbell 6<BR>Bit 10 : doorbell 7<BR>Bit 11 : nab_host_irq<BR>Bit 12 : ble_rfc_gpo_8_irq<BR>Bit 13 : RTC<BR>Bit 14 : DebugSS Csyspwrupreq<BR>Bit 15 : DebugSS Force-active<BR>Bit 16 : secured_error_irq<BR>Bit 17 : core wdt irq<BR>Note: GPIO wakeup src 0 is AND of wakeup sources and GPIO wakup src 1 is OR of wakeup sources</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR<BR>No event request</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0001</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>TMRREQ<BR>ELP timer wakeup request</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0002</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC0<BR>AND of wakeup sources</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0004</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>WUSRC1<BR>OR of wakeup sources</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0008</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL0<BR>Doorbell 0</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0010</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL1<BR>Doorbell 1</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0020</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL2<BR>Doorbell 2</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0040</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL3<BR>Doorbell 3</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0080</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL4<BR>Doorbell 4</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0100</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL5<BR>Doorbell 5</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0200</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL6<BR>Doorbell 6</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0400</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DRBL7<BR>Doorbell 7</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 0800</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>NAB<BR>NAB host irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 1000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BLERFCGPO<BR>BLE RFC GPO 9 irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 2000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RTC<BR>RTC</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 4000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGPWRUP<BR>Debugss Csyspwrupreq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0 8000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DBGFRCACT<BR>Debugss forecactive</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x1 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SECERR<BR>Secure error irq</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x2 0000</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>COREWDT<BR>Core WDT request</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_OREFCLK"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:OREFCLK</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0050</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>OSPI Reference Clock.<BR><BR>Field to select the OSPI  reference clock</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0009</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SEL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SELECTOR<BR>'0' - default host clk div2<BR>'1' host clk div 4</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_0<BR>Host clock div2</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>SEL_1<BR>Host clock div4</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="HOSTMCU_AON_WUC"><A href="_.html"></A>:<A href="#Top_IPBTag">HOSTMCU_AON</A>:WUC</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 005C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Wake-up Control State.<BR><BR>Register for Host wake up state</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED316042</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STA</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Field showing the host wake up state<BR>3'b000 - PD_PWR_DN<BR>3'b001 - SHARED_UP<BR>3'b010 - PD_PWR_UP<BR>3'b011 - ACTIVE<BR>3'b100 - DEEPSLEEP</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RD_0<BR>PD power down</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RD_1<BR>Shared domain up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RD_2<BR>PD power up</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0x3</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>RD_3<BR>Active</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

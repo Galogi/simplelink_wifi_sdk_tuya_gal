@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_e334c803ecb12309469b8b6317d0fbc9" kind="dir">
+    <compoundname>psa_crypto</compoundname>
+    <innerdir refid="dir_0ad4869d9839b096be46562a3ae3a1f1">include</innerdir>
+    <innerfile refid="crypto__config_8h">crypto_config.h</innerfile>
+    <innerfile refid="crypto__helper_8h">crypto_helper.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/third_party/psa_crypto/"/>
+  </compounddef>
+</doxygen>

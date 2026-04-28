@@ -1,0 +1,526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_p_i_w_f_f3_d_m_a___object" kind="struct" language="C++" prot="public">
+    <compoundname>SPIWFF3DMA_Object</compoundname>
+    <includes refid="_s_p_i_w_f_f3_d_m_a_8h" local="no">SPIWFF3DMA.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a77e11e4ed3964a7b4a90e6fcf29f121d" prot="public" static="no" mutable="no">
+        <type><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref></type>
+        <definition>HwiP_Struct SPIWFF3DMA_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="899" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="899" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a33ce74456dad35ae5fca5219e203216d" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj SPIWFF3DMA_Object::spiPostObj</definition>
+        <argsstring></argsstring>
+        <name>spiPostObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="900" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="900" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1aa435255e3fff1433f1ec4f57377c33e3" prot="public" static="no" mutable="no">
+        <type><ref refid="union_swi_p___struct" kindref="compound">SwiP_Struct</ref></type>
+        <definition>SwiP_Struct SPIWFF3DMA_Object::swi</definition>
+        <argsstring></argsstring>
+        <name>swi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="901" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="901" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a24a7a8e09b6b40e7e536d9af8a0a7999" prot="public" static="no" mutable="no">
+        <type><ref refid="union_semaphore_p___struct" kindref="compound">SemaphoreP_Struct</ref></type>
+        <definition>SemaphoreP_Struct SPIWFF3DMA_Object::transferComplete</definition>
+        <argsstring></argsstring>
+        <name>transferComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="902" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="902" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a14ad42aed5269e95646b355f835ffaa9" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1a207e2d5a7e7ea5606b6995b6485ca015" kindref="member">SPI_CallbackFxn</ref></type>
+        <definition>SPI_CallbackFxn SPIWFF3DMA_Object::transferCallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>transferCallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="904" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="904" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1af3555cc5bc90eefee81a94861466bc28" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_p_i___transaction" kindref="compound">SPI_Transaction</ref> *</type>
+        <definition>SPI_Transaction* SPIWFF3DMA_Object::headPtr</definition>
+        <argsstring></argsstring>
+        <name>headPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="905" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="905" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1ab179f782cf93830329cfe725bf5be9c1" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_p_i___transaction" kindref="compound">SPI_Transaction</ref> *</type>
+        <definition>SPI_Transaction* SPIWFF3DMA_Object::tailPtr</definition>
+        <argsstring></argsstring>
+        <name>tailPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="906" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="906" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a2cbecbdf65ef10f82757effeb16877d3" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_p_i___transaction" kindref="compound">SPI_Transaction</ref> *</type>
+        <definition>SPI_Transaction* SPIWFF3DMA_Object::completedTransfers</definition>
+        <argsstring></argsstring>
+        <name>completedTransfers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="907" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="907" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a55c496cc413d7c7b2f7c6e264b5e2767" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPIWFF3DMA_Object::framesQueued</definition>
+        <argsstring></argsstring>
+        <name>framesQueued</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="909" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="909" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a5ecaa0b3a566bf6200f8d7bd650d6b81" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPIWFF3DMA_Object::framesTransferred</definition>
+        <argsstring></argsstring>
+        <name>framesTransferred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="910" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="910" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a54fbc4b1e289a726de36ac44d03cf6c3" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPIWFF3DMA_Object::transferSize</definition>
+        <argsstring></argsstring>
+        <name>transferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="911" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="911" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a5a1ebf41a94a57f41c4e40ffbecaaa5d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPIWFF3DMA_Object::dmaTxSrcAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaTxSrcAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="914" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="914" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1aca7fc6b9d25b9a2a38c6df794e32779d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPIWFF3DMA_Object::dmaTxDstAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaTxDstAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="915" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="915" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a19fb16ca3fea4b3b007ee3610d8983ef" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPIWFF3DMA_Object::dmaTxTransferSize</definition>
+        <argsstring></argsstring>
+        <name>dmaTxTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="916" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="916" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a37ba8c82f96cefead13cfd8ca9c00de8" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPIWFF3DMA_Object::dmaRxSrcAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaRxSrcAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="918" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="918" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1af15e5f3d8bfc9db17df3828b413a8b4d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SPIWFF3DMA_Object::dmaRxDstAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaRxDstAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="919" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="919" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a3e0a6b4a009f35dd269ac1098cf860f2" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SPIWFF3DMA_Object::dmaRxTransferSize</definition>
+        <argsstring></argsstring>
+        <name>dmaRxTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="920" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="920" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a6e6b3f4998aaf583217a2cb89d331c28" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_Object::bitRate</definition>
+        <argsstring></argsstring>
+        <name>bitRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="922" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="922" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a42cd5fb2a69ae26659c6626d56ebf91d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_Object::dataSize</definition>
+        <argsstring></argsstring>
+        <name>dataSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="923" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="923" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1aa3e03f6b52d727814063ae77846349f1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_Object::transferTimeout</definition>
+        <argsstring></argsstring>
+        <name>transferTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="924" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="924" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a95224f794e3cf0b497c00281d487ad96" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_Object::busyBit</definition>
+        <argsstring></argsstring>
+        <name>busyBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="925" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="925" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a71e6a5078da7ee6783668a00ee49b98d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SPIWFF3DMA_Object::dsample</definition>
+        <argsstring></argsstring>
+        <name>dsample</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="926" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="926" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1ab9640ff2e6a994766ed209bdb1eeb3bd" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t SPIWFF3DMA_Object::rxScratchBuf</definition>
+        <argsstring></argsstring>
+        <name>rxScratchBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="928" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="928" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a43e959bc64bf1e4a101d01818bb51bd0" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t SPIWFF3DMA_Object::txScratchBuf</definition>
+        <argsstring></argsstring>
+        <name>txScratchBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="929" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="929" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a7606a6eef94bddd729c859a962732852" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1ab9ea76c6529d6076eee5e1c4a5a92c6f" kindref="member">SPI_TransferMode</ref></type>
+        <definition>SPI_TransferMode SPIWFF3DMA_Object::transferMode</definition>
+        <argsstring></argsstring>
+        <name>transferMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="931" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="931" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1abeb4945b54e9ba054ddfc4efebb102ed" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_8h_1a60a7e3d74577b38aa79ea6983362f942" kindref="member">SPI_Mode</ref></type>
+        <definition>SPI_Mode SPIWFF3DMA_Object::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="932" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="932" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1af44439cfa0ca251a2b2c7fd17b1c06c6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPIWFF3DMA_Object::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="933" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="933" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1a0b1ed14307bb22fb60d77879324f0f13" prot="public" static="no" mutable="no">
+        <type>uint_least8_t</type>
+        <definition>uint_least8_t SPIWFF3DMA_Object::csnPin</definition>
+        <argsstring></argsstring>
+        <name>csnPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="934" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="934" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1abb3b242a5369eb136636ae231d0176a3" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_p_i_w_f_f3_d_m_a_8h_1a2929b02d5c37f9f9402248ee983acef8" kindref="member">SPIWFF3DMA_ReturnPartial</ref></type>
+        <definition>SPIWFF3DMA_ReturnPartial SPIWFF3DMA_Object::returnPartial</definition>
+        <argsstring></argsstring>
+        <name>returnPartial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="935" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="935" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1afc91d65c2862363e701c052f31467259" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SPIWFF3DMA_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="936" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="936" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_p_i_w_f_f3_d_m_a___object_1aafbde741b5cad777675068b633936f54" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SPIWFF3DMA_Object::manualStart</definition>
+        <argsstring></argsstring>
+        <name>manualStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="937" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="937" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SPIWFF3DMA Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="300">
+        <label>SPI_Config_</label>
+        <link refid="struct_s_p_i___config__"/>
+        <childnode refid="301" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="293">
+        <label>SPIWFF3DMA_Object</label>
+        <link refid="struct_s_p_i_w_f_f3_d_m_a___object"/>
+        <childnode refid="294" relation="usage">
+          <edgelabel>swi</edgelabel>
+        </childnode>
+        <childnode refid="295" relation="usage">
+          <edgelabel>spiPostObj</edgelabel>
+        </childnode>
+        <childnode refid="297" relation="usage">
+          <edgelabel>hwi</edgelabel>
+        </childnode>
+        <childnode refid="298" relation="usage">
+          <edgelabel>transferComplete</edgelabel>
+        </childnode>
+        <childnode refid="299" relation="usage">
+          <edgelabel>completedTransfers</edgelabel>
+          <edgelabel>headPtr</edgelabel>
+          <edgelabel>tailPtr</edgelabel>
+        </childnode>
+        <childnode refid="300" relation="usage">
+          <edgelabel>transferCallbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="294">
+        <label>SwiP_Struct</label>
+        <link refid="union_swi_p___struct"/>
+      </node>
+      <node id="301">
+        <label>SPI_FxnTable</label>
+        <link refid="struct_s_p_i___fxn_table"/>
+        <childnode refid="300" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>transferCancelFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>transferFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="299">
+        <label>SPI_Transaction</label>
+        <link refid="struct_s_p_i___transaction"/>
+      </node>
+      <node id="295">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="296" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="298">
+        <label>SemaphoreP_Struct</label>
+        <link refid="union_semaphore_p___struct"/>
+      </node>
+      <node id="296">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="296" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="297">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="898" column="1" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="897" bodyend="938"/>
+    <listofallmembers>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a6e6b3f4998aaf583217a2cb89d331c28" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>bitRate</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a95224f794e3cf0b497c00281d487ad96" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>busyBit</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a2cbecbdf65ef10f82757effeb16877d3" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>completedTransfers</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a0b1ed14307bb22fb60d77879324f0f13" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>csnPin</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a42cd5fb2a69ae26659c6626d56ebf91d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dataSize</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1af15e5f3d8bfc9db17df3828b413a8b4d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaRxDstAddr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a37ba8c82f96cefead13cfd8ca9c00de8" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaRxSrcAddr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a3e0a6b4a009f35dd269ac1098cf860f2" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaRxTransferSize</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1aca7fc6b9d25b9a2a38c6df794e32779d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaTxDstAddr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a5a1ebf41a94a57f41c4e40ffbecaaa5d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaTxSrcAddr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a19fb16ca3fea4b3b007ee3610d8983ef" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dmaTxTransferSize</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a71e6a5078da7ee6783668a00ee49b98d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>dsample</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1af44439cfa0ca251a2b2c7fd17b1c06c6" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>format</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a55c496cc413d7c7b2f7c6e264b5e2767" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>framesQueued</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a5ecaa0b3a566bf6200f8d7bd650d6b81" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>framesTransferred</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1af3555cc5bc90eefee81a94861466bc28" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>headPtr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a77e11e4ed3964a7b4a90e6fcf29f121d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>hwi</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1afc91d65c2862363e701c052f31467259" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>isOpen</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1aafbde741b5cad777675068b633936f54" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>manualStart</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1abeb4945b54e9ba054ddfc4efebb102ed" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>mode</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1abb3b242a5369eb136636ae231d0176a3" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>returnPartial</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1ab9640ff2e6a994766ed209bdb1eeb3bd" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>rxScratchBuf</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a33ce74456dad35ae5fca5219e203216d" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>spiPostObj</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1aa435255e3fff1433f1ec4f57377c33e3" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>swi</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1ab179f782cf93830329cfe725bf5be9c1" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>tailPtr</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a14ad42aed5269e95646b355f835ffaa9" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>transferCallbackFxn</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a24a7a8e09b6b40e7e536d9af8a0a7999" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>transferComplete</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a7606a6eef94bddd729c859a962732852" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>transferMode</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a54fbc4b1e289a726de36ac44d03cf6c3" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>transferSize</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1aa3e03f6b52d727814063ae77846349f1" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>transferTimeout</name></member>
+      <member refid="struct_s_p_i_w_f_f3_d_m_a___object_1a43e959bc64bf1e4a101d01818bb51bd0" prot="public" virt="non-virtual"><scope>SPIWFF3DMA_Object</scope><name>txScratchBuf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

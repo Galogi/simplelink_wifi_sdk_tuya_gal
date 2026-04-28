@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['scr',['SCR',['../struct_s_c_b___type.html#a3a4840c6fa4d1ee75544f4032c88ec34',1,'SCB_Type']]],
+  ['sfpa',['SFPA',['../union_c_o_n_t_r_o_l___type.html#adab539fdfb991718401475bf6853669c',1,'CONTROL_Type']]],
+  ['shcsr',['SHCSR',['../struct_s_c_b___type.html#a7b5ae9741a99808043394c4743b635c4',1,'SCB_Type']]],
+  ['shpr',['SHPR',['../struct_s_c_b___type.html#a9a442e7582573585ee0489267450dedb',1,'SCB_Type::SHPR()'],['../struct_s_c_b___type.html#afb22e89dbfb984022a6f8ecbaf0c3b2c',1,'SCB_Type::SHPR()']]],
+  ['sleepcnt',['SLEEPCNT',['../struct_d_w_t___type.html#a416a54e2084ce66e5ca74f152a5ecc70',1,'DWT_Type']]],
+  ['sppr',['SPPR',['../struct_t_p_i___type.html#a12f79d4e3ddc69893ba8bff890d04cc5',1,'TPI_Type']]],
+  ['spsel',['SPSEL',['../union_c_o_n_t_r_o_l___type.html#a8cc085fea1c50a8bd9adea63931ee8e2',1,'CONTROL_Type']]],
+  ['sspsr',['SSPSR',['../struct_t_p_i___type.html#a037901d7cb870199ac51d9ad0ef9fd1a',1,'TPI_Type']]],
+  ['stigaddren',['stigAddrEn',['../struct_o_s_p_i_s_t_i_g_config__t.html#aa0d2f2247d2772a0208831dac4ff15d6',1,'OSPISTIGConfig_t']]],
+  ['stigaddrnumbytes',['stigAddrNumBytes',['../struct_o_s_p_i_s_t_i_g_config__t.html#a6fcf41f014c15f70fbf804f941ef27d1',1,'OSPISTIGConfig_t']]],
+  ['stigmemoryen',['stigMemoryEn',['../struct_o_s_p_i_s_t_i_g_config__t.html#a255608fb93938d9280bab2ca7ce2dc56',1,'OSPISTIGConfig_t']]],
+  ['stigmodebiten',['stigModeBitEN',['../struct_o_s_p_i_s_t_i_g_config__t.html#ad1efa05a19b5a8ee20adcd4fd5251a26',1,'OSPISTIGConfig_t']]],
+  ['stignumdummycycles',['stigNumDummyCycles',['../struct_o_s_p_i_s_t_i_g_config__t.html#a1b14bf6aa3a874dcb618ffbc5e3fbdc5',1,'OSPISTIGConfig_t']]],
+  ['stigopcode',['stigOpcode',['../struct_o_s_p_i_s_t_i_g_config__t.html#ace58ae2f2896164f99ed99992281f935',1,'OSPISTIGConfig_t']]],
+  ['stigrden',['stigRdEn',['../struct_o_s_p_i_s_t_i_g_config__t.html#a3d400523feec70a06fbfb920713b5624',1,'OSPISTIGConfig_t']]],
+  ['stigrdnumbytes',['stigRDNumBytes',['../struct_o_s_p_i_s_t_i_g_config__t.html#a44d47e5574972109d207a7393088676b',1,'OSPISTIGConfig_t']]],
+  ['stigwren',['stigWrEn',['../struct_o_s_p_i_s_t_i_g_config__t.html#a900706a55ef13db6e53e17a9560b6435',1,'OSPISTIGConfig_t']]],
+  ['stigwrnumbytes',['stigWrNumBytes',['../struct_o_s_p_i_s_t_i_g_config__t.html#af8fce257a1f94dd18df41f6c87186446',1,'OSPISTIGConfig_t']]],
+  ['stir',['STIR',['../struct_n_v_i_c___type.html#a37de89637466e007171c6b135299bc75',1,'NVIC_Type::STIR()'],['../struct_s_c_b___type.html#ad70825dd0869b7ccd07fb2b8680fcdb6',1,'SCB_Type::STIR()']]]
+];

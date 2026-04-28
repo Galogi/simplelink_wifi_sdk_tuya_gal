@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structti__psa__cipher__operation__s" kind="struct" language="C++" prot="public">
+    <compoundname>ti_psa_cipher_operation_s</compoundname>
+    <includes refid="ti__psa__crypto__cipher_8h" local="no">ti_psa_crypto_cipher.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a167302f70482fcc6007f54e13624ad27" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_e_c_b_8h_1aead654e55264bd1e3b45048d3a078f80" kindref="member">AESECB_Config</ref></type>
+        <definition>AESECB_Config ti_psa_cipher_operation_s::aesecbConfig</definition>
+        <argsstring></argsstring>
+        <name>aesecbConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="47" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a7aca20047e0326f038d84d011b0bfe9a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_a_e_s_e_c_b_x_x_f3___object" kindref="compound">AESECBXXF3_Object</ref></type>
+        <definition>AESECBXXF3_Object ti_psa_cipher_operation_s::aesecbObject</definition>
+        <argsstring></argsstring>
+        <name>aesecbObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="49" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1abe229170feb76c5956c9cab347aae79b" prot="public" static="no" mutable="no">
+        <type>struct ti_psa_cipher_operation_s::@1::@2</type>
+        <definition>struct ti_psa_cipher_operation_s::@1::@2  ti_psa_cipher_operation_s::aesecb</definition>
+        <argsstring></argsstring>
+        <name>aesecb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1af22617ff485b128d98e754bd4c95c85f" prot="public" static="no" mutable="no">
+        <type>union ti_psa_cipher_operation_s::@1</type>
+        <definition>union ti_psa_cipher_operation_s::@1  ti_psa_cipher_operation_s::driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1ab2c1e8ac1a83e8c3751a096c96c7134b" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_cipher_operation_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="58" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1ad05b4cc760f5bf08d45c740a734d00ea" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_cipher_operation_s::iv_required</definition>
+        <argsstring></argsstring>
+        <name>iv_required</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="59" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a76a66a88f7e74ce2f8cc26cc7b9035ce" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_cipher_operation_s::iv_set</definition>
+        <argsstring></argsstring>
+        <name>iv_set</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="60" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1ae04c6d16a962e93c6456b0799478b9fc" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_cipher_operation_s::is_encrypt</definition>
+        <argsstring></argsstring>
+        <name>is_encrypt</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="61" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a835004dacfb1cf94220044ec84cb5bab" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ti_psa_cipher_operation_s::in_error_state</definition>
+        <argsstring></argsstring>
+        <name>in_error_state</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="62" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a8810cbc11eee0f509bbf19da6f044902" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ti_psa_cipher_operation_s::default_iv_length</definition>
+        <argsstring></argsstring>
+        <name>default_iv_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="63" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a6e505b5cbb6c3a5b3f5e98f1ab09bf31" prot="public" static="no" mutable="no">
+        <type>psa_algorithm_t</type>
+        <definition>psa_algorithm_t ti_psa_cipher_operation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="64" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a5fa0212ba49918ce83a3ae1ba8514420" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ti_psa_cipher_operation_s::unprocessed_len</definition>
+        <argsstring></argsstring>
+        <name>unprocessed_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of bytes that have not been processed yet </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="67" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a804a7b07ac9cb457856ba88434c7bf0a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ti_psa_cipher_operation_s::unprocessed_data[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</definition>
+        <argsstring>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</argsstring>
+        <name>unprocessed_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="77" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a485126bdae98985094752f59d7d5cd3f" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* ti_psa_cipher_operation_s::curr_unprocessed_data</definition>
+        <argsstring></argsstring>
+        <name>curr_unprocessed_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="81" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structti__psa__cipher__operation__s_1a8dbabf2069b4a38c2a902ee81e6d404b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref></type>
+        <definition>CryptoKey ti_psa_cipher_operation_s::cryptoKey</definition>
+        <argsstring></argsstring>
+        <name>cryptoKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="83" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="349">
+        <label>AESCommonXXF3_Object</label>
+        <link refid="struct_a_e_s_common_x_x_f3___object"/>
+        <childnode refid="344" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="342">
+        <label>ti_psa_cipher_operation_s</label>
+        <link refid="structti__psa__cipher__operation__s"/>
+        <childnode refid="343" relation="usage">
+          <edgelabel>aesecbConfig</edgelabel>
+        </childnode>
+        <childnode refid="344" relation="usage">
+          <edgelabel>cryptoKey</edgelabel>
+        </childnode>
+        <childnode refid="347" relation="usage">
+          <edgelabel>aesecbObject</edgelabel>
+        </childnode>
+      </node>
+      <node id="344">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="345" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="346" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="348">
+        <label>AESECB_Operation</label>
+        <link refid="struct_a_e_s_e_c_b___operation"/>
+        <childnode refid="344" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="345">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="347">
+        <label>AESECBXXF3_Object</label>
+        <link refid="struct_a_e_s_e_c_b_x_x_f3___object"/>
+        <childnode refid="348" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+        <childnode refid="343" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="349" relation="usage">
+          <edgelabel>common</edgelabel>
+        </childnode>
+      </node>
+      <node id="343">
+        <label>AESCommon_Config</label>
+        <link refid="struct_a_e_s_common___config"/>
+      </node>
+      <node id="346">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/psa/ti_psa_crypto_cipher.h" line="42" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_cipher.h" bodystart="41" bodyend="84"/>
+    <listofallmembers>
+      <member refid="structti__psa__cipher__operation__s_1abe229170feb76c5956c9cab347aae79b" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>aesecb</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a167302f70482fcc6007f54e13624ad27" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>aesecbConfig</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a7aca20047e0326f038d84d011b0bfe9a" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>aesecbObject</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a6e505b5cbb6c3a5b3f5e98f1ab09bf31" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>alg</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a8dbabf2069b4a38c2a902ee81e6d404b" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>cryptoKey</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a485126bdae98985094752f59d7d5cd3f" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>curr_unprocessed_data</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a8810cbc11eee0f509bbf19da6f044902" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>default_iv_length</name></member>
+      <member refid="structti__psa__cipher__operation__s_1af22617ff485b128d98e754bd4c95c85f" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>driver</name></member>
+      <member refid="structti__psa__cipher__operation__s_1ab2c1e8ac1a83e8c3751a096c96c7134b" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>id</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a835004dacfb1cf94220044ec84cb5bab" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>in_error_state</name></member>
+      <member refid="structti__psa__cipher__operation__s_1ae04c6d16a962e93c6456b0799478b9fc" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>is_encrypt</name></member>
+      <member refid="structti__psa__cipher__operation__s_1ad05b4cc760f5bf08d45c740a734d00ea" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>iv_required</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a76a66a88f7e74ce2f8cc26cc7b9035ce" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>iv_set</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a804a7b07ac9cb457856ba88434c7bf0a" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>unprocessed_data</name></member>
+      <member refid="structti__psa__cipher__operation__s_1a5fa0212ba49918ce83a3ae1ba8514420" prot="public" virt="non-virtual"><scope>ti_psa_cipher_operation_s</scope><name>unprocessed_len</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

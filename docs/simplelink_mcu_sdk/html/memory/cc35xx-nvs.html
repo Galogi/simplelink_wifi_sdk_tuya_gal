@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NVS &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Flash Mapping &amp; Boot-Sector" href="mem-map.html" />
+    <link rel="prev" title="Memory Overview" href="memory.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug memory cc35xx-nvs";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Memory Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NVS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvocmp-module">NVOCMP Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-volatile-interface-nvint">Non Volatile Interface (NVINT)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvocmp-operation">NVOCMP Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nvocmp-apis">NVOCMP APIs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-examples">Code examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mem-map.html">Flash Mapping &amp; Boot-Sector</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Memory Overview</a> &raquo;</li>
+        
+      <li>NVS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nvs">
+<span id="sec-cc35xx-nvs"></span><h1>NVS<a class="headerlink" href="#nvs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Non-Volatile Storage (NVS) is a driver that provides a way to store data in a non-volatile memory, such as flash memory.
+This allows applications to save data that needs to persist across device reboots or power cycles. NVS uses low level driverlib APIs
+to read, write and erase data on flash memory. It is commonly used for storing configuration settings, calibration data, user
+preferences, and other small pieces of information that need to be retained even when the device is powered off. NVS is designed
+to be lightweight and efficient, making it suitable for use in embedded systems with limited resources.</p>
+</div>
+<div class="section" id="nvocmp-module">
+<h2>NVOCMP Module<a class="headerlink" href="#nvocmp-module" title="Permalink to this headline">¶</a></h2>
+<p>Non-Volatile On Chip Multiple Page (NVOCMP) is a module that provides an abstraction layer for managing non-volatile storage (NVS)
+in embedded systems. It is designed to handle the complexities of writing and reading data to and from flash. The NVOCMP module provides
+a set of APIs that allow developers to easily read, write, and manage data in NVS without needing to deal with the low-level details
+of the memory hardware. NVOCMP offers the following features:</p>
+<ul class="simple">
+<li>Thread safe access to non volatile memory</li>
+<li>ID based system that decouples a storage item from its address in memory</li>
+<li>Space efficient storage with automatic compaction</li>
+<li>Power loss tolerant data preservation</li>
+</ul>
+</div>
+<div class="section" id="non-volatile-interface-nvint">
+<h2>Non Volatile Interface (NVINT)<a class="headerlink" href="#non-volatile-interface-nvint" title="Permalink to this headline">¶</a></h2>
+<p>The NVINTF is an abstraction layer that defines a common set of APIs for interacting with NVOCMP using an ID system. This common set
+of APIs allow for new methods of NV storage to be implemented without changing the API calls in the stack and application.
+The ID system is most efficient because it decouples the data stored from its address in flash. This is necessary because flash banks
+must have the entire sector erased before writing again. Using the ID system, when an NV item needs to be updated, it can simply be
+invalidated and stored again at a different address. Once the NV system becomes full of unused items, a compaction will occur.
+A compaction is the removal of unused items.</p>
+<p>This interface is defined in <code class="docutils literal notranslate"><span class="pre">nvint.h</span></code> header file. The NVINTF is not intended to be changed by the customer, but instead used as is.</p>
+<p>The implementation of the NVINTF is done in the NVOCMP module. This software relies on several layers which are illustrated below.</p>
+<div class="figure align-center">
+<img alt="../_images/nvintf_architecture.png" src="../_images/nvintf_architecture.png" />
+</div>
+</div>
+<div class="section" id="nvocmp-operation">
+<h2>NVOCMP Operation<a class="headerlink" href="#nvocmp-operation" title="Permalink to this headline">¶</a></h2>
+<p>The NVOCMP module implements a non-volatile memory system that utilizes multiple consecutive pages of Flash memory. After initialization,
+all pages except one are “active” and the remaining one page is available for “compaction” when the active pages do not have enough
+empty space for data write operation. Compaction can occur “just in time” during a data write operation or “on demand” at application
+request. The compaction process is designed to survive a power cycle before it completes. It will resume where it was interrupted and
+complete the process. The number of NV pages can be set by the <code class="docutils literal notranslate"><span class="pre">NVOCMP_NVPAGES</span></code> preprocessor define. If this is not set, it will
+default to 2.</p>
+<p>Each flash page contains a “page header” which indicates its current state. The page header is located at the first byte of the flash
+page. Following the page header is the “compact header”, which indicates the flash page’s compaction state. The remainder of the flash
+page contains NV data items which are packed together.</p>
+<p>Each NV data item is unique and has two parts:</p>
+<ol class="arabic simple">
+<li>A data block which is stored first (lower memory address)</li>
+<li>An item header following the data block (higher memory address)</li>
+</ol>
+<p>The item header (defined by <code class="docutils literal notranslate"><span class="pre">NVOCMP_itemHdr_t</span></code>) contains status information required to traverse packed data items in the flash page.
+An example of the NV item memory layout storing a single byte of data is illustrated below.</p>
+<div class="figure align-center">
+<img alt="../_images/nvintf_header.png" src="../_images/nvintf_header.png" />
+</div>
+<p>NV Item Header breakdown:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="14%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Size (bits)</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>System ID</td>
+<td>6</td>
+<td>Indicates the system component identifier</td>
+</tr>
+<tr class="row-odd"><td>Item ID</td>
+<td>10</td>
+<td>Indicates the item data identifier</td>
+</tr>
+<tr class="row-even"><td>Sub ID</td>
+<td>10</td>
+<td>Identifier of the sub-data related to the NV item</td>
+</tr>
+<tr class="row-odd"><td>Length</td>
+<td>12</td>
+<td>Length of the NV item data in bytes</td>
+</tr>
+<tr class="row-even"><td>CRC</td>
+<td>8</td>
+<td>CRC checksum of the NV item</td>
+</tr>
+<tr class="row-odd"><td>Status Bits</td>
+<td>2</td>
+<td>Indicates CRC integrity and if item is active</td>
+</tr>
+<tr class="row-even"><td>Signature</td>
+<td>8</td>
+<td>Used to detect presence of a NV item in flash</td>
+</tr>
+</tbody>
+</table>
+<p>For each NV item that is added or updated in NV storage, the item is written to the next lowest available memory address in the
+active flash page. If the NV item is being updated, the old NV item will be marked as inactive. Inactive items are removed from
+memory when a memory compaction takes place.</p>
+<p>For more information, see the API documentation in <code class="docutils literal notranslate"><span class="pre">nvocmp.h</span></code> and the design description in <code class="docutils literal notranslate"><span class="pre">nvocmp_cc35xx.c</span></code>.</p>
+</div>
+<div class="section" id="nvocmp-apis">
+<h2>NVOCMP APIs<a class="headerlink" href="#nvocmp-apis" title="Permalink to this headline">¶</a></h2>
+<p>The interface to NVOCMP is function pointer based. The function pointers are defined in the <code class="docutils literal notranslate"><span class="pre">NVINTF_nvFuncts_t</span></code> structure.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//! Structure of NV API function pointers</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="nc">nvintf_nvfuncts_t</span>
+<span class="p">{</span>
+    <span class="c1">//! Initialization function</span>
+    <span class="n">NVINTF_initNV</span> <span class="n">initNV</span><span class="p">;</span>
+    <span class="c1">//! Compact NV function</span>
+    <span class="n">NVINTF_compactNV</span> <span class="n">compactNV</span><span class="p">;</span>
+    <span class="c1">//! Create item function</span>
+    <span class="n">NVINTF_createItem</span> <span class="n">createItem</span><span class="p">;</span>
+    <span class="c1">//! Update item function</span>
+    <span class="n">NVINTF_updateItem</span> <span class="n">updateItem</span><span class="p">;</span>
+    <span class="c1">//! Delete NV item function</span>
+    <span class="n">NVINTF_deleteItem</span> <span class="n">deleteItem</span><span class="p">;</span>
+    <span class="c1">//! Read item function based on ID</span>
+    <span class="n">NVINTF_readItem</span> <span class="n">readItem</span><span class="p">;</span>
+    <span class="c1">//! Read item function based on Content</span>
+    <span class="n">NVINTF_readContItem</span> <span class="n">readContItem</span><span class="p">;</span>
+    <span class="c1">//! Write item function</span>
+    <span class="n">NVINTF_writeItem</span> <span class="n">writeItem</span><span class="p">;</span>
+    <span class="c1">//! Get item length function</span>
+    <span class="n">NVINTF_getItemLen</span> <span class="n">getItemLen</span><span class="p">;</span>
+    <span class="c1">//! Iterator Like doNext function</span>
+    <span class="n">NVINTF_doNext</span> <span class="n">doNext</span><span class="p">;</span>
+    <span class="c1">//! Lock item function</span>
+    <span class="n">NVINTF_lockNV</span> <span class="n">lockNV</span><span class="p">;</span>
+    <span class="c1">//! Unlock item function</span>
+    <span class="n">NVINTF_unlockNV</span> <span class="n">unlockNV</span><span class="p">;</span>
+    <span class="c1">//! Expect compact function</span>
+    <span class="n">NVINTF_expectComp</span> <span class="n">expectComp</span><span class="p">;</span>
+    <span class="c1">//! Erase NV function</span>
+    <span class="n">NVINTF_eraseNV</span> <span class="n">eraseNV</span><span class="p">;</span>
+    <span class="c1">//! Get Free NV function</span>
+    <span class="n">NVINTF_getFreeNV</span> <span class="n">getFreeNV</span><span class="p">;</span>
+<span class="cp">#ifdef ENABLE_SANITY_CHECK</span>
+    <span class="c1">//! Sanity Check function</span>
+    <span class="n">NVINTF_sanityCheck</span> <span class="n">sanityCheck</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span> <span class="n">NVINTF_nvFuncts_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-examples">
+<h2>Code examples<a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h2>
+<p>The following code snippet illustrates how to initialize the NVOCMP module and create, read, update, and delete an NV item.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;nv/nvint.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;nv/nvocmp.h&quot;</span><span class="cp"></span>
+
+<span class="c1">// Defines for Item ID structure</span>
+<span class="c1">// Change to appropriate values for the application</span>
+<span class="cp">#define APPLICATION_SYSID   100</span>
+<span class="cp">#define APPLICATION_ITEMID  2</span>
+<span class="cp">#define APPLICATION_SUBID   4</span>
+
+<span class="k">static</span> <span class="n">NVINTF_nvFuncts_t</span> <span class="n">NVIF</span><span class="p">;</span>
+<span class="n">NVINTF_itemID_t</span> <span class="n">item</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">payloadRead</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">payloadWrite</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;Hello, NVS!&quot;</span><span class="p">;</span>
+<span class="kt">uint8_t</span> <span class="n">ret</span><span class="p">;</span>
+
+<span class="n">NVOCMP_loadApiPtrs</span><span class="p">(</span><span class="o">&amp;</span><span class="n">NVIF</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">NVIF</span><span class="p">.</span><span class="n">initNV</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Set appropriate values for Item ID structure</span>
+    <span class="n">item</span><span class="p">.</span><span class="n">systemID</span> <span class="o">=</span> <span class="n">APPLICATION_SYSID</span><span class="p">;</span>
+    <span class="n">item</span><span class="p">.</span><span class="n">itemID</span> <span class="o">=</span> <span class="n">APPLICATION_ITEMID</span><span class="p">;</span>
+    <span class="n">item</span><span class="p">.</span><span class="n">subID</span> <span class="o">=</span> <span class="n">APPLICATION_SUBID</span><span class="p">;</span>
+
+    <span class="n">ret</span><span class="o">=</span><span class="n">NVIF</span><span class="p">.</span><span class="n">initNV</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">NVIF</span><span class="p">.</span><span class="n">readItem</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">payloadWrite</span><span class="p">),</span> <span class="n">payloadRead</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="n">NVINTF_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Item is successfully read.</span>
+        <span class="c1">// Overwrite the item</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">NVIF</span><span class="p">.</span><span class="n">writeItem</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">payloadWrite</span><span class="p">),</span> <span class="n">payloadWrite</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Item does not exist, create it</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">NVIF</span><span class="p">.</span><span class="n">createItem</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">payloadWrite</span><span class="p">),</span> <span class="n">payloadWrite</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// To delete an item</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">NVIF</span><span class="p">.</span><span class="n">deleteItem</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mem-map.html" class="btn btn-neutral float-right" title="Flash Mapping &amp; Boot-Sector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="memory.html" class="btn btn-neutral float-left" title="Memory Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

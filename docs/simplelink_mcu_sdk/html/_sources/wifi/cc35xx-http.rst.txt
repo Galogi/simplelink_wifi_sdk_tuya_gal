@@ -1,0 +1,118 @@
+.. _sec-wifi-http: 
+
+HTTP Client and Server
+=======================
+
+Introduction
+-------------
+
+The lightweight TCP/IP (LwIP) stack is an open-source TCP IP stack used in embedded systems. The LwIP stack is designed to reduce memory usage and code size.
+LwIP network stack includes built-in support for HTTP web client and server.
+The implementation of LwIP includes HTTP GET only and is missing implementation for HTTP POST.
+Since LwIP does not have any HTML parsing (e.g. not loading any items inside HTML, page redirection, etc), it is mainly aimed to work with servers that serve basic GET services (e.g. static pages).
+
+The implementation of HTTP server in LwIP includes a basic list of static pages and in addition two dynamic mechanisms, CGI (Common Gateway Interface) and SSI (Server Side Includes).
+CGI mechanism allows clients to hook functions to particular request URIs. This can be useful in cases where the client want to modify the state of a resource on the server, e.g. toggle a led.
+SSI mechanism allows clients to replace a well defined tag or token on an HTML page with a value from application. This can be useful in cases where the client want to fetch the state of a resource on the server, e.g. read a temperature.
+To enable SSI support, define label LWIP_HTTPD_SSI in ``lwipopts.h``. To enable CGI support, define label LWIP_HTTPD_CGI in ``lwipopts.h``.
+
+.. note::
+    Next SDK releases would include examples of both, HTTP client and HTTP server.
+
+HTTP client
+------------
+
+HTTPS
+^^^^^^
+
+In order to secure the TLS layer in HTTP (also known as HTTPS), an external mbedTLS library is used. The current implementation of HTTP client in LwIP does not include any hooks for a secured HTTP client.
+Nevertheless, the user can add support for a secured client by referring to HTTPS server implementation (see next section) and MQTT client.
+
+HTTP Server
+------------
+
+CGI Notes
+^^^^^^^^^^
+
+1. The simple CGI support offered works with GET method requests only.
+2. Can handle up to ``LWIP_HTTPD_MAX_CGI_PARAMETERS`` parameters encoded into the URI, currently 16 parameters, but it can be modified in ``httpd_opts.h``.
+3. The handler function may not write directly to the HTTP output but must return a filename that the HTTP server will send to the browser as a response to the incoming CGI request.
+
+SSI Notes
+^^^^^^^^^^
+
+1. No tag may contain '-' or whitespace characters within the tag name.
+2. Whitespace is allowed between the tag lead-in ``"<!--#"`` and the start of the tag name and between the tag name and the lead-out string ``"-->"``.
+3. The maximum tag name length is ``LWIP_HTTPD_MAX_TAG_NAME_LEN``, currently 8 characters, but it can be modified in ``httpd_opts.h``.
+
+HTTPS
+^^^^^^^
+
+In order to secure the TLS layer in HTTP (also known as HTTPS), an external mbedTLS library is used. Mbed TLS is a C library that implements cryptographic primitives, X.509 certificate manipulation and the SSL/TLS and DTLS protocols.
+It is distributed under the Apache License version 2.0. Its small code footprint makes it suitable for embedded systems. It is known to be easy to understand, use, integrate and expand.
+The library is designed to integrate with existing (embedded) applications and to provide the building blocks for secure communication, cryptography and key management.
+It is designed to be as loosely coupled as possible, allowing you to only integrate the parts you need without having overhead from the rest.
+
+LwIP and mbedTLS
+"""""""""""""""""
+
+The LwIP project already has inbuilt support for MbedTLS. With MbedTLS being enabled, the data which passes through the default TCP layer now takes an alternate route and is processed by an Alternate TCP/IP layer (also
+referred to as ALTCP layer). These layers have callback functions set. The callback functions determine the behavior of application on establishing connection, sending data, receiving data, closing connection, handling
+errors, and so forth.
+The mbedTLS implementation in LwIP is mainly done in a single file, ``altcp_tls_mbedtls.c``.
+To have mbedTLS support with LwIP, the user need to enable the ``LWIP_HAVE_MBEDTLS`` in ``lwipopt.h`` header file.
+
+LwIP implementation of HTTPS
+"""""""""""""""""""""""""""""
+
+LwIP already includes a secured HTTP server implementation using the ``httpd_inits()`` API instead of ``httpd_init()``. In addition, the certificates and keys must be registered for security to work. This is done by using the
+``altcp_tls_create_config_server_privkey_cert()`` API. Please note that LwIP implementation does not use the CA certificate (hard-coded) so by definition there is no client authentication. To also disable client authentication
+in LwIP, the authentication mode should be set to either ``MBEDTLS_SSL_VERIFY_OPTIONAL`` or ``MBEDTLS_SSL_VERIFY_NONE`` and not ``MBEDTLS_SSL_VERIFY_REQUIRED``. This setting can be found under ``altcp_tls_mbedtls.c``.
+To enable HTTPS, ``HTTPD_ENABLE_HTTPS`` needs to be define under ``httpd_opts.h``.
+
+TLS certificates
+""""""""""""""""
+
+As for generating certificates and keys for the HTTPS demo, the following openssl commands can be used:
+* Create Key pair for Certificate authority (CA).
+
+.. code-block:: bash
+
+		oopenssl genrsa -des3 -out ca.key 2048
+
+* Generate certificate for CA using above key
+
+.. code-block:: bash
+
+		openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
+
+* Create server key pair for the server, to be used by the broker
+
+.. code-block:: bash
+
+		openssl genrsa -out server.key 2048
+
+* Create a Certificate Sign Request (csr) for the server
+
+.. code-block:: bash
+
+		openssl req -new -out server.csr -key server.key
+
+* Self sign the Server certificates using CA key
+
+.. code-block:: bash
+
+		openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 360
+
+* To convert certificates from PEM to DER format. Convert both CA and server certificates
+
+.. code-block:: bash
+
+		openssl x509 -outform der -in ca.pem -out ca.crt
+		openssl rsa -outform der -in ca.key -out ca.key
+
+* To convert DER certificates to binary data, this data is used in client_info.h
+
+.. code-block:: bash
+
+		xxd -i filename.der filename.h

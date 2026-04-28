@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_flash_type" kind="struct" language="C++" prot="public">
+    <compoundname>FlashType</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_flash_type_1a2603ec1493d9e42fac61bd66126ea73e" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashType::enterStigCfg[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>enterStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to enter STIG mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="302" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1ae7be12d17f118ecf384a58cc4b3ef0cb" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_stig_read_cfg" kindref="compound">FlashStigReadCfg</ref></type>
+        <definition>FlashStigReadCfg FlashType::readStigCfg</definition>
+        <argsstring></argsstring>
+        <name>readStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for STIG read operations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="303" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1a0a6c498bf09f585a8b9c2bf947ad1339" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_stig_write_cfg" kindref="compound">FlashStigWriteCfg</ref></type>
+        <definition>FlashStigWriteCfg FlashType::writeStigCfg</definition>
+        <argsstring></argsstring>
+        <name>writeStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for STIG write operations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="304" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1a6a0e54cfcee8545d105e2834a8f80c52" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_stig_erase_cfg" kindref="compound">FlashStigEraseCfg</ref></type>
+        <definition>FlashStigEraseCfg FlashType::eraseStigCfg</definition>
+        <argsstring></argsstring>
+        <name>eraseStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for STIG erase operations </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="305" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1afed6b7f35373950fbfff1cfc35a6f7ce" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashType::exitStigCfg[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>exitStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to exit STIG mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="306" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1aa257b59d8fe785461473dde08d261c13" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_polling_cfg" kindref="compound">FlashPollingCfg</ref></type>
+        <definition>FlashPollingCfg FlashType::pollingCfg</definition>
+        <argsstring></argsstring>
+        <name>pollingCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for status polling </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="307" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1af3938dd6ddb42a46570b776a14d56a3d" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t FlashType::sectorSize</definition>
+        <argsstring></argsstring>
+        <name>sectorSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of a flash sector in bytes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="308" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_type_1adf36de2143e095c00e14f83bbb791e2c" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t FlashType::verifyBufSize</definition>
+        <argsstring></argsstring>
+        <name>verifyBufSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of verification buffer in bytes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="309" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Flash type configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure containing all configurations and parameters for a specific flash memory type. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="68">
+        <label>FlashType</label>
+        <link refid="struct_flash_type"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>eraseStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>exitStigCfg</edgelabel>
+          <edgelabel>enterStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>readStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>writeStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>pollingCfg</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>FlashStigEraseCfg</label>
+        <link refid="struct_flash_stig_erase_cfg"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>FlashPollingCfg</label>
+        <link refid="struct_flash_polling_cfg"/>
+      </node>
+      <node id="71">
+        <label>FlashStigReadCfg</label>
+        <link refid="struct_flash_stig_read_cfg"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>FlashRegister</label>
+        <link refid="struct_flash_register"/>
+      </node>
+      <node id="72">
+        <label>FlashStigWriteCfg</label>
+        <link refid="struct_flash_stig_write_cfg"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="301" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="300" bodyend="310"/>
+    <listofallmembers>
+      <member refid="struct_flash_type_1a2603ec1493d9e42fac61bd66126ea73e" prot="public" virt="non-virtual"><scope>FlashType</scope><name>enterStigCfg</name></member>
+      <member refid="struct_flash_type_1a6a0e54cfcee8545d105e2834a8f80c52" prot="public" virt="non-virtual"><scope>FlashType</scope><name>eraseStigCfg</name></member>
+      <member refid="struct_flash_type_1afed6b7f35373950fbfff1cfc35a6f7ce" prot="public" virt="non-virtual"><scope>FlashType</scope><name>exitStigCfg</name></member>
+      <member refid="struct_flash_type_1aa257b59d8fe785461473dde08d261c13" prot="public" virt="non-virtual"><scope>FlashType</scope><name>pollingCfg</name></member>
+      <member refid="struct_flash_type_1ae7be12d17f118ecf384a58cc4b3ef0cb" prot="public" virt="non-virtual"><scope>FlashType</scope><name>readStigCfg</name></member>
+      <member refid="struct_flash_type_1af3938dd6ddb42a46570b776a14d56a3d" prot="public" virt="non-virtual"><scope>FlashType</scope><name>sectorSize</name></member>
+      <member refid="struct_flash_type_1adf36de2143e095c00e14f83bbb791e2c" prot="public" virt="non-virtual"><scope>FlashType</scope><name>verifyBufSize</name></member>
+      <member refid="struct_flash_type_1a0a6c498bf09f585a8b9c2bf947ad1339" prot="public" virt="non-virtual"><scope>FlashType</scope><name>writeStigCfg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

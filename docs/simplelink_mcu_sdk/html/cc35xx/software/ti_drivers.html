@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TI Drivers &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx software ti_drivers";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>TI Drivers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ti-drivers">
+<h1>TI Drivers<a class="headerlink" href="#ti-drivers" title="Permalink to this headline">¶</a></h1>
+<p>The SDK includes drivers for a number of peripherals. These drivers are provided in the
+<cite>&lt;SDK_INSTALL_DIR&gt;/source/ti/drivers</cite> directory. The driver examples show how to use these drivers.</p>
+<p>Some of the drivers are available only for certain target families. Some examples of drivers supported on several target families include GPIO, I2C, Power, SPI, UART, and Watchdog. There are many more. See the  [detailed reference information](../drivers/doxygen/html/index.html) for the complete list of TI Drivers for your target family along with full information about the APIs and configuration structures.</p>
+<div class="section" id="driver-framework">
+<h2>Driver Framework<a class="headerlink" href="#driver-framework" title="Permalink to this headline">¶</a></h2>
+<p>TI drivers have a common framework for configuration and a set of APIs that all drivers implement. Applications interface with a TI driver using a top-level driver interface. This interface is configured via a set of data structures that specify one or more specific lower-level driver implementations. TI Drivers can be configured manually or using the SysConfig tool.</p>
+<p>TI drivers can be split into two categories: instance-based drivers and singleton drivers.</p>
+<p>Singleton drivers such as GPIO and Power only have a single instance for the entire application. They only need to be initialized with <cite>Driver_init()</cite> once and can then be called without the need for a handle.</p>
+<p>Instance based drivers support multiple instances of the same driver coexisting in the same application. These might each target their own hardware peripheral on the device such as UART or allow time-division multiplexed access to a single hardware peripheral by the driver. Such instance-based drivers support all the standard APIs given below.</p>
+<ul class="simple">
+<li><cite>void Driver_init(void)</cite>
+- Initializes the driver. This function must be called only once and before any calls to the other driver APIs. Generally, this is done before the RTOS Kernel is started.</li>
+<li><cite>void Driver_Params_init(Driver_Params *params)</cite>
+- Initializes the driver’s parameter structure to default values. All instance-based drivers implement the Params structure. The Params structure is empty for some drivers.</li>
+<li><cite>Driver_Handle Driver_open(uint_least8_t index, Driver_Params *params)</cite>
+- Opens the driver instance specified by the index with the params provided. If the params field is NULL, the driver uses default values. This function returns a handle that will be used by other driver APIs and should be saved. If there is an error opening the driver or the driver has already been opened, Driver_open() returns NULL.</li>
+<li><cite>void Driver_close(Driver_Handle handle)</cite>
+- Closes the driver instance that was opened, specified by the driver handle returned during open. This function closes the driver immediately, without checking to see if the driver is currently in use. It is up to the application to determine when to call Driver_close() and to ensure it doesn’t disrupt on-going driver activity.</li>
+</ul>
+</div>
+<div class="section" id="drivers-porting-layer-dpl">
+<h2>Drivers Porting Layer (DPL)<a class="headerlink" href="#drivers-porting-layer-dpl" title="Permalink to this headline">¶</a></h2>
+<p>The Drivers Porting Layer allows the TI drivers to work with any supported RTOS
+kernel.</p>
+<p>The TI Drivers use DPL APIs provided by various RTOS Kernels for clock,
+interrupt, mutex, semaphore, and other services. However, the DPL abstracts the
+RTOS kernel functionality used by the drivers so that the application is not
+dependent on any particular RTOS.</p>
+</div>
+<div class="section" id="board-files">
+<h2>Board Files<a class="headerlink" href="#board-files" title="Permalink to this headline">¶</a></h2>
+<p>Unless you are using SysConfig, TI Driver examples contain a board-specific C file (and its companion header file). The filenames are
+<cite>board.c</cite> and <cite>board.h</cite>, where board is the name of the launchpad. All the TI Driver examples for a specific board use the same board files. These files are considered part of the example application, and you can modify them as needed.</p>
+<p>The board files perform board-specific configuration of the drivers provided by the SDK. For example, they typically configure the GPIO ports and pins and configure use of the board LEDs.</p>
+</div>
+</div>
+<div class="section" id="sysconfig-1">
+<h1>SysConfig<a class="headerlink" href="#sysconfig-1" title="Permalink to this headline">¶</a></h1>
+<p>The SysConfig tool makes it easy to configure components like TI Drivers and device-specific components (such as the networking stack, EasyLink, and WiFi).</p>
+<p>For this release, SysConfig is used in the majority of the examples and is the recommended mechanism for configuring TI Drivers and device-specific components. Please note that SysConfig is not required though. A project can still use the previous board file approach. Please refer to the <cite>rtos/&lt;board&gt;/drivers/empty_legacy</cite> example to see this approach.</p>
+<p>You can choose to use SysConfig no matter what your choice is for the following:</p>
+<ul class="simple">
+<li>Device: Supported for a range of SimpleLink devices and boards.</li>
+<li>IDE: Supported for CCS Desktop, CCS Cloud, and as a standalone desktop tool</li>
+<li>Compiler Toolchain: Supported for the TI and GCC toolchains.</li>
+<li>RTOS: Supported for FreeRTOS</li>
+</ul>
+<p>This section focuses on configuring TI Drivers, since all devices support TI Drivers using a common configuration framework. For TI Drivers, the SysConfig tool generates source files–<cite>ti_drivers_config.c</cite> and <cite>ti_drivers_config.h</cite>–to be compiled and linked with the application during builds. Additional components, such as networking stacks, may be configurable using SysConfig for certain targets, and will cause additional source files to be generated. See the device-specific documentation for information about any additional components that SysConfig can be used to configure.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/sysconfig_1.png"><img alt="../../_images/sysconfig_1.png" src="../../_images/sysconfig_1.png" style="width: 1035.0px; height: 489.59999999999997px;" /></a>
+</div>
+<p>As shown above, SysConfig provides descriptions and links to access reference documentation for the drivers and other modules you can configure.</p>
+<p>Besides the ease-of-use provided by SysConfig, the tool resolves conflicts on the fly. This ensures that you create a valid pin and TI Driver configuration. In addition, you can view diagrams of the pin configuration as you make changes.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/sysconfig_3pins.png"><img alt="../../_images/sysconfig_3pins.png" src="../../_images/sysconfig_3pins.png" style="width: 430.8px; height: 363.59999999999997px;" /></a>
+</div>
+<p>SysConfig settings are stored in a file called <cite>&lt;project&gt;.syscfg</cite>. Its output files are stored in a <cite>syscfg</cite> folder within the build folder.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/sysconfig_2.png"><img alt="../../_images/sysconfig_2.png" src="../../_images/sysconfig_2.png" style="width: 428.4px; height: 513.0px;" /></a>
+</div>
+<p>You open (with a simple double click) the <cite>&lt;project&gt;.syscfg</cite> file in SysConfig and modify it as needed. You can view the <cite>ti_drivers_config.c</cite> and <cite>ti_drivers_config.h</cite> file contents within SysConfig and see how configuration changes affect the generated code.</p>
+<p>When you save the <cite>&lt;project&gt;.syscfg</cite> file and build the project, the following actions occur:</p>
+<ol class="arabic simple">
+<li>The <cite>ti_drivers_config.c</cite> and <cite>ti_drivers_config.h</cite> are generated from the <cite>&lt;project&gt;.syscfg</cite> file.</li>
+<li>The <cite>ti_drivers_config.c</cite> and <cite>ti_drivers_config.h</cite> are compiled to create a <cite>ti_drivers_config.o</cite> object file.</li>
+<li>The <cite>ti_drivers_config.o</cite> object is linked with the rest of the libraries to create the application.</li>
+</ol>
+<p>Some users may choose to use SysConfig initially to generate the <cite>ti_drivers_config.c</cite>, <cite>ti_drivers_config.h</cite> (and other component configuration files) and then exclude the <cite>*.syscfg</cite> file from the build so that manual changes made to these files are not overwritten. Additionally user may want to add their custom board setup into SysConfig.</p>
+<p>Additional information for SysConfig can be found on <a class="reference external" href="http://www.ti.com/tool/sysconfig">http://www.ti.com/tool/sysconfig</a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

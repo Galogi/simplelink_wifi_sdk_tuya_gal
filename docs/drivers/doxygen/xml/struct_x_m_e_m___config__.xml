@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_x_m_e_m___config__" kind="struct" language="C++" prot="public">
+    <compoundname>XMEM_Config_</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_x_m_e_m___config___1ad2f165c66614deda083efe4a0d559b40" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* XMEM_Config_::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific data object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="371" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_x_m_e_m___config___1a4b69811232e59c913ce17a498042975c" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* XMEM_Config_::hwAttrs</definition>
+        <argsstring></argsstring>
+        <name>hwAttrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific hardware attributes structure </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="374" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XMEM Global configuration. </para>    </briefdescription>
+    <detaileddescription>
+<para>The XMEM_Config structure contains a set of pointers used to characterize the XMEM driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="369" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="368" bodyend="375"/>
+    <listofallmembers>
+      <member refid="struct_x_m_e_m___config___1a4b69811232e59c913ce17a498042975c" prot="public" virt="non-virtual"><scope>XMEM_Config_</scope><name>hwAttrs</name></member>
+      <member refid="struct_x_m_e_m___config___1ad2f165c66614deda083efe4a0d559b40" prot="public" virt="non-virtual"><scope>XMEM_Config_</scope><name>object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

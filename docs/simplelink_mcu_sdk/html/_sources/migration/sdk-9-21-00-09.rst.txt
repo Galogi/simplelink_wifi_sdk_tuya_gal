@@ -1,0 +1,9 @@
+Migration from 9.20.00.07 |rarr| 9.21.00.09
+===========================================
+
+This page will go over the main changes between SDK version 9.20.00.07 and 9.21.00.09
+
+Wlan Driver
+-----------
+
+- WLanSetRegDomainCustomEntry_t type renamed to WlanSetRegDomainCustomEntry_t

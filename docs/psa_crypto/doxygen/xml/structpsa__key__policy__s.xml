@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__key__policy__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_key_policy_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__key__policy__s_1a531ad1c1d2ff6c3bafb679dccb75886f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__policy_1ga7bb9de71337e0e98de843aa7f9b55f25" kindref="member">psa_key_usage_t</ref></type>
+        <definition>psa_key_usage_t psa_key_policy_s::usage</definition>
+        <argsstring></argsstring>
+        <name>usage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="113" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1aa1af20f142ca722222c6d98678a0c448" compoundref="crypto__struct_8h" startline="278" endline="282">psa_get_key_usage_flags</referencedby>
+        <referencedby refid="crypto__struct_8h_1a42a65b3c4522ce9b67ea5ea7720e17de" compoundref="crypto__struct_8h" startline="271" endline="276">psa_set_key_usage_flags</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__policy__s_1aac47cb27e3eafa6af098df892a68ee5f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_key_policy_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="114" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="crypto__struct_8h_1ac255da850a00bbed925390044f016b34" compoundref="crypto__struct_8h" startline="290" endline="294">psa_get_key_algorithm</referencedby>
+        <referencedby refid="crypto__struct_8h_1a5bee85c2164ad3d4c0d42501241eeb06" compoundref="crypto__struct_8h" startline="326" endline="330">psa_get_key_bits</referencedby>
+        <referencedby refid="crypto__struct_8h_1aeb8341ca52baa0279475ea3fd3bcdc98" compoundref="crypto__struct_8h" startline="284" endline="288">psa_set_key_algorithm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__key__policy__s_1a548824ba6b5f32ec3fa2f86309f6b7ad" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_key_policy_s::alg2</definition>
+        <argsstring></argsstring>
+        <name>alg2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="115" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="112" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="111" bodyend="116"/>
+    <listofallmembers>
+      <member refid="structpsa__key__policy__s_1aac47cb27e3eafa6af098df892a68ee5f" prot="public" virt="non-virtual"><scope>psa_key_policy_s</scope><name>alg</name></member>
+      <member refid="structpsa__key__policy__s_1a548824ba6b5f32ec3fa2f86309f6b7ad" prot="public" virt="non-virtual"><scope>psa_key_policy_s</scope><name>alg2</name></member>
+      <member refid="structpsa__key__policy__s_1a531ad1c1d2ff6c3bafb679dccb75886f" prot="public" virt="non-virtual"><scope>psa_key_policy_s</scope><name>usage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

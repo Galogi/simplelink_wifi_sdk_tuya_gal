@@ -1,0 +1,672 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Generic Attribute Profile (GATT) &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Physical Layer (PHY)" href="phy.html" />
+    <link rel="prev" title="Generic Access Profile (GAP)" href="gap.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble gatt";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Generic Attribute Profile (GATT)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gatt-services-and-profile">GATT Services and Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gatt-server">GATT Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#read-and-write-callback-functions">Read and Write Callback Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notify-and-indicate-functions">Notify and Indicate Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gatt-client">GATT Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a> &raquo;</li>
+        
+      <li>Generic Attribute Profile (GATT)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="generic-attribute-profile-gatt">
+<span id="gatt"></span><h1>Generic Attribute Profile (GATT)<a class="headerlink" href="#generic-attribute-profile-gatt" title="Permalink to this headline">¶</a></h1>
+<p>Just as the GAP layer handles most connection-related functionality,
+the GATT layer of the Bluetooth Low Energy protocol stack is used by
+the application for data communication between two connected
+devices. Data is passed and stored in the form of characteristics
+which are stored in memory on the Bluetooth Low Energy device. From
+a GATT standpoint, when two devices are connected they are each in
+one of two roles.</p>
+<ul>
+<li><p class="first">The <strong>GATT server</strong></p>
+<blockquote>
+<div><p>the device containing the characteristic
+database that is being read or written by a GATT client.</p>
+</div></blockquote>
+</li>
+<li><p class="first">The <strong>GATT client</strong></p>
+<blockquote>
+<div><p>the device that is reading or writing data
+from or to the GATT server.</p>
+</div></blockquote>
+</li>
+</ul>
+<p><a class="reference internal" href="#gatt-client-server"><span class="std std-numref">Fig. 8</span></a> shows this relationship in a sample Bluetooth low
+energy connection where the peripheral device (that is, a TI LaunchPad)
+is the GATT server and the central device (that is, a smart phone) is the GATT
+client.</p>
+<div class="figure align-center" id="figure-1">
+<span id="gatt-client-server"></span><img alt="../_images/gatt_client_server.png" src="../_images/gatt_client_server.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">GATT Client and Server Interaction Overview</span></p>
+</div>
+<p>The GATT roles of client and server are independent from the GAP
+roles of peripheral and central. A peripheral can be either a GATT
+client or a GATT server, and a central can be either a GATT client
+or a GATT server. A peripheral can act as both a GATT client and a
+GATT server.</p>
+<div class="section" id="gatt-services-and-profile">
+<h2>GATT Services and Profile<a class="headerlink" href="#gatt-services-and-profile" title="Permalink to this headline">¶</a></h2>
+<p>A GATT service is a collection of characteristics. For example, the
+heart rate service contains a heart rate measurement characteristic
+and a body location characteristic, among others. Multiple services
+can be grouped together to form a profile. Many profiles only
+implement one service so the two terms are sometimes used
+interchangeably.</p>
+<p><strong>GATT Characteristics and Attributes</strong></p>
+<p>While characteristics and attributes are sometimes used
+interchangeably when referring to Bluetooth Low Energy, consider
+characteristics as groups of information called attributes.
+Attributes are the information actually transferred between devices.
+Characteristics organize and use attributes as data values,
+properties, and configuration information. A typical characteristic
+is composed of the following attributes.</p>
+<ul>
+<li><p class="first">Characteristic Value</p>
+<blockquote>
+<div><p>data value of the characteristic</p>
+</div></blockquote>
+</li>
+<li><p class="first">Characteristic Declaration</p>
+<blockquote>
+<div><p>descriptor storing the properties,
+location, and type of the characteristic value</p>
+</div></blockquote>
+</li>
+<li><p class="first">Client Characteristic Configuration</p>
+<blockquote>
+<div><p>a configuration that allows the GATT server to
+configure the characteristic to be notified (send message
+asynchronously) or indicated (send message asynchronously
+with acknowledgment)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Characteristic User Description</p>
+<blockquote>
+<div><p>an ASCII string describing the characteristic</p>
+</div></blockquote>
+</li>
+</ul>
+<p>These attributes are stored in the GATT server in an attribute
+table. In addition to the value, the following properties are
+associated with each attribute.</p>
+<ul>
+<li><p class="first">Handle</p>
+<blockquote>
+<div><p>the index of the attribute in the table (Every attribute has
+a unique handle.)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Type</p>
+<blockquote>
+<div><p>indicates what the attribute data represents (referred to as a
+UUID [universal unique identifier]. Some of these are Bluetooth
+SIG-defined and some are custom.)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Permissions</p>
+<blockquote>
+<div><blockquote>
+<div><p>enforces if and how a GATT client device can access the
+value of an attribute. The following flags are all the options available on NimBLE</p>
+</div></blockquote>
+<div class="literal-block-wrapper docutils container" id="container-1">
+<div class="code-block-caption"><span class="caption-number">Listing 13 </span><span class="caption-text"><strong>ble_gatt.h</strong> - Characteristic Flags
+/** GATT Characteristic Flag: Broadcast. <a href="#system-message-1"><span class="problematic" id="problematic-1">*</span></a>/
+#define BLE_GATT_CHR_F_BROADCAST                        0x0001</span><a class="headerlink" href="#container-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="cm">/** GATT Characteristic Flag: Read. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_READ                             0x0002</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Write without Response. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_WRITE_NO_RSP                     0x0004</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Write. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_WRITE                            0x0008</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Notify. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_NOTIFY                           0x0010</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Indicate. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_INDICATE                         0x0020</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Authenticated Signed Writes. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_AUTH_SIGN_WRITE                  0x0040</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Reliable Writes. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_RELIABLE_WRITE                   0x0080</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Auxiliary Writes. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_AUX_WRITE                        0x0100</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Read Encrypted. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_READ_ENC                         0x0200</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Read Authenticated. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_READ_AUTHEN                      0x0400</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Read Authorized. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_READ_AUTHOR                      0x0800</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Write Encrypted. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_WRITE_ENC                        0x1000</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Write Authenticated. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_WRITE_AUTHEN                     0x2000</span>
+
+    <span class="cm">/** GATT Characteristic Flag: Write Authorized. */</span>
+    <span class="cp">#define BLE_GATT_CHR_F_WRITE_AUTHOR                     0x4000</span>
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>GATT Security</strong></p>
+<p>As described in  the GATT server may define
+permissions independently for each characteristic. The server may
+allow some characteristics to be accessed by any client, while
+limiting access to other characteristics to only authenticated or
+authorized clients. These permissions are usually defined as part of
+a higher level profile specification. For custom profiles, the user
+may select the permissions as they see fit. For more information
+about the GATT Security, refer to the Security Considerations section
+([Vol 3], Part G, Section 8) of the <a href="#system-message-6"><span class="problematic" id="problematic-6">`Bluetooth Core Specifications Version 5.3`_</span></a>.</p>
+<p><strong>Authentication</strong></p>
+<p>Characteristics that require authentication cannot be accessed until
+the client has gone through an authenticated pairing method. This
+verification is performed within the stack, with no processing
+required by the application. The only requirement is for the
+characteristic to be registered properly with the GATT server.</p>
+</div>
+<div class="section" id="gatt-server">
+<h2>GATT Server<a class="headerlink" href="#gatt-server" title="Permalink to this headline">¶</a></h2>
+<p><strong>Creating the Attribute Table</strong></p>
+<p>NimBLE APIs makes creating a GATT Table a painless process by using the following struct.</p>
+<p>You can find an example of a custom GATT Table in the <cite>ble_wifi_provisioning</cite> example</p>
+<div class="literal-block-wrapper docutils container" id="container-2">
+<div class="code-block-caption"><span class="caption-number">Listing 14 </span><span class="caption-text"><strong>nimble_host.c</strong> - gatt_svr_svcs[]</span><a class="headerlink" href="#container-2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>            <span class="cm">/* Service: TI Simple Peripheral */</span>
+        <span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">BLE_GATT_SVC_TYPE_PRIMARY</span><span class="p">,</span>
+        <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_UUID16</span><span class="p">),</span>
+        <span class="p">.</span><span class="n">characteristics</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="nc">ble_gatt_chr_def</span><span class="p">[])</span> <span class="p">{</span> <span class="p">{</span>
+            <span class="cm">/* Characteristic: READ/WRITE */</span>
+            <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_1</span><span class="p">),</span>
+            <span class="p">.</span><span class="n">access_cb</span> <span class="o">=</span> <span class="n">gatt_svr_chr_access_ti_peripheral</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_GATT_CHR_F_READ</span> <span class="o">|</span> <span class="n">BLE_GATT_CHR_F_WRITE</span><span class="p">,</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="cm">/* Characteristic: READ */</span>
+            <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_2</span><span class="p">),</span>
+            <span class="p">.</span><span class="n">access_cb</span> <span class="o">=</span> <span class="n">gatt_svr_chr_access_ti_peripheral</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_GATT_CHR_F_READ</span><span class="p">,</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="cm">/* Characteristic: WRITE */</span>
+            <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_3</span><span class="p">),</span>
+            <span class="p">.</span><span class="n">access_cb</span> <span class="o">=</span> <span class="n">gatt_svr_chr_access_ti_peripheral</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_GATT_CHR_F_WRITE</span><span class="p">,</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="cm">/* Characteristic: NOTIFY */</span>
+            <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_4</span><span class="p">),</span>
+            <span class="p">.</span><span class="n">access_cb</span> <span class="o">=</span> <span class="n">gatt_svr_chr_access_ti_peripheral</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">val_handle</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ti_peripheral_handle</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_GATT_CHR_F_NOTIFY</span><span class="p">,</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="cm">/* Characteristic: READ */</span>
+            <span class="p">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">BLE_UUID16_DECLARE</span><span class="p">(</span><span class="n">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_5</span><span class="p">),</span>
+            <span class="p">.</span><span class="n">access_cb</span> <span class="o">=</span> <span class="n">gatt_svr_chr_access_ti_peripheral</span><span class="p">,</span>
+            <span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">BLE_GATT_CHR_F_READ</span><span class="p">,</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="cm">/* No more characteristics in this service */</span>
+        <span class="p">},</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="cm">/* No more services */</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>In this struct multiple services and their characteristics can be defined. A 0
+defines when there is no more services or characteristics in a service, if the 0
+is not added, the service will not be parsed correctly.</p>
+<p>Once the <cite>ble_gatt_svc_def</cite> struct has been defined you will need to update
+the hosts configuration settings to accommodate the new services</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gatts_count_cfg</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_svc_def</span> <span class="o">*</span><span class="n">defs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Next we must add the services for registration to the table</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gatts_add_svcs</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_svc_def</span> <span class="o">*</span><span class="n">svcs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once registered the function <cite>ble_gatts_start()</cite> will make the services available to parameters</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gatts_start</span><span class="p">(</span><span class="kt">void</span><span class="p">);;</span>
+</pre></div>
+</div>
+<p>To show the state of the GATT Table at anytime call the following function;</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ble_gatts_show_local</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="read-and-write-callback-functions">
+<h3>Read and Write Callback Functions<a class="headerlink" href="#read-and-write-callback-functions" title="Permalink to this headline">¶</a></h3>
+<p>The profile must define Read and Write callback functions which the
+stack calls when one of the attributes of the profile are
+written to or read from. The callbacks are registered when creating
+the <cite>ble_gatt_chr_def</cite> struct as the <cite>access_cb</cite>. When a read or write
+request from a GATT Client is received for a given
+attribute, the protocol stack checks the permissions of the
+attribute and, if the attribute is readable, calls the read call-back
+profile. The profile copies in the value, performs any profile-specific processing.
+The callback is passed a <cite>ble_gatt_access_ctxt</cite></p>
+<div class="literal-block-wrapper docutils container" id="container-3">
+<div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text"><strong>ble_gatt.h</strong> - callback context</span><a class="headerlink" href="#container-3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="k">struct</span> <span class="nc">ble_gatt_register_ctxt</span> <span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">    * Indicates the gatt registration operation just performed.  This is</span>
+<span class="cm">    * equal to one of the following values:</span>
+<span class="cm">    *     o BLE_GATT_REGISTER_OP_SVC</span>
+<span class="cm">    *     o BLE_GATT_REGISTER_OP_CHR</span>
+<span class="cm">    *     o BLE_GATT_REGISTER_OP_DSC</span>
+<span class="cm">    */</span>
+    <span class="kt">uint8_t</span> <span class="n">op</span><span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * The value of the op field determines which field in this union is valid.</span>
+<span class="cm">    */</span>
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="cm">/** Service; valid if op == BLE_GATT_REGISTER_OP_SVC. */</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="cm">/** The ATT handle of the service definition attribute. */</span>
+            <span class="kt">uint16_t</span> <span class="n">handle</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The service definition representing the service being</span>
+<span class="cm">            * registered.</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_svc_def</span> <span class="o">*</span><span class="n">svc_def</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">svc</span><span class="p">;</span>
+
+        <span class="cm">/** Characteristic; valid if op == BLE_GATT_REGISTER_OP_CHR. */</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="cm">/** The ATT handle of the characteristic definition attribute. */</span>
+            <span class="kt">uint16_t</span> <span class="n">def_handle</span><span class="p">;</span>
+
+            <span class="cm">/** The ATT handle of the characteristic value attribute. */</span>
+            <span class="kt">uint16_t</span> <span class="n">val_handle</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The characteristic definition representing the characteristic</span>
+<span class="cm">            * being registered.</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_chr_def</span> <span class="o">*</span><span class="n">chr_def</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The service definition corresponding to the characteristic&#39;s</span>
+<span class="cm">            * parent service.</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_svc_def</span> <span class="o">*</span><span class="n">svc_def</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">chr</span><span class="p">;</span>
+
+        <span class="cm">/** Descriptor; valid if op == BLE_GATT_REGISTER_OP_DSC. */</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="cm">/** The ATT handle of the descriptor definition attribute. */</span>
+            <span class="kt">uint16_t</span> <span class="n">handle</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The descriptor definition corresponding to the descriptor being</span>
+<span class="cm">            * registered.</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_dsc_def</span> <span class="o">*</span><span class="n">dsc_def</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The characteristic definition corresponding to the descriptor&#39;s</span>
+<span class="cm">            * parent characteristic.</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_chr_def</span> <span class="o">*</span><span class="n">chr_def</span><span class="p">;</span>
+
+            <span class="cm">/**</span>
+<span class="cm">            * The service definition corresponding to the descriptor&#39;s</span>
+<span class="cm">            * grandparent service</span>
+<span class="cm">            */</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="nc">ble_gatt_svc_def</span> <span class="o">*</span><span class="n">svc_def</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">dsc</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<p>This context is then used in the callback to process the requests</p>
+<p><strong>Read Request from Client</strong>
+If a read request is called from a client the application must populate
+the context buffer with the data that will be sent to the client.</p>
+<div class="literal-block-wrapper docutils container" id="container-4">
+<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text"><strong>nimble_host.c</strong> - Read Request Callback Function
+static int gatt_svr_chr_access_ti_peripheral(uint16_t conn_handle, uint16_t attr_handle,
+                            struct ble_gatt_access_ctxt <a href="#system-message-2"><span class="problematic" id="problematic-2">*</span></a>ctxt, void <a href="#system-message-3"><span class="problematic" id="problematic-3">*</span></a>arg)
+{
+    uint16_t uuid16;
+    int rc;</span><a class="headerlink" href="#container-4" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>        <span class="n">uuid16</span> <span class="o">=</span> <span class="n">ble_uuid_u16</span><span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">chr</span><span class="o">-&gt;</span><span class="n">uuid</span><span class="p">);</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">uuid16</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="k">switch</span><span class="p">(</span><span class="n">uuid16</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="nl">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">op</span> <span class="o">==</span> <span class="n">BLE_GATT_ACCESS_OP_READ_CHR</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">rc</span> <span class="o">=</span> <span class="n">os_mbuf_append</span><span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">om</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ble_svc_ti_peripheral_data</span><span class="p">.</span><span class="n">char1</span><span class="p">,</span>
+                                        <span class="k">sizeof</span><span class="p">(</span><span class="n">ble_svc_ti_peripheral_data</span><span class="p">.</span><span class="n">char1</span><span class="p">));</span>
+                    <span class="k">return</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">BLE_ATT_ERR_INSUFFICIENT_RES</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Write Request from Client</strong>
+If a write request is called from a client the application must stored
+data sent to external buffer outside of the callback context.</p>
+<div class="literal-block-wrapper docutils container" id="container-5">
+<div class="code-block-caption"><span class="caption-number">Listing 17 </span><span class="caption-text"><strong>nimble_host.c</strong> - Write Request Callback Function
+static int gatt_svr_chr_access_ti_peripheral(uint16_t conn_handle, uint16_t attr_handle,
+                            struct ble_gatt_access_ctxt <a href="#system-message-4"><span class="problematic" id="problematic-4">*</span></a>ctxt, void <a href="#system-message-5"><span class="problematic" id="problematic-5">*</span></a>arg)
+{
+    uint16_t uuid16;
+    int rc;</span><a class="headerlink" href="#container-5" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>        <span class="n">uuid16</span> <span class="o">=</span> <span class="n">ble_uuid_u16</span><span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">chr</span><span class="o">-&gt;</span><span class="n">uuid</span><span class="p">);</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">uuid16</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="k">switch</span><span class="p">(</span><span class="n">uuid16</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="nl">BLE_SVC_TI_PERIPHERAL_CHR_UUID16_1</span><span class="p">:</span>
+               <span class="k">if</span> <span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">op</span> <span class="o">==</span> <span class="n">BLE_GATT_ACCESS_OP_WRITE_CHR</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">rc</span> <span class="o">=</span> <span class="n">gatt_svr_chr_write</span><span class="p">(</span><span class="n">ctxt</span><span class="o">-&gt;</span><span class="n">om</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ble_svc_ti_peripheral_data</span><span class="p">.</span><span class="n">char1</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">ble_svc_ti_peripheral_data</span><span class="p">.</span><span class="n">char1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+                    <span class="k">return</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">BLE_ATT_ERR_INSUFFICIENT_RES</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="notify-and-indicate-functions">
+<h3>Notify and Indicate Functions<a class="headerlink" href="#notify-and-indicate-functions" title="Permalink to this headline">¶</a></h3>
+<p>If a client has subscribed to a notification or indication
+characteristic. The GATT server will send the appropriate message when
+the characteristic is updated.</p>
+<p>To following function is called send either a notification or indication
+to all of a characteristics subscribers.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ble_gatts_chr_updated</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">chr_val_handle</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To send a notification or indication to a particular connection the following function can be used</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">ble_gatts_notify_custom</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">conn_handle</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">att_handle</span><span class="p">,</span>
+                        <span class="k">struct</span> <span class="nc">os_mbuf</span> <span class="o">*</span><span class="n">om</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gatt-client">
+<h2>GATT Client<a class="headerlink" href="#gatt-client" title="Permalink to this headline">¶</a></h2>
+<p><strong>Under Development</strong></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="phy.html" class="btn btn-neutral float-right" title="Physical Layer (PHY)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gap.html" class="btn btn-neutral float-left" title="Generic Access Profile (GAP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

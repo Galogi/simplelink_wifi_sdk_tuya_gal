@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_w_f_f3___param" kind="struct" language="C++" prot="public">
+    <compoundname>SDWFF3_Param</compoundname>
+    <includes refid="_s_d_w_f_f3_8h" local="no">SDWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___param_1ac2c0ded6bd0b20ab28bb6e7a92408d84" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SDWFF3_Param::SDWFF3CallbackFxn</definition>
+        <argsstring></argsstring>
+        <name>SDWFF3CallbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application call-back function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="409" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___param_1afc7c98757a96983218f5ff2e8d7bffcd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_Param::minDmaTransferSize</definition>
+        <argsstring></argsstring>
+        <name>minDmaTransferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum transfer size for DMA based transfer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="412" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/sd/SDWFF3.h" line="407" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="406" bodyend="414"/>
+    <listofallmembers>
+      <member refid="struct_s_d_w_f_f3___param_1afc7c98757a96983218f5ff2e8d7bffcd" prot="public" virt="non-virtual"><scope>SDWFF3_Param</scope><name>minDmaTransferSize</name></member>
+      <member refid="struct_s_d_w_f_f3___param_1ac2c0ded6bd0b20ab28bb6e7a92408d84" prot="public" virt="non-virtual"><scope>SDWFF3_Param</scope><name>SDWFF3CallbackFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

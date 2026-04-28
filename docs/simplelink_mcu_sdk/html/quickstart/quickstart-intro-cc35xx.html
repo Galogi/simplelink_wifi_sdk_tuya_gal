@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started with the SimpleLink CC35xx &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug quickstart quickstart-intro-cc35xx";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Getting Started with the SimpleLink CC35xx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-the-simplelink-device">
+<span id="sec-cc35xx-getting-started"></span><h1>Getting Started with the SimpleLink CC35xx<a class="headerlink" href="#getting-started-with-the-simplelink-device" title="Permalink to this headline">¶</a></h1>
+<p>The SimpleLink Wi-Fi SDK delivers components that enable engineers to develop applications on
+the Texas Instruments SimpleLink CC35xx family of wireless microcontroller
+(MCUs). This powerful software toolkit provides a cohesive and consistent
+software experience for all SimpleLink CC35xx wireless MCU users by packaging
+essential software components, such as a Bluetooth® Low Energy (Bluetooth
+LE) protocol stack supporting Bluetooth 5.4, and Wi-Fi 6 networking stack based on
+LwIP (<a class="reference external" href="https://savannah.nongnu.org/projects/lwip/">https://savannah.nongnu.org/projects/lwip/</a>), as well as the FreeRTOS kernel and TI
+Drivers in one easy-to-use software package along with example applications and
+exhaustive documentation.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>The user is expected to have the following:</p>
+<ul class="simple">
+<li>CC35x1E LaunchPad</li>
+<li>XDS110 Debugger <a class="reference external" href="https://www.ti.com/tool/LP-XDS110ET">LP-XDS110ET</a></li>
+<li>SimpleLink Wi-Fi SDK</li>
+<li>CCS 20.4.0</li>
+<li>Sysconfig 1.26.0</li>
+<li>Putty or any other Serial Terminal Application</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Please note that CCS must be installed prior to moving on to the next steps. CCS is available here: <a class="reference external" href="https://www.ti.com/tool/CCSTUDIO#downloads">Code Composer Studio</a> .</p>
+</div>
+</div>
+<div class="section" id="sdk-download-and-installation">
+<h2>SDK - Download and Installation<a class="headerlink" href="#sdk-download-and-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-the-sdk">
+<h3>Installing the SDK<a class="headerlink" href="#installing-the-sdk" title="Permalink to this headline">¶</a></h3>
+<p>This section covers the required settings for a SimpleLink Wi-Fi SDK installation. The SimpleLink Wi-Fi SDK
+contains all of the Documentation, Example, Kernel, Driver Sources, and tools
+required to get up and running with the SimpleLink CC35xx family of devices.</p>
+<ol class="arabic simple">
+<li>Download the SimpleLink Wi-Fi SDK from the <a class="reference external" href="https://www.ti.com/tool/SIMPLELINK-WIFI-SDK">SDK Product Page</a>.</li>
+<li>Install to the default installation directory.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="activation-and-initial-programming">
+<h2>Activation and Initial Programming<a class="headerlink" href="#activation-and-initial-programming" title="Permalink to this headline">¶</a></h2>
+<p>This section will cover the activation and initial programming of the
+SimpleLink CC35xx.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Please note that throughout the activation and initial programming the window should <strong>NOT be refreshed at any
+point</strong>. Additionally, the activation and initial programming process <strong>should only be done ONCE</strong> for each new CC35xx.</p>
+</div>
+<div class="section" id="activation">
+<h3>Activation<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h3>
+<p>When the device is first received it will be in an ‘OPEN’ security state , which
+will not allow you to do much with until it has gone through the activation
+process. The activation process will change the device ownership by flipping
+the security state to ‘deployed’, and add customer credentials.</p>
+<p>For the following steps you will need to have the CC35x1E LaunchPad connected to the
+LP-XDS110ET and to the PC.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Make sure that both LP-XDS110ET and CC35x1E LaunchPad are connected to the same PC through two different USB-C ports.</p>
+</div>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Start the Toolbox application that is downloaded along the SimpleLink Wi-Fi SDK by navigating to the root of the <cite>simplelink_wifi_toolbox_”platform”_x_x_x</cite> and run the “simplelink-wifi-toolbox.exe”.</dt>
+<dd><p class="first">Executing the Toolbox application will open the default browser at the Toolbox home page. Once in the home page click on the <strong>Programmer</strong> tool.</p>
+<div class="last figure align-center" id="figure-1">
+<span id="fig-activation-1"></span><a class="reference internal image-reference" href="../_images/activation-1.png"><img alt="../_images/activation-1.png" src="../_images/activation-1.png" style="width: 956.0px; height: 466.0px;" /></a>
+<p class="caption"><span class="caption-text">Toolbox Application Home Page</span></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>This will open a windows that will allow you to see any XDS connected device and select onbnoard flash.</dt>
+<dd><p class="first">Select the connected XDS110 device from a drop-down list of XDS-devices
+connected to the PC.</p>
+<div class="figure align-center" id="figure-2">
+<span id="fig-activation-2"></span><a class="reference internal image-reference" href="../_images/activation-2.png"><img alt="../_images/activation-2.png" src="../_images/activation-2.png" style="width: 957.5px; height: 471.0px;" /></a>
+<p class="caption"><span class="caption-text">XDS110 Select Page</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using a Revision A Launchpad, select IS25WJ064F. For Launchpads Revision E4 or earlier revisions, select IS25WJ032F</p>
+</div>
+<div class="last figure align-center" id="figure-3">
+<span id="fig-activation-2-1"></span><a class="reference internal image-reference" href="../_images/flash-options.png"><img alt="../_images/flash-options.png" src="../_images/flash-options.png" style="width: 957.5px; height: 418.5px;" /></a>
+<p class="caption"><span class="caption-text">Flash Device Select Page</span></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The following step will require you to select the activation method.</dt>
+<dd><p class="first">There are 3 options for activating the device:</p>
+<ol class="loweralpha simple">
+<li><strong>Vendor Key</strong> - Use custom Vendor keys</li>
+<li><strong>SDK Example Key</strong> - Emulate the full vendor operation using an emulation key (TI-provided ‘debug’ key).</li>
+</ol>
+<p>c. <strong>Authentication Bypass</strong> - Enable the vendor to load and execute
+unauthenticated images.</p>
+<p>However for the purposes of this Quickstart User’s Guide please <strong>select the SDK example key</strong> (if wanting to use a Vendor Key please refer to the programmer guide in the Wifi Toolbox User guide)</p>
+<div class="last figure align-center" id="figure-4">
+<span id="fig-activation-3"></span><a class="reference internal image-reference" href="../_images/activation-3.png"><img alt="../_images/activation-3.png" src="../_images/activation-3.png" style="width: 958.5px; height: 455.5px;" /></a>
+<p class="caption"><span class="caption-text">Activation Type Page</span></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Since the SDK example key was selected the “Root of Trust” key will be pre-selected.</dt>
+<dd><p class="first">The key is not pre-selected if the Authentication Bypass activation method is chosen. Confirm
+the “Root of Trust” key is selected and activate the CC35xx.</p>
+<div class="last figure align-center" id="figure-5">
+<span id="fig-activation-4"></span><a class="reference internal image-reference" href="../_images/activation-4.png"><img alt="../_images/activation-4.png" src="../_images/activation-4.png" style="width: 959.5px; height: 453.5px;" /></a>
+<p class="caption"><span class="caption-text">Activation Page</span></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>At the end of the activation process the tool will report a summary for review.</dt>
+<dd><p class="first">In case of failed RoT fuse-programming, the activation/programming process
+will be halted.</p>
+<div class="last figure align-center" id="figure-6">
+<span id="fig-activation-5"></span><a class="reference internal image-reference" href="../_images/activation-5.png"><img alt="../_images/activation-5.png" src="../_images/activation-5.png" style="width: 905.0px; height: 434.0px;" /></a>
+<p class="caption"><span class="caption-text">Review Page</span></p>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="initial-programming">
+<h3>Initial Programming<a class="headerlink" href="#initial-programming" title="Permalink to this headline">¶</a></h3>
+<p>Once the activation process has concluded, the Initial Programming process will start
+automatically in the next window. During this process you will download
+an example image and <a class="reference internal" href="../cc35xx/hardware/hardware-overview.html#sec-cc35xx-connectivity-core"><span class="std std-ref">Connectivity Core</span></a> image to the CC35xx
+in addition to flash configuration. As a reminder, please be sure <strong>not to refresh the page</strong> during this process.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Image selectionBoot Sector</strong> - Flash partition, calibration, and flash
+high-speed configuration.</li>
+<li><strong>TI Bootloader</strong> - RAM-bootloader (2nd stage BL provided by TI).</li>
+<li><strong>TI Wifi Firmware</strong> - WiFi Servicepack</li>
+<li><strong>Vendor Demo Image</strong> - for FCS versions the image will program Network Terminal.</li>
+</ul>
+<div class="figure align-center" id="figure-7">
+<span id="fig-programming-1"></span><img alt="../_images/programming-1.png" src="../_images/programming-1.png" />
+<p class="caption"><span class="caption-text">Initial Programming Page</span></p>
+</div>
+</div></blockquote>
+<p>Press the program button to begin Initial Programming. Once programmed you will be met with the following screen.</p>
+<blockquote>
+<div><div class="figure align-center" id="figure-8">
+<img alt="../_images/programming-2.png" src="../_images/programming-2.png" />
+<p class="caption"><span class="caption-text">Initial Programming Page</span></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="example-application-network-terminal">
+<h3>Example Application (Network Terminal)<a class="headerlink" href="#example-application-network-terminal" title="Permalink to this headline">¶</a></h3>
+<p>As part of the initial programming process above a precompiled network terminal
+example has been programmed as the vendor image. In order to use the device and
+evaluate using the demo, follow the steps below:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Determine which COM port the LP-XDS110ET is connected to. On Windows this can be done by referencing Ports section in Device Manager. Two XDS devices will show, for a serial connection the COM port that is relevant belongs to the device that is labeled “Application/User UART”.</li>
+<li>Open a serial terminal application such as ‘Putty’ or ‘Tera Term’.</li>
+<li>Configure the connection as Serial with BAUD of 115200 and the COM port found in step 1.</li>
+<li>Reset the CC35x1E LaunchPad and LP-XDS110ET.</li>
+<li>The <strong>Network Terminal</strong> example screen should show up, providing you with
+a command-line interface that enables running basic operations. The initial bringup and/or typing <code class="docutils literal notranslate"><span class="pre">help</span></code>
+will show this menu:</li>
+</ol>
+<div class="figure align-center" id="figure-9">
+<a class="reference internal image-reference" href="../_images/tera-term.png"><img alt="../_images/tera-term.png" src="../_images/tera-term.png" style="width: 994.5px; height: 1209.0px;" /></a>
+<p class="caption"><span class="caption-text">Network Terminal Help Screen</span></p>
+</div>
+</div></blockquote>
+<p>This allows for verification that the device has been flashed and is working. For further development please refer
+to the SimpleLink Wireless MCU CC35xx Overview section.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

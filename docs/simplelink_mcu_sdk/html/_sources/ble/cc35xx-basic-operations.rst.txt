@@ -1,0 +1,144 @@
+.. _sec-ble-basic-operations: 
+
+Basic Operations
+================
+
+**BLE Application Structure**
+-----------------------------
+
+The SimpleLink Wi-Fi Software Development Kit offers an easy way to begin BLE development with the use of the Nimble Host interface.
+The Nimble Host interface is the connection between user application code and the NimBLE stack, this allows developers to control and 
+contain all aspects of BLE development inside one file, ``nimble_host.c``. In this interface the developer can control the GATT Server
+and all event callbacks.
+
+The following section will explain how to use basic BLE functionality through the Nimble Host interface.
+
+**Initialization**
+------------------
+
+Before any BLE functionality can be done you must first run 
+
+.. code-block:: bash
+
+        Wlan_Start(WlanEventHandlerCB_t eventHandlerCB)
+
+This command found in the ``wifi_stack.lib`` library, loads the containers (FW, bootloader and configuration binaries) from the NVMEM and programs them to the MAC layer.
+This step should be the first, otherwise there will be no communication with the device.
+
+Next you will need to enable BLE as it is not by default. To do so run 
+
+.. code-block:: bash
+
+        ctrlCmdFw_EnableBLECmd(void)
+
+Once BLE is enabled, the next step would be to initialize and sync the Nimble Host Stack with the following functionality
+
+.. code-block:: bash
+
+        nimble_host_start(void)
+
+This function will create the transport layer and the task that handles events from the Nimble stack.
+
+
+**Advertising**
+---------------
+To begin advertising on the CC35xx the following commands should be run
+
+.. code-block:: bash
+
+        nimble_host_ext_adv_cfg(ExtAdvCfg_t *pAdvCfg)
+
+This function will configure the advertising parameters specified in the ``ExtAdvCfg`` struct
+
+.. code-block:: bash
+
+    ExtAdvCfg
+        * instance;
+        * legacy;
+        * interval_ms;
+        * prim_phy;
+        * sec_phy;
+
+After setting the parameters, you will then need to run
+
+.. code-block:: bash
+
+        nimble_host_ext_adv_enable(ExtAdvEnable_t *pAdvEnb)
+
+This function will enable advertising in accordance to the given parameters
+
+.. code-block:: bash
+
+    ExtAdvEnable
+        * enable;
+        * instance;
+        * duration;
+        * max_events;
+
+
+**Scanning**
+------------
+
+Similarly to advertising, you will need to configure scan parameters then enable scanning.
+The following function should be run to configure a scan
+
+.. code-block:: bash
+
+        nimble_host_ext_scan_cfg(ExtScanCfg_t *pScanCfg)
+
+The parameters are
+
+.. code-block:: bash
+
+    ExtScanCfg
+        * scan_interval_ms;
+        * scan_window_ms;
+        * own_address_type;
+        * filter_policy;
+        * scan_type;
+        * scan_phy;
+
+Once the parameters are set, scanning can be enabled
+
+.. code-block:: bash
+
+        nimble_host_ext_scan_enable(ExtScanEnable_t *pScanEnb)
+
+This function will enable a scanning instance that lasts as long as specified.
+
+.. code-block:: bash
+
+    ExtScanEnable
+        * duration;
+        * uint16 period;
+        * uint8 enable;
+        * uint8 filter_duplicate;
+
+When scanning is completed the following BLE_GAP_EVENT_DISC_COMPLETE event callback will be triggered.
+
+**Connecting and Pairing**
+--------------------------
+
+To initialize a connection you will need to know the bluetooth address (bd_addr) and address type of the device
+you want to connect to, this information is received when scanning for devices.
+
+The following function is used to start a connection request
+
+.. code-block:: bash
+
+    nimble_host_ext_connect(uint8_t* bd_addr, uint8_t addr_type)
+
+Pairing is currently done automatically after connecting, this can be removed by changing the behavior
+in the BLE_GAP_EVENT_CONNECT GAP callback.
+
+To disconnect from a device the following function must be ctrlCmdFw_EnableBLECmd
+
+.. code-block:: bash
+
+    nimble_host_ext_disconnect(uint8_t* bd_addr, uint8_t addr_type)
+
+.. note:: 
+
+    If you do not input any bd_addr, the device will disconnect from all parameters
+
+

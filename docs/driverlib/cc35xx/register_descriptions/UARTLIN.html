@@ -1,0 +1,6237 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<link href="prodRef.css" rel="stylesheet" type="text/css">
+<TITLE>UARTLIN</TITLE>
+</HEAD>
+<BODY class=magillemBody><H2 class="magillemCellTitle"><A name="Top_IPBTag">UARTLIN</A></H2>
+<P>This section provides information on the UARTLIN Module Instance within this product. Each of the registers within the Module Instance is described separately below.</P>
+<P>Universal Asynchronous Receiver/Transmitter (UART) interface
+
+INTERNAL_NOTE
+Integrates PrimeCell PL011-r1p5 IP from ARM.
+[Functional specification](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/cc26xx_uart_wrapper_func_spec.doc)
+[Technical reference manual for the IP](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/DDI0183G_uart_pl011_r1p5_trm.pdf)
+[Users guide for the IP](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/PL000USGD0000D_user_guide.pdf)</P>
+
+<P>&nbsp;</P>
+
+
+	<H3 class="magillemCellTitle">UARTLIN Registers Mapping Summary</H3>
+
+	<H3 class="magillemRegisterSummaryTitle"><A name="UARTLIN"><A href="_.html"> </A>:UARTLIN Common Register Mapping Summary</H3>
+	<TABLE class="magillemRegisterSummaryTable" cellspacing=0>
+		<TR class="rowTop">
+			<TD class="cellTopCol1">
+				<P>Register Name</P>
+			</TD>
+			<TD class="cellTopCol2">
+				<P>Type</P>
+			</TD>
+			<TD class="cellTopCol3">
+				<P>Register Width (Bits)</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Register Reset</P>
+			</TD>
+			<TD class="cellTopCol4">
+				<P>Address Offset</P>
+			</TD>
+		</TR>
+
+
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_DR">DR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RSRECR">RSRECR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RESERVED0">RESERVED0</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_FR">FR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0090</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RESERVED2">RESERVED2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_UARTILPR">UARTILPR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_IBRD">IBRD</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_FBRD">FBRD</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_LCRH">LCRH</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0200</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_CTL">CTL</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0300</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_IFLS">IFLS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0012</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_IMSC">IMSC</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RIS">RIS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 000D</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_MIS">MIS</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_ICR">ICR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>WO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_DMACTL">DMACTL</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_TCR">TCR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0080</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_ITIP">ITIP</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0036</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0084</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_ITOP">ITOP</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0088</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_TDR">TDR</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 008C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RESERVED3">RESERVED3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0090</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_RESERVED4">RESERVED4</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FD0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PERIPHID0">PERIPHID0</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0011</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FE0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PERIPHID1">PERIPHID1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0010</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FE4</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PERIPHID2">PERIPHID2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0034</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FE8</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PERIPHID3">PERIPHID3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FEC</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PCELLID0">PCELLID0</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 000D</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FF0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PCELLID1">PCELLID1</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 00F0</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FF4</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PCELLID2">PCELLID2</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0005</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FF8</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_PCELLID3">PCELLID3</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RO</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 00B1</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0FFC</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><A HREF="#UARTLIN_CLKCFG">CLKCFG</A></P>
+			</TD>
+			<TD class="cellCol2">
+				<P>RW</P>
+			</TD>
+			<TD class="cellCol3">
+				<P>32</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 0000</P>
+			</TD>
+			<TD class="cellCol4">
+				<P>0x0000 1000</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H4 class="magillemCellTitle">UARTLIN Instances Register Mapping Summary</H2>
+
+	<H4 class="magillemCellTitle">UARTLIN Register Descriptions</H2>
+	<H3 class="magillemRegisterSummaryTitle"><A href="_.html"> </A>:UARTLIN Common Register Descriptions</H3>
+
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_DR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:DR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Data<BR>For words to be transmitted:<BR>  - if the **FIFO**s are enabled ([LCRH.FEN] = 1), data written to this location is pushed onto the transmit **FIFO**<BR>  - if the **FIFO**s are not enabled ([LCRH.FEN] = 0), data is stored in the transmitter holding register (the bottom word of the transmit **FIFO**).<BR>The write operation initiates transmission from the **UART**. The data is prefixed with a start bit, appended with the appropriate parity bit (if parity is enabled), and a stop bit.<BR>The resultant word is then transmitted.<BR>For received words:<BR>  - if the **FIFO**s are enabled ([LCRH.FEN] = 1), the data byte and the 4-bit status (break, frame, parity, and overrun) is pushed onto the 12-bit wide receive **FIFO** <BR>  - if the **FIFO**s are not enabled ([LCRH.FEN] = 0), the data byte and status are stored in the receiving holding register (the bottom word of the receive **FIFO**).<BR>The received data byte is read by performing reads from this register along with the corresponding status information. The status information can also be read by a read of the [RSR.*] register.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Overrun Error:<BR>This bit is set to 1 if data is received and the receive **FIFO** is already full. The **FIFO** contents remain valid because no more data is written when the **FIFO** is full, , only the contents of the shift register are overwritten.<BR>This is cleared to 0 once there is an empty space in the **FIFO** and a new character can be written to it.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Break Error:<BR>This bit is set to 1 if a break condition was detected, indicating that the received data input (**UARTRXD** input pin) was held LOW for longer than a full-word transmission time (defined as start, data, parity and stop bits).<BR>In **FIFO** mode, this error is associated with the character at the top of the **FIFO** (i.e., the oldest received data character since last read). When a break occurs, a 0 character is loaded into the **FIFO**. The next character is enabled after the receive data input (**UARTRXD** input pin) goes to a 1 (marking state), and the next valid start bit is received.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Parity Error:<BR>When set to 1, it indicates that the parity of the received data character does not match the parity that the [LCRH.EPS] and [LCRH.SPS] select.<BR>In **FIFO** mode, this error is associated with the character at the top of the **FIFO** (i.e., the oldest received data character since last read).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Framing Error:<BR>When set to 1, it indicates that the received character did not have a valid stop bit (a valid stop bit is 1).<BR>In **FIFO** mode, this error is associated with the character at the top of the **FIFO** (i.e., the oldest received data character since last read).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DATA</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Data transmitted or received:<BR>On writes, the transmit data character is pushed into the **FIFO**.<BR>On reads, the oldest received data character since the last read is returned.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RSRECR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RSRECR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0004</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Status<BR>This register is mapped to the same address as [ECR.*] register.  Reads from this address are associated with [RSRECR.*] register and return the receive status. Writes to this address are associated with [ECR.*] register and clear the receive status flags (framing, parity, break, and overrun errors).<BR>If the status is read from this register, then the status information for break, framing and parity corresponds to the data character read from the Data Register, [DR.*] prior to reading the [RSRECR.*]. The status information for overrun is set immediately when an overrun condition occurs.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Overrun Error:<BR>This bit is set to 1 if data is received and the receive **FIFO** is already full. The **FIFO** contents remain valid because no more data is written when the **FIFO** is full, , only the contents of the shift register are overwritten.<BR>This is cleared to 0 once there is an empty space in the **FIFO** and a new character can be written to it.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_NOTSET<BR>Error flag is not set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_0<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_1<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_SET<BR>Error flag is set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Break Error:<BR>This bit is set to 1 if a break condition was detected, indicating that the received data input (**UARTRXD** input pin) was held LOW for longer than a full-word transmission time (defined as start, data, parity and stop bits).<BR>When a break occurs, a 0 character is loaded into the **FIFO**. The next character is enabled after the receive data input (**UARTRXD** input pin) goes to a 1 (marking state), and the next valid start bit is received.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_NOTSET<BR>Error flag is not set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_0<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_1<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_SET<BR>Error flag is set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Parity Error:<BR>When set to 1, it indicates that the parity of the received data character does not match the parity that the [LCRH.EPS] and [LCRH.SPS] select.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_NOTSET<BR>Error flag is not set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_0<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_1<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_SET<BR>Error flag is set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Framing Error:<BR>When set to 1, it indicates that the received character did not have a valid stop bit (a valid stop bit is 1).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_NOTSET<BR>Error flag is not set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_0<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Write&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>CLEAR_ERROR_1<BR>Clears error flag if error is set. Write value is not important.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>Read&nbsp;1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ERROR_SET<BR>Error flag is set</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RESERVED0"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RESERVED0</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0008</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>UART Reserved Area</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_FR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:FR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0018</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Flag<BR>Reads from this register return the **UART** flags.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXFE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Transmit **FIFO** Empty:<BR>The meaning of this bit depends on the state of [LCRH.FEN] .<BR>  - If the **FIFO** is disabled, this bit is set when the transmit holding register is empty.<BR>  - If the **FIFO** is enabled, this bit is set when the transmit **FIFO** is empty.<BR>This bit does not indicate if there is data in the transmit shift register.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXFF</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Receive **FIFO** Full: <BR>The meaning of this bit depends on the state of [LCRH.FEN].<BR>  - If the **FIFO** is disabled, this bit is set when the receive holding register is full.<BR>  - If the **FIFO** is enabled, this bit is set when the receive **FIFO** is full.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXFF</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Transmit **FIFO** Full:<BR>Transmit **FIFO** full. The meaning of this bit depends on the state of [LCRH.FEN].<BR>  - If the **FIFO** is disabled, this bit is set when the transmit holding register is full.<BR>  - If the **FIFO** is enabled, this bit is set when the transmit **FIFO** is full.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXFE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Receive **FIFO** Empty:<BR>Receive **FIFO** empty. The meaning of this bit depends on the state of [LCRH.FEN].<BR>  - If the **FIFO** is disabled, this bit is set when the receive holding register is empty.<BR>  - If the **FIFO** is enabled, this bit is set when the receive **FIFO** is empty.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BUSY</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Busy: <BR>If this bit is set to 1, the **UART** is busy transmitting data. This bit remains set until the complete byte, including all the stop bits, has been sent from the shift register.<BR>This bit is set as soon as the transmit **FIFO** becomes non-empty, regardless of whether the **UART** is enabled or not.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Reserved</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Clear To Send: <BR>This bit is the complement of the active-low **UART** **CTS** input pin.<BR>That is, the bit is 1 when **CTS** input pin is LOW.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RESERVED2"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RESERVED2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 001C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>UART Reserved Area</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_UARTILPR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:UARTILPR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0020</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>IrDA <Low-Power Counter Register</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ILPDVSR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>8 bit low-power divisor value</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_IBRD"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:IBRD</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0024</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Integer Baud-Rate Divisor<BR>If this register is modified while transmission or reception is on-going, the baudrate will not be updated until transmission or reception of the current character is complete.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DIVINT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The integer baud rate divisor:<BR>The baud rate divisor is calculated using the formula below:<BR>Baud rate divisor = (UART reference clock frequency) / (16 * Baud rate)<BR>Baud rate divisor must be minimum 1 and maximum 65535. <BR>That is, [DIVINT]=0 does not give a valid baud rate. <BR>Similarly, if [DIVINT]=0xFFFF, any non-zero values in [FBRD.DIVFRAC] will be illegal.<BR>A valid value must be written to this field before the **UART** can be used for **RX** or **TX** operations.<BR>INTERNAL_NOTE<BR>The calculator below can be used to find the register values:<BR>[Baud-rate calculator](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/UART_baudrate_calculator.xlsx)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_FBRD"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:FBRD</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0028</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Fractional Baud-Rate Divisor<BR>If this register is modified while transmission or reception is on-going, the baudrate will not be updated until transmission or reception of the current character is complete.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DIVFRAC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Fractional Baud-Rate Divisor:<BR>The baud rate divisor is calculated using the formula below:<BR>Baud rate divisor = (UART reference clock frequency) / (16 * Baud rate)<BR>Baud rate divisor must be minimum 1 and maximum 65535. <BR>That is, [IBRD.DIVINT]=0 does not give a valid baud rate. <BR>Similarly, if [IBRD.DIVINT]=0xFFFF, any non-zero values in [DIVFRAC] will be illegal.<BR>A valid value must be written to this field before the **UART** can be used for **RX** or **TX** operations.<BR>INTERNAL_NOTE<BR>The calculator below can be used to find the register values:<BR>[Baud-rate calculator](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/UART_baudrate_calculator.xlsx)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_LCRH"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:LCRH</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 002C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Line Control</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10:9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DELIM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>In UART LIN defines the length of DELIM field that has to be sent</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>LEN_1<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>LEN_2<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>LEN_3<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x3</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>LEN_4<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXBRKSYNC</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART LIN mode TXBRKSYNC:<BR>0: In LIN mode TXBRKSYNC will not be sent.<BR>1: In LIN mode send TXBRKSYNC field and reset the LCRH.TXBRKSYNC bit.<BR>This bit has no effect when [PEN] disables parity checking and generation.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SPS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Stick Parity Select:<BR>0: Stick parity is disabled<BR>1: The parity bit is transmitted and checked as invert of [EPS] field (i.e. the parity bit is transmitted and checked as 1 when [EPS] = 0).<BR>This bit has no effect when [PEN] disables parity checking and generation.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6:5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>WLEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Word Length:<BR>These bits indicate the number of data bits transmitted or received in a frame.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BITL5<BR>Word Length 5 bits</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BITL6<BR>Word Length 6 bits</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BITL7<BR>Word Length 7 bits</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x3</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>BITL8<BR>Word Length 8 bits</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Enable **FIFO**s</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>**FIFO**s are disabled (character mode) that is, the **FIFO**s become 1-byte-deep holding registers.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Transmit and receive **FIFO** buffers are enabled (**FIFO** mode)</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>STP2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Two Stop Bits Select:<BR>If this bit is set to 1, two stop bits are transmitted at the end of the frame. The receive logic does not check for two stop bits being received.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EPS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Even Parity Select</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>ODD<BR>Odd parity: The **UART** generates or checks for an odd number of 1s in the data and parity bits.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EVEN<BR>Even parity: The **UART** generates or checks for an even number of 1s in the data and parity bits.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Parity Enable<BR>This bit controls generation and checking of parity bit. <BR>INTERNAL_NOTE<BR>See [Parity truth table](https://spsemea.itg.ti.com/sites/lpw/proj/CC26xx/Modules/UART/parity.png) for details.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Parity is disabled and no parity bit is added to the data frame</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Parity checking and generation is enabled.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BRK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Send Break<BR>If this bit is set to 1, a low-level is continually output on the **UARTTXD** output pin, after completing transmission of the current character. For the proper execution of the break command, the<BR>software must set this bit for at least two complete frames. For normal use, this bit must be cleared to 0.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_CTL"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:CTL</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0030</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Control</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTSEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>**CTS** hardware flow control enable</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>**CTS** hardware flow control disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>**CTS** hardware flow control enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RTSEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>**RTS** hardware flow control enable</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>**RTS** hardware flow control disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>**RTS** hardware flow control enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13:12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RTS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Request to Send<BR>This bit is the complement of the active-low **UART** **RTS** output. That is, when the bit is programmed to a 1 then **RTS** output on the pins is LOW.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Receive Enable<BR>If the **UART** is disabled in the middle of reception, it completes the current character before stopping.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>UART Receive disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>UART Receive enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Transmit Enable<BR>If the **UART** is disabled in the middle of transmission, it completes the current character before stopping.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>UART Transmit disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>UART Transmit enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LBE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Loop Back Enable<BR>Enabling the loop-back mode connects the **UARTTXD** output from the **UART** to **UARTRXD** input of the **UART**.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Loop Back disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Loop Back enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FCEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART FIFO Concatenation Enable<BR>Enabling the lFIFO concatenation in TX moderesulting in 16 TX buffers.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>UART FIFO Concatenation  disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>UART FIFO Concatenation  enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DORMEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>DORMEN bit is only functionally makes sense for LIN mode of operation.<BR>When dormant mode is disabled, break and sync data shall be loaded to RX FIFO and associated interrupt flags shall be set as in normal UART operation.<BR>When dormant mode is enabled, break and sync data shall not be loaded to RX FIFO and RX FIFO shall be updated with actual data (PID) only after successful reception of break/sync fields.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>ABDEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This configuration bit defines whether we want automatic baud rate detection enabled or not in the LIN mode of operation.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This is the LIN Mode of operation configuration bit.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Magillem Info : Information not available in the IP-XACT file</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SIRLP</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SIR low power IrDA mode<BR>This bit selects the IrDA encoding mode</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Low-level bits are transmitted as active high with a 3/16th period width,</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Low-level bits are transmitted with a pulse width of 3 times the period of IrLPBaud16, regardless of the selected bit rate.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>SIREN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SIR Enable<BR>This bit has no effect if UARTEN bit disables the UART.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>IrDA SIR ENDEC is disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>IrDA SIR ENDEC is enabled. Data is transmitted and received via nSIROUT and SIRIN.</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>UARTEN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART Enable</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>UART disabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>UART enabled</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_IFLS"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:IFLS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0034</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Interrupt **FIFO** Level Select</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXSEL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive interrupt **FIFO** level select:<BR>This field sets the trigger points for the receive interrupt. Values 0b101-0b111 are reserved.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>QUARTER<BR>Receive **FIFO** becomes >= 1/4 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>HALF<BR>Receive **FIFO** becomes >= 1/2 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x3</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>THREEQU<BR>Receive **FIFO** becomes >= 3/4 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXSEL</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit interrupt **FIFO** level select:<BR>This field sets the trigger points for the transmit interrupt. Values 0b101-0b111 are reserved.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x2</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>QUARTER<BR>Transmit **FIFO** becomes <= 1/4 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x2</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>HALF<BR>Transmit **FIFO** becomes <= 1/2 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0x3</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>THREEQU<BR>Transmit **FIFO** becomes <= 3/4 full</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_IMSC"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:IMSC</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0038</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Interrupt Mask Set/Clear</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINSYNCTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN Sync Time out error interrupt mask. A read returns the current mask for UART's LINSYNCTOE interrupt. On a write of 1, the mask of the LINSYNCTOE interrupt is set which means the interrupt state will be reflected in MIS.LINSYNCTOE. A write of 0 clears the mask which means MIS.LINSYNCTOE will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRKTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN Break field Time out error interrupt mask. A read returns the current mask for UART's LINBRKTOE interrupt. On a write of 1, the mask of the LINBRKTOE interrupt is set which means the interrupt state will be reflected in MIS.LINBRKTOE. A write of 0 clears the mask which means MIS.LINBRKTOE will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN Break field received/detected interrupt mask. A read returns the current mask for UART's LINBRK interrupt. On a write of 1, the mask of the LINBRK interrupt is set which means the interrupt state will be reflected in MIS.LINBRK. A write of 0 clears the mask which means MIS.LINBRK will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Rx DMA done interrupt mask. A read returns the current mask for UART's RXDMADONE interrupt. On a write of 1, the mask of the RXDMADONE interrupt is set which means the interrupt state will be reflected in MIS.RXDMADONE. A write of 0 clears the mask which means MIS.RXDMADONE will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Tx DMA done interrupt mask. A read returns the current mask for UART's TXDMADONE interrupt. On a write of 1, the mask of the TXDMADONE interrupt is set which means the interrupt state will be reflected in MIS.TXDMADONE. A write of 0 clears the mask which means MIS.TXDMADONE will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EOT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>End of Transmission interrupt mask. A read returns the current mask for UART's EoT interrupt. On a write of 1, the mask of the EoT interrupt is set which means the interrupt state will be reflected in MIS.EOT. A write of 0 clears the mask which means MIS.EOT will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Overrun error interrupt mask. A read returns the current mask for **UART**'s overrun error interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.OE]. A write of 0 clears the mask which means [MIS.OE] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Break error interrupt mask. A read returns the current mask for **UART**'s break error interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.BE]. A write of 0 clears the mask which means [MIS.BE] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Parity error interrupt mask. A read returns the current mask for **UART**'s parity error interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.PE]. A write of 0 clears the mask which means [MIS.PE] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Framing error interrupt mask. A read returns the current mask for **UART**'s framing error interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.FE]. A write of 0 clears the mask which means [MIS.FE] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive timeout interrupt mask. A read returns the current mask for **UART**'s receive timeout interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.RT]. A write of 0 clears the mask which means this bitfield will not reflect the interrupt. <BR>The raw interrupt for receive timeout [RIS.RT] cannot be set unless the mask is set ([RT] = 1). This is because the mask acts as an enable for power saving. That is, the same status can be read from [MIS.RT] and [RIS.RT].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit interrupt mask. A read returns the current mask for **UART**'s transmit interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.TX]. A write of 0 clears the mask which means [MIS.TX] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive interrupt mask. A read returns the current mask for **UART**'s receive interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.RX]. A write of 0 clears the mask which means [MIS.RX] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Clear to Send (CTS) modem interrupt mask. A read returns the current mask for **UART**'s clear to send interrupt. On a write of 1, the mask of the overrun error interrupt is set which means the interrupt state will be reflected in [MIS.CTSM]. A write of 0 clears the mask which means [MIS.CTSM] will not reflect the interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RIS"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RIS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 003C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Raw Interrupt Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINSYNCTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN SYNC field time out interrupt status:<BR>This field returns the raw interrupt state of whether sync field is measurable in UART's LIN mode of operation. This is set when the timer measuring the SYNC field overflows.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRKTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK field time out interrupt status:<BR>This field returns the raw interrupt state of whether break field is measurable in UART's LIN mode of operation. This is set when the timer measuring the Break field overflows.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK detected interrupt status:<BR>This field returns the raw interrupt state of whether break field is received/detected in UART's LIN mode of operation.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Rx DMA done interrupt status:<BR>This field returns the raw interrupt state of UART's rx dma done interrupt. RX DMA done flag is set when you receive rx dma done status from dma module.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Tx DMA done interrupt status:<BR>This field returns the raw interrupt state of UART's tx dma done interrupt. TX DMA done flag is set when you receive tx dma done status from dma module.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EOT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>End of Transmission interrupt status:<BR>This field returns the raw interrupt state of UART's end of transmission interrupt. End of transmission flag is set when all the Transmit data in the FIFO and on the TX Line is transmitted.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Overrun error interrupt status: <BR>This field returns the raw interrupt state of **UART**'s overrun error interrupt. Overrun error occurs if data is received and the receive **FIFO** is full.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Break error interrupt status:<BR>This field returns the raw interrupt state of **UART**'s break error interrupt. Break error is set when a break condition is detected, indicating that the received data input (**UARTRXD** input pin) was held LOW for longer than a full-word transmission time (defined as start, data, parity and stop bits).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Parity error interrupt status:<BR>This field returns the raw interrupt state of **UART**'s parity error interrupt. Parity error is set if the parity of the received data character does not match the parity that the [LCRH.EPS] and [LCRH.SPS] select.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Framing error interrupt status:<BR>This field returns the raw interrupt state of **UART**'s framing error interrupt. Framing error is set if the received character does not have a valid stop bit (a valid stop bit is 1).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive timeout interrupt status:<BR>This field returns the raw interrupt state of **UART**'s receive timeout interrupt. The receive timeout interrupt is asserted when the receive **FIFO** is not empty, and no more data is received during a 32-bit period. The receive timeout interrupt is cleared either when the **FIFO** becomes empty through reading all the data, or when a 1 is written to [ICR.RT].<BR>The raw interrupt for receive timeout cannot be set unless the mask is set ([IMSC.RT] = 1). This is because the mask acts as an enable for power saving. That is, the same status can be read from [MIS.RT] and [RT].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit interrupt status: <BR>This field returns the raw interrupt state of **UART**'s transmit interrupt.<BR>When **FIFO**s are enabled ([LCRH.FEN] = 1), the transmit interrupt is asserted if the number of bytes in transmit **FIFO** is equal to or lower than the programmed trigger level ([IFLS.TXSEL]). The transmit interrupt is cleared by writing data to the transmit **FIFO** until it becomes greater than the trigger level, or by clearing the interrupt through [ICR.TX].<BR>When **FIFO**s are disabled ([LCRH.FEN] = 0), that is they have a depth of one location, the transmit interrupt is asserted if there is no data present in the transmitters single location. It is cleared by performing a single write to the transmit **FIFO**, or by clearing the interrupt through [ICR.TX].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive interrupt status:<BR>This field returns the raw interrupt state of **UART**'s receive interrupt. <BR>When **FIFO**s are enabled ([LCRH.FEN] = 1), the receive interrupt is asserted if the receive **FIFO** reaches the programmed trigger<BR>level ([IFLS.RXSEL]). The receive interrupt is cleared by reading data from the receive **FIFO** until it becomes less than the trigger level, or by clearing the interrupt through [ICR.RX].<BR>When **FIFO**s are disabled ([LCRH.FEN] = 0), that is they have a depth of one location, the receive interrupt is asserted if data is received<BR>thereby filling the location. The receive interrupt is cleared by performing a single read of the receive **FIFO**, or by clearing the interrupt through [ICR.RX].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Clear to Send (CTS) modem interrupt status: <BR>This field returns the raw interrupt state of **UART**'s clear to send interrupt.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>1</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_MIS"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:MIS</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0040</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Masked Interrupt Status</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Read as zero, do not modify</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINSYNCTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN sync field time out error interrupt status:<BR>This field returns the masked interrupt state of the LIN sync timeout error interrupt which is the AND product of raw interrupt state RIS.LINSYNCTOE and the mask setting IMSC.LINSYNCTOE.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRKTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK field time out error interrupt status:<BR>This field returns the masked interrupt state of the LIN BRK timeout error interrupt which is the AND product of raw interrupt state RIS.LINBRKTOE and the mask setting IMSC.LINBRKTOE.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK field detected interrupt status:<BR>This field returns the masked interrupt state of the LIN BRK detected interrupt which is the AND product of raw interrupt state RIS.LINBRK and the mask setting IMSC.LINBRK.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Rx DMA done interrupt status:<BR>This field returns the masked interrupt state of the rx dma done interrupt which is the AND product of raw interrupt state RIS.RXDMADONE and the mask setting IMSC.RXDMADONE.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Tx DMA done interrupt status:<BR>This field returns the masked interrupt state of the tx dma done interrupt which is the AND product of raw interrupt state RIS.TXDMADONE and the mask setting IMSC.TXDMADONE.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EOT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>End of Transmission interrupt status:<BR>This field returns the masked interrupt state of the End of transmission interrupt which is the AND product of raw interrupt state RIS.EOT and the mask setting IMSC.EOT.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Overrun error masked interrupt status: <BR>This field returns the masked interrupt state of the overrun interrupt which is the AND product of raw interrupt state [RIS.OE] and the mask setting [IMSC.OE].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Break error masked interrupt status: <BR>This field returns the masked interrupt state of the break error interrupt which is the AND product of raw interrupt state [RIS.BE] and the mask setting [IMSC.BE].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Parity error masked interrupt status:<BR>This field returns the masked interrupt state of the parity error interrupt which is the AND product of raw interrupt state [RIS.PE] and the mask setting [IMSC.PE].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Framing error masked interrupt status: Returns the masked interrupt state of the framing error interrupt which is the AND product of raw interrupt state [RIS.FE] and the mask setting [IMSC.FE].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive timeout masked interrupt status: <BR>Returns the masked interrupt state of the receive timeout interrupt.<BR>The raw interrupt for receive timeout cannot be set unless the mask is set ([IMSC.RT] = 1). This is because the mask acts as an enable for power saving. That is, the same status can be read from [RT] and [RIS.RT].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit masked interrupt status: <BR>This field returns the masked interrupt state of the transmit interrupt  which is the AND product of raw interrupt state [RIS.TX] and the mask setting [IMSC.TX].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive masked interrupt status:<BR>This field returns the masked interrupt state of the receive interrupt  which is the AND product of raw interrupt state [RIS.RX] and the mask setting [IMSC.RX].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Clear to Send (CTS) modem masked interrupt status:<BR>This field returns the masked interrupt state of the clear to send interrupt which is the AND product of raw interrupt state [RIS.CTSM] and the mask setting [IMSC.CTSM].</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Write 0.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_ICR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:ICR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0044</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Interrupt Clear<BR>On a write of 1, the corresponding interrupt is cleared. A write of 0 has no effect.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>WO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:19</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Read as zero, do not modify</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>18:17</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Read as zero, do not modify</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINSYNCTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN SYNC timeout interrupt clear:<BR>Writing 1 to this field clears the rxdma done interrupt (RIS.LINSYNCTOE). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRKTOE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK field timeout interrupt clear:<BR>Writing 1 to this field clears the rxdma done interrupt (RIS.LINBRKTOE). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>LINBRK</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>LIN BRK field detected interrupt clear:<BR>Writing 1 to this field clears the rxdma done interrupt (RIS.LINBRK). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Rx DMA Done interrupt clear:<BR>Writing 1 to this field clears the rxdma done interrupt (RIS.RXDMADONE). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMADONE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Tx DMA Done interrupt clear:<BR>Writing 1 to this field clears the txdma done interrupt (RIS.TXDMADONE). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EOT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>End of Transmission interrupt clear:<BR>Writing 1 to this field clears the End of Transmission interrupt (RIS.EOT). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>OE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Overrun error interrupt clear:<BR>Writing 1 to this field clears the overrun error interrupt ([RIS.OE]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>9</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>BE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Break error interrupt clear:<BR>Writing 1 to this field clears the break error interrupt ([RIS.BE]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Parity error interrupt clear:<BR>Writing 1 to this field clears the parity error interrupt ([RIS.PE]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>FE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Framing error interrupt clear:<BR>Writing 1 to this field clears the framing error interrupt ([RIS.FE]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RT</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive timeout interrupt clear:<BR>Writing 1 to this field clears the receive timeout interrupt ([RIS.RT]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit interrupt clear:<BR>Writing 1 to this field clears the transmit interrupt ([RIS.TX]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RX</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive interrupt clear:<BR>Writing 1 to this field clears the receive interrupt ([RIS.RX]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED2</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Write 0</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CTSM</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Clear to Send (CTS) modem interrupt clear:<BR>Writing 1 to this field clears the clear to send interrupt ([RIS.CTSM]). Writing 0 has no effect.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Write 0.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>WO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_DMACTL"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:DMACTL</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0048</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>DMA Control</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Read as zero, do not modify.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DMAONERR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>DMA on error. If this bit is set to 1, the **DMA** receive request outputs (for  single and burst requests) are disabled when the **UART** error interrupt is asserted (more specifically if any of the error interrupts [RIS.PE], [RIS.BE], [RIS.FE] or [RIS.OE] are asserted).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMAE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Transmit **DMA** enable. If this bit is set to 1, **DMA** for the transmit **FIFO** is enabled.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMAE</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Receive **DMA** enable. If this bit is set to 1, **DMA** for the receive **FIFO** is enabled.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_TCR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:TCR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0080</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Test Control<BR>NOTE: This register is intended for integration testing and debugging only. In normal usecases, this register should not be used.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior. Read as zero, do not modify.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>SIR test enable. Setting this bit to 1 enables the receive data path during IrDA transmission (SIR<BR>full-duplex operation is only available when testing). This bit must be set to 1 to enable SIR system<BR>loopback testing, and you must also set the LBE bit to 1 in the Control Register, CTL</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Test **FIFO** enable. When this bit it 1, a write to the Test Data Register, [TDR.DATA] writes data into the receive **FIFO**, and a read from the [TDR.DATA] reads data out of the transmit **FIFO**. When this bit is 0, data cannot be read directly from the transmit **FIFO** or written directly to the receive **FIFO** (normal operation).</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Integration test enable. When this bit is 1, the **UART** is placed in integration test mode, otherwise it is in normal operation.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_ITIP"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:ITIP</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0084</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Integration Test Input<BR>NOTE: This register is intended for integration testing and debugging only. In normal usecases, this register should not be used.</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMACLR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Writes to this bit specify the value to be driven on the intra-chip input at PrimeCell PL011 level,<BR>TXDMACLR, in the integration test mode.<BR>Reads return the value of TXDMACLR at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMACLR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Writes to this bit specify the value to be driven on the intra-chip input at PrimeCell PL011 level,<BR>RXDMACLR, in the integration test mode.<BR>Reads return the value of RXDMACLR at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED4</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>NUARTCTS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Reads return the value of the nUARTCTS primary input at PrimeCell PL011 level.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>UARTRXD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Reads return the value of the **UARTRXD** primary input at PrimeCell PL011 level.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_ITOP"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:ITOP</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0088</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Integration Test Output</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:16</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>15</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMASREQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Intra-chip output of PrimeCell PL011 IP. Writes specify the value to be driven on TXDMASREQ.<BR>Reads return the value of TXDMASREQ at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>14</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>TXDMABREQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Intra-chip output of PrimeCell PL011 IP. Writes specify the value to be driven on TXDMABREQ.<BR>Reads return the value of TXDMABREQ at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>13</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMASREQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Intra-chip output of PrimeCell PL011 IP. Writes specify the value to be driven on RXDMASREQ.<BR>Reads return the value of RXDMASREQ at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>12</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RXDMABREQ</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Intra-chip output of PrimeCell PL011 IP. Writes specify the value to be driven on RXDMABREQ.<BR>Reads return the value of RXDMABREQ at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>11:7</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>RESERVED7</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>6</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>UARTINTR</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Intra-chip output of PrimeCell PL011 IP. Writes specify the value to be driven on UARTINTR.<BR>Reads return the value of UARTINTR at the output of the test multiplexor.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>5:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>NUARTRTS</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Writes specify the value to be driven on nUARTRTS, primary output of PrimeCell PL011 IP.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>2:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>UARTTXD</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Writes specify the value to be driven on UARTTXD, primary output of PrimeCell PL011 IP.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_TDR"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:TDR</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 008C</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Test Data</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:11</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>10:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>When the [TCR.TESTFIFO] bit is set to 1, data is written into the receive **FIFO** and read out of the transmit **FIFO**.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x000</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RESERVED3"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RESERVED3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0090</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>UART Reserved Area</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_RESERVED4"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:RESERVED4</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FD0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>UART Reserved Area For Future **ID** Expansion</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PERIPHID0"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PERIPHID0</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FE0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Peripheral Identification 0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PARTNUM0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Identifies the peripheral</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x11</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PERIPHID1"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PERIPHID1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FE4</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Peripheral Identification 1</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DESIGNER0</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Identifies the designer (ARM)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x1</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>PARTNUM1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Identifies the peripheral</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PERIPHID2"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PERIPHID2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FE8</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Peripheral Identification 2</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:4</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>REVISION</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>UART revision</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x3</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>3:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>DESIGNER1</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Identifies the designer (ARM)</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x4</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PERIPHID3"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PERIPHID3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FEC</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>Peripheral Identification 3</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>CNF</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>The configuration option of the UART.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PCELLID0"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PCELLID0</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FF0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>PrimeCell Identification 0</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This field is hard coded and reads back as 0x0D</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0D</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PCELLID1"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PCELLID1</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FF4</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>PrimeCell Identification 1</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This field is hard coded and reads back as 0xF0</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xF0</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PCELLID2"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PCELLID2</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FF8</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>PrimeCell Identification 2</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This field is hard coded and reads back as 0x05</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x05</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_PCELLID3"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:PCELLID3</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 0FFC</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>PrimeCell Identification 3</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RO</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:8</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x00 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>7:0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This field is hard coded and reads back as 0xB1</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0xB1</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<H3 class="magillemRegisterTitle"><A name="UARTLIN_CLKCFG"><A href="_.html"></A>:<A href="#Top_IPBTag">UARTLIN</A>:CLKCFG</A></H3>
+	<TABLE class="magillemRegisterTable" cellspacing=0>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Address offset</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+		  		<P>0x0000 1000</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Description</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>This register enable or disables the bus clock *uartlin*</P>
+			</TD>
+		</TR>
+		<TR class="row">
+			<TD class="cellCol1">
+				<P><B>Type</B></P>
+			</TD>
+			<TD class="cellCol2" colspan=3>
+				<P>RW</P>
+			</TD>
+		</TR>
+	</TABLE>
+	<TABLE class="magillemBitfieldTable" cellspacing=0>
+		<TR class="rowTop">
+	  		<TD class="cellTopCol1">
+	  			<P>Bits</P>
+	  		</TD>
+	  		<TD class="cellTopCol2">
+	  			<P>Field Name</P>
+	  		</TD>
+	  		<TD class="cellTopCol3" colspan=3>
+	  			<P>Description</P>
+	  		</TD>
+	  		<TD class="cellTopCol4">
+	  			<P>Type</P>
+	  		</TD>
+	  		<TD class="cellTopCol5">
+	  			<P>Reset</P>
+	  		</TD>
+	 	</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>31:1</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>Reserved</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>Software should not rely on the value of a reserved. Writing any other value than the reset value may result in undefined behavior.</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RO</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0x0000 0000</P>
+			</TD>
+		</TR>
+
+
+	 	<TR class="rowBitfield">
+	  		<TD class="cellBitfieldCol1">
+	  			<P>0</span></P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol2">
+	  			<P>EN</P>
+	  		</TD>
+	  		<TD class="cellBitfieldCol3" colspan=3>
+	  			<P>This bit enable or disables the bus clock *Uartlin*</P>
+			</TD>
+	  		<TD class="cellBitfieldCol4">
+	  			<P>RW</P>
+			</TD>
+			<TD class="cellBitfieldCol5">
+				<P>0</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>0</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>DIS<BR>Disables the clock to *Uartlin*</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+		<TR class="rowEnum">
+			<TD class="cellEnumCol1">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol2">
+				<P>&nbsp;</P>
+			</TD>
+			<TD class="cellEnumCol4">
+				<P>1</P>
+			</TD>
+			<TD class="cellEnumCol5">
+				<P>EN<BR>Enables the clock to *Uartlin*</P>
+			</TD>
+			<TD class="cellEnumCol6" colspan=2>
+				<P>&nbsp;</P>
+			</TD>
+		</TR>
+	</TABLE>
+
+
+</BODY>
+</HTML>

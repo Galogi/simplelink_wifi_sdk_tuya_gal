@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_flash_stig_read_cfg" kind="struct" language="C++" prot="public">
+    <compoundname>FlashStigReadCfg</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_flash_stig_read_cfg_1a5a48c321a63f923fff28eef424764f6a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashStigReadCfg::preStigCfg</definition>
+        <argsstring></argsstring>
+        <name>preStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is pre STIG configuration needed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="272" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_read_cfg_1a54f26de7226a1c1321d7f8cc1da573a2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FlashStigReadCfg::postStigCfg</definition>
+        <argsstring></argsstring>
+        <name>postStigCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is post STIG configuration needed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="273" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_read_cfg_1a0e6e619a780b55f820127b91b1cf23bc" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigReadCfg::preStigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>preStigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to perform before STIG read </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="274" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_read_cfg_1a54190499280645893e86b87aa6674af5" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigReadCfg::stigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>stigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations for STIG read command </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="275" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_flash_stig_read_cfg_1a7f6d53d99b137f43dcbee7c6747c3d74" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref></type>
+        <definition>FlashRegister FlashStigReadCfg::postStigOperation[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>postStigOperation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register operations to perform after STIG read </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="276" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Flash STIG read configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+<para>Structure containing configuration parameters and register operations for STIG-based flash read operations. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="62">
+        <label>FlashStigReadCfg</label>
+        <link refid="struct_flash_stig_read_cfg"/>
+        <childnode refid="63" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>FlashRegister</label>
+        <link refid="struct_flash_register"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="271" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="270" bodyend="277"/>
+    <listofallmembers>
+      <member refid="struct_flash_stig_read_cfg_1a54f26de7226a1c1321d7f8cc1da573a2" prot="public" virt="non-virtual"><scope>FlashStigReadCfg</scope><name>postStigCfg</name></member>
+      <member refid="struct_flash_stig_read_cfg_1a7f6d53d99b137f43dcbee7c6747c3d74" prot="public" virt="non-virtual"><scope>FlashStigReadCfg</scope><name>postStigOperation</name></member>
+      <member refid="struct_flash_stig_read_cfg_1a5a48c321a63f923fff28eef424764f6a" prot="public" virt="non-virtual"><scope>FlashStigReadCfg</scope><name>preStigCfg</name></member>
+      <member refid="struct_flash_stig_read_cfg_1a0e6e619a780b55f820127b91b1cf23bc" prot="public" virt="non-virtual"><scope>FlashStigReadCfg</scope><name>preStigOperation</name></member>
+      <member refid="struct_flash_stig_read_cfg_1a54190499280645893e86b87aa6674af5" prot="public" virt="non-virtual"><scope>FlashStigReadCfg</scope><name>stigOperation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

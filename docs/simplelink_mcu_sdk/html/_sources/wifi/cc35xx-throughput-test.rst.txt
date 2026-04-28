@@ -1,0 +1,174 @@
+.. _sec-wifi-throughput:
+
+Throughput Testing Guide
+========================
+
+Overview
+--------
+
+Throughput in WiFi refers to the amount of data transmitted from a source to destination within a specified period of time, usually measured in
+megabits per second (Mb/s). There are numerous factors that can affect throughput including the number of devices on the network, the protocol
+used (UDP vs TCP), and the host being used with the CC35xx. For example, using a Beaglebone Black (AM335) as a host will result in a lower
+throughput when compared to the AM62 being used as a host. This discrepancy in rates is due to the difference in how much data each device
+is capable of receiving. In order to get an accurate idea of the CC35xx throughput it is recommended that the test is conducted in a clean
+environment at first without interference for an accurate estimate of the device's throughput capabilities with the desired host.
+
+The main tool recommended to test the throughput of the CC35xx is known as iPerf and is an open source command line tool designed for testing
+network throughput. In order to use iPerf, at least one device must act as a server and another as a client. These devices should both be
+connected to the same AP and data will be transmitted between them with the AP acting as a bridge.
+
+iPerf Introduction
+------------------
+
+In order for devices to be connected via iPerf, one needs to be configured as a server that is listening on the same port that the client will
+be configured to transmit to. The commands listed below can be used for various adjustments to this configuration. For example, to open a basic
+server configured for TCP broadcasts on the default port (5900) the following command would be used:
+
+.. code-block:: bash
+
+    iperf -s
+
+To open a basic client to transmit on the same port, also using TCP, the following command can be used:
+
+.. code-block:: bash
+
+    iperf -c <server_ip_address>
+
+To adjust the port, change the protocol to UDP, or other configurations the commands below can be used. This is not the full list, which can be
+displayed using iperf -h or iperf -help, but these are the commands most relevant to the throughput testing covered in this guide.
+
+.. code-block:: bash
+
+    Client/Server:
+    -i, --interval          #       seconds between periodic bandwidth reports
+    -p, --port              #       server port to listen on/connect to
+    -u, --udp               #       use UDP rather than TCP
+    -w, --window            #       [KM]    TCP window size (socket buffer size)
+
+    Server specific:
+    -s, --server            #       run in server mode
+    -U, --single_udp        #       run in single threaded UDP mode
+
+    Client specific:
+    -b, --bandwidth         #       [KM] for UDP, bandwidth to send at in bits/sec (default 1 Mbit/sec, implies -u)
+    -c, --client            #       <host>   run in client mode, connecting to <host>
+    -n, --num               #       [KM] number of bytes to transmit (instead of -t)
+    -t, --time              #       time in seconds to transmit for (default 10 secs)
+
+    Miscellaneous:
+    -h, --help              #       print this message and quit
+
+    [KM] Indicates options that support a K or M suffix for kilo- or mega-
+
+iPerf Throughput Example
+------------------------
+Configuring the CC35xx as a client and the computer as a server.
+
+In this configuration, the CC35xx is in station mode and connected to the AP via WiFi. Additionally, the computer behind the AP is connected through ethernet.
+A connection over ethernet, rather than WiFi, is recommended so that the computer behind the AP does not take up bandwidth and compete
+with the CC35xx over the air. The CC35xx is then configured using iPerf to be a client, while the computer is configured as a server.
+The data from the CC35xx is being transmitted from the CC35xx to the AP then to the computer. The steps to start this setup are as follows:
+
+1. Connect the CC35xx to the AP as a station using the WiFi APIs.
+2. Connect a computer or laptop (from here on out referred to as Computer 1) to the same AP via ethernet.
+
+Run either ipconfig (Windows) or ifconfig (Linux) to find out the IP Address of the assigned to the computer. This is the IP address that
+the CC35xx will connect to with iPerf when configured as a client.
+
+.. code-block:: c
+
+    C:\Users\Administrator>ipconfig
+
+    Windows IP Configuration
+
+    Ethernet adapter AP:
+
+        Connection-specific DNS Suffix  . : dhcp.ti.com
+        Link-local IPv6 Address . . . . . : fe80::686b:36c3:ae90:e8de%29
+        IPv4 Address. . . . . . . . . . . : 192.168.50.119
+        Subnet Mask . . . . . . . . . . . : 255.255.255.0
+        Default Gateway . . . . . . . . . : 192.168.50.1
+
+The ``IPv4 Address`` is the IP address assigned to the laptop by the AP while the ``Default Gateway`` is the IP Address of the AP itself.
+
+3. To ensure that both Computer 1 and the CC35xx are properly connected it's a good idea to ping Computer 1 from the CC35xx using the command
+below and it should produce a result similar to what is shown below if they are connected.
+
+.. code-block:: c
+
+    root@am335x-evm:/usr/share/cc35xx# ping 192.168.50.119
+    PING 192.168.50.119 (192.168.50.119): 56 data bytes
+    64 bytes from 192.168.50.119: seq=0 ttl=128 time=901.689 ms
+    64 bytes from 192.168.50.119: seq=1 ttl=128 time=105.525 ms
+    64 bytes from 192.168.50.119: seq=2 ttl=128 time=436.115 ms
+    64 bytes from 192.168.50.119: seq=3 ttl=128 time=561.868 ms
+
+4. Open a server on Computer 1 with the following command:
+
+.. code-block:: c
+
+    iperf -s -p 5901 -i1
+
+* -s specifies that a server is being started
+* -p 5901 opens the server on port 5901
+* -i1 ensures that the data that is received by the server will be broadcasted on the screen
+* For more information, such as using UDP or adjusting the TCP window, reference the full list with the command iperf -h
+
+Expected output on Computer 1:
+
+.. code-block:: c
+
+    C:\Users\Administrator>iperf -s -p 5901 -i1
+    ------------------------------------------------------------
+    Server listening on TCP port 5901
+    TCP window size: 64.0 KByte (default)
+    ------------------------------------------------------------
+5. Connect to the server and transmit data from the CC35xx host using the following command:
+
+.. code-block:: c
+
+    iperf -c 192.168.50.119 -p 5901 -i1 -t5
+
+* -c specifies that a client is being started and will connect to the following IP address
+* -p specifies the same port that was opened on the server side
+* -i1 broadcasts the data which can be seen below on both the server and client sides
+* -t5 configures the device to transmit data for 5 sec
+
+Expected output on CC35xx host:
+
+.. code-block:: c
+
+    root@am335x-evm:/usr/share/cc35xx# iperf -c 192.168.50.119 -p 5901 -i1 -t5
+    ------------------------------------------------------------
+    Client connecting to 192.168.50.119, TCP port 5901
+    TCP window size: 83.8 KByte (default)
+    ------------------------------------------------------------
+    [  3] local 192.168.50.143 port 35430 connected with 192.168.50.119 port 5901
+    [ ID] Interval       Transfer      Bandwidth
+    [  3]  0.0- 1.0 sec   XXX KBytes   Y.YY Mbits/sec
+    [  3]  1.0- 2.0 sec   XXX KBytes   Y.YY Mbits/sec
+    [  3]  2.0- 3.0 sec   XXX KBytes   Y.YY Mbits/sec
+    [  3]  3.0- 4.0 sec   XXX KBytes   Y.YY Mbits/sec
+    [  3]  4.0- 5.0 sec   XXX KBytes   Y.YY Mbits/sec
+
+Expected output on Computer 1:
+
+.. code-block:: c
+
+    C:\Users\Administrator>iperf -s -p 5901
+    ------------------------------------------------------------
+    Server listening on TCP port 5901
+    TCP window size: 64.0 KByte (default)
+    ------------------------------------------------------------
+    [428] local 192.168.50.119 port 5901 connected with 192.168.50.119 port 5901
+    [ ID] Interval        Transfer      Bandwidth
+    [428]  0.0- 1.0 sec   X.XX MBytes   Y.YY Mbits/sec
+    [428]  1.0- 2.0 sec   X.XX MBytes   Y.YY Mbits/sec
+    [428]  2.0- 3.0 sec   X.XX MBytes   Y.YY Mbits/sec
+    [428]  3.0- 4.0 sec   X.XX MBytes   Y.YY Mbits/sec
+    [428]  4.0- 5.0 sec   X.XX MBytes   Y.YY Mbits/sec
+
+.. note::
+
+    The above example can be adjusted based on the desired test in a number of ways. The configuration could be switched where
+    the CC35xx host acted as the server and Computer 1 was the client by simply switching the same commands on the respective devices.

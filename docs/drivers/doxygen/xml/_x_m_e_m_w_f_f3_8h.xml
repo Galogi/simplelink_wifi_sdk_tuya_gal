@@ -1,0 +1,1199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_x_m_e_m_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>XMEMWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <incdepgraph>
+      <node id="529">
+        <label>stdbool.h</label>
+      </node>
+      <node id="528">
+        <label>stdint.h</label>
+      </node>
+      <node id="527">
+        <label>XMEMWFF3.h</label>
+        <link refid="_x_m_e_m_w_f_f3_8h"/>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_flash_register" prot="public">FlashRegister</innerclass>
+    <innerclass refid="struct_flash_stig_erase_cfg" prot="public">FlashStigEraseCfg</innerclass>
+    <innerclass refid="struct_flash_stig_write_cfg" prot="public">FlashStigWriteCfg</innerclass>
+    <innerclass refid="struct_flash_stig_read_cfg" prot="public">FlashStigReadCfg</innerclass>
+    <innerclass refid="struct_flash_polling_cfg" prot="public">FlashPollingCfg</innerclass>
+    <innerclass refid="struct_flash_type" prot="public">FlashType</innerclass>
+    <innerclass refid="struct_x_m_e_m_w_f_f3___h_w_attrs" prot="public">XMEMWFF3_HWAttrs</innerclass>
+    <innerclass refid="struct_x_m_e_m_w_f_f3___object" prot="public">XMEMWFF3_Object</innerclass>
+    <innerclass refid="struct_x_m_e_m___attrs" prot="public">XMEM_Attrs</innerclass>
+    <innerclass refid="struct_x_m_e_m___config__" prot="public">XMEM_Config_</innerclass>
+    <innerclass refid="struct_x_m_e_m___params" prot="public">XMEM_Params</innerclass>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a182c6966b891ffb3d2392d16e7ae5a86" prot="public" static="no">
+        <name>XMEM_WRITE</name>
+        <initializer>(0x0)</initializer>
+        <briefdescription>
+<para>XMEM write flags. </para>        </briefdescription>
+        <detaileddescription>
+<para>The following flags can be or&apos;d together and passed as a bit mask to <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>.</para><para>write flag.</para><para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a182c6966b891ffb3d2392d16e7ae5a86" kindref="member">XMEM_WRITE</ref> is used in <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, the write operation will be performed directly without any validation or erasing of the destination sectors. Operation is done using udma. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="182" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" prot="public" static="no">
+        <name>XMEM_WRITE_ERASE</name>
+        <initializer>(0x1)</initializer>
+        <briefdescription>
+<para>Erase write flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" kindref="member">XMEM_WRITE_ERASE</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, the affected destination flash sectors will be erased prior to the start of the write operation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="191" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" prot="public" static="no">
+        <name>XMEM_WRITE_PRE_VERIFY</name>
+        <initializer>(0x2)</initializer>
+        <briefdescription>
+<para>Validate write flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, the destination address range will be pre-tested to guarantee that the source data can be successfully written. If <ref refid="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" kindref="member">XMEM_WRITE_ERASE</ref> is also requested in the write flags, then the <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref> modifier is ignored. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="201" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" prot="public" static="no">
+        <name>XMEM_WRITE_POST_VERIFY</name>
+        <initializer>(0x4)</initializer>
+        <briefdescription>
+<para>Validate write flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" kindref="member">XMEM_WRITE_POST_VERIFY</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, the destination address range will be tested after the write is finished to verify that the write operation was completed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="210" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" prot="public" static="no">
+        <name>XMEM_WRITE_STIG</name>
+        <initializer>(0x8)</initializer>
+        <briefdescription>
+<para>Write STIG write flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" kindref="member">XMEM_WRITE_STIG</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, the write operation is done using STIG command. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="218" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1aba6755a4b81f8c1d255a5be8df4b4123" prot="public" static="no">
+        <name>XMEM_FLASH</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Device enumeration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="49" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a49b8c874f2f80144dca3c1c5b4959ee0" prot="public" static="no">
+        <name>XMEM_PSRAM</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="50" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a667b7c0b76b1f1660a1c27a21629503d" prot="public" static="no">
+        <name>XMEM_WORD_SIZE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>size of one word which can be read by STIG command and used in: <ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="56" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1ae023687e38cfe0b44d71b74c16993978" prot="public" static="no">
+        <name>CONFIG_XMEM_COUNT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Number of max available XMEM Configuration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="61" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a87ec08cbec8f912c560aa5c64e0b8e94" prot="public" static="no">
+        <name>XMEM_NUM_HANDLER</name>
+        <initializer>16</initializer>
+        <briefdescription>
+<para>Number of max available XMEM handlers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="66" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" prot="public" static="no">
+        <name>XMEM_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code returned by: <ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read()</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref>, or <ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>APIs returns <ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref> if the API was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="76" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" prot="public" static="no">
+        <name>XMEM_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code returned by: <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref>, or <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>,. </para>        </briefdescription>
+        <detaileddescription>
+<para>APIs return <ref refid="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" kindref="member">XMEM_STATUS_ERROR</ref> if the API was not executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="85" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a98604a138424ff539e0540df6c1cfcc0" prot="public" static="no">
+        <name>XMEM_STATUS_TIMEOUT</name>
+        <initializer>(-3)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref> will return this value if the <computeroutput>timeout</computeroutput> has expired </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="92" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a48e70e7e482e03c365ce02aa024ee7a4" prot="public" static="no">
+        <name>XMEM_STATUS_INV_OFFSET</name>
+        <initializer>(-4)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read()</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref>, or <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para>Error status code returned if the <computeroutput>offset</computeroutput> argument is invalid (e.g., when offset + bufferSize exceeds the size of the region). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="101" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1ab871251cbec8a576192470d60d697e89" prot="public" static="no">
+        <name>XMEM_STATUS_INV_ALIGNMENT</name>
+        <initializer>(-5)</initializer>
+        <briefdescription>
+<para>An error status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref> if the <computeroutput>offset</computeroutput> argument is not aligned on a flash sector address. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="109" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1ac63aba0257bc2c20a9691f579f068510" prot="public" static="no">
+        <name>XMEM_STATUS_INV_SIZE</name>
+        <initializer>(-6)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref> and <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para>Error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase()</ref> if the <computeroutput>size</computeroutput> argument is not a multiple of the flash sector size, or if <computeroutput>offset</computeroutput> + <computeroutput>size</computeroutput> extends past the end of the region. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="118" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a7f02e49e2c575514b0b6ff59c0cf7199" prot="public" static="no">
+        <name>XMEM_STATUS_INV_WRITE</name>
+        <initializer>(-7)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref> will return this value if #XMEMWFF3_WRITE_PRE_VERIFY is requested and a flash location can not be changed to the value desired. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="127" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a309a73788e008d015d655748f5bd1335" prot="public" static="no">
+        <name>XMEM_STATUS_VERIFYBUFFER</name>
+        <initializer>(-8)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write()</ref> will return this value if <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref> or <ref refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" kindref="member">XMEM_WRITE_POST_VERIFY</ref> is requested but the verification buffer has not been configured. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="135" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" prot="public" static="no">
+        <name>XMEM_STATUS_INVALID_PARAMS</name>
+        <initializer>(-9)</initializer>
+        <briefdescription>
+<para>An error status code returned by various XMEM functions. </para>        </briefdescription>
+        <detaileddescription>
+<para>APIs return <ref refid="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" kindref="member">XMEM_STATUS_INVALID_PARAMS</ref> if one or more of the input parameters are invalid (e.g., invalid flag combinations, NULL pointers, or out-of-range values). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="144" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a0c157e4231f319cae4c6df980fd72982" prot="public" static="no">
+        <name>XMEM_READ</name>
+        <initializer>(0x0)</initializer>
+        <briefdescription>
+<para>read flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read()</ref>, the read operation is done using udma. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="155" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" prot="public" static="no">
+        <name>XMEM_READ_STIG</name>
+        <initializer>(0x1)</initializer>
+        <briefdescription>
+<para>read STIG flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref> is set in the flags passed to <ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read()</ref>, the read operation is done using STIG command. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="164" column="9" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71e" prot="public" static="no">
+        <name>XMEM_Flash_Idx</name>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eada756c177a8971016753df7de9dbf692" prot="public">
+          <name>IS25WJ032F_IDX</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea6c8be0850dc37079170787f23272174b" prot="public">
+          <name>IS25WJ064F_IDX</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eae2dd1b64045d15e5391f7843d7c9eaa2" prot="public">
+          <name>W25Q32JW_IDX</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea514ffd16d1c35a472a24e222b65ab8d4" prot="public">
+          <name>W25Q64JW_IDX</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea606994007797283a57b2a0e694b4b75c" prot="public">
+          <name>GD25LF32ETJGY_IDX</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea99ff18542da4b274221190c4c67e6ce8" prot="public">
+          <name>GD25LF64ETJGY_IDX</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ead5fff876d7a50bede18bb14976b265cc" prot="public">
+          <name>PY25Q32LB_IDX</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea9c58e05c5c006b8029c3480e8f20e544" prot="public">
+          <name>PY25Q64LB_IDX</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea776be9bed1c6a280547652a63a865685" prot="public">
+          <name>PY25Q128LA_IDX</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea39b5181c428720004b2a379c7c7280e4" prot="public">
+          <name>PY25Q256LC_IDX</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eaf1be3d208be26c89d70e297399cb66be" prot="public">
+          <name>MX25U3235F_IDX</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea7980711b4235d29de4b3fd56705cb4ee" prot="public">
+          <name>MX25U6435F_IDX</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea61bdfb1f76138952039a509962766260" prot="public">
+          <name>IS25WJ128F_IDX</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>External flash device type identifiers. </para>        </briefdescription>
+        <detaileddescription>
+<para>This enumeration defines identifiers for supported external flash memory devices. These values are used to select the appropriate flash device configuration and command sequences for memory operations. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="400" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="399" bodyend="414"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" prot="public" static="no">
+        <type>struct <ref refid="struct_x_m_e_m___config__" kindref="compound">XMEM_Config_</ref> *</type>
+        <definition>typedef struct XMEM_Config_* XMEM_Handle</definition>
+        <argsstring></argsstring>
+        <name>XMEM_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from the <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="355" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_x_m_e_m_w_f_f3_8h_1a48aa65fd73b5861dbd391a5fbed5b563" prot="public" static="no">
+        <type>struct <ref refid="struct_x_m_e_m___config__" kindref="compound">XMEM_Config_</ref></type>
+        <definition>typedef struct XMEM_Config_  XMEM_Config</definition>
+        <argsstring></argsstring>
+        <name>XMEM_Config</name>
+        <briefdescription>
+<para>XMEM Global configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>The XMEM_Config structure contains a set of pointers used to characterize the XMEM driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="375" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1aa9eb796daa06f85059260c59090f2e15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t XMEMWFF3_close</definition>
+        <argsstring>(XMEM_Handle handle)</argsstring>
+        <name>XMEMWFF3_close</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close an <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" kindref="member">XMEM_STATUS_INVALID_PARAMS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If handle is NULL.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="426" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t XMEMWFF3_erase</definition>
+        <argsstring>(XMEM_Handle handle, size_t offset, size_t size)</argsstring>
+        <name>XMEMWFF3_erase</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Erase <computeroutput>size</computeroutput> bytes of the region beginning at <computeroutput>offset</computeroutput> bytes from the base of the region referenced by the <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Erasing internal flash on most devices can introduce significant interrupt latencies while the erase operation is in in progress. The user may want to surround certain real-time critical code sections with <ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref> and <ref refid="_x_m_e_m_w_f_f3_8h_1ae951d1e2b932daa52cce12f8c209136d" kindref="member">XMEMWFF3_unlock()</ref> calls in order to prevent uncoordinated flash erase operations from negatively impacting performance.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte offset into the XMEM region to start erasing from (must be erase sector aligned)</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes to erase (must be integer multiple of sector size)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ab871251cbec8a576192470d60d697e89" kindref="member">XMEM_STATUS_INV_ALIGNMENT</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>offset</computeroutput> is not aligned on a sector boundary </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a48e70e7e482e03c365ce02aa024ee7a4" kindref="member">XMEM_STATUS_INV_OFFSET</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>offset</computeroutput> exceeds region size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ac63aba0257bc2c20a9691f579f068510" kindref="member">XMEM_STATUS_INV_SIZE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>size</computeroutput> or <computeroutput>offset</computeroutput> + <computeroutput>size</computeroutput> exceeds region size, or if <computeroutput>size</computeroutput> is not an integer multiple of the flash sector size. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" kindref="member">XMEM_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an internal error occurred erasing the flash. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="458" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a445907f285cd886fae69d9d6e5a5eca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XMEMWFF3_getAttrs</definition>
+        <argsstring>(XMEM_Handle handle, XMEM_Attrs *attrs)</argsstring>
+        <name>XMEMWFF3_getAttrs</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_x_m_e_m___attrs" kindref="compound">XMEM_Attrs</ref> *</type>
+          <declname>attrs</declname>
+        </param>
+        <briefdescription>
+<para>Function to get the XMEM attributes. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will populate a <ref refid="struct_x_m_e_m___attrs" kindref="compound">XMEM_Attrs</ref> structure with attributes specific to the memory region associated with the <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>attrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Location to store attributes. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="470" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1abc29e95339ce497d41388df37f03bf42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XMEMWFF3_getObject</definition>
+        <argsstring>(XMEM_Handle handle, XMEMWFF3_Object *object)</argsstring>
+        <name>XMEMWFF3_getObject</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_x_m_e_m_w_f_f3___object" kindref="compound">XMEMWFF3_Object</ref> *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Function to get the XMEM object. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will populate an <ref refid="struct_x_m_e_m_w_f_f3___object" kindref="compound">XMEMWFF3_Object</ref> structure with the object data specific to the memory region associated with the <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Location to store the XMEMWFF3 object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="482" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a2aa18198a203bf9fd1ec1a625e063c73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t XMEMWFF3_getActiveHandlers</definition>
+        <argsstring>(void)</argsstring>
+        <name>XMEMWFF3_getActiveHandlers</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Function to get the number of active XMEM handlers. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function will return the count of active handlers that have been opened using the <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref> function and not yet closed.</para><para><simplesect kind="return"><para>The number of currently active XMEM handlers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="492" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XMEMWFF3_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>XMEMWFF3_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Function to initialize the XMEM module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The XMEM_config structure must exist and be persistent before this function can be called. This function must also be called before any other XMEM APIs. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="501" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t XMEMWFF3_lock</definition>
+        <argsstring>(XMEM_Handle handle, uint32_t timeout)</argsstring>
+        <name>XMEMWFF3_lock</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Function to lock the XMEM driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is provided in the event that the user needs to perform some flash related operation not provided by the XMEM driver API set or if the user simply needs to block flash operations for a period of time.</para><para>For example, the interrupt latency introduced by an uncoordinated flash write operation could interfere with some critical operation being performed by the application.</para><para><ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref> prevents any other thread from initiating read, write, or erase operations while the user is performing an operation which is incompatible with those functions.</para><para>When the application no longer needs to block flash operations by other threads, <ref refid="_x_m_e_m_w_f_f3_8h_1ae951d1e2b932daa52cce12f8c209136d" kindref="member">XMEMWFF3_unlock()</ref> must be called to allow XMEM write or erase APIs to complete.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeout (in milliseconds) to wait, or #XMEM_LOCK_WAIT_FOREVER, #XMEM_LOCK_NO_WAIT</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a98604a138424ff539e0540df6c1cfcc0" kindref="member">XMEM_STATUS_TIMEOUT</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>timeout</computeroutput> has expired. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="531" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+        <definition>XMEM_Handle XMEMWFF3_open</definition>
+        <argsstring>(XMEM_Params *params)</argsstring>
+        <name>XMEMWFF3_open</name>
+        <param>
+          <type><ref refid="struct_x_m_e_m___params" kindref="compound">XMEM_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Open an XMEM region for reading and writing. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init()</ref> was called.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a parameter block. Parameters muse be initialized before calling <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A non-zero handle on success, else NULL. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="544" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t XMEMWFF3_read</definition>
+        <argsstring>(XMEM_Handle handle, size_t offset, void *buffer, size_t bufferSize, uint_fast16_t flags)</argsstring>
+        <name>XMEMWFF3_read</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint_fast16_t</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Read data from the XMEM region associated with the <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte offset into the XMEM region to start reading from. Note: When using STIG mode, the offset + word size must not cross page boundaries (256 bytes). Operations that would exceed the current page will return an error.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A buffer to copy the data to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bufferSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer (number of bytes to read). If <ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref> flash is on, and bufferSize is higher than 4 (one word), only the first 4 bytes will be read. If <ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref> flash is on, bufferSize is not allowed to be lower than 4 (one word).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Write flags (<ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref>)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a48e70e7e482e03c365ce02aa024ee7a4" kindref="member">XMEM_STATUS_INV_OFFSET</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>offset</computeroutput> + <computeroutput>size</computeroutput> exceed the size of the region. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" kindref="member">XMEM_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" kindref="member">XMEM_READ_STIG</ref> flash is on and bufferSize is lower than 4 (one word). If the internal read STIG operation is failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" kindref="member">XMEM_STATUS_INVALID_PARAMS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If flags is not contain allowed bits. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="573" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1ae951d1e2b932daa52cce12f8c209136d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void XMEMWFF3_unlock</definition>
+        <argsstring>(XMEM_Handle handle)</argsstring>
+        <name>XMEMWFF3_unlock</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to unlock the XMEM driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function allows XMEM write and erase operations to proceed after being temporarily inhibited by a call to <ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="583" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t XMEMWFF3_write</definition>
+        <argsstring>(XMEM_Handle handle, size_t offset, void *buffer, size_t bufferSize, uint_fast16_t flags)</argsstring>
+        <name>XMEMWFF3_write</name>
+        <param>
+          <type><ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint_fast16_t</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Write data to the XMEM region associated with the <ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Writing to internal flash on most devices can introduce significant interrupt latencies while the write operation is in in progress. The user may want to surround certain real-time critical code sections with <ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock()</ref> and <ref refid="_x_m_e_m_w_f_f3_8h_1ae951d1e2b932daa52cce12f8c209136d" kindref="member">XMEMWFF3_unlock()</ref> calls in order to prevent uncoordinated flash write operations from negatively impacting performance.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle returned from <ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte offset into the XMEM region to start writing. Note: When using STIG mode, the offset + word size must not cross page boundaries (256 bytes). Operations that would exceed the current page will return an error.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A buffer containing data to write to the XMEM region.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bufferSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer (number of bytes to write). If <ref refid="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" kindref="member">XMEM_WRITE_STIG</ref> flash is on, and bufferSize is higher than 4 (one word), only the first 4 bytes will be write. If <ref refid="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" kindref="member">XMEM_WRITE_STIG</ref> flash is on, bufferSize is not allowed to be lower than 4 (one word).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Write flags (<ref refid="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" kindref="member">XMEM_WRITE_ERASE</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" kindref="member">XMEM_WRITE_POST_VERIFY</ref>, <ref refid="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" kindref="member">XMEM_WRITE_STIG</ref>).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" kindref="member">XMEM_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" kindref="member">XMEM_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the internal flash write operation failed, or if <ref refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" kindref="member">XMEM_WRITE_POST_VERIFY</ref> was requested and the destination flash range does not match the source <computeroutput>buffer</computeroutput> data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a48e70e7e482e03c365ce02aa024ee7a4" kindref="member">XMEM_STATUS_INV_OFFSET</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <computeroutput>offset</computeroutput> + <computeroutput>size</computeroutput> exceed the size of the region. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a7f02e49e2c575514b0b6ff59c0cf7199" kindref="member">XMEM_STATUS_INV_WRITE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref> is requested and the destination flash address range cannot be change to the values desired. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ab871251cbec8a576192470d60d697e89" kindref="member">XMEM_STATUS_INV_ALIGNMENT</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" kindref="member">XMEM_WRITE_ERASE</ref> is requested and <computeroutput>offset</computeroutput> is not aligned on a sector boundary </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1a309a73788e008d015d655748f5bd1335" kindref="member">XMEM_STATUS_VERIFYBUFFER</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" kindref="member">XMEM_WRITE_PRE_VERIFY</ref> or <ref refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" kindref="member">XMEM_WRITE_POST_VERIFY</ref> is requested but the verification buffer has not been configured.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" kindref="member">XMEM_STATUS_INVALID_PARAMS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If flags is not contain allowed bits.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>This call may lock a region to ensure atomic access to the region. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="636" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2024-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>==========<sp/>XMEMWFF3.h<sp/>==========</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_xmem_XMEMWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_xmem_XMEMWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_x_m_e_m_w_f_f3_8h_1aba6755a4b81f8c1d255a5be8df4b4123" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_FLASH<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_x_m_e_m_w_f_f3_8h_1a49b8c874f2f80144dca3c1c5b4959ee0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>XMEM_PSRAM<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="_x_m_e_m_w_f_f3_8h_1a667b7c0b76b1f1660a1c27a21629503d" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WORD_SIZE<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="_x_m_e_m_w_f_f3_8h_1ae023687e38cfe0b44d71b74c16993978" refkind="member"><highlight class="preprocessor">#define<sp/>CONFIG_XMEM_COUNT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_x_m_e_m_w_f_f3_8h_1a87ec08cbec8f912c560aa5c64e0b8e94" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_NUM_HANDLER<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="_x_m_e_m_w_f_f3_8h_1a09ef5a0f8f7c0a10a0bdf2e798e5f2b3" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_SUCCESS<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_x_m_e_m_w_f_f3_8h_1a3fa194d32bdf614a5fb55427472f2e8d" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_ERROR<sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="_x_m_e_m_w_f_f3_8h_1a98604a138424ff539e0540df6c1cfcc0" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_TIMEOUT<sp/>(-3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_x_m_e_m_w_f_f3_8h_1a48e70e7e482e03c365ce02aa024ee7a4" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_INV_OFFSET<sp/>(-4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_x_m_e_m_w_f_f3_8h_1ab871251cbec8a576192470d60d697e89" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_INV_ALIGNMENT<sp/>(-5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="_x_m_e_m_w_f_f3_8h_1ac63aba0257bc2c20a9691f579f068510" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_INV_SIZE<sp/>(-6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="_x_m_e_m_w_f_f3_8h_1a7f02e49e2c575514b0b6ff59c0cf7199" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_INV_WRITE<sp/>(-7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="_x_m_e_m_w_f_f3_8h_1a309a73788e008d015d655748f5bd1335" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_VERIFYBUFFER<sp/>(-8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="_x_m_e_m_w_f_f3_8h_1ae960077ef82d862e215a65a84fa2eca8" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_STATUS_INVALID_PARAMS<sp/>(-9)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="_x_m_e_m_w_f_f3_8h_1a0c157e4231f319cae4c6df980fd72982" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_READ<sp/>(0x0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="_x_m_e_m_w_f_f3_8h_1a3aa5cc565a01bd1ad4411f0ee5e4ea91" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_READ_STIG<sp/>(0x1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="_x_m_e_m_w_f_f3_8h_1a182c6966b891ffb3d2392d16e7ae5a86" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WRITE<sp/>(0x0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="_x_m_e_m_w_f_f3_8h_1a06c5e8305ed199b298322c71e39725b9" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WRITE_ERASE<sp/>(0x1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="_x_m_e_m_w_f_f3_8h_1af29a9f0dce52290daa163b3f17fd15bd" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WRITE_PRE_VERIFY<sp/>(0x2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="_x_m_e_m_w_f_f3_8h_1a3bdfd3d9d0203ce523cd70bace62b7cd" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WRITE_POST_VERIFY<sp/>(0x4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="_x_m_e_m_w_f_f3_8h_1afee2c46248db7aa1191ea1589c2b7d82" refkind="member"><highlight class="preprocessor">#define<sp/>XMEM_WRITE_STIG<sp/>(0x8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="struct_flash_register" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229" refid="struct_flash_register_1a2904565025582a6850829ca8702496b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_register_1a2904565025582a6850829ca8702496b5" kindref="member">address</ref>;<sp/></highlight></codeline>
+<codeline lineno="230" refid="struct_flash_register_1a599170b6834ee3e4844a4b10ca1dfa4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_register_1a599170b6834ee3e4844a4b10ca1dfa4a" kindref="member">data</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}<sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref>;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="struct_flash_stig_erase_cfg" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="241" refid="struct_flash_stig_erase_cfg_1a71e1aa1a51a23b0ceb5890a26c27f965" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_erase_cfg_1a71e1aa1a51a23b0ceb5890a26c27f965" kindref="member">preStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="242" refid="struct_flash_stig_erase_cfg_1a613e53b65916c7b6cd90767041ac102f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_erase_cfg_1a613e53b65916c7b6cd90767041ac102f" kindref="member">StigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243" refid="struct_flash_stig_erase_cfg_1afda98323aba0d3c6be8b134e339984b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_erase_cfg_1afda98323aba0d3c6be8b134e339984b7" kindref="member">postStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="244" refid="struct_flash_stig_erase_cfg_1a9152fc0eb8027a8f72b8bee3b11a6da5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>preStigOperation[1];<sp/><sp/></highlight></codeline>
+<codeline lineno="245" refid="struct_flash_stig_erase_cfg_1abb7aa7b7a8b75b140ca65000312ad4cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>stigOperation[1];<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="246" refid="struct_flash_stig_erase_cfg_1af3110adb3e207d84c230d728565f3c90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>postStigOperation[1];<sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}<sp/><ref refid="struct_flash_stig_erase_cfg" kindref="compound">FlashStigEraseCfg</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="struct_flash_stig_write_cfg" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="257" refid="struct_flash_stig_write_cfg_1a71979d744a87af1ad8a3e83c6af8ff22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_write_cfg_1a71979d744a87af1ad8a3e83c6af8ff22" kindref="member">preStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258" refid="struct_flash_stig_write_cfg_1ad8560e1ab3d0d0af1a9f4faf21ddac0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_write_cfg_1ad8560e1ab3d0d0af1a9f4faf21ddac0a" kindref="member">postStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="259" refid="struct_flash_stig_write_cfg_1a53d0a831416f26c1ad1301355e3fffe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>preStigOperation[1];<sp/><sp/></highlight></codeline>
+<codeline lineno="260" refid="struct_flash_stig_write_cfg_1a51337fc8a7277505cd30873d9fa1769e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>stigOperation[1];<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="261" refid="struct_flash_stig_write_cfg_1a97f8eb777b1243d947da4cb62e0e7260" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>postStigOperation[1];<sp/></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}<sp/><ref refid="struct_flash_stig_write_cfg" kindref="compound">FlashStigWriteCfg</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="struct_flash_stig_read_cfg" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272" refid="struct_flash_stig_read_cfg_1a5a48c321a63f923fff28eef424764f6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_read_cfg_1a5a48c321a63f923fff28eef424764f6a" kindref="member">preStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="273" refid="struct_flash_stig_read_cfg_1a54f26de7226a1c1321d7f8cc1da573a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_stig_read_cfg_1a54f26de7226a1c1321d7f8cc1da573a2" kindref="member">postStigCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="274" refid="struct_flash_stig_read_cfg_1a0e6e619a780b55f820127b91b1cf23bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>preStigOperation[1];<sp/><sp/></highlight></codeline>
+<codeline lineno="275" refid="struct_flash_stig_read_cfg_1a54190499280645893e86b87aa6674af5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>stigOperation[1];<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="276" refid="struct_flash_stig_read_cfg_1a7f6d53d99b137f43dcbee7c6747c3d74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>postStigOperation[1];<sp/></highlight></codeline>
+<codeline lineno="277"><highlight class="normal">}<sp/><ref refid="struct_flash_stig_read_cfg" kindref="compound">FlashStigReadCfg</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="struct_flash_polling_cfg" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287" refid="struct_flash_polling_cfg_1a65d84a1a8b6ebd80dc724d3b409fd2b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_polling_cfg_1a65d84a1a8b6ebd80dc724d3b409fd2b9" kindref="member">NumOfIteration</ref>;<sp/></highlight></codeline>
+<codeline lineno="288" refid="struct_flash_polling_cfg_1aed549c1483f28e7a98b4b99b36852f1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_polling_cfg_1aed549c1483f28e7a98b4b99b36852f1a" kindref="member">command</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="289" refid="struct_flash_polling_cfg_1a0919e465deb5df7966e691f0663ea9a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_polling_cfg_1a0919e465deb5df7966e691f0663ea9a2" kindref="member">timeOut</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="290" refid="struct_flash_polling_cfg_1a03ccf2bcecf978075aafd1d96e8a6433" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_polling_cfg_1a03ccf2bcecf978075aafd1d96e8a6433" kindref="member">polarity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="291" refid="struct_flash_polling_cfg_1a4b9d9fa294221a66c42d2a5737f2a7aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_flash_polling_cfg_1a4b9d9fa294221a66c42d2a5737f2a7aa" kindref="member">mask</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}<sp/><ref refid="struct_flash_polling_cfg" kindref="compound">FlashPollingCfg</ref>;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="struct_flash_type" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="302" refid="struct_flash_type_1a2603ec1493d9e42fac61bd66126ea73e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>enterStigCfg[3];<sp/><sp/></highlight></codeline>
+<codeline lineno="303" refid="struct_flash_type_1ae7be12d17f118ecf384a58cc4b3ef0cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_stig_read_cfg" kindref="compound">FlashStigReadCfg</ref><sp/><ref refid="struct_flash_type_1ae7be12d17f118ecf384a58cc4b3ef0cb" kindref="member">readStigCfg</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="304" refid="struct_flash_type_1a0a6c498bf09f585a8b9c2bf947ad1339" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_stig_write_cfg" kindref="compound">FlashStigWriteCfg</ref><sp/><ref refid="struct_flash_type_1a0a6c498bf09f585a8b9c2bf947ad1339" kindref="member">writeStigCfg</ref>;<sp/></highlight></codeline>
+<codeline lineno="305" refid="struct_flash_type_1a6a0e54cfcee8545d105e2834a8f80c52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_stig_erase_cfg" kindref="compound">FlashStigEraseCfg</ref><sp/><ref refid="struct_flash_type_1a6a0e54cfcee8545d105e2834a8f80c52" kindref="member">eraseStigCfg</ref>;<sp/></highlight></codeline>
+<codeline lineno="306" refid="struct_flash_type_1afed6b7f35373950fbfff1cfc35a6f7ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_register" kindref="compound">FlashRegister</ref><sp/>exitStigCfg[3];<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="307" refid="struct_flash_type_1aa257b59d8fe785461473dde08d261c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_polling_cfg" kindref="compound">FlashPollingCfg</ref><sp/><ref refid="struct_flash_type_1aa257b59d8fe785461473dde08d261c13" kindref="member">pollingCfg</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="308" refid="struct_flash_type_1af3938dd6ddb42a46570b776a14d56a3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_flash_type_1af3938dd6ddb42a46570b776a14d56a3d" kindref="member">sectorSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="309" refid="struct_flash_type_1adf36de2143e095c00e14f83bbb791e2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_flash_type_1adf36de2143e095c00e14f83bbb791e2c" kindref="member">verifyBufSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}<sp/><ref refid="struct_flash_type" kindref="compound">FlashType</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319" refid="struct_x_m_e_m_w_f_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="321" refid="struct_x_m_e_m_w_f_f3___h_w_attrs_1a4c11c5eeb019cdf57ce0db42c9f1c27f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_type" kindref="compound">FlashType</ref><sp/><ref refid="struct_x_m_e_m_w_f_f3___h_w_attrs_1a4c11c5eeb019cdf57ce0db42c9f1c27f" kindref="member">flashType</ref>;<sp/></highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}<sp/><ref refid="struct_x_m_e_m_w_f_f3___h_w_attrs" kindref="compound">XMEMWFF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="struct_x_m_e_m_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="332" refid="struct_x_m_e_m_w_f_f3___object_1af77e1f7f0814ad73fd0ff184cd3a3854" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1af77e1f7f0814ad73fd0ff184cd3a3854" kindref="member">opened</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="333" refid="struct_x_m_e_m_w_f_f3___object_1ac2338f250b5a8fee694716de2a9a72ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uintptr_t<sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1ac2338f250b5a8fee694716de2a9a72ca" kindref="member">mutexKey</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="334" refid="struct_x_m_e_m_w_f_f3___object_1a8d0ca1ba837421d78ecf5b2edeb27e0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1a8d0ca1ba837421d78ecf5b2edeb27e0e" kindref="member">regionBase</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="335" refid="struct_x_m_e_m_w_f_f3___object_1a776ff2d7562218e7612f51b9dce34401" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1a776ff2d7562218e7612f51b9dce34401" kindref="member">regionStartAddr</ref>;<sp/></highlight></codeline>
+<codeline lineno="336" refid="struct_x_m_e_m_w_f_f3___object_1a0233c2ac6ea3432cea361d509897fd00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1a0233c2ac6ea3432cea361d509897fd00" kindref="member">regionSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="337" refid="struct_x_m_e_m_w_f_f3___object_1a79b58cca945f3d16d9b356804900de29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m_w_f_f3___object_1a79b58cca945f3d16d9b356804900de29" kindref="member">deviceNum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="338"><highlight class="normal">}<sp/><ref refid="struct_x_m_e_m_w_f_f3___object" kindref="compound">XMEMWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347" refid="struct_x_m_e_m___attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="349" refid="struct_x_m_e_m___attrs_1aa5004b4de80556395e360f4b96502de0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_flash_type" kindref="compound">FlashType</ref><sp/><ref refid="struct_x_m_e_m___attrs_1aa5004b4de80556395e360f4b96502de0" kindref="member">flashType</ref>;<sp/></highlight></codeline>
+<codeline lineno="350"><highlight class="normal">}<sp/><ref refid="struct_x_m_e_m___attrs" kindref="compound">XMEM_Attrs</ref>;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_x_m_e_m___config__" kindref="compound">XMEM_Config_</ref><sp/>*<ref refid="_x_m_e_m_w_f_f3_8h_1a4b17a9b8d0486dda2694f8b6a3f9b624" kindref="member">XMEM_Handle</ref>;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368" refid="struct_x_m_e_m___config__" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_x_m_e_m___config__" kindref="compound">XMEM_Config_</ref></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="371" refid="struct_x_m_e_m___config___1ad2f165c66614deda083efe4a0d559b40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_x_m_e_m___config___1ad2f165c66614deda083efe4a0d559b40" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374" refid="struct_x_m_e_m___config___1a4b69811232e59c913ce17a498042975c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_x_m_e_m___config___1a4b69811232e59c913ce17a498042975c" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal">}<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a48aa65fd73b5861dbd391a5fbed5b563" kindref="member">XMEM_Config</ref>;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="struct_x_m_e_m___params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="386" refid="struct_x_m_e_m___params_1af06812644eae0087e1016d6edc393e5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m___params_1af06812644eae0087e1016d6edc393e5f" kindref="member">regionBase</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="387" refid="struct_x_m_e_m___params_1ab56062569fd321e23af61dcd4b2d3caa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m___params_1ab56062569fd321e23af61dcd4b2d3caa" kindref="member">regionStartAddr</ref>;<sp/></highlight></codeline>
+<codeline lineno="388" refid="struct_x_m_e_m___params_1a7d4ae35531eb28f862affe094befebc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_x_m_e_m___params_1a7d4ae35531eb28f862affe094befebc9" kindref="member">regionSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="389" refid="struct_x_m_e_m___params_1aa00e316780a93dcf1a06f3dfa4b034b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_x_m_e_m___params_1aa00e316780a93dcf1a06f3dfa4b034b1" kindref="member">deviceNum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="390"><highlight class="normal">}<sp/><ref refid="struct_x_m_e_m___params" kindref="compound">XMEM_Params</ref>;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="401" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eada756c177a8971016753df7de9dbf692" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eada756c177a8971016753df7de9dbf692" kindref="member">IS25WJ032F_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="402" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea6c8be0850dc37079170787f23272174b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea6c8be0850dc37079170787f23272174b" kindref="member">IS25WJ064F_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="403" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eae2dd1b64045d15e5391f7843d7c9eaa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eae2dd1b64045d15e5391f7843d7c9eaa2" kindref="member">W25Q32JW_IDX</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="404" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea514ffd16d1c35a472a24e222b65ab8d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea514ffd16d1c35a472a24e222b65ab8d4" kindref="member">W25Q64JW_IDX</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="405" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea606994007797283a57b2a0e694b4b75c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea606994007797283a57b2a0e694b4b75c" kindref="member">GD25LF32ETJGY_IDX</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="406" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea99ff18542da4b274221190c4c67e6ce8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea99ff18542da4b274221190c4c67e6ce8" kindref="member">GD25LF64ETJGY_IDX</ref><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="407" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ead5fff876d7a50bede18bb14976b265cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ead5fff876d7a50bede18bb14976b265cc" kindref="member">PY25Q32LB_IDX</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="408" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea9c58e05c5c006b8029c3480e8f20e544" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea9c58e05c5c006b8029c3480e8f20e544" kindref="member">PY25Q64LB_IDX</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="409" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea776be9bed1c6a280547652a63a865685" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea776be9bed1c6a280547652a63a865685" kindref="member">PY25Q128LA_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="410" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea39b5181c428720004b2a379c7c7280e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea39b5181c428720004b2a379c7c7280e4" kindref="member">PY25Q256LC_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="411" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eaf1be3d208be26c89d70e297399cb66be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71eaf1be3d208be26c89d70e297399cb66be" kindref="member">MX25U3235F_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="412" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea7980711b4235d29de4b3fd56705cb4ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea7980711b4235d29de4b3fd56705cb4ee" kindref="member">MX25U6435F_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="413" refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea61bdfb1f76138952039a509962766260" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71ea61bdfb1f76138952039a509962766260" kindref="member">IS25WJ128F_IDX</ref><sp/><sp/><sp/><sp/>=<sp/>12</highlight></codeline>
+<codeline lineno="414"><highlight class="normal">}<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a8d30be4ef6c77d6178ec70c31890d71e" kindref="member">XMEM_Flash_Idx</ref>;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal">int_fast16_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1aa9eb796daa06f85059260c59090f2e15" kindref="member">XMEMWFF3_close</ref>(XMEM_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458"><highlight class="normal">int_fast16_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a1fc08ecdd11598ecf058f0852d7a0300" kindref="member">XMEMWFF3_erase</ref>(XMEM_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a445907f285cd886fae69d9d6e5a5eca4" kindref="member">XMEMWFF3_getAttrs</ref>(XMEM_Handle<sp/>handle,<sp/><ref refid="struct_x_m_e_m___attrs" kindref="compound">XMEM_Attrs</ref><sp/>*attrs);</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1abc29e95339ce497d41388df37f03bf42" kindref="member">XMEMWFF3_getObject</ref>(XMEM_Handle<sp/>handle,<sp/><ref refid="struct_x_m_e_m_w_f_f3___object" kindref="compound">XMEMWFF3_Object</ref><sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal">uint8_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a2aa18198a203bf9fd1ec1a625e063c73" kindref="member">XMEMWFF3_getActiveHandlers</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a613c31c4c455a9c048f3f3399b22ab41" kindref="member">XMEMWFF3_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal">int_fast16_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a5674b484e2e1eb0237705033bcc77585" kindref="member">XMEMWFF3_lock</ref>(XMEM_Handle<sp/>handle,<sp/>uint32_t<sp/>timeout);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="544"><highlight class="normal">XMEM_Handle<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1ac8b8c49f8b0bf44da82f62fc219bb51d" kindref="member">XMEMWFF3_open</ref>(<ref refid="struct_x_m_e_m___params" kindref="compound">XMEM_Params</ref><sp/>*<ref refid="_driver___init_8h_1af93f10d4f7393a01dff58c92f91d8cbc" kindref="member">params</ref>);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal">int_fast16_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1acc8adfd8169c334f4ef5d48254b3f10e" kindref="member">XMEMWFF3_read</ref>(XMEM_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bufferSize,<sp/>uint_fast16_t<sp/>flags);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight></codeline>
+<codeline lineno="583"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_x_m_e_m_w_f_f3_8h_1ae951d1e2b932daa52cce12f8c209136d" kindref="member">XMEMWFF3_unlock</ref>(XMEM_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal">int_fast16_t<sp/><ref refid="_x_m_e_m_w_f_f3_8h_1a44f5cadc5cbb7aa42971b34e5f0f6f55" kindref="member">XMEMWFF3_write</ref>(XMEM_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bufferSize,<sp/>uint_fast16_t<sp/>flags);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>defined<sp/>(__cplusplus)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="645"><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_xmem_XMEMWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h"/>
+  </compounddef>
+</doxygen>

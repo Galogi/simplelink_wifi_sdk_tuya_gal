@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_97f54e7b4efed9cf1559837825c68bd4" kind="dir">
+    <compoundname>trng</compoundname>
+    <innerfile refid="_t_r_n_g_x_x_f3_h_s_m_8h">TRNGXXF3HSM.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/trng/"/>
+  </compounddef>
+</doxygen>

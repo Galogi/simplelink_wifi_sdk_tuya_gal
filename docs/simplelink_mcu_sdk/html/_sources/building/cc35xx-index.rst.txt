@@ -1,0 +1,11 @@
+Your First Application from Scratch
+***********************************
+
+.. rubric:: Table of contents
+
+.. toctree::
+    :maxdepth: 2
+
+    configuration.rst
+    rebuild_lib.rst
+    creating_image.rst

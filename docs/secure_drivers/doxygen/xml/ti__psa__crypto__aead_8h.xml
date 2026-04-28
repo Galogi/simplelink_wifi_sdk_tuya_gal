@@ -1,0 +1,682 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="ti__psa__crypto__aead_8h" kind="file" language="C++">
+    <compoundname>ti_psa_crypto_aead.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">third_party/mbedtls/include/psa/crypto.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <incdepgraph>
+      <node id="418">
+        <label>stdbool.h</label>
+      </node>
+      <node id="415">
+        <label>stdint.h</label>
+      </node>
+      <node id="416">
+        <label>third_party/mbedtls/include/psa/crypto.h</label>
+      </node>
+      <node id="414">
+        <label>stddef.h</label>
+      </node>
+      <node id="417">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="415" relation="include">
+        </childnode>
+        <childnode refid="418" relation="include">
+        </childnode>
+      </node>
+      <node id="413">
+        <label>ti_psa_crypto_aead.h</label>
+        <link refid="ti__psa__crypto__aead_8h"/>
+        <childnode refid="414" relation="include">
+        </childnode>
+        <childnode refid="415" relation="include">
+        </childnode>
+        <childnode refid="416" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structti__psa__aead__operation__s" prot="public">ti_psa_aead_operation_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ti__psa__crypto__aead_8h_1a5cd3da5279a7799b0552922c26ad76f9" prot="public" static="no">
+        <name>TI_PSA_AEAD_OPERATION_INIT</name>
+        <initializer>(<ref refid="ti__psa__crypto__aead_8h_1ab8bac380fec067c195c82c78f980e5d8" kindref="member">ti_psa_aead_operation_t</ref>)      \
+    {                              \
+        0                          \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="71" column="9" bodyfile="source/ti/drivers/psa/ti_psa_crypto_aead.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="ti__psa__crypto__aead_8h_1ab8bac380fec067c195c82c78f980e5d8" prot="public" static="no">
+        <type>struct <ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref></type>
+        <definition>typedef struct ti_psa_aead_operation_s ti_psa_aead_operation_t</definition>
+        <argsstring></argsstring>
+        <name>ti_psa_aead_operation_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="168" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_aead.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref></type>
+        <definition>static struct ti_psa_aead_operation_s ti_psa_aead_operation_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>ti_psa_aead_operation_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="168" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto_aead.h" bodystart="76" bodyend="80"/>
+        <references refid="ti__psa__crypto__aead_8h_1ad4e7db956dd30dc9de7b717e2207a974">ti_psa_aead_abort</references>
+        <references refid="ti__psa__crypto__aead_8h_1a62e12aacd2667880b7b4447ed4e82831">ti_psa_aead_decrypt</references>
+        <references refid="ti__psa__crypto__aead_8h_1a073bac7b5004cefdad0f20797a826f23">ti_psa_aead_decrypt_setup</references>
+        <references refid="ti__psa__crypto__aead_8h_1a5ee66ab79bec810da1a74232fc577930">ti_psa_aead_encrypt</references>
+        <references refid="ti__psa__crypto__aead_8h_1ab180a0824c72658987f04d352ce45ca8">ti_psa_aead_encrypt_setup</references>
+        <references refid="ti__psa__crypto__aead_8h_1a7b8cc9f07476664ffff5de86e7524a78">ti_psa_aead_finish</references>
+        <references refid="ti__psa__crypto__aead_8h_1a5e7cd8c6f929087e9e965ff2e9669dde">ti_psa_aead_generate_nonce</references>
+        <references refid="ti__psa__crypto__aead_8h_1a5cd3da5279a7799b0552922c26ad76f9" compoundref="ti__psa__crypto__aead_8h" startline="71">TI_PSA_AEAD_OPERATION_INIT</references>
+        <references refid="ti__psa__crypto__aead_8h_1a50c151a6ea4a7ce37a0c43c8a00af866">ti_psa_aead_set_lengths</references>
+        <references refid="ti__psa__crypto__aead_8h_1aaa3884d81be650d2778faa8c3a8046ee">ti_psa_aead_set_nonce</references>
+        <references refid="ti__psa__crypto__aead_8h_1a38b937438460cd6691e245b70f2dbea8">ti_psa_aead_update</references>
+        <references refid="ti__psa__crypto__aead_8h_1ae0a3263eb0a01d830c6193b662e82c3e">ti_psa_aead_update_ad</references>
+        <references refid="ti__psa__crypto__aead_8h_1a9e63f209d5b8f6553cb2379817e81c99">ti_psa_aead_verify</references>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1ad4e7db956dd30dc9de7b717e2207a974" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_abort</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation)</argsstring>
+        <name>ti_psa_aead_abort</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="85" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1ab180a0824c72658987f04d352ce45ca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_encrypt_setup</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, mbedtls_svc_key_id_t key, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_aead_encrypt_setup</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="87" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a073bac7b5004cefdad0f20797a826f23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_decrypt_setup</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, mbedtls_svc_key_id_t key, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_aead_decrypt_setup</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="91" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a7b8cc9f07476664ffff5de86e7524a78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_finish</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, uint8_t *ciphertext, size_t ciphertext_size, size_t *ciphertext_length, uint8_t *tag, size_t tag_size, size_t *tag_length)</argsstring>
+        <name>ti_psa_aead_finish</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ciphertext_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>ciphertext_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>tag_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>tag_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="95" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a38b937438460cd6691e245b70f2dbea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_update</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_aead_update</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="103" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1ae0a3263eb0a01d830c6193b662e82c3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_update_ad</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, const uint8_t *input, size_t input_length)</argsstring>
+        <name>ti_psa_aead_update_ad</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="110" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a5ee66ab79bec810da1a74232fc577930" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_encrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *nonce, size_t nonce_length, const uint8_t *additional_data, size_t additional_data_length, const uint8_t *plaintext, size_t plaintext_length, uint8_t *ciphertext, size_t ciphertext_size, size_t *ciphertext_length)</argsstring>
+        <name>ti_psa_aead_encrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nonce_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>additional_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>additional_data_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>plaintext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>plaintext_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ciphertext_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>ciphertext_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="115" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a62e12aacd2667880b7b4447ed4e82831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_decrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *nonce, size_t nonce_length, const uint8_t *additional_data, size_t additional_data_length, const uint8_t *ciphertext, size_t ciphertext_length, uint8_t *plaintext, size_t plaintext_size, size_t *plaintext_length)</argsstring>
+        <name>ti_psa_aead_decrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nonce_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>additional_data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>additional_data_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>ciphertext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ciphertext_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>plaintext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>plaintext_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>plaintext_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="127" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a5e7cd8c6f929087e9e965ff2e9669dde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_generate_nonce</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, uint8_t *nonce, size_t nonce_size, size_t *nonce_length)</argsstring>
+        <name>ti_psa_aead_generate_nonce</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nonce_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>nonce_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="139" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a50c151a6ea4a7ce37a0c43c8a00af866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_set_lengths</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, size_t ad_length, size_t plaintext_length)</argsstring>
+        <name>ti_psa_aead_set_lengths</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>ad_length</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>plaintext_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="144" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1aaa3884d81be650d2778faa8c3a8046ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_set_nonce</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, const uint8_t *nonce, size_t nonce_length)</argsstring>
+        <name>ti_psa_aead_set_nonce</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>nonce</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nonce_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="146" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto__aead_8h_1a9e63f209d5b8f6553cb2379817e81c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_aead_verify</definition>
+        <argsstring>(psa_aead_operation_t *psa_operation, uint8_t *plaintext, size_t plaintext_size, size_t *plaintext_length, const uint8_t *tag, size_t tag_length)</argsstring>
+        <name>ti_psa_aead_verify</name>
+        <param>
+          <type>psa_aead_operation_t *</type>
+          <declname>psa_operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>plaintext</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>plaintext_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>plaintext_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>tag_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h" line="148" column="1"/>
+        <referencedby refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" compoundref="ti__psa__crypto__aead_8h" startline="76" endline="80">ti_psa_aead_operation_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>The<sp/>Mbed<sp/>TLS<sp/>Contributors</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>by<sp/>Texas<sp/>Instruments<sp/>to<sp/>support<sp/>SimpleLink<sp/>device<sp/>crypto<sp/>hardware</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>drivers.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TI_PSA_CRYPTO_AEAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_CRYPTO_AEAD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((TFM_ENABLED<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>!defined(TFM_BUILD))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/tfm/interface/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/mbedtls/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structti__psa__aead__operation__s" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Used<sp/>to<sp/>mark<sp/>the<sp/>operation<sp/>struct<sp/>as<sp/>ready.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structti__psa__aead__operation__s_1ad85f75e096b35237bf89fdea4b0e930f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1ad85f75e096b35237bf89fdea4b0e930f" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structti__psa__aead__operation__s_1afd968c1ae8c59064ce75f8d0a4f6af0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/><ref refid="structti__psa__aead__operation__s_1afd968c1ae8c59064ce75f8d0a4f6af0e" kindref="member">alg</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structti__psa__aead__operation__s_1aef5b41e7be7cd5486dffc8f93c364e39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1aef5b41e7be7cd5486dffc8f93c364e39" kindref="member">iv_set</ref>:1;</highlight></codeline>
+<codeline lineno="41" refid="structti__psa__aead__operation__s_1a053e19f45ebb98033157cb45fde50da3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a053e19f45ebb98033157cb45fde50da3" kindref="member">in_error_state</ref>:1;</highlight></codeline>
+<codeline lineno="42" refid="structti__psa__aead__operation__s_1a0fa742524547cfe49b7393226629dc27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a0fa742524547cfe49b7393226629dc27" kindref="member">adLength</ref>;</highlight></codeline>
+<codeline lineno="43" refid="structti__psa__aead__operation__s_1a1135766feea43c535759e004f69f1fa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a1135766feea43c535759e004f69f1fa8" kindref="member">plaintextLength</ref>;</highlight></codeline>
+<codeline lineno="44" refid="structti__psa__aead__operation__s_1ad19898c225611cd7da4bab1b0d19adbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1ad19898c225611cd7da4bab1b0d19adbc" kindref="member">runningADLength</ref>;</highlight></codeline>
+<codeline lineno="45" refid="structti__psa__aead__operation__s_1a0ac09fb2c5bf573546c85b1e3ca3805b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a0ac09fb2c5bf573546c85b1e3ca3805b" kindref="member">runningPlaintextLength</ref>;</highlight></codeline>
+<codeline lineno="46" refid="structti__psa__aead__operation__s_1aceb1e8615898081998d83e4cec0b1d75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1aceb1e8615898081998d83e4cec0b1d75" kindref="member">tagSize</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Buffer<sp/>for<sp/>data<sp/>that<sp/>has<sp/>not<sp/>been<sp/>processed<sp/>yet.<sp/>Word-aligned<sp/>for<sp/>max</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>performance<sp/>and<sp/>in<sp/>case<sp/>any<sp/>drivers<sp/>require<sp/>aligned<sp/>input<sp/>buffer.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Double-buffer<sp/>is<sp/>used<sp/>when<sp/>PSA<sp/>crypto<sp/>is<sp/>built<sp/>into<sp/>the<sp/>TFM<sp/>to<sp/>prevent</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>corruption<sp/>before<sp/>the<sp/>data<sp/>can<sp/>be<sp/>consumed<sp/>since<sp/>the<sp/>underlying<sp/>crypto</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>drivers<sp/>are<sp/>used<sp/>in<sp/>callback<sp/>mode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TFM_BUILD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structti__psa__aead__operation__s_1a2cfc40d31cd748f3729eb2955fe58f54" kindref="member">unprocessedData</ref>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE<sp/>*<sp/>2]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structti__psa__aead__operation__s_1a2cfc40d31cd748f3729eb2955fe58f54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structti__psa__aead__operation__s_1a2cfc40d31cd748f3729eb2955fe58f54" kindref="member">unprocessedData</ref>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]<sp/>__attribute__((aligned(4)));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TFM_BUILD<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pointer<sp/>to<sp/>the<sp/>current<sp/>unprocessed<sp/>data<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structti__psa__aead__operation__s_1a2bccf4f59a91a25b71d5dcf06a61fe9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="structti__psa__aead__operation__s_1a2bccf4f59a91a25b71d5dcf06a61fe9f" kindref="member">curr_unprocessed_data</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structti__psa__aead__operation__s_1a6f2c75a0eed1a542ff35ea8afc227b5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a6f2c75a0eed1a542ff35ea8afc227b5c" kindref="member">unprocessed_len</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structti__psa__aead__operation__s_1a2bdbe05040505ce5a164f292b466cd3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><ref refid="structti__psa__aead__operation__s_1a2bdbe05040505ce5a164f292b466cd3c" kindref="member">cryptoKey</ref>;</highlight></codeline>
+<codeline lineno="65" refid="structti__psa__aead__operation__s_1a74a929ab1e80a0eb4b5b67cff87d5501" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a74a929ab1e80a0eb4b5b67cff87d5501" kindref="member">done_updating_ad</ref>;</highlight></codeline>
+<codeline lineno="66" refid="structti__psa__aead__operation__s_1a9131aca27bf5eb4e4b8c9e9a7c9349c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structti__psa__aead__operation__s_1a9131aca27bf5eb4e4b8c9e9a7c9349c3" kindref="member">length_set</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="ti__psa__crypto__aead_8h_1ab8bac380fec067c195c82c78f980e5d8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref><sp/><ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_t</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="ti__psa__crypto__aead_8h_1a5cd3da5279a7799b0552922c26ad76f9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_AEAD_OPERATION_INIT<sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(ti_psa_aead_operation_t)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref><sp/><ref refid="ti__psa__crypto__aead_8h_1a2b5d75b7391f7b399349ee2879251738" kindref="member">ti_psa_aead_operation_init</ref>(void)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structti__psa__aead__operation__s" kindref="compound">ti_psa_aead_operation_s</ref><sp/>v<sp/>=<sp/><ref refid="ti__psa__crypto__aead_8h_1a5cd3da5279a7799b0552922c26ad76f9" kindref="member">TI_PSA_AEAD_OPERATION_INIT</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(v);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Multi-Step<sp/>AEAD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1ad4e7db956dd30dc9de7b717e2207a974" kindref="member">ti_psa_aead_abort</ref>(psa_aead_operation_t<sp/>*psa_operation);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1ab180a0824c72658987f04d352ce45ca8" kindref="member">ti_psa_aead_encrypt_setup</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a073bac7b5004cefdad0f20797a826f23" kindref="member">ti_psa_aead_decrypt_setup</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a7b8cc9f07476664ffff5de86e7524a78" kindref="member">ti_psa_aead_finish</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*ciphertext,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ciphertext_size,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*ciphertext_length,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*tag,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tag_size,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*tag_length);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a38b937438460cd6691e245b70f2dbea8" kindref="member">ti_psa_aead_update</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1ae0a3263eb0a01d830c6193b662e82c3e" kindref="member">ti_psa_aead_update_ad</ref>(psa_aead_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>One-Step<sp/>AEAD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a5ee66ab79bec810da1a74232fc577930" kindref="member">ti_psa_aead_encrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*nonce,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nonce_length,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*additional_data,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>additional_data_length,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*plaintext,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>plaintext_length,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*ciphertext,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ciphertext_size,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*ciphertext_length);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a62e12aacd2667880b7b4447ed4e82831" kindref="member">ti_psa_aead_decrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*nonce,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nonce_length,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*additional_data,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>additional_data_length,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*ciphertext,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ciphertext_length,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*plaintext,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>plaintext_size,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*plaintext_length);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a5e7cd8c6f929087e9e965ff2e9669dde" kindref="member">ti_psa_aead_generate_nonce</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*nonce,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nonce_size,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*nonce_length);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a50c151a6ea4a7ce37a0c43c8a00af866" kindref="member">ti_psa_aead_set_lengths</ref>(psa_aead_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ad_length,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>plaintext_length);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1aaa3884d81be650d2778faa8c3a8046ee" kindref="member">ti_psa_aead_set_nonce</ref>(psa_aead_operation_t<sp/>*psa_operation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*nonce,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nonce_length);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto__aead_8h_1a9e63f209d5b8f6553cb2379817e81c99" kindref="member">ti_psa_aead_verify</ref>(psa_aead_operation_t<sp/>*psa_operation,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*plaintext,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>plaintext_size,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*plaintext_length,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*tag,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tag_length);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TI_PSA_CRYPTO_AEAD_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/psa/ti_psa_crypto_aead.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+.. _sec-power-management:
+
+Power Management
+=================
+
+Introduction
+-------------
+
+Power management and extended battery life are primary focus areas for embedded low-power Wi-Fi® devices such as the SimpleLink™ CC35xx SoC solution.
+Handling power regimes effectively is fundamental for any battery-operated device. This problem is especially challenging for standards-based
+wireless devices that need to comply with certain requirements for Transmit power, Beacon interval, and
+data rates, as is the case with embedded Wi-Fi® devices. This paragraph covers the application level and networking
+subsystem power management (PM) capabilities, and describes how to enable and measure the average current in different use cases.
+By application level we refer to the ARM m33 processor and subsystem and by networking subsystem we refer to the
+internal ARM m3 processor handling all the Wi-Fi® and BLE lower layers.
+
+Power Modes
+-------------
+
+The CC35xx SoC device offers multiple power modes to optimize energy consumption based on system's operational requirements. These power modes enable the device to adapt
+its power usage dynamically, depending on its specific operation (such as monitoring beacons, receiving or transmitting data, etc.).
+A power mode defines a specific operational state of the device, characterized by its functionality and corresponding power consumption.
+
+In general, the aggregated power consumption is composed from contribution of the application processor subsystem and the networking subsystem.
+Each of these subsystems is independent and can be in a different power mode. For example, in an idle connected mode, where the device is connected to an Access Point and
+waking up to receive beacons, there is no need to wakeup the application processor and hence the networking subsystem would jitter between LPDS current (Low Power Deep Sleep)
+and full RX current. The application processor would stay in LPDS.
+
+Power modes:
+
+* **Shutdown** - refers to the networking subsystem. This is the lowest power mode. Networking subsystem is powered off, meaning power lines voltages are down, RTC is not running. Requires cold boot stabilization, including slow clock stabilization. This mode exists before ``Wlan_Start()`` API is invoked.
+
+* **Low Power Deep Sleep (LPDS)** - applies to both, the application level subsystem and the networking subsystem. Lowest power mode which keeps RTC's clock and counter running. Fast clock is off. Memories are in retention mode. Voltage levels are lowered. Please note that each subsystem can be in LPDS regardless of the other subsystem. For example, in idle connected mode, the application subsystem would be most of the time in LPDS whereas the networking subsystem may receive or transmit. On the other hand, after ``Wlan_Start()`` API is invoked, the networking subsystem is in LPDS and the application processor may be in Active mode depends of the application code.
+
+* **Active** - Device is fully active, voltage levels are at their operational value, and all clocks are active. In terms of the application subsystem, it means the processor is ticking. In terms of the networking subsystem, it may be in one of 3 modes, Rx listen, Rx normal or Tx. Rx listen is a mode of STA role when the device is connected and monitors beacons where the beacons are received in 1Mbps or 2Mbps. Rx normal is similar to Rx listen but for all modulations. The Rx current is a little higher in this mode as can be seen on the datasheet. Tx is activating the internal PA to transmit frames.
+
+.. note::
+    Since each of the subsystems operate independently, it is common to refer to the device power mode as a combination of the two subsystems mode. For example, when a device power mode is referred to as true LPDS, it means that both subsystems are in LPDS concurrently.
+
+How to measure?
+-------------------
+
+In order to measure the aggregated power consumption, an external power meter needs to be connected. For this purpose, there are two jumpers on the LaunchPad EVB, one for the 1.8V and another for the 3.3V.
+The 3.3V is used for Tx mode only. Instructions of how to connect and measure can be found in the CC35xxE LaunchPad User Guide under *Measure the CC35xxE Current Draw* paragraph. See
+`CC35xxE LaunchPad User Guide <https://www.ti.com/lit/ug/swru629a/swru629a.pdf?ts=1743508085534&ref_url=https%253A%252F%252Fwww.ti.com%252Ftool%252FLP-EM-CC35X1>`_.
+
+Power related code in SDK
+-----------------------------
+
+Power related code is spread all over the application code and the linked libraries.
+This section lists all the important locations in the code so user can test those out and observe the impact on the measured power consumption.
+
+* **Application level** - can be found in the following locations:
+
+  * ``syscfg`` - under the *Power* section, the *Policy Function* can be set to *PowerWFF3_sleepPolicy* to allow the application subsystem to go into LPDS.
+  To prevent the application subsystem from going to LPDS, choose *PowerWFF3_doWFI*.
+
+  * idle task - when the system jumps to the idle task, it behaves according to the *Policy Function*. In examples where the user terminal is operational (like the ``CC35xx_network_terminal`` example), the UART keeps the system awake and preventing it from going to LPDS. To release this constraint, the UART must be closed and when returning from idle task, open the UART again.
+
+  * networking subsystem - to put the networking subsystem into LPDS, the user must configure it using the ``POWER_MANAGEMENT_ELP_MODE`` option of ``Wlan_Set()`` API.
+  In ``CC35xx_network_terminal`` example, it is set during ``wlan_start`` command.
+  In ``CC35xx_MQTT_client`` example, it is set during the ``WIFI_IF_init``.
+
+* **LwIP** - LwIP network stack wakes up cyclically for each protocol and checks for events. By default, the lowest period is 100mSec which contributes an average current of approximately 1mA.
+  It is possible to increase those timeouts and observe how the average current decreases.
+  Please note that there may be implications if you choose to increase the default values. For example, increasing the TCP timeout would cause the LwIP to wakeup less often when trying to retransmit in case of congestion.
+  This may be seen as higher latency on an application layer.
+  You can find the array containing all stack-internal cyclic timers under ``timeouts.c``, and specifically ``lwip_cyclic_timers``.
+  Some of the default wakeup periods for the different protocols are:
+
+  * ``TCP_TMR_INTERVAL`` - 250mSec
+  * ``ARP_TMR_INTERVAL`` - 1000mSec
+  * ``DHCP_FINE_TIMER_MSECS`` - 500mSec
+  * ``AUTOIP_TMR_INTERVAL`` - 100mSec
+  * ``IGMP_TMR_INTERVAL`` - 100mSec
+
+* **Firmware level** - in default, the firmware generates some firmware logs which increase the power consumption. It can be seen mainly when the firmware tries to enter LPDS. To lower the power consumption to minimum, it is recommended
+  to disable the logger completely. The recommended way to disable the logger is to use the INI composer tool in the **Simplelink Wi-Fi Toolbox**. The variable is called *disable_logger* and can be found under the *Core* option.
+  After the parameter is modified, simply generate the new binary and follow the steps found in the `Radio Configuration`_ section.
+
+Additional power related improvements
+--------------------------------------
+
+In addition to the steps above, power consumption may be further reduced. This is mainly attributed to how the two processors behave when exiting power save.
+It is observed that the ARM m3 processor exits PS, executes and immediately goes back to sleep, whereas the ARM m33 processor wakes up much earlier in time, thus increasing the power consumption.
+The following figure illustrates how m33 processor operates on 20mA for approximately 12mSec, consumming around 240uC.
+
+.. figure:: ../cc35xx/resources/m33_excessive_power_before.png
+    :name: m33_excessive_power_before
+    :align: center
+
+    m33 Excessive Power with early wakeup of 15mSec
+
+The reason for that is still under assesment but to allow m33 processor to directly execute without wasting power, it is advised to modify a definition in the PM ecosystem, ``PowerWFF3_WAKEDELAYSLEEP``.
+This definition can be found under ``PowerWFF3.h`` header file. By default it is set to 15000 (15mSec). This value denotes how early the processor should wake up prior to the next expected event.
+Since the value for the fast clock stabilization is set to 1.7mSec (see ``XTAL_SettlingTime`` in INI composer), recommended value is 2mSec (2000) so the m33 processor still have enough guard time after the XTAL is stabilized.
+The following figure illustrates how this modification eliminates the excessive power consumption.
+
+.. figure:: ../cc35xx/resources/m33_excessive_power_after.png
+    :name: m33_excessive_power_after
+    :align: center
+
+    m33 Lower Power with early wakeup of 2mSec
+
+The following table shows some measurements done on two configurations when the device is in idle connected mode to an AP with 3 wakeup periods:
+
+* Baseline - no modifications made
+* Enhanced - disabling the logger and setting ``PowerWFF3_WAKEDELAYSLEEP`` to 2mSec
+
++------------------------+---------------+---------------+
+| Idle Period (beacons)  | Baseline (mA) | Enhanced (mA) |
++========================+===============+===============+
+| DTIM1                  | 4.5           | 2.7           |
++------------------------+---------------+---------------+
+| DTIM3                  | 3.9           | 1.8           |
++------------------------+---------------+---------------+
+| DTIM10                 | 3.6           | 1.6           |
++------------------------+---------------+---------------+
+
+How to measure using the SDK
+-----------------------------
+
+In order to measure the power consumption, the user needs to use the ``CC35xx_network_terminal`` example.
+The commands include a new command ``test_sleep`` with an option to set the time in seconds that the system would try to move to LPDS.
+If connected idle mode is desired, it is also recommended to configure the DTIM period and observe how the average current decreases as the DTIM period increases.
+To modify the DTIM period, the user can use the ``wlan_set_LSI`` and set the number of DTIM period to stay in LPDS.

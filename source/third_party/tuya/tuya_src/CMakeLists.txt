@@ -1,0 +1,26 @@
+set(CORE_TARGET "tuya_core")
+file(GLOB_RECURSE CORE_SOURCES "*.c")
+
+# Filter Junk (Speeds up build 2x)
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/docs/")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/test/")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/examples/")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/demos/")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/stm32")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/esp8266")
+list(FILTER CORE_SOURCES EXCLUDE REGEX "/linux")
+
+file(GLOB_RECURSE ALL_HEADERS "*.h")
+set(CORE_INCLUDES "")
+foreach(_h ${ALL_HEADERS})
+    if(NOT "${_h}" MATCHES "/test/" AND NOT "${_h}" MATCHES "/demos/")
+        get_filename_component(_dir ${_h} DIRECTORY)
+        list(APPEND CORE_INCLUDES ${_dir})
+    endif()
+endforeach()
+list(REMOVE_DUPLICATES CORE_INCLUDES)
+
+add_library(${CORE_TARGET} STATIC ${CORE_SOURCES})
+target_include_directories(${CORE_TARGET} PUBLIC ${CORE_INCLUDES} ${CMAKE_CURRENT_LIST_DIR}/../ti_config)
+# Relax warnings for Linux GCC
+target_compile_options(${CORE_TARGET} PRIVATE -Wno-error -Ofast)

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_e_d_d_s_a_x_x_f3_h_s_m_8h" kind="file" language="C++">
+    <compoundname>EDDSAXXF3HSM.h</compoundname>
+    <includes refid="_e_d_d_s_a_8h" local="no">ti/drivers/EDDSA.h</includes>
+    <incdepgraph>
+      <node id="358">
+        <label>stdbool.h</label>
+      </node>
+      <node id="356">
+        <label>EDDSAXXF3HSM.h</label>
+        <link refid="_e_d_d_s_a_x_x_f3_h_s_m_8h"/>
+        <childnode refid="357" relation="include">
+        </childnode>
+      </node>
+      <node id="360">
+        <label>stdint.h</label>
+      </node>
+      <node id="364">
+        <label>ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h</label>
+        <link refid="_e_c_c_params_x_x_f3_h_s_m_8h"/>
+      </node>
+      <node id="362">
+        <label>ti/drivers/cryptoutils/ecc/ECCParams.h</label>
+        <link refid="_e_c_c_params_8h"/>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="364" relation="include">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>stddef.h</label>
+      </node>
+      <node id="357">
+        <label>ti/drivers/EDDSA.h</label>
+        <link refid="_e_d_d_s_a_8h"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
+        <childnode refid="362" relation="include">
+        </childnode>
+      </node>
+      <node id="363">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="361">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs" prot="public">EDDSAXXF3HSM_HWAttrs</innerclass>
+    <innerclass refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" prot="public">EDDSAXXF3HSM_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a361b71e20424dd7fa41cb6c1617e4580" prot="public" static="no">
+        <name>EDDSA_COMPONENT_VECTOR_LENGTH_BYTES</name>
+        <initializer>72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="63" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a24353d86f2070d83792b5041da2fb3e5" prot="public" static="no">
+        <name>EDDSA_CURVE_LENGTH_25519</name>
+        <initializer>255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="64" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a8bfab8533c181a858e590cd4c79e156d" prot="public" static="no">
+        <name>EDDSAXXF3HSM_STATUS_RESOURCE_UNAVAILABLE</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 0)</initializer>
+        <briefdescription>
+<para>An error status code returned if the hardware or software resource is currently unavailable. </para>        </briefdescription>
+        <detaileddescription>
+<para>EDDSA driver implementations may have hardware or software limitations on how many clients can simultaneously perform operations. This status code is returned if the mutual exclusion mechanism signals that an operation cannot currently be performed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="75" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a01c50d256d91f5aed346694d5e0b7404" prot="public" static="no">
+        <name>EDDSAXXF3HSM_STATUS_HARDWARE_ERROR</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 1)</initializer>
+        <briefdescription>
+<para>An error ocurred on the HW level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="80" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1ae279112d07f8037deb5d6dad45541817" prot="public" static="no">
+        <name>EDDSAXXF3HSM_STATUS_INVALID_MESSAGE_LENGTH</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 2)</initializer>
+        <briefdescription>
+<para>Message length must be greater than zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="85" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a5580e58868813cf91afd954be83373e8" prot="public" static="no">
+        <name>EDDSAXXF3HSM_STATUS_INVALID_KEY_ENCODING</name>
+        <initializer>(<ref refid="_e_c_d_s_a_8h_1af0557cd1a241899dbe217ff6f36fffd3" kindref="member">ECDSA_STATUS_RESERVED</ref> - 3)</initializer>
+        <briefdescription>
+<para>Invalid encoding for private or public keys or both. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="90" column="9" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>EdDSA driver implementation for the CC27XX and CC35XX family. </para>    </briefdescription>
+    <detaileddescription>
+<para>===========================================================================</para><para>This file should only be included in the board file to fill the EDDSA_config struct.</para><para><heading level="1">Supported Curve Types</heading>
+</para><para>The driver implementation supports the following curves for EdDSA:</para><para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Curve </para></entry><entry thead="yes"><para>Supported  </para></entry></row>
+<row>
+<entry thead="no"><para>Ed25519 </para></entry><entry thead="no"><para>Yes </para></entry></row>
+<row>
+<entry thead="no"><para>Ed448 </para></entry><entry thead="no"><para>No </para></entry></row>
+</table>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_eddsa_EDDSAXXF3HSM__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_eddsa_EDDSAXXF3HSM__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_e_d_d_s_a_8h" kindref="compound">ti/drivers/EDDSA.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>largest<sp/>signature<sp/>will<sp/>be<sp/>for<sp/>NIST521<sp/>which<sp/>will<sp/>produce<sp/>72B<sp/>per<sp/>component<sp/>(S<sp/>and<sp/>R)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a361b71e20424dd7fa41cb6c1617e4580" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EDDSA_COMPONENT_VECTOR_LENGTH_BYTES<sp/>72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a24353d86f2070d83792b5041da2fb3e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EDDSA_CURVE_LENGTH_25519<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>255</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a8bfab8533c181a858e590cd4c79e156d" refkind="member"><highlight class="preprocessor">#define<sp/>EDDSAXXF3HSM_STATUS_RESOURCE_UNAVAILABLE<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a01c50d256d91f5aed346694d5e0b7404" refkind="member"><highlight class="preprocessor">#define<sp/>EDDSAXXF3HSM_STATUS_HARDWARE_ERROR<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1ae279112d07f8037deb5d6dad45541817" refkind="member"><highlight class="preprocessor">#define<sp/>EDDSAXXF3HSM_STATUS_INVALID_MESSAGE_LENGTH<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a5580e58868813cf91afd954be83373e8" refkind="member"><highlight class="preprocessor">#define<sp/>EDDSAXXF3HSM_STATUS_INVALID_KEY_ENCODING<sp/>(ECDSA_STATUS_RESERVED<sp/>-<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs_1a5651770f6c0ff0ce7f49996ac0d1d0f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs_1a5651770f6c0ff0ce7f49996ac0d1d0f8" kindref="member">reserved1</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___h_w_attrs" kindref="compound">EDDSAXXF3HSM_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0dd9b05e7e8762de40acc765a1866541" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0dd9b05e7e8762de40acc765a1866541" kindref="member">privateKey</ref>;</highlight></codeline>
+<codeline lineno="111" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1afcb07bc5ccd67cb37c3c54df8ca4c33a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1afcb07bc5ccd67cb37c3c54df8ca4c33a" kindref="member">publicKey</ref>;</highlight></codeline>
+<codeline lineno="112" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a42d9f6f149f1db7a4dca33c2533d1ba0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a42d9f6f149f1db7a4dca33c2533d1ba0" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="113" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ab2b07c90a6af3776cdea6a8969733cdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ab2b07c90a6af3776cdea6a8969733cdc" kindref="member">driverCreatedPrivateKeyAsset</ref>;</highlight></codeline>
+<codeline lineno="114" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1af5285fc9fdff39f76d1869365d25d15d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1af5285fc9fdff39f76d1869365d25d15d" kindref="member">driverCreatedPublicKeyAsset</ref>;</highlight></codeline>
+<codeline lineno="115" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a218ba5dec9a9b2a2ad88dda7ab7dbf82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a218ba5dec9a9b2a2ad88dda7ab7dbf82" kindref="member">returnStatus</ref>;</highlight></codeline>
+<codeline lineno="116" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a07d77682c8b918149d565d5e5126a98c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="union_e_d_d_s_a___operation" kindref="compound">EDDSA_Operation</ref><sp/>*<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a07d77682c8b918149d565d5e5126a98c" kindref="member">operation</ref>;</highlight></codeline>
+<codeline lineno="117" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a3fd5298a1131124b3e2b6ffbc23ef2d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_d_d_s_a_8h_1af6e60847c2c0eaf13d3c854838bca0fb" kindref="member">EDDSA_OperationType</ref><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a3fd5298a1131124b3e2b6ffbc23ef2d2" kindref="member">operationType</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a14905f35214fea6454c24c7bfc0a270a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_d_d_s_a_8h_1a6a093ae7e304be315a31a45095c4662b" kindref="member">EDDSA_CallbackFxn</ref><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a14905f35214fea6454c24c7bfc0a270a" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="119" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a53d2332bce1744f0ca158e903db74361" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_d_d_s_a_8h_1a4dd8a220f65c0bcee35b3aa81416e14f" kindref="member">EDDSA_ReturnBehavior</ref><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a53d2332bce1744f0ca158e903db74361" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="120" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0f26c3d9f43a32e9d339f1f6fa8a4f07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0f26c3d9f43a32e9d339f1f6fa8a4f07" kindref="member">semaphoreTimeout</ref>;</highlight></codeline>
+<codeline lineno="121" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ad30d82607af0c9c3981285f4a0e6ff6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ad30d82607af0c9c3981285f4a0e6ff6c" kindref="member">hsmStatus</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae95287bf747764a2ee8aa93e55c4ba39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae95287bf747764a2ee8aa93e55c4ba39" kindref="member">privateKeyAssetID</ref>;</highlight></codeline>
+<codeline lineno="123" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a5fc07af75eb9f32913344022d4ec1c56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a5fc07af75eb9f32913344022d4ec1c56" kindref="member">publicKeyAssetID</ref>;</highlight></codeline>
+<codeline lineno="124" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a86014861daf50bbdad5d97547f33083c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a86014861daf50bbdad5d97547f33083c" kindref="member">paramAssetID</ref>;</highlight></codeline>
+<codeline lineno="125" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae78daf66383c53c33532556d3b926a77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae78daf66383c53c33532556d3b926a77" kindref="member">tempAssetID</ref>;</highlight></codeline>
+<codeline lineno="126" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a49104dfbd01372bd05dece3a73edefe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a49104dfbd01372bd05dece3a73edefe8" kindref="member">stateAssetID</ref>;</highlight></codeline>
+<codeline lineno="127" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a1c3dbfe33c2103a60442266c857bff27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a1c3dbfe33c2103a60442266c857bff27" kindref="member">curveParam</ref>;</highlight></codeline>
+<codeline lineno="128" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a815c51aea11eafa1b07295aa23e9fdee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a815c51aea11eafa1b07295aa23e9fdee" kindref="member">curveParamSize</ref>;</highlight></codeline>
+<codeline lineno="129" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a145aa5051b24f18f0195759a022693c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a145aa5051b24f18f0195759a022693c7" kindref="member">input</ref>;</highlight></codeline>
+<codeline lineno="130" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a407f3a8046e35e0289c60e2c2203dd55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a407f3a8046e35e0289c60e2c2203dd55" kindref="member">inputLength</ref>;</highlight></codeline>
+<codeline lineno="131" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a35114183d6cdf3c9999dca751f983969" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a35114183d6cdf3c9999dca751f983969" kindref="member">inputLengthRemaining</ref>;</highlight></codeline>
+<codeline lineno="132" refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a4f28d287d82b028c9845ff9007fcf05c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>signature[<ref refid="_e_d_d_s_a_x_x_f3_h_s_m_8h_1a361b71e20424dd7fa41cb6c1617e4580" kindref="member">EDDSA_COMPONENT_VECTOR_LENGTH_BYTES</ref>];</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}<sp/><ref refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kindref="compound">EDDSAXXF3HSM_Object</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_eddsa_EDDSAXXF3HSM__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h"/>
+  </compounddef>
+</doxygen>

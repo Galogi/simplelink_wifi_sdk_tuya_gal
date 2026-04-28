@@ -1,0 +1,1095 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Radio Tool Command Line Interface User’s Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="INI Composer User Guide" href="ini_composer_user_guide.html" />
+    <link rel="prev" title="Radio Tool User’s Guide" href="radio_tool_user_guide.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox command_line_interface_basics";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio_tool_user_guide.html">Radio Tool User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Radio Tool Command Line Interface User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-containers-1">Loading Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wlan-plt">WLAN PLT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tune-and-calibrate-1">Tune and Calibrate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tune-channel-1">Tune channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calibration">Calibration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-transmit-parameters-1">Generating Transmit parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi-tx">Wi-Fi TX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi-rx">Wi-Fi RX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi-tx-tone">Wi-Fi TX Tone</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#antenna-select">Antenna Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ble-plt">BLE PLT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transmitting-ble-packets">Transmitting BLE Packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ble-receive-packets">BLE Receive packets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#more-cli-options">More CLI Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#device-information-commands">Device Information Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#communicator-commands">Communicator Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reset-device">Reset device</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-detect-my-xds110-serial-number">How to detect my XDS110 Serial Number</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Radio Tool Command Line Interface User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="radio-tool-command-line-interface-user-s-guide">
+<h1>Radio Tool Command Line Interface User’s Guide<a class="headerlink" href="#radio-tool-command-line-interface-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The command line interface (CLI) provides a way to interact with RadioTool using only text based commands entered through a terminal or command prompt. You can see help text and optional arguments for the commands by adding “-h”.</p>
+<p>To start navigate to the Simplelink Wi-Fi Toolbox install directory:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>For Windows:</dt>
+<dd><div class="first last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> c:<span class="se">\t</span>i<span class="se">\s</span>implelink_wifi_toolbox_X.X.X
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For Linux:</dt>
+<dd><div class="first last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/YOUR_USER/ti/simplelink_wifi_toolbox_X.X.X
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For Mac OS X:</dt>
+<dd><div class="first last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /Users/YOUR_USER/ti/simplelink_wifi_toolbox_X.X.X
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The install paths shown above are examples of the typical default path.  Make sure to edit the command to reflect the install path for your use case.</p>
+</div>
+</div>
+<div class="section" id="loading-containers-1">
+<span id="loading-containers"></span><h2>Loading Containers<a class="headerlink" href="#loading-containers-1" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The command mentioned in this section is an example. Make sure to substitute parts of the commands depending on your setup. This can include the file path and the device part number (i.e. replace “CC33xx” with your specific part number). It is  especially important to substitute for your actual Debug Probe Serial Number instead of “12345678”, refer to <a class="reference internal" href="#detect-xds110-serial-number">Detect_XDS110_Serial_Number</a>.</p>
+</div>
+<p>To load the firmware to the device use the command below;</p>
+<ol class="arabic">
+<li><p class="first">Load the device bootloader:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 auto common load_radio_tool --tbl &lt;2nd_loader path&gt; --firmware &lt;fw path&gt; --conf_bin &lt;cc33xx-conf path&gt; --device_family CC33XX --tbl_dl_index <span class="m">23</span> --firmware_dl_index <span class="m">1</span> --conf_bin_dl_index <span class="m">1</span> --sleep_tbl_fw <span class="m">0</span> --sleep_fw_confbin <span class="m">0</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are receiving errors, check the binary file paths. Make sure to change file path depending on simplelink_wifi_toolbox_X.X.X version and device (e.g. binaries/CC3301/cc33xx_fw.bin).</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If you are using MAC or Linux, change the “.” to “./” to execute commands.</p>
+</div>
+</div>
+<div class="section" id="wlan-plt">
+<h2>WLAN PLT<a class="headerlink" href="#wlan-plt" title="Permalink to this headline">¶</a></h2>
+<p>The CC35xx/CC33xx devices feature 2.4GHz &amp; 5GHz Wi-Fi 6 with 20 MHz, single spatial stream, MAC, baseband, and RF transceiver supporting IEEE 802.11 b/g/n/ax. This section explains what CLI commands to use for testing Wi-Fi.</p>
+<p>Once the containers have been loaded to the device (refer to <a class="reference internal" href="#loading-containers">Loading Containers</a>) the commands below should be run before conducting Wi-Fi testing.</p>
+<p>Turn on WLAN PLT:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan plt --on
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arguments:
+  --on        Enables PLT
+  --off       Disable PLT
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">It is required that WLAN PLT be ON before doing any WLAN testing</p>
+</div>
+<div class="section" id="tune-and-calibrate-1">
+<span id="tune-and-calibrate"></span><h3>Tune and Calibrate<a class="headerlink" href="#tune-and-calibrate-1" title="Permalink to this headline">¶</a></h3>
+<p>For optimal performance it is important to Tune and Calibrate before transmitting every time the selected channel or band is changed.</p>
+<div class="section" id="tune-channel-1">
+<span id="tune-channel"></span><h4>Tune channel<a class="headerlink" href="#tune-channel-1" title="Permalink to this headline">¶</a></h4>
+<p>To get optimal RF performance, use the Tune Channel command for the desired channel and band that will be tested.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan channel_tune --channel <span class="s2">&quot;1&quot;</span> --band <span class="s2">&quot;b24Ghz&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure that your channel and band selection match correctly (Channels 1-13 are 2.4GHz channels, and Channels 36-165 are 5GHz channels)</p>
+</div>
+</div>
+<div class="section" id="calibration">
+<h4>Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">¶</a></h4>
+<p>To get optimal performance, use the calibrate command anytime the desired channel and band are changed.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> common calibration start --all
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The plt commands may have optional arguments to tune and calibrate before running.  If this option is used for those commands, calibration and channel tuning can be skipped.</p>
+</div>
+</div>
+</div>
+<div class="section" id="generating-transmit-parameters-1">
+<span id="generating-transmit-parameters"></span><h3>Generating Transmit parameters<a class="headerlink" href="#generating-transmit-parameters-1" title="Permalink to this headline">¶</a></h3>
+<p>To specify transmit parameters for the device, a .json file is needed. This file will alow the device to transmit according to the specified values, the command below is used to generate example files for each available preamble type option;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx gen_tx_params_json --preamble_type <span class="s2">&quot;PREAMBLE_TYPE&quot;</span> --output_dir DESIRED_OUTPUT_PATH
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example of generating transmit parameter .json file for preamble type “11b Long Preamble” ;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx gen_tx_params_json --preamble_type <span class="s2">&quot;11b Long Preamble&quot;</span> --output_dir C:<span class="se">\t</span>i<span class="se">\s</span>implelink_wifi_toolbox_x.x.x
+</pre></div>
+</div>
+</div></blockquote>
+<p id="txparameters">Contents of generated “tx_parameters_p_11b_long_preamble.json” file;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;bitmask&quot;</span>: <span class="m">4294967295</span>,
+<span class="s2">&quot;delay&quot;</span>: <span class="m">3000</span>,
+<span class="s2">&quot;packet_mode&quot;</span>: <span class="s2">&quot;continuous&quot;</span>,
+<span class="s2">&quot;number_of_packets&quot;</span>: <span class="m">300</span>,
+<span class="s2">&quot;data_mode&quot;</span>: <span class="s2">&quot;random_value&quot;</span>,
+<span class="s2">&quot;data_const_value&quot;</span>: <span class="m">85</span>,
+<span class="s2">&quot;src_addr&quot;</span>: <span class="s2">&quot;22:22:33:44:55:66&quot;</span>,
+<span class="s2">&quot;dst_addr&quot;</span>: <span class="s2">&quot;02:02:03:04:05:06&quot;</span>,
+<span class="s2">&quot;packet_length_start&quot;</span>: <span class="m">100</span>,
+<span class="s2">&quot;packet_length_end&quot;</span>: <span class="m">100</span>,
+<span class="s2">&quot;preamble_type&quot;</span>: <span class="s2">&quot;p_11b_long_preamble&quot;</span>,
+<span class="s2">&quot;phy_rate&quot;</span>: <span class="s2">&quot;r_1_mbps&quot;</span>,
+<span class="s2">&quot;tx_power&quot;</span>: <span class="m">0</span>,
+<span class="s2">&quot;enable_cca&quot;</span>: true,
+<span class="s2">&quot;_options_&quot;</span>:
+<span class="o">{</span>
+    <span class="s2">&quot;delay_options&quot;</span>: <span class="s2">&quot;50 .. 1000000&quot;</span>,
+    <span class="s2">&quot;packet_mode_options&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;continuous&quot;</span>,
+        <span class="s2">&quot;single_packet&quot;</span>,
+        <span class="s2">&quot;multi_packet&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;number_of_packets_options&quot;</span>: <span class="s2">&quot;1 .. 10000&quot;</span>,
+    <span class="s2">&quot;data_mode_options&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;constant_value&quot;</span>,
+        <span class="s2">&quot;increment&quot;</span>,
+        <span class="s2">&quot;random_value&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;data_const_value_options&quot;</span>: <span class="s2">&quot;0 .. 255&quot;</span>,
+    <span class="s2">&quot;packet_length_start_options&quot;</span>: <span class="s2">&quot;0 .. 16000&quot;</span>,
+    <span class="s2">&quot;packet_length_end_options&quot;</span>: <span class="s2">&quot;0 .. 16000&quot;</span>,
+    <span class="s2">&quot;phy_rate_options&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;r_1_mbps&quot;</span>,
+        <span class="s2">&quot;r_2_mbps&quot;</span>,
+        <span class="s2">&quot;r_5p5_mbps&quot;</span>,
+        <span class="s2">&quot;r_11_mbps&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;tx_power_options&quot;</span>: <span class="s2">&quot;-10 .. 21&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Once the parameter file is generated you may edit the file as needed. Reference the arguments mentioned after line <cite>“_options_”</cite> to modify according to the available settings.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The generated .json file has many of the same parameters that can be exported from Radio Tool GUI directly. If unsure of what options to use, try exporting a file from RadioTool GUI with the desired settings to compare parameters.</p>
+</div>
+</div>
+<div class="section" id="wi-fi-tx">
+<span id="wi-fi-tx-commands"></span><h3>Wi-Fi TX<a class="headerlink" href="#wi-fi-tx" title="Permalink to this headline">¶</a></h3>
+<p>Once the desired TX parameters file exists on a known path (refer to <a class="reference internal" href="#generating-transmit-parameters">Generating Transmit parameters</a>), the device can be set to transmit.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx start --channel <span class="s2">&quot;1&quot;</span> --band <span class="s2">&quot;b24Ghz&quot;</span> --calibrate  --tx_parameters_file C:<span class="se">\t</span>i<span class="se">\s</span>implelink_wifi_toolbox_x.x.x/tx_parameters_p_11b_long_preamble.json
+</pre></div>
+</div>
+</div></blockquote>
+<p>You may repeat the commands shown as needed, make sure to stop current Wi-Fi TX test before doing a another Wi-Fi transmission.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx stop
+</pre></div>
+</div>
+</div></blockquote>
+<p>Once WLAN testing is complete, make sure to stop the test and turn PLT off.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan plt --off
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>It is required that WLAN PLT be ON before starting TX testing, and any previous testing is stopped before running another test.</p>
+<p class="last">Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done when the optional arguments <code class="docutils literal notranslate"><span class="pre">--channel</span></code>, <code class="docutils literal notranslate"><span class="pre">--band</span></code>, and <code class="docutils literal notranslate"><span class="pre">--calibrate</span></code> are used in the command. The seperate Tune channel and calibrate commands can also be used (refer to <a class="reference internal" href="#tune-and-calibrate">Tune and Calibrate</a> ).</p>
+</div>
+</div>
+<div class="section" id="wi-fi-rx">
+<h3>Wi-Fi RX<a class="headerlink" href="#wi-fi-rx" title="Permalink to this headline">¶</a></h3>
+<p>RX testing is used for gathering Wi-Fi statistics within a specified channel.</p>
+<p>Once the desired TX parameters file exists on a known path (refer to <a class="reference internal" href="#generating-transmit-parameters">Generating Transmit parameters</a>), the commands below shows how to run the Wi-Fi RX test.</p>
+<p>Example of Starting Wi-Fi RX test for 2.4Ghz:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan rx start --ack_disable --preamble_type <span class="s2">&quot;All&quot;</span>  --phy_rate <span class="s2">&quot;All&quot;</span> --mac_address  <span class="s2">&quot;FF:FF:FF:FF:FF:FF&quot;</span> --channel <span class="s2">&quot;1&quot;</span> --band <span class="s2">&quot;b24Ghz&quot;</span> --calibrate
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When testing for 5Ghz the  Association Index must be specified by adding optiona argument <code class="docutils literal notranslate"><span class="pre">--aid</span></code>.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>It is required that WLAN PLT be ON before starting Wi-Fi RX test, and any previous testing should stopped before running another test.</p>
+<p class="last">Before doing receiver testing the device should always be tuned to the desired channel and band, then calibrated. This can be done when the optional arguments <code class="docutils literal notranslate"><span class="pre">--channel</span></code>, <code class="docutils literal notranslate"><span class="pre">--band</span></code>, and <code class="docutils literal notranslate"><span class="pre">--calibrate</span></code> are used in the command. The separate Tune channel and calibrate commands can also be used (refer to <a class="reference internal" href="#tune-and-calibrate">Tune and Calibrate</a> ).</p>
+</div>
+<p>Optional arguments for command ‘wlan rx’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arguments:
+  start             Start Receiver Test
+  stop              Stop Receiver Test
+  stats             Read Receiver Statistics
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘wlan rx start’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --ack_enable     Response with ACK
+
+  --ack_disable    Don not respond with ACK
+
+  --preamble_type  Choose preamble Type
+      Options:
+          <span class="s2">&quot;All&quot;</span> <span class="o">(</span>recommended option<span class="o">)</span>
+          <span class="s2">&quot;11b Short Preamble&quot;</span>
+          <span class="s2">&quot;11b Long Preamble&quot;</span>
+          <span class="s2">&quot;11ag Legacy OFDM&quot;</span>
+          <span class="s2">&quot;11n Mixed Mode&quot;</span>
+          <span class="s2">&quot;11ac VHT&quot;</span>
+          <span class="s2">&quot;11ax SU&quot;</span>
+          <span class="s2">&quot;11ax SU ER&quot;</span>
+          <span class="s2">&quot;11ax TB&quot;</span>
+
+  --phy_rate      Choose the Phy Rate
+      Options: <span class="o">[</span>All <span class="o">(</span>recommended option<span class="o">)</span> , 1Mbps, 2Mbps, 5p5Mbps, 11Mbps, 6Mbps, 9Mbps, 12Mbps, 18Mbps,
+                24Mbps, 36Mbps, 48Mbps, 54Mbps, MCS0, MCS1, MCS2, MCS3, MCS4, MCS5, MCS6, MCS7<span class="o">]</span>
+
+  --mac_address    MAC Address, Default: FF:FF:FF:FF:FF:FF
+
+  --aid            Association Index, Default: <span class="m">65535</span>
+
+  --channel        Channel to tune before receiver <span class="nb">test</span> starts
+      Options: <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>, <span class="m">10</span>, <span class="m">11</span>, <span class="m">12</span>, <span class="m">13</span><span class="o">]</span>
+        <span class="o">[</span><span class="m">36</span>, <span class="m">40</span>, <span class="m">44</span>, <span class="m">48</span>, <span class="m">52</span>, <span class="m">56</span>, <span class="m">60</span>, <span class="m">64</span>, <span class="m">100</span>, <span class="m">104</span>, <span class="m">108</span>, <span class="m">112</span>, <span class="m">116</span>, <span class="m">120</span>, <span class="m">124</span>, <span class="m">128</span>, <span class="m">132</span>, <span class="m">136</span>, <span class="m">140</span>, <span class="m">144</span>, <span class="m">149</span>, <span class="m">153</span>, <span class="m">157</span>, <span class="m">161</span>, <span class="m">165</span><span class="o">]</span>
+
+  --band      Band of channel to tune before receiver <span class="nb">test</span> start
+      Options: <span class="o">[</span><span class="s2">&quot;b24Ghz&quot;</span>, <span class="s2">&quot;b5Ghz&quot;</span><span class="o">]</span>
+
+  --calibrate      Full calibration before receiver <span class="nb">test</span> start
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘wlan rx stats’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --get           Read current statistics data
+
+  --reset         Reset statistics data
+
+  --interval_sec  Read statistics every specified interval, <span class="k">in</span> seconds
+
+  --samples       Read statistics a specified amount of <span class="nb">times</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example command to read statistics;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan rx stats --get --interval_sec <span class="s2">&quot;1&quot;</span> --samples <span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example output from the “wlan rx stats” command.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Sample <span class="o">[</span><span class="m">1</span>/1<span class="o">]</span>
+Requesting For Statistics ...
+
++-----------------------------+-------+
+<span class="p">|</span> Key                         <span class="p">|</span> Value <span class="p">|</span>
++-----------------------------+-------+
+<span class="p">|</span> total_packet_number         <span class="p">|</span>     <span class="m">1</span> <span class="p">|</span>
+<span class="p">|</span> fcs_error_packet_number     <span class="p">|</span>     <span class="m">0</span> <span class="p">|</span>
+<span class="p">|</span> addr_mismatch_packet_number <span class="p">|</span>     <span class="m">0</span> <span class="p">|</span>
+<span class="p">|</span> good_packet_number          <span class="p">|</span>     <span class="m">1</span> <span class="p">|</span>
+<span class="p">|</span> average_data_ctrl_rssi      <span class="p">|</span>   -73 <span class="p">|</span>
++-----------------------------+-------+
+Statistics got successfully
+In order to stop this task press on CTRL+C or <span class="nb">wait</span> <span class="k">for</span> all samples <span class="k">done</span>.
+</pre></div>
+</div>
+</div></blockquote>
+<p>You may repeat the commands shown as needed, make sure to stop current Wi-Fi RX test before doing another Wi-Fi test.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan rx stop
+</pre></div>
+</div>
+</div></blockquote>
+<p>Once WLAN testing is complete, make sure to stop the test and turn PLT off.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan plt --off
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="wi-fi-tx-tone">
+<h3>Wi-Fi TX Tone<a class="headerlink" href="#wi-fi-tx-tone" title="Permalink to this headline">¶</a></h3>
+<p>When using the following command the user may create and transmit the Carrier Wave of a signal with selected tone options.</p>
+<p>Example of running the Wi-Fi TX Tone command;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./simplelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx_tone start --mode single_tone --offset -10 --channel <span class="s2">&quot;1&quot;</span> --band <span class="s2">&quot;b24Ghz&quot;</span> --calibrate
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  start       Start TX Tone
+  stop        Stop TX Tone
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --mode         Tone mode
+      Options:<span class="s2">&quot;single_tone&quot;</span>
+
+  --offset       Tone offset,
+      Options: -10<span class="o">[</span>Mhz<span class="o">]</span> to +10<span class="o">[</span>Mhz<span class="o">]</span>, with steps of <span class="m">0</span>.25<span class="o">[</span>Mhz<span class="o">]</span>
+
+  --channel      Channel to tune before TX Tone start
+      Options: <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>, <span class="m">10</span>, <span class="m">11</span>, <span class="m">12</span>, <span class="m">13</span><span class="o">]</span>
+        <span class="o">[</span><span class="m">36</span>, <span class="m">40</span>, <span class="m">44</span>, <span class="m">48</span>, <span class="m">52</span>, <span class="m">56</span>, <span class="m">60</span>, <span class="m">64</span>, <span class="m">100</span>, <span class="m">104</span>, <span class="m">108</span>, <span class="m">112</span>, <span class="m">116</span>, <span class="m">120</span>, <span class="m">124</span>, <span class="m">128</span>, <span class="m">132</span>, <span class="m">136</span>, <span class="m">140</span>, <span class="m">144</span>, <span class="m">149</span>, <span class="m">153</span>, <span class="m">157</span>, <span class="m">161</span>, <span class="m">165</span><span class="o">]</span>
+
+  --band         Band of channel to tune before TX Tone starts
+      Options: <span class="o">[</span><span class="s2">&quot;b24Ghz&quot;</span><span class="o">]</span>
+
+  --calibrate    Full calibration before TX Tone start
+</pre></div>
+</div>
+</div></blockquote>
+<p>You may repeat the commands shown as needed, make sure to stop current TX Tone test before doing a different test.</p>
+<p>Example for stopping the current Wi-Fi TX Tone test;</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan tx_tone stop
+</pre></div>
+</div>
+</div></blockquote>
+<p>Once testing is complete, make sure to stop the test and turn PLT off.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> wlan plt --off
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>It is required that WLAN PLT be ON before starting RX, and any previous testing is stopped before running another test.</p>
+<p class="last">Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done with seperate commands (refer to <a class="reference internal" href="#tune-and-calibrate">Tune and Calibrate</a>), but it is also done when the argument ‘–channel’, ‘–band’, and –calibrate are used with the appropiate commands.</p>
+</div>
+</div>
+</div>
+<div class="section" id="antenna-select">
+<h2>Antenna Select<a class="headerlink" href="#antenna-select" title="Permalink to this headline">¶</a></h2>
+<p>The following command is used to select the antenna</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> common antenna_selection <span class="nb">set</span> --antenna_number <span class="s2">&quot;0&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘common antenna_selection’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  <span class="nb">set</span>       Set transmit antenna number
+  get       Get transmit antenna number
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘common antenna_selection set’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arguments:
+  --antenna_number  Antenna number<span class="o">]</span>
+      Options: <span class="o">[</span><span class="s2">&quot;0&quot;</span>, <span class="s2">&quot;1&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ble-plt">
+<h2>BLE PLT<a class="headerlink" href="#ble-plt" title="Permalink to this headline">¶</a></h2>
+<p>Bluetooth ® Low Energy 5.4 is only used with CC35x1/CC33x1 devices. This sections explains the CLI commands to use for testing BLE.</p>
+<p>Once the containers have been loaded to the device (refer to <a class="reference internal" href="#loading-containers">Loading Containers</a>) and the below commands are run you may start running BLE tests.</p>
+<p>Enable the BLE Radio:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> common ble_enable
+</pre></div>
+</div>
+</div></blockquote>
+<p>Turn on BLE PLT:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble plt --on
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is required that BLE PLT be ON before doing any testing</p>
+</div>
+<div class="section" id="transmitting-ble-packets">
+<span id="tx-ble-packets"></span><h3>Transmitting BLE Packets<a class="headerlink" href="#transmitting-ble-packets" title="Permalink to this headline">¶</a></h3>
+<p>The below commands are used to test BLE packet transmissions</p>
+<p>Example of starting BLE TX with parameters:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_tx start --phy_mode <span class="s2">&quot;LE_1_Mbps&quot;</span> --tx_power <span class="m">0</span> --channel <span class="m">17</span> --no_whitening --packet_number <span class="m">100</span> --packet_interval_ms <span class="m">10</span> --sequence_number_enable --packet_type OZOZ --packet_length <span class="m">37</span> --calibrate
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example of starting BLE TX with infinite number of packets:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_tx start --phy_mode LE_1_Mbps --tx_power <span class="m">0</span> --channel <span class="m">17</span> --whitening --packet_number <span class="m">0</span> --packet_interval_ms <span class="m">10</span> --sequence_number_enable --packet_type Hex --packet_payload_data <span class="s2">&quot;05 a2 11 22&quot;</span> --calibrate
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘ble’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  plt                      Enable/Disable Production Line Test <span class="o">(</span>PLT<span class="o">)</span>
+  packet_tx                Packet Transmitter Test
+  packet_rx                Packet Receiver Test
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt>Optional arguments for command ‘ble packet_tx’</dt>
+<dd><div class="first last highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  start            Start Packet Transmitter Test
+  stop             Stop Packet Transmitter Test
+  stat             Read Transmitter Statistics
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Optional arguments for command ‘ble packet_tx start’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --phy_mode                Transmit PHY Mode
+      Options:  <span class="o">[</span>LE_1_Mbps, LE_2_Mbps, LE_Coded_500_kbps, LE_Coded_125_kbps<span class="o">]</span>
+
+  --tx_power                Transmit Power, between -10 and <span class="m">22</span> dBm with <span class="m">1</span> dBm available step
+
+  --channel                 Transmit channel number
+      Options:  <span class="o">[</span><span class="m">0</span> to <span class="m">39</span><span class="o">]</span>
+
+  --whitening               Scrambled packet payload before transmission
+
+  --no_whitening            Do not scramble packet payload before transmission
+
+  --packet_number           Number of packet to transmit, <span class="nb">set</span> <span class="m">0</span> <span class="k">for</span> infinite number of packets
+
+  --packet_type             Transmit packet <span class="nb">type</span>
+      Options:  <span class="o">[</span>Text, Hex, PRBS9, FOFO, ZOZO, PRBS15, ALLONES, ALLZEROS, OFOF, OZOZ<span class="o">]</span>
+
+  --packet_length           Packet length to transmit, <span class="k">in</span> bytes, required <span class="k">for</span> non <span class="s1">&#39;Hex&#39;</span>/<span class="s1">&#39;Text&#39;</span> packet <span class="nb">type</span>
+
+  --packet_payload_data     Packet payload data, required <span class="k">for</span> <span class="s1">&#39;Hex&#39;</span>/<span class="s1">&#39;Text&#39;</span> packet <span class="nb">type</span>
+
+  --packet_interval_ms      Interval between transmitted packets, <span class="k">in</span> mSec
+
+  --sequence_number_enable  Include sequence number as part of payload, will include as two first bytes <span class="k">in</span> payload
+
+  --calibrate               Calibrate before transmission
+</pre></div>
+</div>
+</div></blockquote>
+<p>Use this command to read transmitter statistics</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_tx stat --get --packet_type OZOZ
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--get          Read current statistics data
+
+--reset        Reset statistics data
+
+--packet_type  Select transmitted packet <span class="nb">type</span>
+      Options:  <span class="o">[</span><span class="s1">&#39;Text&#39;</span>, <span class="s1">&#39;Hex&#39;</span>, <span class="s1">&#39;PRBS9&#39;</span>, <span class="s1">&#39;FOFO&#39;</span>, <span class="s1">&#39;ZOZO&#39;</span>, <span class="s1">&#39;PRBS15&#39;</span>, <span class="s1">&#39;ALLONES&#39;</span>, <span class="s1">&#39;ALLZEROS&#39;</span>, <span class="s1">&#39;OFOF&#39;</span>, <span class="s1">&#39;OZOZ&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Use the following command to stop transmission testing. This is needed before a different transmission can be started.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_tx stop
+</pre></div>
+</div>
+<p>You can repeat the commands mentioned above with different parameters as desired. Once testing is complete, make sure to stop the test and turn PLT off.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble plt --off
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>It is required that BLE PLT be ON before any BLE testing, and any previous testing is stopped before running another test with different parameters.</p>
+<p class="last">Before transmitting the device should always be tuned to the desired channel and band, then calibrated. This can be done with when the optional arguments <code class="docutils literal notranslate"><span class="pre">--channel</span></code>, <code class="docutils literal notranslate"><span class="pre">--band</span></code>, and <code class="docutils literal notranslate"><span class="pre">--calibrate</span></code> are used in the command. The separate Tune channel and calibrate commands can also be used (refer to <a class="reference internal" href="#tune-and-calibrate">Tune and Calibrate</a>).</p>
+</div>
+</div>
+<div class="section" id="ble-receive-packets">
+<h3>BLE Receive packets<a class="headerlink" href="#ble-receive-packets" title="Permalink to this headline">¶</a></h3>
+<p>The below commands are used to test receiving BLE packets</p>
+<p>Optional arguments for command ‘ble packet_rx’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  start            Start Packet Receiver Test
+  stop             Stop Packet Receiver Test
+  stat             Read Receiver Statistics
+</pre></div>
+</div>
+</div></blockquote>
+<p>Example of starting BLE RX:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_rx start --phy_mode <span class="s2">&quot;LE_2_Mbps&quot;</span> --channel <span class="m">11</span> --no_whitening --calibrate
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘ble packet_rx start’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --phy_mode          Receive PHY Mode
+      Options:  <span class="o">[</span>LE_1_Mbps, LE_2_Mbps, LE_Coded_500_kbps, LE_Coded_125_kbps<span class="o">]</span>
+
+  --channel           Transmit channel number
+      Options:  <span class="o">[</span><span class="m">0</span> to <span class="m">39</span><span class="o">]</span>
+
+  --whitening        Packet payload was scrambled before transmission
+
+  --no_whitening     Packet payload was not scrambled before transmission
+
+  --access_address   Access address, default: 8e89bed6
+
+  --only_statistics  Collect packet statistics without packet payload
+
+  --calibrate        Calibrate before receiving packet
+</pre></div>
+</div>
+</div></blockquote>
+<p>Use the following command to stop transmission testing. This is needed before a different transmission can be started.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_rx stop
+</pre></div>
+</div>
+</div></blockquote>
+<p>Use this command to geet BLE RX statistics:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_rx stat --get
+</pre></div>
+</div>
+</div></blockquote>
+<p>Optional arguments for command ‘ble packet_rx stat’</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arguments:
+  --get              Read current statistics data
+  --reset            Reset statistics data
+  --view_format      Display received payload as, available choices: <span class="o">[</span><span class="s1">&#39;Hex&#39;</span>, <span class="s1">&#39;Text&#39;</span><span class="o">]</span>
+  --sequence_number  Contains sequence number <span class="k">in</span> payload
+  --only_statistics  Statistics without packet payload
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can repeat the commands mentioned above with different parameters as desired. Once testing is complete, make sure to stop the test and turn PLT off.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble packet_rx stop
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> ble plt --off
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>It is required that BLE PLT be ON before testing, and any previous testing is stopped before running another test with different parameters.</p>
+<p class="last">Before transmitting the device should be calibrated, this is done with the optional argument –calibrate.</p>
+</div>
+</div>
+</div>
+<div class="section" id="more-cli-options">
+<span id="radio-tool-cli"></span><h2>More CLI Options<a class="headerlink" href="#more-cli-options" title="Permalink to this headline">¶</a></h2>
+<p>When using CLI you can use the following help command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -h
+</pre></div>
+</div>
+</div></blockquote>
+<p>Output:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: .\simplelink-wifi-toolbox.exe radio-tool [-h] [--version] -i {XDS110} [-param1 INTERFACE_PARAMETER_1]
+                                              [-param2 INTERFACE_PARAMETER_2]
+                                              {firmware,phy,cpe,mce,mac_address,wlan,ble}
+
+positional arguments:
+  {firmware,phy,cpe,mce,mac_address,wlan,ble}
+    firmware            Firmware
+    phy                 Phy
+    cpe                 CPE
+    mce                 MCE
+    mac_address         Mac Address
+    wlan                WLAN
+    ble                 BLE
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program&#39;s version number and exit
+  -i {XDS110}, --interface {XDS110}
+                        Interface
+  -param1 INTERFACE_PARAMETER_1, --interface_parameter_1 INTERFACE_PARAMETER_1
+                        Interface
+  -param2 INTERFACE_PARAMETER_2, --interface_parameter_2 INTERFACE_PARAMETER_2
+                        Interface
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="device-information-commands">
+<span id="info-commands"></span><h3>Device Information Commands<a class="headerlink" href="#device-information-commands" title="Permalink to this headline">¶</a></h3>
+<p>Bellow are command examples to get the version from device for firmware, PHY, CPE, and MCE</p>
+<p>Get Firmware version:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> firmware -v
+</pre></div>
+</div>
+</div></blockquote>
+<p>Get PHY version:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> phy  -v
+</pre></div>
+</div>
+</div></blockquote>
+<p>Get CPE version:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> cpe  -v
+</pre></div>
+</div>
+</div></blockquote>
+<p>Get MCE version:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> mce  -v
+</pre></div>
+</div>
+</div></blockquote>
+<p>Get device MAC address:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe radio-tool -i XDS110 -param1 <span class="m">12345678</span> mac_address -a
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="communicator-commands">
+<span id="communicator"></span><h3>Communicator Commands<a class="headerlink" href="#communicator-commands" title="Permalink to this headline">¶</a></h3>
+<p>To use the communicator (XDS110) with CLI you can use the following help command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe communicator -h
+</pre></div>
+</div>
+</div></blockquote>
+<p>Outputs:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: .\simplelink-wifi-toolbox.exe communicator [-h] [--version] -i {XDS110} -param1 INTERFACE_PARAMETER_1 [-param2 INTERFACE_PARAMETER_2]
+                                                {container,general,memory_read,memory_write,rma} ...
+
+positional arguments:
+  {container,general,memory_read,memory_write,rma}
+    container           Download container from binary file
+    general             Get general information from Jtag
+    memory_read         Read from memory space using M3
+    memory_write        Write into memory space using M3
+    rma                 Rma command
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program&#39;s version number and exit
+  -i {XDS110}, --interface {XDS110}
+                        Interface
+  -param1 INTERFACE_PARAMETER_1, --interface_parameter_1 INTERFACE_PARAMETER_1
+                        serial numberws interface
+  -param2 INTERFACE_PARAMETER_2, --interface_parameter_2 INTERFACE_PARAMETER_2
+                        Interface
+</pre></div>
+</div>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe communicator container -h
+</pre></div>
+</div>
+<p>Outputs;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>optional arguments:
+  -h, --help        show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --container_file  Path to container binary file
+  --timeout         Set timeout <span class="k">for</span> error detection
+  --write_delay     Set delay between data send
+  --reset_device    Reset device before download container
+  --dwnld_speed     Configure download speed, avaliable options: <span class="o">[</span><span class="s1">&#39;low&#39;</span>, <span class="s1">&#39;mid&#39;</span>, <span class="s1">&#39;mid_high&#39;</span>, <span class="s1">&#39;high&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe communicator general -h
+</pre></div>
+</div>
+<p>Outputs;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>positional arguments:
+  <span class="o">{</span>device_reset,device_status,device_info<span class="o">}</span>
+    device_reset                    get device status
+    device_status                   get device status
+    device_info                     get device information
+</pre></div>
+</div>
+<div class="section" id="reset-device">
+<span id="how-to-reset-cc33xx"></span><h4>Reset device<a class="headerlink" href="#reset-device" title="Permalink to this headline">¶</a></h4>
+<p>Instead of power cycling the device you may use the following command to reset the device:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe communicator -i XDS110 -param1 <span class="m">12345678</span> general device_reset
+</pre></div>
+</div>
+</div></blockquote>
+<p>To verify that the device was reset the following command may be used to verify the current status of the device:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\s</span>implelink-wifi-toolbox.exe  communicator -i XDS110 -param1 <span class="m">12345678</span> general device_status
+</pre></div>
+</div>
+</div></blockquote>
+<p>It should output a table with remark “WAITING_FOR_CONTAINER”, which means the device is waiting for the containers to be loaded ( refer to <a class="reference internal" href="#loading-containers">Loading Containers</a> ).</p>
+<p>Example Output below:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+-------------------+--------+-----------------+-----------------+-----------------------+
+<span class="p">|</span> Reg Name          <span class="p">|</span> Offset <span class="p">|</span> Reg Value <span class="o">(</span>DEC<span class="o">)</span> <span class="p">|</span> Reg Value <span class="o">(</span>HEX<span class="o">)</span> <span class="p">|</span>        Remark         <span class="p">|</span>
++-------------------+--------+-----------------+-----------------+-----------------------+
+<span class="p">|</span> DEVICE_ID         <span class="p">|</span> <span class="m">0</span>      <span class="p">|</span> <span class="m">196612143</span>       <span class="p">|</span> 0xbb8102f       <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> DEVICE_USER_CODE  <span class="p">|</span> <span class="m">4</span>      <span class="p">|</span> <span class="m">0</span>               <span class="p">|</span> 0x0             <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> DEBUG_SS_VERSION  <span class="p">|</span> <span class="m">8</span>      <span class="p">|</span> <span class="m">1073741968</span>      <span class="p">|</span> 0x40000090      <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> SYS               <span class="p">|</span> <span class="m">12</span>     <span class="p">|</span> <span class="m">0</span>               <span class="p">|</span> 0x0             <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> BOOT_DIAG         <span class="p">|</span> <span class="m">16</span>     <span class="p">|</span> <span class="m">11</span>              <span class="p">|</span> 0xb             <span class="p">|</span> WAITING_FOR_CONTAINER <span class="p">|</span>
+<span class="p">|</span> LIFE_CYCLE_STATE  <span class="p">|</span> <span class="m">20</span>     <span class="p">|</span> <span class="m">3</span>               <span class="p">|</span> 0x3             <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> DFT_EN            <span class="p">|</span> <span class="m">24</span>     <span class="p">|</span> <span class="m">0</span>               <span class="p">|</span> 0x0             <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> UNIQUE_DEVICE_ID0 <span class="p">|</span> <span class="m">40</span>     <span class="p">|</span> <span class="m">287703744</span>       <span class="p">|</span> 0x112602c0      <span class="p">|</span>                       <span class="p">|</span>
+<span class="p">|</span> UNIQUE_DEVICE_ID1 <span class="p">|</span> <span class="m">44</span>     <span class="p">|</span> <span class="m">337784908</span>       <span class="p">|</span> 0x1422304c      <span class="p">|</span>                       <span class="p">|</span>
++-------------------+--------+-----------------+-----------------+-----------------------+
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-detect-my-xds110-serial-number">
+<span id="detect-xds110-serial-number"></span><h2>How to detect my XDS110 Serial Number<a class="headerlink" href="#how-to-detect-my-xds110-serial-number" title="Permalink to this headline">¶</a></h2>
+<p>When the XDS110 debug probe is connected to PC you may confirm the serial number by doing the following.</p>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open Windows Command Line ( CMD ) and navigate into the XDS110 updates directory with this command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> c:<span class="se">\t</span>i<span class="se">\s</span>implelink_wifi_toolbox_x.x.x<span class="se">\u</span>tility<span class="se">\x</span>ds110
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Execute the following command to show information of connected devices.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ .<span class="se">\x</span>dsdfu -e
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div>output should look like this:</div></blockquote>
+<blockquote id="xds110-information">
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/xdsdfu-e.png"><img alt="../_images/xdsdfu-e.png" src="../_images/xdsdfu-e.png" style="width: 418.8px; height: 210.0px;" /></a>
+</div>
+<p>Serial Number should be taken from “Serial Num:”</p>
+</div></blockquote>
+</div>
+<div class="section" id="ubuntu">
+<h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open terminal and navigate into the XDS110 updates directory with this command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/ti/simplelink_wifi_toolbox_x.x.x/utility/xds110
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Execute the xdsdfu application to see all connected devices</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xdsdfu -e
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><p>output should look like this:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/xdsdfu-e.png"><img alt="xdsdfu-e" src="../_images/xdsdfu-e.png" style="width: 418.8px; height: 210.0px;" /></a>
+</div>
+<p>Serial Number should be taken from “Serial Num:”</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ini_composer_user_guide.html" class="btn btn-neutral float-right" title="INI Composer User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="radio_tool_user_guide.html" class="btn btn-neutral float-left" title="Radio Tool User’s Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

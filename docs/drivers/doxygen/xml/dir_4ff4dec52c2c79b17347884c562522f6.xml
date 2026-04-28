@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_4ff4dec52c2c79b17347884c562522f6" kind="dir">
+    <compoundname>power</compoundname>
+    <innerfile refid="_power_w_f_f3_8h">PowerWFF3.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/power/"/>
+  </compounddef>
+</doxygen>

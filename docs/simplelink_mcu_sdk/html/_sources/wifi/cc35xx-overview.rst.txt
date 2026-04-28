@@ -1,0 +1,38 @@
+.. _sec-wifi-overview:
+
+Overview & Features
+===================
+
+Introduction
+------------
+
+CC35xx Simplelink Wi-Fi family of devices is a full SoC, enabling connectivity through Wi-Fi and BLE.
+In this section, the focus would be on Wi-Fi and to demonstrates its capabilities, the Network Terminal
+example in the SimpleLink Wi-Fi Software Development Kit would be used.
+The purpose is to familiarize users with Wi-Fi in general and with the set of APIs available to the application.
+To simplify the experience, the network terminal is used to translate these APIs into a readable terminal interactive commands
+that would be covered in this section.
+
+.. note::
+		Follow the Quick Start Guide under the SDK documentation folder to install the SDK, build the setup,
+		activate the device (which is locked initially) and program the device for the first time.
+		Upon successful procedure, the Network Terminal menu should appear on the Terminal emulation.
+
+
+**Wi-Fi** Features
+------------------
+
+* IEEE 802.11 b/g/n/a/ax
+* 2.4GHz and 5GHz bands
+* Station role (STA) 
+* Access Point role (AP) - up to 4 connections, Wi-Fi4 only
+* Multirole - STA role and AP role running in parallel
+* Channel Switch Announcement support in Station role
+* P2P Client and Go
+* Support Security types - Personal - WPA3 (STA role only), WPA2 (STA and AP), WPA/WPA2 (mixed mode, STA role only), WPS, OPEN
+						 - Enterprise - WPA3, WPA2 (TLS,TTLS, PEAP0)
+* Date and time module
+* Agile Multiband
+* DFS support and channel switch
+
+

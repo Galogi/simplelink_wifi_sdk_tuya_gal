@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_ca5bc1b6fa7a6c9932fc577f49c4b654" kind="dir">
+    <compoundname>aes</compoundname>
+    <innerfile refid="_a_e_s_common_x_x_f3_8h">AESCommonXXF3.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/cryptoutils/aes/"/>
+  </compounddef>
+</doxygen>

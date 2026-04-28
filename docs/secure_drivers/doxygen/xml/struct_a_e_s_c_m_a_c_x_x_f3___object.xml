@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_c_m_a_c_x_x_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>AESCMACXXF3_Object</compoundname>
+    <includes refid="_a_e_s_c_m_a_c_x_x_f3_8h" local="no">AESCMACXXF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a56468d8e6e0901271c9923a597a0633a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_a_e_s_common_x_x_f3___object" kindref="compound">AESCommonXXF3_Object</ref></type>
+        <definition>AESCommonXXF3_Object AESCMACXXF3_Object::common</definition>
+        <argsstring></argsstring>
+        <name>common</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="131" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1aae0bd95633a8804772b7a2b4573cd638" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t AESCMACXXF3_Object::intermediateTag[AES_TAG_LENGTH_BYTES/4U]</definition>
+        <argsstring>[AES_TAG_LENGTH_BYTES/4U]</argsstring>
+        <name>intermediateTag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="132" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a71bebe2869ecf4592f2ce878ba7f23dd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCMACXXF3_Object::finalInputBlock[AES_BLOCK_SIZE_WORDS]</definition>
+        <argsstring>[AES_BLOCK_SIZE_WORDS]</argsstring>
+        <name>finalInputBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="133" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a814edbf291867a9bef8fb37d26e6f430" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_m_a_c_8h_1a8e592c44859616fb36f7f43e207721c5" kindref="member">AESCMAC_CallbackFxn</ref></type>
+        <definition>AESCMAC_CallbackFxn AESCMACXXF3_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="134" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a998a5ebe80ea4e8d439d352e4a9d6fce" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_a_e_s_c_m_a_c___operation" kindref="compound">AESCMAC_Operation</ref> *</type>
+        <definition>AESCMAC_Operation* AESCMACXXF3_Object::operation</definition>
+        <argsstring></argsstring>
+        <name>operation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="135" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a76f24d6eafe4115aa0fdfe0a92a4676d" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_m_a_c_8h_1ac55eeee495d245e33cd5461184af41a4" kindref="member">AESCMAC_OperationType</ref></type>
+        <definition>AESCMAC_OperationType AESCMACXXF3_Object::operationType</definition>
+        <argsstring></argsstring>
+        <name>operationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="136" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a1a9811e471378a2e3b4f4ca9573c9e97" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_e_s_c_m_a_c_8h_1abaad4def712e02a8451f275575c2771c" kindref="member">AESCMAC_OperationalMode</ref></type>
+        <definition>AESCMAC_OperationalMode AESCMACXXF3_Object::operationalMode</definition>
+        <argsstring></argsstring>
+        <name>operationalMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="137" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1adfd89ccdb26398325245d0798a783bfa" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* AESCMACXXF3_Object::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="139" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a3095b9edf1d1fb0cd251d2222a22dff7" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t AESCMACXXF3_Object::inputLength</definition>
+        <argsstring></argsstring>
+        <name>inputLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="140" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a44ffe1bc505a3e8dabbd72ecdf607a9c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCMACXXF3_Object::tempAssetID</definition>
+        <argsstring></argsstring>
+        <name>tempAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="141" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1ac4a49ac775694bccb204e9eb9c86986f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t AESCMACXXF3_Object::keyAssetID</definition>
+        <argsstring></argsstring>
+        <name>keyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="142" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1ae4d5c1e32cdf0c1969528469ef48b628" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCMACXXF3_Object::hsmStatus</definition>
+        <argsstring></argsstring>
+        <name>hsmStatus</name>
+        <briefdescription>
+<para>The status of the HSM Boot up process if HSMXXF3_STATUS_SUCCESS, the HSM booted properly. if HSMXXF3_STATUS_ERROR, the HSM did not boot properly. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="148" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a29b54f226bbf0d11e3c295918f9318dd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCMACXXF3_Object::segmentedOperationInProgress</definition>
+        <argsstring></argsstring>
+        <name>segmentedOperationInProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="150" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1aa6b9b6e6ea1495f4c19099cf4cd7322e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCMACXXF3_Object::driverCreatedKeyAsset</definition>
+        <argsstring></argsstring>
+        <name>driverCreatedKeyAsset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="151" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_m_a_c_x_x_f3___object_1a81f1c6cda379e89555f71fbd3c7d3cfb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool AESCMACXXF3_Object::threadSafe</definition>
+        <argsstring></argsstring>
+        <name>threadSafe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="153" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCMACXXF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="71">
+        <label>AESCommonXXF3_Object</label>
+        <link refid="struct_a_e_s_common_x_x_f3___object"/>
+        <childnode refid="72" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>AESCMAC_Operation</label>
+        <link refid="struct_a_e_s_c_m_a_c___operation"/>
+      </node>
+      <node id="72">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="73" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="68">
+        <label>AESCMACXXF3_Object</label>
+        <link refid="struct_a_e_s_c_m_a_c_x_x_f3___object"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>common</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>AESCommon_Config</label>
+        <link refid="struct_a_e_s_common___config"/>
+      </node>
+      <node id="74">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/aescmac/AESCMACXXF3.h" line="129" column="1" bodyfile="source/ti/drivers/aescmac/AESCMACXXF3.h" bodystart="128" bodyend="154"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a814edbf291867a9bef8fb37d26e6f430" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a56468d8e6e0901271c9923a597a0633a" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>common</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1aa6b9b6e6ea1495f4c19099cf4cd7322e" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>driverCreatedKeyAsset</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a71bebe2869ecf4592f2ce878ba7f23dd" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>finalInputBlock</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1ae4d5c1e32cdf0c1969528469ef48b628" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>hsmStatus</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1adfd89ccdb26398325245d0798a783bfa" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>input</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a3095b9edf1d1fb0cd251d2222a22dff7" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>inputLength</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1aae0bd95633a8804772b7a2b4573cd638" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>intermediateTag</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1ac4a49ac775694bccb204e9eb9c86986f" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>keyAssetID</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a998a5ebe80ea4e8d439d352e4a9d6fce" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>operation</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a1a9811e471378a2e3b4f4ca9573c9e97" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>operationalMode</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a76f24d6eafe4115aa0fdfe0a92a4676d" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>operationType</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a29b54f226bbf0d11e3c295918f9318dd" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>segmentedOperationInProgress</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a44ffe1bc505a3e8dabbd72ecdf607a9c" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>tempAssetID</name></member>
+      <member refid="struct_a_e_s_c_m_a_c_x_x_f3___object_1a81f1c6cda379e89555f71fbd3c7d3cfb" prot="public" virt="non-virtual"><scope>AESCMACXXF3_Object</scope><name>threadSafe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

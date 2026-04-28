@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___s_p_i___c_m_d" kind="group">
+    <compoundname>SPI_CMD</compoundname>
+    <title>Command Codes</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga07972712cc7d02620987197f923453b3" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_RETURN_PARTIAL_ENABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 0)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Enabling this command allows SPI_transfer to return partial data if the controller de-asserts the CS line before the expected number of frames were received. This command <bold>arg</bold> is of type <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns SPI_STATUS_SUCCESS or SPI_STATUS_ERROR. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="634" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="634" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1gaefbbe828a00189418c7519aca91218b3" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_RETURN_PARTIAL_DISABLE</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 1)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to disable partial return. </para>        </briefdescription>
+        <detaileddescription>
+<para>Disabling this command returns the SPIWFF3DMA to the default blocking behavior where SPI_transfer blocks until all data bytes were received. With this command <bold>arg</bold> is <emphasis>don&apos;t</emphasis> <emphasis>care</emphasis> and it returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="643" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1gab0319d6b622964d95123f19fa242cfa8" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_SET_CSN_PIN</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 2)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to re-configure chip select pin. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command specifies a chip select pin in <bold>arg</bold> with type <computeroutput>uint_least8_t</computeroutput>. It always returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="651" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="651" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga5191278174ea5437a005eb7df5b7ecb5" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_CLEAR_CSN_PIN</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 3)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to clear the chip select pin. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command <bold>arg</bold> should be NULL. It always returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="658" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="658" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga561ffe8c7f1eca1228d9c2016855195e" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_SET_MANUAL</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 4)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Manual start mode can only be used when in callback mode. In manual start mode, calls to <ref refid="_s_p_i_8h_1a989e17f96b54fcc3dc2cac5f8ac6bdb2" kindref="member">SPI_transfer()</ref> queue the transaction but does not start the transfer until another control call is made with <ref refid="group___s_p_i___c_m_d_1gafdbeb15079bc9a1ff88fa0ea3e0fa82d" kindref="member">SPIWFF3DMA_CMD_MANUAL_START</ref>. This allows multiple transactions to be queued and executed seamlessly using the DMA&apos;s ping pong mechanism. This mode is MANDATORY for peripherals queueing multiple short transactions. Manual start mode can only be enabled or disabled when no transactions are queued.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="673" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga838baa6dcf3f43455c9feb4867cfb0e8" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_CLR_MANUAL</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 5)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to disable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Manual start mode is disabled by default. Enabling and disabling manual mode can only be done if no transactions are currently queued.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="684" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="684" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1gafdbeb15079bc9a1ff88fa0ea3e0fa82d" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_MANUAL_START</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 6)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to enable manual start mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command is used with manual start mode enabled. If transactions have been queued and the driver is in manual mode, this command will enable the SSI and DMA. For controller devices, the transfer will start. For peripheral devices, the transfer will start when the controller initiates.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="696" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="696" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_p_i___c_m_d_1ga045715aee07904c24ee398975cabc64f" prot="public" static="no">
+        <name>SPIWFF3DMA_CMD_SET_SAMPLE_DELAY</name>
+        <initializer>(<ref refid="group___s_p_i___c_o_n_t_r_o_l_1ga3d23d16525ee76f77276472d8dea80b0" kindref="member">SPI_CMD_RESERVED</ref> + 7)</initializer>
+        <briefdescription>
+<para>Command used by <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref> to set the sample delay in controller mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>This command is only used when in controller mode. After <ref refid="_s_p_i_8h_1a9c9022decfb136991d6b53f7dd2ae2fc" kindref="member">SPI_open()</ref> is called, the default DSAMPLE value is set as follows.<itemizedlist>
+<listitem><para>(bitRate &lt; 4MHz) -&gt; delay = 0</para></listitem><listitem><para>(bitRate &gt;= 4MHz) -&gt; delay = 1</para></listitem><listitem><para>(bitRate &gt;= 8MHz) -&gt; delay = 2</para></listitem></itemizedlist>
+</para><para>The sample delay is a measurement of clock cycles. In controller mode the data on the input pin will delay sampling by the defined clock cycles. At lower bitRates a delay is usually not necessary. At higher bitRates a delay may become necessary if the peripheral device is not keeping pace with the controller device. In this case, the delay can be used to ensure the controller device captures the data on the input pin. This command <bold>arg</bold> is of type uint8_t.</para><para>Returns <ref refid="group___s_p_i___s_t_a_t_u_s_1gab38fa90ff62128dbc98b2ecd84ca106f" kindref="member">SPI_STATUS_SUCCESS</ref> or <ref refid="group___s_p_i___s_t_a_t_u_s_1ga2d0020dd673cc28a9e1c20b0ff101073" kindref="member">SPI_STATUS_ERROR</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/spi/SPIWFF3DMA.h" line="717" column="9" bodyfile="source/ti/drivers/spi/SPIWFF3DMA.h" bodystart="717" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SPI_CMD_* macros are general command codes for <ref refid="_s_p_i_8h_1a1b3fafc9892141b7bab1bc9c19ede9ef" kindref="member">SPI_control()</ref>. Not all SPI driver implementations support these command codes.</para><para>SPIWFF3DMA_CMD_* macros are command codes only defined in the <ref refid="_s_p_i_w_f_f3_d_m_a_8h" kindref="compound">SPIWFF3DMA.h</ref> driver implementation and need to: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/spi/SPIWFF3DMA.h&gt;</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

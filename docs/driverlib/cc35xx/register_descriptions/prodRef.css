@@ -1,0 +1,636 @@
+BODY.magillemBody
+{
+    BACKGROUND-COLOR: white;
+    BACKGROUND-IMAGE: url(stripe.gif);
+    BACKGROUND-REPEAT: repeat-y;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    MARGIN-LEFT: 1.5cm
+}
+BODY.magillemBody A
+{
+    TEXT-DECORATION: none
+}
+IFRAME.magillemHeader
+{
+    WIDTH: 100%;
+    HEIGHT: 4.5cm;
+}
+IFRAME.magillemFooter
+{
+    WIDTH: 100%;
+    HEIGHT: 3cm;
+}
+H1.magillemProductTitle
+{
+    COLOR: black;
+    TEXT-ALIGN: center
+}
+H1.magillemVersionTitle
+{
+    COLOR: black;
+    TEXT-ALIGN: center
+}
+H2.magillemInstanceSummaryTitle
+{
+    COLOR: black
+}
+H2.magillemCellTitle
+{
+    COLOR: black
+}
+H3.magillemRegisterTitle
+{
+    COLOR: black;
+    FONT-SIZE: small;
+    BACKGROUND: #FFFF99
+}
+H3.magillemRegisterSummaryTitle
+{
+    FONT-STYLE: italic;
+    FONT-SIZE: medium;
+    COLOR: black
+}
+TABLE.magillemInstanceSummaryTable
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    FONT-SIZE: x-small;
+    WIDTH: 100%
+}
+TABLE.magillemInstanceSummaryTable TR.row
+{
+}
+TABLE.magillemInstanceSummaryTable TR.rowHead
+{
+    BACKGROUND-COLOR: #FFFF99
+}
+TABLE.magillemInstanceSummaryTable TD.cellTopCol1
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellTopCol2
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellTopCol3
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellTopCol4
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellCol1
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellCol2
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellCol3
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemInstanceSummaryTable TD.cellCol4
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+
+TABLE.magillemRegisterSummaryTable
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    FONT-SIZE: x-small;
+    WIDTH: 100%
+}
+TABLE.magillemRegisterSummaryTable TR.rowHead
+{
+    BACKGROUND-COLOR: #FFFF99
+}
+TABLE.magillemRegisterSummaryTable TR.row
+{
+}
+TABLE.magillemRegisterSummaryTable TD.cellTopCol1
+{
+    WIDTH: 20%;
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellTopCol2
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellTopCol3
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellTopCol4
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellTopCol5
+{
+    BORDER-BOTTOM: black 3px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 2px solid;
+    FONT-WEIGHT: bold;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellCol1
+{
+    WIDTH: 20%;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellCol2
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellCol3
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellCol4
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterSummaryTable TD.cellCol5
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    FONT-SIZE: x-small;
+    WIDTH: 100%
+}
+TABLE.magillemRegisterTable TR.row
+{
+}
+TABLE.magillemRegisterTable TD.cellCol1
+{
+    WIDTH: 12%;
+    FONT-WEIGHT: bold;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable TD.cellCol2
+{
+    WIDTH: 30%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable TD.headerCol
+{
+    WIDTH: 40%;
+    BACKGROUND-COLOR: blue;
+    COLOR: white;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable TD.udpCol1
+{
+    WIDTH: 40%;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable TD.cellCol3
+{
+    WIDTH: 8%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemRegisterTable TD.cellCol4
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    text-align: left;
+    PADDING-TOP: 5px
+}
+
+TABLE.magillemBitfieldTable
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    FONT-SIZE: x-small;
+    WIDTH: 100%
+}
+TABLE.magillemBitfieldTable TR.rowTop
+{
+    FONT-WEIGHT: bold;
+}
+TABLE.magillemBitfieldTable TD.cellTopCol1
+{
+    WIDTH: 4%;
+    BACKGROUND-COLOR: #FFFF99;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellTopCol2
+{
+    WIDTH: 20%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellTopCol3
+{
+    WIDTH: 55%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellTopCol4
+{
+    WIDTH: 4%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellTopCol5
+{
+    WIDTH: 17%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TR.rowBitfield
+{
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldCol1
+{
+    WIDTH: 4%;
+    BACKGROUND-COLOR: #FFFF99;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldCol2
+{
+    WIDTH: 20%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldCol3
+{
+    WIDTH: 55%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldCol4
+{
+    WIDTH: 4%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldCol5
+{
+    WIDTH: 17%;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldHeaderUdp
+{
+    WIDTH: 17%;
+    BACKGROUND-COLOR: blue;
+    COLOR: white;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellBitfieldUdp
+{
+    WIDTH: 17%;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TR.rowEnum
+{
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol1
+{
+    BACKGROUND-COLOR: #FFFF99;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol2
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol3
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol4
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol5
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumUdpHeader
+{
+    BACKGROUND-COLOR: blue;
+    COLOR: white;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumUdp
+{
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+TABLE.magillemBitfieldTable TD.cellEnumCol6
+{
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}

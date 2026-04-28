@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_d_c_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>ADCWFF3_Object</compoundname>
+    <includes refid="_a_d_c_w_f_f3_8h" local="no">ADCWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___object_1a776280f540a2fefc150553f2cc5048d4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ADCWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag if the instance is in use </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="170" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_w_f_f3___object_1a98167759e728bd48d36d3ef5e388a6f0" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj ADCWFF3_Object::postNotify</definition>
+        <argsstring></argsstring>
+        <name>postNotify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For reconfiguration after Sleep </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/adc/ADCWFF3.h" line="172" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ADCWFF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="14">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ADCWFF3_Object</label>
+        <link refid="struct_a_d_c_w_f_f3___object"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>postNotify</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/adc/ADCWFF3.h" line="168" column="1" bodyfile="source/ti/drivers/adc/ADCWFF3.h" bodystart="167" bodyend="173"/>
+    <listofallmembers>
+      <member refid="struct_a_d_c_w_f_f3___object_1a776280f540a2fefc150553f2cc5048d4" prot="public" virt="non-virtual"><scope>ADCWFF3_Object</scope><name>isOpen</name></member>
+      <member refid="struct_a_d_c_w_f_f3___object_1a98167759e728bd48d36d3ef5e388a6f0" prot="public" virt="non-virtual"><scope>ADCWFF3_Object</scope><name>postNotify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

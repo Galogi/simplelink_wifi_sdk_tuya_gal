@@ -1,0 +1,61 @@
+***********************
+INI Composer User Guide
+***********************
+
+The INI Composer tool is used to configure radio frequency parameters and modes 
+specific to a CC33xx or CC35xx device. The tool will output either a :literal:`cc33xx-conf.bin`
+or a :literal:`cc35xx-conf.bin`. The :literal:`cc33xx-conf.bin` must be installed on embedded linux filesystems,
+while the :literal:`cc35xx-conf.bin` will be used for application development in the `CC35xx SimpleLink WiFi SDK`.
+See the Configuration steps in the documentation of the `CC35xx SimpleLink WiFi SDK` for more details.
+The binaries provided by this tool can also be used in RadioTool for radio testing and certification. 
+
+Loading and Generating
+======================
+
+The INI Composer tool can be used to both generate and load multiple file types 
+with each type serving different purposes. 
+
+Generate
+--------
+
+The :literal:`Generate` button is used to create different file types. The options 
+are **BIN**, and **TAR**. 
+
+* **BIN**: The output is :literal:`cc3xxx-conf.bin`. If using a CC33xx with a linux host, the file should be copied to :literal:`/lib/firmware/ti-connectivity/`.
+* **TAR**: An archive file containing the :literal:`cc33xx-conf.bin` and 
+  project settings. Preferred option for saving and loading.
+
+Load
+----
+
+Multiple file types can be used to change parameters from a previous session. 
+After pressing the :literal:`Load` button, any one of the input options will populate 
+the parameters in the INI Composer. Those options are **BIN**, **TAR**, **CONF KEY**, **CUSTOM**, **DIR**, 
+and **DEFAULT**. 
+
+* **BIN**: The same BIN file previously generated 
+* **TAR**: The same TAR file previously generated 
+* **CONF KEY**: Token for OTP configuration
+* **DIR**: A path to the uncompressed cc33conf folder. The path must be entered 
+  manually. For example, the string :literal:`C:\\Users\\<user>\\Downloads\\cc33conf` must 
+  be typed into the text box.
+* **CUSTOM**: Allows user to set the files individually.
+* **DEFAULT**: The default settings automatically provided by INI Composer 
+
+INI Parameter Description
+=========================
+
+The table below lists the parameters which can be defined in the INI file. All of the values here must be written in hexadecimal format.
+
+.. tabs::
+    .. tab:: CC33xx
+
+      .. include:: /global_files/ini-table.rst
+        :start-after: .. cc33xx-table-start
+        :end-before: .. cc33xx-table-end
+
+    .. tab:: CC35xx
+
+      .. include:: /global_files/ini-table.rst
+        :start-after: .. cc35xx-table-start
+        :end-before: .. cc35xx-table-end

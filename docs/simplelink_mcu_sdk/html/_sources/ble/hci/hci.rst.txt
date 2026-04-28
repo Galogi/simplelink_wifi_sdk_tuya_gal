@@ -1,0 +1,8 @@
+Vendor Specific HCI Commands
+============================
+
+.. include:: introduction.rst
+
+.. include:: hci_interface.rst
+
+.. include:: hci_ext_api.rst

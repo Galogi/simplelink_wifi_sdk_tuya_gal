@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structpsa__aead__operation__s" kind="struct" language="C++" prot="public">
+    <compoundname>psa_aead_operation_s</compoundname>
+    <includes refid="crypto__struct_8h" local="no">crypto_struct.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a56d14c30e289b3ef8d3028d21c999540" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_aead_operation_s::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique ID indicating which driver got assigned to do the operation. Since driver contexts are driver-specific, swapping drivers halfway through the operation is not supported. ID values are auto-generated in psa_driver_wrappers.h ID value zero means the context is not valid or not assigned to any driver (i.e. none of the driver contexts are active). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="657" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="657" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1aed4a6c71316b99e2bcf4f63932850ef5" prot="public" static="no" mutable="no">
+        <type><ref refid="group__crypto__types_1gac2e4d47f1300d73c2f829a6d99252d69" kindref="member">psa_algorithm_t</ref></type>
+        <definition>psa_algorithm_t psa_aead_operation_s::alg</definition>
+        <argsstring></argsstring>
+        <name>alg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="658" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="658" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1aed541f4f1a6367a8a5c2c01afcb0ec86" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_aead_operation_s::iv_set</definition>
+        <argsstring></argsstring>
+        <name>iv_set</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="659" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a3a4ec86a3dec74628d8fdde8692286db" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int psa_aead_operation_s::in_error_state</definition>
+        <argsstring></argsstring>
+        <name>in_error_state</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="660" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="660" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1acfca428a2024fba570829d12284fef86" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::adLength</definition>
+        <argsstring></argsstring>
+        <name>adLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="661" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="661" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a6f4b59e4bb238b5f9df2bf490f0090c3" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::plaintextLength</definition>
+        <argsstring></argsstring>
+        <name>plaintextLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="662" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="662" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a78b90cc8f7b99f6bf81aa3042adb5102" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::runningADLength</definition>
+        <argsstring></argsstring>
+        <name>runningADLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="663" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a399bc6c0b5ad257e7d22c8c5cf0af33c" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::runningPlaintextLength</definition>
+        <argsstring></argsstring>
+        <name>runningPlaintextLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="664" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="664" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a47ba517899aa6ad83dc84e75307a1e24" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::tagSize</definition>
+        <argsstring></argsstring>
+        <name>tagSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="665" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="665" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1ae9ccba1b04bacbf9824e4371dc49d1ea" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t psa_aead_operation_s::unprocessedData[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</definition>
+        <argsstring>[PSA_BLOCK_CIPHER_BLOCK_MAX_SIZE]</argsstring>
+        <name>unprocessedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="675" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1ac263e3de33a48f8c38acf803be5dd5f2" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* psa_aead_operation_s::curr_unprocessed_data</definition>
+        <argsstring></argsstring>
+        <name>curr_unprocessed_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="679" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="679" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1af0feca43b4338689f7b504485aa7691b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t psa_aead_operation_s::unprocessed_len</definition>
+        <argsstring></argsstring>
+        <name>unprocessed_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="681" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="681" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a1eba3b303b9067e3766f179a64e481b3" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">CryptoKey</ref></type>
+        <definition>CryptoKey psa_aead_operation_s::cryptoKey</definition>
+        <argsstring></argsstring>
+        <name>cryptoKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="683" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="683" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a838090e88bf5359d49c6562181aa2ced" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool psa_aead_operation_s::done_updating_ad</definition>
+        <argsstring></argsstring>
+        <name>done_updating_ad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="684" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="684" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpsa__aead__operation__s_1a69b0b2f3587f13083ad30ab1cd9631f4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool psa_aead_operation_s::length_set</definition>
+        <argsstring></argsstring>
+        <name>length_set</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="685" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="685" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>psa_aead_operation_s</label>
+        <link refid="structpsa__aead__operation__s"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>cryptoKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="6">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/third_party/psa_crypto/include/psa/crypto_struct.h" line="650" column="1" bodyfile="source/third_party/psa_crypto/include/psa/crypto_struct.h" bodystart="649" bodyend="686"/>
+    <listofallmembers>
+      <member refid="structpsa__aead__operation__s_1acfca428a2024fba570829d12284fef86" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>adLength</name></member>
+      <member refid="structpsa__aead__operation__s_1aed4a6c71316b99e2bcf4f63932850ef5" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>alg</name></member>
+      <member refid="structpsa__aead__operation__s_1a1eba3b303b9067e3766f179a64e481b3" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>cryptoKey</name></member>
+      <member refid="structpsa__aead__operation__s_1ac263e3de33a48f8c38acf803be5dd5f2" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>curr_unprocessed_data</name></member>
+      <member refid="structpsa__aead__operation__s_1a838090e88bf5359d49c6562181aa2ced" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>done_updating_ad</name></member>
+      <member refid="structpsa__aead__operation__s_1a56d14c30e289b3ef8d3028d21c999540" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>id</name></member>
+      <member refid="structpsa__aead__operation__s_1a3a4ec86a3dec74628d8fdde8692286db" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>in_error_state</name></member>
+      <member refid="structpsa__aead__operation__s_1aed541f4f1a6367a8a5c2c01afcb0ec86" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>iv_set</name></member>
+      <member refid="structpsa__aead__operation__s_1a69b0b2f3587f13083ad30ab1cd9631f4" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>length_set</name></member>
+      <member refid="structpsa__aead__operation__s_1a6f4b59e4bb238b5f9df2bf490f0090c3" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>plaintextLength</name></member>
+      <member refid="structpsa__aead__operation__s_1a78b90cc8f7b99f6bf81aa3042adb5102" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>runningADLength</name></member>
+      <member refid="structpsa__aead__operation__s_1a399bc6c0b5ad257e7d22c8c5cf0af33c" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>runningPlaintextLength</name></member>
+      <member refid="structpsa__aead__operation__s_1a47ba517899aa6ad83dc84e75307a1e24" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>tagSize</name></member>
+      <member refid="structpsa__aead__operation__s_1af0feca43b4338689f7b504485aa7691b" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>unprocessed_len</name></member>
+      <member refid="structpsa__aead__operation__s_1ae9ccba1b04bacbf9824e4371dc49d1ea" prot="public" virt="non-virtual"><scope>psa_aead_operation_s</scope><name>unprocessedData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

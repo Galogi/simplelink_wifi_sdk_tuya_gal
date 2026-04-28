@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_t_r_n_g_x_x_f3_h_s_m___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>TRNGXXF3HSM_HWAttrs</compoundname>
+    <includes refid="_t_r_n_g_x_x_f3_h_s_m_8h" local="no">TRNGXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_t_r_n_g_x_x_f3_h_s_m___h_w_attrs_1ab389c1e4072d5aa2758b55865e096d1d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TRNGXXF3HSM_HWAttrs::reserved1</definition>
+        <argsstring></argsstring>
+        <name>reserved1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/trng/TRNGXXF3HSM.h" line="146" column="1" bodyfile="source/ti/drivers/trng/TRNGXXF3HSM.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TRNGXXF3HSM Hardware Attributes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/trng/TRNGXXF3HSM.h" line="145" column="1" bodyfile="source/ti/drivers/trng/TRNGXXF3HSM.h" bodystart="144" bodyend="147"/>
+    <listofallmembers>
+      <member refid="struct_t_r_n_g_x_x_f3_h_s_m___h_w_attrs_1ab389c1e4072d5aa2758b55865e096d1d" prot="public" virt="non-virtual"><scope>TRNGXXF3HSM_HWAttrs</scope><name>reserved1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

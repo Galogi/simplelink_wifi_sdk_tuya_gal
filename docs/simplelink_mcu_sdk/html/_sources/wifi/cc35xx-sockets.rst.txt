@@ -1,0 +1,167 @@
+.. _sec-wifi-sockets:
+
+Sockets
+========
+
+Introduction
+-------------
+
+LwIP network stack includes built-in support BSD style sockets, allowing developers to use the familiar socket programming API.
+Using familiar socket APIs abstract the inner implementation from the user, allowing migration of networking code more easily.
+In LwIP there are two main types of sockets, BSD sockets API and Netconn APIs.
+There is also a RAW socket API that is used mostly when in no-OS mode but this would not be covered.
+
+BSD style APIs
+---------------
+
+This is a high-level API that provides a familiar interface for network programming, similar to what you'd find in standard Unix/Linux systems.
+The BSD sockets API provides a more standard, POSIX-like interface, than Netconn.
+
+The APIs for using BSD sockets are mainly under ``socket.h`` header file.
+These BSD socket APIs would call ``lwip_xxx()`` with the ``xxx`` defined as the API operation itself.
+To enable LwIP sockets, user must define label ``LWIP_SOCKET`` in ``lwipopts.h``.
+
+The full set of BSD Socket APIs can be found at `socket.html <https://www.nongnu.org/lwip/2_1_x/group__socket.html>`_.
+
+Netconn style APIs
+-------------------
+
+lwIP uses the Netconn API to implement the BSD Sockets API internally, but it can also be called directly from applications.
+The Netconn API is a higher-level, lwIP-specific interface for socket programming, and as such, it is not portable as a BSD socket API.
+
+The APIs for using Netconn start with ``netconn_xxx()``.
+To enable LwIP sockets and also Netconn support, user must define label ``LWIP_SOCKET`` and ``LWIP_NETCONN`` in ``lwipopts.h``.
+
+The full set of Netconn APIs can be found at `netconn.html <https://www.nongnu.org/lwip/2_1_x/group__netconn.html>`_.
+
+Socket APIs used in SDK examples
+---------------------------------
+
+The SDK includes currently two examples, ``CC35xx_network_terminal`` and ``CC35xx_MQTT_client``
+``CC35xx_network_terminal`` example uses the ``lwip_xxx()`` which are eventually calling the ``netconn_xxx()`` APIs.
+It can be seen that the default configuration in ``lwipopts.h`` includes both, ``LWIP_SOCKET`` and ``LWIP_NETCONN``.
+``CC35xx_MQTT_client`` example, like other built-in protocols, exposes protocol specific APIs so there is no need to call directly any socket APIs.
+In MQTT example specifically, LwIP provides some specific MQTT APIs (starting with ``mqtt_xxx()``), which handle the socket internally and transparently.
+More specifically, it uses ALTCP layer (Application Layered TCP) which is an abstraction layer that prevents applications linking directly against the tcp.h.
+This way, an application can make use of other application layer protocols on top of TCP without knowing the details. A good example is the TLS implementation with mbedTLS stack.
+The ALTCP is used internally in MQTT as well as in HTTP and applications can also use it.
+
+
+Code examples
+--------------
+
+The following code snippet illustrates a TCP server allowing connection from a peer device, receiving and printing the received message and sending a pre-defined response.
+
+.. code-block:: bash
+
+    #include "lwip/sockets.h"
+
+    #define SERVER_PORT 8080
+    #define BUFFER_SIZE 1024
+
+    void tcp_server(void *arg) {
+        int server_fd, client_fd;
+        struct sockaddr_in server_addr, client_addr;
+        socklen_t addr_len = sizeof(client_addr);
+        char buffer[BUFFER_SIZE];
+
+        // Create socket
+        server_fd = lwip_socket(AF_INET, SOCK_STREAM, 0);
+        if (server_fd < 0) {
+            printf("Socket creation failed\n");
+            return;
+        }
+
+        // Bind socket to port
+        server_addr.sin_family = AF_INET;
+        server_addr.sin_port = htons(SERVER_PORT);
+        server_addr.sin_addr.s_addr = INADDR_ANY;
+
+        if (lwip_bind(server_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+            printf("Bind failed\n");
+            lwip_close(server_fd);
+            return;
+        }
+
+        // Listen for connections
+        if (lwip_listen(server_fd, 5) < 0) {
+            printf("Listen failed\n");
+            lwip_close(server_fd);
+            return;
+        }
+
+        printf("Server listening on port %d\n", SERVER_PORT);
+
+        while (1) {
+            // Accept client connection
+            client_fd = lwip_accept(server_fd, (struct sockaddr*)&client_addr, &addr_len);
+            if (client_fd < 0) {
+                printf("Accept failed\n");
+                continue;
+            }
+
+            printf("Client connected\n");
+
+            // Receive data
+            int len = lwip_recv(client_fd, buffer, BUFFER_SIZE, 0);
+            if (len > 0) {
+                buffer[len] = '\0';
+                printf("Received: %s\n", buffer);
+
+                // Send response
+                lwip_send(client_fd, "Hello from server", 17, 0);
+            }
+
+            // Close client connection
+            lwip_close(client_fd);
+        }
+
+        lwip_close(server_fd);
+    }
+
+The following code snippet illustrates a TCP client connecting to a server, sending a pre-defined data, receiving a response and presenting it.
+
+.. code-block:: bash
+
+    #include "lwip/sockets.h"
+
+    #define SERVER_IP "192.168.1.100"
+    #define SERVER_PORT 8080
+
+    void tcp_client(void *arg) {
+        int client_fd;
+        struct sockaddr_in server_addr;
+        char buffer[1024] = "Hello from client";
+
+        // Create socket
+        client_fd = lwip_socket(AF_INET, SOCK_STREAM, 0);
+        if (client_fd < 0) {
+            printf("Socket creation failed\n");
+            return;
+        }
+
+        // Server address
+        server_addr.sin_family = AF_INET;
+        server_addr.sin_port = htons(SERVER_PORT);
+        server_addr.sin_addr.s_addr = inet_addr(SERVER_IP);
+
+        // Connect to server
+        if (lwip_connect(client_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+            printf("Connection failed\n");
+            lwip_close(client_fd);
+            return;
+        }
+
+        // Send data
+        lwip_send(client_fd, buffer, strlen(buffer), 0);
+
+        // Receive response
+        int len = lwip_recv(client_fd, buffer, sizeof(buffer), 0);
+        if (len > 0) {
+            buffer[len] = '\0';
+            printf("Received: %s\n", buffer);
+        }
+
+        // Close socket
+        lwip_close(client_fd);
+    }

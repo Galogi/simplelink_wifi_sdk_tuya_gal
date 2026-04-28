@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_watchdog_w_f_f3___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>WatchdogWFF3_HWAttrs</compoundname>
+    <includes refid="_watchdog_w_f_f3_8h" local="no">WatchdogWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_watchdog_w_f_f3___h_w_attrs_1aaa3d91f47bc1513a5336e9eccb87c03d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t WatchdogWFF3_HWAttrs::reloadValue</definition>
+        <argsstring></argsstring>
+        <name>reloadValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reload value in milliseconds for Watchdog </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/watchdog/WatchdogWFF3.h" line="180" column="1" bodyfile="source/ti/drivers/watchdog/WatchdogWFF3.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Watchdog hardware attributes for WFF3. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/watchdog/WatchdogWFF3.h" line="179" column="1" bodyfile="source/ti/drivers/watchdog/WatchdogWFF3.h" bodystart="178" bodyend="181"/>
+    <listofallmembers>
+      <member refid="struct_watchdog_w_f_f3___h_w_attrs_1aaa3d91f47bc1513a5336e9eccb87c03d" prot="public" virt="non-virtual"><scope>WatchdogWFF3_HWAttrs</scope><name>reloadValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,303 @@
+.. _sec-hsm-overview:
+
+.. _hsm_programming_guide_cc27xx:
+
+The Hardware Security Module (HSM)
+==================================
+The CC35xx includes an integrated Hardware Security Module (HSM) which
+supports an isolated environment for cryptographic, key management, secure
+counters, and random number generation operations. The HSM allows developers to
+develop secure and future-proof IoT applications using energy efficient
+accelerators and RNG functions.
+
+HSM Feature Overview
+--------------------
+Supported cryptograhpic algorithms are listed below:
+
++---------------------------------+-----------------------------------------------------------------------------+
+| Functions                       | Supported Algorithms                                                        |
++=================================+=============================================================================+
+| Key Agreement Schemes           | ECDH                                                                        |
++---------------------------------+-----------------------------------------------------------------------------+
+| Key Derivation Methods          | Random (DRBG)                                                               |
++---------------------------------+-----------------------------------------------------------------------------+
+| Signature Processing            | ECDSA, pureEdDSA                                                            |
++---------------------------------+-----------------------------------------------------------------------------+
+| Message Authentication Codes    | AES CBC-MAC, AES CMAC, HMAC with SHA2-224, SHA2-256, SHA2-384, and SHA2-512 |
++---------------------------------+-----------------------------------------------------------------------------+
+| Block Cipher Modes of Operation | AES CCM, GCM, ECB, CBC, CTR                                                 |
++---------------------------------+-----------------------------------------------------------------------------+
+| Hash Algorithms                 | SHA2 (224, 256, 384, 512)                                                   |
++---------------------------------+-----------------------------------------------------------------------------+
+| Random Number Generation        | NIST SP 800-90B Compliant TRNG, AES-CTR DRBG                                |
++---------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+    SHA 3 is not yet supported by the Cryptographic driver. But, it is supported by the HSM HW module.
+    Future SDK release will support this feature.
+
+Supported Cryptographic key sizes and types include:
+
+* Advanced Encryption Standard (AES) key sizes of 128, 192, and 256 bits.
+* Diffie-Hellman key sizes of 2048-bits and 3072-bits
+* Ellipetic Curve Support
+
+  * Short Weierstrass
+
+    * NIST-P224, NIST-P256, NIST-P384, NIST-P521
+
+  * Montgomery
+
+    * Curve25519
+
+  * Twisted Edwards form
+
+    * Ed25519
+
+SimpleLink Crypto Driver
+------------------------
+The SimpleLink crypto driver supports several features for our
+cryptographic operations. The CC35XX device family includes a dedicated
+on-chip hardware accelerators that may be used to perform cryptograhpic
+operations (HSM). The SimpleLink driver layer extends support for HSM.
+
+The first on-chip hardware accelerator is a symmetric operations focused
+accelerator that performs only AES-128 operations called the LAES engine.
+The on-chip hardware accelerator (HSM) offers support for cryptographic
+operations including AES-128/192/256, SHA2 hashing, asymmetric
+operations, and random number generation.
+
+The SimpleLink layer consists of different drivers performing algorithm-specific
+cryptographic operations.
+
+SimpleLink Crypto Driver Usage
+------------------------------
+The following code utilizes the HSM engine.
+
+.. code-block:: C
+    :linenos:
+    :emphasize-lines: 31, 34
+
+    #include <ti/drivers/AESCCM.h>
+    #include <ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h>
+
+    AESCCM_Params params;
+    AESCCM_Handle handle;
+    CryptoKey cryptoKey;
+    int_fast16_t encryptionResult;
+    uint8_t nonce[] = "Thisisanonce";
+    uint8_t aad[] = "This string will be authenticated but not encrypted.";
+    uint8_t plaintext[] = "This string will be encrypted and authenticated.";
+    uint8_t mac[16];
+    uint8_t ciphertext[sizeof(plaintext)];
+    uint8_t keyingMaterial[32] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+                                  0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
+                                  0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17,
+                                  0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F};
+    AESCCM_Params_init(&params)
+    params.returnBehavior = AESCCM_RETURN_BEHAVIOR_POLLING;
+    handle = AESCCM_open(0, &params);
+    if (handle == NULL) {
+        /* If the handle is returned as NULL, this indicates that the HSM
+         * firmware has not been flashed.
+         */
+        // handle error
+    }
+
+    /* This uses the HSM. */
+    CryptoKeyPlaintextHSM_initKey(&cryptoKey, keyingMaterial, sizeof(keyingMaterial));
+
+    AESCCM_OneStepOperation operation;
+    AESCCM_OneStepOperation_init(&operation);
+    operation.key           = &cryptoKey;
+    operation.aad           = aad;
+    operation.aadLength     = sizeof(aad);
+    operation.input         = plaintext;
+    operation.output        = ciphertext;
+    operation.inputLength   = sizeof(plaintext);
+    operation.nonce         = nonce;
+    operation.nonceLength   = sizeof(nonce);
+    operation.mac           = mac;
+    operation.macLength     = sizeof(mac);
+    encryptionResult = AESCCM_oneStepEncrypt(handle, &operation);
+    if (encryptionResult != AESCCM_STATUS_SUCCESS) {
+        // handle error
+    }
+    AESCCM_close(handle);
+
+
+System Architecture for SimpleLink Crypto Drivers is shown below.
+
+.. _fig-psa_hsm_breakdown:
+.. figure:: resources/psa_hsm_breakdown.png
+    :align: center
+
+PSA Module
+----------
+The PSA module is a wrapper around the SimpleLink cryptography drivers that
+conform to the PSA specification. This API serves to be portable across hardware
+that conforms to the PSA specification, and is the API that offers the most
+security. However, the security that it offers comes at the cost of higher memory
+usage and higher latency.
+
+PSA Module Usage
+----------------
+The code below shows how to setup an ECC operation for signature verification.
+
+.. code-block:: C
+    :linenos:
+
+    #include <stdint.h>
+
+    /* Driver Header files */
+    #include <third_party/psa_crypto/include/psa/crypto.h>
+    #include <ti/drivers/cryptoutils/hsm/HSMLPF3.h>
+
+    /* Driver configuration */
+    #include "ti_drivers_config.h"
+
+    #define KEY_BITS 256
+    #define KEY_TYPE PSA_KEY_TYPE_ECC_KEY_PAIR(PSA_ECC_FAMILY_SECP_R1)
+    #define KEY_ALG  PSA_ALG_ECDSA(PSA_ALG_SHA_256)
+
+    const uint8_t message[6] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06};
+
+    void *mainThread(void *arg0)
+    {
+        psa_status_t status;
+        int_fast16_t ret;
+
+        /** Initialize PSA **/
+        status = psa_crypto_init();
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+            /* If this occurs, it indicates that the HSM has not been flashed. */
+        }
+
+        /** Provision the hardware unique key **/
+        ret = HSMLPF3_provisionHUK();
+        if (ret != HSMLPF3_STATUS_SUCCESS)
+        {
+            // Error handling.
+            /* If this occurs, it indicates that the HSM has not been flashed. */
+        }
+
+        /**** ECDSA Key Generation ****/
+        psa_key_id_t key_id;
+
+        /* To store generated public key */
+        uint8_t public_key[PSA_KEY_EXPORT_ECC_PUBLIC_KEY_MAX_SIZE(KEY_BITS)];
+        size_t public_key_length = 0;
+
+        psa_key_attributes_t attributes = PSA_KEY_ATTRIBUTES_INIT;
+
+        /* Since we want to sign messages, we need PSA_KEY_USAGE_SIGN_HASH */
+        psa_set_key_usage_flags(&attributes, PSA_KEY_USAGE_SIGN_HASH);
+
+        /* We are using these keys for ECDSA, and the hashing algorithm used is SHA-256 */
+        psa_set_key_algorithm(&attributes, KEY_ALG);
+
+        /* This is where we are setting out curve */
+        psa_set_key_type(&attributes, KEY_TYPE);
+
+        /* This is the bit size of the hash algorithm we are using (SHA-256) */
+        psa_set_key_bits(&attributes, KEY_BITS);
+
+        /* This will generate our key */
+        status = psa_generate_key(&attributes, &key_id);
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+        }
+
+        /* Now we want to export our PUBLIC key */
+        status = psa_export_public_key(key_id, public_key, sizeof(public_key), &public_key_length);
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+        }
+        /**** ECDSA Key Generation Done ****/
+
+        /**** ECDSA Signing ****/
+        /** Our buffer to hold the signature **/
+        uint8_t signature[PSA_SIGN_OUTPUT_SIZE(KEY_TYPE, KEY_BITS, KEY_ALG)];
+        size_t signature_length = 0;
+
+        status = psa_sign_message(key_id,
+                                  KEY_ALG,
+                                  message,
+                                  6,
+                                  signature,
+                                  PSA_SIGN_OUTPUT_SIZE(KEY_TYPE, KEY_BITS, KEY_ALG),
+                                  &signature_length);
+
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+        }
+        /**** ECDSA Signing Done ****/
+
+        /**** Import ECDSA Public Key ****/
+        psa_key_id_t p_key_id = PSA_KEY_ID_USER_MIN + 1;
+        psa_key_attributes_t p_attributes = PSA_KEY_ATTRIBUTES_INIT;
+
+        /* the public key is used to verify */
+        psa_set_key_usage_flags(&p_attributes, PSA_KEY_USAGE_VERIFY_HASH);
+
+        /* We are using these keys for ECDSA, and the hashing algorithm used is SHA-256 */
+        psa_set_key_algorithm(&p_attributes, KEY_ALG);
+
+        /* This is where we are setting out curve */
+        psa_set_key_type(&p_attributes, PSA_KEY_TYPE_ECC_PUBLIC_KEY(PSA_ECC_FAMILY_SECP_R1));
+
+        /* Key bits of the curve type */
+        psa_set_key_bits(&p_attributes, KEY_BITS);
+
+        status = psa_import_key(&p_attributes, public_key, public_key_length, &p_key_id);
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+        }
+        /**** Import ECDSA Public Key Done ****/
+
+        /**** Verify message ****/
+        status = psa_verify_message(p_key_id,
+                                  KEY_ALG,
+                                  message,
+                                  6,
+                                  signature,
+                                  signature_length);
+
+        if (status != PSA_SUCCESS)
+        {
+            // Error handling.
+        }
+        /**** Verify message done ****/
+
+        while(1);
+    }
+
+
+Key Storage in the HSM
+----------------------
+A keystore is a secure storage mechanism for cryptographic keys and certificates.
+It is used to store, manage, and protect private keys and public keys, often required
+for encryption and authentication in software systems. Keys stored in the HSM cannot be
+exported back to the application, and are only accessible inside the HSM. Keys that are
+stored in the HSM will be used for cryptographic operations internal to the HSM. This
+prevents private keys from being exposed to the application, and thus, to an attacker.
+
+HUK (Hardware Unique Key) is a 256-bit key that is used to encrypt a key or derive a
+Trusted Derive Key (TKDK) or Trusted Wrap Key (TKEK).   TKDK is used to derive a key and
+TKEK is to encrypt/decrypt a key.
+
+One HUK is allowed per device and HSMXXF3_provisionHUK( ) is the API to provision a HUK.
+This API generates a 256-bit random number and programs it to OTP, which is a special
+flash region that is only accessible by the HSM.
+
+.. note::
+    Note that HUK is not required for any crypto operations except:
+
+    * TKDK Key Derivation
+    * Key Encryption/decryption

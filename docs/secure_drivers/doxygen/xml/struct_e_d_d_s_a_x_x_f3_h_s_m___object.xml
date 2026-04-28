@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_e_d_d_s_a_x_x_f3_h_s_m___object" kind="struct" language="C++" prot="public">
+    <compoundname>EDDSAXXF3HSM_Object</compoundname>
+    <includes refid="_e_d_d_s_a_x_x_f3_h_s_m_8h" local="no">EDDSAXXF3HSM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0dd9b05e7e8762de40acc765a1866541" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>CryptoKey* EDDSAXXF3HSM_Object::privateKey</definition>
+        <argsstring></argsstring>
+        <name>privateKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="110" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1afcb07bc5ccd67cb37c3c54df8ca4c33a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>CryptoKey* EDDSAXXF3HSM_Object::publicKey</definition>
+        <argsstring></argsstring>
+        <name>publicKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="111" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a42d9f6f149f1db7a4dca33c2533d1ba0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EDDSAXXF3HSM_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="112" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ab2b07c90a6af3776cdea6a8969733cdc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EDDSAXXF3HSM_Object::driverCreatedPrivateKeyAsset</definition>
+        <argsstring></argsstring>
+        <name>driverCreatedPrivateKeyAsset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="113" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1af5285fc9fdff39f76d1869365d25d15d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EDDSAXXF3HSM_Object::driverCreatedPublicKeyAsset</definition>
+        <argsstring></argsstring>
+        <name>driverCreatedPublicKeyAsset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="114" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a218ba5dec9a9b2a2ad88dda7ab7dbf82" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t EDDSAXXF3HSM_Object::returnStatus</definition>
+        <argsstring></argsstring>
+        <name>returnStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="115" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a07d77682c8b918149d565d5e5126a98c" prot="public" static="no" mutable="no">
+        <type><ref refid="union_e_d_d_s_a___operation" kindref="compound">EDDSA_Operation</ref> *</type>
+        <definition>EDDSA_Operation* EDDSAXXF3HSM_Object::operation</definition>
+        <argsstring></argsstring>
+        <name>operation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="116" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a3fd5298a1131124b3e2b6ffbc23ef2d2" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_d_d_s_a_8h_1af6e60847c2c0eaf13d3c854838bca0fb" kindref="member">EDDSA_OperationType</ref></type>
+        <definition>EDDSA_OperationType EDDSAXXF3HSM_Object::operationType</definition>
+        <argsstring></argsstring>
+        <name>operationType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="117" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a14905f35214fea6454c24c7bfc0a270a" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_d_d_s_a_8h_1a6a093ae7e304be315a31a45095c4662b" kindref="member">EDDSA_CallbackFxn</ref></type>
+        <definition>EDDSA_CallbackFxn EDDSAXXF3HSM_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="118" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a53d2332bce1744f0ca158e903db74361" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_d_d_s_a_8h_1a4dd8a220f65c0bcee35b3aa81416e14f" kindref="member">EDDSA_ReturnBehavior</ref></type>
+        <definition>EDDSA_ReturnBehavior EDDSAXXF3HSM_Object::returnBehavior</definition>
+        <argsstring></argsstring>
+        <name>returnBehavior</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="119" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0f26c3d9f43a32e9d339f1f6fa8a4f07" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::semaphoreTimeout</definition>
+        <argsstring></argsstring>
+        <name>semaphoreTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="120" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ad30d82607af0c9c3981285f4a0e6ff6c" prot="public" static="no" mutable="no">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t EDDSAXXF3HSM_Object::hsmStatus</definition>
+        <argsstring></argsstring>
+        <name>hsmStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="121" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae95287bf747764a2ee8aa93e55c4ba39" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::privateKeyAssetID</definition>
+        <argsstring></argsstring>
+        <name>privateKeyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="122" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a5fc07af75eb9f32913344022d4ec1c56" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::publicKeyAssetID</definition>
+        <argsstring></argsstring>
+        <name>publicKeyAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="123" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a86014861daf50bbdad5d97547f33083c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::paramAssetID</definition>
+        <argsstring></argsstring>
+        <name>paramAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="124" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae78daf66383c53c33532556d3b926a77" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::tempAssetID</definition>
+        <argsstring></argsstring>
+        <name>tempAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="125" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a49104dfbd01372bd05dece3a73edefe8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::stateAssetID</definition>
+        <argsstring></argsstring>
+        <name>stateAssetID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="126" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a1c3dbfe33c2103a60442266c857bff27" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* EDDSAXXF3HSM_Object::curveParam</definition>
+        <argsstring></argsstring>
+        <name>curveParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="127" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a815c51aea11eafa1b07295aa23e9fdee" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t EDDSAXXF3HSM_Object::curveParamSize</definition>
+        <argsstring></argsstring>
+        <name>curveParamSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="128" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a145aa5051b24f18f0195759a022693c7" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* EDDSAXXF3HSM_Object::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="129" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a407f3a8046e35e0289c60e2c2203dd55" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t EDDSAXXF3HSM_Object::inputLength</definition>
+        <argsstring></argsstring>
+        <name>inputLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="130" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a35114183d6cdf3c9999dca751f983969" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t EDDSAXXF3HSM_Object::inputLengthRemaining</definition>
+        <argsstring></argsstring>
+        <name>inputLengthRemaining</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="131" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a4f28d287d82b028c9845ff9007fcf05c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t EDDSAXXF3HSM_Object::signature[72]</definition>
+        <argsstring>[72]</argsstring>
+        <name>signature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="132" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>EDDSAXXF3HSM Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="302">
+        <label>EDDSA_Operation</label>
+        <link refid="union_e_d_d_s_a___operation"/>
+        <childnode refid="303" relation="usage">
+          <edgelabel>verify</edgelabel>
+        </childnode>
+        <childnode refid="308" relation="usage">
+          <edgelabel>sign</edgelabel>
+        </childnode>
+        <childnode refid="309" relation="usage">
+          <edgelabel>generatePublicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="303">
+        <label>EDDSA_OperationVerify</label>
+        <link refid="struct_e_d_d_s_a___operation_verify"/>
+        <childnode refid="304" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="305" relation="usage">
+          <edgelabel>theirPublicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="301">
+        <label>EDDSA_Config</label>
+        <link refid="struct_e_d_d_s_a___config"/>
+      </node>
+      <node id="305">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="306" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="307" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+      </node>
+      <node id="300">
+        <label>EDDSAXXF3HSM_Object</label>
+        <link refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object"/>
+        <childnode refid="301" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+        <childnode refid="302" relation="usage">
+          <edgelabel>operation</edgelabel>
+        </childnode>
+        <childnode refid="305" relation="usage">
+          <edgelabel>privateKey</edgelabel>
+          <edgelabel>publicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="308">
+        <label>EDDSA_OperationSign</label>
+        <link refid="struct_e_d_d_s_a___operation_sign"/>
+        <childnode refid="304" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="305" relation="usage">
+          <edgelabel>myPrivateKey</edgelabel>
+          <edgelabel>myPublicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="304">
+        <label>ECCParams_CurveParams</label>
+        <link refid="struct_e_c_c_params___curve_params"/>
+      </node>
+      <node id="309">
+        <label>EDDSA_OperationGeneratePublicKey</label>
+        <link refid="struct_e_d_d_s_a___operation_generate_public_key"/>
+        <childnode refid="304" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="305" relation="usage">
+          <edgelabel>myPrivateKey</edgelabel>
+          <edgelabel>myPublicKey</edgelabel>
+        </childnode>
+      </node>
+      <node id="306">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="307">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" line="109" column="1" bodyfile="source/ti/drivers/eddsa/EDDSAXXF3HSM.h" bodystart="108" bodyend="133"/>
+    <listofallmembers>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a14905f35214fea6454c24c7bfc0a270a" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a1c3dbfe33c2103a60442266c857bff27" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>curveParam</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a815c51aea11eafa1b07295aa23e9fdee" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>curveParamSize</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ab2b07c90a6af3776cdea6a8969733cdc" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>driverCreatedPrivateKeyAsset</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1af5285fc9fdff39f76d1869365d25d15d" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>driverCreatedPublicKeyAsset</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ad30d82607af0c9c3981285f4a0e6ff6c" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>hsmStatus</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a145aa5051b24f18f0195759a022693c7" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>input</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a407f3a8046e35e0289c60e2c2203dd55" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>inputLength</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a35114183d6cdf3c9999dca751f983969" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>inputLengthRemaining</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a42d9f6f149f1db7a4dca33c2533d1ba0" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>isOpen</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a07d77682c8b918149d565d5e5126a98c" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>operation</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a3fd5298a1131124b3e2b6ffbc23ef2d2" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>operationType</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a86014861daf50bbdad5d97547f33083c" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>paramAssetID</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0dd9b05e7e8762de40acc765a1866541" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>privateKey</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae95287bf747764a2ee8aa93e55c4ba39" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>privateKeyAssetID</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1afcb07bc5ccd67cb37c3c54df8ca4c33a" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>publicKey</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a5fc07af75eb9f32913344022d4ec1c56" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>publicKeyAssetID</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a53d2332bce1744f0ca158e903db74361" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>returnBehavior</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a218ba5dec9a9b2a2ad88dda7ab7dbf82" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>returnStatus</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a0f26c3d9f43a32e9d339f1f6fa8a4f07" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>semaphoreTimeout</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a4f28d287d82b028c9845ff9007fcf05c" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>signature</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1a49104dfbd01372bd05dece3a73edefe8" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>stateAssetID</name></member>
+      <member refid="struct_e_d_d_s_a_x_x_f3_h_s_m___object_1ae78daf66383c53c33532556d3b926a77" prot="public" virt="non-virtual"><scope>EDDSAXXF3HSM_Object</scope><name>tempAssetID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

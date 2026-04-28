@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_x_m_e_m___attrs" kind="struct" language="C++" prot="public">
+    <compoundname>XMEM_Attrs</compoundname>
+    <includes refid="_x_m_e_m_w_f_f3_8h" local="no">XMEMWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_x_m_e_m___attrs_1aa5004b4de80556395e360f4b96502de0" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_flash_type" kindref="compound">FlashType</ref></type>
+        <definition>FlashType XMEM_Attrs::flashType</definition>
+        <argsstring></argsstring>
+        <name>flashType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration for the specific flash memory hardware </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="349" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>XMEM attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>The address of an <ref refid="struct_x_m_e_m___attrs" kindref="compound">XMEM_Attrs</ref> structure is passed to <ref refid="_x_m_e_m_w_f_f3_8h_1a445907f285cd886fae69d9d6e5a5eca4" kindref="member">XMEMWFF3_getAttrs()</ref>.</para><para><simplesect kind="see"><para><ref refid="_x_m_e_m_w_f_f3_8h_1a445907f285cd886fae69d9d6e5a5eca4" kindref="member">XMEMWFF3_getAttrs()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="339">
+        <label>FlashType</label>
+        <link refid="struct_flash_type"/>
+        <childnode refid="340" relation="usage">
+          <edgelabel>eraseStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="341" relation="usage">
+          <edgelabel>exitStigCfg</edgelabel>
+          <edgelabel>enterStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="342" relation="usage">
+          <edgelabel>readStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="343" relation="usage">
+          <edgelabel>writeStigCfg</edgelabel>
+        </childnode>
+        <childnode refid="344" relation="usage">
+          <edgelabel>pollingCfg</edgelabel>
+        </childnode>
+      </node>
+      <node id="340">
+        <label>FlashStigEraseCfg</label>
+        <link refid="struct_flash_stig_erase_cfg"/>
+        <childnode refid="341" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="344">
+        <label>FlashPollingCfg</label>
+        <link refid="struct_flash_polling_cfg"/>
+      </node>
+      <node id="342">
+        <label>FlashStigReadCfg</label>
+        <link refid="struct_flash_stig_read_cfg"/>
+        <childnode refid="341" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="341">
+        <label>FlashRegister</label>
+        <link refid="struct_flash_register"/>
+      </node>
+      <node id="343">
+        <label>FlashStigWriteCfg</label>
+        <link refid="struct_flash_stig_write_cfg"/>
+        <childnode refid="341" relation="usage">
+          <edgelabel>preStigOperation</edgelabel>
+          <edgelabel>postStigOperation</edgelabel>
+          <edgelabel>stigOperation</edgelabel>
+        </childnode>
+      </node>
+      <node id="338">
+        <label>XMEM_Attrs</label>
+        <link refid="struct_x_m_e_m___attrs"/>
+        <childnode refid="339" relation="usage">
+          <edgelabel>flashType</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/xmem/XMEMWFF3.h" line="348" column="1" bodyfile="source/ti/drivers/xmem/XMEMWFF3.h" bodystart="347" bodyend="350"/>
+    <listofallmembers>
+      <member refid="struct_x_m_e_m___attrs_1aa5004b4de80556395e360f4b96502de0" prot="public" virt="non-virtual"><scope>XMEM_Attrs</scope><name>flashType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

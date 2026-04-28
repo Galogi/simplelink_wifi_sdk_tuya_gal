@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_watchdog_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>WatchdogWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_watchdog_8h" local="no">ti/drivers/Watchdog.h</includes>
+    <incdepgraph>
+      <node id="524">
+        <label>stdbool.h</label>
+      </node>
+      <node id="523">
+        <label>stdint.h</label>
+      </node>
+      <node id="522">
+        <label>WatchdogWFF3.h</label>
+        <link refid="_watchdog_w_f_f3_8h"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+      </node>
+      <node id="525">
+        <label>ti/drivers/Watchdog.h</label>
+        <link refid="_watchdog_8h"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_watchdog_w_f_f3___h_w_attrs" prot="public">WatchdogWFF3_HWAttrs</innerclass>
+    <innerclass refid="struct_watchdog_w_f_f3___object" prot="public">WatchdogWFF3_Object</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_watchdog_w_f_f3_8h_1a13360a1e2221349630b67f05761ef713" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_watchdog___fxn_table" kindref="compound">Watchdog_FxnTable</ref></type>
+        <definition>const Watchdog_FxnTable WatchdogWFF3_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>WatchdogWFF3_fxnTable</name>
+        <briefdescription>
+<para>Watchdog function table for WFF3. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/watchdog/WatchdogWFF3.h" line="173" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Watchdog driver implementation for WiFi F3 devices. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><heading level="1">Driver include</heading>
+</para><para>The Watchdog header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/Watchdog.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/watchdog/WatchdogWFF3.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_watchdog_8h" kindref="compound">Watchdog.h</ref> for a complete description of APIs.</para><para><heading level="1">Overview</heading>
+</para><para>The general Watchdog API should be used in application code, i.e. <ref refid="_watchdog_8h_1a26795f67f599b74de830ca7bf36bdced" kindref="member">Watchdog_open()</ref> should be used instead of WatchdogWFF3_open(). The board file will define the device specific config, and casting in the general API will ensure that the correct device specific functions are called.</para><para><heading level="1">General Behavior</heading>
+</para><para>This Watchdog driver implementation is designed to operate on a WFF3 device. Before using the Watchdog on WFF3, the Watchdog driver is initialized by calling <ref refid="_watchdog_8h_1afaadfb59be17661ae95562f2081355e7" kindref="member">Watchdog_init()</ref>. The Watchdog HW is configured by calling <ref refid="_watchdog_8h_1a26795f67f599b74de830ca7bf36bdced" kindref="member">Watchdog_open()</ref>. Once opened, the Watchdog will count up from zero to the reload value specified in <ref refid="struct_watchdog_w_f_f3___h_w_attrs" kindref="compound">WatchdogWFF3_HWAttrs</ref>. If it times out, a reset signal will be generated. To prevent a reset, <ref refid="_watchdog_8h_1a396decd6b1807db10c636f9987c3be4c" kindref="member">Watchdog_clear()</ref> must be called to clear the timer, or <ref refid="_watchdog_8h_1a1c0dfea7011b06f303d01afb631ffbdd" kindref="member">Watchdog_close()</ref> to stop the Watchdog timer.</para><para><simplesect kind="note"><para>In these devices, the Watchdog Timer operates differently: it counts up to the reload value (reset threshold) instead of counting down from a reload value to zero as described in the general API. However, the device-specific API abstracts this difference, allowing the user to interact with the Watchdog Timer as though it behaves as described in the general API. Be aware that internally, the implementation and naming conventions may differ to accommodate this behavior.</para></simplesect>
+The Watchdog counts up at the rate of the device clock LFCLK divided by 2^8, which results in a frequency of 128 Hz. The watchdog driver assumes LFCLK is running at 32768 Hz and will not produce accurate timeouts at other frequencies. LFOSC is an inherently inaccurate clock source and will present variations around the target 32768 Hz frequency. These inaccuracies have to be taken into consideration at the application level.</para><para>The reload value which the Watchdog timer counts up to may be changed during runtime using <ref refid="_watchdog_8h_1a63ea82dda83e42e236578b9810e56880" kindref="member">Watchdog_setReload()</ref>. This value should be specified in Watchdog threshold ticks and should not exceed &quot;2^23 - 1&quot; or fall below &quot;1&quot;. At the rate of 128 Hz, the resolution of each threshold tick is 7.8125 ms. This corresponds to a maximum timeout period of 65535992 ms and a minimum period of 7.8125 ms. Calling <ref refid="_watchdog_8h_1a63ea82dda83e42e236578b9810e56880" kindref="member">Watchdog_setReload()</ref> will also reset counter value.</para><para>The function <ref refid="_watchdog_8h_1a7b93cd0bd3a6f11aa28b0c7219755979" kindref="member">Watchdog_convertMsToTicks()</ref> can be used to convert from ms to Watchdog threshold ticks. If the converted value exceeds or falls below the allowed range, a zero (0) will be returned to indicate overflow/underflow. The period has a resolution of 7.8125 ms, which imposes limitations on achieving certain exact values. When a requested period cannot be precisely implemented, the system will automatically adjust to the nearest possible value within the resolution. For instance, if a period of 22 ms is specified, the actual implemented period will be 23.4375 ms.</para><para><ref refid="_watchdog_8h_1a1c0dfea7011b06f303d01afb631ffbdd" kindref="member">Watchdog_close()</ref> can be used to stop the Watchdog timer.</para><para><bold>No</bold> WFF3 specific command exists. Any call to <ref refid="_watchdog_8h_1a513c121c62f277318a7c35b0b2bdc869" kindref="member">Watchdog_control()</ref> will return <ref refid="group___watchdog___s_t_a_t_u_s_1ga589be79a7f8ce642863f231e1dae7577" kindref="member">Watchdog_STATUS_UNDEFINEDCMD</ref>.</para><para>The Watchdog module available on WFF3 devices does not support debug stalling. Therefore, the <ref refid="struct_watchdog___params_1abe7792eef8afa2972a4625f428b7241b" kindref="member">Watchdog_Params.debugStallMode</ref> parameter in the <ref refid="struct_watchdog___params" kindref="compound">Watchdog_Params</ref> struct must be Watchdog_DEBUG_STALL_OFF will. Calling <ref refid="_watchdog_8h_1a26795f67f599b74de830ca7bf36bdced" kindref="member">Watchdog_open()</ref> with the debug stall mode to Watchdog_DEBUG_STALL_ON will fail and return a NULL handle.</para><para>The Watchdog driver available for WFF3 only supports reset enabled mode, it cannot be used as a timer interrupt, that is, specifying a callback function is not supported by the driver.</para><para><heading level="1">Power Management</heading>
+</para><para>Once started, the Watchdog will keep running in Active, Idle and Standby mode. Note that the Watchdog timer is restarted by the Power driver whenever the device enters Standby. If the device remains in Standby for a duration longer than the Watchdog timeout, the device will reset.</para><para><heading level="1">Supported Functions</heading>
+</para><para><table rows="7" cols="3"><row>
+<entry thead="yes"><para>Generic API Function </para></entry><entry thead="yes"><para>API Function </para></entry><entry thead="yes"><para>Description  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1afaadfb59be17661ae95562f2081355e7" kindref="member">Watchdog_init()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_init() </para></entry><entry thead="no"><para>Initialize Watchdog driver </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1a26795f67f599b74de830ca7bf36bdced" kindref="member">Watchdog_open()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_open() </para></entry><entry thead="no"><para>Initialize HW and set system dependencies </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1a396decd6b1807db10c636f9987c3be4c" kindref="member">Watchdog_clear()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_clear() </para></entry><entry thead="no"><para>Reload Watchdog counter </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1a63ea82dda83e42e236578b9810e56880" kindref="member">Watchdog_setReload()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_setReload() </para></entry><entry thead="no"><para>Update timer reload value in clock ticks </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1a7b93cd0bd3a6f11aa28b0c7219755979" kindref="member">Watchdog_convertMsToTicks()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_convertMsToTicks() </para></entry><entry thead="no"><para>Converts milliseconds to clock ticks </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h_1a1c0dfea7011b06f303d01afb631ffbdd" kindref="member">Watchdog_close()</ref> </para></entry><entry thead="no"><para>WatchdogWFF3_close() </para></entry><entry thead="no"><para>Stop Watchdog timer </para></entry></row>
+</table>
+<simplesect kind="note"><para>All calls should go through the generic API. Please refer to <ref refid="_watchdog_8h" kindref="compound">Watchdog.h</ref> for a complete description of the generic APIs.</para></simplesect>
+<heading level="1">Use Cases</heading>
+</para><para><heading level="2">Basic Watchdog</heading>
+</para><para>In this basic watchdog example, the application is expected to start the Watchdog timer by calling <ref refid="_watchdog_8h_1a26795f67f599b74de830ca7bf36bdced" kindref="member">Watchdog_open()</ref>. If needed, <ref refid="_watchdog_8h_1a63ea82dda83e42e236578b9810e56880" kindref="member">Watchdog_setReload()</ref> may be called to change the timeout period. If all monitored tasks are doing alright, <ref refid="_watchdog_8h_1a396decd6b1807db10c636f9987c3be4c" kindref="member">Watchdog_clear()</ref> should be called regularly to reload the counter so as to restart the timeout period and to avoid the Watchdog resetting the device. If the <ref refid="_watchdog_8h_1a396decd6b1807db10c636f9987c3be4c" kindref="member">Watchdog_clear()</ref> is missed and the Watchdog timer is allowed to timeout, the device will be reset.</para><para>The following code example shows how to correctly initialize the driver&apos;s parameters, start the Watchdog timer and modify at runtime the timeout period. <programlisting><codeline><highlight class="normal">Watchdog_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">Watchdog_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/>tickValue;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Watchdog_init();</highlight></codeline>
+<codeline><highlight class="normal">Watchdog_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.debugStallMode<sp/>=<sp/>Watchdog_DEBUG_STALL_OFF;</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>Watchdog_open(Watchdog_configIndex,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>set<sp/>timeout<sp/>period<sp/>to<sp/>100<sp/>ms</highlight></codeline>
+<codeline><highlight class="normal">tickValue<sp/>=<sp/>Watchdog_convertMsToTicks(handle,<sp/>100);</highlight></codeline>
+<codeline><highlight class="normal">Watchdog_setReload(handle,<sp/>tickValue);</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2024-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>WatchdogWFF3.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Watchdog<sp/>driver<sp/>implementation<sp/>for<sp/>WiFi<sp/>F3<sp/>devices</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Driver<sp/>include<sp/>#</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Watchdog<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/Watchdog.h&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/watchdog/WatchdogWFF3.h&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>Watchdog.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>general<sp/>Watchdog<sp/>API<sp/>should<sp/>be<sp/>used<sp/>in<sp/>application<sp/>code,<sp/>i.e.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>#Watchdog_open()<sp/>should<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>WatchdogWFF3_open().<sp/>The<sp/>board</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>file<sp/>will<sp/>define<sp/>the<sp/>device<sp/>specific<sp/>config,<sp/>and<sp/>casting<sp/>in<sp/>the<sp/>general<sp/>API</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>will<sp/>ensure<sp/>that<sp/>the<sp/>correct<sp/>device<sp/>specific<sp/>functions<sp/>are<sp/>called.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>General<sp/>Behavior<sp/>#</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>Watchdog<sp/>driver<sp/>implementation<sp/>is<sp/>designed<sp/>to<sp/>operate<sp/>on<sp/>a<sp/>WFF3<sp/>device.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>Before<sp/>using<sp/>the<sp/>Watchdog<sp/>on<sp/>WFF3,<sp/>the<sp/>Watchdog<sp/>driver<sp/>is<sp/>initialized<sp/>by</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>calling<sp/>#Watchdog_init().<sp/>The<sp/>Watchdog<sp/>HW<sp/>is<sp/>configured<sp/>by<sp/>calling</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>#Watchdog_open().<sp/>Once<sp/>opened,<sp/>the<sp/>Watchdog<sp/>will<sp/>count<sp/>up<sp/>from<sp/>zero<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>reload<sp/>value<sp/>specified<sp/>in<sp/>#WatchdogWFF3_HWAttrs.<sp/>If<sp/>it<sp/>times<sp/>out,<sp/>a<sp/>reset</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>signal<sp/>will<sp/>be<sp/>generated.<sp/>To<sp/>prevent<sp/>a<sp/>reset,<sp/>#Watchdog_clear()<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>called<sp/>to<sp/>clear<sp/>the<sp/>timer,<sp/>or<sp/>#Watchdog_close()<sp/>to<sp/>stop<sp/>the<sp/>Watchdog<sp/>timer.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>@note</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>In<sp/>these<sp/>devices,<sp/>the<sp/>Watchdog<sp/>Timer<sp/>operates<sp/>differently:<sp/>it<sp/>counts<sp/>up<sp/>to</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>reload<sp/>value<sp/>(reset<sp/>threshold)<sp/>instead<sp/>of<sp/>counting<sp/>down<sp/>from<sp/>a<sp/>reload</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>value<sp/>to<sp/>zero<sp/>as<sp/>described<sp/>in<sp/>the<sp/>general<sp/>API.<sp/>However,<sp/>the<sp/>device-specific</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>API<sp/>abstracts<sp/>this<sp/>difference,<sp/>allowing<sp/>the<sp/>user<sp/>to<sp/>interact<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog<sp/>Timer<sp/>as<sp/>though<sp/>it<sp/>behaves<sp/>as<sp/>described<sp/>in<sp/>the<sp/>general<sp/>API.<sp/>Be</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>aware<sp/>that<sp/>internally,<sp/>the<sp/>implementation<sp/>and<sp/>naming<sp/>conventions<sp/>may<sp/>differ</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>to<sp/>accommodate<sp/>this<sp/>behavior.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Watchdog<sp/>counts<sp/>up<sp/>at<sp/>the<sp/>rate<sp/>of<sp/>the<sp/>device<sp/>clock<sp/>LFCLK<sp/>divided<sp/>by<sp/>2^8,</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>which<sp/>results<sp/>in<sp/>a<sp/>frequency<sp/>of<sp/>128<sp/>Hz.<sp/>The<sp/>watchdog<sp/>driver<sp/>assumes<sp/>LFCLK<sp/>is</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>running<sp/>at<sp/>32768<sp/>Hz<sp/>and<sp/>will<sp/>not<sp/>produce<sp/>accurate<sp/>timeouts<sp/>at<sp/>other</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>frequencies.<sp/>LFOSC<sp/>is<sp/>an<sp/>inherently<sp/>inaccurate<sp/>clock<sp/>source<sp/>and<sp/>will<sp/>present</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>variations<sp/>around<sp/>the<sp/>target<sp/>32768<sp/>Hz<sp/>frequency.<sp/>These<sp/>inaccuracies<sp/>have<sp/>to</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>be<sp/>taken<sp/>into<sp/>consideration<sp/>at<sp/>the<sp/>application<sp/>level.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>reload<sp/>value<sp/>which<sp/>the<sp/>Watchdog<sp/>timer<sp/>counts<sp/>up<sp/>to<sp/>may<sp/>be<sp/>changed<sp/>during</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>runtime<sp/>using<sp/>#Watchdog_setReload().<sp/>This<sp/>value<sp/>should<sp/>be<sp/>specified<sp/>in</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog<sp/>threshold<sp/>ticks<sp/>and<sp/>should<sp/>not<sp/>exceed<sp/>&quot;2^23<sp/>-<sp/>1&quot;<sp/>or<sp/>fall<sp/>below<sp/>&quot;1&quot;.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>At<sp/>the<sp/>rate<sp/>of<sp/>128<sp/>Hz,<sp/>the<sp/>resolution<sp/>of<sp/>each<sp/>threshold<sp/>tick<sp/>is<sp/>7.8125<sp/>ms.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>corresponds<sp/>to<sp/>a<sp/>maximum<sp/>timeout<sp/>period<sp/>of<sp/>65535992<sp/>ms<sp/>and<sp/>a<sp/>minimum</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>period<sp/>of<sp/>7.8125<sp/>ms.<sp/>Calling<sp/>#Watchdog_setReload()<sp/>will<sp/>also<sp/>reset<sp/>counter</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>value.</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>function<sp/>#Watchdog_convertMsToTicks()<sp/>can<sp/>be<sp/>used<sp/>to<sp/>convert<sp/>from<sp/>ms</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>to<sp/>Watchdog<sp/>threshold<sp/>ticks.<sp/>If<sp/>the<sp/>converted<sp/>value<sp/>exceeds<sp/>or<sp/>falls<sp/>below</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>allowed<sp/>range,<sp/>a<sp/>zero<sp/>(0)<sp/>will<sp/>be<sp/>returned<sp/>to<sp/>indicate</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>overflow/underflow.<sp/>The<sp/>period<sp/>has<sp/>a<sp/>resolution<sp/>of<sp/>7.8125<sp/>ms,<sp/>which<sp/>imposes</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>on<sp/>achieving<sp/>certain<sp/>exact<sp/>values.<sp/>When<sp/>a<sp/>requested<sp/>period</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>cannot<sp/>be<sp/>precisely<sp/>implemented,<sp/>the<sp/>system<sp/>will<sp/>automatically<sp/>adjust<sp/>to<sp/>the</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>nearest<sp/>possible<sp/>value<sp/>within<sp/>the<sp/>resolution.<sp/>For<sp/>instance,<sp/>if<sp/>a<sp/>period<sp/>of</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>22<sp/>ms<sp/>is<sp/>specified,<sp/>the<sp/>actual<sp/>implemented<sp/>period<sp/>will<sp/>be<sp/>23.4375<sp/>ms.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>#Watchdog_close()<sp/>can<sp/>be<sp/>used<sp/>to<sp/>stop<sp/>the<sp/>Watchdog<sp/>timer.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>&lt;b&gt;No&lt;/b&gt;<sp/>WFF3<sp/>specific<sp/>command<sp/>exists.<sp/>Any<sp/>call<sp/>to<sp/>#Watchdog_control()<sp/>will</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/>return<sp/>#Watchdog_STATUS_UNDEFINEDCMD.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Watchdog<sp/>module<sp/>available<sp/>on<sp/>WFF3<sp/>devices<sp/>does<sp/>not<sp/>support<sp/>debug</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/><sp/>stalling.<sp/>Therefore,<sp/>the<sp/>#Watchdog_Params.debugStallMode<sp/>parameter<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/>#Watchdog_Params<sp/>struct<sp/>must<sp/>be<sp/>Watchdog_DEBUG_STALL_OFF<sp/>will.<sp/>Calling</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>#Watchdog_open()<sp/>with<sp/>the<sp/>debug<sp/>stall<sp/>mode<sp/>to<sp/>Watchdog_DEBUG_STALL_ON<sp/>will</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/><sp/>fail<sp/>and<sp/>return<sp/>a<sp/>NULL<sp/>handle.</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Watchdog<sp/>driver<sp/>available<sp/>for<sp/>WFF3<sp/>only<sp/>supports<sp/>reset<sp/>enabled<sp/>mode,<sp/>it</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/>cannot<sp/>be<sp/>used<sp/>as<sp/>a<sp/>timer<sp/>interrupt,<sp/>that<sp/>is,<sp/>specifying<sp/>a<sp/>callback<sp/>function</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/><sp/>is<sp/>not<sp/>supported<sp/>by<sp/>the<sp/>driver.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Power<sp/>Management<sp/>#</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>Once<sp/>started,<sp/>the<sp/>Watchdog<sp/>will<sp/>keep<sp/>running<sp/>in<sp/>Active,<sp/>Idle<sp/>and<sp/>Standby</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/>mode.<sp/>Note<sp/>that<sp/>the<sp/>Watchdog<sp/>timer<sp/>is<sp/>restarted<sp/>by<sp/>the<sp/>Power<sp/>driver<sp/>whenever</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>device<sp/>enters<sp/>Standby.<sp/>If<sp/>the<sp/>device<sp/>remains<sp/>in<sp/>Standby<sp/>for<sp/>a<sp/>duration</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/>longer<sp/>than<sp/>the<sp/>Watchdog<sp/>timeout,<sp/>the<sp/>device<sp/>will<sp/>reset.</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Supported<sp/>Functions<sp/>#</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>Generic<sp/>API<sp/>Function<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>API<sp/>Function<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/>|------------------------------|---------------------------------|-------------------------------------------|</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>WatchdogWFF3_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>Watchdog<sp/>driver<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>WatchdogWFF3_open()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>HW<sp/>and<sp/>set<sp/>system<sp/>dependencies<sp/>|</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_clear()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>WatchdogWFF3_clear()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Reload<sp/>Watchdog<sp/>counter<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_setReload()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>WatchdogWFF3_setReload()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Update<sp/>timer<sp/>reload<sp/>value<sp/>in<sp/>clock<sp/>ticks<sp/><sp/>|</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_convertMsToTicks()<sp/>|<sp/>WatchdogWFF3_convertMsToTicks()<sp/>|<sp/>Converts<sp/>milliseconds<sp/>to<sp/>clock<sp/>ticks<sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>#Watchdog_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>WatchdogWFF3_close()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Stop<sp/>Watchdog<sp/>timer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/>@note<sp/>All<sp/>calls<sp/>should<sp/>go<sp/>through<sp/>the<sp/>generic<sp/>API.<sp/>Please<sp/>refer<sp/>to<sp/>@ref</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>the<sp/>generic<sp/>APIs.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Use<sp/>Cases<sp/>#</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Basic<sp/>Watchdog<sp/>#</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/>In<sp/>this<sp/>basic<sp/>watchdog<sp/>example,<sp/>the<sp/>application<sp/>is<sp/>expected<sp/>to<sp/>start<sp/>the</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog<sp/>timer<sp/>by<sp/>calling<sp/>#Watchdog_open().<sp/>If<sp/>needed,<sp/>#Watchdog_setReload()</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/>may<sp/>be<sp/>called<sp/>to<sp/>change<sp/>the<sp/>timeout<sp/>period.<sp/>If<sp/>all<sp/>monitored<sp/>tasks<sp/>are<sp/>doing</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/>alright,<sp/>#Watchdog_clear()<sp/>should<sp/>be<sp/>called<sp/>regularly<sp/>to<sp/>reload<sp/>the<sp/>counter</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/>so<sp/>as<sp/>to<sp/>restart<sp/>the<sp/>timeout<sp/>period<sp/>and<sp/>to<sp/>avoid<sp/>the<sp/>Watchdog<sp/>resetting<sp/>the</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/><sp/>device.<sp/>If<sp/>the<sp/>#Watchdog_clear()<sp/>is<sp/>missed<sp/>and<sp/>the<sp/>Watchdog<sp/>timer<sp/>is<sp/>allowed</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/>to<sp/>timeout,<sp/>the<sp/>device<sp/>will<sp/>be<sp/>reset.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>following<sp/>code<sp/>example<sp/>shows<sp/>how<sp/>to<sp/>correctly<sp/>initialize<sp/>the<sp/>driver&apos;s</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/>parameters,<sp/>start<sp/>the<sp/>Watchdog<sp/>timer<sp/>and<sp/>modify<sp/>at<sp/>runtime<sp/>the<sp/>timeout</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/><sp/>period.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Params<sp/>params;</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/>tickValue;</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_init();</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/>params.debugStallMode<sp/>=<sp/>Watchdog_DEBUG_STALL_OFF;</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>Watchdog_open(Watchdog_configIndex,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>set<sp/>timeout<sp/>period<sp/>to<sp/>100<sp/>ms</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/><sp/>tickValue<sp/>=<sp/>Watchdog_convertMsToTicks(handle,<sp/>100);</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_setReload(handle,<sp/>tickValue);</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_watchdog_WatchdogWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_watchdog_WatchdogWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_watchdog_8h" kindref="compound">ti/drivers/Watchdog.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_watchdog___fxn_table" kindref="compound">Watchdog_FxnTable</ref><sp/><ref refid="_watchdog_w_f_f3_8h_1a13360a1e2221349630b67f05761ef713" kindref="member">WatchdogWFF3_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="struct_watchdog_w_f_f3___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180" refid="struct_watchdog_w_f_f3___h_w_attrs_1aaa3d91f47bc1513a5336e9eccb87c03d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_watchdog_w_f_f3___h_w_attrs_1aaa3d91f47bc1513a5336e9eccb87c03d" kindref="member">reloadValue</ref>;<sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}<sp/><ref refid="struct_watchdog_w_f_f3___h_w_attrs" kindref="compound">WatchdogWFF3_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="struct_watchdog_w_f_f3___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190" refid="struct_watchdog_w_f_f3___object_1a33a3adc0222b773a67bc3f32fe6caa6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_watchdog_w_f_f3___object_1a33a3adc0222b773a67bc3f32fe6caa6d" kindref="member">isOpen</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Flag<sp/>for<sp/>open/close<sp/>status<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}<sp/><ref refid="struct_watchdog_w_f_f3___object" kindref="compound">WatchdogWFF3_Object</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_watchdog_WatchdogWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/watchdog/WatchdogWFF3.h"/>
+  </compounddef>
+</doxygen>

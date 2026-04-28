@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware Overview &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software Overview" href="../software/software-overview.html" />
+    <link rel="prev" title="Introduction to the SimpleLink Wi-Fi SDK" href="../index-platform.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx hardware hardware-overview";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-core">System Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connectivity-core">Connectivity Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flash-ram-and-peripherals">Flash, RAM, and Peripherals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#supported-flashes">Supported Flashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#startup-sequence">Startup Sequence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/software-overview.html">Software Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a> &raquo;</li>
+        
+      <li>Hardware Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-overview">
+<span id="sec-cc35xx-hw-overview"></span><h1>Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The main source of information for CC35xx hardware is the Technical
+Reference Manual:</p>
+</div>
+<div class="section" id="system-core">
+<h2>System Core<a class="headerlink" href="#system-core" title="Permalink to this headline">¶</a></h2>
+<p>The system core is designed to run the wireless protocol stack from the
+network layer up to the user application.</p>
+<ul class="simple">
+<li>For CC35xx devices the system core is ARM Cortex M33</li>
+</ul>
+<p>You can read more about ARM Cortex in the <a class="reference external" href="https://developer.arm.com/Processors/Cortex-M33">ARM Cortex-M33 documentation</a>.</p>
+<p>The network layer interfaces to the radio core through a software module called the
+Net driver. The RF driver runs on the system core and acts as an interface to the
+radio on the CC35xx, and also manages the power domains of the radio hardware
+and radio core. Documentation for the Net driver can be found at the <a class="reference external" href="../../../../drivers/tidriversAPIs.html">TI Drivers API Reference</a>.</p>
+</div>
+<div class="section" id="connectivity-core">
+<span id="sec-cc35xx-connectivity-core"></span><h2>Connectivity Core<a class="headerlink" href="#connectivity-core" title="Permalink to this headline">¶</a></h2>
+<p>The Connectivity Core  within the CC35xx is a Cortex M3 processor responsible for both interfacing
+to the radio hardware, and translating complex instructions from the system core
+into bits that are sent over the air using the radio. The Connectivity Core
+implements the PHY and DATA Link layers of the protocol stack and is able to operate
+autonomously, this frees up the system core for higher-level protocol and
+application-layer processing.</p>
+<p>The system core communicates with the Connectivity Core through a direct memory hardware
+interface, which is documented in the CC35xx SimpleLink Wireless MCU Technical Reference Manual. The connectivity core firmware is not
+intended to be used or modified by the application developer.</p>
+</div>
+<div class="section" id="flash-ram-and-peripherals">
+<h2>Flash, RAM, and Peripherals<a class="headerlink" href="#flash-ram-and-peripherals" title="Permalink to this headline">¶</a></h2>
+<p>The following in-system programmable SRAM options are available
+for the CC35xx. For a full memory of your device, please refer to the CC35xx
+datasheet.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="26%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device</th>
+<th class="head">Flash (kB)</th>
+<th class="head">SRAM (kB)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CC35xx</td>
+<td>External</td>
+<td>1200</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="supported-flashes">
+<h3>Supported Flashes<a class="headerlink" href="#supported-flashes" title="Permalink to this headline">¶</a></h3>
+<p>The CC35xx currently supports the following flash devices</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="45%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vendor</th>
+<th class="head">Name</th>
+<th class="head">Size(MB)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ISSI</td>
+<td>IS25WJ032F</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>ISSI</td>
+<td>IS25WJ064F</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td colspan="2">Winbond*        | W25Q32JW</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Winbond*        | W25Q64JW</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Gigadevice</td>
+<td>GD25LF32E</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Gigadevice</td>
+<td>GD25LF64E</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Puya</td>
+<td>PY25Q32LB</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Puya</td>
+<td>PY25Q64LB</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Puya</td>
+<td>PY25Q128LA</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>Puya</td>
+<td>PY25Q256LC</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><a href="#system-message-1"><span class="problematic" id="problematic-1">*</span></a>The Winbond devices are not recommended for new designs due to performance limitations</p>
+</div>
+<p>Note that there is no DRR support or OSPI support (QSPI only)</p>
+<p>The following list are experimental flashes are supported but not yet system tested</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="45%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vendor</th>
+<th class="head">Name</th>
+<th class="head">Size(MB)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ISSI</td>
+<td>IS25WJ128F</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>Macronix</td>
+<td>MX25U3235F</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td colspan="3">Macronix       | MX25U6435F          | 8</td>
+</tr>
+</tbody>
+</table>
+<p>The CC35xx also hosts a full range of peripherals
+including UART, I2C, I2S, AES, TRNG, temperature and battery monitors, 4x 32-bit
+timers, 2x SSI, and an integrated Hardware Security Module (HSM).</p>
+<p>Below is a sample device block diagram. Please check the datasheet for an
+accurate block diagram of your device.</p>
+<div class="figure align-center" id="fig-cc355x-block-diagram">
+<img alt="../../_images/fig-cc355x-block-diagram.png" src="../../_images/fig-cc355x-block-diagram.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">SimpleLink™ CC355x Block Diagram</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="startup-sequence">
+<h2>Startup Sequence<a class="headerlink" href="#startup-sequence" title="Permalink to this headline">¶</a></h2>
+<p>For a complete description of the CC35xx reset sequence, see the CC35xx SimpleLink Wireless MCU Technical Reference Manual.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The main source of information for CC35xx hardware is the Technical
+Reference Manual:</p>
+</div>
+<span class="target" id="sec-resets"></span></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../software/software-overview.html" class="btn btn-neutral float-right" title="Software Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index-platform.html" class="btn btn-neutral float-left" title="Introduction to the SimpleLink Wi-Fi SDK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

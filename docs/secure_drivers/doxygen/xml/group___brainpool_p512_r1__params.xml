@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___brainpool_p512_r1__params" kind="group">
+    <compoundname>BrainpoolP512R1_params</compoundname>
+    <title>BrainpoolP512R1 curve params</title>
+    <innerclass refid="union_e_c_c___brainpool_p512_r1___param" prot="public">ECC_BrainpoolP512R1_Param</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga00ac3a7141ae0bcd727a4f698027ec17" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="421" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga4a7cba518b001e6dc2a8f1924b722818" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="426" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga6603d7a8902a12baa255fdada31d899f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="431" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1ga4c73c601a5f74a3262eecc16e966521d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_BrainpoolP512R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="437" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gaaa9394a583362d0c4be3cc86687bd2e3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_BrainpoolP512R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="443" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gaffbae9c85ab758bbd18d8378178c5613" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="448" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gab2b3ef544d95e60259f3f55c5439217d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="453" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gad107efa512f76ca905285e44e7b21f9a" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="458" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p512_r1__params_1gac5570ba04040d151124de1f8b5e33f77" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p512_r1___param" kindref="compound">ECC_BrainpoolP512R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP512R1_Param ECC_BrainpoolP512R1_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP512R1_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_BrainpoolP512R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="463" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___brainpool_p512_r1__params_1gad93b2f35c2a0d2768b7d0a5f9ce9b1e1" prot="public" static="no">
+        <name>ECCParams_BrainpoolP512R1_LENGTH</name>
+        <initializer>64</initializer>
+        <briefdescription>
+<para>Length of BrainpoolP512R1 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="407" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

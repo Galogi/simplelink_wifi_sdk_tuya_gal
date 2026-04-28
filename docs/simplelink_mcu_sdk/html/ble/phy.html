@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Physical Layer (PHY) &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vendor Specific HCI Commands" href="hci/hci.html" />
+    <link rel="prev" title="Generic Attribute Profile (GATT)" href="gatt.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug ble phy";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Physical Layer (PHY)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-2m-phy">LE 2M PHY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-coded-phy">LE Coded PHY</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#le-coded-s2-and-s8">LE Coded S2 and S8</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#link-budget">Link Budget</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#phy-comparison">PHY Comparison</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#le-2m-phy-vs-le-1m-phy">LE 2M PHY vs LE 1M PHY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#le-coded-phy-vs-le-1m-phy">LE Coded PHY vs LE 1M PHY</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a> &raquo;</li>
+        
+      <li>Physical Layer (PHY)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="physical-layer-phy">
+<span id="sec-phy"></span><h1>Physical Layer (PHY)<a class="headerlink" href="#physical-layer-phy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The physical layer (<span class="xref std std-term">PHY</span>) is the lowest layer of the Bluetooth low
+energy protocol stack. It configures the physical parameters of the radio
+transmission and reception. It determines how a bit (and its value) are
+represented over the air. By switching the PHY, the physical properties of the
+RF signal is changed.</p>
+<p>The supported PHYs include LE 1M, 2M, and Coded PHY</p>
+</div>
+<div class="section" id="le-2m-phy">
+<h2>LE 2M PHY<a class="headerlink" href="#le-2m-phy" title="Permalink to this headline">¶</a></h2>
+<p>The CC33x1 device supports transferring data over the mandatory symbol rate of 1
+megasymbol per second (Msym/s) where 1 symbol represents 1 bit.
+This results in a bit rate of 1 megabit per second (Mb/s), which is referred to
+as LE 1M PHY.</p>
+<p>The stack also supports an optional symbol rate of 2 Msym/s, with a
+bit rate of 2 Mb/s, which is referred to as LE 2M PHY.</p>
+</div>
+<div class="section" id="le-coded-phy">
+<span id="sec-phy-coded"></span><h2>LE Coded PHY<a class="headerlink" href="#le-coded-phy" title="Permalink to this headline">¶</a></h2>
+<p>LE Coded PHY allows the ability to have the signal range increase up to nearly
+quadruple the range of LE 1M PHY. This is achieved by coding the signal, so the
+Tx power stays the same. This means that the power consumption per time stays
+the same. On the other hand, this coding entails a lower data throughput.</p>
+<div class="section" id="le-coded-s2-and-s8">
+<span id="phy-coded-s2-s8"></span><h3>LE Coded S2 and S8<a class="headerlink" href="#le-coded-s2-and-s8" title="Permalink to this headline">¶</a></h3>
+<p>The LE Coded <span class="xref std std-term">PHY</span> can be operated with two data rates:</p>
+<ul class="simple">
+<li><strong>S2</strong> : In LE Coded S=2 mode, each bit is represented by two symbols. Thus,
+the data rate is 500kbps. In this mode the range is roughly doubled compared
+to the LE 1M PHY.</li>
+<li><strong>S8</strong>: In LE Coded S=8, each bit is represented by eight symbols. This
+gives a data rate of 125kbps. In this mode the range is roughly quadrupled
+compared to the LE 1M PHY.</li>
+</ul>
+<p>Every packet sent on LE Coded PHY contains a coding indicator (<span class="xref std std-term">CI</span>),
+which indicates the coding of the packet. Thus, when a packet is being received
+on the LE Coded PHY, the receiver uses the coding indicator to determine the
+coding of the packet. The full packet format of packets sent on LE Coded PHY is
+found in the <a href="#system-message-1"><span class="problematic" id="problematic-1">`Bluetooth Core Specifications Version 5.3`_</span></a>, Vol 6, Part B, Chapter 2.2 PACKET FORMAT FOR THE
+LE CODED PHY.</p>
+</div>
+<div class="section" id="link-budget">
+<h3>Link Budget<a class="headerlink" href="#link-budget" title="Permalink to this headline">¶</a></h3>
+<p>The LE Coded <span class="xref std std-term">PHY</span> gives a higher sensitivity than the LE 1M PHY. The
+receiver sensitivity is defined by how weak signals the receiver can receive
+compared to the level of interfering RF power received simultaneously. If no
+interference is present, the sensitivity level is determined by the thermal
+background noise and will correspond to the sensitivity specified in the
+datasheet.</p>
+<p>In an operating RF link, the transmitter will transmit at a specified RF power
+level, and a (usually very tiny) fraction of that RF power will be picked up by
+the receiving antenna and fed to the receiver.  If that fraction is too small,
+the received power level will drop below the receiver sensitivity level and the
+link will fail.</p>
+<p>The link budget is the ratio between transmitted power and the Rx sensitivity
+level. For convenience, the link budget (LB) is usually denoted in a
+logarithmic scale (dB). Output power and sensitivity are usually denoted in a
+logarithmic scale relative to 1mW (dBm). This means that:</p>
+<div class="math">
+<p><img src="../_images/math/9dc50b034efa4d63e286d52cf85f5291ce590f7b.svg" alt="\textrm{LB}_{\textrm{dBm}} = \textrm{Tx Power} (\textrm{dBm}) - \textrm{Rx Sensitivity Level} (\textrm{dBm})"/></p>
+</div><p>There are two ways to improve the link budget:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Increase the output power</li>
+<li>Improve (reduce) the receiver sensitivity level</li>
+</ol>
+</div></blockquote>
+<p>Increasing the output power is fairly straight forward, but it comes at the cost
+of (sometimes significantly) increased power consumption. In addition, all
+regulatory jurisdictions have limits on RF emission levels and unwanted spurious
+emissions, both of which will increase if the transmit power is increased.</p>
+<p>The other option, improving receiver sensitivity, is the path chosen by the
+Bluetooth SIG when Bluetooth 5 was adopted with the intention of offering four
+times the RF range. This was also chosen to provide the longest range Bluetooth
+Low Energy solutions at lowest power consumption. In free space, a doubling of
+the range requires a quadrupling of the link budget (or 6 dB increase). This
+means that four times the range requires 12 dB better sensitivity for the LE
+Coded PHY, when compared with the LE 1M PHY. The reference for LE 1M PHY is set
+to -93 dBm. (Note that -93 dBm was chosen as a reference point for a standard
+radio at the time the spec was written.) Since the reference for LE 1M PHY is
+-93 dBm, the LE Coded PHY needs a sensitivity of -105 dBm in order to achieve
+four times the range.</p>
+<p>The link budget increase is achieved through a two-way approach:</p>
+<ul class="simple">
+<li>The biggest improvement comes simply from the fact that the data rate is
+reduced to 1/8th, which means that every bit carries eight times more energy
+for any given power level. Theoretically, this allows the receiver to
+receive signals at 9 dB lower power levels and still accumulate the same
+energy per bit as before.</li>
+<li>The last 3 dB can be achieved due to the coding employed. The -93 dBm
+comparison level (for 1Mpbs) assumed a standard differential demodulator,
+where each received symbol (1 symbol per bit) is determined to be “1” or
+“0” based on a comparison with the previous symbol. The Coded PHYs
+facilitate a semi-coherent receiver where eight symbols make up 1 bit, and
+correlators can search for these known symbol sequences. This is called
+Forward Error Correction (<span class="xref std std-term">FEC</span>).</li>
+</ul>
+<p>It is worth noting that even though the Tx power is the same for LE Coded PHY
+as for LE 1M PHY, the data rate is lower, thus the device will spend a longer
+time to send the same amount of data. This will give a higher power consumption
+for sending the same amount of data on LE Coded PHY compared to LE 1M PHY.</p>
+<p>You can read more about how the LE Coded PHY in this blog: <a class="reference external" href="https://e2e.ti.com/blogs_/b/connecting_wirelessly/archive/2017/01/30/how-does-bluetooth-5-increase-the-achievable-range-of-a-bluetooth-low-energy-connection">How does Bluetooth®
+5 increase the achievable range of a Bluetooth Low Energy connection?</a></p>
+</div>
+</div>
+<div class="section" id="phy-comparison">
+<h2>PHY Comparison<a class="headerlink" href="#phy-comparison" title="Permalink to this headline">¶</a></h2>
+<p>A comparison of the Bluetooth Low Energy PHYs is given below:</p>
+<table border="1" class="docutils" id="table-1">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Comparison of the PHYs.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="27%" />
+<col width="21%" />
+<col width="10%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">LE 1M</th>
+<th class="head">LE 2M</th>
+<th class="head">LE Coded S=2</th>
+<th class="head">LE Coded S=8</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Symbol Rate</td>
+<td>1Msps</td>
+<td>2Msps</td>
+<td>1Msps</td>
+<td>1Msps</td>
+</tr>
+<tr class="row-odd"><td>Data Rate</td>
+<td>1Mbps</td>
+<td>2Mbps</td>
+<td>500kbps</td>
+<td>125kbps</td>
+</tr>
+<tr class="row-even"><td>Error Correction</td>
+<td>None</td>
+<td>None</td>
+<td><span class="xref std std-term">FEC</span></td>
+<td><span class="xref std std-term">FEC</span></td>
+</tr>
+<tr class="row-odd"><td>Range Multiplier</td>
+<td>1</td>
+<td>~0.8</td>
+<td>~2</td>
+<td>~4</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="le-2m-phy-vs-le-1m-phy">
+<h3>LE 2M PHY vs LE 1M PHY<a class="headerlink" href="#le-2m-phy-vs-le-1m-phy" title="Permalink to this headline">¶</a></h3>
+<p>The LE 2M PHY feature uses the same transmit power as the LE 1M PHY, the only
+change is in the modulation of data in the PHY. Using the LE 2M PHY, the energy
+consumption decreases due to higher data modulation at the same output power.
+The following table lists some of the differences between the two PHYs:</p>
+<span id="phy-tradeoffs"></span><table border="1" class="docutils" id="table-2">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Tradeoff between 1M and 2M PHYs</span><a class="headerlink" href="#table-2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Comparison</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Power consumption</td>
+<td>Energy consumption is reduced using the same transmit power.</td>
+</tr>
+<tr class="row-odd"><td>Data Rate</td>
+<td>LE 2M PHY is 2x faster to transmit data than LE 1M PHY.</td>
+</tr>
+<tr class="row-even"><td>Receive Sensitivity</td>
+<td>The link budget will be lower relative to LE 1M PHY, due to
+the increased symbol rate.</td>
+</tr>
+<tr class="row-odd"><td>Transmit Power</td>
+<td>The output power is same for both PHYs.</td>
+</tr>
+</tbody>
+</table>
+<p>The main advantage to use the LE 2M PHY is for high throughput applications to
+transfer data at a higher speed.</p>
+</div>
+<div class="section" id="le-coded-phy-vs-le-1m-phy">
+<h3>LE Coded PHY vs LE 1M PHY<a class="headerlink" href="#le-coded-phy-vs-le-1m-phy" title="Permalink to this headline">¶</a></h3>
+<p>The LE Coded <span class="xref std std-term">PHY</span> feature uses the same transmit power as the LE 1M PHY,
+the only change is in the modulation of data in the PHY. Using the LE Coded
+PHY, the energy consumption increases because the radio is in Tx longer. Thus
+the main application for LE Coded PHY should be applications that need a long
+range, but a low data rate. According to the Bluetooth spec, there are
+limitations on what packets can be sent on the LE Coded PHY.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hci/hci.html" class="btn btn-neutral float-right" title="Vendor Specific HCI Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gatt.html" class="btn btn-neutral float-left" title="Generic Attribute Profile (GATT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

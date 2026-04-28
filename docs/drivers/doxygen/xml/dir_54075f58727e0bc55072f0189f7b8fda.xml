@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_54075f58727e0bc55072f0189f7b8fda" kind="dir">
+    <compoundname>watchdog</compoundname>
+    <innerfile refid="_watchdog_w_f_f3_8h">WatchdogWFF3.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/watchdog/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,133 @@
+.. _BoosterPack User Guide: BP-CC3301_HW_UserGuide.html
+
+.. _Conf Tool Guide: ../linux/CC33conf-tool.html
+
+******************
+CC33xx Coexistence
+******************
+The 2.4-GHz band is used by many wireless communication standards and proprietary wireless
+implementations. When two different entities use the same wireless band in close proximity, there must be a
+coexistence mechanism to avoid significant degradation in performance.
+
+The CC33xx implements a 3 wire Packet Traffic Arbitration (PTA) in order to manage a coexistence mechanism.
+
+
+Packet Traffic Arbitration
+==========================
+The PTA mechanism provides a per packet authorization for all transmission and receptions, it 
+can be abstracted to a signal interface between the two devices, as illustrated in the figure below
+
+.. figure:: resources/ExternalPTAtiming.png
+    :align: center
+
+    PTA (Packet Traffic Arbitration) Signals
+
+
+In order to support time-shared signals, the coex feature is heavily dependent on accurate timing.
+
+.. _my-table2:
+.. table:: PTA Timing
+
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+    | Parameter   | Description                                                  | Minimal (µs) | Maximal (µs) | Recommended (µs) |
+    +=============+==============================================================+==============+==============+==================+
+    |   T1        |REQUEST signal is asserted by the external SoC (PTA slave).   | 90           | 150          | 120              |
+    |             |REQUEST signal indicates to the CC33xx (PTA master) that the  |              |              |                  |
+    |             |coex slave will perform RF activity. This is a request for    |              |              |                  | 
+    |             |access to the shared frequency band. T1 can be expected to be |              |              |                  | 
+    |             |in the range of 90-150 µs. In the timing diagram, this happens|              |              |                  | 
+    |             |at a time T1 before the BLE RX command is scheduled to run    |              |              |                  |
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+    |  T2         |PRIORITY signal is time-shared between indicating priority    | 5            | 20           |20                |
+    |             |and and type of CoEX entities RF activity (TX/RX) will do.    |              |              |                  |
+    |             |The time T2 indicates the duration of which the PRIORITY      |              |              |                  | 
+    |             |signal indicates priority from the time the REQUEST signal is |              |              |                  |
+    |             |asserted, and for a duration of 5- 20 µs. For the rest of the |              |              |                  |
+    |             |request interaction, as long as the REQUEST signal is asserted|              |              |                  |
+    |             |the PRIORITY signal indicates CoEX entities RF activity. The  |              |              |                  |
+    |             |PRIORITY signal can be modified, when REQUEST and GRANT signal|              |              |                  |
+    |             |are asserted, only if there is no activity (TX or RX) and T4  |              |              |                  |
+    |             |before the next activity is started                           |              |              |                  |
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+    |T3           |In a period before the scheduled RF activity, the CC33xx      |50            | T1-T2        | 80               |
+    |             |(PTA master) will assert or de-assert the GRANT signal. This  |              |              |                  |
+    |             |is to indicate if the request from the external SoC,          |              |              |                  |
+    |             |asserted at T1, is granted or not. At period T3, 50-135 µs,   |              |              |                  |
+    |             |the GRANT signal is expected to be in a stable state. The     |              |              |                  |
+    |             |external SoC (PTA slave) will read the GRANT signal within the|              |              |                  |
+    |             |T3 period, and use this value as the answer to the request.   |              |              |                  |
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+    |T4           |The PRIORITY signal is time-shared, as explained under T2.    | 0            |Idle          |Idle              |
+    |             |After T2, the PRIORITY signal indicates the type of RF        |              |              |                  |
+    |             |activity (and no longer priority). In the timing diagram, the |              |              |                  |
+    |             |external SoC (PTA slave) asserts the PRIORITY signal at T4    |              |              |                  |
+    |             |before it transmits to indicate the change in type of activity|              |              |                  | 
+    |             |from RX to TX.The RX activity is indicated by de-asserting the|              |              |                  | 
+    |             |PRIORITY signal, and the TX activity is indicated by asserting|              |              |                  |
+    |             |the PRIORITY signal                                           |              |              |                  |
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+    |T5           |After the coex slave is finished with the scheduled RF        |0             |25            |0                 |
+    |             |activities, it will de-assert the REQUEST signal. This is how |              |              |                  |
+    |             |the external SoC (PTA slave) indicates to the CC33xx that the |              |              |                  |
+    |             |requested RF activity is finished. This will happen 0-25 µs   |              |              |                  |
+    |             |after the last RF activity                                    |              |              |                  |
+    +-------------+--------------------------------------------------------------+--------------+--------------+------------------+
+
+
+Enabling External Coexistence
+=============================
+The Following steps are need to enable external coex on the CC33xx
+
+1. Locate and open the 'CC33xx-conf.ini' file with a text editor
+
+.. code-block:: text
+
+    cd /usr/sbin/cc33conf
+    vi cc33xx-conf.ini
+
+2. Add the following line to enable the External SoC entity
+
+.. code-block:: text
+
+    Is_ExtSoC_Connected         = 01   # Yes/No Choose if External SoC entity is connected - 1 - YES, 0 - NO
+
+3. Other coex parameters can be modified depending on the application. See below
+
+.. code-block:: text
+
+    ExtSoC_grant_polarity       = 01   # External SoC grant polarity - 0 - Active Low, 1 - Active High (Default)
+    ExtSoC_priority_polarity    = 01   # External SoC priority polarity - 0 - Active Low, 1 - Active High (Default)
+    ExtSoC_request_polarity     = 01   # External SoC request polarity - 0 - Active Low, 1 - Active High (Default)
+    ExtSoC_min_grant_time       = 96   # 150 in decimal, Minimum grant time for External SoC
+    ExtSoC_max_grant_time       = 3fff # 16383 in decimal, Maximum available grant time for External SoC
+    ExtSoC_t2_time              = 05   # T2 time for External SoC
+    ExtSoC_to_wifi_grant_delay  = 1e   # 30 in decimal, Maximum time for changing the grant from External SoC to WiFi
+    ExtSoC_to_ble_grant_delay   = 23   # 35 in decimal, Maximum time for changing the grant from External SoC to BLE
+
+4. Build new 'cc33xx-conf.bin' with the new configuration. This new file will need to be moved to the firmware location.
+
+.. code-block:: text
+
+    ./cc33xxconf -D
+    ./cc33xxconf -I cc33xx-conf.ini -X
+    cp cc33xx-conf.bin /lib/firmware/ti-connectivity/cc33xx-conf.bin
+
+5. Reboot the device with the new 'cc33xx-conf.bin'. 
+
+For more information please reference the `Conf Tool Guide`_
+
+.. _my-table3:
+.. table:: Boosterpack Coex Pins
+    :align: center
+
+    +-------------+---------------------+
+    | Name        | Pin                 |
+    +=============+=====================+
+    |REQUEST      | P1.29               |
+    +-------------+---------------------+
+    |PRIORITY     | P1.30               |
+    +-------------+---------------------+
+    |GRANT        | P1.9                |
+    +-------------+---------------------+
+
+For a detailed view of the pin layout please reference the `BoosterPack User Guide`_ 

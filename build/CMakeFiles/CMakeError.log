@@ -1,0 +1,66 @@
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+tiarmclang: error: argument to '-V' is missing (expected 1 value)
+tiarmclang: error: no input files
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is IntelLLVM using "--version" did not match "(Intel[^
+]+oneAPI)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+tiarmclang: error: argument to '-V' is missing (expected 1 value)
+tiarmclang: error: no input files
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+tiarmclang: error: unknown argument '-qversion'; did you mean '--version'?
+tiarmclang: error: no input files
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+tiarmclang: error: unknown argument: '-?'
+tiarmclang: error: no input files
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+tiarmclang: error: unknown argument: '-h'
+tiarmclang: error: no input files
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+tiarmclang: error: no input files
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+tiarmclang: error: no input files
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+TI Arm Clang Compiler 4.0.4.LTS
+Target: arm-ti-none-eabi
+Thread model: posix
+InstalledDir: C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\bin
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+tiarmclang: error: unknown argument '-version'; did you mean '--version'?
+tiarmclang: error: no input files
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+tiarmclang: error: argument to '-V' is missing (expected 1 value)
+tiarmclang: error: no input files

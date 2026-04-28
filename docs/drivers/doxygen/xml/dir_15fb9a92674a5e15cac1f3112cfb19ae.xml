@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_15fb9a92674a5e15cac1f3112cfb19ae" kind="dir">
+    <compoundname>drivers</compoundname>
+    <innerdir refid="dir_e03dc3647b348dca1984ae4e1f6492ad">adc</innerdir>
+    <innerdir refid="dir_d7164342cbe3b5e6599b94cd0b45873d">apps</innerdir>
+    <innerdir refid="dir_b052a18d625aa9eac33fab32980dea61">cryptoutils</innerdir>
+    <innerdir refid="dir_29c8f8daf96077ae2fb9d31f27afbd5b">dma</innerdir>
+    <innerdir refid="dir_fb2953259385de282595b9f3b684779b">dpl</innerdir>
+    <innerdir refid="dir_e04a9300b6ae44d51559f161dee38a3f">gpio</innerdir>
+    <innerdir refid="dir_f74ce4d54e39566bb5d2f4a5d9fce8d8">i2c</innerdir>
+    <innerdir refid="dir_03bb0485d0acfa81a13933475fa92b16">i2s</innerdir>
+    <innerdir refid="dir_88f8ae67b7f372cbc8de25b69c832970">itm</innerdir>
+    <innerdir refid="dir_4ff4dec52c2c79b17347884c562522f6">power</innerdir>
+    <innerdir refid="dir_07876b852a425c7ca5daf9518b415a8b">pwm</innerdir>
+    <innerdir refid="dir_3a1f81bd72fcb5946db0cc78cd888196">sd</innerdir>
+    <innerdir refid="dir_ee266df58c4df4cb1788a159200586e8">sdio</innerdir>
+    <innerdir refid="dir_183ca61512fca743664de8d7bb475abc">spi</innerdir>
+    <innerdir refid="dir_5a4a523ae7c5d740c709aadfc0215ef8">timer</innerdir>
+    <innerdir refid="dir_96d3e3f453dafc588d9e6ca277d521c4">uart2</innerdir>
+    <innerdir refid="dir_55bcd063d1ba33fb324790b024d70f92">utils</innerdir>
+    <innerdir refid="dir_54075f58727e0bc55072f0189f7b8fda">watchdog</innerdir>
+    <innerdir refid="dir_cc420c5698a249e94c91c4b87123ab4a">xmem</innerdir>
+    <innerfile refid="_a_d_c_8h">ADC.h</innerfile>
+    <innerfile refid="_board_8h">Board.h</innerfile>
+    <innerfile refid="_g_p_i_o_8h">GPIO.h</innerfile>
+    <innerfile refid="_i2_c_8h">I2C.h</innerfile>
+    <innerfile refid="_i2_s_8h">I2S.h</innerfile>
+    <innerfile refid="_i_t_m_8h">ITM.h</innerfile>
+    <innerfile refid="_n_v_s_8h">NVS.h</innerfile>
+    <innerfile refid="_power_8h">Power.h</innerfile>
+    <innerfile refid="_p_w_m_8h">PWM.h</innerfile>
+    <innerfile refid="_s_d_8h">SD.h</innerfile>
+    <innerfile refid="_s_d_i_o_8h">SDIO.h</innerfile>
+    <innerfile refid="_s_p_i_8h">SPI.h</innerfile>
+    <innerfile refid="_u_a_r_t2_8h">UART2.h</innerfile>
+    <innerfile refid="_watchdog_8h">Watchdog.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "../../../../source/third_party/hsmddk/lib"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_DriverInit/Driver/src/adapter_driver_init.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_DriverInit/Driver/src/adapter_init.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_Generic/src/adapter_interrupts.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/Adapter_mbedTLS/src/platform.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/Adapter_mbedTLS/src/psa_crypto_client.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/Adapter_mbedTLS/src/psa_crypto_storage.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_asset.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_asym_parse.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_asym_write.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_exchangetoken.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_init.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_internal.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_key_derivation.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_key_management.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_preprovisioned_keys.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/adapter_psa_system.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_PSA/src/psa_key_store.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_VEX/src/adapter_vex_device.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_VEX/src/adapter_vex_identity.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_VEX/src/adapter_vex_init.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_VEX/src/adapter_vex_mailbox.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Adapter_VEX/src/adapter_vex_physicaltoken.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Asn1Der/src/asn1der_parse.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/Asn1Der/src/asn1der_write.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/DriverFramework/src/device_generic.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/DriverFramework/src/hwpal_device_mb.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Integration/HSMSAL/HSMSAL.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Kit/EIP130/DomainHelper/src/eip130_domain_ecc_getcurve.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Kit/EIP130/MailboxControl/src/eip130.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Kit/EIP130/TokenHelper/src/eip130_token_common.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Kit/EIP201/src/eip201.c.obj"
+  "CMakeFiles/hsmddk_cc35xx.dir/include/Kit/Log/src/log.c.obj"
+  "lib/ticlang/m33f/hsmddk_cc35xx/hsmddk_cc35xx.a"
+  "lib/ticlang/m33f/hsmddk_cc35xx/hsmddk_cc35xx.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/hsmddk_cc35xx.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

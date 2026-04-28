@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kernel Configuration &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power Management" href="power.html" />
+    <link rel="prev" title="FreeRTOS (RTOS Kernel) Overview" href="freertos-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug freertos config";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#posix-support">POSIX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#driver-porting-layer-dpl">Driver Porting Layer (DPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-freertos-with-ccs">Using FreeRTOS with CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#freertos-modules">FreeRTOS modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html">Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rov.html">Debugging FreeRTOS with Runtime Object View (ROV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-timers.html">Software Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Kernel Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kernel-configuration">
+<span id="sec-freertos-config"></span><h1>Kernel Configuration<a class="headerlink" href="#kernel-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The FreeRTOS kernel is configured by FreeRTOSConfig.h file which can be found
+in <code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\kernel\freertos\builds\{DEVICE}\release\pregenerated_configuration</span></code>,
+you can change the configuration file so that the kernel will be tailored to your application.
+For more information about kernel configuration, please see <a class="reference external" href="https://www.freertos.org/a00110.html">FreeRTOS Kernel Configuration Overview</a>.</p>
+<p>In the SimpleLink Wi-Fi SDK, all FreeRTOS application routines are abstracted using the following:</p>
+<ul class="simple">
+<li>A POSIX layer, which was designed for use with this SimpleLink Wi-Fi SDK</li>
+<li>A Driver Porting Layer (DPL) for use by the TI Drivers</li>
+</ul>
+<p>You can find example FreeRTOS projects that use the SimpleLink Wi-Fi SDK in the <code class="docutils literal notranslate"><span class="pre">examples/rtos/</span></code>
+folder for all supported IDEs.</p>
+<p>No native FreeRTOS examples are provided in this SimpleLink Wi-Fi SDK. If you want to use the native
+FreeRTOS routines without the abstractions provided by the SimpleLink Wi-Fi SDK, documentation is provided
+on the <a class="reference external" href="https://www.freertos.org">FreeRTOS website</a>.</p>
+</div>
+<div class="section" id="posix-support">
+<h1>POSIX Support<a class="headerlink" href="#posix-support" title="Permalink to this headline">¶</a></h1>
+<p>Portable Operating System Interface (POSIX) is an IEEE industry API standard for
+OS compatibility. The SimpleLink Wi-Fi SDK provides support for POSIX APIs on top of
+FreeRTOS. For a more detailed description of the POSIX
+support in the SimpleLink Wi-Fi SDK, please refer to the
+<a class="reference external" href="https://dev.ti.com/tirex/explore/node?node=ACzypa9NTyZS--.cZMxD.g__BSEc4rl__LATEST">POSIX Overview Workshop</a></p>
+</div>
+<div class="section" id="driver-porting-layer-dpl">
+<h1>Driver Porting Layer (DPL)<a class="headerlink" href="#driver-porting-layer-dpl" title="Permalink to this headline">¶</a></h1>
+<p>The TI Drivers (e.g. UART2, I2C, Power Management, etc.) are written to be used
+with the Driver Porting Layer (DPL). The SimpleLink Wi-Fi SDK includes a DPL
+implementation for FreeRTOS</p>
+<blockquote>
+<div><div class="figure align-center">
+<img alt="../_images/driver_levels_dpl.png" src="../_images/driver_levels_dpl.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="using-freertos-with-ccs">
+<h1>Using FreeRTOS with CCS<a class="headerlink" href="#using-freertos-with-ccs" title="Permalink to this headline">¶</a></h1>
+<p>In order to use FreeRTOS within CCS, you must specify the location of the FreeRTOS
+installation. To do this, follow these steps:</p>
+</div>
+<div class="section" id="freertos-modules">
+<span id="freertos-examples"></span><h1>FreeRTOS modules<a class="headerlink" href="#freertos-modules" title="Permalink to this headline">¶</a></h1>
+<p>The application and the ICall layer communicate using events to call the
+OS and made context switch. The table below shows the modules that are used by FreeRTOS.</p>
+<span id="tbl-freertos-modules"></span><table border="1" class="docutils" id="table-1">
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">FreeRTOS modules</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Example flow</strong></td>
+<td><strong>FreeRTOS modules</strong></td>
+</tr>
+<tr class="row-even"><td>1. <em>Application Thread</em>
+Listen (pend) on event
+number</td>
+<td>SemaphoreP (used through DPL layer)
+and mq_send / mq_receive <em>Blocking</em>
+Mqueue (POSIX queues)</td>
+</tr>
+<tr class="row-odd"><td>2. <em>Stack Thread</em>
+Doing whatever he asked
+to do by the app called</td>
+<td>TimersP (used through DPL layer)</td>
+</tr>
+<tr class="row-even"><td>3. <em>Stack Thread</em>
+Push a message (or number
+of messages) into the
+queue and post an event
+Queue</td>
+<td>mq_send / mq_receive <em>NON-Blocking</em>
+Mqueue (POSIX queues)</td>
+</tr>
+<tr class="row-odd"><td>4. <em>Application Thread</em>
+OS wakes the application
+thread and the application
+pulls the message from the
+Non-OS queue</td>
+<td>mq_send / mq_receive <em>NON-Blocking</em>
+Mqueue (POSIX queues)</td>
+</tr>
+<tr class="row-even"><td>5. <em>Application Thread</em>
+Listen (pend) on event
+number - cycle has
+completed</td>
+<td>mq_send / mq_receive <em>Blocking</em>
+Mqueue (POSIX queues)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="power.html" class="btn btn-neutral float-right" title="Power Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="freertos-index.html" class="btn btn-neutral float-left" title="FreeRTOS (RTOS Kernel) Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

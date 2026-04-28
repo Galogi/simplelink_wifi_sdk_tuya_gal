@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating and Flashing Image &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FreeRTOS (RTOS Kernel) Overview" href="../freertos/freertos-index.html" />
+    <link rel="prev" title="Making Choices for Your Application" href="rebuild_lib.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug building creating_image";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Your First Application from Scratch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Radio Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rebuild_lib.html">Making Choices for Your Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating and Flashing Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Your First Application from Scratch</a> &raquo;</li>
+        
+      <li>Creating and Flashing Image</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-and-flashing-image">
+<h1>Creating and Flashing Image<a class="headerlink" href="#creating-and-flashing-image" title="Permalink to this headline">¶</a></h1>
+<p>The following section explains how to build and flash an image onto the CC35xx using either Code Composer Studio or through the WiFi Toolbox Command Line Interface (CLI)</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+CCS</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+CLI</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p><strong>Code Composer Studio CCS</strong></p>
+<p>First import a Project by going to <cite>File</cite> → <cite>Import Projects</cite></p>
+<div class="figure align-center" id="figure-1">
+<a class="reference internal image-reference" href="../_images/Theia_Import.png"><img alt="../_images/Theia_Import.png" src="../_images/Theia_Import.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Import Project</span></p>
+</div>
+<p>Browse for the example</p>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/Theia_Browse.png"><img alt="../_images/Theia_Browse.png" src="../_images/Theia_Browse.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Browse Examples</span></p>
+</div>
+<p>Make sure to select <cite>workspace</cite> as the <cite>import destination</cite></p>
+<dl class="docutils">
+<dt>Verify the correct version of <cite>SimpleLink Wifi Toolbox</cite>, <cite>Sysconfig</cite>, and <cite>Simplelink_Wifi_SDK</cite> are in the product dependencies.</dt>
+<dd>Right click on the Project and navigate to <cite>Properties</cite></dd>
+</dl>
+<div class="figure align-center" id="figure-3">
+<a class="reference internal image-reference" href="../_images/Theia_Properties.png"><img alt="../_images/Theia_Properties.png" src="../_images/Theia_Properties.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Project Properties</span></p>
+</div>
+<p>In the Project Properties go to <cite>General</cite> → <cite>Dependencies</cite> → <cite>Product Dependencies</cite></p>
+<div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/Theia_Dependencies.png"><img alt="../_images/Theia_Dependencies.png" src="../_images/Theia_Dependencies.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Product Dependencies</span></p>
+</div>
+<p>Build the Imported Project by right clicking on the project and clicking on <cite>Build Projects</cite></p>
+<div class="figure align-center" id="figure-5">
+<a class="reference internal image-reference" href="../_images/Theia_Build.png"><img alt="../_images/Theia_Build.png" src="../_images/Theia_Build.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Building Project</span></p>
+</div>
+<p>Debug the Project by clicking on the debug Icon</p>
+<div class="figure align-center" id="figure-6">
+<a class="reference internal image-reference" href="../_images/Theia_StartDebug.png"><img alt="../_images/Theia_StartDebug.png" src="../_images/Theia_StartDebug.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Start Debug</span></p>
+</div>
+<p>Then choose the correct project from the drop down list and press the Green play icon</p>
+<div class="figure align-center" id="figure-7">
+<a class="reference internal image-reference" href="../_images/Theia_GreenPlay.png"><img alt="../_images/Theia_GreenPlay.png" src="../_images/Theia_GreenPlay.png" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Start debugging instance.</span></p>
+</div>
+<p>This will begin flashing the device with the image and start the debugger</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p><strong>Simplelink Wifi Toolbox CLI</strong></p>
+<p>The Wi-Fi toolbox command line interface provides commands that allow you to build programming image binary files, activate your device etc.</p>
+<p>For any command that requires activation type, signing module etc, please note that the activation_type default setting is “sdk_example_key” and the signing_module will only be used for activation type
+“vendor_key” and has a default path “flash-images-builder/signing_module/sign.py”, so you have to specify the path if the script is a different name or somewhere else.</p>
+<p>If you haven’t updated the signing module Python script when needed, you will see this warning:</p>
+<div class="figure align-center">
+<img alt="../_images/cli-warning.png" src="../_images/cli-warning.png" />
+</div>
+<p>Here is the factory programming command. If successful, the device will be running network terminal.</p>
+<div class="figure align-center">
+<img alt="../_images/cli-factory-programming.png" src="../_images/cli-factory-programming.png" />
+</div>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span>./simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 &lt;XDS110 NUMBER&gt; factory_programming --flash_type &#39;IS25WJ032F&#39; --activation_type &#39;sdk_example_key&#39;
+</pre></div>
+</div>
+<p>Flash erase command:</p>
+<div class="figure align-center">
+<img alt="../_images/cli-flash-erase.png" src="../_images/cli-flash-erase.png" />
+</div>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span>./simplelink-wifi-toolbox.exe programmer -i XDS110 -param1 &lt;XDS110 NUMBER&gt; full_flash_erase --flash_type &#39;IS25WJ032F&#39; --activation_type &#39;sdk_example_key&#39;
+</pre></div>
+</div>
+<p><strong>Below are examples of commands to conduct certain operations for a CC35xx device that was activated using the ‘sdk_example_key’ and developing with the network terminal.</strong></p>
+<p>The following code will build and sign the programming image with the files created by <cite>Syscfg</cite></p>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span>`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build programming_image --flash_memory_config &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/external_memory_configurator.json&quot; --fuses_programming_instructions &quot;`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/programmer/activation_and_initial_programming/jsons/authentication_bypass/fuse_prog_inst_param.CC35XXE.json&quot; --activation_type &#39;sdk_example_key&#39; --signing_module `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign programming_image --unsign_image workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_instructions_image.unsign.bin --activation_type &#39;sdk_vendor_key&#39; --signing_module `SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py --dir_out_path workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox
+</pre></div>
+</div>
+<p>The following code will send the CC35xx action requests that will allow programming and debugging the MCU</p>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span>`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type programming --params_json &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/action_params.json&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/programming_action_request.unsign.bin&quot; --activation_type &#39;sdk_vendor_key&#39; --signing_module &quot;`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build action_request --type debug --params_json &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/syscfg/action_params.json&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign action_request --unsign_request &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/debug_action_request.unsign.bin&quot; --activation_type &#39;sdk_vendor_key&#39; --signing_module &quot;`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+</pre></div>
+</div>
+<p>The following code will build and sign overall vendor image</p>
+<div class="code highlight-c notranslate"><div class="highlight"><pre><span></span>`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder build vendor_image --vendor_out_file &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/network_terminal_LP_EM_CC35X1_freertos_ticlang.out&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot; --version &quot;$(primary_vendor_image_version)&quot; --output_file_name &quot;primary_vendor_image.bin&quot;
+
+`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/simplelink-wifi-toolbox flash-images-builder sign vendor_image --unsign_image &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox/primary_vendor_image.unsign.bin&quot; --activation_type &#39;sdk_vendor_key&#39; --signing_module &quot;`SIMPLELINK_WIFI_TOOLBOX_INSTALL_DIR`/flash-images-builder/signing_module/sign.py&quot; --dir_out_path &quot;workspace_ccstheia/network_terminal_LP_EM_CC35X1_freertos_ticlang/Debug/toolbox&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../freertos/freertos-index.html" class="btn btn-neutral float-right" title="FreeRTOS (RTOS Kernel) Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rebuild_lib.html" class="btn btn-neutral float-left" title="Making Choices for Your Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

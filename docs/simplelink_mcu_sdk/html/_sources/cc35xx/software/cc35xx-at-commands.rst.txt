@@ -1,0 +1,1287 @@
+.. _sec-wifi-at-commands:
+
+AT Commands
+===========
+
+Introduction
+------------
+
+This document describes all available AT commands as well as how to use them. The SDK for the CC35X1 has an AT commands example project which allows users to run these commands. Some of these commands require only one MX device, while other commands require at least 2 devices in order to verify functionality. It is ideal to use 2 devices when testing AT commands that deal with sockets, BLE etc.
+
+Disclaimers
+-----------
+
+* Buffer Limit - If you type more than 520 bytes, the current command you are trying to type will be deleted and a new prompt will appear.
+
+* Cancellation - Commands inserted into the terminal can be canceled in the midst of insertion by simply pressing "Ctrl+C". That applies for "at+send" and "at+sendto" commands too, which can prompt for more data if inserted payload isn't matching the stated payload length.
+
+* CMDs History - You will not be able to navigate command history using arrow keys when using long commands. A command is considered long when it requires the terminal the wrap around the line it's currently processing.
+
+Command Syntax
+--------------
+.. code:: 
+        
+        AT+<command name>=<param1>, <param2>, ...,<paramX>
+
+* Commands that contain parameters should include an equal sign (=) between the command name and the first parameter.
+* Commands that contain parameters should include a comma mark (,) as a delimiter between them—comma delimiters are mandatory.
+* In case the parameter is defined as "ignore" or "optional", it could be left empty but the comma delimiter should be mentioned—it looks like two conjunction delimiters (,,).
+* Parameters that are left empty must be treated as 0 or NULL (according to the parameter type), and in case it was not defined as "ignore" or "optional", an error will be raised.
+* String parameters containing spaces must be enclosed with quotes (" ").
+* String parameters containing a comma delimiter (,) must be enclosed with quotes (" ").
+* Numeric value parameters could be one of the following:
+
+    - Decimal
+    - Hexadecimal—sometimes a prefix of zero x notation (0x) is required (mostly for sheer numbers and not addresses such as MAC)
+* Numeric array parameters could be enclosed with square brackets ([ ]).
+* Numeric array parameters could be one of the following:
+
+    - IPv4 address—contains four numeric values (8 bits each) with a point mark (.) as a delimiter between them enclosed with or without square brackets—x.x.x.x or [x.x.x.x]
+    - IPv6 address—contains four numeric values (32 bit each) with a colon mark (:) as a delimiter between them enclosed with or without square brackets—x:x:x:x or [x:x:x:x]
+    - MAC address—contains six numeric values (8 bit each) with a colon mark (:) as a delimiter between them enclosed with or without square brackets—x:x:x:x:x:x or [x:x:x:x:x:x]
+* Bitmask parameters should contain values with a vertical bar ( | ) as delimiter between them enclosed with or without square brackets—x|x|x or [x|x|x]
+* The AT command handler allows for the AT commands to be entered in uppercase or lowercase with spaces between the arguments.
+* Data parameter should be one of the following formats:
+
+    - Binary format
+    - Base64 format—binary to text encoding
+
+Command Return Values 
+----------------------
+* Command that returns values:
+.. code:: 
+
+        <command name>: <value1>, ..., <valueX>
+* Command that returns success:
+    - None
+* Command that returns failure:
+.. code:: 
+
+        <event name>: <event ID>,<value1>,...,<valueX>
+* Command return status should include a colon mark (:) between the command name and the first value.
+* Command return status that contains list values should include a semicolon mark (;) as a delimiter between the list members.
+
+Asynchronous Events 
+--------------------
+* The events may arrive at any time. Asynchronous events are always built in the following format:
+.. code:: 
+
+        <event name>: <event ID>,<value1>,...,<valueX>
+
+* The event should include a colon mark (:) between the event name and the event ID.
+
+Commands Summary
+-----------------
+* **Device Commands**:
+    - AT + Test: Test command
+    - AT + Version: Get Version
+    - AT + Ate0: Echo off 
+    - At + Ate1: Echo on
+* **Socket Commands**:
+    - AT + Socket: Create endpoint for communication 
+    - AT + Close: Close socket 
+    - AT + Accept: Accept a connection on a socket 
+    - AT + Bind: Assign a name to a socket 
+    - AT + Listen: Listen for connections on a socket 
+    - AT + Connect: Initiate a connection on a socket 
+    - AT + Recv: Read data from TCP socket 
+    - AT + RecvFrom: Read data from socket 
+    - AT + Send: Write data to TCP socket 
+    - AT + SendTo: Write data to socket 
+* **WLAN Commands**
+    - AT + WlanStart: Starts the WLAN device
+    - AT + WlanStop: Stops the WLAN device
+    - AT + WlanConnect: Connect to WLAN network as a station
+    - AT + WlanDisconnect: Disconnect connection
+    - AT + WlanStaRoleUp: Start WLAN STA role activity
+    - AT + WlanApRoleUp: Start WLAN AP role activity
+    - AT + WlanRoleDown: Stop WLAN STA/AP role activity
+    - AT + WlanScan: Gets the WLAN scan operation results
+    - AT + WlanSetMacAddress: Sets WLAN role MAC address 
+    - AT + WlanGetMacAddress: Gets WLAN role MAC address
+
+* **BLE Commands**
+    - AT + BleInit: Starts/stops the BLE module
+    - AT + BleSetMacAddress: Set BLE MAC address type
+    - AT + BleGetMacAddress: Get BLE random MAC address
+    - AT + BleSetDeviceName: Set BLE device name
+    - AT + BleGetDeviceName: Get BLE device name
+    - AT + BleSetScanCfg: Set BLE scan configurations
+    - AT + BleGetScanCfg: Get BLE scan configurations
+    - AT + BleScan: BLE scan enable
+    - AT + BleConnect: BLE connect
+    - AT + BleDisconnect: BLE disconnect
+    - AT + BleConnectedPeers: Get BLE connected peers
+    - AT + BleSetAdvCfg: Set BLE advertise configurations 
+    - AT + BleGetAdvCfg: Get BLE advertise configurations 
+    - AT + BleAdvStart: BLE start advertise 
+    - AT + BleAdvStop: BLE stop advertise 
+
+* **Network Commands**
+    - AT + NetCfgSetInterfaceIp: Set interface IP
+    - AT + NetCfgSetInterfaceIp: Get interface IP
+    - AT + NetCfgSetDhcpServer: Set AP`s DHCP server parameters
+    - AT + NetCfgGetDhcpServer: Get AP`s DHCP server parameters
+
+Device Commands
+----------------
+
+*AT + Test*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: This is to test whether or not you receive "OK".
+
+**Command Parameters**
+
+    +----------------+-----------+------------------------+
+    | **Parameter**  | *Request* | *Response*             |
+    +----------------+-----------+------------------------+
+    | **Expression** | AT + Test | OK                     |
+    +----------------+-----------+------------------------+
+    | **Arguments**  | None      | None                   |
+    +----------------+-----------+------------------------+
+:Example Usage: 
+.. code:: 
+        
+        AT + Test 
+
+*AT + Version*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get Host Driver Version.
+
+**Command Parameters**
+        
+        +----------------+--------------+------------------------+
+        | **Parameter**  | *Request*    | *Response*             |
+        +----------------+--------------+------------------------+
+        | **Expression** | AT + Version | OK                     |
+        +----------------+--------------+------------------------+
+        | **Arguments**  | None         | None                   |
+        +----------------+--------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Version
+
+*AT + Ate0*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: This command causes terminal to display nothing when you type.
+
+**Command Parameters**
+        
+        +----------------+-----------+------------------------+
+        | **Parameter**  | *Request* | *Response*             |
+        +----------------+-----------+------------------------+
+        | **Expression** | AT + Ate0 | OK                     |
+        +----------------+-----------+------------------------+
+        | **Arguments**  | None      | None                   |
+        +----------------+-----------+------------------------+
+:Example Usage: 
+.. code:: 
+        
+        AT + Ate0 
+
+*AT + Ate1*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: This command causes terminal to display what you type.
+
+**Command Parameters**
+        
+        +----------------+-----------+------------------------+
+        | **Parameter**  | *Request* | *Response*             |
+        +----------------+-----------+------------------------+
+        | **Expression** | AT + Ate1 | OK                     |
+        +----------------+-----------+------------------------+
+        | **Arguments**  | None      | None                   |
+        +----------------+-----------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Ate1 
+
+Socket Commands
+----------------
+Note that the two endpoints of the socket need to be connected to the same network.
+
+*AT + Socket*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Creates an End-Point for Communication.
+
+**Command Parameters**
+
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                       | *Response*                |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Expression** | AT + Socket                                     | +Socket:[socket]          |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Arguments**  | * Domain - Specifies protocol family of socket: | socket: Socket descriptor |   
+        |                |    - INET: For network protocol IPv4            | that will be used in the  |
+        |                | * Type (specifies) communication semantic       | socket commands 4.2.2     |
+        |                |    - STREAM: Reliable stream-oriented service   | through 4.2.x             |
+        |                |      or Stream Sockets                          |                           |
+        |                |    - DGRAM: Datagram service of Datagram        |                           |
+        |                |      Sockets                                    |                           |
+        |                |    - RAW: Raw protocols atop the network layer  |                           |
+        |                | * Protocol (Specifies particular transport to   |                           |
+        |                |   be used with the socket)                      |                           |
+        |                |    - TCP                                        |                           |
+        |                |    - UDP                                        |                           |
+        |                |    - RAW                                        |                           |
+        +----------------+-------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Socket = INET, STREAM, TCP
+
+*AT + Close*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Close Socket.
+
+**Command Parameters**
+
+        +----------------+------------------------------------+------------------------+
+        | **Parameter**  | *Request*                          | *Response*             |
+        +----------------+------------------------------------+------------------------+
+        | **Expression** | AT + Close = [socket]              | +Close:[socket]        |
+        |                |                                    | OK                     |
+        +----------------+------------------------------------+------------------------+
+        | **Arguments**  | socket: Socket descriptor received |                        |
+        |                | from AT + Socket command           | None                   |
+        +----------------+------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Close = 0 // where 0 is the socket number (this is assuming you already used the AT + Socket command and it returned something like +socket:0 where 0 is the socket number)
+
+*AT + Accept*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Accept a Connection on a Socket.
+
+**Command Parameters**
+
+        +----------------+-------------------------------------------------+-----------------------------+
+        | **Parameter**  | *Request*                                       | *Response*                  |
+        +----------------+-------------------------------------------------+-----------------------------+
+        | **Expression** | AT + Accept = [socket],[family]                 | +Accept:                    |
+        |                |                                                 | [New Socket],[Family],      |
+        |                |                                                 | [Port],[Address]            |
+        |                |                                                 | OK                          |
+        +----------------+-------------------------------------------------+-----------------------------+
+        | **Arguments**  | * socket: Socket descriptor received from       | * NewSocket: New connected  |   
+        |                |   AT + Socket command                           |   socket                    |
+        |                | * family - Specifies protocol family of socket: | * Family: internet protocol |                                            
+        |                |    - INET: For network protocol IPv4            |   (AF_INET)                 |                
+        |                |                                                 | * Port: Address port        |
+        |                |                                                 | * Address: Peer socket      |
+        |                |                                                 |   address                   |
+        +----------------+-------------------------------------------------+-----------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Accept = 0,INET // note that another device must be trying to connect to you first
+
+*AT + Bind*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Assign a Name to a Socket.
+
+**Command Parameters**
+
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                       | *Response*                |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Expression** | AT + Bind = [Socket],[Family],[Port],[Address]  | OK                        |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Arguments**  | * Socket: Socket descriptor received from       | None                      |   
+        |                |   AT+Socket command                             |                           |
+        |                | * Family: Specifies the protocol family of the  |                           |
+        |                |   created socket:                               |                           |
+        |                |    - INET: For protocol IPv4                    |                           |
+        |                | * Port: Address port                            |                           |
+        |                | * Address: Local socket address                 |                           |
+        +----------------+-------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Bind=0,INET,50000,192.168.10.27 // the socket address is the IP found after issuing AT + NetCfgGetInterfaceIp (after device has connected to an AP), and the port is within 49512-65525 which are free to use in client programs and are not reserved
+
+*AT + Listen*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Listen for Connections on a Socket.
+
+**Command Parameters**
+
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                       | *Response*                |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Expression** | AT + Listen = [socket],[backlog]                | OK                        |
+        +----------------+-------------------------------------------------+---------------------------+
+        | **Arguments**  | * socket: Received from AT+Socket command       | None                      |  
+        |                | * backlog: Listen                               |                           |
+        +----------------+-------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Listen = 0,Listen
+
+*AT + Connect*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Initiate a Connection on a Socket.
+
+**Command Parameters**
+
+        +----------------+---------------------------------------------------+--------------------------------------------+
+        | **Parameter**  | *Request*                                         | *Response*                                 |
+        +----------------+---------------------------------------------------+--------------------------------------------+
+        | **Expression** | AT + Connect = [Socket],[Family],[Port],[Address] | OK                                         |
+        |                |                                                   | +Connect : [Port], [Address]               |
+        +----------------+---------------------------------------------------+--------------------------------------------+
+        | **Arguments**  | * Socket: Received from AT+Socket command         | * Port: Address port                       |
+        |                | * family - Specifies protocol family of socket:   | * Address: Peer socket address ("x.x.x.x") |                                            
+        |                |    - INET: For network protocol IPv4              |                                            |                
+        |                | * Port: Adress port                               |                                            |
+        |                | * Address: Peer socket address ("x.x.x.x")        |                                            |
+        +----------------+---------------------------------------------------+--------------------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Connect = 0,INET,50000,192.168.10.27 // note that AT + Socket must be run first, and the descriptor must be the same as what the other device is using
+
+*AT + Recv*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Read Data From TCP Socket.
+
+Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.
+
+**Command Parameters**
+
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Parameter**  | *Request*                                            | *Response*                                 |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Expression** | AT + Recv = [sd],[format],[length]                   | OK                                         |
+        |                |                                                      | +Recv: [sd],[format],[length],[data]       |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Arguments**  | * sd: Socket handle                                  | None                                       |
+        |                | * format: Data format:                               |                                            |                                            
+        |                |    - 0: Binary data format                           |                                            |   
+        |                |    - 1: Base64 data format (binary to text encoding) |                                            |             
+        |                | * length: Maximum number of bytes to receive         |                                            |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Recv = 1,0,1 // if the device receiving is the one that accepted the connection, it must use the new connected socket (return argument from AT + Accept) as the parameter for AT + Recv
+
+*AT + RecvFrom*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Read Data From Socket.
+
+Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.
+
+**Command Parameters**
+
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                            | *Response*                |
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Expression** | AT + RecvFrom = [sd],[family],[port],[addr],         | +Recv: [sd],[format],     |
+        |                | [format],[length]                                    | [length],[data]           |
+        |                |                                                      | OK                        |
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Arguments**  | * sd: Socket handle                                  | None                      |   
+        |                | * family: internet protocol                          |                           |
+        |                |    - INET: For protocol IPv4                         |                           |
+        |                |    - INET6: For protocol IPv6                        |                           |
+        |                | * port: Address port (16 bits)                       |                           |
+        |                | * addr: internet address (32 bits)                   |                           |
+        |                | * format: Data format:                               |                           |
+        |                |    - 0: Binary data format                           |                           |
+        |                |    - 1: Base64 data format (binary to text encoding) |                           |
+        |                | * length: Maximum number of bytes to receive         |                           |
+        +----------------+------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + RecvFrom = 1,INET,54911,192.168.10.54,0,1 // recall that if this device is the one that accepted a connection, SD, Port, and Addr are return values from AT + Accept
+
+*AT + Send*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Write Data to TCP Socket.
+
+Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.
+
+**Command Parameters**
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Parameter**  | *Request*                                            | *Response*                                 |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Expression** | AT + Send = [sd],[format],[por],[length],[data]      | OK                                         |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+        | **Arguments**  | * sd: Socket handle                                  | None                                       |
+        |                | * format: Data format:                               |                                            |                                            
+        |                |    - 0: Binary data format                           |                                            |   
+        |                |    - 1: Base64 data format (binary to text encoding) |                                            |             
+        |                | * length: Number of bytes to send                    |                                            |
+        |                | * data: Data to send                                 |                                            |
+        +----------------+------------------------------------------------------+--------------------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + Send = 0,0,1,1
+
+*AT + SendTo*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Write Data to Socket.
+
+Note that the socket handle is the same as the socket descriptor returned by calling AT + Socket.
+
+**Command Parameters**
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                            | *Response*                |
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Expression** | AT + SendTo = [sd],[family],[port],[addr],           | OK                        |
+        |                | [format],[length],[data]                             |                           |
+        |                |                                                      |                           |
+        +----------------+------------------------------------------------------+---------------------------+
+        | **Arguments**  | * sd: Socket handle                                  | None                      |   
+        |                | * family: internet protocol                          |                           |
+        |                |    - INET: For protocol IPv4                         |                           |
+        |                | * port: Address port (16 bits)                       |                           |
+        |                | * addr: internet address (32 bits)                   |                           |
+        |                | * format: Data format:                               |                           |
+        |                |    - 0: Binary data format                           |                           |
+        |                |    - 1: Base64 data format (binary to text encoding) |                           |
+        |                | * length: Maximum number of bytes to send            |                           |
+        |                | * data: Data to send                                 |                           |
+        +----------------+------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + SendTo = 0,INET,50000,192.168.10.27,0,1,0
+
+WLAN Commands
+----------------
+
+*AT + WlanStart*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: This command starts the WLAN device.
+
+**Command Parameters**
+
+        +----------------+----------------+------------------------+
+        | **Parameter**  | *Request*      | *Response*             |
+        +----------------+----------------+------------------------+
+        | **Expression** | AT + WlanStart | OK                     |
+        +----------------+----------------+------------------------+
+        | **Arguments**  | None           | None                   |
+        +----------------+----------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanStart // you might need to hit enter after the command completes in order to issue additional commands
+
+*AT + WlanStop*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: This command stops the WLAN device.
+
+**Command Parameters**
+        +----------------+---------------+------------------------+
+        | **Parameter**  | *Request*     | *Response*             |
+        +----------------+---------------+------------------------+
+        | **Expression** | AT + WlanStop | OK                     |
+        +----------------+---------------+------------------------+
+        | **Arguments**  | None          | None                   |
+        +----------------+---------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanStop // you can only issue this after AT + WlanStart
+
+*AT + WlanConnect*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Connect to WLAN Network as a Station.
+
+**Command Parameters**
+        +----------------+-----------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                           | *Response*                |
+        +----------------+-----------------------------------------------------+---------------------------+
+        | **Expression** | AT + WlanConnect = [SSID],[BSSID],[SecurityType],   | OK                        |
+        |                | [SecurityKey]                                       | IPv4 Acquired             |
+        +----------------+-----------------------------------------------------+---------------------------+
+        | **Arguments**  | * SSID: Name of the Access Point                    | None                      |   
+        |                | * BSSID: Access Point MAC address (optional)        |                           |
+        |                | * SecurityType: Security type:                      |                           |
+        |                |    - OPEN                                           |                           |
+        |                |    - WPA_WPA2                                       |                           |
+        |                |    - WPA2_PLUS                                      |                           |
+        |                |    - WPA3                                           |                           |
+        |                | * Security Key: Password (Optional in case OPEN     |                           |
+        |                |   security type was chosen)                         |                           |
+        |                | Arguments for WPS connection:                       |                           | 
+        |                |                                                     |                           |
+        |                | * Security Type:                                    |                           |       
+        |                |    - WPS_PIN                                        |                           |       
+        |                |    - WPS_PBC                                        |                           |      
+        +----------------+-----------------------------------------------------+---------------------------+
+:Example Usage (note that WPS does not require SSID or BSSID fields): 
+.. code:: 
+
+        AT + wlanConnect = texas_instruments,00:00:00:00:00:00,WPA_WPA2,12345678 // for the fields you enter such as SSID, BSSID etc, you can obtain them after conducting a WlanScan. Note that you might need to press enter if you want to issue more commands afterwards.
+
+*AT + WlanDisconnect*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Disconnect the connection.
+
+**Command Parameters**
+        +----------------+---------------------+------------------------+
+        | **Parameter**  | *Request*           | *Response*             |
+        +----------------+---------------------+------------------------+
+        | **Expression** | AT + WlanDisconnect | OK                     |
+        +----------------+---------------------+------------------------+
+        | **Arguments**  | None                | None                   |
+        +----------------+---------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanDisconnect // you can only do this after being connected to an access point
+
+*AT + WlanScan*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Gets the WLAN Scan Operation Results.
+
+**Command Parameters**
+        +----------------+--------------------------------------------------------+--------------------------------------+
+        | **Parameter**  | *Request*                                              | *Response*                           |
+        +----------------+--------------------------------------------------------+--------------------------------------+
+        | **Expression** | AT + WlanScan = [Count]                                | OK                                   |            
+        |                |                                                        | +WlanScan:                           |
+        |                |                                                        | [SSID],[BSSID],[RSSI],[Channel],     |
+        |                |                                                        | [Security_Type],[Hidden_SSID]        |                   
+        +----------------+--------------------------------------------------------+--------------------------------------+
+        | **Arguments**  | * Count: How many entries to fetch; maximum is 20.     | None                                 |   
+        |                |   Count should be in the range of 1 to 20 (including). |                                      |
+        |                |                                                        | * SSID: Wireless LAN identifier      |
+        |                |                                                        | * BSSID: MAC address of the          |
+        |                |                                                        |   wireless access point              |
+        |                |                                                        | * Channel                            |
+        |                |                                                        | * RSSI: Relative received signal     |
+        |                |                                                        |   strength in a wireless environment |                       
+        |                |                                                        | * Security_Type:                     |
+        |                |                                                        |    - OPEN                            |
+        |                |                                                        |    - WPA                             |
+        |                |                                                        |    - WPA2                            |
+        |                |                                                        |    - WPA_WPA2                        |
+        |                |                                                        |    - WPA3                            |
+        |                |                                                        | * Hidden_SSID:                       |
+        |                |                                                        |    - 1: Hidden                       |
+        |                |                                                        |    - 0: Not hidden                   |
+        +----------------+--------------------------------------------------------+--------------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanScan = 10 // you can only issue this after AT + WlanStaRoleUp; you might need to hit enter after the command completes in order to issue additional commands
+
+*AT + WlanStaRoleUp*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Start WLAN STA Role (mode).
+
+**Command Parameters**
+        +----------------+--------------------+------------------------+
+        | **Parameter**  | *Request*          | *Response*             |
+        +----------------+--------------------+------------------------+
+        | **Expression** | AT + WlanStaRoleUp | OK                     |
+        +----------------+--------------------+------------------------+
+        | **Arguments**  | None               | None                   |
+        +----------------+--------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanStaRoleUp // you can only issue this after already issuing AT + WlanStart
+
+*AT + WlanApRoleUp*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Start WLAN AP Role (mode).
+
+**Command Parameters**
+        +----------------+-------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                             | *Response*                |
+        +----------------+-------------------------------------------------------+---------------------------+
+        | **Expression** | AT + wlanApRoleUp = [SSID],[SecurityType],[Password], | OK                        |
+        |                | [Hidden_SSID],[Channel],[Max Stations]                |                           |
+        +----------------+-------------------------------------------------------+---------------------------+
+        | **Arguments**  | * SSID: Wireless LAN identifier                       | None                      |   
+        |                | * SecurityType: Security type:                        |                           |
+        |                |    - OPEN                                             |                           |
+        |                |    - WPA_WPA2                                         |                           |
+        |                |    - WPA2_PLUS                                        |                           |
+        |                |    - WPA3                                             |                           |
+        |                | * Password: Set Password for AP mode (Password        |                           |
+        |                |   for WPA: 8-63 characters)                           |                           |
+        |                | * hidden (whether AP is Hidden or Not):               |                           |
+        |                |    - 1: Hidden                                        |                           |
+        |                |    - 0: Not Hidden                                    |                           |
+        |                | * Channel: Set channel for AP role                    |                           |
+        |                | * Max Stations: Set Max AP stations (1-4)             |                           |
+        +----------------+-------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanApRoleUp = hello,WPA_WPA2,12345678,0,15,1
+
+*AT + WlanRoleDown*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Stop WLAN Role (mode).
+
+**Command Parameters**
+        +----------------+-------------------------------------+------------------------+
+        | **Parameter**  | *Request*                           | *Response*             |
+        +----------------+-------------------------------------+------------------------+
+        | **Expression** | AT + WlanRoleDown = [Role]          | OK                     |
+        +----------------+-------------------------------------+------------------------+
+        | **Arguments**  | * Role                              | None                   |
+        |                |    - STA: For WLAN station role     |                        |
+        |                |    - AP: For WLAN Access Point role |                        |
+        +----------------+-------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + wlanRoleDown = STA // or AT + wlanRoleDown = AP assuming that the role up has been issuesd for the respective mode
+
+*AT + WlanSetMacAddress*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set Role MAC Address.
+
+**Command Parameters**
+
+        +----------------+--------------------------------------+------------------------+
+        | **Parameter**  | *Request*                            | *Response*             |
+        +----------------+--------------------------------------+------------------------+
+        | **Expression** | AT + WlanSetMacAddress = [Role],     | OK                     |
+        |                | [MAC_ADDRESS]                        |                        |
+        +----------------+--------------------------------------+------------------------+
+        | **Arguments**  | * Role                               | None                   |
+        |                |   - STA: For WLAN station role       |                        |
+        |                |   - AP: For WLAN Access Point role   |                        |
+        |                | * MAC_ADDRESS: Requested MAC address |                        |
+        +----------------+--------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + WlanSetMacAddress = STA,aa:bb:cc:dd:ee:ff
+
+*AT + WlanGetMacAddress*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get Role MAC Address.
+
+**Command Parameters**
+        +----------------+-------------------------------------+------------------------+
+        | **Parameter**  | *Request*                           | *Response*             |
+        +----------------+-------------------------------------+------------------------+
+        | **Expression** | AT + WlanGetMacAddress = [Role]     | OK                     |
+        +----------------+-------------------------------------+------------------------+
+        | **Arguments**  | * Role                              | None                   |
+        |                |    - STA: For WLAN station role     |                        |
+        |                |    - AP: For WLAN Access Point role |                        |
+        +----------------+-------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + WlanGetMacAddress = STA // or = AP depending on the respective mode set during STA role up
+
+BLE Commands
+----------------
+
+*AT + BleInit*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Start / Stop BLE module.
+
+**Command Parameters**
+        +----------------+------------------------------------+------------------------+
+        | **Parameter**  | *Request*                          | *Response*             |
+        +----------------+------------------------------------+------------------------+
+        | **Expression** | AT + BleInit = [Role]              | OK                     |
+        +----------------+------------------------------------+------------------------+
+        | **Arguments**  | * Role                             | None                   |
+        |                |    - 0: Deinit BLE                 |                        |
+        |                |    - 1: Init BLE                   |                        |
+        +----------------+------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleInit = 1 // or = 0 depending on AT + BleInit was issued already; can only be used after AT + WlanStart , but should be done before any BLE operation
+
+*AT + BleSetMacAddress*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set BLE MAC address type.
+
+**Command Parameters**
+        +----------------+---------------------------------------+------------------------+
+        | **Parameter**  | *Request*                             | *Response*             |
+        +----------------+---------------------------------------+------------------------+
+        | **Expression** | AT + BleSetMacAddress = [AddressType] | OK                     |
+        +----------------+---------------------------------------+------------------------+
+        | **Arguments**  | * AddressType                         | None                   |
+        |                |    - 0: Public                        |                        |
+        |                |    - 1: Random                        |                        |
+        |                | * Note that every call for setting a  |                        |
+        |                |   random BLE address will result in   |                        |
+        |                |   generation of a new random address  |                        |
+        +----------------+---------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleSetMacAddress = 1 // or = 0, depending on what type of address you want - you can observe that repeated arguments of 0 will result in the same MAC address, whereas an argument of 1 will behave as the note described
+
+*AT + BleGetMacAddress*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE random MAC address.
+
+**Command Parameters**
+        +----------------+------------------------------------+--------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                     |
+        +----------------+------------------------------------+--------------------------------+
+        | **Expression** | AT + BleGetMacAddress              | +BleGetMacAddress:[MacAddress] |
+        |                |                                    | OK                             |
+        +----------------+------------------------------------+--------------------------------+
+        | **Arguments**  | None                               | None                           |
+        +----------------+------------------------------------+--------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleGetMacAddress
+
+*AT + BleSetDeviceName*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set BLE device name.
+    : Limit up to 31 characters; default name is "TI CC3xxxx"
+
+**Command Parameters**
+        +----------------+---------------------------------------+------------------------+
+        | **Parameter**  | *Request*                             | *Response*             |
+        +----------------+---------------------------------------+------------------------+
+        | **Expression** | AT + BleSetDeviceName = [DeviceName]  | OK                     |
+        +----------------+---------------------------------------+------------------------+
+        | **Arguments**  | * DeviceName: Requested device name.  | None                   |
+        |                |   Allowing up to 31 characters.       |                        |
+        +----------------+---------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+        
+        AT + BleSetDeviceName = Texas // you can verify changes using AT + BleGetDeviceName
+
+*AT + BleGetDeviceName*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE device name.
+
+**Command Parameters**
+        +----------------+------------------------------------+--------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                     |
+        +----------------+------------------------------------+--------------------------------+
+        | **Expression** | AT + BleGetDeviceName              | +BleGetDeviceName:[DeviceName] |
+        |                |                                    | OK                             |
+        +----------------+------------------------------------+--------------------------------+
+        | **Arguments**  | None                               | None                           |
+        +----------------+------------------------------------+--------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleGetDeviceName
+
+*AT + BleSetScanCfg*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE device name.
+
+**Command Parameters**
+        +----------------+-------------------------------------------------------------------------------------------------+--------------------------------+
+        | **Parameter**  | *Request*                                                                                       | *Response*                     |
+        +----------------+-------------------------------------------------------------------------------------------------+--------------------------------+
+        | **Expression** | AT + BleSetScancfg = [scanType],                                                                | OK                             |
+        |                | [ownAddressType],[filterPolicy],                                                                |                                |
+        |                | [scanInterval],[scanWindow]                                                                     |                                |
+        +----------------+-------------------------------------------------------------------------------------------------+--------------------------------+
+        | **Arguments**  | * ScanType:                                                                                     | None                           |
+        |                |                                                                                                 |                                |
+        |                |   - 0: Passive Scan                                                                             |                                |
+        |                |   - 1: Active Scan                                                                              |                                |
+        |                | * Own Address Type:                                                                             |                                |
+        |                |                                                                                                 |                                |
+        |                |   - 0: Public Device Address                                                                    |                                |
+        |                |   - 1: Random Device Address                                                                    |                                |
+        |                | * Filter Policy:                                                                                |                                |
+        |                |                                                                                                 |                                |
+        |                |   - 0: Accept all advertisements except directed ones not intended for this device              |                                |
+        |                |   - 1: Accept only from devices in White List except directed ones not intended for this device |                                |
+        |                |   - 2: Accept all advertisements including directed ones not intended for this device           |                                |
+        |                |   - 3: Accept only from devices in White List including ones not intended for this device       |                                |
+        |                | * Scan Interval:                                                                                |                                |
+        |                |                                                                                                 |                                |
+        |                |   - 0.625ms per interval                                                                        |                                |
+        |                |   - Range is [0x004, 0x4000] or 2.5ms to 10.24s                                                 |                                |
+        |                |   - Parameter must be no less than "Scan Window" parameter                                      |                                |
+        |                | * Scan Window:                                                                                  |                                |
+        |                |                                                                                                 |                                |
+        |                |   - 0.625ms per window                                                                          |                                |
+        |                |   - Range is [0x004, 0x4000] or 2.5ms to 10.24s                                                 |                                |
+        |                |   - Parameter must be no greater than "Scan Interval" parameter                                 |                                |
+        +----------------+-------------------------------------------------------------------------------------------------+--------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleSetScanCfg = 0,0,0,100,50
+
+*AT + BleGetScanCfg*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE scan configurations.
+
+**Command Parameters**
+        +----------------+------------------------------------+----------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                       |
+        +----------------+------------------------------------+----------------------------------+
+        | **Expression** | AT + BleGetScancfg                 | +BleGetScanCfg: = [scanType],    | 
+        |                |                                    | [ownAddressType],[filterPolicy], |                                
+        |                |                                    | [scanInterval],[scanWindow]      |   
+        |                |                                    | OK                               |                             
+        +----------------+------------------------------------+----------------------------------+
+        | **Arguments**  | None                               | None                             |
+        +----------------+------------------------------------+----------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleGetScanCfg
+
+*AT + BleScan*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: BLE scan enable.
+    : Note that in order to use this API, one must first set the scan parameters using "AT+BleSetScanCfg".
+
+**Command Parameters**
+        +----------------+------------------------------------------+------------------------+
+        | **Parameter**  | *Request*                                | *Response*             |
+        +----------------+------------------------------------------+------------------------+
+        | **Expression** | AT + BleScan = [Enable]<,[Duration]>     | OK                     |
+        +----------------+------------------------------------------+------------------------+
+        | **Arguments**  | * Enable: Enable or disable the scan     | None                   |
+        |                |                                          |                        |
+        |                |   - 0: disable                           |                        |
+        |                |   - 1: enable                            |                        |
+        |                | * Duration: Must be set if enable == 1   |                        |
+        |                |   Set scan duration in units of seconds  |                        |
+        |                |   If set to 0, the scan is continuously  |                        |
+        |                |   running until this API is called again |                        |
+        |                |   with enable==0.                        |                        |
+        +----------------+------------------------------------------+------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleScan = 1,1 // this command can only be used after setting the scan configuration
+
+*AT + BleConnect*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: BLE connect.
+
+**Command Parameters**
+
+        +----------------+------------------------------------+--------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                     |
+        +----------------+------------------------------------+--------------------------------+
+        | **Expression** | AT + BleConnect = [Peer Address],  | OK                             |
+        |                | [Peer Address Type]                |                                |
+        +----------------+------------------------------------+--------------------------------+
+        | **Arguments**  | * Peer Address                     | None                           |
+        |                | * Peer Address Type                |                                |
+        +----------------+------------------------------------+--------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleConnect = aa:bb:cc:dd:ee:ff,random // note that the Bluetooth Device you are connecting to must be advertising to your device and allow your device to connect to it
+
+*AT + BleDisconnect*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: BLE disconnect.
+
+**Command Parameters**
+        +----------------+------------------------------------+--------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                     |
+        +----------------+------------------------------------+--------------------------------+
+        | **Expression** | AT + BleDisconnect                 | OK                             |
+        +----------------+------------------------------------+--------------------------------+
+        | **Arguments**  | None                               | None                           |
+        +----------------+------------------------------------+--------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleDisconnect
+
+*AT + BleConnectedPeers*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE connected peers.
+
+**Command Parameters**
+        +----------------+------------------------------------+----------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                       |
+        +----------------+------------------------------------+----------------------------------+
+        | **Expression** | AT + BleConnectedPeers             | +BleConnectedPeers:[MAC Address] |
+        |                |                                    | OK                               |
+        +----------------+------------------------------------+----------------------------------+
+        | **Arguments**  | None                               | None                             |
+        +----------------+------------------------------------+----------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + BleConnectedPeers // will show empty list if not connected with anyone
+
+*AT + BleSetAdvCfg*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set BLE advertise configurations.
+
+**Command Parameters**
+        +----------------+--------------------------------------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                                                            | *Response*                |
+        +----------------+--------------------------------------------------------------------------------------+---------------------------+
+        | **Expression** | AT + BleSetAdvCfg = [Min Interval],[Max Interval],[Adv Type],                        | OK                        |
+        |                | [Own Address Type],[Channel Map], [Filter Policy],                                   | IPv4_ACQUIRED             |
+        |                | [Peer Address Type], [Peer Address], [Primary Phy],                                  |                           |
+        |                | [Secondary Phy]                                                                      |                           |
+        +----------------+--------------------------------------------------------------------------------------+---------------------------+
+        | **Arguments**  | * Min Interval                                                                       |                           |   
+        |                |                                                                                      |                           |
+        |                |   - Min interval is 0.625 ms, if 0 stack uses same defaults                          |                           |
+        |                |   - Range [0x0020, 0x4000] or [20,10240] milliseconds                                |                           |
+        |                | * Max Interval                                                                       |                           |
+        |                |                                                                                      |                           |
+        |                |   - Maximum advertising interval in 0.625 ms, if 0 stack uses                        |                           |
+        |                |     same defaults where                                                              |                           |
+        |                |   - Range is same as min interval                                                    |                           |
+        |                | * Adv Type:                                                                          |                           |
+        |                |                                                                                      |                           |
+        |                |   - 0: BLE_ADV_TYPE_IND                                                              |                           |
+        |                |   - 1: BLE_ADV_TYPE_DIRECT_IND_HIGH (max 1280 ms)                                    |                           |
+        |                |   - 2: BLE_ADV_TYPE_SCAN_IND                                                         |                           |
+        |                |   - 3: BLE_ADV_TYPE_NONCONN_IND                                                      |                           |
+        |                |   - 4: BLE_ADV_TYPE_DIRECT_IND_LOW                                                   |                           |
+        |                |   - 5: BLE_ADV_TYPE_EXT_NOSCANNABLE_IND                                              |                           |
+        |                |   - 6: BLE_ADV_TYPE_EXT_CONNECTABLE_IND                                              |                           |
+        |                |   - 7: BLE_ADV_TYPE_EXT_SCANNABLE_IND                                                |                           |
+        |                | * Own Address Type Used By Advertising Instance                                      |                           |
+        |                |                                                                                      |                           |
+        |                |   - 0: Public Device Address                                                         |                           |
+        |                |   - 1: Random Device Address                                                         |                           |
+        |                | * Channel Map: Advertising Channel Map, if 0 stack                                   |                           |
+        |                |                                                                                      |                           |
+        |                |   - 1: Channel 37                                                                    |                           |
+        |                |   - 2: Channel 38                                                                    |                           |
+        |                |   - 3: Channel 39                                                                    |                           |
+        |                |   - 4: All channels                                                                  |                           |
+        |                | * Advertising Filter Policy                                                          |                           |
+        |                |                                                                                      |                           |
+        |                |   - 0: NONE (default) - no whitelist                                                 |                           |
+        |                |   - 1: SCAN - process all connection requests but only scans from whitelist          |                           |
+        |                |   - 2: CONN: - process all scan requests but only connection requests from whitelist |                           | 
+        |                |   - 3: BOTH: ignore all scan and connection requests unless in whitelist             |                           |
+        |                | * Peer Address Type for Direct Advertising If Directed Is Set                        |                           |
+        |                |                                                                                      |                           |
+        |                |   - 0: Public Device Address                                                         |                           |
+        |                |   - 1: Random Device Address                                                         |                           |
+        |                | * Peer Address for directed advertising if directed is set                           |                           |
+        |                | * Primary Phy                                                                        |                           |
+        |                |                                                                                      |                           |
+        |                |   - 1: 1M Phy                                                                        |                           |
+        |                |   - 3: Coded Phy (yes it's a 3)                                                      |                           |
+        |                | * Secondary Phy                                                                      |                           |
+        |                |                                                                                      |                           |
+        |                |   - 1: 1M Phy                                                                        |                           |
+        |                |   - 2: 2M Phy                                                                        |                           |
+        |                |   - 3: Coded Phy                                                                     |                           |
+        +----------------+--------------------------------------------------------------------------------------+---------------------------+
+.. :Example Usage: 
+.. ".. code::"
+
+..         AT + NetCfgSetInterfaceIp = AP,DHCP,192.168.1.100,255.255.255.0,192.168.1.1
+
+*AT + BleGetAdvCfg*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get BLE advertise configurations.
+
+**Command Parameters**
+        +----------------+---------------------------+--------------------------------------------------------------------------------------+
+        | **Parameter**  | *Request*                 | *Response*                                                                           |
+        +----------------+---------------------------+--------------------------------------------------------------------------------------+
+        | **Expression** | AT+BleSetAdvCfg           | OK                                                                                   |
+        |                |                           | [Min Interval],[Max Interval],[Adv Type],                                            |
+        |                |                           | [Own Address Type],[Channel Map], [Filter Policy],                                   |
+        |                |                           | [Peer Address Type], [Peer Address], [Primary Phy],                                  |
+        |                |                           | [Secondary Phy]                                                                      |
+        +----------------+---------------------------+--------------------------------------------------------------------------------------+
+        | **Arguments**  |                           | * Min Interval                                                                       |  
+        |                |                           |                                                                                      |
+        |                |                           |   - Min interval is 0.625 ms, if 0 stack uses same defaults                          |
+        |                |                           |   - Range [0x0020, 0x4000] or [20,10240] milliseconds                                |
+        |                |                           | * Max Interval                                                                       |
+        |                |                           |                                                                                      |
+        |                |                           |   - Maximum advertising interval in 0.625 ms, if 0 stack uses                        |
+        |                |                           |     same defaults where                                                              |
+        |                |                           |   - Range is same as min interval                                                    |
+        |                |                           | * Adv Type:                                                                          |
+        |                |                           |                                                                                      |
+        |                |                           |   - 0: BLE_ADV_TYPE_IND                                                              |
+        |                |                           |   - 1: BLE_ADV_TYPE_DIRECT_IND_HIGH                                                  |
+        |                |                           |   - 2: BLE_ADV_TYPE_SCAN_IND                                                         |
+        |                |                           |   - 3: BLE_ADV_TYPE_NONCONN_IND                                                      |
+        |                |                           |   - 4: BLE_ADV_TYPE_DIRECT_IND_LOW                                                   |
+        |                |                           |   - 5: BLE_ADV_TYPE_EXT_NOSCANNABLE_IND                                              |
+        |                |                           |   - 6: BLE_ADV_TYPE_EXT_CONNECTABLE_IND                                              |
+        |                |                           |   - 7: BLE_ADV_TYPE_EXT_SCANNABLE_IND                                                |
+        |                |                           | * Own Address Type Used By Advertising Instance                                      |
+        |                |                           |                                                                                      |
+        |                |                           |   - 0: Public Device Address                                                         |
+        |                |                           |   - 1: Random Device Address                                                         |
+        |                |                           | * Channel Map: Advertising Channel Map, if 0 stack                                   |
+        |                |                           |                                                                                      |
+        |                |                           |   - 1: Channel 37                                                                    |
+        |                |                           |   - 2: Channel 38                                                                    |
+        |                |                           |   - 3: Channel 39                                                                    |
+        |                |                           |   - 4: All channels                                                                  |
+        |                |                           | * Advertising Filter Policy                                                          |
+        |                |                           |                                                                                      |
+        |                |                           |   - 0: NONE (default) - no whitelist                                                 |
+        |                |                           |   - 1: SCAN - process all connection requests but only scans from whitelist          |
+        |                |                           |   - 2: CONN: - process all scan requests but only connection requests from whitelist |
+        |                |                           |   - 3: BOTH: ignore all scan and connection requests unless in whitelist             |
+        |                |                           | * Peer Address Type for Direct Advertising If Directed Is Set                        |
+        |                |                           |                                                                                      |
+        |                |                           |   - 0: Public Device Address                                                         |
+        |                |                           |   - 1: Random Device Address                                                         |
+        |                |                           | * Peer Address for directed advertising if directed is set                           |
+        |                |                           | * Primary Phy                                                                        |
+        |                |                           |                                                                                      |
+        |                |                           |   - 1: 1M Phy                                                                        |
+        |                |                           |   - 3: Coded Phy (yes it's a 3)                                                      |
+        |                |                           | * Secondary Phy                                                                      |
+        |                |                           |                                                                                      |
+        |                |                           |   - 1: 1M Phy                                                                        |
+        |                |                           |   - 2: 2M Phy                                                                        |
+        |                |                           |   - 3: Coded Phy                                                                     |
+        +----------------+---------------------------+--------------------------------------------------------------------------------------+
+
+*AT + BleAdvStart*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Start advertising in BLE.
+
+**Command Parameters**
+        +----------------+------------------------------------+----------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                       |
+        +----------------+------------------------------------+----------------------------------+
+        | **Expression** | AT + BleAdvStart                   | OK                               |
+        +----------------+------------------------------------+----------------------------------+
+        | **Arguments**  | None                               | None                             |
+        +----------------+------------------------------------+----------------------------------+
+
+*AT + BleAdvStop*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Stop advertising in BLE.
+
+**Command Parameters**
+        +----------------+------------------------------------+----------------------------------+
+        | **Parameter**  | *Request*                          | *Response*                       |
+        +----------------+------------------------------------+----------------------------------+
+        | **Expression** | AT + BleAdvStop                    | OK                               |
+        +----------------+------------------------------------+----------------------------------+
+        | **Arguments**  | None                               | None                             |
+        +----------------+------------------------------------+----------------------------------+
+
+Network Commands
+----------------
+
+*AT + NetCfgSetInterfaceIp*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set interface IP.
+
+**Command Parameters**
+        +----------------+------------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                                  | *Response*                |
+        +----------------+------------------------------------------------------------+---------------------------+
+        | **Expression** | AT + NetCfgSetInterfaceIp = [Role],[IP Mode],[IP Address], | OK                        |
+        |                | [Netmask],[Gateway Address]                                | IPv4_ACQUIRED             |
+        +----------------+------------------------------------------------------------+---------------------------+
+        | **Arguments**  | * Role / Interface: Interface we wish to set               |                           |   
+        |                |                                                            |                           |
+        |                |   - STA                                                    |                           |
+        |                |   - AP                                                     |                           |
+        |                | * IP Mode:                                                 |                           |
+        |                |                                                            |                           |
+        |                |   - STATIC                                                 |                           |
+        |                |   - DHCP                                                   |                           |
+        |                | The following parameters are applicable for all roles      |                           |
+        |                | except for STA using DHCP                                  |                           |
+        |                |                                                            |                           |
+        |                | * IP Address                                               |                           |
+        |                | * Netmask Address                                          |                           |
+        |                | * Gateway Address                                          |                           |
+        +----------------+------------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + NetCfgSetInterfaceIp = AP,DHCP,192.168.1.100,255.255.255.0,192.168.1.1
+
+*AT + NetCfgGetInterfaceIp*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get interface IP.
+
+**Command Parameters**
+        +----------------+----------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                                | *Response*                |
+        +----------------+----------------------------------------------------------+---------------------------+
+        | **Expression** | AT + NetCfgGetInterfaceIp = [Role]                       | OK                        |
+        +----------------+----------------------------------------------------------+---------------------------+
+        | **Arguments**  | * Role/Interface: Interface we wish to get IP info about |                           |   
+        |                |    - STA                                                 | * IP Address              |
+        |                |    - AP                                                  | * Netmask Address         |
+        |                |                                                          | * Gateway Address         |
+        |                |                                                          | * DHCP/STATIC Mode:       |
+        |                |                                                          |   - 0: STATIC             |
+        |                |                                                          |   - 1: DHCP               |
+        +----------------+----------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + NetCfgGetnterfaceIp = STA // or = AP depending on what role up command was used
+
+*AT + NetCfgSetDhcpServer*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Set AP's DHCP server parameters.
+
+**Command Parameters**
+        +----------------+--------------------------------------------------------------+---------------------------+
+        | **Parameter**  | *Request*                                                    | *Response*                |
+        +----------------+--------------------------------------------------------------+---------------------------+
+        | **Expression** | AT + NetCfgSetDhcpServer = [Lease Time],[IP start address],  | OK                        |
+        |                | [IP end address]                                             |                           |
+        +----------------+--------------------------------------------------------------+---------------------------+
+        | **Arguments**  | * Lease Time: Address lease time, in minutes. Optional       |                           |   
+        |                |   parameter                                                  |                           |
+        |                | * IP start address                                           |                           |
+        |                | * IP end address                                             |                           |
+        |                | Note: for AP role this API can only be used if AP role is up |                           |
+        +----------------+--------------------------------------------------------------+---------------------------+
+:Example Usage: 
+.. code:: 
+        
+        AT + NetCfgSetDhcpServer = 10,192.168.1.1,192.168.1.100 // note that the range of these addresses cannot include the current AP's address
+
+*AT + NetCfgGetDhcpServer*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Command Description: Get AP's DHCP server parameters.
+
+**Command Parameters**
+        +----------------+--------------------------------------------------------------+-------------------------------------+
+        | **Parameter**  | *Request*                                                    | *Response*                          |
+        +----------------+--------------------------------------------------------------+-------------------------------------+
+        | **Expression** | AT + NetCfgGetDhcpServer                                     | OK                                  |
+        |                |                                                              | +NetCfgGetDhcpServer:[Lease Time],  |
+        |                |                                                              | [IP Start Address],[IP End Address] |
+        +----------------+--------------------------------------------------------------+-------------------------------------+
+        | **Arguments**  | None                                                         | * Lease Time: Address lease time,   |                              
+        |                |                                                              |   in minutes. Optional parameter    |
+        |                |                                                              | * IP start address                  |                           
+        |                |                                                              | * IP end address                    |                           
+        +----------------+--------------------------------------------------------------+-------------------------------------+
+:Example Usage: 
+.. code:: 
+
+        AT + NetCfgGetDhcpServer
+
+Events
+----------------
+
+*WlanEvent*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Event Description: WLAN Asynchronous Event.
+
+**Event Parameters**
+        +-------------------------------------------------------------------------------+
+        |  Response                                                                     |
+        +-------------------------------------------------------------------------------+
+        |  +EventWlan:[EventID],[Value1],...,[ValueX]                                   |
+        +-------------------------------------------------------------------------------+ 
+        |  Arguments:                                                                   |
+        +-----------------------------------------+-------------------------------------+
+        |  Event ID                               | Value                               |
+        +-----------------------------------------+-------------------------------------+
+        |  CONNECT                                | * SSID Name                         |
+        |  STA connection indication event        | * BSSID                             |
+        |                                         | * -1 on Connection Failure          |
+        +-----------------------------------------+-------------------------------------+
+        |  DISCONNECT                             | * SSID Name                         |
+        |  STA client disconnection event         | * BSSID                             |
+        |                                         | * Reason Code                       |
+        +-----------------------------------------+-------------------------------------+
+        |  SCAN_RESULTS                           | * SSID Name                         |
+        |  STA scan results. Received as multiple | * BSSID                             |
+        |  sequential events, separated by ;      | * RSSI                              |
+        |                                         | * Channel                           |
+        |                                         | * Security Type                     |
+        |                                         | * Key                               |
+        |                                         | * Hidden                            |
+        |                                         |   - 0: SSID Not Hidden              |
+        |                                         |   - 1: SSID Hidden                  |
+        +-----------------------------------------+-------------------------------------+
+        |  STA_ADDED                              | * MAC Address                       |
+        |  STA connected to operating AP          |                                     |
+        +-----------------------------------------+-------------------------------------+
+        |  STA_REMOVED                            | * MAC Address                       |
+        |  STA disconnected to operating AP       |                                     |
+        +-----------------------------------------+-------------------------------------+
+
+*NetworkEvent*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Event Description: Network Asynchronous Event.
+
+**Event Parameters**
+        +-------------------------------------------------------------------------------+
+        |  Response                                                                     |
+        +-------------------------------------------------------------------------------+
+        |  +EventNetwork:[EventID],[Value1],...,[ValueX]                                |
+        +-------------------------------------------------------------------------------+ 
+        |  Arguments:                                                                   |
+        +---------------------------------------+---------------------------------------+
+        |  Event ID                             | Value                                 |
+        +---------------------------------------+---------------------------------------+
+        |  IPv4_ACQUIRED                        | * IP Address                          |
+        |  Network interface acquied IPv4 (STA) | * Gateway Address                     |
+        |                                       | * Netmask                             |
+        +---------------------------------------+---------------------------------------+
+
+*BleEvent*
+^^^^^^^^^^^^^^^^^^^^^^^
+:Event Description: BLE Asynchronous Event.
+
+**Event Parameters**
+        +-----------------------------------------------------------+
+        | Response                                                  |
+        +-----------------------------------------------------------+
+        | +EventBle:[EventID],[Value1],...,[ValueX]                 |
+        +-----------------------------------------------------------+
+        | Arguments:                                                |
+        +----------------------------+------------------------------+
+        | Event ID                   | Value                        |
+        +----------------------------+------------------------------+
+        | BLESCAN                    | * MAC Address                |
+        | BLE scan result received   | * RSSI                       |
+        |                            | * Own Address Type:          |
+        |                            |                              |
+        |                            |   - Public                   |
+        |                            |   - Random                   |
+        |                            | * Device Name                |
+        |                            |                              |
+        |                            |   - "Unnamed" if N/A         |
+        +----------------------------+------------------------------+
+        | BLESCANDONE                | N/A                          |
+        | BLE scan is done           |                              |
+        +----------------------------+------------------------------+
+        | BLECONNECT                 | * Connection Handle          |
+        | BLE is connected           | * MAC Address                |
+        |                            | * Peer Address Type          |
+        +----------------------------+------------------------------+
+        | BLEDISCONNECT              | * Connection Handle          |
+        | BLE is disconnected        | * MAC Address                |
+        |                            | * Address Type               |
+        +----------------------------+------------------------------+
+        | BLEADVCOMPLETE             | * Termination Code           |
+        | BLE advertise is completed |                              |
+        +----------------------------+------------------------------+

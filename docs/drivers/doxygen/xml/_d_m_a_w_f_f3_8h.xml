@@ -1,0 +1,760 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_d_m_a_w_f_f3_8h" kind="file" language="C++">
+    <compoundname>DMAWFF3.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_power_8h" local="no">ti/drivers/Power.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includes local="no">DeviceFamily_constructPath(inc/hw_types.h)</includes>
+    <includes local="no">DeviceFamily_constructPath(driverlib/dma.h)</includes>
+    <includedby refid="_s_p_i_w_f_f3_d_m_a_8h" local="no">SPIWFF3DMA.h</includedby>
+    <incdepgraph>
+      <node id="85">
+        <label>stdbool.h</label>
+      </node>
+      <node id="83">
+        <label>DMAWFF3.h</label>
+        <link refid="_d_m_a_w_f_f3_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>stdint.h</label>
+      </node>
+      <node id="90">
+        <label>ti/drivers/power/PowerCC26XX.h</label>
+      </node>
+      <node id="88">
+        <label>stddef.h</label>
+      </node>
+      <node id="89">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="86">
+        <label>ti/drivers/Power.h</label>
+        <link refid="_power_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>DeviceFamily_constructPath(inc/hw_types.h)</label>
+      </node>
+      <node id="92">
+        <label>DeviceFamily_constructPath(driverlib/dma.h)</label>
+      </node>
+      <node id="87">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="93">
+        <label>DMAWFF3.h</label>
+        <link refid="_d_m_a_w_f_f3_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>SPIWFF3DMA.h</label>
+        <link refid="_s_p_i_w_f_f3_d_m_a_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143" prot="public" static="no">
+        <name>DMAWFF3_ChConfig</name>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad10e6a863a5e29b71c727b5180f0002f" prot="public">
+          <name>DMAWFF3_CONFIG_SRC_PTR_WRAP</name>
+          <initializer>= DMA_CONFIG_SRC_PTR_WRAP</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Source pointer wraps around </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a9cb360ca6f9226b4866bd55f02069db4" prot="public">
+          <name>DMAWFF3_CONFIG_DST_PTR_WRAP</name>
+          <initializer>= DMA_CONFIG_DST_PTR_WRAP</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Destination pointer wraps around </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a05417b5ffbd50f898eca36a4b8a413b9" prot="public">
+          <name>DMAWFF3_CONFIG_FORCE_REQ</name>
+          <initializer>= DMA_CONFIG_FORCE_REQ</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Tie DMA request signal high. Set this bit when doing memory-to-memory transactions. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a39ce44d2df6f216b2b86a4204c5c15bc" prot="public">
+          <name>DMAWFF3_CONFIG_SRC_PTR_FIFO</name>
+          <initializer>= DMA_CONFIG_SRC_PTR_FIFO</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Source pointer (FIFO mode) </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143aa883548327b18be06dc135106955b553" prot="public">
+          <name>DMAWFF3_CONFIG_DST_PTR_FIFO</name>
+          <initializer>= DMA_CONFIG_DST_PTR_FIFO</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Destination pointer (FIFO mode) </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a80726d79edf96e8c03032f6791c2260a" prot="public">
+          <name>DMAWFF3_CONFIG_RX</name>
+          <initializer>= DMA_CONFIG_RX</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link DMA channel to RX port of peripheral </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad7a79fd71566f115e1b55945234a5a0e" prot="public">
+          <name>DMAWFF3_CONFIG_TX</name>
+          <initializer>= DMA_CONFIG_TX</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link DMA channel to TX port of peripheral </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a1f76116555d901ab75f4890d697c7e50" prot="public">
+          <name>DMAWFF3_CONFIG_CLEAR_AT_JOB_START</name>
+          <initializer>= DMA_CONFIG_CLEAR_AT_JOB_START</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Enable DMA to set a read/write clear pulse at the beginning of a job (one cycle after run cmd) </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Definitions for the config argument of the <ref refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" kindref="member">DMAWFF3_configureChannel()</ref> function. The argument value must be a bitwise OR the supported defines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="110" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="109" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="enum" id="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fb" prot="public" static="no">
+        <name>DMAWFF3_WordSize</name>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaf1a82c4da8d7cb0eae8471a7bd3f797c" prot="public">
+          <name>DMAWFF3_WORD_SIZE_1B</name>
+          <initializer>= DMA_WORD_SIZE_1B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Word size is 1 byte </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fba254c72aae5d71d3053c5ed7da2f53597" prot="public">
+          <name>DMAWFF3_WORD_SIZE_2B</name>
+          <initializer>= DMA_WORD_SIZE_2B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Word size is 2 bytes </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaa634efe2a31bc4b155a9aee5dfd60db0" prot="public">
+          <name>DMAWFF3_WORD_SIZE_4B</name>
+          <initializer>= DMA_WORD_SIZE_4B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Word size is 4 bytes </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Definitions for the wordSize argument of the <ref refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" kindref="member">DMAWFF3_configureChannel()</ref> function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="134" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="133" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="enum" id="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337" prot="public" static="no">
+        <name>DMAWFF3_BlockSize</name>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337a1014089dc3a8dbfd7d640485ee222145" prot="public">
+          <name>DMAWFF3_BLOCK_SIZE_1B</name>
+          <initializer>= DMA_WORD_SIZE_1B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Block size is 1 byte </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab9a9db5ebb1712fe4ee8ac3b4a7214d2" prot="public">
+          <name>DMAWFF3_BLOCK_SIZE_2B</name>
+          <initializer>= DMA_WORD_SIZE_2B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Block size is 2 bytes </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab04dd3d8526951cd4eeb0edc6a1e6ac5" prot="public">
+          <name>DMAWFF3_BLOCK_SIZE_4B</name>
+          <initializer>= DMA_WORD_SIZE_4B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Block size is 4 bytes </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Definitions for the blockSize argument of the <ref refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" kindref="member">DMAWFF3_configureChannel()</ref> function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="148" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="147" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="enum" id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752" prot="public" static="no">
+        <name>DMAWFF3_Peripheral</name>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a93ecda15c45caa66e0b98579786b29ae" prot="public">
+          <name>DMAWFF3_PERIPH_UARTLIN_0</name>
+          <initializer>= DMA_PERIPH_UARTLIN_0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a4e51e9dacacf376a54f6dbe3721716b2" prot="public">
+          <name>DMAWFF3_PERIPH_UARTLIN_1</name>
+          <initializer>= DMA_PERIPH_UARTLIN_1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ad495f964fe57441e44fe18f14b2888cc" prot="public">
+          <name>DMAWFF3_PERIPH_SPI_0</name>
+          <initializer>= DMA_PERIPH_SPI_0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a29821b27fa8944964988b06c002aef89" prot="public">
+          <name>DMAWFF3_PERIPH_SPI_1</name>
+          <initializer>= DMA_PERIPH_SPI_1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a50c0c11ae58d3ae767ef41044e6dd719" prot="public">
+          <name>DMAWFF3_PERIPH_I2C_0</name>
+          <initializer>= DMA_PERIPH_I2C_0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aa08296a19f226fbdcc406a2bcf392c6b" prot="public">
+          <name>DMAWFF3_PERIPH_I2C_1</name>
+          <initializer>= DMA_PERIPH_I2C_1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ab3d7fe2b12dcee9b56a8f6c65ef651b4" prot="public">
+          <name>DMAWFF3_PERIPH_SDMMC</name>
+          <initializer>= DMA_PERIPH_SDMMC</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a41161b391dfc9d81696bde0cd728578d" prot="public">
+          <name>DMAWFF3_PERIPH_SDIO</name>
+          <initializer>= DMA_PERIPH_SDIO</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ac60100c7baf6e4389ed22b2aa2daf00f" prot="public">
+          <name>DMAWFF3_PERIPH_MCAN</name>
+          <initializer>= DMA_PERIPH_MCAN</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a0e7d0fcf678aa45ea7ad7e0f3444d884" prot="public">
+          <name>DMAWFF3_PERIPH_ADC</name>
+          <initializer>= DMA_PERIPH_ADC</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aebad1c4fdcb5fc743b4fc23fba762136" prot="public">
+          <name>DMAWFF3_PERIPH_PDM</name>
+          <initializer>= DMA_PERIPH_PDM</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a6cdd286b37ed29decfa520b7403c9714" prot="public">
+          <name>DMAWFF3_PERIPH_HIF</name>
+          <initializer>= DMA_PERIPH_HIF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a96ec7ce0159ee523590aafaecbcc93e9" prot="public">
+          <name>DMAWFF3_PERIPH_UARTLIN_2</name>
+          <initializer>= DMA_PERIPH_UARTLIN_2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Definitions for the peripheral argument of the <ref refid="_d_m_a_w_f_f3_8h_1aaf259643b2839b5944b4dc45ecd58821" kindref="member">DMAWFF3_connectChannel()</ref> function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="162" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="161" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a7ae9ab2788146a3a17e000e3e7740e2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DMAWFF3_disableChannel</definition>
+        <argsstring>(uint32_t channel)</argsstring>
+        <name>DMAWFF3_disableChannel</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Function to disable a DMA channel. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will abort any operation in the selected DMA channel. Function returns when abort operation is finished. The abort operation might last for a maximum of eight clock cycles.</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task</para></simplesect>
+<simplesect kind="post"><para><ref refid="_d_m_a_w_f_f3_8h_1a7114d28fc9617a61700b7518ca2aca11" kindref="member">DMAWFF3_initChannel()</ref> must be called before any new transaction can be started on the channel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a92e269c807f8870d0c46fa55b43bd518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t DMAWFF3_getRemainingBytes</definition>
+        <argsstring>(uint32_t channel)</argsstring>
+        <name>DMAWFF3_getRemainingBytes</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Function to get the number of remaining bytes of a DMA transaction. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will return the number of remaining of bytes of a DMA transaction. An aborted DMA transaction may cause bytes to remain.</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task</para></simplesect>
+<simplesect kind="return"><para>Number of remaining bytes in last DMA transaction </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="204" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a6a90153b4e11a6f8a7fc140a005d60b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DMAWFF3_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>DMAWFF3_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Function to initialize the WFF3 DMA driver and peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will initialize the DMA peripheral by disabling all DMA interrupts.</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="215" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a7114d28fc9617a61700b7518ca2aca11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DMAWFF3_initChannel</definition>
+        <argsstring>(uint32_t channel)</argsstring>
+        <name>DMAWFF3_initChannel</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize a DMA channel. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will initialize the selected DMA channel by issuing an INIT command to the channel.</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void DMAWFF3_configureChannel</definition>
+        <argsstring>(uint32_t channel, uint8_t blockSize, DMAWFF3_WordSize wordSize, DMAWFF3_ChConfig config)</argsstring>
+        <name>DMAWFF3_configureChannel</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>blockSize</declname>
+        </param>
+        <param>
+          <type><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fb" kindref="member">DMAWFF3_WordSize</ref></type>
+          <declname>wordSize</declname>
+        </param>
+        <param>
+          <type><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143" kindref="member">DMAWFF3_ChConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Function to configure the given DMA channel. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will configure the given DMA channel. The block size of the channel determines the arbitration rate of the DMA channels.</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel number to be configured.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blockSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of words in a block (1-63 words, inclusive).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wordSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of a word which is one of the following defines:<itemizedlist>
+<listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaf1a82c4da8d7cb0eae8471a7bd3f797c" kindref="member">DMAWFF3_WORD_SIZE_1B</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fba254c72aae5d71d3053c5ed7da2f53597" kindref="member">DMAWFF3_WORD_SIZE_2B</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaa634efe2a31bc4b155a9aee5dfd60db0" kindref="member">DMAWFF3_WORD_SIZE_4B</ref></para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel configuration which is a bitwise OR of the following defines:<itemizedlist>
+<listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad10e6a863a5e29b71c727b5180f0002f" kindref="member">DMAWFF3_CONFIG_SRC_PTR_WRAP</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a9cb360ca6f9226b4866bd55f02069db4" kindref="member">DMAWFF3_CONFIG_DST_PTR_WRAP</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a05417b5ffbd50f898eca36a4b8a413b9" kindref="member">DMAWFF3_CONFIG_FORCE_REQ</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a39ce44d2df6f216b2b86a4204c5c15bc" kindref="member">DMAWFF3_CONFIG_SRC_PTR_FIFO</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143aa883548327b18be06dc135106955b553" kindref="member">DMAWFF3_CONFIG_DST_PTR_FIFO</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a80726d79edf96e8c03032f6791c2260a" kindref="member">DMAWFF3_CONFIG_RX</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad7a79fd71566f115e1b55945234a5a0e" kindref="member">DMAWFF3_CONFIG_TX</ref></para></listitem><listitem><para><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a1f76116555d901ab75f4890d697c7e50" kindref="member">DMAWFF3_CONFIG_CLEAR_AT_JOB_START</ref> </para></listitem></itemizedlist>
+</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="259" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="259" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1aaf259643b2839b5944b4dc45ecd58821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void DMAWFF3_connectChannel</definition>
+        <argsstring>(uint32_t channel, DMAWFF3_Peripheral peripheral)</argsstring>
+        <name>DMAWFF3_connectChannel</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752" kindref="member">DMAWFF3_Peripheral</ref></type>
+          <declname>peripheral</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="280" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="280" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a10c33c67559b2d26d6b562091a36705f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void DMAWFF3_clearInterrupt</definition>
+        <argsstring>(uint32_t channelBitmask)</argsstring>
+        <name>DMAWFF3_clearInterrupt</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channelBitmask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="297" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="297" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="_d_m_a_w_f_f3_8h_1a6421003303444ca14c7cde17fb4b2791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__STATIC_INLINE void</type>
+        <definition>__STATIC_INLINE void DMAWFF3_startTransaction</definition>
+        <argsstring>(uint32_t channel, const uint32_t *srcStartAddr, uint32_t *dstStartAddr, uint16_t transLenByte, bool remainingBytesBurst)</argsstring>
+        <name>DMAWFF3_startTransaction</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>srcStartAddr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>dstStartAddr</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>transLenByte</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>remainingBytesBurst</declname>
+        </param>
+        <briefdescription>
+<para>Function to start a DMA transaction. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function will start a transaction on the given DMA channel</para><para><simplesect kind="pre"><para>Calling context: Hwi, Swi, Task</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel number of the DMA transaction</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>srcStartAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the start address of the source data. The pointer cannot point to flash memory.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dstStartAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the destination start address</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transLenByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes in the DMA transaction</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>remainingBytesBurst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if burst mode shall be used </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/dma/DMAWFF3.h" line="322" column="1" bodyfile="source/ti/drivers/dma/DMAWFF3.h" bodystart="322" bodyend="330"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>DMAWFF3 driver implementation. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para><heading level="1">Driver include</heading>
+</para><para>The DMAWFF3 header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/dma/DMAWFF3.h&gt;</highlight></codeline>
+</programlisting></para><para><heading level="1">Overview</heading>
+</para><para>The DMAWFF3 driver currently only supports internal use by the drivers that use the DMA peripheral (for example, UART2WFF3). In other words, the application should never call any of the functions in this file.</para><para><heading level="1">General Behavior</heading>
+</para><para>This driver is used implicitly by other drivers (e.g., the UART2WFF3 driver) so users should not have to interface to this driver from the application.</para><para><heading level="1">Error handling</heading>
+</para><para>Error handling is handled by the overlying driver which uses the DMA.</para><para><heading level="1">Power management</heading>
+</para><para>Power management is handled by the overlying driver which uses the DMA.</para><para><heading level="1">Supported functions</heading>
+</para><para>Note that these functions should never be called from the application, they are only called from other drivers. They are however included here for completeness:</para><para><table rows="9" cols="2"><row>
+<entry thead="yes"><para>API function </para></entry><entry thead="yes"><para>Description  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a10c33c67559b2d26d6b562091a36705f" kindref="member">DMAWFF3_clearInterrupt()</ref> </para></entry><entry thead="no"><para>Clear DMA interrupts. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" kindref="member">DMAWFF3_configureChannel()</ref> </para></entry><entry thead="no"><para>Configure DMA channel transaction. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1aaf259643b2839b5944b4dc45ecd58821" kindref="member">DMAWFF3_connectChannel()</ref> </para></entry><entry thead="no"><para>Connect DMA channel to peripheral. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a7ae9ab2788146a3a17e000e3e7740e2e" kindref="member">DMAWFF3_disableChannel()</ref> </para></entry><entry thead="no"><para>Abort DMA channel operation. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a92e269c807f8870d0c46fa55b43bd518" kindref="member">DMAWFF3_getRemainingBytes()</ref> </para></entry><entry thead="no"><para>Get remaining bytes of DMA transaction. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a6a90153b4e11a6f8a7fc140a005d60b2" kindref="member">DMAWFF3_init()</ref> </para></entry><entry thead="no"><para>Initialize the DMA driver. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a7114d28fc9617a61700b7518ca2aca11" kindref="member">DMAWFF3_initChannel()</ref> </para></entry><entry thead="no"><para>Initialize DMA channel HW functionality. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_d_m_a_w_f_f3_8h_1a6421003303444ca14c7cde17fb4b2791" kindref="member">DMAWFF3_startTransaction()</ref> </para></entry><entry thead="no"><para>Start DMA channel transaction. </para></entry></row>
+</table>
+<simplesect kind="note"><para>These functions should not be called by code. These functions are called by drivers using the DMA.</para></simplesect>
+<heading level="1">Unsupported Functionality</heading>
+</para><para><itemizedlist>
+<listitem><para>DMA transaction from flash is not supported due to HW limitations.</para></listitem><listitem><para>Use of DMA interrupts are not supported by this driver. It only supports clearing the interrupts for initialization purpose. Higher level drivers for peripherals that makes use of the DMA should handle the DMA related interrupts of the peripheral itself. <hruler/>
+ </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_DMAWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_DMAWFF3__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_power_8h" kindref="compound">ti/drivers/Power.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(inc/hw_types.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>DeviceFamily_constructPath(driverlib/dma.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad10e6a863a5e29b71c727b5180f0002f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad10e6a863a5e29b71c727b5180f0002f" kindref="member">DMAWFF3_CONFIG_SRC_PTR_WRAP</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_SRC_PTR_WRAP,</highlight></codeline>
+<codeline lineno="114" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a9cb360ca6f9226b4866bd55f02069db4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a9cb360ca6f9226b4866bd55f02069db4" kindref="member">DMAWFF3_CONFIG_DST_PTR_WRAP</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_DST_PTR_WRAP,</highlight></codeline>
+<codeline lineno="116" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a05417b5ffbd50f898eca36a4b8a413b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a05417b5ffbd50f898eca36a4b8a413b9" kindref="member">DMAWFF3_CONFIG_FORCE_REQ</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_FORCE_REQ,</highlight></codeline>
+<codeline lineno="118" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a39ce44d2df6f216b2b86a4204c5c15bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a39ce44d2df6f216b2b86a4204c5c15bc" kindref="member">DMAWFF3_CONFIG_SRC_PTR_FIFO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_SRC_PTR_FIFO,</highlight></codeline>
+<codeline lineno="120" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143aa883548327b18be06dc135106955b553" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143aa883548327b18be06dc135106955b553" kindref="member">DMAWFF3_CONFIG_DST_PTR_FIFO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_DST_PTR_FIFO,</highlight></codeline>
+<codeline lineno="122" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a80726d79edf96e8c03032f6791c2260a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a80726d79edf96e8c03032f6791c2260a" kindref="member">DMAWFF3_CONFIG_RX</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_RX,</highlight></codeline>
+<codeline lineno="124" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad7a79fd71566f115e1b55945234a5a0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143ad7a79fd71566f115e1b55945234a5a0e" kindref="member">DMAWFF3_CONFIG_TX</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_CONFIG_TX,</highlight></codeline>
+<codeline lineno="126" refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a1f76116555d901ab75f4890d697c7e50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143a1f76116555d901ab75f4890d697c7e50" kindref="member">DMAWFF3_CONFIG_CLEAR_AT_JOB_START</ref><sp/>=<sp/>DMA_CONFIG_CLEAR_AT_JOB_START,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}<sp/><ref refid="_d_m_a_w_f_f3_8h_1a730e1365250c0e1a9ce7440a67513143" kindref="member">DMAWFF3_ChConfig</ref>;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fb" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136" refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaf1a82c4da8d7cb0eae8471a7bd3f797c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaf1a82c4da8d7cb0eae8471a7bd3f797c" kindref="member">DMAWFF3_WORD_SIZE_1B</ref><sp/>=<sp/>DMA_WORD_SIZE_1B,</highlight></codeline>
+<codeline lineno="138" refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fba254c72aae5d71d3053c5ed7da2f53597" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fba254c72aae5d71d3053c5ed7da2f53597" kindref="member">DMAWFF3_WORD_SIZE_2B</ref><sp/>=<sp/>DMA_WORD_SIZE_2B,</highlight></codeline>
+<codeline lineno="140" refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaa634efe2a31bc4b155a9aee5dfd60db0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fbaa634efe2a31bc4b155a9aee5dfd60db0" kindref="member">DMAWFF3_WORD_SIZE_4B</ref><sp/>=<sp/>DMA_WORD_SIZE_4B,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}<sp/><ref refid="_d_m_a_w_f_f3_8h_1a09744e70670a99c51732be3149cd58fb" kindref="member">DMAWFF3_WordSize</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150" refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337a1014089dc3a8dbfd7d640485ee222145" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337a1014089dc3a8dbfd7d640485ee222145" kindref="member">DMAWFF3_BLOCK_SIZE_1B</ref><sp/>=<sp/>DMA_WORD_SIZE_1B,</highlight></codeline>
+<codeline lineno="152" refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab9a9db5ebb1712fe4ee8ac3b4a7214d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab9a9db5ebb1712fe4ee8ac3b4a7214d2" kindref="member">DMAWFF3_BLOCK_SIZE_2B</ref><sp/>=<sp/>DMA_WORD_SIZE_2B,</highlight></codeline>
+<codeline lineno="154" refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab04dd3d8526951cd4eeb0edc6a1e6ac5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337ab04dd3d8526951cd4eeb0edc6a1e6ac5" kindref="member">DMAWFF3_BLOCK_SIZE_4B</ref><sp/>=<sp/>DMA_WORD_SIZE_4B,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}<sp/><ref refid="_d_m_a_w_f_f3_8h_1a34e6cf9699342c8dd9c78d6d667a8337" kindref="member">DMAWFF3_BlockSize</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a93ecda15c45caa66e0b98579786b29ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a93ecda15c45caa66e0b98579786b29ae" kindref="member">DMAWFF3_PERIPH_UARTLIN_0</ref><sp/>=<sp/>DMA_PERIPH_UARTLIN_0,</highlight></codeline>
+<codeline lineno="164" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a4e51e9dacacf376a54f6dbe3721716b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a4e51e9dacacf376a54f6dbe3721716b2" kindref="member">DMAWFF3_PERIPH_UARTLIN_1</ref><sp/>=<sp/>DMA_PERIPH_UARTLIN_1,</highlight></codeline>
+<codeline lineno="165" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ad495f964fe57441e44fe18f14b2888cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ad495f964fe57441e44fe18f14b2888cc" kindref="member">DMAWFF3_PERIPH_SPI_0</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_SPI_0,</highlight></codeline>
+<codeline lineno="166" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a29821b27fa8944964988b06c002aef89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a29821b27fa8944964988b06c002aef89" kindref="member">DMAWFF3_PERIPH_SPI_1</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_SPI_1,</highlight></codeline>
+<codeline lineno="167" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a50c0c11ae58d3ae767ef41044e6dd719" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a50c0c11ae58d3ae767ef41044e6dd719" kindref="member">DMAWFF3_PERIPH_I2C_0</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_I2C_0,</highlight></codeline>
+<codeline lineno="168" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aa08296a19f226fbdcc406a2bcf392c6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aa08296a19f226fbdcc406a2bcf392c6b" kindref="member">DMAWFF3_PERIPH_I2C_1</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_I2C_1,</highlight></codeline>
+<codeline lineno="169" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ab3d7fe2b12dcee9b56a8f6c65ef651b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ab3d7fe2b12dcee9b56a8f6c65ef651b4" kindref="member">DMAWFF3_PERIPH_SDMMC</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_SDMMC,</highlight></codeline>
+<codeline lineno="170" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a41161b391dfc9d81696bde0cd728578d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a41161b391dfc9d81696bde0cd728578d" kindref="member">DMAWFF3_PERIPH_SDIO</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_SDIO,</highlight></codeline>
+<codeline lineno="171" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ac60100c7baf6e4389ed22b2aa2daf00f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752ac60100c7baf6e4389ed22b2aa2daf00f" kindref="member">DMAWFF3_PERIPH_MCAN</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_MCAN,</highlight></codeline>
+<codeline lineno="172" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a0e7d0fcf678aa45ea7ad7e0f3444d884" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a0e7d0fcf678aa45ea7ad7e0f3444d884" kindref="member">DMAWFF3_PERIPH_ADC</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_ADC,</highlight></codeline>
+<codeline lineno="173" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aebad1c4fdcb5fc743b4fc23fba762136" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752aebad1c4fdcb5fc743b4fc23fba762136" kindref="member">DMAWFF3_PERIPH_PDM</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_PDM,</highlight></codeline>
+<codeline lineno="174" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a6cdd286b37ed29decfa520b7403c9714" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a6cdd286b37ed29decfa520b7403c9714" kindref="member">DMAWFF3_PERIPH_HIF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>DMA_PERIPH_HIF,</highlight></codeline>
+<codeline lineno="175" refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a96ec7ce0159ee523590aafaecbcc93e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752a96ec7ce0159ee523590aafaecbcc93e9" kindref="member">DMAWFF3_PERIPH_UARTLIN_2</ref><sp/>=<sp/>DMA_PERIPH_UARTLIN_2,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}<sp/><ref refid="_d_m_a_w_f_f3_8h_1a86d842cf773e0e72c54292107a63f752" kindref="member">DMAWFF3_Peripheral</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a7ae9ab2788146a3a17e000e3e7740e2e" kindref="member">DMAWFF3_disableChannel</ref>(uint32_t<sp/>channel);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="_d_m_a_w_f_f3_8h_1a92e269c807f8870d0c46fa55b43bd518" kindref="member">DMAWFF3_getRemainingBytes</ref>(uint32_t<sp/>channel);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a6a90153b4e11a6f8a7fc140a005d60b2" kindref="member">DMAWFF3_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a7114d28fc9617a61700b7518ca2aca11" kindref="member">DMAWFF3_initChannel</ref>(uint32_t<sp/>channel);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" refkind="member"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a61a68bb0c21f0391adee89c016d9dc52" kindref="member">DMAWFF3_configureChannel</ref>(uint32_t<sp/>channel,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>blockSize,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DMAWFF3_WordSize<sp/>wordSize,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DMAWFF3_ChConfig<sp/>config)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>DMA<sp/>channel<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>DMAConfigureChannel(channel,<sp/>blockSize,<sp/>wordSize,<sp/>config);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="_d_m_a_w_f_f3_8h_1aaf259643b2839b5944b4dc45ecd58821" refkind="member"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1aaf259643b2839b5944b4dc45ecd58821" kindref="member">DMAWFF3_connectChannel</ref>(uint32_t<sp/>channel,<sp/>DMAWFF3_Peripheral<sp/>peripheral)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Connect<sp/>DMA<sp/>channel<sp/>to<sp/>peripheral<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>DMAInitChannel(channel,<sp/>(DMAPeripheral)peripheral);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="_d_m_a_w_f_f3_8h_1a10c33c67559b2d26d6b562091a36705f" refkind="member"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a10c33c67559b2d26d6b562091a36705f" kindref="member">DMAWFF3_clearInterrupt</ref>(uint32_t<sp/>channelBitmask)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Clear<sp/>DMA<sp/>interrupts<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>DMAClearInt(channelBitmask);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322" refid="_d_m_a_w_f_f3_8h_1a6421003303444ca14c7cde17fb4b2791" refkind="member"><highlight class="normal">__STATIC_INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_d_m_a_w_f_f3_8h_1a6421003303444ca14c7cde17fb4b2791" kindref="member">DMAWFF3_startTransaction</ref>(uint32_t<sp/>channel,</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>*srcStartAddr,</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>*dstStartAddr,</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>transLenByte,</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>remainingBytesBurst)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>DMA<sp/>transaction<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>DMAStartTransaction(channel,<sp/>srcStartAddr,<sp/>dstStartAddr,<sp/>transLenByte,<sp/>remainingBytesBurst);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_DMAWFF3__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/dma/DMAWFF3.h"/>
+  </compounddef>
+</doxygen>

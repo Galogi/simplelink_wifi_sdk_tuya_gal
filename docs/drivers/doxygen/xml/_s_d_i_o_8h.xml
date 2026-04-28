@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_i_o_8h" kind="file" language="C++">
+    <compoundname>SDIO.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="376">
+        <label>stdint.h</label>
+      </node>
+      <node id="375">
+        <label>SDIO.h</label>
+        <link refid="_s_d_i_o_8h"/>
+        <childnode refid="376" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_s_d_i_o___params" prot="public">SDIO_Params</innerclass>
+    <innerclass refid="struct_s_d_i_o___config__" prot="public">SDIO_Config_</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___s_d_i_o___s_t_a_t_u_s_1ga33502ded79c6fdcd2969e11ba66560f0" prot="public" static="no">
+        <name>SDIO_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code returned by SDIO driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="85" column="9" bodyfile="source/ti/drivers/SDIO.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_d_i_o___s_t_a_t_u_s_1ga456aaf7c873f200f58c271bf55c37896" prot="public" static="no">
+        <name>SDIO_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code returned by SDIO driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="90" column="9" bodyfile="source/ti/drivers/SDIO.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_i_o___config__" kindref="compound">SDIO_Config_</ref> *</type>
+        <definition>typedef struct SDIO_Config_* SDIO_Handle</definition>
+        <argsstring></argsstring>
+        <name>SDIO_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from a <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="96" column="1" bodyfile="source/ti/drivers/SDIO.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_i_o_8h_1a89e2044ee3eb91ea858122b70514244f" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_i_o___config__" kindref="compound">SDIO_Config_</ref></type>
+        <definition>typedef struct SDIO_Config_  SDIO_Config</definition>
+        <argsstring></argsstring>
+        <name>SDIO_Config</name>
+        <briefdescription>
+<para>SDIO Global configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="_s_d_i_o_8h_1a89e2044ee3eb91ea858122b70514244f" kindref="member">SDIO_Config</ref> structure contains a set of pointers used to characterize the SDIO driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" kindref="member">SDIO_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" kindref="member">SDIO_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="132" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_i_o_8h_1a1ccd648626b358e590c4a3f849480b73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDIO_close</definition>
+        <argsstring>(SDIO_Handle handle)</argsstring>
+        <name>SDIO_close</name>
+        <param>
+          <type><ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a SDIO peripheral specified by the SDIO handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref> had to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref> returned from <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDIO_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDIO_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initializes the SDIO driver. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The <ref refid="_s_d_i_o_8h_1a89e2044ee3eb91ea858122b70514244f" kindref="member">SDIO_Config</ref>[] array must exist and be persistent before this function can be called. This function must also be called before any other SDIO driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="153" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_i_o_8h_1a24b4c24396ff1be2d7ae453891560854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDIO_Params_init</definition>
+        <argsstring>(SDIO_Params *params)</argsstring>
+        <name>SDIO_Params_init</name>
+        <param>
+          <type><ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the <ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to <ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref> structure for initialization. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref></type>
+        <definition>SDIO_Handle SDIO_open</definition>
+        <argsstring>(uint_least8_t index, SDIO_Params *params)</argsstring>
+        <name>SDIO_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to open the SDIO peripheral with the index and parameters specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SDIO driver has been initialized using <ref refid="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" kindref="member">SDIO_init()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the SDIO indexed into the <ref refid="_s_d_i_o_8h_1a89e2044ee3eb91ea858122b70514244f" kindref="member">SDIO_Config</ref>[] table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a parameter block, if NULL it will use default values. All the fields in this structure are RO (read-only).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref> on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" kindref="member">SDIO_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_i_o_8h_1a1ccd648626b358e590c4a3f849480b73" kindref="member">SDIO_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_i_o_8h_1aad9166feee960105a1c202e1681d3310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDIO_read</definition>
+        <argsstring>(SDIO_Handle handle, void *buf, int_fast32_t numByte)</argsstring>
+        <name>SDIO_read</name>
+        <param>
+          <type><ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>numByte</declname>
+        </param>
+        <briefdescription>
+<para>Function that reads the data from SDIO host. The destination is specified by <emphasis>buf</emphasis>. And the total number of bytes to read is provided by <emphasis>numByte</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SDIO driver has been opened and initialized by calling <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref> returned from <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer to read data into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d_i_o___s_t_a_t_u_s_1ga33502ded79c6fdcd2969e11ba66560f0" kindref="member">SDIO_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d_i_o___s_t_a_t_u_s_1ga456aaf7c873f200f58c271bf55c37896" kindref="member">SDIO_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para>SDIO host initialized the SDIO peripheral </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_i_o_8h_1abbf155cc239a3a39048f9793ecf6cf78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SDIO_write</definition>
+        <argsstring>(SDIO_Handle handle, void *buf, int_fast32_t numByte)</argsstring>
+        <name>SDIO_write</name>
+        <param>
+          <type><ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>numByte</declname>
+        </param>
+        <briefdescription>
+<para>Function that writes data to SDIO host. The source is specified by <emphasis>buf</emphasis>. And the total number of bytes to read is provided by <emphasis>numByte</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SDIO driver has been opened and initialized by calling <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref> returned from <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer containing data to write to disk.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numByte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to be written.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d_i_o___s_t_a_t_u_s_1ga33502ded79c6fdcd2969e11ba66560f0" kindref="member">SDIO_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d_i_o___s_t_a_t_u_s_1ga456aaf7c873f200f58c271bf55c37896" kindref="member">SDIO_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para>SDIO host initialized the SDIO peripheral </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="221" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Secure Digital Input Output (SDIO) Driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_s_d_i_o_8h_1ti_drivers_SDIO_Overview"/><heading level="1">Overview</heading>
+</para><para>The SDIO driver is designed to serve as an interface to perform basic transfers directly between Hosts.</para><para><hruler/>
+ <anchor id="_s_d_i_o_8h_1ti_drivers_SDIO_Usage"/><heading level="1">Usage</heading>
+</para><para>SDIO (Secure Digital Input Output) provides a reliable and efficient method for connecting peripheral devices to a host system. It allows the host device, such as a microcontroller or processor, to communicate with various SDIO-compatible modules, including Wi-Fi, Bluetooth, GPS, and other external peripherals. The host can use standard SDIO commands to initialize and control the connected device.</para><para><anchor id="_s_d_i_o_8h_1ti_drivers_SDIO_Synopsis"/><heading level="2">Synopsis</heading>
+</para><para><anchor id="_s_d_i_o_8h_1ti_drivers_SDIO_Synopsis_Code"/> <hruler/>
+ <anchor id="_s_d_i_o_8h_1ti_drivers_SDIO_Configuration"/><heading level="1">Configuration</heading>
+</para><para>Refer to the <ref refid="index_1driver_configuration" kindref="member">Driver&apos;s Configuration</ref> section for driver configuration information.</para><para><hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*!***************************************************************************</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDIO.h</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Secure<sp/>Digital<sp/>Input<sp/>Output<sp/>(SDIO)<sp/>Driver</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDIO_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDIO<sp/>driver<sp/>is<sp/>designed<sp/>to<sp/>serve<sp/>as<sp/>an<sp/>interface<sp/>to<sp/>perform<sp/>basic</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>transfers<sp/>directly<sp/>between<sp/>Hosts.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDIO_Usage</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>SDIO<sp/>(Secure<sp/>Digital<sp/>Input<sp/>Output)<sp/>provides<sp/>a<sp/>reliable<sp/>and<sp/>efficient<sp/>method<sp/>for</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>connecting<sp/>peripheral<sp/>devices<sp/>to<sp/>a<sp/>host<sp/>system.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>It<sp/>allows<sp/>the<sp/>host<sp/>device,<sp/>such<sp/>as<sp/>a<sp/>microcontroller<sp/>or<sp/>processor,<sp/>to<sp/>communicate<sp/>with<sp/>various</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>SDIO-compatible<sp/>modules,<sp/>including<sp/>Wi-Fi,<sp/>Bluetooth,<sp/>GPS,<sp/>and<sp/>other<sp/>external<sp/>peripherals.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>host<sp/>can<sp/>use<sp/>standard<sp/>SDIO<sp/>commands<sp/>to<sp/>initialize<sp/>and<sp/>control<sp/>the<sp/>connected<sp/>device.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDIO_Synopsis</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Synopsis</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDIO_Synopsis_Code</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDIO_Configuration</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Configuration</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>the<sp/>@ref<sp/>driver_configuration<sp/>&quot;Driver&apos;s<sp/>Configuration&quot;</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>section<sp/>for<sp/>driver<sp/>configuration<sp/>information.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_SDIO__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_SDIO__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="group___s_d_i_o___s_t_a_t_u_s_1ga33502ded79c6fdcd2969e11ba66560f0" refkind="member"><highlight class="preprocessor">#define<sp/>SDIO_STATUS_SUCCESS<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group___s_d_i_o___s_t_a_t_u_s_1ga456aaf7c873f200f58c271bf55c37896" refkind="member"><highlight class="preprocessor">#define<sp/>SDIO_STATUS_ERROR<sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_i_o___config__" kindref="compound">SDIO_Config_</ref><sp/>*<ref refid="_s_d_i_o_8h_1a0da62c0ba5fe5f59af791b6e4c241f12" kindref="member">SDIO_Handle</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment">/*<sp/>SDIO<sp/>Parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_s_d_i_o___params" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110" refid="struct_s_d_i_o___params_1a8f8f25a21a3c5a35250b470a7c6f566f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_i_o___params_1a8f8f25a21a3c5a35250b470a7c6f566f" kindref="member">custom</ref>;<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}<sp/><ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="struct_s_d_i_o___config__" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_i_o___config__" kindref="compound">SDIO_Config_</ref></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="struct_s_d_i_o___config___1a11a0c3e2709832b5885291f7edefe5e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_i_o___config___1a11a0c3e2709832b5885291f7edefe5e4" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="struct_s_d_i_o___config___1ab52752ccf3ede0329229f306a52e2b3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_i_o___config___1ab52752ccf3ede0329229f306a52e2b3b" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/><ref refid="_s_d_i_o_8h_1a89e2044ee3eb91ea858122b70514244f" kindref="member">SDIO_Config</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_i_o_8h_1a1ccd648626b358e590c4a3f849480b73" kindref="member">SDIO_close</ref>(SDIO_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_i_o_8h_1a7aa7248d52746be40eb3963082fcbf24" kindref="member">SDIO_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_i_o_8h_1a24b4c24396ff1be2d7ae453891560854" kindref="member">SDIO_Params_init</ref>(<ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref><sp/>*<ref refid="_driver___init_8h_1af93f10d4f7393a01dff58c92f91d8cbc" kindref="member">params</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SDIO_Handle<sp/><ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open</ref>(uint_least8_t<sp/>index,<sp/><ref refid="struct_s_d_i_o___params" kindref="compound">SDIO_Params</ref><sp/>*<ref refid="_driver___init_8h_1af93f10d4f7393a01dff58c92f91d8cbc" kindref="member">params</ref>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_i_o_8h_1aad9166feee960105a1c202e1681d3310" kindref="member">SDIO_read</ref>(SDIO_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/>int_fast32_t<sp/>numByte);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_i_o_8h_1abbf155cc239a3a39048f9793ecf6cf78" kindref="member">SDIO_write</ref>(SDIO_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/>int_fast32_t<sp/>numByte);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_SDIO__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/SDIO.h"/>
+  </compounddef>
+</doxygen>

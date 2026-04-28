@@ -1,0 +1,27 @@
+Using FreeRTOS with CCS
+-----------------------
+
+The FreeRTOS Kernel is configured through the SysConfig tool. This is used to enable and disable modules as well as configure device-specific settings. SysConfig will generate three files, and contribute to one more as part of the application project:
+
+#.  `ti_freertos_config.c` : Contains the source code that is to be compiled for FreeRTOS. This is done by inserting preprocessor statements to `#include` the C files of all selected modules. The file
+    also contains several hooks used to enable and disable FreeRTOS features such as Queue registration in TI code.
+
+#.  `ti_freertos_portable_config.c` : This file contains all C code for the application's architecture and toolchain specific port.
+
+#.  `ti_utils_build_linker.cmd.genlibs` : The ports of some architecture and toolchain combinations use assembly files. We compile these into prebuilt libraries. This is because we cannot `#include` assembly files safely. These libraries are then added to the linker invocation through an entry in the ti_utils_build_linker.cmd.genlibs file.
+
+#.  `FreeRTOSConfig.h` : This is the standard FreeRTOS configuration header file that your application will typically `#include`. The entries in this file will change depending on the device and settings selected in SysConfig. You no longer need to edit FreeRTOSConfig.h
+yourself. SysConfig will maintain it for you.
+If you would like to change a FreeRTOS feature or setting that is not exposed in SysConfig, you can remove this file from SysConfig and maintain it yourself.
+
+Changing the FreeRTOS Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As with all SysConfig modules, you can either edit their configuration via the SysConfig GUI or by editing the .syscfg file directly in a text editor.
+
+Since the FreeRTOS configuration is stored in a project's .syscfg file, each project has its own FreeRTOS configuration. Changing one project's configuration will not impact another project's configuration.
+
+Why might you want to change the default FreeRTOS configuration?
+
+    * Reduce the code footprint. For example, you might decrease the heap size or disable Software Timers.
+    * Enable debug options. For example, you might add Assert checking to the configuration.

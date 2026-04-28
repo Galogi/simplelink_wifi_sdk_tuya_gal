@@ -1,0 +1,15 @@
+Secure Boot
+===========
+
+.. attention::
+    Documentation under development
+
+The CC35xx device implements a secure boot that authenticates images against a vendor ROT (Root of Trust).
+The secure boot is always the first code that runs on the device no matter what is the life cycle state. This code is immutable
+This ROT is programmed onto the device during the device activation phase. The device will not allow any
+images to be flashed until the ROT is set.
+
+.. note:: 
+    All examples in SDK will use TI's vendor ROT by default
+
+To learn how to set the vendor ROT. Please reference the SimpleLink Wifi SDK Quickstart Guide

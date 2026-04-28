@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__nistp384__params" kind="group">
+    <compoundname>nistp384_params</compoundname>
+    <title>NIST P384 curve params</title>
+    <innerclass refid="union_e_c_c___n_i_s_t_p384___param" prot="public">ECC_NISTP384_Param</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__nistp384__params_1ga7495c1d492f60e12c1cf367c19d250e6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="142" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga9c39db25d1336870ff1ba8c8cae25b6d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="147" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga32acbe88f04741c597f917d2c653a53c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga63f1eb00822a6ee1598c96758079c7fd" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_NISTP384 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga365d02290375ce2d8c9c3b0c6983df17" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_NISTP384 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga356f94c7e9d0e0c5db2fc5b03acf1c4d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="169" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga2919779a7131a2b7a6d3cb4dd029e164" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="174" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga983529c374f7a1c55d27a6d5f05dd0c1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__nistp384__params_1ga5348d3067bf45713572e347ea0e5a9c6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___n_i_s_t_p384___param" kindref="compound">ECC_NISTP384_Param</ref></type>
+        <definition>const ECC_NISTP384_Param ECC_NISTP384_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_NISTP384_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_NISTP384 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="184" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__nistp384__params_1ga9f83c0733522625e071ac93d16c3fd31" prot="public" static="no">
+        <name>ECCParams_NISTP384_LENGTH</name>
+        <initializer>48</initializer>
+        <briefdescription>
+<para>Length of NIST P384 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="128" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

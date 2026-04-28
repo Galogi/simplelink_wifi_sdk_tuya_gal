@@ -1,0 +1,1028 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="ti__psa__crypto_8h" kind="file" language="C++">
+    <compoundname>ti_psa_crypto.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">third_party/mbedtls/include/psa/crypto.h</includes>
+    <incdepgraph>
+      <node id="410">
+        <label>stdint.h</label>
+      </node>
+      <node id="411">
+        <label>third_party/mbedtls/include/psa/crypto.h</label>
+      </node>
+      <node id="409">
+        <label>stddef.h</label>
+      </node>
+      <node id="408">
+        <label>ti_psa_crypto.h</label>
+        <link refid="ti__psa__crypto_8h"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="410" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8" prot="public" static="no">
+        <name>aes_operation_t</name>
+        <enumvalue id="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a499ec7d0d5de5b6027db02e1bbc95435" prot="public">
+          <name>AES_ENCRYPT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a546ff8653f5230bc1faf08bb4f780fe8" prot="public">
+          <name>AES_DECRYPT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="35" column="1" bodyfile="source/ti/drivers/psa/ti_psa_crypto.h" bodystart="34" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ace2a8b1bc11e6d38ebd579e29ff75833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_copy_key</definition>
+        <argsstring>(mbedtls_svc_key_id_t source_key, const psa_key_attributes_t *attributes, mbedtls_svc_key_id_t *target_key)</argsstring>
+        <name>ti_psa_copy_key</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>source_key</declname>
+        </param>
+        <param>
+          <type>const psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t *</type>
+          <declname>target_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a9a4652223523e71a68c7fa17fe226e31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_destroy_key</definition>
+        <argsstring>(mbedtls_svc_key_id_t key)</argsstring>
+        <name>ti_psa_destroy_key</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a99479b3e75d8360326adbf87b9a24e83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_export_key</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, uint8_t *data, size_t data_size, size_t *data_length)</argsstring>
+        <name>ti_psa_export_key</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>data_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a38b5cd62431804c20db87a079fc9f6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_export_public_key</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, uint8_t *data, size_t data_size, size_t *data_length)</argsstring>
+        <name>ti_psa_export_public_key</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>data_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1aa018801687ff2943312db7cbb0577227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_generate_key</definition>
+        <argsstring>(const psa_key_attributes_t *attributes, mbedtls_svc_key_id_t *key)</argsstring>
+        <name>ti_psa_generate_key</name>
+        <param>
+          <type>const psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1aee8903a76a70a469482e033f98ffe01c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_get_key_attributes</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_key_attributes_t *attributes)</argsstring>
+        <name>ti_psa_get_key_attributes</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a1afd06a901e897912f8b121c01d2c34f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_import_key</definition>
+        <argsstring>(const psa_key_attributes_t *attributes, const uint8_t *data, size_t data_length, mbedtls_svc_key_id_t *key)</argsstring>
+        <name>ti_psa_import_key</name>
+        <param>
+          <type>const psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_length</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a0400e899e64853adc49a704910cc5434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_purge_key</definition>
+        <argsstring>(mbedtls_svc_key_id_t key)</argsstring>
+        <name>ti_psa_purge_key</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a78ef997c2728fa1afaf90b9486ab9b6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ti_psa_reset_key_attributes</definition>
+        <argsstring>(psa_key_attributes_t *attributes)</argsstring>
+        <name>ti_psa_reset_key_attributes</name>
+        <param>
+          <type>psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a9b5eac50fe3900d17aaa10891e67c3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_asymmetric_encrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, const uint8_t *salt, size_t salt_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_asymmetric_encrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>salt_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a107ba206ef9af769b80361d04d69a312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_asymmetric_decrypt</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, const uint8_t *salt, size_t salt_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_asymmetric_decrypt</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>salt_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ae63e5818a9922e9a29a32dc3cfba17e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_sign_message</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *signature, size_t signature_size, size_t *signature_length)</argsstring>
+        <name>ti_psa_sign_message</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>signature_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>signature_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ae7aa3271ac803aa36a2595486a2c02da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_verify_message</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *input, size_t input_length, const uint8_t *signature, size_t signature_length)</argsstring>
+        <name>ti_psa_verify_message</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>signature_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a8d92a7fc15b0786a251cf6ab70342f05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_sign_hash</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *hash, size_t hash_length, uint8_t *signature, size_t signature_size, size_t *signature_length)</argsstring>
+        <name>ti_psa_sign_hash</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>signature_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>signature_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ae424cbecdf0e977f95a33d78dcd8b84a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_verify_hash</definition>
+        <argsstring>(mbedtls_svc_key_id_t key, psa_algorithm_t alg, const uint8_t *hash, size_t hash_length, const uint8_t *signature, size_t signature_length)</argsstring>
+        <name>ti_psa_verify_hash</name>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>hash_length</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>signature</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>signature_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a19aaf349625646f1745c40fbf86df1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_abort</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation)</argsstring>
+        <name>ti_psa_key_derivation_abort</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1aa7b9f91808cdf51d8adc5d380e69bb7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_get_capacity</definition>
+        <argsstring>(const psa_key_derivation_operation_t *operation, size_t *capacity)</argsstring>
+        <name>ti_psa_key_derivation_get_capacity</name>
+        <param>
+          <type>const psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="124" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1abc367f76c4b4ce891e5f2c140571623b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_input_bytes</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, psa_key_derivation_step_t step, const uint8_t *data, size_t data_length)</argsstring>
+        <name>ti_psa_key_derivation_input_bytes</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>psa_key_derivation_step_t</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>data_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a245494fc942ec78a1e021861ae83df79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_input_integer</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, psa_key_derivation_step_t step, uint64_t value)</argsstring>
+        <name>ti_psa_key_derivation_input_integer</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>psa_key_derivation_step_t</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a2637c75da2dd4ae509d2f70410b2a03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_input_key</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, psa_key_derivation_step_t step, mbedtls_svc_key_id_t key)</argsstring>
+        <name>ti_psa_key_derivation_input_key</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>psa_key_derivation_step_t</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="135" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a2349f82d9c7d605d3085730c94433270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_output_bytes</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, uint8_t *output, size_t output_length)</argsstring>
+        <name>ti_psa_key_derivation_output_bytes</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a070493714314932e7df3e298f7312e43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_output_key</definition>
+        <argsstring>(const psa_key_attributes_t *attributes, psa_key_derivation_operation_t *operation, mbedtls_svc_key_id_t *key)</argsstring>
+        <name>ti_psa_key_derivation_output_key</name>
+        <param>
+          <type>const psa_key_attributes_t *</type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a8a41cc212e0503bce12ea92a990185ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_set_capacity</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, size_t capacity)</argsstring>
+        <name>ti_psa_key_derivation_set_capacity</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="147" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1af98a0c266528bca68886851109286a4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_setup</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, psa_algorithm_t alg)</argsstring>
+        <name>ti_psa_key_derivation_setup</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ab53482fdf816112e3a79b668f537722e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_verify_bytes</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, const uint8_t *expected_output, size_t output_length)</argsstring>
+        <name>ti_psa_key_derivation_verify_bytes</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>expected_output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1a027a28158360dd5b8d18b365a2282998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_verify_key</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, mbedtls_svc_key_id_t expected)</argsstring>
+        <name>ti_psa_key_derivation_verify_key</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ac082137bf2fee72502c9116cf74393a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_raw_key_agreement</definition>
+        <argsstring>(psa_algorithm_t alg, mbedtls_svc_key_id_t private_key, const uint8_t *peer_key, size_t peer_key_length, uint8_t *output, size_t output_size, size_t *output_length)</argsstring>
+        <name>ti_psa_raw_key_agreement</name>
+        <param>
+          <type>psa_algorithm_t</type>
+          <declname>alg</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>private_key</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>peer_key</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>peer_key_length</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>output_size</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>output_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ti__psa__crypto_8h_1ade7db43e9654f4a5d4cfe843352afcec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>psa_status_t</type>
+        <definition>psa_status_t ti_psa_key_derivation_key_agreement</definition>
+        <argsstring>(psa_key_derivation_operation_t *operation, psa_key_derivation_step_t step, mbedtls_svc_key_id_t private_key, const uint8_t *peer_key, size_t peer_key_length)</argsstring>
+        <name>ti_psa_key_derivation_key_agreement</name>
+        <param>
+          <type>psa_key_derivation_operation_t *</type>
+          <declname>operation</declname>
+        </param>
+        <param>
+          <type>psa_key_derivation_step_t</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>mbedtls_svc_key_id_t</type>
+          <declname>private_key</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>peer_key</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>peer_key_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/psa/ti_psa_crypto.h" line="168" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>The<sp/>Mbed<sp/>TLS<sp/>Contributors</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>by<sp/>Texas<sp/>Instruments<sp/>to<sp/>support<sp/>SimpleLink<sp/>device<sp/>crypto<sp/>hardware</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/>drivers.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TI_PSA_CRYPTO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TI_PSA_CRYPTO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((TFM_ENABLED<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>!defined(TFM_BUILD))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/tfm/interface/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;third_party/mbedtls/include/psa/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a499ec7d0d5de5b6027db02e1bbc95435" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a499ec7d0d5de5b6027db02e1bbc95435" kindref="member">AES_ENCRYPT</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="37" refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a546ff8653f5230bc1faf08bb4f780fe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8a546ff8653f5230bc1faf08bb4f780fe8" kindref="member">AES_DECRYPT</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/><ref refid="ti__psa__crypto_8h_1ad1a8a3bf9a82d3221ae347ccb67450a8" kindref="member">aes_operation_t</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Key<sp/>management<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ace2a8b1bc11e6d38ebd579e29ff75833" kindref="member">ti_psa_copy_key</ref>(mbedtls_svc_key_id_t<sp/>source_key,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_key_attributes_t<sp/>*attributes,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>*target_key);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a9a4652223523e71a68c7fa17fe226e31" kindref="member">ti_psa_destroy_key</ref>(mbedtls_svc_key_id_t<sp/>key);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a99479b3e75d8360326adbf87b9a24e83" kindref="member">ti_psa_export_key</ref>(mbedtls_svc_key_id_t<sp/>key,<sp/>uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_size,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*data_length);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a38b5cd62431804c20db87a079fc9f6ad" kindref="member">ti_psa_export_public_key</ref>(mbedtls_svc_key_id_t<sp/>key,<sp/>uint8_t<sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_size,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*data_length);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1aa018801687ff2943312db7cbb0577227" kindref="member">ti_psa_generate_key</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_key_attributes_t<sp/>*attributes,<sp/>mbedtls_svc_key_id_t<sp/>*key);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1aee8903a76a70a469482e033f98ffe01c" kindref="member">ti_psa_get_key_attributes</ref>(mbedtls_svc_key_id_t<sp/>key,<sp/>psa_key_attributes_t<sp/>*attributes);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a1afd06a901e897912f8b121c01d2c34f" kindref="member">ti_psa_import_key</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_key_attributes_t<sp/>*attributes,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_length,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>*key);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a0400e899e64853adc49a704910cc5434" kindref="member">ti_psa_purge_key</ref>(mbedtls_svc_key_id_t<sp/>key);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ti__psa__crypto_8h_1a78ef997c2728fa1afaf90b9486ab9b6f" kindref="member">ti_psa_reset_key_attributes</ref>(psa_key_attributes_t<sp/>*attributes);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Asymmetric<sp/>cryptography<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a9b5eac50fe3900d17aaa10891e67c3af" kindref="member">ti_psa_asymmetric_encrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*salt,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>salt_length,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a107ba206ef9af769b80361d04d69a312" kindref="member">ti_psa_asymmetric_decrypt</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*salt,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>salt_length,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ae63e5818a9922e9a29a32dc3cfba17e8" kindref="member">ti_psa_sign_message</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*signature,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>signature_size,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*signature_length);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ae7aa3271ac803aa36a2595486a2c02da" kindref="member">ti_psa_verify_message</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*input,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>input_length,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*signature,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>signature_length);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a8d92a7fc15b0786a251cf6ab70342f05" kindref="member">ti_psa_sign_hash</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*hash,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_length,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*signature,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>signature_size,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*signature_length);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ae424cbecdf0e977f95a33d78dcd8b84a" kindref="member">ti_psa_verify_hash</ref>(mbedtls_svc_key_id_t<sp/>key,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*hash,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hash_length,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*signature,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>signature_length);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Key<sp/>Derivation<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a19aaf349625646f1745c40fbf86df1bf" kindref="member">ti_psa_key_derivation_abort</ref>(psa_key_derivation_operation_t<sp/>*operation);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1aa7b9f91808cdf51d8adc5d380e69bb7b" kindref="member">ti_psa_key_derivation_get_capacity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_key_derivation_operation_t<sp/>*operation,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*capacity);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1abc367f76c4b4ce891e5f2c140571623b" kindref="member">ti_psa_key_derivation_input_bytes</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_key_derivation_step_t<sp/>step,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_length);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a245494fc942ec78a1e021861ae83df79" kindref="member">ti_psa_key_derivation_input_integer</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_key_derivation_step_t<sp/>step,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>value);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a2637c75da2dd4ae509d2f70410b2a03d" kindref="member">ti_psa_key_derivation_input_key</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_key_derivation_step_t<sp/>step,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>key);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a2349f82d9c7d605d3085730c94433270" kindref="member">ti_psa_key_derivation_output_bytes</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_length);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a070493714314932e7df3e298f7312e43" kindref="member">ti_psa_key_derivation_output_key</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>psa_key_attributes_t<sp/>*attributes,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>*key);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a8a41cc212e0503bce12ea92a990185ae" kindref="member">ti_psa_key_derivation_set_capacity</ref>(psa_key_derivation_operation_t<sp/>*operation,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>capacity);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1af98a0c266528bca68886851109286a4b" kindref="member">ti_psa_key_derivation_setup</ref>(psa_key_derivation_operation_t<sp/>*operation,<sp/>psa_algorithm_t<sp/>alg);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ab53482fdf816112e3a79b668f537722e" kindref="member">ti_psa_key_derivation_verify_bytes</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*expected_output,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_length);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1a027a28158360dd5b8d18b365a2282998" kindref="member">ti_psa_key_derivation_verify_key</ref>(psa_key_derivation_operation_t<sp/>*operation,<sp/>mbedtls_svc_key_id_t<sp/>expected);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Key<sp/>Agreement<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ac082137bf2fee72502c9116cf74393a5" kindref="member">ti_psa_raw_key_agreement</ref>(psa_algorithm_t<sp/>alg,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>private_key,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*peer_key,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>peer_key_length,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>*output,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>output_size,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*output_length);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">psa_status_t<sp/><ref refid="ti__psa__crypto_8h_1ade7db43e9654f4a5d4cfe843352afcec" kindref="member">ti_psa_key_derivation_key_agreement</ref>(psa_key_derivation_operation_t<sp/>*operation,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>psa_key_derivation_step_t<sp/>step,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mbedtls_svc_key_id_t<sp/>private_key,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*peer_key,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>peer_key_length);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TI_PSA_CRYPTO_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/ti/drivers/psa/ti_psa_crypto.h"/>
+  </compounddef>
+</doxygen>

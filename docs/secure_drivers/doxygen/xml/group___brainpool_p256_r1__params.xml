@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___brainpool_p256_r1__params" kind="group">
+    <compoundname>BrainpoolP256R1_params</compoundname>
+    <title>BrainpoolP256R1 curve params</title>
+    <innerclass refid="union_e_c_c___brainpool_p256_r1___param" prot="public">ECC_BrainpoolP256R1_Param</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gaf5f0030a8ec3510508100a61f6572c4c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_generatorX</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_generatorX</name>
+        <briefdescription>
+<para>X coordinate of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="285" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga2a2e1f223ec34a3474818bc8a9cf0177" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_generatorY</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_generatorY</name>
+        <briefdescription>
+<para>Y coordinate of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="290" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga7ee96457fbf965dbb4f45883a30879ad" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_prime</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_prime</name>
+        <briefdescription>
+<para>Prime of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="295" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga4ffd0d8eb0504924338b7cca8a039f35" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_a</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_a</name>
+        <briefdescription>
+<para>&apos;a&apos; constant of the ECC_BrainpoolP256R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="301" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga9724a88a1b569cf4c1de8c31d588efe8" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_b</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_b</name>
+        <briefdescription>
+<para>&apos;b&apos; constant of the ECC_BrainpoolP256R1 curve when expressed in short Weierstrass form (y^2 = x^3 + a*x + b). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="307" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1ga8a50791606d8a2564d10a3b1e4b818e2" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_order</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_order</name>
+        <briefdescription>
+<para>Order of the generator point of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="312" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gafd614a05787569cc657ed90c8900f17f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_k_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_k_mont</name>
+        <briefdescription>
+<para>&apos;k&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="317" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gab88cc1e7bad7a21bc0d5e04087cdd705" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_a_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_a_mont</name>
+        <briefdescription>
+<para>&apos;a&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="322" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___brainpool_p256_r1__params_1gab57ba97ba3de4538fd57e2426d96d48e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="union_e_c_c___brainpool_p256_r1___param" kindref="compound">ECC_BrainpoolP256R1_Param</ref></type>
+        <definition>const ECC_BrainpoolP256R1_Param ECC_BrainpoolP256R1_b_mont</definition>
+        <argsstring></argsstring>
+        <name>ECC_BrainpoolP256R1_b_mont</name>
+        <briefdescription>
+<para>&apos;b&apos; in Montgomery domain of the ECC_BrainpoolP256R1 curve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="327" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___brainpool_p256_r1__params_1gac8e29fecd21ddc0b0d1768bf1a40075b" prot="public" static="no">
+        <name>ECCParams_BrainpoolP256R1_LENGTH</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>Length of BrainpoolP256R1 curve parameters in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" line="271" column="9" bodyfile="source/ti/drivers/cryptoutils/ecc/ECCParamsXXF3HSM.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

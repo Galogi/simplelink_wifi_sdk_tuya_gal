@@ -1,0 +1,1636 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Radio Tool User’s Guide &mdash; Wi-Fi Toolbox User&#39;s Guide 4.0.xx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Radio Tool Command Line Interface User’s Guide" href="command_line_interface_basics.html" />
+    <link rel="prev" title="Programmer User Guide" href="programmer_user_guide.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug WiFi-toolbox radio_tool_user_guide";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="cc33xx-index.html" class="icon icon-home" alt="Documentation Home"> Wi-Fi Toolbox User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.0.xx 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programmer_user_guide.html">Programmer User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Radio Tool User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hw-prerequisites">HW Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#radio-tool-startup">Radio Tool Startup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#radio-tool-page-contains">Radio Tool page contains:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wi-fi-testing">Wi-Fi testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi-tx-1">Wi-Fi TX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transmit-parameters-section">Transmit Parameters Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tx-parameters-section">TX Parameters Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tx-power-limitation">TX Power Limitation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wi-fi-rx-1">Wi-Fi RX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action-1">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rx-parameters-section">RX Parameters Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statistics-section">Statistics Section</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bluetooth-reg-low-energy-testing">Bluetooth ® Low Energy testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble-tx-1">BLE TX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action-2">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rf-parameters-section">RF Parameters Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#packet-tx-section">Packet TX Section</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ble-rx-1">BLE RX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action-3">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rf-parameters-section-1">RF Parameters Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#packet-rx-section">Packet RX Section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-received-section">Data Received Section</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tx-tone-1">TX Tone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#action-4">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tx-tone-parameters">TX Tone Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device-info">Device Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-functions">Additional Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-load-custom-containers-1">How to Load Custom Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-detect-my-xds110-jtag-debug-probe-serial-number-1">How to Detect my XDS110 JTAG Debug Probe Serial Number</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reset-device">Reset device</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="command_line_interface_basics.html">Radio Tool Command Line Interface User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ini_composer_user_guide.html">INI Composer User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logger_user_guide.html">Logger User Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="cc33xx-index.html">Wi-Fi Toolbox User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="cc33xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Radio Tool User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="radio-tool-user-s-guide">
+<h1>Radio Tool User’s Guide<a class="headerlink" href="#radio-tool-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Radio Tool is a tool for RF evaluation and testing during development and certification. The tool enables low-level radio testing capabilities by manually setting the radio into transmit or receive modes. Usage of the tool requires familiarity and knowledge of radio circuit theory and radio test methods.</p>
+<div class="section" id="hw-prerequisites">
+<h3>HW Prerequisites<a class="headerlink" href="#hw-prerequisites" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Windows 10 64Bit / Ubuntu 20 (or higher) 64bit operation system</li>
+<li>Latest Chrome Web Browser</li>
+<li>Installation of SimpleLink ™ Wi-Fi Toolbox (refer to <a class="reference external" href="simplelink_wifi_toolbox_startup_guide.html">SimpleLink Wi-Fi Toolbox Startup Guide</a>)</li>
+<li>CC33xx/CC35xx evaluation boards</li>
+<li>An <a class="reference external" href="https://www.ti.com/tool/LP-XDS110ET">LP-XDS110ET</a> debugger for SWD communication</li>
+</ul>
+</div>
+</div>
+<div class="section" id="radio-tool-startup">
+<h2>Radio Tool Startup<a class="headerlink" href="#radio-tool-startup" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+CC35xx Family</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+CC33xx Family</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>Open SimpleLink Wi-Fi Toolbox and click on the “Radio Tool” button:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/activation-1.png"><img alt="simplelink-wifi-toolbox_intro" src="../_images/activation-1.png" style="width: 669.1999999999999px; height: 326.2px;" /></a>
+</div>
+<p>The app will route to the next page “Radio Tool Intro”, where a user should select their current device:</p>
+<ul class="simple">
+<li><strong>Device Part Number</strong>
+* CC3500
+* CC3501
+* CC3550
+* CC3551</li>
+</ul>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p>Open SimpleLink Wi-Fi Toolbox and click on the “Radio Tool” button:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/activation-1-cc33.png"><img alt="simplelink-wifi-toolbox_intro" src="../_images/activation-1-cc33.png" style="width: 657.0px; height: 409.0px;" /></a>
+</div>
+<p>The app will route to the next page “Radio Tool Intro”, where a user should select their current device:</p>
+<ul class="simple">
+<li><strong>Device Part Number</strong><ul>
+<li>CC3300 - 2.4Ghz 11ax Wi-Fi Transceiver</li>
+<li>CC3301 - 2.4Ghz 11ax Wi-Fi and BLE Transceiver</li>
+<li>CC3350 - 2.4 / 5 Ghz 11ax Wi-Fi Transceiver</li>
+<li>CC3351 - 2.4 / 5 Ghz 11ax Wi-Fi and BLE Transceiver</li>
+<li>CC3301MOD - 2.4Ghz 11ax Wi-Fi and BLE Transceiver</li>
+<li>CC3351MOD - 2.4 / 5 Ghz 11ax Wi-Fi and BLE Transceiver</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul>
+<li><p class="first"><strong>Device Connection Interface</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>Demo Mode</strong> - Users can experience the operation of Radio Tool without being connected to a real device.</p>
+</li>
+<li><p class="first"><strong>XDS110</strong> - This connection interface requires connecting a XDS110 debug probe to the device under test (CC35xx/cc33xx).</p>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>XDS110 Serial Number</strong> - The app will display the serial number of all connected XDS110 devices to the PC.</dt>
+<dd><div class="first last admonition note">
+<p class="first admonition-title">Note</p>
+<ol class="last arabic simple">
+<li>In case of multiple XDS110 connected devices to the PC, see section <a class="reference internal" href="#how-to-detect-my-xds110-jtag-debug-probe-serial-number"><span class="std std-ref">How to Detect my XDS110 JTAG Debug Probe Serial Number</span></a></li>
+<li>In case of old firmware version of XDS110 follow instruction from <code class="docutils literal notranslate"><span class="pre">&lt;simplelink_wifi_toolbox_x.x.x</span> <span class="pre">installation</span> <span class="pre">folder&gt;\utility\xds110_reset\README</span></code></li>
+</ol>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Device Region</strong></p>
+<p>The device region will configure the device to follow the selected regions transmission regulations. This is done by loading the appropriate conf.bin</p>
+</li>
+<li><p class="first"><strong>Containers Load</strong></p>
+<p>The app provides a couple of ways of loading software into CC35XX devices</p>
+<ul class="simple">
+<li><strong>Load custom containers</strong> - Follow <a class="reference internal" href="#how-to-load-custom-containers"><span class="std std-ref">How to Load Custom Containers</span></a> for more info.</li>
+<li><strong>Load official container</strong> - SimpleLink Wi-Fi Toolbox comes with integrated official software that can be used on the device.</li>
+<li><strong>Use pre-loaded container</strong> - The user can start using Radio Tool based on pre-loaded software from one of the options above.</li>
+</ul>
+</li>
+</ul>
+<p>After filling the fields as described above click on <code class="docutils literal notranslate"><span class="pre">Start</span></code></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/radio-tool-intro.png"><img alt="radio-tool-intro-example" src="../_images/radio-tool-intro.png" style="width: 956.5px; height: 466.5px;" /></a>
+</div>
+<p>After clicking on the <code class="docutils literal notranslate"><span class="pre">Start</span></code> the app will route into the “Radio Tool Home” page</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/radio-tool-home.png"><img alt="radio-tool-home" src="../_images/radio-tool-home.png" style="width: 1075.1999999999998px; height: 604.4499999999999px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The content and options seen will change according to the selected operation, see sections “<a class="reference internal" href="#cc33xx-wlan-testing"><span class="std std-ref">Wi-Fi testing</span></a>”, “<a class="reference internal" href="#cc33x1-ble-testing"><span class="std std-ref">Bluetooth ® Low Energy testing</span></a>”, “<a class="reference internal" href="#tx-tone"><span class="std std-ref">TX Tone</span></a>”, “<a class="reference internal" href="#add-ons"><span class="std std-ref">Device Info</span></a>”</p>
+</div>
+<div class="section" id="radio-tool-page-contains">
+<h3>Radio Tool page contains:<a class="headerlink" href="#radio-tool-page-contains" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Top Toolbar - Description of connection interface and connected device</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/top-toolbar.png"><img alt="top-toolbar" src="../_images/top-toolbar.png" style="width: 1076.5px; height: 66.5px;" /></a>
+</div>
+<ul class="simple">
+<li>Left Side Navigation Bar -  Will display different options according to selected device, active test mode will be outlined in red</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/side-nav.png"><img alt="side-nav" src="../_images/side-nav.png" style="width: 82.80000000000001px; height: 441.20000000000005px;" /></a>
+</div>
+<ul class="simple">
+<li>Terminal -  Logs of all activities while using Radio Tool</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/terminal.png"><img alt="terminal" src="../_images/terminal.png" style="width: 1193.3999999999999px; height: 157.2px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The two blue icons, that apppear on the top right when hovering over the terminal window, are to “Clear Terminal” logs and to “Save Terminal Data” as a .txt file.</p>
+</div>
+</div>
+</div>
+<div class="section" id="wi-fi-testing">
+<span id="cc33xx-wlan-testing"></span><h2>Wi-Fi testing<a class="headerlink" href="#wi-fi-testing" title="Permalink to this headline">¶</a></h2>
+<p>The CC35xx/CC33xx devices features Wi-Fi 6 with 2.4 GHz, 5 Ghz, 20 MHz, single spatial stream, MAC, baseband, and RF transceiver with support for IEEE 802.11 b/g/n/ax.
+The below sections explain how to use the Radio Tool toolbox for testing Wi-FI and the limitations of the tool.</p>
+<div class="section" id="wi-fi-tx-1">
+<span id="wi-fi-tx"></span><h3>Wi-Fi TX<a class="headerlink" href="#wi-fi-tx-1" title="Permalink to this headline">¶</a></h3>
+<p>In this mode the device will transmit packets depending on the chosen parameters. To get optimal RF performance first press <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code>, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code>, and lastly <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">Start</span></code> respectively every time the chosen channel is changed.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The user may toggle the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Ch.</span> <span class="pre">and</span> <span class="pre">Calibrate</span> <span class="pre">on</span> <span class="pre">TX</span> <span class="pre">start</span></code> instead of manually pressing the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code> button, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code> before <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">Start</span></code></p>
+</div>
+<div class="figure align-center" id="figure-1">
+<a class="reference internal image-reference" href="../_images/wifi-tx.png"><img alt="wifi-tx" src="../_images/wifi-tx.png" style="width: 816.4px; height: 338.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 16 </span><span class="caption-text">View of RadioTool Wi-Fi TX mode</span></p>
+</div>
+<div class="section" id="action">
+<h4>Action<a class="headerlink" href="#action" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Export</td>
+<td>Export current selected parameters into JSON file</td>
+</tr>
+<tr class="row-odd"><td>Import</td>
+<td>Import parameters from JSON file</td>
+</tr>
+<tr class="row-even"><td>Tune Ch. and Calibrate on RX start</td>
+<td>When enabled will tune and calibrate the device before starting transmission</td>
+</tr>
+<tr class="row-odd"><td>Tune Channel</td>
+<td>The device will be tuned to the selected frequency channel</td>
+</tr>
+<tr class="row-even"><td>Calibrate</td>
+<td>Will calibrate the device to improve RF performance</td>
+</tr>
+<tr class="row-odd"><td>TX Start / Stop</td>
+<td>Start / Stop transmit Wi-Fi packet according to selected parameters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="transmit-parameters-section">
+<h4>Transmit Parameters Section<a class="headerlink" href="#transmit-parameters-section" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Antenna Number</td>
+<td>0 (Default) or 1</td>
+<td>Select main antenna to transmit from</td>
+</tr>
+<tr class="row-odd"><td>Band</td>
+<td><div class="first last line-block">
+<div class="line">2.4 Ghz</div>
+<div class="line">5 Ghz</div>
+</div>
+</td>
+<td>WLAN frequency band</td>
+</tr>
+<tr class="row-even"><td>Channel</td>
+<td><div class="first last line-block">
+<div class="line">1 - 13 (Default : 6)</div>
+<div class="line">36 - 165 (Default : 36)</div>
+</div>
+</td>
+<td>Operating frequency range within the selected WLAN frequency band</td>
+</tr>
+<tr class="row-odd"><td>Packet Mode</td>
+<td><div class="first last line-block">
+<div class="line">Continuous</div>
+<div class="line"><br /></div>
+<div class="line">Single Packet</div>
+<div class="line"><br /></div>
+<div class="line">Multi Packet</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Sends an infinite number of packets on TX Start</div>
+<div class="line"><br /></div>
+<div class="line">Send one packet on TX Start</div>
+<div class="line"><br /></div>
+<div class="line">Send the finite amount of packets according to “Number Of Packets” on TX Start</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Delay [uSec]</td>
+<td>50 - 1000000</td>
+<td>Delay between packets</td>
+</tr>
+<tr class="row-odd"><td>Number of Packets</td>
+<td>1 - 10000</td>
+<td>Enabled for Multi Packet Mode</td>
+</tr>
+<tr class="row-even"><td>Data Mode</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line">Constant Value</div>
+<div class="line"><br /></div>
+<div class="line">Increment</div>
+<div class="line"><br /></div>
+<div class="line">Random Value</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line">Constant packet payload according to “Data Const Value”</div>
+<div class="line"><br /></div>
+<div class="line">Packet payload will increase by one each sent packet</div>
+<div class="line"><br /></div>
+<div class="line">Random packet payload</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Data Const Value</td>
+<td>0 - 255</td>
+<td>Constant value used in all packets</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tx-parameters-section">
+<h4>TX Parameters Section<a class="headerlink" href="#tx-parameters-section" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Source MAC Address</td>
+<td>00:11:22:33:44:55 (Default)</td>
+<td>MAC (media access control) Address being received</td>
+</tr>
+<tr class="row-odd"><td>Destination MAC Address</td>
+<td>01:02:03:04:05:06 (Default)</td>
+<td>MAC (media access control) Address being transmitted</td>
+</tr>
+<tr class="row-even"><td>Packet Length [Bytes] when “CCA Sensing” Disabled (Default)</td>
+<td>0 - 3500</td>
+<td>Number of data bytes (except mac 802.11 header) when “Disable CCA Sensing” is checked</td>
+</tr>
+<tr class="row-odd"><td>Packet Length [Bytes] when “CCA Sensing” Enabled</td>
+<td>Constant start of value 0-16000</td>
+<td>Number of data bytes (except mac 802.11 header) when “Disable CCA Sensing” is unchecked</td>
+</tr>
+<tr class="row-even"><td>Preamble Type</td>
+<td><div class="first last line-block">
+<div class="line">11b Short Preamble</div>
+<div class="line">11b Long Preamble</div>
+<div class="line">11ag Legacy OFDM</div>
+<div class="line">11n Mixed Mode</div>
+<div class="line">11ac VHT</div>
+<div class="line">11ax SU (Single User)</div>
+<div class="line">11ax SU ER (Single User Extended Range)</div>
+<div class="line">11ax TB (Trigger Base)</div>
+</div>
+</td>
+<td>The Preamble type in 802.11 based wireless communication defines the length of the CRC</td>
+</tr>
+<tr class="row-odd"><td>Regulatory Limit Tx Power (dBm)</td>
+<td>Enable / Disable (dBm level)</td>
+<td>If enabled, permits the bypass of regulatory Tx power limits</td>
+</tr>
+</tbody>
+</table>
+<p>Some of the options below will appear according to selected <code class="docutils literal notranslate"><span class="pre">Preamble</span> <span class="pre">Type</span></code>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>PHY Rate [Mbps]</td>
+<td>Available options change according to selected preamble type</td>
+<td>Maximum speed that data can move across a wireless link</td>
+</tr>
+<tr class="row-odd"><td>TX Power [dBm]</td>
+<td>-10 to 21</td>
+<td>Transmit power level</td>
+</tr>
+<tr class="row-even"><td>Disable CCA Sensing</td>
+<td>Disable/Enable ( Default )</td>
+<td>Select to ignore Wi-Fi CCA (Clear Channel Assessment)</td>
+</tr>
+<tr class="row-odd"><td>GL/LTF Type</td>
+<td>Available options change according to selected preamble type</td>
+<td>Common Info field that indicates which guard interval and long training field will be used for the transmission</td>
+</tr>
+<tr class="row-even"><td>BSS Color</td>
+<td>0 to 63</td>
+<td>Identifies a BSS and assists a STA receiving a PPDU that carries BSS from which the PPDU originates so that the STA can use the channel access rules</td>
+</tr>
+<tr class="row-odd"><td>Nominal Packet Padding [μsec]</td>
+<td><div class="first last line-block">
+<div class="line">0 usecs</div>
+<div class="line">8 usecs</div>
+<div class="line">16 usecs</div>
+</div>
+</td>
+<td>Value indicated by the Pre-FEC Padding Factor subfield in the Common Information Field in the Trigger Frame</td>
+</tr>
+<tr class="row-even"><td>SU ER Bandwidth</td>
+<td><div class="first last line-block">
+<div class="line">242 tone RU</div>
+<div class="line">Upper Frequency 106 tone RU</div>
+</div>
+</td>
+<td>Indicates the channel width of the PPDU. Enumerated type: ER-RU-242 for the 242-tone</td>
+</tr>
+<tr class="row-odd"><td>TB mode</td>
+<td><div class="first last line-block">
+<div class="line">External Trigger</div>
+<div class="line">Autonomous</div>
+</div>
+</td>
+<td>Sets the device to expect an external trigger before transmitting, or to do so autonomously with internal triger</td>
+</tr>
+<tr class="row-even"><td>AID</td>
+<td>0 to 2047</td>
+<td>Association Index</td>
+</tr>
+<tr class="row-odd"><td>Num of HeLtf</td>
+<td><div class="first last line-block">
+<div class="line">1 HeLtf</div>
+<div class="line">2 HeLtf</div>
+<div class="line">4 HeLtf</div>
+<div class="line">6 HeLtf</div>
+<div class="line">8 HeLtf</div>
+</div>
+</td>
+<td>Number of HE-LTF symbols</td>
+</tr>
+<tr class="row-even"><td>RU Allocation</td>
+<td>0 to 2047</td>
+<td>Resource unit (RU) assigned for transmitting the HE TB PPDU response</td>
+</tr>
+<tr class="row-odd"><td>Uplink BW</td>
+<td><div class="first last line-block">
+<div class="line">20 MHz</div>
+<div class="line">40 MHz</div>
+<div class="line">80 MHz</div>
+</div>
+</td>
+<td>Common Information filed indicates the bandwith in the HE-SIG-A filed of the HE TB PDDU</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some field options may appear and disappear depending on selections made</p>
+</div>
+</div>
+<div class="section" id="tx-power-limitation">
+<h4>TX Power Limitation<a class="headerlink" href="#tx-power-limitation" title="Permalink to this headline">¶</a></h4>
+<p>Depending on the Preamble Type the device will not transmit at the highest power set by the user on <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">Power</span> <span class="pre">[dBm]</span></code>, this is a limit set by the firmware on the device. Refer to the table below for the resulting TX power from the CC35xx/CC33xx device.</p>
+<span id="device-max-tx-power"></span><table border="1" class="docutils align-center" id="table-1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Maximum TX power from device when set to 21 dBm.</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="30%" />
+<col width="17%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Preamble   Type</td>
+<td>Phy Rate</td>
+<td>Expected power (from device pin)</td>
+</tr>
+<tr class="row-even"><td rowspan="3">11b Short Preamble</td>
+<td>2  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>5.5  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>11  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td rowspan="4">11b Long Preamble</td>
+<td>1  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>2  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>5.5  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>11  Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td rowspan="8">11ag Legacy OFDM</td>
+<td>6 Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>9 Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>12 Mbps</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>18 Mbps</td>
+<td>20 dBm</td>
+</tr>
+<tr class="row-odd"><td>24 Mbps</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>36 Mbps</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>48 Mbps</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>54 Mbps</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td rowspan="8">11n Mixed Mode</td>
+<td>MCS0</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 1</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 2</td>
+<td>20 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 3</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 4</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 5</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 6</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 7</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td rowspan="8">11ax SU</td>
+<td>MCS 0</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 1</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 2</td>
+<td>20 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 3</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 4</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 5</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 6</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 7</td>
+<td>18 dBm</td>
+</tr>
+<tr class="row-odd"><td>11ax SU ER</td>
+<td>MCS 0</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td rowspan="8">11ax TB</td>
+<td>MCS 0</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 1</td>
+<td>20.5 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 2</td>
+<td>20 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 3</td>
+<td>17 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 4</td>
+<td>17 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 5</td>
+<td>17 dBm</td>
+</tr>
+<tr class="row-even"><td>MCS 6</td>
+<td>17 dBm</td>
+</tr>
+<tr class="row-odd"><td>MCS 7</td>
+<td>17 dBm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="wi-fi-rx-1">
+<span id="wi-fi-rx"></span><h3>Wi-Fi RX<a class="headerlink" href="#wi-fi-rx-1" title="Permalink to this headline">¶</a></h3>
+<p>RX testing is used for gathering Wi-Fi statistics within a specified channel. To get optimal RF performance first press <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code>, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code>, and lastly <code class="docutils literal notranslate"><span class="pre">RX</span> <span class="pre">Start</span></code> respectively every time the chosen channel is changed.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The user may toggle the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Ch.</span> <span class="pre">and</span> <span class="pre">Calibrate</span> <span class="pre">on</span> <span class="pre">RX</span> <span class="pre">start</span></code> instead of manually pressing the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code> button, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code> before <code class="docutils literal notranslate"><span class="pre">RX</span> <span class="pre">Start</span></code></p>
+</div>
+<div class="figure align-center" id="figure-2">
+<a class="reference internal image-reference" href="../_images/wifi-rx.png"><img alt="wifi-rx" src="../_images/wifi-rx.png" style="width: 809.9px; height: 378.3px;" /></a>
+<p class="caption"><span class="caption-number">Figure 17 </span><span class="caption-text">View of RadioTool Wi-Fi RX mode</span></p>
+</div>
+<div class="section" id="action-1">
+<h4>Action<a class="headerlink" href="#action-1" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Export</td>
+<td>Export current selected parameters into JSON file</td>
+</tr>
+<tr class="row-odd"><td>Import</td>
+<td>Import parameters from JSON file</td>
+</tr>
+<tr class="row-even"><td>Tune Ch. and Calibrate on RX start</td>
+<td>When enabled will tune and calibrate the device before starting transmission</td>
+</tr>
+<tr class="row-odd"><td>Tune Channel</td>
+<td>The device will be tuned to the selected frequency channel</td>
+</tr>
+<tr class="row-even"><td>Calibrate</td>
+<td>Will calibrate the device to improve RF performance</td>
+</tr>
+<tr class="row-odd"><td>RX Start / Stop</td>
+<td>Start / Stop receiving Wi-Fi packet according to selected parameters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rx-parameters-section">
+<h4>RX Parameters Section<a class="headerlink" href="#rx-parameters-section" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Band</td>
+<td><div class="first last line-block">
+<div class="line">2.4 Ghz</div>
+<div class="line">5 Ghz</div>
+</div>
+</td>
+<td>WLAN frequency band</td>
+</tr>
+<tr class="row-odd"><td>Channel</td>
+<td><div class="first last line-block">
+<div class="line">1 - 13 (Default : 6)</div>
+<div class="line">36 - 165 (Default : 36)</div>
+</div>
+</td>
+<td>Operating frequency range within the selected WLAN frequency band</td>
+</tr>
+<tr class="row-even"><td>MAC Address</td>
+<td>FF:FF:FF:FF:FF:FF</td>
+<td>Source mac address of received packet</td>
+</tr>
+<tr class="row-odd"><td>Preamble Type</td>
+<td><div class="first last line-block">
+<div class="line">11b Short Preamble</div>
+<div class="line">11b Long Preamble</div>
+<div class="line">11ag Legacy OFDM</div>
+<div class="line">11n Mixed Mode</div>
+<div class="line">11ac VHT</div>
+<div class="line">11ax SU (Single User)</div>
+<div class="line">11ax SU ER (Single User Extended Range)</div>
+<div class="line">11ax TB (Trigger Base)</div>
+</div>
+</td>
+<td>The Preamble type in 802.11 based wireless communication defines the length of the CRC</td>
+</tr>
+<tr class="row-even"><td>PHY Rate [Mbps]</td>
+<td>Options change according to selected preamble type</td>
+<td>Maximum speed that data can move across a wireless link</td>
+</tr>
+<tr class="row-odd"><td>ACK Enable</td>
+<td>Enable ( Default ) / Disable</td>
+<td>Select to response with Wi-FI ACK for each received packet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="statistics-section">
+<h4>Statistics Section<a class="headerlink" href="#statistics-section" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Get / Clear / Stop actions will be available on successful RX Start</li>
+<li>Each new sample will be appearing in the first row of the table</li>
+<li>RX RSSI reporting is not optimized.</li>
+</ul>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Pull Method</td>
+<td>One Shot</td>
+<td>Get statistics by clicking on the <code class="docutils literal notranslate"><span class="pre">Get</span></code> button</td>
+</tr>
+<tr class="row-odd"><td>Pull Method</td>
+<td>Interval</td>
+<td>Get statistics by each “Pull Interval [Sec]”</td>
+</tr>
+<tr class="row-even"><td>Pull Method</td>
+<td>Interval &amp; Count</td>
+<td>Get statistics on the finite number of samples by “Number of Samples” each “Pull Interval [Sec]”</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Get</td>
+<td>Get statistics according to Pull Methods</td>
+</tr>
+<tr class="row-odd"><td>Clear</td>
+<td>Clear statistics table</td>
+</tr>
+<tr class="row-even"><td>Stop</td>
+<td>Will appear for pull method “Interval” / “Interval &amp; Count”, stops requesting for statistics.</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure">
+<img alt="../_images/wlan-rx-export-statisctics-to-excel.png" src="../_images/wlan-rx-export-statisctics-to-excel.png" />
+</div>
+</td>
+<td>Export statistics table into Excel file</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure">
+<img alt="../_images/wlan-rx-export-statisctics-to-json.png" src="../_images/wlan-rx-export-statisctics-to-json.png" />
+</div>
+</td>
+<td>Export statistics table into Excel file</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">RX RSSI reporting is not optimized.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bluetooth-reg-low-energy-testing">
+<span id="cc33x1-ble-testing"></span><h2>Bluetooth ® Low Energy testing<a class="headerlink" href="#bluetooth-reg-low-energy-testing" title="Permalink to this headline">¶</a></h2>
+<p>Bluetooth ® Low Energy 5.4 is only for CC35x1/CC33x1 devices, below sections explain how to use the Radio Tool toolbox for testing BLE.</p>
+<div class="section" id="ble-tx-1">
+<span id="ble-tx"></span><h3>BLE TX<a class="headerlink" href="#ble-tx-1" title="Permalink to this headline">¶</a></h3>
+<p>Mode to transmit BLE packets.</p>
+<div class="figure align-center" id="figure-3">
+<a class="reference internal image-reference" href="../_images/ble-tx.png"><img alt="BLE-TX" src="../_images/ble-tx.png" style="width: 808.6px; height: 377.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 18 </span><span class="caption-text">View of RadioTool BLE TX mode</span></p>
+</div>
+<div class="section" id="action-2">
+<h4>Action<a class="headerlink" href="#action-2" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Export</td>
+<td>Export current selected parameters into JSON file</td>
+</tr>
+<tr class="row-odd"><td>Import</td>
+<td>Import parameters from JSON file</td>
+</tr>
+<tr class="row-even"><td>TX Start / Stop</td>
+<td>Start / Stop transmit BLE packet according to selected parameters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rf-parameters-section">
+<h4>RF Parameters Section<a class="headerlink" href="#rf-parameters-section" title="Permalink to this headline">¶</a></h4>
+<p>Section to specify the RF parameters of the BLE transmission</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Transmit Mode</td>
+<td>Packet(Default)</td>
+<td>Packet transmit mode</td>
+</tr>
+<tr class="row-odd"><td>Antenna Number</td>
+<td>0 (Default) or 1</td>
+<td>Select main antenna to trasnmit from</td>
+</tr>
+<tr class="row-even"><td>RF mode</td>
+<td><div class="first last line-block">
+<div class="line">1 Mbps, LE 1M (Default)</div>
+<div class="line">2 Mbps, LE 2M</div>
+<div class="line">500 kbps, LE Coded</div>
+<div class="line">125 kbps, LE Coded</div>
+</div>
+</td>
+<td>BLE RF mode</td>
+</tr>
+<tr class="row-odd"><td>BLE Channel</td>
+<td>0 - 39 (Default channel 11 )</td>
+<td>Select BLE operating frequency channel</td>
+</tr>
+<tr class="row-even"><td>TX Power [dBm]</td>
+<td>0 - 20 (Default 0)</td>
+<td>Transmit power</td>
+</tr>
+<tr class="row-odd"><td>Whitening</td>
+<td>Enable / Disable (Default)</td>
+<td>Enable to have packet payload scrambled before transmission</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="packet-tx-section">
+<h4>Packet TX Section<a class="headerlink" href="#packet-tx-section" title="Permalink to this headline">¶</a></h4>
+<p>Section to specify the parameters of the packets to be transmitted</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Packet Interval [mSec]</td>
+<td>from 10 mSecs</td>
+<td>Transmit time between BLE packet packets</td>
+</tr>
+<tr class="row-odd"><td>Packet Count</td>
+<td>Use number higher than 1</td>
+<td>Set the number of a packet to transmit</td>
+</tr>
+<tr class="row-even"><td>Infinite Packet Transmit</td>
+<td>Enable / Disable (Default)</td>
+<td>Check to transmit an infinite number of packets</td>
+</tr>
+<tr class="row-odd"><td>Packet Structure</td>
+<td>&#160;</td>
+<td>Illustration for how packet will be transmitted in the air</td>
+</tr>
+<tr class="row-even"><td>Data Type</td>
+<td><div class="first last line-block">
+<div class="line">Standard Patterns - Random</div>
+<div class="line"><br /></div>
+<div class="line">Standard Patterns - Hex</div>
+<div class="line"><br /></div>
+<div class="line">Standard Patterns - Text</div>
+<div class="line"><br /></div>
+<div class="line">Extra Patterns</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line"><br /></div>
+<div class="line">Transmit BLE packet with auto generated data according to required PDU Payload Length</div>
+<div class="line"><br /></div>
+<div class="line">Transmit BLE packet with user provided data in hexadecimal  format</div>
+<div class="line"><br /></div>
+<div class="line">Transmit BLE packet with user provided data in ASCII format</div>
+<div class="line"><br /></div>
+<div class="line">Implements “LE Transmitter Test commands” according to Core spec 5.4</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Add Sequence Number</td>
+<td>Enable / Disable</td>
+<td>Enable will add 2 bytes to the beginning of payload</td>
+</tr>
+<tr class="row-even"><td>PDU Packet Length</td>
+<td>10/12 - 37</td>
+<td>Length of PDU payload</td>
+</tr>
+<tr class="row-odd"><td>Advertise Data</td>
+<td>Related  to Data Type</td>
+<td>Content that will place into PDU payload</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Setting transmit interval at less than 10 mSec can cause unexpected behavior.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ble-rx-1">
+<span id="ble-rx"></span><h3>BLE RX<a class="headerlink" href="#ble-rx-1" title="Permalink to this headline">¶</a></h3>
+<p>Mode to receive BLE packets.</p>
+<div class="figure align-center" id="figure-4">
+<a class="reference internal image-reference" href="../_images/ble-rx.png"><img alt="BLE-RX" src="../_images/ble-rx.png" style="width: 810.5500000000001px; height: 377.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 19 </span><span class="caption-text">View of RadioTool BLE RX mode</span></p>
+</div>
+<div class="section" id="action-3">
+<h4>Action<a class="headerlink" href="#action-3" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Export</td>
+<td>Export current selected parameters into JSON file</td>
+</tr>
+<tr class="row-odd"><td>Import</td>
+<td>Import parameters from JSON file</td>
+</tr>
+<tr class="row-even"><td>RX Start / Stop</td>
+<td>Start / Stop receiving BLE packets according to selected parameters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rf-parameters-section-1">
+<h4>RF Parameters Section<a class="headerlink" href="#rf-parameters-section-1" title="Permalink to this headline">¶</a></h4>
+<p>Section to specify the RF parameters of the received signal</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Transmit Mode</td>
+<td>Packet (Default)</td>
+<td>Packet receive mode</td>
+</tr>
+<tr class="row-odd"><td>Antenna Number</td>
+<td>0 (Default) or 1</td>
+<td>Select main antenna to receive from</td>
+</tr>
+<tr class="row-even"><td>RF mode</td>
+<td><div class="first last line-block">
+<div class="line">1 Mbps, LE 1M (Default)</div>
+<div class="line">2 Mbps, LE 2M</div>
+<div class="line">500 kbps, LE Coded</div>
+<div class="line">125 kbps, LE Coded</div>
+</div>
+</td>
+<td>BLE RF mode</td>
+</tr>
+<tr class="row-odd"><td>BLE Channel</td>
+<td>0 - 39 (Default channel 11 )</td>
+<td>Select BLE operating frequency channel</td>
+</tr>
+<tr class="row-even"><td>TX Power [dBm]</td>
+<td>0 - 20 (Default 0)</td>
+<td>Transmit power</td>
+</tr>
+<tr class="row-odd"><td>Whitening</td>
+<td>Enable / Disable (Default)</td>
+<td>Enable to have packet payload scrambled before transmission</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="packet-rx-section">
+<h4>Packet RX Section<a class="headerlink" href="#packet-rx-section" title="Permalink to this headline">¶</a></h4>
+<p>Section to specify the parameters of the packets that will be received</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Access Address</td>
+<td>Hex input of 8 digits</td>
+<td>Default access address is 8e89bed6. Note for BLE_TEST packets access address should be 71764129.</td>
+</tr>
+<tr class="row-odd"><td>Expected Packet Count</td>
+<td>No Limitation</td>
+<td>After receiving all expected packets, RX mode stops automatically</td>
+</tr>
+<tr class="row-even"><td>Infinite Packet Transmit</td>
+<td>Enable / Disable (Default)</td>
+<td>Enable “Infinite Packet Transmit” when expected to receive infinite number of packets</td>
+</tr>
+<tr class="row-odd"><td>Only Statistics</td>
+<td>Enable / Disable (Default)</td>
+<td>Check to show only packets statistics (without payload content)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-received-section">
+<h4>Data Received Section<a class="headerlink" href="#data-received-section" title="Permalink to this headline">¶</a></h4>
+<p>Section that displays the statistics of all received packets</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Last RSSI [dBm]</td>
+<td>N/A only results</td>
+<td>As part of the broadcast message decoding, the device will return the last Received Signal Strength Indicator (RSSI) value.</td>
+</tr>
+<tr class="row-odd"><td>Received OK:</td>
+<td>N/A only results</td>
+<td>Total number of received packets succesfully</td>
+</tr>
+<tr class="row-even"><td>Received Not OK:</td>
+<td>N/A only results</td>
+<td>Total number of received packets unsuccesfully</td>
+</tr>
+<tr class="row-odd"><td>Packet Error Rate [%]</td>
+<td>N/A only results</td>
+<td>The Packet Error Rate (PER) indicates how many transmissions from a device are never received by the Network Server.</td>
+</tr>
+<tr class="row-even"><td>Bit Error Rate [%]</td>
+<td>N/A only results</td>
+<td>The bit error rate (BER) is the number of bit errors per unit time.</td>
+</tr>
+<tr class="row-odd"><td>View Format</td>
+<td>Hex (Default) / Text</td>
+<td>Display payload as Hex data or decoded UTF-8 Text</td>
+</tr>
+<tr class="row-even"><td>Sequence Number in Payloads</td>
+<td>Enable / Disable (Default)</td>
+<td>EXpected Sequence number to be included in the received packet payload</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For best experience, transmit data to the device with rate higher than 100msec between packets.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tx-tone-1">
+<span id="tx-tone"></span><h2>TX Tone<a class="headerlink" href="#tx-tone-1" title="Permalink to this headline">¶</a></h2>
+<p>In this mode the user may create and transmit the Carrier Wave of a signal with selected tone options. To get optimal RF performance first press <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code>, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code>, and lastly <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">Start</span></code> respectively every time the chosen channel is changed.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">The user may toggle the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Ch.</span> <span class="pre">and</span> <span class="pre">Calibrate</span> <span class="pre">on</span> <span class="pre">RX</span> <span class="pre">start</span></code> instead of manually pressing the <code class="docutils literal notranslate"><span class="pre">Tune</span> <span class="pre">Channel</span></code> button, then <code class="docutils literal notranslate"><span class="pre">Calibrate</span></code> before <code class="docutils literal notranslate"><span class="pre">TX</span> <span class="pre">Start</span></code></p>
+</div>
+<div class="figure align-center" id="figure-5">
+<a class="reference internal image-reference" href="../_images/tx-tone.png"><img alt="tx-tone" src="../_images/tx-tone.png" style="width: 809.9px; height: 377.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 20 </span><span class="caption-text">View of RadioTool TX Tone mode</span></p>
+</div>
+<div class="section" id="action-4">
+<h3>Action<a class="headerlink" href="#action-4" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Action</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Export</td>
+<td>Export current selected parameters into JSON file</td>
+</tr>
+<tr class="row-odd"><td>Import</td>
+<td>Import parameters from JSON file</td>
+</tr>
+<tr class="row-even"><td>Tune Ch. and Calibrate on RX start</td>
+<td>When enabled will tune and calibrate the device before starting transmission</td>
+</tr>
+<tr class="row-odd"><td>Tune Channel</td>
+<td>The device will be tuned to the selected frequency channel</td>
+</tr>
+<tr class="row-even"><td>Calibrate</td>
+<td>Will calibrate the device to improve RF performance</td>
+</tr>
+<tr class="row-odd"><td>TX Tone Start / Stop</td>
+<td>Start / Stop sending Carrier Wave</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tx-tone-parameters">
+<h3>TX Tone Parameters<a class="headerlink" href="#tx-tone-parameters" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Antenna Number</td>
+<td>0 (Default) or 1</td>
+<td>Select main antenna to transmit from</td>
+</tr>
+<tr class="row-odd"><td>Band</td>
+<td><div class="first last line-block">
+<div class="line">2.4 Ghz</div>
+<div class="line">5 Ghz</div>
+</div>
+</td>
+<td>WLAN frequency band</td>
+</tr>
+<tr class="row-even"><td>Channel</td>
+<td><div class="first last line-block">
+<div class="line">1 - 13 (Default : 6)</div>
+<div class="line">36 - 165 (Default : 36)</div>
+</div>
+</td>
+<td>Operating frequency range within the selected WLAN frequency band</td>
+</tr>
+<tr class="row-odd"><td>Mode</td>
+<td>Single Tone</td>
+<td>Sends a single tone</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Silence</td>
+<td>Reserved for future release</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Carrier Feedthrough</td>
+<td>Reserved for future release</td>
+</tr>
+<tr class="row-even"><td>Offset [Mhz]</td>
+<td>-10 to 10</td>
+<td>Offset carrier frequency by amount chosen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="device-info">
+<span id="add-ons"></span><h2>Device Info<a class="headerlink" href="#device-info" title="Permalink to this headline">¶</a></h2>
+<p>The Info mode will display the information of the device, see figure below.</p>
+<div class="figure align-center" id="figure-6">
+<a class="reference internal image-reference" href="../_images/Device_Info.png"><img alt="Device information" src="../_images/Device_Info.png" style="width: 808.6px; height: 378.3px;" /></a>
+<p class="caption"><span class="caption-number">Figure 21 </span><span class="caption-text">View of RadioTool Device Info mode</span></p>
+</div>
+</div>
+<div class="section" id="additional-functions">
+<span id="additional-func"></span><h2>Additional Functions<a class="headerlink" href="#additional-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-load-custom-containers-1">
+<span id="how-to-load-custom-containers"></span><h3>How to Load Custom Containers<a class="headerlink" href="#how-to-load-custom-containers-1" title="Permalink to this headline">¶</a></h3>
+<p>In some cases, custom containers should be loaded onto the device.
+For that purpose select “Containers Load” → “Load Custom Containers” in the Radio Tool Intro page.
+The <code class="docutils literal notranslate"><span class="pre">NEXT</span></code> dialog should appear after clicking on <code class="docutils literal notranslate"><span class="pre">Start</span></code>.
+The connection interface and XDS110 serial number will be automatically selected from the Radio Tool Intro page. Then, click on <code class="docutils literal notranslate"><span class="pre">NEXT</span></code></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/container-loader-part1-device-selection.png"><img alt="container-loader-part1-device-selection" src="../_images/container-loader-part1-device-selection.png" style="width: 238.5px; height: 232.5px;" /></a>
+</div>
+<p>This section for general information about selected devices, and click on <code class="docutils literal notranslate"><span class="pre">NEXT</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure BOOT_DIAG status is <code class="docutils literal notranslate"><span class="pre">WAITING_FOR_CONTAINER</span></code> before clicking on <code class="docutils literal notranslate"><span class="pre">NEXT</span></code></p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/container-loader-part2-device-confirmation.png"><img alt="container-loader-part2-device-confirmation.png" src="../_images/container-loader-part2-device-confirmation.png" style="width: 960.0px; height: 540.0px;" /></a>
+</div>
+<p>Select custom containers, then click on <code class="docutils literal notranslate"><span class="pre">NEXT</span></code></p>
+<ul class="simple">
+<li>2nd Bootloader Container - Container contains RAM Bootloader that response to load next container.</li>
+<li>Firmware Container - Container contains code for MAC, PHY and CPE.</li>
+<li>Configuration Binary -  Contains configurations for the device, and can be generated with INI composer tool (refer to the <a class="reference external" href="ini_composer_user_guide.html">INI Composer User Guide</a> ).</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/container-loader-part3-container-binaries.png"><img alt="container-loader-part3-container-binaries.png" src="../_images/container-loader-part3-container-binaries.png" style="width: 672.0px; height: 384.5px;" /></a>
+</div>
+<p>Final step before loading container into device, click on <code class="docutils literal notranslate"><span class="pre">LOAD</span></code> to start load container</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/container-loader-part4-container-loader.png"><img alt="container-loader-part4-container-loader" src="../_images/container-loader-part4-container-loader.png" style="width: 559.2px; height: 519.2px;" /></a>
+</div>
+<p>In case of successful  process “Container downloaded successfully” message will appear, in case of failure message with problem ID will appear.</p>
+<p>In order continue, click on <code class="docutils literal notranslate"><span class="pre">CONTINUE</span></code>.</p>
+</div>
+<div class="section" id="how-to-detect-my-xds110-jtag-debug-probe-serial-number-1">
+<span id="how-to-detect-my-xds110-jtag-debug-probe-serial-number"></span><h3>How to Detect my XDS110 JTAG Debug Probe Serial Number<a class="headerlink" href="#how-to-detect-my-xds110-jtag-debug-probe-serial-number-1" title="Permalink to this headline">¶</a></h3>
+<p>When the XDS110 debug probe is connected to PC you may find the the serial number doing the following.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If there are problems with the computer recognizing the XDS110 DebugProbe, download and install the “XDS110 Support Utilities package” (currently on release 7.0.100.1) at <a class="reference external" href="https://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_xds_software_package_download.html">XDS Emulation Software (EMUPack) Download</a>.</p>
+<p class="last">Alternatively installing or updating <a class="reference external" href="https://www.ti.com/tool/CCSTUDIO">Code Composer Studio™ (IDE)</a> may also add the necessary drivers.</p>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open Windows Command Line ( CMD ) and navigate into the XDS110 updates directory with this command:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> c:<span class="se">\t</span>i<span class="se">\s</span>implelink_wifi_toolbox_x.x.x<span class="se">\u</span>tility<span class="se">\x</span>ds110
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Execute the following command to show information of connected devices.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xdsdfu -e
+</pre></div>
+</div>
+<p>output should look like this:</p>
+</div></blockquote>
+<blockquote id="xds110-information">
+<div><div class="figure">
+<img alt="xdsdfu-e" src="../_images/xdsdfu-e.png" />
+</div>
+<p>Serial Number should be taken from “Serial Num:”</p>
+</div></blockquote>
+</div>
+<div class="section" id="ubuntu">
+<h4>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Open terminal and navigate into the XDS110 updates directory with this command:</li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/ti/simplelink_wifi_toolbox_x.x.x/communicator/xds110_updates
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Execute xdsduf application to see all connected devices</li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xdsdfu -e
+</pre></div>
+</div>
+<p>output should look like this:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/xdsdfu-e.png"><img alt="xdsdfu-e" src="../_images/xdsdfu-e.png" style="width: 418.8px; height: 210.0px;" /></a>
+</div>
+<p>Serial Number should be taken from “Serial Num:”</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="reset-device">
+<span id="how-to-reset-bp-cc33xx"></span><h3>Reset device<a class="headerlink" href="#reset-device" title="Permalink to this headline">¶</a></h3>
+<p>Instead of power cycling the device you may use the following command to reset the device:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xds110reset -a toggle
+</pre></div>
+</div>
+</div></blockquote>
+<p>Execute the following command for a list of reset options</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xds110reset --help
+</pre></div>
+</div>
+</div></blockquote>
+<p>Outputs:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NAME
+    xds110reset - Execute board reset via XDS110 probe
+
+SYNOPSIS
+    xds110reset &lt;option argument&gt; &lt;option argument&gt; ...
+
+DESCRIPTION
+    -a, --action &lt;NAME&gt;
+        choose an action to perform
+        NAME may be &quot;assert&quot;, &quot;deassert&quot;, or &quot;toggle&quot;
+        if not specified, toggle will be executed by default
+    -d, --delay &lt;VALUE&gt;
+        set the on-time for the reset toggle in milliseconds
+        has no effect if action is &quot;assert&quot; or &quot;deassert&quot;
+        if not specified, delay will be set to 50 ms
+    -s, --serial &lt;TEXT&gt;
+        select the XDS110 probe by serial number
+        TEXT is the serial number to use, up to eight characters
+        if not specified, the first XDS110 found will be used
+    -h, --help
+        display this text and cancel other options
+
+EXAMPLE
+    xds110reset -a toggle -d 100 -s 01234567
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="command_line_interface_basics.html" class="btn btn-neutral float-right" title="Radio Tool Command Line Interface User’s Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="programmer_user_guide.html" class="btn btn-neutral float-left" title="Programmer User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

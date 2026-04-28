@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_w_f_f3___hw_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>SDWFF3_HwAttrs</compoundname>
+    <includes refid="_s_d_w_f_f3_8h" local="no">SDWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ad254114330606f4784ea81c84d614801" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::baseAddr</definition>
+        <argsstring></argsstring>
+        <name>baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>SD HW register base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="312" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a314f40564e9fe72d8f23f10a9159552c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt number for HWip driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="315" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a4aa3864ffd595efed94d6cd85b57c824" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt priority for HWip driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="318" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a5aea0d14c1374a920dd034c9e7adf10e" prot="public" static="no" mutable="no">
+        <type>PowerWFF3_Resource</type>
+        <definition>PowerWFF3_Resource SDWFF3_HwAttrs::powerID</definition>
+        <argsstring></argsstring>
+        <name>powerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Peripheral ID for power driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="321" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a5a5df6d1b65a56d0ace48a9d40c02cf6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::DmaChannel</definition>
+        <argsstring></argsstring>
+        <name>DmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA channel for SD </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="324" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a6945dc799b7de010be06ed3732b3cbf1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::clkPin</definition>
+        <argsstring></argsstring>
+        <name>clkPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for clock I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="327" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a0d417194206ed0ba42c69183b755d66b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::clkPinMux</definition>
+        <argsstring></argsstring>
+        <name>clkPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for clock I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="330" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a27d15a1066f03b16f184aa4983f24cd5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::cmdPin</definition>
+        <argsstring></argsstring>
+        <name>cmdPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for command I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="333" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a23dcb210157583884e1063409d7ef900" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::cmdPinMux</definition>
+        <argsstring></argsstring>
+        <name>cmdPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for command I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="336" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ad69c926ebcd1903521bec77feeeaf505" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data0Pin</definition>
+        <argsstring></argsstring>
+        <name>data0Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 0 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="339" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1afc15e323127b2cce9ced42da54664a49" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data0PinMux</definition>
+        <argsstring></argsstring>
+        <name>data0PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 0 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="342" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a2f418ba570e7d44fb011167768b70a10" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data1Pin</definition>
+        <argsstring></argsstring>
+        <name>data1Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 1 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="345" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a6c6115ed407d5715d58fd7ccfd6e19ce" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data1PinMux</definition>
+        <argsstring></argsstring>
+        <name>data1PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 1 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="348" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a649c908d0df1e6c01b061f784e453b77" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data2Pin</definition>
+        <argsstring></argsstring>
+        <name>data2Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 2 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="351" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ac88722ddbbd41eec40c33aab6545f50a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data2PinMux</definition>
+        <argsstring></argsstring>
+        <name>data2PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 2 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="354" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a37ca4e99b71981becf38c1c4beff88d5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data3Pin</definition>
+        <argsstring></argsstring>
+        <name>data3Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 3 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="357" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a381b460f7ba76a333a0a68b4b7c8ec02" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::data3PinMux</definition>
+        <argsstring></argsstring>
+        <name>data3PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 3 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="360" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ace849967f6b679a237010a970d56c948" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::cdPin</definition>
+        <argsstring></argsstring>
+        <name>cdPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for card detect I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="363" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1afa8c5d472fbccd0d0914fac634ae8048" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::cdPinMux</definition>
+        <argsstring></argsstring>
+        <name>cdPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for card detect I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="366" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1af54179cba7f3b08a8f657c10a822d15a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::wpPin</definition>
+        <argsstring></argsstring>
+        <name>wpPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for write protect I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="369" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ae81209ff949a9e2edc4eb955483ca558" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::wpPinMux</definition>
+        <argsstring></argsstring>
+        <name>wpPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number write protect I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="372" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a3c8ab3e9a0bc9e329386150a49c47af3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::powPin</definition>
+        <argsstring></argsstring>
+        <name>powPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for HW power supply I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="375" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1ae4ccb7bf5175d4cc63feec6dd12f09b7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SDWFF3_HwAttrs::powPinMux</definition>
+        <argsstring></argsstring>
+        <name>powPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for HW power supply I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="378" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a113856374e6c65f5ff3804e37f0d3dee" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::numData</definition>
+        <argsstring></argsstring>
+        <name>numData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of data lines </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="381" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1aedaba197e2c671eae38797d82196f8d7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDWFF3_HwAttrs::divClk</definition>
+        <argsstring></argsstring>
+        <name>divClk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Card clock divider </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="384" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a08d3047b5292ee335bf14b9470990a70" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::cdEnable</definition>
+        <argsstring></argsstring>
+        <name>cdEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Card detect enable </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="387" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a50791a927124a2bcb60f30c641e65417" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::cdPolHigh</definition>
+        <argsstring></argsstring>
+        <name>cdPolHigh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is Card detect polarity high </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="390" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a5fbdd660fb904c3e559b57cc6208f123" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::wpEnable</definition>
+        <argsstring></argsstring>
+        <name>wpEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write protect enable </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="393" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a67716a82481b80795aef2b658cfe274d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::wpPolHigh</definition>
+        <argsstring></argsstring>
+        <name>wpPolHigh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is Write protect polarity high </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="396" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1a1e1ba874dbbdb2a764fa768b9eb8684e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::powEnable</definition>
+        <argsstring></argsstring>
+        <name>powEnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HW power supply enable </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="399" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_w_f_f3___hw_attrs_1aabffa63a2a8c46eecbf891b1827269de" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDWFF3_HwAttrs::powerOffInSleep</definition>
+        <argsstring></argsstring>
+        <name>powerOffInSleep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Card power off when host sleep </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sd/SDWFF3.h" line="402" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/sd/SDWFF3.h" line="310" column="1" bodyfile="source/ti/drivers/sd/SDWFF3.h" bodystart="309" bodyend="404"/>
+    <listofallmembers>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ad254114330606f4784ea81c84d614801" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>baseAddr</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a08d3047b5292ee335bf14b9470990a70" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cdEnable</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ace849967f6b679a237010a970d56c948" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cdPin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1afa8c5d472fbccd0d0914fac634ae8048" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cdPinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a50791a927124a2bcb60f30c641e65417" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cdPolHigh</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a6945dc799b7de010be06ed3732b3cbf1" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>clkPin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a0d417194206ed0ba42c69183b755d66b" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>clkPinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a27d15a1066f03b16f184aa4983f24cd5" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cmdPin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a23dcb210157583884e1063409d7ef900" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>cmdPinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ad69c926ebcd1903521bec77feeeaf505" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data0Pin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1afc15e323127b2cce9ced42da54664a49" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data0PinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a2f418ba570e7d44fb011167768b70a10" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data1Pin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a6c6115ed407d5715d58fd7ccfd6e19ce" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data1PinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a649c908d0df1e6c01b061f784e453b77" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data2Pin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ac88722ddbbd41eec40c33aab6545f50a" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data2PinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a37ca4e99b71981becf38c1c4beff88d5" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data3Pin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a381b460f7ba76a333a0a68b4b7c8ec02" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>data3PinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1aedaba197e2c671eae38797d82196f8d7" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>divClk</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a5a5df6d1b65a56d0ace48a9d40c02cf6" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>DmaChannel</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a314f40564e9fe72d8f23f10a9159552c" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>intNum</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a4aa3864ffd595efed94d6cd85b57c824" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a113856374e6c65f5ff3804e37f0d3dee" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>numData</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a1e1ba874dbbdb2a764fa768b9eb8684e" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>powEnable</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a5aea0d14c1374a920dd034c9e7adf10e" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>powerID</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1aabffa63a2a8c46eecbf891b1827269de" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>powerOffInSleep</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a3c8ab3e9a0bc9e329386150a49c47af3" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>powPin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ae4ccb7bf5175d4cc63feec6dd12f09b7" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>powPinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a5fbdd660fb904c3e559b57cc6208f123" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>wpEnable</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1af54179cba7f3b08a8f657c10a822d15a" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>wpPin</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1ae81209ff949a9e2edc4eb955483ca558" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>wpPinMux</name></member>
+      <member refid="struct_s_d_w_f_f3___hw_attrs_1a67716a82481b80795aef2b658cfe274d" prot="public" virt="non-virtual"><scope>SDWFF3_HwAttrs</scope><name>wpPolHigh</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

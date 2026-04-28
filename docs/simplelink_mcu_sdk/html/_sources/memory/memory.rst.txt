@@ -1,0 +1,65 @@
+Memory Overview
+===============
+
+.. warning::
+
+    This page is still under development
+
+The CC35xx device supports on-chip and off-chip memories. The memories are used for execution, data and
+non volatile memory. The on-chip memory includes SRAM and the off-chip memories supported are serial Flash
+and serial PSRAM.
+The SRAM is used for execution and data. It is divided into Tightly Coupled Memory (TCM) and non TCM. The
+Flash is non volatile memory used for execution and for data storage. The PSRAM is used as data storage.
+Each of the memories can be accessed by the M33 MCU, Host DMA and the μDMA. The host DMA is used for
+data transfer between peripherals and the device on-chip SRAM. The μDMA is used for data transfer between
+the external Flash/PSRAM and on-chip SRAM.
+
+Configuring External Memory
+---------------------------
+
+The following section will explain how to choose the appropriate memory options when building applications.
+
+Supported Flashes
+^^^^^^^^^^^^^^^^^
+
+The |DEVICE| currently supports the following flash devices
+
++---------------+---------------------+-----------+
+|Vendor         | Name                |  Size(MB) |
++===============+=====================+===========+
+|ISSI           | IS25WJ032F          | 4         |
++---------------+---------------------+-----------+
+|ISSI           | IS25WJ064F          | 8         |
++---------------+---------------------+-----------+
+|Winbond        | W25Q32JW            | 4         |
++---------------+---------------------+-----------+
+|Winbond        | W25Q64JW            | 8         |
++---------------+---------------------+-----------+
+|Gigadevice     | GD25LF32E           | 4         |
++---------------+---------------------+-----------+
+|Gigadevice     | GD25LF64E           | 8         |
++---------------+---------------------+-----------+
+|Puya           | PY25Q32LB           | 4         |
++---------------+---------------------+-----------+
+|Puya           | PY25Q64LB           | 8         |
++---------------+---------------------+-----------+
+
+.. Warning::
+
+    When choosing external flash, the flash chosen must support SPI for initial setup before switching to xSPI
+
+In the `Memory Map` module of the CC35xx syscfg file there will be a drop down menu of all the current supported Flashes
+as well as a drop down menu to choose what PSRAM is connected to the device, if any.
+
+.. figure:: resources/supported_flashes.png
+   :align: center
+   :scale: 80
+
+Choosing the appropriate flash is important. Sysconfig will automatically map the addresses of image containers, fw container,
+bootloaders, and Non Volatile storage in accordance to flash type. These addresses can be found in the generated file
+`ti_flash_map_config.c`
+
+.. figure:: resources/memory_map.png
+   :align: center
+   :scale: 80
+

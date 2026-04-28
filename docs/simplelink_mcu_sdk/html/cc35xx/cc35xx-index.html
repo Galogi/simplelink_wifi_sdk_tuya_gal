@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SimpleLink Wi-Fi SDK User’s Guide &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to the SimpleLink Wi-Fi SDK" href="index-platform.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug cc35xx cc35xx-index";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SimpleLink Wi-Fi SDK User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simplelink-wi-fi-sdk-user-s-guide">
+<h1>SimpleLink Wi-Fi SDK User’s Guide<a class="headerlink" href="#simplelink-wi-fi-sdk-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Table of contents</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/hardware-overview.html">Hardware Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/software-overview.html">Software Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-overview.html">Overview &amp; Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-basic-operations.html#get-and-set">GET and SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-http.html">HTTP Client and Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-sockets.html">Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-network-addresses.html">Network Address - Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-sntp.html">SNTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-throughput-test.html">Throughput Testing Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-p2p.html">Peer to Peer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wifi/cc35xx-power-management.html">Power Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ble/cc35xx-overview.html">Overview and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/cc35xx-basic-operations.html">Basic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/cc35xx-running-ble-provisioning.html">Running BLE Provisioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/gap.html">Generic Access Profile (GAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/gatt.html">Generic Attribute Profile (GATT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/phy.html">Physical Layer (PHY)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ble/hci/hci.html">Vendor Specific HCI Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="activation.html">Device Activation &amp; Fuses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="activation.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation.html#fuses">Fuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation.html#future-programming">Future Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation.html#wi-fi-toolbox-cli">Wi-Fi Toolbox CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../memory/memory.html">Memory Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../memory/cc35xx-nvs.html">NVS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../memory/mem-map.html">Flash Mapping &amp; Boot-Sector</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security/network-security.html">Network Layer Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/secure-boot.html">Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/secure-debug.html">Secure Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/hsm.html">The Hardware Security Module (HSM)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ota.html">Over the Air Update (OTA)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ota.html#ota-container-states">OTA Container States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ota.html#ota-process">OTA Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ota.html#enabling-ota">Enabling OTA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ota.html#ota-nvs-region">OTA &amp; NVS Region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ota.html#ota-limitations">OTA Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples-index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="software/cc35xx-at-commands.html">AT Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calibrator.html">Calibrator Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../building/configuration.html">Radio Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/rebuild_lib.html">Making Choices for Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/creating_image.html">Creating and Flashing Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/config.html#posix-support">POSIX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/config.html#driver-porting-layer-dpl">Driver Porting Layer (DPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/config.html#using-freertos-with-ccs">Using FreeRTOS with CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/config.html#freertos-modules">FreeRTOS modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/power.html">Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/rov.html">Debugging FreeRTOS with Runtime Object View (ROV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/software-timers.html">Software Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freertos/synchronization.html">Thread Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../migration/cc35xx-sdk-migration.html">ALL VERSIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migration/sdk-9-13-00-13.html">Migration from 9.10.00.01 → 9.13.00.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migration/sdk-9-13-01-04.html">Migration from 9.13.00.13 → 9.13.01.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migration/sdk-9-20-00-07.html">Migration from 9.13.01.14 → 9.20.00.07</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../migration/sdk-9-21-00-09.html">Migration from 9.20.00.07 → 9.21.00.09</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="index-platform.html" class="btn btn-neutral float-right" title="Introduction to the SimpleLink Wi-Fi SDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

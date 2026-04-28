@@ -1,0 +1,1212 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <title>TI Secure Drivers SysConfig Reference</title>
+    <link href="../../doxygen/html/tiapistylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody><tr>
+        <td bgcolor="black" width="1"><a href="https://www.ti.com"><img border="0" src="../../doxygen/html/tilogo.gif" /></a></td>
+        <td bgcolor="red"><img src="../../doxygen/html/titagline.gif" /></td>
+     </tr></tbody>
+    </table>
+    <div class="contents">
+      <div class="textblock">
+        <div id="AESCBC_Description">
+          <h1 class="headertitle" title="AESCBC Description">AESCBC: AES (Advanced Encryption Standard) Cipher Block Chaining Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_c_b_c_8h.html#details" title="C API reference"><strong>AESCBC driver</strong></a> encrypts messages of any practical
+length that have a length evenly divisible by the block size.
+Unlike ECB, it guarantees confidentiality of the entire message.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_b_c_8h.html#ti_drivers_AESCBC_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_b_c_8h.html#ti_drivers_AESCBC_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESCBC_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESCBC_Description -->
+        <div id="AESCBC_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESCBC configuration options">AESCBC Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESCBC</var><a href="#ti_drivers_AESCBC_aescbcImplementation"><code>.aescbcImplementation</code></a><code> = 'AESCBCXXF3';</code></td><td><code>// AESCBC Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESCBC_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESCBC_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESCBC driver as a whole">AESCBC Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCBC_aescbcImplementation"></a>AESCBC Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESCBC</var><code>.aescbcImplementation = 'AESCBCXXF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESCBC delegates available for the CC3500 device.<p /><p>Displays AESCBC delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESCBCXXF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESCBC_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESCBC instance">AESCBC Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCBC_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="AESCCM_Description">
+          <h1 class="headertitle" title="AESCCM Description">AESCCM: AES (Advanced Encryption Standard) Counter with Cipher Block Chaining Message Authentication Code (CBC-MAC) Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_c_c_m_8h.html#details" title="C API reference"><strong>AESCCM driver</strong></a> combines CBC-MAC with an AES block cipher
+in CTR mode of operation. This combination of block cipher modes
+enables CCM to encrypt messages of any length and not only
+multiples of the block cipher block size.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_c_m_8h.html#ti_drivers_AESCCM_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_c_m_8h.html#ti_drivers_AESCCM_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESCCM_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESCCM_Description -->
+        <div id="AESCCM_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESCCM configuration options">AESCCM Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESCCM</var><a href="#ti_drivers_AESCCM_aesccmImplementation"><code>.aesccmImplementation</code></a><code> = 'AESCCMXXF3';</code></td><td><code>// AESCCM Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESCCM_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESCCM_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESCCM driver as a whole">AESCCM Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCCM_aesccmImplementation"></a>AESCCM Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESCCM</var><code>.aesccmImplementation = 'AESCCMXXF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESCCM delegates available for the CC3500 device.<p /><p>Displays AESCCM delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESCCMXXF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESCCM_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESCCM instance">AESCCM Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCCM_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="AESCMAC_Description">
+          <h1 class="headertitle" title="AESCMAC Description">AESCMAC: AES (Advanced Encryption Standard) Cipher-based Message Authentication Code (CMAC)</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_c_m_a_c_8h.html#details" title="C API reference"><strong>AESCMAC driver</strong></a> generates or verifies a message authentication
+code using AES in CMAC or CBC-MAC mode.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_m_a_c_8h.html#ti_drivers_AESCMAC_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_m_a_c_8h.html#ti_drivers_AESCMAC_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESCMAC_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESCMAC_Description -->
+        <div id="AESCMAC_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESCMAC configuration options">AESCMAC Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESCMAC</var><a href="#ti_drivers_AESCMAC_aescmacImplementation"><code>.aescmacImplementation</code></a><code> = 'AESCMACXXF3';</code></td><td><code>// AESCMAC Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESCMAC_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESCMAC_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESCMAC driver as a whole">AESCMAC Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCMAC_aescmacImplementation"></a>AESCMAC Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESCMAC</var><code>.aescmacImplementation = 'AESCMACXXF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESCMAC delegates available for the CC3500 device.<p /><p>Displays AESCMAC delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESCMACXXF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESCMAC_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESCMAC instance">AESCMAC Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCMAC_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="AESCTR_Description">
+          <h1 class="headertitle" title="AESCTR Description">AESCTR: AES (Advanced Encryption Standard) Counter Mode Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_c_t_r_8h.html#details" title="C API reference"><strong>AESCTR driver</strong></a> encrypts messages of any practical
+length. Unlike AESECB, it guarantees confidentiality of the
+entire message when the message is larger than one block.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_t_r_8h.html#ti_drivers_AESCTR_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_c_t_r_8h.html#ti_drivers_AESCTR_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESCTR_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESCTR_Description -->
+        <div id="AESCTR_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESCTR configuration options">AESCTR Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESCTR</var><a href="#ti_drivers_AESCTR_aesctrImplementation"><code>.aesctrImplementation</code></a><code> = 'AESCTRXXF3';</code></td><td><code>// AESCTR Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESCTR_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESCTR_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESCTR driver as a whole">AESCTR Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCTR_aesctrImplementation"></a>AESCTR Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESCTR</var><code>.aesctrImplementation = 'AESCTRXXF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESCTR delegates available for the CC3500 device.<p /><p>Displays AESCTR delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESCTRXXF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESCTR_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESCTR instance">AESCTR Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESCTR_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="AESECB_Description">
+          <h1 class="headertitle" title="AESECB Description">AESECB: AES (Advanced Encryption Standard) Electronic Code Book (ECB) Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_e_c_b_8h.html#details" title="C API reference"><strong>AESECB driver</strong></a> encrypts or decrypts one or multiple blocks
+of plain-text or cipher-text by directly encrypting or decrypting
+input blocks using AES.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_e_c_b_8h.html#ti_drivers_AESECB_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_e_c_b_8h.html#ti_drivers_AESECB_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESECB_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESECB_Description -->
+        <div id="AESECB_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESECB configuration options">AESECB Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESECB</var><a href="#ti_drivers_AESECB_aesecbImplementation"><code>.aesecbImplementation</code></a><code> = 'AESECBXXF3';</code></td><td><code>// AESECB Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESECB_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESECB_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESECB driver as a whole">AESECB Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESECB_aesecbImplementation"></a>AESECB Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESECB</var><code>.aesecbImplementation = 'AESECBXXF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESECB delegates available for the CC3500 device.<p /><p>Displays AESECB delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESECBXXF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESECB_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESECB instance">AESECB Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESECB_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="AESGCM_Description">
+          <h1 class="headertitle" title="AESGCM Description">AESGCM: AES (Advanced Encryption Standard) Galois Counter Mode (GCM) Driver </h1>
+<p>The <a href="/secure_drivers/doxygen/html/_a_e_s_g_c_m_8h.html#details" title="C API reference"><strong>AESGCM driver</strong></a> combines GHASH with the AES block cipher
+in CTR mode of operation. This combination of block cipher mode
+and GHASH based MAC enables GCM to encrypt messages of any
+length and not only multiples of the block cipher block size.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_g_c_m_8h.html#ti_drivers_AESGCM_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_a_e_s_g_c_m_8h.html#ti_drivers_AESGCM_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#AESGCM_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end AESGCM_Description -->
+        <div id="AESGCM_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all AESGCM configuration options">AESGCM Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>AESGCM</var><a href="#ti_drivers_AESGCM_aesgcmImplementation"><code>.aesgcmImplementation</code></a><code> = 'AESGCMLPF3';</code></td><td><code>// AESGCM Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_AESGCM_interruptPriority"><code>.interruptPriority</code></a><code> = '15';</code></td><td><code>// Interrupt Priority</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="AESGCM_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the AESGCM driver as a whole">AESGCM Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESGCM_aesgcmImplementation"></a>AESGCM Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>AESGCM</var><code>.aesgcmImplementation = 'AESGCMLPF3']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays AESGCM delegates available for the CC3500 device.<p /><p>Displays AESGCM delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'AESGCMLPF3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="AESGCM_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added AESGCM instance">AESGCM Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_AESGCM_interruptPriority"></a>Interrupt Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.interruptPriority = '15'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Crypto peripheral interrupt priority<p /><p>This configuration allows you to configure the
+hardware interrupt priority.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'15'</code></td><td style="padding:10px"><code>15 - Lowest Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'14'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'13'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'12'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'11'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'10'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'9'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'8'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'7'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'6'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'5'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'4'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'3'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'2'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'1'</code></td><td style="padding:10px"><code>1 - Highest Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="CryptoKeyKeyStore_PSA_Description">
+          <h1 class="headertitle" title="CryptoKeyKeyStore_PSA Description">CryptoKeyKeyStore_PSA: PSA Crypto and KeyStore</h1>
+<p>The <a href="/psa_crypto/doxygen/html/crypto_8h.html#details" title="C API reference"><strong>PSA Crypto API</strong></a> provides APIs to import, export, copy, and destroy
+KeyStore keys which are referenced using a key identifier. These keys
+are subject to usage restrictions as defined by the key attributes assigned
+during key import. Depending on these restrictions, the keys can be used
+via their key identifiers for future PSA Crypto operations.</p>
+
+          <hr />
+        </div> <!-- end CryptoKeyKeyStore_PSA_Description -->
+        <div id="CryptoKeyKeyStore_PSA_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all CryptoKeyKeyStore_PSA configuration options">CryptoKeyKeyStore_PSA Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_totalSlotCount"><code>.totalSlotCount</code></a><code> = 59;</code></td><td><code>// Total Key Slots</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_assetStoreSlotCount"><code>.assetStoreSlotCount</code></a><code> = 53;</code></td><td><code>// Asset Store Key Slots</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_persistentKeyCacheSlots"><code>.persistentKeyCacheSlots</code></a><code> = 1;</code></td><td><code>// Persistent Key Cache Slots</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_volatileSlotCount"><code>.volatileSlotCount</code></a><code> = 5;</code></td><td><code>// Volatile Key Slots</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_volatileMemoryPoolSize"><code>.volatileMemoryPoolSize</code></a><code> = 2760;</code></td><td><code>// Volatile Key Material Storage Space</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ramUsage"><code>.ramUsage</code></a><code> = 6123;</code></td><td><code>// KeyStore RAM Usage (bytes)</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_persistentNumKeys"><code>.persistentNumKeys</code></a><code> = 45;</code></td><td><code>// Number of Persistent Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_useSWCrypto"><code>.useSWCrypto</code></a><code> = true;</code></td><td><code>// Use MbedTLS SW Crypto</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_aesConfig"><code>.aesConfig</code></a><code> = ;</code></td><td><code>// Volatile AES Key Configuration</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc224PlaintextNumVolatile"><code>.ecc224PlaintextNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-224 Plaintext Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc256PlaintextNumVolatile"><code>.ecc256PlaintextNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-256 Plaintext Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc384PlaintextNumVolatile"><code>.ecc384PlaintextNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-384 Plaintext Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc512PlaintextNumVolatile"><code>.ecc512PlaintextNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-512 Plaintext Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc521PlaintextNumVolatile"><code>.ecc521PlaintextNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-521 Plaintext Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc224EncryptedNumVolatile"><code>.ecc224EncryptedNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-224 Encrypted Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc256EncryptedNumVolatile"><code>.ecc256EncryptedNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-256 Encrypted Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc384EncryptedNumVolatile"><code>.ecc384EncryptedNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-384 Encrypted Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc512EncryptedNumVolatile"><code>.ecc512EncryptedNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-512 Encrypted Keys</code></td></tr>
+            <tr><td><var>CryptoKeyKeyStore_PSA</var><a href="#ti_drivers_CryptoKeyKeyStore_PSA_ecc521EncryptedNumVolatile"><code>.ecc521EncryptedNumVolatile</code></a><code> = 0;</code></td><td><code>// ECC-521 Encrypted Keys</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="CryptoKeyKeyStore_PSA_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the CryptoKeyKeyStore_PSA driver as a whole">CryptoKeyKeyStore_PSA Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_totalSlotCount"></a>Total Key Slots
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.totalSlotCount = 59]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The total number of keys (of any lifetime) that can be placed in KeyStore. Each key slot, regardless of key type, occupies 83 bytes of data for metadata alone.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_assetStoreSlotCount"></a>Asset Store Key Slots
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.assetStoreSlotCount = 53]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Sets the number of keys that can be actively stored in the HSM Asset Store.<p /><p>This value changes the number of HSM Asset Store keys that can be referenced by KeyStore at once. The slot count should be reduced per the needs of the application, to save RAM usage by KeyStore slots.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_persistentKeyCacheSlots"></a>Persistent Key Cache Slots
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.persistentKeyCacheSlots = 1]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Pre-define a non-configurable value for the number of slots that will be reserved to cache keys that also get stored in NVM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_volatileSlotCount"></a>Volatile Key Slots
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.volatileSlotCount = 5]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The number of volatile keys that can be stored in KeyStore at a given time. This is determined by the number of volatile keys that are selected for usage.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_volatileMemoryPoolSize"></a>Volatile Key Material Storage Space
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.volatileMemoryPoolSize = 2760]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the amount of RAM space that will be necessary to hold the specified number of volatile keys of the given sizes, as well as the space required for caching 3 persistent keys, in KeyStore's memory allocator pool.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ramUsage"></a>KeyStore RAM Usage (bytes)
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ramUsage = 6123]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> RAM space required for all keys and key metadata.<p /><p>This is the amount of RAM space that will be necessary to hold the specified number of keys of the given sizes &amp; types, as well as the space required for caching 1 persistent keys and storing all key metadata.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_persistentNumKeys"></a>Number of Persistent Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.persistentNumKeys = 45]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of keys that can be stored in KeyStore flash at a given time.<p /><p>This value should be set based on the flash size available for KeyStore, as determined by the Memory Map SysConfig module. 45 keys require at least 16KB of KeyStore flash space. Another known valid configuration is 22 keys for 8KB of flash space.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_useSWCrypto"></a>Use MbedTLS SW Crypto
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.useSWCrypto = true]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Allows MbedTLS SW Crypto implementations to be used for select crypto operations that the HSM doesn't support.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_aesConfig"></a>Volatile AES Key Configuration
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.aesConfig = ]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc224PlaintextNumVolatile"></a>ECC-224 Plaintext Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc224PlaintextNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-224 keys planned to be used and stored in plaintext in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc256PlaintextNumVolatile"></a>ECC-256 Plaintext Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc256PlaintextNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-256 keys planned to be used and stored in plaintext in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc384PlaintextNumVolatile"></a>ECC-384 Plaintext Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc384PlaintextNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-384 keys planned to be used and stored in plaintext in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc512PlaintextNumVolatile"></a>ECC-512 Plaintext Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc512PlaintextNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-512 keys planned to be used and stored in plaintext in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc521PlaintextNumVolatile"></a>ECC-521 Plaintext Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc521PlaintextNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-521 keys planned to be used and stored in plaintext in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc224EncryptedNumVolatile"></a>ECC-224 Encrypted Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc224EncryptedNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-224 keys planned to be used and stored in encrypted format in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc256EncryptedNumVolatile"></a>ECC-256 Encrypted Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc256EncryptedNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-256 keys planned to be used and stored in encrypted format in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc384EncryptedNumVolatile"></a>ECC-384 Encrypted Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc384EncryptedNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-384 keys planned to be used and stored in encrypted format in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc512EncryptedNumVolatile"></a>ECC-512 Encrypted Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc512EncryptedNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-512 keys planned to be used and stored in encrypted format in Key Store RAM.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_CryptoKeyKeyStore_PSA_ecc521EncryptedNumVolatile"></a>ECC-521 Encrypted Keys
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>CryptoKeyKeyStore_PSA</var><code>.ecc521EncryptedNumVolatile = 0]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This is the number of ECC-521 keys planned to be used and stored in encrypted format in Key Store RAM.<p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="ECDSA_Description">
+          <h1 class="headertitle" title="ECDSA Description">ECDSA: Elliptic Curve Digital Signature Algorithm (ECDSA) Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_e_c_d_s_a_8h.html#details" title="C API reference"><strong>ECDSA driver</strong></a> provides APIs for generating and verifying digital
+signatures.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_e_c_d_s_a_8h.html#ti_drivers_ECDSA_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_e_c_d_s_a_8h.html#ti_drivers_ECDSA_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#ECDSA_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end ECDSA_Description -->
+        <div id="ECDSA_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all ECDSA configuration options">ECDSA Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>ECDSA</var><a href="#ti_drivers_ECDSA_ecdsaImplementation"><code>.ecdsaImplementation</code></a><code> = 'ECDSAXXF3HSM';</code></td><td><code>// ECDSA Implementation</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="ECDSA_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the ECDSA driver as a whole">ECDSA Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_ECDSA_ecdsaImplementation"></a>ECDSA Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>ECDSA</var><code>.ecdsaImplementation = 'ECDSAXXF3HSM']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays ECDSA delegates available for the CC3500 device.<p /><p>Displays ECDSA delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'ECDSAXXF3HSM'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="EDDSA_Description">
+          <h1 class="headertitle" title="EDDSA Description">EDDSA: Edwards Curve Digital Signature Algorithm (EDDSA) Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_e_d_d_s_a_8h.html#details" title="C API reference"><strong>EDDSA driver</strong></a> provides APIs for generating
+and verifying digital signatures.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_e_d_d_s_a_8h.html#ti_drivers_EDDSA_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_e_d_d_s_a_8h.html#ti_drivers_EDDSA_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#EDDSA_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end EDDSA_Description -->
+        <div id="EDDSA_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all EDDSA configuration options">EDDSA Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>EDDSA</var><a href="#ti_drivers_EDDSA_eddsaImplementation"><code>.eddsaImplementation</code></a><code> = 'EDDSAXXF3HSM';</code></td><td><code>// EDDSA Implementation</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="EDDSA_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the EDDSA driver as a whole">EDDSA Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_EDDSA_eddsaImplementation"></a>EDDSA Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>EDDSA</var><code>.eddsaImplementation = 'EDDSAXXF3HSM']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays EDDSA delegates available for the CC3500 device.<p /><p>Displays EDDSA delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'EDDSAXXF3HSM'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="RNG_Description">
+          <h1 class="headertitle" title="RNG Description">RNG: Random Number Generator (RNG)</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_r_n_g_8h.html#details" title="C API reference"><strong>RNG driver</strong></a> generates random data of variable
+lengths from a pool of entropy. The pool of entropy is maintained by the
+driver using implementation-specific sources of entropy.
+The output is suitable for applications requiring cryptographically
+random data such as keying material for private or symmetric keys.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_r_n_g_8h.html#ti_drivers_RNG_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_r_n_g_8h.html#ti_drivers_RNG_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#RNG_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end RNG_Description -->
+        <div id="RNG_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all RNG configuration options">RNG Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>RNG</var><a href="#ti_drivers_RNG_rngReturnBehavior"><code>.rngReturnBehavior</code></a><code> = 'RNG_RETURN_BEHAVIOR_POLLING';</code></td><td><code>// Return Behavior</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_RNG_$name"><code>.$name</code></a><code> = 'CONFIG_RNG_{num}';</code></td><td><code>// Name</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="RNG_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the RNG driver as a whole">RNG Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_RNG_rngReturnBehavior"></a>Return Behavior
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>RNG</var><code>.rngReturnBehavior = 'RNG_RETURN_BEHAVIOR_POLLING']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The return behavior (RNG_RETURN_BEHAVIOR) which will be used for all instances of the driver. All instances must be opened using this setting.<p />
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'RNG_RETURN_BEHAVIOR_POLLING'</code></td><td style="padding:10px"><code>Polling</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'RNG_RETURN_BEHAVIOR_BLOCKING'</code></td><td style="padding:10px"><code>Blocking</code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="RNG_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added RNG instance">RNG Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_RNG_$name"></a>Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.$name = 'CONFIG_RNG_{num}'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The C/C++ identifier used in applications as the index parameter passed to RNG runtime APIs<p /><p>This name is declared in the generated ti_drivers_config.h file so applications can reference this instance symbolically. Additionally, this name is used to declare an &#39;extern const&#39; which allows libraries to define symbolic names for required driver configurations <em>without</em> needing to rebuild library source files. The &#39;const&#39; identifier is declared as the same name with a <strong>_CONST</strong> suffix. The name can be set to any globally unique name that is also a valid C/C++ identifier.</p>
+<p>The SysConfig tooling ensures that <em>all</em> names defined in a configuration are unique.  When instances are first created, SysConfig gives them a default name, <code>CONFIG_RNG_</code>, that&#39;s made unique by appending a numeric id.  If you provide a name, it&#39;s checked against all other instance names in the configuration and, if another instance has the same name, an error is triggered. The additional &#39;const&#39; declaration is assumed to also be globally unique.</p>
+<p>Note: since not all names are added to ti_drivers_config.h, it&#39;s possible that some names will not be allowed even though they do not actually collide in the generated files.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="SHA2_Description">
+          <h1 class="headertitle" title="SHA2 Description">SHA2: Secure Hash Algorithm (SHA2) Driver</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_s_h_a2_8h.html#details" title="C API reference"><strong>SHA2 driver</strong></a> provides access to the
+SHA2 family of cryptographic hashes that map an
+input of arbitrary length to a fixed-length output
+with negligible probability of collision.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_s_h_a2_8h.html#ti_drivers_SHA2_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_s_h_a2_8h.html#ti_drivers_SHA2_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#SHA2_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end SHA2_Description -->
+        <div id="SHA2_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all SHA2 configuration options">SHA2 Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>SHA2</var><a href="#ti_drivers_SHA2_sha2Implementation"><code>.sha2Implementation</code></a><code> = 'SHA2XXF3HSM';</code></td><td><code>// SHA2 Implementation</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="SHA2_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the SHA2 driver as a whole">SHA2 Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_SHA2_sha2Implementation"></a>SHA2 Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>SHA2</var><code>.sha2Implementation = 'SHA2XXF3HSM']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays SHA2 delegates available for the CC3500 device.<p /><p>Displays SHA2 delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'SHA2XXF3HSM'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="TRNG_Description">
+          <h1 class="headertitle" title="TRNG Description">TRNG: True Random Number Generator (TRNG)</h1>
+<p>The <a href="/secure_drivers/doxygen/html/_t_r_n_g_8h.html#details" title="C API reference"><strong>TRNG driver</strong></a> generates numbers of
+variable lengths from a source of entropy. The output
+is suitable for applications requiring cryptographically
+secure random numbers such as keying material for
+private or symmetric keys.</p>
+<ul>
+<li><a href="/secure_drivers/doxygen/html/_t_r_n_g_8h.html#ti_drivers_TRNG_Synopsis" title="Basic C usage summary">Usage Synopsis</a></li>
+<li><a href="/secure_drivers/doxygen/html/_t_r_n_g_8h.html#ti_drivers_TRNG_Examples" title="C usage examples">Examples</a></li>
+<li><a href="/secure_drivers/syscfg/html/ConfigDoc.html#TRNG_Configuration_Options" title="Configuration options reference">Configuration Options</a></li>
+</ul>
+
+          <hr />
+        </div> <!-- end TRNG_Description -->
+        <div id="TRNG_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all TRNG configuration options">TRNG Configuration Synopsis</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>TRNG</var><a href="#ti_drivers_TRNG_trngImplementation"><code>.trngImplementation</code></a><code> = 'TRNGXXF3HSM';</code></td><td><code>// TRNG Implementation</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_drivers_TRNG_$name"><code>.$name</code></a><code> = 'CONFIG_TRNG_{num}';</code></td><td><code>// Name</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="TRNG_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the TRNG driver as a whole">TRNG Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_TRNG_trngImplementation"></a>TRNG Implementation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>TRNG</var><code>.trngImplementation = 'TRNGXXF3HSM']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Displays TRNG delegates available for the CC3500 device.<p /><p>Displays TRNG delegates available for the CC3500 device.</p>
+<p>Since there is only one delegate, it is a read-only value that cannot be changed.
+Please refer to the <a href="/drivers/doxygen/html/index.html#drivers"><strong>TI-Drivers implementation matrix</strong></a> for all
+available drivers and documentation.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'TRNGXXF3HSM'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="TRNG_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added TRNG instance">TRNG Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_drivers_TRNG_$name"></a>Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.$name = 'CONFIG_TRNG_{num}'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The C/C++ identifier used in applications as the index parameter passed to TRNG runtime APIs<p /><p>This name is declared in the generated ti_drivers_config.h file so applications can reference this instance symbolically. Additionally, this name is used to declare an &#39;extern const&#39; which allows libraries to define symbolic names for required driver configurations <em>without</em> needing to rebuild library source files. The &#39;const&#39; identifier is declared as the same name with a <strong>_CONST</strong> suffix. The name can be set to any globally unique name that is also a valid C/C++ identifier.</p>
+<p>The SysConfig tooling ensures that <em>all</em> names defined in a configuration are unique.  When instances are first created, SysConfig gives them a default name, <code>CONFIG_TRNG_</code>, that&#39;s made unique by appending a numeric id.  If you provide a name, it&#39;s checked against all other instance names in the configuration and, if another instance has the same name, an error is triggered. The additional &#39;const&#39; declaration is assumed to also be globally unique.</p>
+<p>Note: since not all names are added to ti_drivers_config.h, it&#39;s possible that some names will not be allowed even though they do not actually collide in the generated files.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <a id="How_to_Read_SysConfig_Synopsis_Lines"></a>
+        <h3>How to Read SysConfig Synopsis Lines</h3>
+        <p>SysConfig configuration scripts consist of a sequence of assignments
+          to configuration parameters defined by the modules used in an
+          application.  There are two types of assignments: assignments to
+          module-level configuration parameters (that apply to all
+          instances of the module) and assignments to instance-level
+          configuration parameters (which are specific to the instance
+          alone). All configuration parameters have a default value
+          that's used in the event that it's not explicitly set in the
+          configuration script.
+        </p>
+        <p>Synopsis lines of the form<br />
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>MOD</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrate an assignment of a module configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>Similarily,<br />
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>inst</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrates an assignment of a instance configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>For example, the following is a snippet of a SysConfg
+          script that configures the GPIO module and a GPIO instance.
+        </p>
+        <div class="fragment">
+          <div class="line"><span class="comment">// Add the GPIO module to this configuration</span></div>
+          <div class="line"><span class="keyword">var</span> GPIO = system.addModule('/ti/drivers/GPIO');</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set a GPIO module configuration parameter</span></div>
+          <div class="line">GPIO.optimizeCallbackTableSize = true;</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Add a new GPIO instance</span></div>
+          <div class="line"><span class="keyword">var</span> led = GPIO.addInstance();</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set this instance's configuration parameters</span></div>
+          <div class="line">led.$name = 'LED';</div>
+          <div class="line">led.mode = 'Output';</div>
+        </div> <!-- end class "fragment" -->
+      </div> <!-- end class "textblock" -->
+    </div> <!-- end class "contents" -->
+  </body>
+</html>

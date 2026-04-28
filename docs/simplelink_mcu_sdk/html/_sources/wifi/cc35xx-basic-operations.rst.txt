@@ -1,0 +1,502 @@
+.. _sec-wifi-basic-operations:
+
+Basic Operations
+================
+
+Each of these WLAN commands eventually calls an API in the lower layer that is represented by the ``wlan_if.c`` file.
+This file is part of the ``wifi_stack.a`` library.
+Following is a detailed explanation of each WLAN command and its API in the ``wifi_stack.a`` library.
+
+wlan_start
+----------
+
+This command turns on the WLAN device, initialize the several threads (like CME, transport, event, etc), and initialize the host interface.
+During the process, the containers (FW, bootloader and configuration binaries) are loaded from the NVMEM and programmed to the MAC layer.
+This step should be the first, otherwise there will be no communication with the device.
+
+An eventHandler Callback must be passed as a parameter, see the example below.
+
+The API to start WLAN in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
+        {
+                void *staif = NULL;
+
+                if(!pWlanEvent)
+                {
+                        return;
+                }
+                switch(pWlanEvent->Id)
+                {
+                        case WLAN_EVENT_CONNECT:
+                        {
+                        }
+                        break;
+                        case WLAN_EVENT_DISCONNECT:
+                        {
+                        }
+                        break;
+                        case WLAN_EVENT_SCAN_RESULT:
+                        {
+                        }
+                        break;
+                        default:
+                        {
+                                UART_PRINT("\n\r[WLAN EVENT HANDLER] Unexpected event [%d]\n\r",
+                                        pWlanEvent->Id);
+                        }
+                        break;
+                }
+        }
+
+.. code-block:: c
+
+        int32_t ret = 0;
+
+        ret = Wlan_Start(WlanStackEventHandler);
+
+        if (ret == OSI_OK)
+        {
+                Report("\n\rWlan start success!");
+        }
+        else
+        {
+                Report("\n\rWlan start failed: %d. please refer errors.h \n\r", ret);
+        }
+
+wlan_stop
+---------
+
+This command turns off the WLAN device and deactivates the host interface.
+During the process, the threads are deleted and queues and semaphores destroyed.
+This step should be the last.
+The API to stop WLAN in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        ret = Wlan_Stop(void);
+        if (0 == ret)
+        {
+                Report("\n\r   Wlan stop success!");
+        }
+        else
+        {
+                Report("\n\r   Wlan stop failed: %d. please refer errors.h\n\r", ret);
+        }
+
+
+wlan_sta_role_up
+----------------
+
+This command adds and starts a station role. 
+
+.. note::
+        
+        Be sure to call the correct Wlan_Set(WLAN_SET_STA_WIFI_BAND, &sta_wifi_band) to select 5GHz or else 5GHz will not work! 
+
+The API to add a network interface in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int32_t ret = 0;
+        RoleUpStaCmd_t RoleUpStaParams;
+        memset(&RoleUpStaParams, 0x0, sizeof(RoleUpStaCmd_t));
+
+        //Set 2.4G and 5G
+        uint8_t sta_wifi_band =  (uint8_t)BAND_SEL_BOTH;
+        Wlan_Set(WLAN_SET_STA_WIFI_BAND, &sta_wifi_band);
+
+        RoleUpStaParams.wpsDisabled = TRUE; /* WPS is enabled by default */
+
+        ret = Wlan_RoleUp(WLAN_ROLE_STA, &RoleUpStaParams, WLAN_WAIT_FOREVER);
+
+wlan_sta_role_down
+------------------
+
+This command stops and removes a station role.
+If the station is connected to an AP, the connection is first terminated.
+During the process, a network interface is removed from the network stack (LwIP) and eventually a station role is removed.
+
+The API to remove a network interface in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int32_t ret = 0;
+        
+        if(connected)
+        {
+                ret = Wlan_Disconnect(WLAN_ROLE_STA,NULL);
+        }
+        
+        if(OSI_OK != ret)
+        {
+                Report("WlanDisconnect() failed");
+                return ret;
+        }
+
+        ret = Wlan_RoleDown(WLAN_ROLE_STA, WLAN_WAIT_FOREVER);
+
+wlan_ap_role_up
+---------------
+
+This command adds and starts an AP role.
+During the process, a network interface is added to the network stack (LwIP) and eventually an AP role is added.
+
+The API to add a network interface in the ``network_lwip.c``  library::
+
+.. code-block:: c
+
+        void network_stack_add_if_ap()
+
+The API in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int32_t      ret = 0;
+        RoleUpApCmd_t RoleUpApParams;
+        
+        /* Call the command parser */
+        memset(&RoleUpApParams, 0x0, sizeof(RoleUpApParams));
+        
+        /* Set default parameters */
+        RoleUpApParams.sta_limit = 4;
+        RoleUpApParams.hidden = FALSE;
+        RoleUpApParams.tx_pow = 0;
+        RoleUpApParams.channel = 1;
+        RoleUpApParams.sae_pwe = 2;
+        RoleUpApParams.hidden = FALSE;
+        RoleUpApParams.channel = 6;
+
+        //prepare configuration for WPS connection
+        RoleUpApParams.wpsParams.deviceName = (char *) g_modelName;
+        RoleUpApParams.wpsParams.configMethods = (char *) g_wpsConfigMethods;
+        RoleUpApParams.wpsParams.manufacturer = (char *) g_manufacturer;
+        RoleUpApParams.wpsParams.modelName = (char *) g_modelName;
+        RoleUpApParams.wpsParams.modelNumber = (char *) g_modelNumber;
+        RoleUpApParams.wpsParams.serialNumber = (char *) g_serialNumber;
+        RoleUpApParams.wpsParams.uuid = (uint8_t *) g_uuid_string;
+        RoleUpApParams.wpsParams.deviceType = (uint8_t *) g_primaryDeviceType;
+        
+        Report("AP %s channel: %d", RoleUpApParams.ssid,RoleUpApParams.channel);
+        
+        ret = Wlan_RoleUp(WLAN_ROLE_AP,&RoleUpApParams , OSI_WAIT_FOR_SECOND * 10);
+
+
+wlan_ap_role_down
+-----------------
+
+This command stops and removes an AP role.
+During the process, a network interface is removed from the network stack (LwIP) and eventually an AP role is removed.
+
+The API to remove a network interface in the ``network_lwip.c``  library::
+
+.. code-block:: c
+
+        void network_stack_remove_if_ap()
+
+The API in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int32_t ret = 0;
+        ret = Wlan_RoleDown(WLAN_ROLE_AP, WLAN_WAIT_FOREVER);
+
+wlan_scan
+---------
+
+This command allows to retrieve scan results from network processor.
+During the process, the application initiates a scan request in an unsolicited manner.
+When the scan results are ready, a scan event is triggered back to the application through an event callback registration.
+
+The following is the API for WLAN scan in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        ScanCmd_t ScanParams;
+        int32_t ret = 0;
+        
+        /* Call the command parser */
+        memset(&ScanParams, 0x0, sizeof(ScanParams));
+        ScanParams.numOfentries = MAX_SSID_ENTRIES;
+        
+        /* Clear the results buffer */
+        memset(&app_CB.gDataBuffer, 0x0, sizeof(app_CB.gDataBuffer));
+        scanCommon_t scanCommo;
+        WlanRole_e      role;
+
+        os_memset(&scanCommo, 0x0, sizeof(scanCommon_t));
+        scanCommo.Band = BAND_SEL_BOTH;//options are BAND_SEL_ONLY_2_4GHZ , BAND_SEL_ONLY_5GHZ , BAND_SEL_BOTH
+        
+        role = WLAN_ROLE_STA;
+        ScanParams.index = 0;
+        ret = Wlan_Scan(role, &scanCommo, ScanParams.numOfentries);
+
+wlan_connect
+------------
+
+This command initiates WLAN connection to an AP.
+The parameters required for connection are the SSID, security type and the password.
+The demos have a blocking timeout where the default is 40 seconds but can be modified by the application (via the ``WLAN_EVENT_TOUT`` define).
+The expected events are triggered back to the application through an event callback registration.
+Events could be ``WLAN_EVENT_CONNECT`` when initially disconnected and ``WLAN_EVENT_DISCONNECT`` prior to ``WLAN_EVENT_CONNECT`` when already connected.
+
+The following is the API for WLAN connect in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int32_t ret = 0;
+        ConnectCmd_t ConnectParams;
+        ConnectParams.secParams.Type = WLAN_SEC_TYPE_OPEN;
+
+        ConnectParams.ssid = ssid;
+
+        /* Connect to AP */
+        ret = Wlan_Connect((const signed char *)(ConnectParams.ssid),
+                        strlen((const char *)(ConnectParams.ssid)),
+                        ConnectParams.bssid,//macAddr, empty by default
+                        ConnectParams.secParams.Type,
+                        (const char *)(ConnectParams.secParams.Key),
+                        ((ConnectParams.secParams.Key != NULL) ? strlen((const char *)ConnectParams.secParams.Key) : 0),
+                        0);
+
+wlan_disconnect
+---------------
+
+This command initiates WLAN disconnection from an AP.
+The expected event is triggered back to the application through an event callback registration.
+Events should be ``WLAN_EVENT_DISCONNECT``.
+
+The following is the API for WLAN disconnect in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+        
+        int32_t ret = 0;
+        if(Connected)
+        {
+                ret = Wlan_Disconnect(WLAN_ROLE_STA,NULL);
+        }
+
+GET and SET
+===========
+
+wlan_get_fw
+-----------
+
+This command allows to retrieve the FW version of the radio core.
+
+The following is the API for WLAN get in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        WlanFWVersions_t wlanFwVersions = {0};
+
+        status = Wlan_Get(WLAN_GET_FWVERSION, (void *)&wlanFwVersions);
+        if (status < 0)
+        {
+            return -1;
+        }
+
+        UART_PRINT("\t MAC:  %d.%d.%d.%d",
+               wlanFwVersions.major_version, wlanFwVersions.minor_version,
+               wlanFwVersions.api_version, wlanFwVersions.build_version);
+        
+        UART_PRINT("\t PHY:  %d.%d.%d.%d",
+               wlanFwVersions.phy_version[0], wlanFwVersions.phy_version[1],
+               wlanFwVersions.phy_version[2], wlanFwVersions.phy_version[3],
+               wlanFwVersions.phy_version[4], wlanFwVersions.phy_version[5],
+               wlanFwVersions.phy_version[6], wlanFwVersions.phy_version[7]);
+
+wlan_get_mac
+------------
+
+This command allows to retrieve the mac address of the device.
+The mac address is different for each role and the role needs to be up in order for this command to execute.
+
+The following is the API for WLAN get in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        WlanMacAddress_t macAddressParams = {0};
+        int8_t status = -1;
+
+        /* Print device Mac address */
+        status = Wlan_Get(WLAN_GET_MACADDRESS, (void *)&macAddressParams);
+        if (status < 0)
+        {
+                return -1;
+        }
+
+        UART_PRINT("\t MAC address: %02x:%02x:%02x:%02x:%02x:%02x",
+               macAddressParams.pMacAddress[0], macAddressParams.pMacAddress[1],
+               macAddressParams.pMacAddress[2], macAddressParams.pMacAddress[3],
+               macAddressParams.pMacAddress[4], macAddressParams.pMacAddress[5]);
+
+wlan_set_mac
+------------
+
+This command allows to set the mac address of the device.
+The mac address is different for each role and the role needs to be up in order for this command to execute.
+
+The following is the API for WLAN set in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        WlanMacAddress_t macAddressParams;
+        int16_t    ret = 0;
+        memset(&macAddressParams, 0, sizeof(WlanMacAddress_t));
+
+        /* Call the command parser */
+        uint32_t tmpRoleId;
+        ret = ParseSetMacAddressCmd(arg, macAddressParams.pMacAddress, &tmpRoleId);
+
+        if (0 == ret)
+        {
+                macAddressParams.roleType = tmpRoleId;
+        }
+
+        ret = Wlan_Set(WLAN_SET_MACADDRESS, (void *)&macAddressParams);
+
+        return (ret);
+
+wlan_get_ps
+-----------
+
+This command allows to retrieve the power save of the device.
+The power save can be either power save mode, Active mode or Automatic mode.
+
+The following is the API for WLAN get in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int16_t         ret = 0;
+        WlanPowerSave_e currentPsMode;
+
+        ret = Wlan_Get(WLAN_GET_POWER_SAVE,(void *)&currentPsMode);
+
+        char *psMode;
+
+        if(!ret)
+        {
+        switch(currentPsMode)
+        {
+        case WLAN_STATION_AUTO_PS_MODE:
+        {
+                psMode = "Auto Power save";
+        }break;
+        case WLAN_STATION_ACTIVE_MODE:
+        {
+                psMode = "Active mode";
+        }break;
+        case WLAN_STATION_POWER_SAVE_MODE:
+        {
+                psMode = "Power save mode";
+        }break;
+        default:
+        {
+                Report("\n\rPower save mode invalid!\n\r");
+                return ret;
+        }
+
+        }
+        Report("\n\r[PS MODE] current PS mode is %s", psMode);
+        }
+
+        return (ret);
+
+wlan_set_ps
+-----------
+
+This command allows to set the power save of the device.
+The power save can be either power save mode, Active mode or Automatic mode.
+
+The following is the API for WLAN set in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int16_t         ret = 0;
+        WlanPowerSave_e PsMode;
+
+        if(ret < 0)
+        {
+                return ret;
+        }
+
+        ret = Wlan_Set(WLAN_SET_POWER_SAVE, (void *)&PsMode);
+
+        if(ret < 0)
+        {
+                Report("\n\r[PS MODE] Failed to set PS mode %d\n\r", PsMode);
+        }
+        else
+        {
+                Report("\n\r[PS MODE] Successfully set PS mode %d\n\r", PsMode);
+        }
+
+        return (ret);
+
+
+wlan_set_pm
+-----------
+
+This command allows to set the power management mode of the device.
+The power save can be either ELP mode (Extreme Low Power), Active mode (fully awake) or Power Down mode (hybrid).
+
+The following is the API for WLAN set in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int16_t               ret = 0;
+        WlanPowerManagement_e PmMode;
+
+        if(ret < 0)
+        {
+                return ret;
+        }
+
+        ret = Wlan_Set(WLAN_SET_POWER_MANAGEMENT, (void *)&PmMode);
+
+        if(ret < 0)
+        {
+                Report("\n\r[PM MODE] Failed to set PM mode %d\n\r", PmMode);
+        }
+        else
+        {
+                Report("\n\r[PM MODE] Successfully set PM mode %d\n\r", PmMode);
+        }
+
+        return (ret);
+
+
+wlan_set_LSI
+------------
+
+This command allows to set the LSI (Long Sleep Interval) mode of the device.
+In LSI mode, the device will only wake up for a single broadcast period within the time interval specified in this command.
+Therefore, the device is able to reduce power consumption with the tradeoff of possibly missing broadcast data on the network.
+
+The following is the API for WLAN set in the ``wifi_stack.a`` library:
+
+.. code-block:: c
+
+        int16_t               ret = 0;
+        WlanLongSleepInterval LsiParams;
+
+        if(ret < 0)
+        {
+                return ret;
+        }
+
+        ret = Wlan_Set(WLAN_SET_LSI, (void *)&LsiParams);
+
+        if(ret < 0)
+        {
+                Report("\n\r[SET LSI] Failed to set LSI %d\n\r", LsiParams.ListenInterval);
+        }
+        else
+        {
+                Report("\n\r[SET LSI] Successfully set LSI to %d\n\r", LsiParams.ListenInterval);
+        }
+
+        return (ret);

@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Power Management &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Debugging FreeRTOS with Runtime Object View (ROV)" href="rov.html" />
+    <link rel="prev" title="Kernel Configuration" href="config.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug freertos power";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/cc35xx-index.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">Kernel Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#posix-support">POSIX Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#driver-porting-layer-dpl">Driver Porting Layer (DPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#using-freertos-with-ccs">Using FreeRTOS with CCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#freertos-modules">FreeRTOS modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Power Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rov.html">Debugging FreeRTOS with Runtime Object View (ROV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-timers.html">Software Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queues.html">Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html">Thread Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a> &raquo;</li>
+        
+      <li>Power Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="power-management">
+<span id="sec-freertos-power-management"></span><h1>Power Management<a class="headerlink" href="#power-management" title="Permalink to this headline">¶</a></h1>
+<p>All power-management functionality is handled by the TI power driver and
+are used by the peripheral drivers (e.g. UART, SPI, I2C, etc..). Applications
+can prevent, if they choose, the CC35xx from entering low power modes by
+setting a power constraint.</p>
+<p>By default, all the examples in SimpleLink Wi-Fi SDK will put the CC35xx in standby mode if
+there is no task running. This is achieved by configuring the TI power driver and the kernel
+to do so, as shown in the following step.</p>
+<ol class="arabic">
+<li><p class="first">In the <code class="docutils literal notranslate"><span class="pre">FreeRTOSConfig.h</span></code>, set following define:</p>
+<div class="literal-block-wrapper docutils container" id="container-1">
+<div class="code-block-caption"><span class="caption-number">Listing 21 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FreeRTOS</span> <span class="pre">Kernel</span></code> Power Management Configuration</span><a class="headerlink" href="#container-1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define configUSE_TICKLESS_IDLE         1</span>
+</pre></div>
+</div>
+</div>
+<p>This means we use a built-in FreeRTOS functionality to get the number of ticks
+until the next tasks need to be executed. Please refer to <a class="reference external" href="https://www.freertos.org/low-power-tickless-rtos.html">FreeRTOS Low Power Support</a>.
+for more information.</p>
+</li>
+<li><p class="first">When there is no task running within 2 ticks from the future, then
+the <code class="docutils literal notranslate"><span class="pre">vPortSuppressTicksAndSleep(TickType_t</span> <span class="pre">xExpectedIdleTime)</span></code> will be called, which
+returns the number of ticks until next task occurs.
+The function can be found in <code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\kernel\freertos\dpl\PowerCCxxxx_freertos.c</span></code></p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">vPortSuppressTicksAndSleep</span></code>, we can see the tick is saved to a global variable
+and Power_idleFunc() gets called.</p>
+<div class="literal-block-wrapper docutils container" id="container-2">
+<div class="code-block-caption"><span class="caption-number">Listing 22 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">PowerCCxxxx_freertos.c</span></code>:: vPortSuppressTicksAndSleep</span><a class="headerlink" href="#container-2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">vPortSuppressTicksAndSleep</span><span class="p">(</span><span class="n">TickType_t</span> <span class="n">xExpectedIdleTime</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* Stash FreeRTOS&#39; expected idle time */</span>
+    <span class="n">PowerCCxxxx_idleTimeOS</span> <span class="o">=</span> <span class="n">xExpectedIdleTime</span><span class="p">;</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * call Power-driver-specified idle function, to conditionally invoke the</span>
+<span class="cm">     * Power policy</span>
+<span class="cm">     */</span>
+    <span class="n">Power_idleFunc</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Power_idleFunc</span></code> takes in policyFxn and policyFxn is defined using SysConfig tool <a class="reference internal" href="#freertos-sysconfig-power-policy"><span class="std std-numref">Fig. 31</span></a>.
+By default, TI sets the <code class="docutils literal notranslate"><span class="pre">PowerCCxxxx_standbyPolicy</span></code> as policyFxn.
+<code class="docutils literal notranslate"><span class="pre">Power_idleFunc</span></code> is defined in <code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\source\ti\drivers\power\PowerCCxxxx.c</span></code> and
+<code class="docutils literal notranslate"><span class="pre">PowerCCxxxx_standbyPolicy</span></code> can be found in <code class="docutils literal notranslate"><span class="pre">{SDK_INSTALL_DIR}\kernel\freertos\dpl\PowerCCxxxx_freetos.c</span></code></p>
+<div class="figure align-center" id="figure-1">
+<span id="freertos-sysconfig-power-policy"></span><img alt="../_images/freertos_sysconfig_power_policy.png" src="../_images/freertos_sysconfig_power_policy.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Configure Power Policy for Idle Function.</span></p>
+</div>
+</li>
+<li><p class="first">In the Sysconfig generated files, you will find the following example in ti_drivers_config.c.</p>
+<div class="literal-block-wrapper docutils container" id="container-3">
+<div class="code-block-caption"><span class="caption-number">Listing 23 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">ti_drivers.c</span></code></span><a class="headerlink" href="#container-3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">PowerCCXXXX_Config</span> <span class="n">PowerCCxxxx_config</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="p">.</span><span class="n">policyInitFxn</span>            <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span>
+      <span class="p">.</span><span class="n">policyFxn</span>                <span class="o">=</span> <span class="n">PowerCCxxxx_standbyPolicy</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rov.html" class="btn btn-neutral float-right" title="Debugging FreeRTOS with Runtime Object View (ROV)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config.html" class="btn btn-neutral float-left" title="Kernel Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+Migration from 9.10.00.01 |rarr| 9.13.00.13
+===========================================
+
+This page will go over the main changes between SDK version 9.10.00.01 and 9.13.00.13
+
+WLAN Driver
+-----------
+
+Wlan_RoleUp
+^^^^^^^^^^^
+
+- Added RoleUpStaCmd_t type, API will now use this type instead RoleUpApCmd_t type.
+- Added new WPS params to RoleUpStaCmd_t and RoleUpApCmd_t
+
+Cryptography Driverlibs
+-----------------------
+
+All the cryptographic drivers have changed naming convention
+
+For example the HSM driver changed from HSMLPF3 to HSMXXF3 all APIs and functions have similarly changed names
+
+.. figure:: resources/HSM_driver_changes.png
+    :align: center
+    :width: 45%
+
+Please update accordingly to your project
+
+Build System
+------------
+
+CCS_projects directory was removed and with it replaced by cmake configuration to now build all libraries.

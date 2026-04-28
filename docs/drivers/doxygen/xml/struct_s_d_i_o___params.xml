@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_i_o___params" kind="struct" language="C++" prot="public">
+    <compoundname>SDIO_Params</compoundname>
+    <includes refid="_s_d_i_o_8h" local="no">SDIO.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_i_o___params_1a8f8f25a21a3c5a35250b470a7c6f566f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SDIO_Params::custom</definition>
+        <argsstring></argsstring>
+        <name>custom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Custom argument used by driver implementation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/SDIO.h" line="110" column="1" bodyfile="source/ti/drivers/SDIO.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SDIO Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>SDIO Parameters are used to with the <ref refid="_s_d_i_o_8h_1a2cf529681b13cbb07ece079d50db2a47" kindref="member">SDIO_open()</ref> call. Default values for these parameters are set using <ref refid="_s_d_i_o_8h_1a24b4c24396ff1be2d7ae453891560854" kindref="member">SDIO_Params_init()</ref>.</para><para><simplesect kind="see"><para><ref refid="_s_d_i_o_8h_1a24b4c24396ff1be2d7ae453891560854" kindref="member">SDIO_Params_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="source/ti/drivers/SDIO.h" line="109" column="1" bodyfile="source/ti/drivers/SDIO.h" bodystart="108" bodyend="111"/>
+    <listofallmembers>
+      <member refid="struct_s_d_i_o___params_1a8f8f25a21a3c5a35250b470a7c6f566f" prot="public" virt="non-virtual"><scope>SDIO_Params</scope><name>custom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

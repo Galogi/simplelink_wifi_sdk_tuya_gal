@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>PSA Crypto API Reference</title>
+    <detaileddescription>
+<para>PSA Crypto API supporting CC13x4/CC26x4 and CC27xx device families:</para><para><itemizedlist>
+<listitem><para><ref refid="crypto_8h" kindref="compound">crypto.h</ref> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t2_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>UART2WFF3_Object</compoundname>
+    <includes refid="_u_a_r_t2_w_f_f3_8h" local="no">UART2WFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___object_1a685fda475e21dc465ac1b46603ff1413" prot="public" static="no" mutable="no">
+        <type>UART2_BASE_OBJECT <ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>UART2_BASE_OBJECT Power_NotifyObj UART2WFF3_Object::preNotify</definition>
+        <argsstring></argsstring>
+        <name>preNotify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For configuring IO pins before entering sleep </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="156" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___object_1a7392aab7f880e611c01f754c2fbfbd5c" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj UART2WFF3_Object::postNotify</definition>
+        <argsstring></argsstring>
+        <name>postNotify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For configuring IO pins after returning from sleep </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="157" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___object_1a151df3623d73ad21556dfa42ba60ca34" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* UART2WFF3_Object::dmaTxDestAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaTxDestAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="158" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2_w_f_f3___object_1a70d5f4093473865f55d6452099aafa87" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* UART2WFF3_Object::dmaRxSrcAddr</definition>
+        <argsstring></argsstring>
+        <name>dmaRxSrcAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/uart2/UART2WFF3.h" line="159" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UART2WFF3 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="322">
+        <label>UART2WFF3_Object</label>
+        <link refid="struct_u_a_r_t2_w_f_f3___object"/>
+        <childnode refid="323" relation="usage">
+          <edgelabel>postNotify</edgelabel>
+          <edgelabel>preNotify</edgelabel>
+        </childnode>
+      </node>
+      <node id="323">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="324" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="324">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="324" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/uart2/UART2WFF3.h" line="154" column="1" bodyfile="source/ti/drivers/uart2/UART2WFF3.h" bodystart="153" bodyend="160"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t2_w_f_f3___object_1a70d5f4093473865f55d6452099aafa87" prot="public" virt="non-virtual"><scope>UART2WFF3_Object</scope><name>dmaRxSrcAddr</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___object_1a151df3623d73ad21556dfa42ba60ca34" prot="public" virt="non-virtual"><scope>UART2WFF3_Object</scope><name>dmaTxDestAddr</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___object_1a7392aab7f880e611c01f754c2fbfbd5c" prot="public" virt="non-virtual"><scope>UART2WFF3_Object</scope><name>postNotify</name></member>
+      <member refid="struct_u_a_r_t2_w_f_f3___object_1a685fda475e21dc465ac1b46603ff1413" prot="public" virt="non-virtual"><scope>UART2WFF3_Object</scope><name>preNotify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

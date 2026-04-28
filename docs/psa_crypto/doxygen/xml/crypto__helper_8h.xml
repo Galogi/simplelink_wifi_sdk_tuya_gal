@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="crypto__helper_8h" kind="file" language="C++">
+    <compoundname>crypto_helper.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="crypto_8h" local="no">third_party/psa_crypto/include/psa/crypto.h</includes>
+    <includes local="no">ti/drivers/cryptoutils/ecc/ECCParams.h</includes>
+    <includes local="no">ti/drivers/ECDH.h</includes>
+    <includes local="no">ti/drivers/ECDSA.h</includes>
+    <includes local="no">ti/devices/DeviceFamily.h</includes>
+    <includedby refid="crypto__struct_8h" local="no">crypto_struct.h</includedby>
+    <incdepgraph>
+      <node id="33">
+        <label>stdbool.h</label>
+      </node>
+      <node id="40">
+        <label>crypto_struct.h</label>
+        <link refid="crypto__struct_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>stdint.h</label>
+      </node>
+      <node id="39">
+        <label>crypto_sizes.h</label>
+        <link refid="crypto__sizes_8h"/>
+      </node>
+      <node id="46">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKeyKeyStore_PSA.h</label>
+        <link refid="__crypto__key__key__store______p__s__a__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="36">
+        <label>stddef.h</label>
+      </node>
+      <node id="42">
+        <label>ti/drivers/AESECB.h</label>
+        <link refid="__a__e__s__e__c__b__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="45">
+        <label>ti/devices/DeviceFamily.h</label>
+      </node>
+      <node id="44">
+        <label>ti/drivers/AESGCM.h</label>
+        <link refid="__a__e__s__g__c__m__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="43">
+        <label>ti/drivers/AESCCM.h</label>
+        <link refid="__a__e__s__c__c__m__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="41">
+        <label>ti/drivers/SHA2.h</label>
+        <link refid="__s__h__a2__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="37">
+        <label>crypto_types.h</label>
+        <link refid="crypto__types_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>third_party/psa_crypto/include/psa/crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>ti/drivers/ECDSA.h</label>
+        <link refid="__e__c__d__s__a__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="48">
+        <label>ti/drivers/cryptoutils/ecc/ECCParams.h</label>
+        <link refid="__e__c__c__params__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="49">
+        <label>ti/drivers/ECDH.h</label>
+        <link refid="__e__c__d__h__8h" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile"/>
+      </node>
+      <node id="38">
+        <label>crypto_values.h</label>
+        <link refid="crypto__values_8h"/>
+      </node>
+      <node id="32">
+        <label>crypto_helper.h</label>
+        <link refid="crypto__helper_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>crypto_extra.h</label>
+        <link refid="crypto__extra_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="52">
+        <label>crypto_struct.h</label>
+        <link refid="crypto__struct_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>crypto_helper.h</label>
+        <link refid="crypto__helper_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="crypto__helper_8h_1ad5611e6239802fbb4c6f271b1a4175ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_AES_status</definition>
+        <argsstring>(int_fast16_t status)</argsstring>
+        <name>map_AES_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a46ae8f51b7dd55283ea01c388c5f16d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_ECDH_status</definition>
+        <argsstring>(int_fast16_t status)</argsstring>
+        <name>map_ECDH_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1aab592c2737fd3f1a43e59c031dbe4693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_ECDSA_status</definition>
+        <argsstring>(int_fast16_t status, bool isVerifyOp)</argsstring>
+        <name>map_ECDSA_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isVerifyOp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a35de8662ac0b760a4e1d384d35f0c321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_EDDSA_status</definition>
+        <argsstring>(int_fast16_t status, bool isVerifyOp)</argsstring>
+        <name>map_EDDSA_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isVerifyOp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a8f8d2bc91fa84c6cf631dbab5d0f3124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_RNG_status</definition>
+        <argsstring>(int_fast16_t status)</argsstring>
+        <name>map_RNG_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a227d9a698c153619bc00b99e1ff580e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_SHA2_status</definition>
+        <argsstring>(int_fast16_t status)</argsstring>
+        <name>map_SHA2_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a40e9874e9ed5b32528afc0fd70a6db38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref></type>
+        <definition>psa_status_t map_TRNG_status</definition>
+        <argsstring>(int_fast16_t status)</argsstring>
+        <name>map_TRNG_status</name>
+        <param>
+          <type>int_fast16_t</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1af81117b7a12ca5819af8703465a1e0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__key__lifetimes_1ga11e986351c65bd3dc3c0fe2cd9926e4b" kindref="member">psa_key_id_t</ref></type>
+        <definition>psa_key_id_t toKeyID</definition>
+        <argsstring>(mbedtls_svc_key_id_t keystoreKeyID)</argsstring>
+        <name>toKeyID</name>
+        <param>
+          <type><ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref></type>
+          <declname>keystoreKeyID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="44" column="1"/>
+        <referencedby refid="crypto__struct_8h_1a5bee85c2164ad3d4c0d42501241eeb06" compoundref="crypto__struct_8h" startline="326" endline="330">psa_get_key_bits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a0b756c5909f1623dc5233cc95316bd0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref></type>
+        <definition>mbedtls_svc_key_id_t toKeyStoreKeyID</definition>
+        <argsstring>(psa_key_id_t keyID)</argsstring>
+        <name>toKeyStoreKeyID</name>
+        <param>
+          <type><ref refid="group__key__lifetimes_1ga11e986351c65bd3dc3c0fe2cd9926e4b" kindref="member">psa_key_id_t</ref></type>
+          <declname>keyID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="45" column="1"/>
+        <referencedby refid="crypto__struct_8h_1a5bee85c2164ad3d4c0d42501241eeb06" compoundref="crypto__struct_8h" startline="326" endline="330">psa_get_key_bits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a66544ce1b41137a2f5ab99981f4c9eda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_c_d_s_a_8h_1acbeddeb9ec24f98c63b1cd6b622f644b" kindref="member" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECDSA_CurveType</ref></type>
+        <definition>ECDSA_CurveType map_keyTypeToECDSACurveTypeHSM</definition>
+        <argsstring>(psa_key_type_t keyType, size_t keyBits)</argsstring>
+        <name>map_keyTypeToECDSACurveTypeHSM</name>
+        <param>
+          <type><ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref></type>
+          <declname>keyType</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>keyBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a44e2e7712f590fe473a430b8a2913ad2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_c_d_h_8h_1a06029cbd3a1bfe5825fc6138909c8445" kindref="member" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECDH_CurveType</ref></type>
+        <definition>ECDH_CurveType map_keyTypeToECDHCurveTypeHSM</definition>
+        <argsstring>(psa_key_type_t keyType, size_t keyBits)</argsstring>
+        <name>map_keyTypeToECDHCurveTypeHSM</name>
+        <param>
+          <type><ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref></type>
+          <declname>keyType</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>keyBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="crypto__helper_8h_1a98b305e62c5238d0ecfb09be6a74ded0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="struct_e_c_c_params___curve_params" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECCParams_CurveParams</ref> *</type>
+        <definition>const ECCParams_CurveParams* map_keyTypeToECCParams</definition>
+        <argsstring>(psa_key_type_t keyType, size_t keyBits)</argsstring>
+        <name>map_keyTypeToECCParams</name>
+        <param>
+          <type><ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref></type>
+          <declname>keyType</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>keyBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/third_party/psa_crypto/crypto_helper.h" line="65" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>2022-2025,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>SPDX-License-Identifier:<sp/>Apache-2.0</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);<sp/>you<sp/>may</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CRYPTO_HELPER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CRYPTO_HELPER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="crypto_8h" kindref="compound">third_party/psa_crypto/include/psa/crypto.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="__e__c__c__params__8h" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ti/drivers/cryptoutils/ecc/ECCParams.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="__e__c__d__h__8h" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ti/drivers/ECDH.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="__e__c__d__s__a__8h" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ti/drivers/ECDSA.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/DeviceFamily.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Error<sp/>mapping<sp/>functions.<sp/>These<sp/>functions<sp/>take<sp/>as<sp/>input<sp/>SimpleLink<sp/>driver</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>error<sp/>codes<sp/>and<sp/>maps<sp/>them<sp/>to<sp/>nearest<sp/>PSA<sp/>error<sp/>code.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1ad5611e6239802fbb4c6f271b1a4175ee" kindref="member">map_AES_status</ref>(int_fast16_t<sp/>status);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1a46ae8f51b7dd55283ea01c388c5f16d6" kindref="member">map_ECDH_status</ref>(int_fast16_t<sp/>status);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1aab592c2737fd3f1a43e59c031dbe4693" kindref="member">map_ECDSA_status</ref>(int_fast16_t<sp/>status,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isVerifyOp);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1a35de8662ac0b760a4e1d384d35f0c321" kindref="member">map_EDDSA_status</ref>(int_fast16_t<sp/>status,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isVerifyOp);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1a8f8d2bc91fa84c6cf631dbab5d0f3124" kindref="member">map_RNG_status</ref>(int_fast16_t<sp/>status);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1a227d9a698c153619bc00b99e1ff580e3" kindref="member">map_SHA2_status</ref>(int_fast16_t<sp/>status);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="group__error_1ga05676e70ba5c6a7565aff3c36677c1f9" kindref="member">psa_status_t</ref><sp/><ref refid="crypto__helper_8h_1a40e9874e9ed5b32528afc0fd70a6db38" kindref="member">map_TRNG_status</ref>(int_fast16_t<sp/>status);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Convert<sp/>to<sp/>and<sp/>from<sp/>the<sp/>keyID<sp/>format<sp/>expected<sp/>by<sp/>the<sp/>SimpleLink<sp/>KeyStore<sp/>API<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group__key__lifetimes_1ga11e986351c65bd3dc3c0fe2cd9926e4b" kindref="member">psa_key_id_t</ref><sp/><ref refid="crypto__helper_8h_1af81117b7a12ca5819af8703465a1e0b6" kindref="member">toKeyID</ref>(<ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref><sp/>keystoreKeyID);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="structmbedtls__svc__key__id__t" kindref="compound">mbedtls_svc_key_id_t</ref><sp/><ref refid="crypto__helper_8h_1a0b756c5909f1623dc5233cc95316bd0c" kindref="member">toKeyStoreKeyID</ref>(<ref refid="group__key__lifetimes_1ga11e986351c65bd3dc3c0fe2cd9926e4b" kindref="member">psa_key_id_t</ref><sp/>keyID);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((DeviceFamily_PARENT<sp/>==<sp/>DeviceFamily_PARENT_CC27XX)<sp/>||<sp/>defined(DeviceFamily_CC35XX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Maps<sp/>PSA<sp/>ECC<sp/>key<sp/>types<sp/>to<sp/>their<sp/>corresponding<sp/>ECDSA<sp/>Curve<sp/>Type<sp/>for<sp/>HSM.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>Assumes<sp/>that<sp/>the<sp/>keyType<sp/>is<sp/>some<sp/>form<sp/>of<sp/>ECC<sp/>key<sp/>type.<sp/>Returns<sp/>0<sp/>if<sp/>could<sp/>not</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>find<sp/>a<sp/>mapping.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="_e_c_d_s_a_8h_1acbeddeb9ec24f98c63b1cd6b622f644b" kindref="member" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECDSA_CurveType</ref><sp/><ref refid="crypto__helper_8h_1a66544ce1b41137a2f5ab99981f4c9eda" kindref="member">map_keyTypeToECDSACurveTypeHSM</ref>(<ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref><sp/>keyType,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keyBits);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Maps<sp/>PSA<sp/>ECC<sp/>key<sp/>types<sp/>to<sp/>their<sp/>corresponding<sp/>ECDH<sp/>Curve<sp/>Type<sp/>for<sp/>HSM.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Assumes<sp/>that<sp/>the<sp/>keyType<sp/>is<sp/>some<sp/>form<sp/>of<sp/>ECC<sp/>key<sp/>type.<sp/>Returns<sp/>0<sp/>if<sp/>could<sp/>not</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>find<sp/>a<sp/>mapping.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="_e_c_d_h_8h_1a06029cbd3a1bfe5825fc6138909c8445" kindref="member" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECDH_CurveType</ref><sp/><ref refid="crypto__helper_8h_1a44e2e7712f590fe473a430b8a2913ad2" kindref="member">map_keyTypeToECDHCurveTypeHSM</ref>(<ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref><sp/>keyType,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keyBits);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Maps<sp/>PSA<sp/>ECC<sp/>key<sp/>types<sp/>to<sp/>their<sp/>corresponding<sp/>ECCParams_CurveParams<sp/>struct</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>pointer.<sp/>Assumes<sp/>that<sp/>the<sp/>keyType<sp/>is<sp/>some<sp/>form<sp/>of<sp/>ECC<sp/>key<sp/>type.<sp/>Returns<sp/>NULL</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>if<sp/>could<sp/>not<sp/>find<sp/>a<sp/>mapping.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_e_c_c_params___curve_params" kindref="compound" external="/conan-data/secure_drivers_wff3/9.20.00.37/library-sb/ga/build/4c49068a18bd2d5dfc5260226be641dec89f1d53/docs/secure_drivers/doxygen/tagfile">ECCParams_CurveParams</ref><sp/>*<ref refid="crypto__helper_8h_1a98b305e62c5238d0ecfb09be6a74ded0" kindref="member">map_keyTypeToECCParams</ref>(<ref refid="group__crypto__types_1ga63fce6880ca5933b5d6baa257febf1f6" kindref="member">psa_key_type_t</ref><sp/>keyType,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keyBits);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>CRYPTO_HELPER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/third_party/psa_crypto/crypto_helper.h"/>
+  </compounddef>
+</doxygen>

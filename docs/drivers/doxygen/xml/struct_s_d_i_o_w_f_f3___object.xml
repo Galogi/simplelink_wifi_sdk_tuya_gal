@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_i_o_w_f_f3___object" kind="struct" language="C++" prot="public">
+    <compoundname>SDIOWFF3_Object</compoundname>
+    <includes refid="_s_d_i_o_w_f_f3_8h" local="no">SDIOWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___object_1a7ba6a5c338c71ec40cdfde7ebe8a607a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDIOWFF3_Object::isInit</definition>
+        <argsstring></argsstring>
+        <name>isInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the driver is initiated </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="253" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___object_1a23c8a88fb04fb9ff29af5eefb32f0372" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDIOWFF3_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the driver is opened </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="256" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___object_1aa68615e8579f9247458d4771cee66ab6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SDIOWFF3_Object::cardInitiated</definition>
+        <argsstring></argsstring>
+        <name>cardInitiated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the card is initiated </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="259" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SDIOWFF3 driver object. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="251" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="250" bodyend="261"/>
+    <listofallmembers>
+      <member refid="struct_s_d_i_o_w_f_f3___object_1aa68615e8579f9247458d4771cee66ab6" prot="public" virt="non-virtual"><scope>SDIOWFF3_Object</scope><name>cardInitiated</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___object_1a7ba6a5c338c71ec40cdfde7ebe8a607a" prot="public" virt="non-virtual"><scope>SDIOWFF3_Object</scope><name>isInit</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___object_1a23c8a88fb04fb9ff29af5eefb32f0372" prot="public" virt="non-virtual"><scope>SDIOWFF3_Object</scope><name>isOpen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Network Layer Security &mdash; SimpleLink Wi-Fi User&#39;s Guide 9.21.00.xx documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Secure Boot" href="secure-boot.html" />
+    <link rel="prev" title="Security" href="cc35xx-index.html" />
+    <script language="JavaScript">
+        var tiPageName;
+        tiPageName = "sug security network-security";
+
+        if (location.protocol == "file:"){
+            var ci_analytics_poc_load = true;
+        }
+    </script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../cc35xx/cc35xx-index.html" class="icon icon-home" alt="Documentation Home"> SimpleLink Wi-Fi User's Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                9.21.00.xx
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/index-platform.html">Introduction to the SimpleLink Wi-Fi SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wifi/cc35xx-wifi.html">Wi-Fi User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ble/cc35xx-ble.html">Bluetooth Low Energy User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/activation.html">Device Activation &amp; Fuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../memory/cc35xx-index.html">Memory Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cc35xx-index.html">Security</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Network Layer Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wifi-security">WiFi Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#secure-socket-layer">Secure Socket Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="secure-boot.html">Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-debug.html">Secure Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hsm.html">The Hardware Security Module (HSM)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/ota.html">Over the Air Update (OTA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cc35xx/examples-index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/cc35xx-index.html">Your First Application from Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../freertos/freertos-index.html">FreeRTOS (RTOS Kernel) Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/cc35xx-index.html">SimpleLink Wi-Fi SDK Migration Guide</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../cc35xx/cc35xx-index.html">SimpleLink Wi-Fi User's Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../cc35xx/cc35xx-index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cc35xx-index.html">Security</a> &raquo;</li>
+        
+      <li>Network Layer Security</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-layer-security">
+<h1>Network Layer Security<a class="headerlink" href="#network-layer-security" title="Permalink to this headline">¶</a></h1>
+<p>The CC35xx device is a Wi-Fi-based device, which supports 802.11 security protocols for the local segment
+of the network (between the node and the AP) and TLS/SSL for the transport layer when using TCP/IP for nodeto-node communication. TLS/SSL can address confidentiality, data integrity, and authenticity between nodes
+across the network.</p>
+<div class="section" id="wifi-security">
+<h2>WiFi Security<a class="headerlink" href="#wifi-security" title="Permalink to this headline">¶</a></h2>
+<p>The Wi-Fi layer of the SimpleLink device complies with 802.11 security to ensure the integrity and confidentiality
+of the frames (L2 data units) in transactions between AP and STA, or between two peers in the case of Wi-Fi
+direct mode. The security protocols are described in the IEEE 802.11 specifications and its extensions.
+The Wi-Fi subsystem of the SimpleLink device provides support for both personal and enterprise security
+paradigms, including RADIUS-based authentication (802.1X)</p>
+<p>The SimpleLink device is Wi-Fi-CERTIFIED™ and complies with Wi-Fi Alliance (WFA) security standards and
+test suites.</p>
+</div>
+<div class="section" id="secure-socket-layer">
+<h2>Secure Socket Layer<a class="headerlink" href="#secure-socket-layer" title="Permalink to this headline">¶</a></h2>
+<p>The SimpleLink device provides a secure transport layer (secure sockets) based on a standard-complaint
+implementation of SSL and TLS protocols, which are network protocols that involve cryptographic paradigms
+designed to provide communications security over a TCP/IP connection.</p>
+<p>The SSL/TLS runs on the network processor subsystem. By design, the architecture of the device is such that
+the networking processor is a physically separate process subsystem, creating a separate execution
+environment. Hardware accelerators are used to offload the intense arithmetic calculations involved in the
+cryptographic algorithms.</p>
+<p>After establishing a TCP connection between two peers, the SSL protocol takes place in negotiating the session
+security parameters and authenticating the peers.
+A short description of this handshake process follows. This handshake is performed by the SimpleLink device,
+and remains transparent to the user:
+#. A client hello message is sent with the following parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Protocol version to be used</li>
+<li>Cipher suites supported by the client</li>
+<li>Extensions, used for different applications of the SSL</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>The server chooses the protocol version and a cipher suite from the client hello cipher list, and sends a ServerHello message to the client.</li>
+<li>The server sends the certificate chain (except for the root CA) to the client.</li>
+<li>The client may verify the chain by checking the signature of each certificate in the chain, starting with the root CA held by the client. The server may request a certificate from the client for a client authentication.</li>
+<li>The client and server establish session (symmetric) keys and can then start transferring encrypted data.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="secure-boot.html" class="btn btn-neutral float-right" title="Secure Boot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cc35xx-index.html" class="btn btn-neutral float-left" title="Security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2025, Texas Instruments</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

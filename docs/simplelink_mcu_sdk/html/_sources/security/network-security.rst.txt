@@ -1,0 +1,43 @@
+Network Layer Security
+======================
+
+The CC35xx device is a Wi-Fi-based device, which supports 802.11 security protocols for the local segment
+of the network (between the node and the AP) and TLS/SSL for the transport layer when using TCP/IP for nodeto-node communication. TLS/SSL can address confidentiality, data integrity, and authenticity between nodes
+across the network.
+
+WiFi Security
+-------------
+
+The Wi-Fi layer of the SimpleLink device complies with 802.11 security to ensure the integrity and confidentiality
+of the frames (L2 data units) in transactions between AP and STA, or between two peers in the case of Wi-Fi
+direct mode. The security protocols are described in the IEEE 802.11 specifications and its extensions.
+The Wi-Fi subsystem of the SimpleLink device provides support for both personal and enterprise security
+paradigms, including RADIUS-based authentication (802.1X)
+
+The SimpleLink device is Wi-Fi-CERTIFIED™ and complies with Wi-Fi Alliance (WFA) security standards and
+test suites.
+
+
+Secure Socket Layer
+-------------------
+The SimpleLink device provides a secure transport layer (secure sockets) based on a standard-complaint
+implementation of SSL and TLS protocols, which are network protocols that involve cryptographic paradigms
+designed to provide communications security over a TCP/IP connection. 
+
+The SSL/TLS runs on the network processor subsystem. By design, the architecture of the device is such that
+the networking processor is a physically separate process subsystem, creating a separate execution
+environment. Hardware accelerators are used to offload the intense arithmetic calculations involved in the
+cryptographic algorithms.
+
+After establishing a TCP connection between two peers, the SSL protocol takes place in negotiating the session
+security parameters and authenticating the peers.
+A short description of this handshake process follows. This handshake is performed by the SimpleLink device,
+and remains transparent to the user:
+#. A client hello message is sent with the following parameters:
+    - Protocol version to be used
+    - Cipher suites supported by the client
+    - Extensions, used for different applications of the SSL
+#. The server chooses the protocol version and a cipher suite from the client hello cipher list, and sends a ServerHello message to the client.
+#. The server sends the certificate chain (except for the root CA) to the client.
+#. The client may verify the chain by checking the signature of each certificate in the chain, starting with the root CA held by the client. The server may request a certificate from the client for a client authentication.
+#. The client and server establish session (symmetric) keys and can then start transferring encrypted data.

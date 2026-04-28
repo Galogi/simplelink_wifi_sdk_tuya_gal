@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_s_d_i_o_w_f_f3___hw_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>SDIOWFF3_HwAttrs</compoundname>
+    <includes refid="_s_d_i_o_w_f_f3_8h" local="no">SDIOWFF3.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ab4bd9b61bc93d08eaced82553275361b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::FN0baseAddr</definition>
+        <argsstring></argsstring>
+        <name>FN0baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FN0 HW register base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="266" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ab43c40c4a3f607ce576e60a3921f3a73" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::FN1baseAddr</definition>
+        <argsstring></argsstring>
+        <name>FN1baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FN1 HW register base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="269" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ae6d225188fa9ddc459fdcf9cd3217c39" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt number for HWip driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="272" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a877824dbae19eaba73192ae3434d1d19" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt priority for HWip driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="275" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a23f43b1927c9af2006c5e315fb4be5e2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::powerID</definition>
+        <argsstring></argsstring>
+        <name>powerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Peripheral ID for power driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="278" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1af584b79d5507d3b5d019a2f8d4301ecc" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::rxDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>rxDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA channel for SDIO Rx FIFO </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="281" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a497d38cb1d293715e1e209a77565fcf1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::txDmaChannel</definition>
+        <argsstring></argsstring>
+        <name>txDmaChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMA channel for SDIO Tx FIFO </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="284" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a424cdd84d41fa866850c359fea1198d4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::thresholdLen</definition>
+        <argsstring></argsstring>
+        <name>thresholdLen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rx Threshold value </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="287" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a21dc56a841ff46a5fa87cf73261ec536" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::clkPin</definition>
+        <argsstring></argsstring>
+        <name>clkPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for clock I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="290" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a804ade90bfbb7e9fda6205c75d043967" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::clkPinMux</definition>
+        <argsstring></argsstring>
+        <name>clkPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for clock I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="293" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a8d1fe0c9a415bf9019519392a76fdbe8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::cmdPin</definition>
+        <argsstring></argsstring>
+        <name>cmdPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for command I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="296" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1aa6a3ec9aec3c5562b7ba4f9ade001e1f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::cmdPinMux</definition>
+        <argsstring></argsstring>
+        <name>cmdPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for command I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="299" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ad056bd1bd04ee055e37b58a49e203535" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data0Pin</definition>
+        <argsstring></argsstring>
+        <name>data0Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 0 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="302" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a1b112b4a07e62c9549472b49d97f1a32" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data0PinMux</definition>
+        <argsstring></argsstring>
+        <name>data0PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 0 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="305" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1abd35bf651f55622fb11c2b20464f8503" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data1Pin</definition>
+        <argsstring></argsstring>
+        <name>data1Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 1 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="308" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a8a985d38caa4a70a19513e4bc38cc695" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data1PinMux</definition>
+        <argsstring></argsstring>
+        <name>data1PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 1 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="311" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ac1353c7c75cfd25cecb5f26c22e7562d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data2Pin</definition>
+        <argsstring></argsstring>
+        <name>data2Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 2 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="314" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a06e569bce8424b65ebd956c36a6fcfff" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data2PinMux</definition>
+        <argsstring></argsstring>
+        <name>data2PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 2 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="317" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1aa46d080f646a97433dbb949a7358cd11" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data3Pin</definition>
+        <argsstring></argsstring>
+        <name>data3Pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for data 3 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="320" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1ae50f50743051012cafeb2ab18dc761b0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::data3PinMux</definition>
+        <argsstring></argsstring>
+        <name>data3PinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for data 3 I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="323" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a0965aac1b3317d1820a439ea52903b66" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::irqPin</definition>
+        <argsstring></argsstring>
+        <name>irqPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO number for IRQ I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="326" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a44422bd335ca974c1dccb4f3db7bda76" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SDIOWFF3_HwAttrs::irqPinMux</definition>
+        <argsstring></argsstring>
+        <name>irqPinMux</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>GPIO mode number for IRQ I/F </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="329" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a02e3d176d4b1cc37d15119bc39e5b25d" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_hwi_p___params" kindref="compound">HwiP_Params</ref></type>
+        <definition>HwiP_Params SDIOWFF3_HwAttrs::hwiPrms</definition>
+        <argsstring></argsstring>
+        <name>hwiPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HWI interrupt params </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="332" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a560c4a6df37b27211fe74a28a823104d" prot="public" static="no" mutable="no">
+        <type><ref refid="union_hwi_p___struct" kindref="compound">HwiP_Struct</ref></type>
+        <definition>HwiP_Struct SDIOWFF3_HwAttrs::hwiStruct</definition>
+        <argsstring></argsstring>
+        <name>hwiStruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>HWI interrupt struct </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="335" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_i_o_w_f_f3___hw_attrs_1a97c4b311bb5b40fb4f5ff3afd6d2990b" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_i_o_w_f_f3_8h_1a598b70d67c1b7d1004f1c957c94480c8" kindref="member">SDIOWFF3EventCB</ref></type>
+        <definition>SDIOWFF3EventCB SDIOWFF3_HwAttrs::SDIOWFF3_CBFunction</definition>
+        <argsstring></argsstring>
+        <name>SDIOWFF3_CBFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application callback function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="338" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="238">
+        <label>HwiP_Params</label>
+        <link refid="struct_hwi_p___params"/>
+      </node>
+      <node id="237">
+        <label>SDIO_Config_</label>
+        <link refid="struct_s_d_i_o___config__"/>
+      </node>
+      <node id="235">
+        <label>SDIOWFF3_HwAttrs</label>
+        <link refid="struct_s_d_i_o_w_f_f3___hw_attrs"/>
+        <childnode refid="236" relation="usage">
+          <edgelabel>hwiStruct</edgelabel>
+        </childnode>
+        <childnode refid="237" relation="usage">
+          <edgelabel>SDIOWFF3_CBFunction</edgelabel>
+        </childnode>
+        <childnode refid="238" relation="usage">
+          <edgelabel>hwiPrms</edgelabel>
+        </childnode>
+      </node>
+      <node id="236">
+        <label>HwiP_Struct</label>
+        <link refid="union_hwi_p___struct"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/ti/drivers/sdio/SDIOWFF3.h" line="264" column="1" bodyfile="source/ti/drivers/sdio/SDIOWFF3.h" bodystart="263" bodyend="340"/>
+    <listofallmembers>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a21dc56a841ff46a5fa87cf73261ec536" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>clkPin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a804ade90bfbb7e9fda6205c75d043967" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>clkPinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8d1fe0c9a415bf9019519392a76fdbe8" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>cmdPin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa6a3ec9aec3c5562b7ba4f9ade001e1f" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>cmdPinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ad056bd1bd04ee055e37b58a49e203535" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data0Pin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a1b112b4a07e62c9549472b49d97f1a32" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data0PinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1abd35bf651f55622fb11c2b20464f8503" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data1Pin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a8a985d38caa4a70a19513e4bc38cc695" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data1PinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ac1353c7c75cfd25cecb5f26c22e7562d" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data2Pin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a06e569bce8424b65ebd956c36a6fcfff" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data2PinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1aa46d080f646a97433dbb949a7358cd11" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data3Pin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae50f50743051012cafeb2ab18dc761b0" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>data3PinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab4bd9b61bc93d08eaced82553275361b" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>FN0baseAddr</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ab43c40c4a3f607ce576e60a3921f3a73" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>FN1baseAddr</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a02e3d176d4b1cc37d15119bc39e5b25d" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>hwiPrms</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a560c4a6df37b27211fe74a28a823104d" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>hwiStruct</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1ae6d225188fa9ddc459fdcf9cd3217c39" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>intNum</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a877824dbae19eaba73192ae3434d1d19" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a0965aac1b3317d1820a439ea52903b66" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>irqPin</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a44422bd335ca974c1dccb4f3db7bda76" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>irqPinMux</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a23f43b1927c9af2006c5e315fb4be5e2" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>powerID</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1af584b79d5507d3b5d019a2f8d4301ecc" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>rxDmaChannel</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a97c4b311bb5b40fb4f5ff3afd6d2990b" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>SDIOWFF3_CBFunction</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a424cdd84d41fa866850c359fea1198d4" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>thresholdLen</name></member>
+      <member refid="struct_s_d_i_o_w_f_f3___hw_attrs_1a497d38cb1d293715e1e209a77565fcf1" prot="public" virt="non-virtual"><scope>SDIOWFF3_HwAttrs</scope><name>txDmaChannel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
