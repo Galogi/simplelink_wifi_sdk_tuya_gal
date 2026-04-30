@@ -43,7 +43,9 @@
  */
 
 #include <stdlib.h>
+#include <stdbool.h>
 #include "FreeRTOS.h"
+#include "task.h"
 
 //SOCKET
 #include "socket_examples.h"
@@ -76,6 +78,10 @@
 #include "osi_kernel.h"
 #include "network_terminal.h"
 #include "tkl_wifi.h"
+#include "tuya_iot.h"
+#include "tal_api.h"
+#include "netmgr.h"
+#include "netcfg.h"
 
 #include "date_time_service.h"
 #ifdef SNTP_SUPPORT
@@ -103,6 +109,40 @@ void initialize_mbedtls_threading(); //define prototype
 #define tklWifiInitStr "tkl_wifi_init"
 #define tklWifiScanStr "tkl_wifi_scan"
 #define tklWifiConnectStr "tkl_wifi_connect"
+#define TUYA_TASK_STACK_SIZE 4096U
+#define TUYA_TASK_PRIORITY   (SPAWN_TASK_PRIORITY - 1)
+
+#ifndef TUYA_PRODUCT_KEY
+#define TUYA_PRODUCT_KEY "gon0wbdhnesxtkxo"
+#endif
+
+#ifndef TUYA_DEVICE_UUID
+#define TUYA_DEVICE_UUID "uuid1372d8812acd2534"
+#endif
+
+#ifndef TUYA_DEVICE_AUTHKEY
+#define TUYA_DEVICE_AUTHKEY "hKtjIfqvTav2ibTG3lcDKsa5Q0c2UGAg"
+#endif
+
+#ifndef TUYA_DEVICE_SW_VER
+#define TUYA_DEVICE_SW_VER "1.0.0"
+#endif
+
+#ifndef TUYA_DEVICE_PINCODE
+#define TUYA_DEVICE_PINCODE "12345678"
+#endif
+
+#ifndef TUYA_STORAGE_NAMESPACE
+#define TUYA_STORAGE_NAMESPACE "tuya_cc35xx"
+#endif
+
+#ifndef TUYA_KV_SEED
+#define TUYA_KV_SEED "TI_TUYA_SEED_001"
+#endif
+
+#ifndef TUYA_KV_KEY
+#define TUYA_KV_KEY "TI_TUYA_KEY__001"
+#endif
 
 /****************************************************************************
                       LOCAL FUNCTION PROTOTYPES
@@ -135,6 +175,13 @@ int32_t cmdTklWifiScanCallback(void *arg);
 int32_t printTklWifiScanUsage(void *arg);
 int32_t cmdTklWifiConnectCallback(void *arg);
 int32_t printTklWifiConnectUsage(void *arg);
+static bool tuya_network_check(void);
+void WlanStackEventHandler(WlanEvent_t *pWlanEvent);
+static void tuya_event_handler(tuya_iot_client_t *client, tuya_event_msg_t *event);
+static void tuya_task(void *arg);
+static OPERATE_RET tuya_platform_bootstrap(void);
+static int32_t tuya_wifi_owner_start(void);
+static void tuya_log_output_cb(const char *str);
 
 extern uint32_t ActiveNetIfBitMap;
 extern void tkl_wifi_handle_event(WlanEvent_t *pWlanEvent);
@@ -401,6 +448,185 @@ cmdAction_t gCmdList[] =
 
 uint32_t            gMaxCmd = (sizeof(gCmdList)/sizeof(cmdAction_t));
 appControlBlock     app_CB;
+static tuya_iot_client_t g_tuya_client;
+static TaskHandle_t g_tuya_task_handle = NULL;
+static bool g_tuya_platform_ready = false;
+
+static void tuya_log_output_cb(const char *str)
+{
+    if (str != NULL) {
+        UART_PRINT("%s", str);
+    }
+}
+
+static bool tuya_network_check(void)
+{
+    return (IS_STA_CONNECTED(app_CB.Status) && IS_IP_ACQUIRED(app_CB.Status)) ? true : false;
+}
+
+static void tuya_event_handler(tuya_iot_client_t *client, tuya_event_msg_t *event)
+{
+    (void)client;
+
+    if (event == NULL) {
+        return;
+    }
+
+    switch (event->id) {
+        case TUYA_EVENT_BIND_START:
+            UART_PRINT("[TUYA_TOKEN] bind start\r\n");
+            break;
+        case TUYA_EVENT_BIND_TOKEN_ON:
+            UART_PRINT("[TUYA_TOKEN] token accepted\r\n");
+            break;
+        case TUYA_EVENT_ACTIVATE_SUCCESSED:
+            UART_PRINT("[TUYA_ACT] activation success event\r\n");
+            break;
+        case TUYA_EVENT_MQTT_CONNECTED:
+            UART_PRINT("[TUYA_MQTT] event connected\r\n");
+            break;
+        case TUYA_EVENT_MQTT_DISCONNECT:
+            UART_PRINT("[TUYA_MQTT] disconnected\r\n");
+            break;
+        default:
+            break;
+    }
+}
+
+static int32_t tuya_wifi_owner_start(void)
+{
+    int32_t ret = 0;
+
+    if (IS_BIT_SET(ActiveNetIfBitMap, NET_IF_IS_UP)) {
+        UART_PRINT("[TUYA_BOOT] Wi-Fi owner already started\r\n");
+        return 0;
+    }
+
+    ret = Wlan_Start(WlanStackEventHandler);
+    if (ret != 0) {
+        UART_PRINT("[TUYA_BOOT] Wi-Fi owner start failed ret=%d\r\n", ret);
+        return ret;
+    }
+
+    SET_BIT_IN_BITMAP(ActiveNetIfBitMap, NET_IF_IS_UP);
+    SET_STATUS_BIT(app_CB.Status, STATUS_BIT_NWP_INIT);
+
+#ifdef CC35XX
+    {
+        uint32_t powerManagement = (uint32_t)POWER_MANAGEMENT_ELP_MODE;
+        (void)Wlan_Set(WLAN_SET_POWER_MANAGEMENT, &powerManagement);
+    }
+#endif
+
+    UART_PRINT("[TUYA_BOOT] Wi-Fi owner start ok\r\n");
+    return 0;
+}
+
+static OPERATE_RET tuya_platform_bootstrap(void)
+{
+    OPERATE_RET op_ret = OPRT_OK;
+    tal_kv_cfg_t kv_cfg = {
+        .seed = TUYA_KV_SEED,
+        .key = TUYA_KV_KEY,
+    };
+    netcfg_args_t netcfg_args = {
+        .type = NETCFG_TUYA_WIFI_AP,
+        .uuid = (char *)TUYA_DEVICE_UUID,
+        .pincode = (char *)TUYA_DEVICE_PINCODE,
+    };
+    tuya_iot_config_t config = {
+        .productkey = TUYA_PRODUCT_KEY,
+        .uuid = TUYA_DEVICE_UUID,
+        .pincode = TUYA_DEVICE_PINCODE,
+        .authkey = TUYA_DEVICE_AUTHKEY,
+        .software_ver = TUYA_DEVICE_SW_VER,
+        .storage_namespace = TUYA_STORAGE_NAMESPACE,
+        .event_handler = tuya_event_handler,
+        .network_check = tuya_network_check,
+    };
+
+    if (g_tuya_platform_ready) {
+        return OPRT_OK;
+    }
+
+    if (tuya_wifi_owner_start() != 0) {
+        return OPRT_COM_ERROR;
+    }
+
+    op_ret = tal_log_init(TAL_LOG_LEVEL_DEBUG, DEF_LOG_BUF_LEN, tuya_log_output_cb);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tal_log_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = tal_time_service_init();
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tal_time_service_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = tal_workq_init();
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tal_workq_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = tal_kv_init(&kv_cfg);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tal_kv_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = tuya_iot_init(&g_tuya_client, &config);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tuya_iot_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    UART_PRINT("[TUYA_BOOT] Tuya init ok\r\n");
+
+    op_ret = netmgr_init(NETCONN_WIFI);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] netmgr_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = netmgr_conn_set(NETCONN_WIFI, NETCONN_CMD_NETCFG, &netcfg_args);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] netmgr_conn_set NETCFG failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    g_tuya_platform_ready = true;
+    UART_PRINT("[TUYA_BOOT] platform bootstrap ok\r\n");
+    return OPRT_OK;
+}
+
+static void tuya_task(void *arg)
+{
+    int op_ret;
+    tuya_iot_client_t *client = (tuya_iot_client_t *)arg;
+
+    if (client == NULL) {
+        UART_PRINT("[TUYA_BOOT] Tuya task missing client\r\n");
+        vTaskDelete(NULL);
+        return;
+    }
+
+    UART_PRINT("[TUYA_BOOT] Tuya task started\r\n");
+
+    op_ret = tuya_iot_start(client);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tuya_iot_start failed ret=%d\r\n", op_ret);
+        vTaskDelete(NULL);
+        return;
+    }
+
+    for (;;) {
+        (void)tuya_iot_yield(client);
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+}
 
 /*!
     \brief          WlanStackEventHandler
@@ -443,6 +669,7 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
             UART_PRINT(
                         "\n\r\n\r[WLAN EVENT HANDLER] connection failed (probably due to Timeout)");
             osi_SyncObjSignal(&(app_CB.CON_CB.connectEventSyncObj));
+            tkl_wifi_handle_event(pWlanEvent);
             break;
         }
         SET_STATUS_BIT(app_CB.Status, STATUS_BIT_STA_CONNECTION);
@@ -632,6 +859,7 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
     case WLAN_EVENT_CONNECTING:
     {
         UART_PRINT("\n\r[WLAN EVENT HANDLER] WLAN_EVENT_CONNECTING, STA is connecting \n\r");
+        tkl_wifi_handle_event(pWlanEvent);
     }
     break;
     case WLAN_EVENT_ASSOCIATED:
@@ -653,6 +881,7 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
     case WLAN_EVENT_AUTHENTICATION_REJECTED:
     {
         UART_PRINT("\n\r[WLAN EVENT HANDLER] WLAN_EVENT_AUTHENTICATION_REJECTED \n\r");
+        tkl_wifi_handle_event(pWlanEvent);
     }
     break;
     case WLAN_EVENT_COMMAND_TIMEOUT:
@@ -663,6 +892,7 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
     case WLAN_EVENT_ASSOCIATION_REJECTED:
     {
         UART_PRINT("\n\r[WLAN EVENT HANDLER] WLAN_EVENT_ASSOCIATION_REJECTED \n\r");
+        tkl_wifi_handle_event(pWlanEvent);
     }
     break;
     case WLAN_EVENT_GENERAL_ERROR:
@@ -1312,6 +1542,23 @@ void *network_terminal_entry(void *args)
 
     initialize_mbedtls_threading();
 #endif // CC35XX
+
+    RetVal = tuya_platform_bootstrap();
+    if (RetVal != OPRT_OK)
+    {
+        UART_PRINT("[TUYA_BOOT] bootstrap failed ret=%d\r\n", RetVal);
+        return NULL;
+    }
+
+    if (g_tuya_task_handle == NULL)
+    {
+        if (xTaskCreate(tuya_task, "tuya_iot", TUYA_TASK_STACK_SIZE, &g_tuya_client,
+                        TUYA_TASK_PRIORITY, &g_tuya_task_handle) != pdPASS)
+        {
+            UART_PRINT("[TUYA_BOOT] failed to create Tuya task\r\n");
+            return NULL;
+        }
+    }
 
 
     /* Output device information to the UART terminal */

@@ -32,4 +32,20 @@ CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_symmetry.c.obj: 
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\clang\18\include\stdbool.h \
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\string.h \
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\xlocale\_string.h \
-  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\include\common\tuya_error_code.h
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\include\common\tuya_error_code.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\ti_config\tkl\tuyaos\tuyaos_adapter\include\system\tkl_memory.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\aes.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\private_access.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\build_info.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\port\tuya_tls_config.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\mbedtls_config.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\check_config.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\clang\18\include\limits.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\limits.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\platform_util.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\libtls\mbedtls-3.1.0\include\mbedtls\platform_time.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\time.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\abi_prefix.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\sys\timespec.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\sys\_timespec.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\xlocale\_time.h

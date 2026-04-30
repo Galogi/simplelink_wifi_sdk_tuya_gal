@@ -76,6 +76,7 @@ set(${TARGET_NAME}_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha256.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha512.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/src/tal_kv.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/src/kv_serialize.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/littlefs/lfs.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_security/src/tal_symmetry.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_security/src/tal_hash.c
@@ -119,6 +120,9 @@ set(${TARGET_NAME}_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/tuya_ota.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/mqtt_service.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/netcfg.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/lan/lan_sock.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/lan/tuya_lan.c
@@ -126,7 +130,8 @@ set(${TARGET_NAME}_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/schema/dp_schema.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/tls/tuya_tls.c
-     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netmgr.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netmgr.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tuya_transport.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tcp_transporter.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tls_transporter.c

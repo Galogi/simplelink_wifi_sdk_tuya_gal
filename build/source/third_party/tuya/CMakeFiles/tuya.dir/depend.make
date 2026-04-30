@@ -387,11 +387,13 @@ source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h
 source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_fs.c.obj: \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/system/tkl_fs.h \
@@ -978,16 +980,29 @@ source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/
  C:/ti/simplelink_wifi_sdk_9_21_00_15/source/ti/drivers/SPI.h
 source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_symmetry.c.obj: \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_symmetry.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/system/tkl_memory.h \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
  ../source/third_party/tuya/ti_config/tuya_kconfig.h \
  ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
  ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/aes.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_symmetry.c \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
@@ -995,10 +1010,14 @@ source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
- C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
 source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_system.c.obj: \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/system/tkl_system.h \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
@@ -1289,6 +1308,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/protocol/tuya_protocol.h \
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/schema/dp_schema.h \
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.h \
+ ../source/ti/drivers/net/wifi/wifi_host_driver/inc_common/errors.h \
  ../source/ti/drivers/net/wifi/wifi_host_driver/inc_common/osi_type.h \
  ../source/ti/drivers/net/wifi/wifi_host_driver/inc_common/user_errno.h \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_wifi.c \
@@ -2490,6 +2510,119 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj: 
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdlib.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj: \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_asymmetrical.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_hash.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_symmetry.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_list.h \
+ ../source/third_party/tuya/ti_config/tuya_kconfig.h \
+ ../source/third_party/tuya/tuya_src/common/utilities/mix_method.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/include/tal_cli/tal_cli.h \
+ ../source/third_party/tuya/tuya_src/include/tal_driver/tal_uart.h \
+ ../source/third_party/tuya/tuya_src/include/tal_kv/tal_kv.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_asymmetrical.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_hash.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_security.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_symmetry.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_x509.h \
+ ../source/third_party/tuya/tuya_src/libcjson/cJSON/cJSON.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/bignum.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ccm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chacha20.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chachapoly.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cipher.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cmac.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecdsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecp.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/gcm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md5.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/pk.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/poly1305.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ripemd160.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/rsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha1.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha256.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha512.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/threading.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_compat.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_common.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_extra.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_sizes.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_struct.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_types.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_values.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/threading_alt.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs_util.h \
+ ../source/third_party/tuya/tuya_src/tal_network/include/tal_network.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_api.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event_info.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_log.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_memory.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_mutex.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_ota.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_queue.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_semaphore.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sleep.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sw_timer.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_system.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_thread.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_time_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workq_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workqueue.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/src/kv_serialize.c \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/alloca.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/assert.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/tal_kv.c.obj: \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/flash/tkl_flash.h \
  ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_asymmetrical.h \
@@ -5022,6 +5155,436 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/lan_sock.h \
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/tuya_lan.c \
  ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/tuya_lan.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/alloca.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/assert.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj: \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_asymmetrical.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_hash.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_symmetry.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_list.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/wifi/tkl_wifi.h \
+ ../source/third_party/tuya/ti_config/tuya_kconfig.h \
+ ../source/third_party/tuya/tuya_src/common/backoffAlgorithm/source/include/backoff_algorithm.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_cloud_com_defs.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/include/libhttp/http_client_interface.h \
+ ../source/third_party/tuya/tuya_src/include/libhttp/http_download.h \
+ ../source/third_party/tuya/tuya_src/include/libmqtt/mqtt_client_interface.h \
+ ../source/third_party/tuya/tuya_src/include/tal_cli/tal_cli.h \
+ ../source/third_party/tuya/tuya_src/include/tal_driver/tal_uart.h \
+ ../source/third_party/tuya/tuya_src/include/tal_kv/tal_kv.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_asymmetrical.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_hash.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_security.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_symmetry.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_x509.h \
+ ../source/third_party/tuya/tuya_src/libcjson/cJSON/cJSON.h \
+ ../source/third_party/tuya/tuya_src/libtls/include/cipher_wrapper.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/bignum.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ccm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chacha20.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chachapoly.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cipher.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cmac.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecdsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecp.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/gcm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md5.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/pk.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/poly1305.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ripemd160.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/rsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha1.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha256.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha512.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/threading.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_compat.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_common.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_extra.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_sizes.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_struct.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_types.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_values.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/threading_alt.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs_util.h \
+ ../source/third_party/tuya/tuya_src/tal_network/include/tal_network.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_api.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event_info.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_log.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_memory.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_mutex.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_ota.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_queue.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_semaphore.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sleep.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sw_timer.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_system.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_thread.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_time_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workq_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workqueue.h \
+ ../source/third_party/tuya/tuya_src/tal_wifi/include/tal_wifi.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_base.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/matop_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_iot.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_log.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_ota.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_register_center.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/protocol/tuya_protocol.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/schema/dp_schema.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/alloca.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/assert.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj: \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
+ ../source/third_party/tuya/ti_config/tuya_kconfig.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/asn1.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/bignum.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/pkcs5.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_log.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj: \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_asymmetrical.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_hash.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_symmetry.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_list.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/wifi/tkl_wifi.h \
+ ../source/third_party/tuya/ti_config/tuya_kconfig.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/include/tal_cli/tal_cli.h \
+ ../source/third_party/tuya/tuya_src/include/tal_driver/tal_uart.h \
+ ../source/third_party/tuya/tuya_src/include/tal_kv/tal_kv.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_asymmetrical.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_hash.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_security.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_symmetry.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_x509.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/bignum.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ccm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chacha20.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chachapoly.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cipher.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cmac.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecdsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecp.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/gcm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md5.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/pk.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/poly1305.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ripemd160.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/rsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha1.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha256.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha512.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/threading.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_compat.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_common.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_extra.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_sizes.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_struct.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_types.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_values.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/threading_alt.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs_util.h \
+ ../source/third_party/tuya/tuya_src/tal_network/include/tal_network.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_api.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event_info.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_log.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_memory.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_mutex.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_ota.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_queue.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_semaphore.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sleep.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sw_timer.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_system.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_thread.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_time_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workq_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workqueue.h \
+ ../source/third_party/tuya/tuya_src/tal_wifi/include/tal_wifi.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.c \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_ti_config.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/abi_prefix.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/alloca.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/assert.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/ctype.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/linkage.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_limits.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/machine/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/_types.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/cdefs.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/stdint.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/sys/timespec.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/time.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_inttypes.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdio.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_stdlib.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_string.h \
+ C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/xlocale/_time.h
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj: \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_asymmetrical.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_hash.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security/tkl_symmetry.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_cloud_types.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/utilities/include/tuya_list.h \
+ ../source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/wifi/tkl_wifi.h \
+ ../source/third_party/tuya/ti_config/tuya_kconfig.h \
+ ../source/third_party/tuya/tuya_src/common/backoffAlgorithm/source/include/backoff_algorithm.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_cloud_com_defs.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_error_code.h \
+ ../source/third_party/tuya/tuya_src/include/common/tuya_iot_config.h \
+ ../source/third_party/tuya/tuya_src/include/libhttp/http_client_interface.h \
+ ../source/third_party/tuya/tuya_src/include/libhttp/http_download.h \
+ ../source/third_party/tuya/tuya_src/include/libmqtt/mqtt_client_interface.h \
+ ../source/third_party/tuya/tuya_src/include/tal_cli/tal_cli.h \
+ ../source/third_party/tuya/tuya_src/include/tal_driver/tal_uart.h \
+ ../source/third_party/tuya/tuya_src/include/tal_kv/tal_kv.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_asymmetrical.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_hash.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_security.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_symmetry.h \
+ ../source/third_party/tuya/tuya_src/include/tal_security/tal_x509.h \
+ ../source/third_party/tuya/tuya_src/libcjson/cJSON/cJSON.h \
+ ../source/third_party/tuya/tuya_src/libtls/include/cipher_wrapper.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/bignum.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/build_info.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ccm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chacha20.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/chachapoly.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/check_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cipher.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/cmac.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/config_psa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecdsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ecp.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/gcm.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/mbedtls_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/md5.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/pk.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_time.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/platform_util.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/poly1305.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/private_access.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/ripemd160.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/rsa.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha1.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha256.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/sha512.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/mbedtls/threading.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_builtin_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_compat.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_config.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_common.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_composites.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_driver_contexts_primitives.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_extra.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_platform.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_sizes.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_struct.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_types.h \
+ ../source/third_party/tuya/tuya_src/libtls/mbedtls-3.1.0/include/psa/crypto_values.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/threading_alt.h \
+ ../source/third_party/tuya/tuya_src/libtls/port/tuya_tls_config.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.h \
+ ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs_util.h \
+ ../source/third_party/tuya/tuya_src/tal_network/include/tal_network.h \
+ ../source/third_party/tuya/tuya_src/tal_network/include/tal_network_register.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_api.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_event_info.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_log.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_memory.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_mutex.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_ota.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_queue.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_semaphore.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sleep.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_sw_timer.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_system.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_thread.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_time_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workq_service.h \
+ ../source/third_party/tuya/tuya_src/tal_system/include/tal_workqueue.h \
+ ../source/third_party/tuya/tuya_src/tal_wifi/include/tal_wifi.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_base.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/matop_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_ble_service.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_iot.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_log.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_ota.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/tuya_lan.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/protocol/tuya_protocol.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/schema/dp_schema.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.h \
+ ../source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netmgr.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdcl.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_isfuncdef.h \
  C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/include/c/_stdint40.h \

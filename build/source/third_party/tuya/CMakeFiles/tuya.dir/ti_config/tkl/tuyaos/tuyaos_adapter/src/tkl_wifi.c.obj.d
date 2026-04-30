@@ -116,6 +116,7 @@ CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_wifi.c.obj: \
   C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\ti_config\tkl\tuyaos\tuyaos_adapter\include\system\tkl_memory.h \
   C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\ti_config\tkl\tuyaos\tuyaos_adapter\include\system\tkl_semaphore.h \
   C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\ti_config\tkl\tuyaos\tuyaos_adapter\include\system\tkl_output.h \
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\ti\drivers\net\wifi\wifi_host_driver\inc_common\errors.h \
   C:\ti\simplelink_wifi_sdk_9_21_00_15\source\third_party\lwip\lwip-stack\src\include\lwip\netif.h \
   C:\ti\simplelink_wifi_sdk_9_21_00_15\source\third_party\lwip\lwip-stack\src\include\lwip\opt.h \
   C:\ti\simplelink_wifi_sdk_9_21_00_15\source\third_party\lwip\ti_config\lwip-port\freertos\include\lwipopts.h \

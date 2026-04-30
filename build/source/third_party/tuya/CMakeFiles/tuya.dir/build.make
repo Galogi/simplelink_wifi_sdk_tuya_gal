@@ -836,9 +836,22 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/tal_kv.c.s: cmak
 	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tal_kv/src/tal_kv.c.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
 
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj: ../source/third_party/tuya/tuya_src/tal_kv/src/kv_serialize.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj"
+	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_kv/src/kv_serialize.c
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.i: cmake_force
+	@echo "Preprocessing C source to CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.s: cmake_force
+	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj: ../source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_kv/littlefs/lfs.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.i: cmake_force
@@ -851,7 +864,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.s: cm
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj: ../source/third_party/tuya/tuya_src/tal_security/src/tal_symmetry.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_security/src/tal_symmetry.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.i: cmake_force
@@ -864,7 +877,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmet
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj: ../source/third_party/tuya/tuya_src/tal_security/src/tal_hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_security/src/tal_hash.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.i: cmake_force
@@ -877,7 +890,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj: ../source/third_party/tuya/tuya_src/tal_network/src/tal_network_register.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_network/src/tal_network_register.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network_register.c.i: cmake_force
@@ -890,7 +903,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj: ../source/third_party/tuya/tuya_src/tal_network/src/tal_platform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_network/src/tal_platform.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platform.c.i: cmake_force
@@ -903,7 +916,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_platfor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj: ../source/third_party/tuya/tuya_src/libhttp/coreHTTP/source/core_http_client.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libhttp/coreHTTP/source/core_http_client.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/core_http_client.c.i: cmake_force
@@ -916,7 +929,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/cor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj: ../source/third_party/tuya/tuya_src/libmqtt/src/mqtt_client_wrapper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/src/mqtt_client_wrapper.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wrapper.c.i: cmake_force
@@ -929,7 +942,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/src/mqtt_client_wra
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj: ../source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt.c.i: cmake_force
@@ -942,7 +955,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/cor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj: ../source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_serializer.c.i: cmake_force
@@ -955,7 +968,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/cor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj: ../source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/core_mqtt_state.c.i: cmake_force
@@ -968,7 +981,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libmqtt/coreMQTT/source/cor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj: ../source/third_party/tuya/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dependency/3rdparty/http_parser/http_parser.c.i: cmake_force
@@ -981,7 +994,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libhttp/coreHTTP/source/dep
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_api.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_api.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.i: cmake_force
@@ -994,7 +1007,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_api.c.s:
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_event.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_event.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.i: cmake_force
@@ -1007,7 +1020,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_event.c.
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_fs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_fs.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.i: cmake_force
@@ -1020,7 +1033,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_fs.c.s: 
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_log.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_log.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.i: cmake_force
@@ -1033,7 +1046,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_log.c.s:
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_sleep.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_sleep.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.i: cmake_force
@@ -1046,7 +1059,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sleep.c.
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_sw_timer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_sw_timer.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer.c.i: cmake_force
@@ -1059,7 +1072,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_sw_timer
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_system.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_system.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c.i: cmake_force
@@ -1072,7 +1085,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_system.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_thread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_thread.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c.i: cmake_force
@@ -1085,7 +1098,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_thread.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_time_serivce.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_time_serivce.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_serivce.c.i: cmake_force
@@ -1098,7 +1111,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_time_ser
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_workq_service.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_workq_service.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_service.c.i: cmake_force
@@ -1111,7 +1124,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workq_se
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj: ../source/third_party/tuya/tuya_src/tal_system/src/tal_workqueue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_system/src/tal_workqueue.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueue.c.i: cmake_force
@@ -1124,7 +1137,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_system/src/tal_workqueu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj: ../source/third_party/tuya/tuya_src/tal_wifi/src/tal_wifi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_wifi/src/tal_wifi.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.i: cmake_force
@@ -1137,7 +1150,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_wifi/src/tal_wifi.c.s: 
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj: ../source/third_party/tuya/tuya_src/tal_network/src/tal_network.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_network/src/tal_network.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network.c.i: cmake_force
@@ -1150,7 +1163,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_network/src/tal_network
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_iot.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_iot.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_iot.c.i: cmake_force
@@ -1163,7 +1176,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_base.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_base.c.i: cmake_force
@@ -1176,7 +1189,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/at
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_service.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/atop_service.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/atop_service.c.i: cmake_force
@@ -1189,7 +1202,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/at
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/iotdns.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/iotdns.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/iotdns.c.i: cmake_force
@@ -1202,7 +1215,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/io
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/matop_service.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/matop_service.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/matop_service.c.i: cmake_force
@@ -1215,7 +1228,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/ma
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_bind.c.i: cmake_force
@@ -1228,7 +1241,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mq
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_endpoint.c.i: cmake_force
@@ -1241,7 +1254,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_health.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_health.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_health.c.i: cmake_force
@@ -1254,7 +1267,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_http.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_http.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_http.c.i: cmake_force
@@ -1267,7 +1280,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_ota.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_ota.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.i: cmake_force
@@ -1280,7 +1293,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.i: cmake_force
@@ -1293,7 +1306,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tu
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_service.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud/mqtt_service.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.i: cmake_force
@@ -1304,9 +1317,48 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mq
 	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
 
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj"
+	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/netcfg.c
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.i: cmake_force
+	@echo "Preprocessing C source to CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.s: cmake_force
+	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj"
+	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.i: cmake_force
+	@echo "Preprocessing C source to CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.s: cmake_force
+	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj"
+	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.i: cmake_force
+	@echo "Preprocessing C source to CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.s: cmake_force
+	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.i: cmake_force
@@ -1319,7 +1371,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/lan_sock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/lan/lan_sock.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.i: cmake_force
@@ -1332,7 +1384,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/lan/tuya_lan.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/lan/tuya_lan.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.i: cmake_force
@@ -1345,7 +1397,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/schema/dp_schema.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/schema/dp_schema.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/dp_schema.c.i: cmake_force
@@ -1358,7 +1410,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/d
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.i: cmake_force
@@ -1371,7 +1423,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/t
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/tls/tuya_tls.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.i: cmake_force
@@ -1384,7 +1436,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netmgr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netmgr.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.i: cmake_force
@@ -1395,9 +1447,22 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/n
 	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
 
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj"
+	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.i: cmake_force
+	@echo "Preprocessing C source to CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.s: cmake_force
+	@echo "Compiling C source to assembly CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tuya_transport.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tuya_transport.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.i: cmake_force
@@ -1410,7 +1475,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transpor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tcp_transporter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tcp_transporter.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.i: cmake_force
@@ -1423,7 +1488,7 @@ source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transpor
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj: source/third_party/tuya/CMakeFiles/tuya.dir/flags.make
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj: ../source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tls_transporter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && C:/ti/ccs2031/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe -c $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj -MD -MF CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj.d C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/transport/tls_transporter.c
 
 source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.i: cmake_force
@@ -1495,6 +1560,7 @@ tuya_OBJECTS = \
 "CMakeFiles/tuya.dir/tuya_src/libtls/mbedtls-3.1.0/library/sha256.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/libtls/mbedtls-3.1.0/library/sha512.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tal_kv/src/tal_kv.c.obj" \
+"CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj" \
@@ -1531,6 +1597,9 @@ tuya_OBJECTS = \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj" \
+"CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj" \
+"CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj" \
+"CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj" \
@@ -1538,6 +1607,7 @@ tuya_OBJECTS = \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj" \
+"CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj" \
 "CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj"
@@ -1604,6 +1674,7 @@ source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libtls/mbedtls-3.1.0/library/sha256.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/libtls/mbedtls-3.1.0/library/sha512.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/tal_kv.c.obj
+source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/src/kv_serialize.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_kv/littlefs/lfs.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_symmetry.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tal_security/src/tal_hash.c.obj
@@ -1640,6 +1711,9 @@ source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_ota.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/cloud/mqtt_service.c.obj
+source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/netcfg.c.obj
+source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c.obj
+source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/lan_sock.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/lan/tuya_lan.c.obj
@@ -1647,12 +1721,13 @@ source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/tls/tuya_tls.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netmgr.c.obj
+source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tuya_transport.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tcp_transporter.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/tuya_src/tuya_cloud_service/transport/tls_transporter.c.obj
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/build.make
 source/third_party/tuya/tuya.a: source/third_party/tuya/CMakeFiles/tuya.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Linking C static library tuya.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Linking C static library tuya.a"
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && $(CMAKE_COMMAND) -P CMakeFiles/tuya.dir/cmake_clean_target.cmake
 	cd C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/source/third_party/tuya && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tuya.dir/link.txt --verbose=$(VERBOSE)
 

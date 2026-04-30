@@ -32,4 +32,5 @@ CMakeFiles/tuya.dir/ti_config/tkl/tuyaos/tuyaos_adapter/src/tkl_flash.c.obj: \
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\clang\18\include\stdbool.h \
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\string.h \
   C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\xlocale\_string.h \
-  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\include\common\tuya_error_code.h
+  C:\ti\Tuya\simplelink_wifi_sdk_tuya\source\third_party\tuya\tuya_src\include\common\tuya_error_code.h \
+  C:\ti\ccs2031\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\include\c\stdio.h

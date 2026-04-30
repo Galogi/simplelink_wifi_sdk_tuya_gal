@@ -303,6 +303,11 @@ void status_callback(struct netif *state_netif)
         if (temp->addr)
         {
             isIpAcquired = 1;
+            if (roleid == WLAN_ROLE_STA)
+            {
+                SET_STATUS_BIT(app_CB.Status, STATUS_BIT_IP_ACQUIRED);
+                Report("[IP_READY] STA IPv4 acquired\r\n");
+            }
             Report("\r\nstatus_callback==UP, local interface IP is %s\r\n", ip4addr_ntoa(netif_ip4_addr(state_netif)));
 
             if (app_CB.CON_CB.dhcpIprecvSyncObj)
@@ -314,6 +319,11 @@ void status_callback(struct netif *state_netif)
         {
             Report("\n\rIp address was not received!! \r\n");
             isIpAcquired = 0;
+            if (roleid == WLAN_ROLE_STA)
+            {
+                CLR_STATUS_BIT(app_CB.Status, STATUS_BIT_IP_ACQUIRED);
+                Report("[IP_READY] STA IPv4 lost\r\n");
+            }
         }
 
         if (extra_status_callback)
@@ -323,6 +333,12 @@ void status_callback(struct netif *state_netif)
     }
     else
     {
+        if (roleid == WLAN_ROLE_STA)
+        {
+            isIpAcquired = 0;
+            CLR_STATUS_BIT(app_CB.Status, STATUS_BIT_IP_ACQUIRED);
+            Report("[IP_READY] STA interface down\r\n");
+        }
         Report("\n\rstatus_callback==DOWN\r\n");
     }
 }

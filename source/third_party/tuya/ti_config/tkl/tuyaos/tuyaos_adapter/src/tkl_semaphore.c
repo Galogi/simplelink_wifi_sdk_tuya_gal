@@ -34,21 +34,24 @@
  */
 OPERATE_RET tkl_semaphore_create_init(TKL_SEM_HANDLE *handle, uint32_t sem_cnt, uint32_t sem_max)
 {
-    // --- BEGIN: user implements ---
     if (NULL == handle) {
         return OPRT_INVALID_PARM;
     }
 
-    // FreeRTOS xSemaphoreCreateCounting takes (MaxCount, InitialCount)
-    // Tuya API takes (InitialCount, MaxCount) -> Careful with order!
-    *handle = (TKL_SEM_HANDLE)xSemaphoreCreateCounting(sem_max, sem_cnt);
+    if (sem_max == 0 || sem_cnt > sem_max) {
+        return OPRT_INVALID_PARM;
+    }
+
+    *handle = (TKL_SEM_HANDLE)xSemaphoreCreateCounting(
+        (UBaseType_t)sem_max,
+        (UBaseType_t)sem_cnt
+    );
 
     if (NULL == *handle) {
         return OPRT_OS_ADAPTER_SEM_CREAT_FAILED;
     }
 
     return OPRT_OK;
-    // --- END: user implements ---
 }
 
 /**

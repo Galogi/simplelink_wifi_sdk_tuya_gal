@@ -11,7 +11,9 @@
 
 // --- BEGIN: user defines and implements ---
 #include "tkl_symmetry.h"
+#include "tkl_memory.h"
 #include "tuya_error_code.h"
+#include <mbedtls/aes.h>
 // --- END: user defines and implements ---
 
 /**
@@ -26,7 +28,20 @@
 OPERATE_RET tkl_aes_create_init(TKL_SYMMETRY_HANDLE *ctx)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    mbedtls_aes_context *mbed_ctx;
+
+    if (ctx == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    mbed_ctx = (mbedtls_aes_context *)tkl_system_malloc(sizeof(mbedtls_aes_context));
+    if (mbed_ctx == NULL) {
+        return OPRT_MALLOC_FAILED;
+    }
+
+    mbedtls_aes_init(mbed_ctx);
+    *ctx = (TKL_SYMMETRY_HANDLE)mbed_ctx;
+    return OPRT_OK;
     // --- END: user implements ---
 }
 
@@ -42,7 +57,12 @@ OPERATE_RET tkl_aes_create_init(TKL_SYMMETRY_HANDLE *ctx)
 OPERATE_RET tkl_aes_free(TKL_SYMMETRY_HANDLE ctx)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    if (ctx != NULL) {
+        mbedtls_aes_free((mbedtls_aes_context *)ctx);
+        tkl_system_free(ctx);
+    }
+
+    return OPRT_OK;
     // --- END: user implements ---
 }
 
@@ -64,7 +84,15 @@ OPERATE_RET tkl_aes_free(TKL_SYMMETRY_HANDLE ctx)
 OPERATE_RET tkl_aes_setkey_enc(TKL_SYMMETRY_HANDLE ctx, const uint8_t *key, uint32_t keybits)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    if (ctx == NULL || key == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    if (mbedtls_aes_setkey_enc((mbedtls_aes_context *)ctx, key, keybits) != 0) {
+        return OPRT_COM_ERROR;
+    }
+
+    return OPRT_OK;
     // --- END: user implements ---
 }
 
@@ -86,7 +114,15 @@ OPERATE_RET tkl_aes_setkey_enc(TKL_SYMMETRY_HANDLE ctx, const uint8_t *key, uint
 OPERATE_RET tkl_aes_setkey_dec(TKL_SYMMETRY_HANDLE ctx, const uint8_t *key, uint32_t keybits)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    if (ctx == NULL || key == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    if (mbedtls_aes_setkey_dec((mbedtls_aes_context *)ctx, key, keybits) != 0) {
+        return OPRT_COM_ERROR;
+    }
+
+    return OPRT_OK;
     // --- END: user implements ---
 }
 
@@ -111,7 +147,23 @@ OPERATE_RET tkl_aes_crypt_ecb(TKL_SYMMETRY_HANDLE ctx, int32_t mode, size_t leng
                               uint8_t *output)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    uint32_t i;
+
+    if (ctx == NULL || input == NULL || output == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    if ((length % 16U) != 0U) {
+        return OPRT_INVALID_PARM;
+    }
+
+    for (i = 0; i < length; i += 16U) {
+        if (mbedtls_aes_crypt_ecb((mbedtls_aes_context *)ctx, mode, input + i, output + i) != 0) {
+            return OPRT_COM_ERROR;
+        }
+    }
+
+    return OPRT_OK;
     // --- END: user implements ---
 }
 
@@ -154,7 +206,15 @@ OPERATE_RET tkl_aes_crypt_cbc(TKL_SYMMETRY_HANDLE ctx, int32_t mode, size_t leng
                               const uint8_t *input, uint8_t *output)
 {
     // --- BEGIN: user implements ---
-    return OPRT_NOT_SUPPORTED;
+    if (ctx == NULL || iv == NULL || input == NULL || output == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    if (mbedtls_aes_crypt_cbc((mbedtls_aes_context *)ctx, mode, length, iv, input, output) != 0) {
+        return OPRT_COM_ERROR;
+    }
+
+    return OPRT_OK;
     // --- END: user implements ---
 }
 

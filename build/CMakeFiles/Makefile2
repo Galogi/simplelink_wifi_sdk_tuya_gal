@@ -628,12 +628,12 @@ source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/all: source/ti/uti
 source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/all: source/third_party/hsmddk/CMakeFiles/hsmddk_cc35xx.dir/all
 	$(MAKE) $(MAKESILENT) -f source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/build.make source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/build.make source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=70,71,72,73 "Built target secure_drivers_cc35xx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=69,70,71,72,73 "Built target secure_drivers_cc35xx"
 .PHONY : source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/all
 
 # Build rule for subdir invocation for target.
 source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/rule
@@ -654,12 +654,12 @@ source/ti/drivers/secure/CMakeFiles/secure_drivers_cc35xx.dir/clean:
 source/ti/log/CMakeFiles/log_cc35xx.dir/all: source/ti/devices/cc35xx/CMakeFiles/driverlib_cc35xx.dir/all
 	$(MAKE) $(MAKESILENT) -f source/ti/log/CMakeFiles/log_cc35xx.dir/build.make source/ti/log/CMakeFiles/log_cc35xx.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/ti/log/CMakeFiles/log_cc35xx.dir/build.make source/ti/log/CMakeFiles/log_cc35xx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=41 "Built target log_cc35xx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num= "Built target log_cc35xx"
 .PHONY : source/ti/log/CMakeFiles/log_cc35xx.dir/all
 
 # Build rule for subdir invocation for target.
 source/ti/log/CMakeFiles/log_cc35xx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/ti/log/CMakeFiles/log_cc35xx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/ti/log/CMakeFiles/log_cc35xx.dir/rule
@@ -758,12 +758,12 @@ source/ti/utils/json/CMakeFiles/json_m33f.dir/clean:
 source/ti/utils/json/CMakeFiles/json_m4.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/ti/utils/json/CMakeFiles/json_m4.dir/build.make source/ti/utils/json/CMakeFiles/json_m4.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/ti/utils/json/CMakeFiles/json_m4.dir/build.make source/ti/utils/json/CMakeFiles/json_m4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=40 "Built target json_m4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num= "Built target json_m4"
 .PHONY : source/ti/utils/json/CMakeFiles/json_m4.dir/all
 
 # Build rule for subdir invocation for target.
 source/ti/utils/json/CMakeFiles/json_m4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/ti/utils/json/CMakeFiles/json_m4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/ti/utils/json/CMakeFiles/json_m4.dir/rule
@@ -784,12 +784,12 @@ source/ti/utils/json/CMakeFiles/json_m4.dir/clean:
 source/ti/utils/json/CMakeFiles/json_m4f.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/ti/utils/json/CMakeFiles/json_m4f.dir/build.make source/ti/utils/json/CMakeFiles/json_m4f.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/ti/utils/json/CMakeFiles/json_m4f.dir/build.make source/ti/utils/json/CMakeFiles/json_m4f.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num= "Built target json_m4f"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=40 "Built target json_m4f"
 .PHONY : source/ti/utils/json/CMakeFiles/json_m4f.dir/all
 
 # Build rule for subdir invocation for target.
 source/ti/utils/json/CMakeFiles/json_m4f.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/ti/utils/json/CMakeFiles/json_m4f.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/ti/utils/json/CMakeFiles/json_m4f.dir/rule
@@ -862,12 +862,12 @@ source/third_party/spiffs/CMakeFiles/spiffs_m33f.dir/clean:
 source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/build.make source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/build.make source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=79 "Built target spiffs_m33f_cc26xx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num= "Built target spiffs_m33f_cc26xx"
 .PHONY : source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/all
 
 # Build rule for subdir invocation for target.
 source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/third_party/spiffs/CMakeFiles/spiffs_m33f_cc26xx.dir/rule
@@ -944,12 +944,12 @@ source/third_party/hsmddk/CMakeFiles/hsmddk_cc35xx_its.dir/clean:
 source/third_party/lwip/CMakeFiles/lwip.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/third_party/lwip/CMakeFiles/lwip.dir/build.make source/third_party/lwip/CMakeFiles/lwip.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/third_party/lwip/CMakeFiles/lwip.dir/build.make source/third_party/lwip/CMakeFiles/lwip.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58 "Built target lwip"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58 "Built target lwip"
 .PHONY : source/third_party/lwip/CMakeFiles/lwip.dir/all
 
 # Build rule for subdir invocation for target.
 source/third_party/lwip/CMakeFiles/lwip.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/third_party/lwip/CMakeFiles/lwip.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/third_party/lwip/CMakeFiles/lwip.dir/rule
@@ -996,12 +996,12 @@ source/third_party/hostap/CMakeFiles/hostap.dir/clean:
 source/third_party/nimble/CMakeFiles/nimble.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/third_party/nimble/CMakeFiles/nimble.dir/build.make source/third_party/nimble/CMakeFiles/nimble.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/third_party/nimble/CMakeFiles/nimble.dir/build.make source/third_party/nimble/CMakeFiles/nimble.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=59,60,61,62,63,64,65,66,67,68,69 "Built target nimble"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=59,60,61,62,63,64,65,66,67,68 "Built target nimble"
 .PHONY : source/third_party/nimble/CMakeFiles/nimble.dir/all
 
 # Build rule for subdir invocation for target.
 source/third_party/nimble/CMakeFiles/nimble.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/third_party/nimble/CMakeFiles/nimble.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/third_party/nimble/CMakeFiles/nimble.dir/rule
@@ -1022,12 +1022,12 @@ source/third_party/nimble/CMakeFiles/nimble.dir/clean:
 source/third_party/tuya/CMakeFiles/tuya.dir/all:
 	$(MAKE) $(MAKESILENT) -f source/third_party/tuya/CMakeFiles/tuya.dir/build.make source/third_party/tuya/CMakeFiles/tuya.dir/depend
 	$(MAKE) $(MAKESILENT) -f source/third_party/tuya/CMakeFiles/tuya.dir/build.make source/third_party/tuya/CMakeFiles/tuya.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=80,81,82,83,84,85,86,87,88,89,90,91 "Built target tuya"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles --progress-num=79,80,81,82,83,84,85,86,87,88,89,90,91 "Built target tuya"
 .PHONY : source/third_party/tuya/CMakeFiles/tuya.dir/all
 
 # Build rule for subdir invocation for target.
 source/third_party/tuya/CMakeFiles/tuya.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/third_party/tuya/CMakeFiles/tuya.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:/ti/Tuya/simplelink_wifi_sdk_tuya/build/CMakeFiles 0
 .PHONY : source/third_party/tuya/CMakeFiles/tuya.dir/rule

@@ -1,5 +1,6 @@
 #include "tkl_flash.h"
 #include "tuya_error_code.h"
+#include <stdio.h>
 #include <string.h>
 
 /* * No TI specific headers included here to avoid CMake build-order dependencies.
@@ -25,6 +26,16 @@ extern int_fast16_t XMEMWFF3_write(XMEM_Handle handle, uint32_t offset, uint8_t 
 extern int_fast16_t XMEMWFF3_erase(XMEM_Handle handle, uint32_t offset, size_t size);
 
 static XMEM_Handle tuya_xmem_handle = NULL;
+static uint32_t tuya_flash_read_log_count = 0;
+static uint32_t tuya_flash_write_log_count = 0;
+static uint32_t tuya_flash_erase_log_count = 0;
+
+static void _tuya_flash_log_region(const char *tag)
+{
+    printf("[TUYA_FLASH] %s physical=0x%08lx\n\r", tag, (unsigned long)nvocmp_physical_slot_address);
+    printf("[TUYA_FLASH] %s logical=0x%08lx\n\r", tag, (unsigned long)nvocmp_logical_slot_address);
+    printf("[TUYA_FLASH] %s region_size=0x%08lx\n\r", tag, (unsigned long)nvocmp_region_size);
+}
 
 static OPERATE_RET _fill_single_region_info(TUYA_FLASH_BASE_INFO_T *info)
 {
@@ -47,8 +58,11 @@ static OPERATE_RET _ensure_flash_open(void) {
     attrs.regionSize      = nvocmp_region_size;
     attrs.deviceNum       = 0;
 
+    _tuya_flash_log_region("open");
+
     tuya_xmem_handle = XMEMWFF3_open(&attrs);
-    
+    printf("[TUYA_FLASH] open handle=%p\n\r", tuya_xmem_handle);
+
     return (tuya_xmem_handle == NULL) ? OPRT_COM_ERROR : OPRT_OK;
 }
 
@@ -57,6 +71,11 @@ OPERATE_RET tkl_flash_read(uint32_t addr, uint8_t *dst, uint32_t size) {
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
     
     int_fast16_t res = XMEMWFF3_read(tuya_xmem_handle, addr, dst, size, 0);
+    if (tuya_flash_read_log_count < 8) {
+        printf("[TUYA_FLASH] read addr=0x%08lx size=%lu ret=%ld\n\r", (unsigned long)addr, (unsigned long)size,
+               (long)res);
+        tuya_flash_read_log_count++;
+    }
     return (res >= 0) ? OPRT_OK : OPRT_COM_ERROR;
 }
 
@@ -76,6 +95,11 @@ OPERATE_RET tkl_flash_write(uint32_t addr, const uint8_t *src, uint32_t size)
                                           addr + current_offset, 
                                           (uint8_t *)(src + current_offset), 
                                           write_size, 0);
+        if (tuya_flash_write_log_count < 8) {
+            printf("[TUYA_FLASH] write addr=0x%08lx size=%lu ret=%ld\n\r",
+                   (unsigned long)(addr + current_offset), (unsigned long)write_size, (long)res);
+            tuya_flash_write_log_count++;
+        }
         
         if (res < 0) {
             return OPRT_COM_ERROR; // Write failed
@@ -92,6 +116,11 @@ OPERATE_RET tkl_flash_erase(uint32_t addr, uint32_t size) {
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
     
     int_fast16_t res = XMEMWFF3_erase(tuya_xmem_handle, addr, size);
+    if (tuya_flash_erase_log_count < 8) {
+        printf("[TUYA_FLASH] erase addr=0x%08lx size=%lu ret=%ld\n\r", (unsigned long)addr, (unsigned long)size,
+               (long)res);
+        tuya_flash_erase_log_count++;
+    }
     return (res >= 0) ? OPRT_OK : OPRT_COM_ERROR;
 }
 
@@ -102,6 +131,9 @@ OPERATE_RET tkl_flash_get_one_type_info(TUYA_FLASH_TYPE_E type, TUYA_FLASH_BASE_
     if (info == NULL) return OPRT_INVALID_PARM;
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
 
+    printf("[TUYA_FLASH] type=%d kv_type=%d uf_type=%d\n\r", type, TUYA_FLASH_TYPE_KV_DATA, TUYA_FLASH_TYPE_UF);
+    _tuya_flash_log_region("map");
+
     /*
      * The current TI port exposes a single practical XMEM/NVOCMP-backed region
      * to Tuya. Both KV and UF are intentionally mapped to that same region
@@ -110,7 +142,13 @@ OPERATE_RET tkl_flash_get_one_type_info(TUYA_FLASH_TYPE_E type, TUYA_FLASH_BASE_
     switch (type) {
         case TUYA_FLASH_TYPE_KV_DATA:
         case TUYA_FLASH_TYPE_UF:
-            return _fill_single_region_info(info);
+            if (_fill_single_region_info(info) == OPRT_OK) {
+                printf("[TUYA_FLASH] start_addr=0x%08lx\n\r", (unsigned long)info->partition[0].start_addr);
+                printf("[TUYA_FLASH] size=0x%08lx\n\r", (unsigned long)info->partition[0].size);
+                printf("[TUYA_FLASH] block_size=0x%08lx\n\r", (unsigned long)info->partition[0].block_size);
+                return OPRT_OK;
+            }
+            return OPRT_COM_ERROR;
         default:
             memset(info, 0, sizeof(*info));
             return OPRT_NOT_SUPPORTED;

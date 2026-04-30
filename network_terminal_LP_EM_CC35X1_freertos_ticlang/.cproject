@@ -85,6 +85,28 @@
                                     <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include"/>
                                     <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_kv/include"/>
                                     <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_kv/littlefs"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libcjson/cJSON"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/protocol"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netcfg"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/netmgr"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libhttp/include"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/coreMQTT/source/include"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/libmqtt/include"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/libtls"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/libhttp"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/libmqtt"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/authorize"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/transport"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/tls"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/schema"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tuya_cloud_service/cloud"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/source"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/tal_cli/include"/>
+                                    <listOptionValue value="C:/ti/simplelink_wifi_sdk_9_21_00_15/source/third_party/mbedtls/ti"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/tal_driver"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/tuya_src/include/tal_security"/>
+                                    <listOptionValue value="C:/ti/Tuya/simplelink_wifi_sdk_tuya/source/third_party/tuya/ti_config/tkl/tuyaos/tuyaos_adapter/include/security"/>
                                 </option>
                                 <option id="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.ASM_SPECIFIC_FLAGS.1480553633" superClass="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.ASM_SPECIFIC_FLAGS" valueType="stringList">
                                     <listOptionValue value="[asm: -xti-asm]"/>
@@ -99,6 +121,7 @@
                                     <listOptionValue value="RAM_CONTAINER"/>
                                     <listOptionValue value="SNTP_SUPPORT"/>
                                     <listOptionValue value="NVOCMP_POSIX_MUTEX"/>
+                                    <listOptionValue value="MBEDTLS_CONFIG_FILE=&quot;&lt;configs/config-hsm.h&gt;&quot;"/>
                                 </option>
                                 <option id="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MCPU.941097356" superClass="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MCPU" value="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MCPU.cortex-m33" valueType="enumerated"/>
                                 <option id="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MFLOAT_ABI.768767644" superClass="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MFLOAT_ABI" value="com.ti.ccstudio.buildDefinitions.TMS470_TICLANG_4.0.compilerID.MFLOAT_ABI.hard" valueType="enumerated"/>
