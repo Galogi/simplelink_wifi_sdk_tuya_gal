@@ -206,6 +206,15 @@ typedef void (*WIFI_REV_MGNT_CB)(uint8_t *buf, uint32_t len);
  */
 typedef void (*WIFI_EVENT_CB)(WF_EVENT_E event, void *arg);
 
+typedef struct {
+    BOOL_T initialized;
+    BOOL_T sta_role_up;
+    BOOL_T ap_role_up;
+    WF_WK_MD_E requested_mode;
+    WF_WK_MD_E current_mode;
+    WF_STATION_STAT_E sta_status;
+} TKL_WIFI_DIAG_T;
+
 /**
  * @brief set wifi station work status changed callback
  *
@@ -213,6 +222,8 @@ typedef void (*WIFI_EVENT_CB)(WF_EVENT_E event, void *arg);
  * @return OPRT_OK on success. Others on error, please refer to tuya_error_code.h
  */
 OPERATE_RET tkl_wifi_init(WIFI_EVENT_CB cb);
+
+OPERATE_RET tkl_wifi_diag_get(TKL_WIFI_DIAG_T *diag);
 
 /**
  * @brief scan current environment and obtain the ap

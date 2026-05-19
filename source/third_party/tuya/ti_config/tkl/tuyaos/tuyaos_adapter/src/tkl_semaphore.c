@@ -78,7 +78,10 @@ OPERATE_RET tkl_semaphore_wait(const TKL_SEM_HANDLE handle, uint32_t timeout)
     if (timeout == SEM_WAIT_FOREVER) {
         ticks = portMAX_DELAY;
     } else {
-        ticks = timeout / portTICK_PERIOD_MS;
+        ticks = pdMS_TO_TICKS(timeout);
+        if (ticks == 0U && timeout > 0U) {
+            ticks = 1U;
+        }
     }
 
     ret = xSemaphoreTake((SemaphoreHandle_t)handle, ticks);

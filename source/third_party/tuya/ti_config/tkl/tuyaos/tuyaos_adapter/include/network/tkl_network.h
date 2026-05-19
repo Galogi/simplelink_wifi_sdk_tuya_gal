@@ -17,6 +17,52 @@
 extern "C" {
 #endif
 
+typedef struct {
+    int last_socket_fd;
+    int last_socket_type;
+    int last_socket_ret;
+    int last_bind_fd;
+    TUYA_IP_ADDR_T last_bind_addr;
+    uint16_t last_bind_port;
+    int last_bind_ret;
+    int last_listen_fd;
+    int last_listen_backlog;
+    int last_listen_ret;
+    int last_select_maxfd;
+    uint32_t last_select_timeout_ms;
+    uint32_t last_select_read_mask_before;
+    uint32_t last_select_error_mask_before;
+    uint32_t last_select_read_mask_after;
+    uint32_t last_select_error_mask_after;
+    int last_select_ret;
+    uint32_t select_call_count;
+    uint32_t select_ready_count;
+    uint32_t select_timeout_count;
+    uint32_t select_error_count;
+    int last_accept_listen_fd;
+    int last_accept_ret;
+    TUYA_IP_ADDR_T last_accept_addr;
+    uint16_t last_accept_port;
+    int last_recv_fd;
+    uint32_t last_recv_len;
+    int last_recv_ret;
+    int last_send_fd;
+    uint32_t last_send_len;
+    int last_send_ret;
+    int last_sendto_fd;
+    TUYA_IP_ADDR_T last_sendto_addr;
+    uint16_t last_sendto_port;
+    uint32_t last_sendto_len;
+    int last_sendto_ret;
+    int last_close_fd;
+    int last_close_ret;
+    int ap_tcp_server_fd;
+    uint16_t ap_tcp_server_port;
+    BOOL_T ap_tcp_server_bind_ok;
+    BOOL_T ap_tcp_server_listen_ok;
+    BOOL_T ap_broadcast_translate_active;
+} TKL_NET_DIAG_T;
+
 /**
  * @brief Get error code of network
  *
@@ -27,6 +73,8 @@ extern "C" {
  * @return 0 on success. Others on error, please refer to the error no of the target system
  */
 TUYA_ERRNO tkl_net_get_errno(void);
+
+OPERATE_RET tkl_net_diag_get(TKL_NET_DIAG_T *diag);
 
 /**
  * @brief Add file descriptor to set

@@ -42,8 +42,12 @@
  * If data is matched, test result is passed otherwise failed.
  */
 
+/* TI mbedTLS 3.x requires an explicit config file selection. */
+#define MBEDTLS_CONFIG_FILE "config-hsm.h"
+
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "FreeRTOS.h"
 #include "task.h"
 
@@ -71,6 +75,7 @@
 
 //LWIP
 #include "network_lwip.h"
+#include "dhcpserver.h"
 
 //ERRORS
 #include "errors.h"
@@ -78,6 +83,7 @@
 #include "osi_kernel.h"
 #include "network_terminal.h"
 #include "tkl_wifi.h"
+#include "tkl_network.h"
 #include "tuya_iot.h"
 #include "tal_api.h"
 #include "netmgr.h"
@@ -109,6 +115,10 @@ void initialize_mbedtls_threading(); //define prototype
 #define tklWifiInitStr "tkl_wifi_init"
 #define tklWifiScanStr "tkl_wifi_scan"
 #define tklWifiConnectStr "tkl_wifi_connect"
+#define tuyaDiagStr "tuya_diag"
+#define tuyaNetTestUdpStr "tuya_net_test_udp"
+#define tuyaNetTestTcpServerStr "tuya_net_test_tcp_server"
+#define tuyaNetTestSelectStr "tuya_net_test_select"
 #define TUYA_TASK_STACK_SIZE 4096U
 #define TUYA_TASK_PRIORITY   (SPAWN_TASK_PRIORITY - 1)
 
@@ -125,7 +135,11 @@ void initialize_mbedtls_threading(); //define prototype
 #endif
 
 #ifndef TUYA_DEVICE_SW_VER
-#define TUYA_DEVICE_SW_VER "1.0.0"
+#define TUYA_DEVICE_SW_VER "2.2.2"
+#endif
+
+#ifndef TUYA_FIRMWARE_KEY
+#define TUYA_FIRMWARE_KEY "keyq9w7rcdppurkd"
 #endif
 
 #ifndef TUYA_DEVICE_PINCODE
@@ -169,12 +183,21 @@ int32_t ParseSetDateTimeCmd(void *arg, uint32_t* pYear, uint32_t* pMonth,
         uint32_t* pDay, uint32_t* pHour, uint32_t* pMinute,
         uint32_t* pSecond);
 int32_t DisplayAppBanner(char* appName, char* appVersion);
+void PrintIPAddress(unsigned char ipv6, void *ip);
 int32_t cmdTklWifiInitCallback(void *arg);
 int32_t printTklWifiInitUsage(void *arg);
 int32_t cmdTklWifiScanCallback(void *arg);
 int32_t printTklWifiScanUsage(void *arg);
 int32_t cmdTklWifiConnectCallback(void *arg);
 int32_t printTklWifiConnectUsage(void *arg);
+static int32_t cmdTuyaDiagCallback(void *arg);
+static int32_t printTuyaDiagUsage(void *arg);
+static int32_t cmdTuyaNetTestUdpCallback(void *arg);
+static int32_t printTuyaNetTestUdpUsage(void *arg);
+static int32_t cmdTuyaNetTestTcpServerCallback(void *arg);
+static int32_t printTuyaNetTestTcpServerUsage(void *arg);
+static int32_t cmdTuyaNetTestSelectCallback(void *arg);
+static int32_t printTuyaNetTestSelectUsage(void *arg);
 static bool tuya_network_check(void);
 void WlanStackEventHandler(WlanEvent_t *pWlanEvent);
 static void tuya_event_handler(tuya_iot_client_t *client, tuya_event_msg_t *event);
@@ -184,7 +207,6 @@ static int32_t tuya_wifi_owner_start(void);
 static void tuya_log_output_cb(const char *str);
 
 extern uint32_t ActiveNetIfBitMap;
-extern void tkl_wifi_handle_event(WlanEvent_t *pWlanEvent);
 extern void tkl_wifi_handle_event(WlanEvent_t *pWlanEvent);
 
 /****************************************************************************
@@ -435,6 +457,10 @@ cmdAction_t gCmdList[] =
 { tklWifiInitStr, cmdTklWifiInitCallback, printTklWifiInitUsage },
 { tklWifiScanStr, cmdTklWifiScanCallback, printTklWifiScanUsage },
 { tklWifiConnectStr, cmdTklWifiConnectCallback, printTklWifiConnectUsage },
+{ tuyaDiagStr, cmdTuyaDiagCallback, printTuyaDiagUsage },
+{ tuyaNetTestUdpStr, cmdTuyaNetTestUdpCallback, printTuyaNetTestUdpUsage },
+{ tuyaNetTestTcpServerStr, cmdTuyaNetTestTcpServerCallback, printTuyaNetTestTcpServerUsage },
+{ tuyaNetTestSelectStr, cmdTuyaNetTestSelectCallback, printTuyaNetTestSelectUsage },
 { wlanGetRegDomEntryStr,  cmdWlanGetRegDomainEntryCallback, printWlanGetRegDomainEntryUsage },
 
 #endif // CC35XX
@@ -451,6 +477,176 @@ appControlBlock     app_CB;
 static tuya_iot_client_t g_tuya_client;
 static TaskHandle_t g_tuya_task_handle = NULL;
 static bool g_tuya_platform_ready = false;
+static uint8_t g_last_peer_mac[6] = {0};
+static bool g_last_peer_valid = false;
+
+static const char *tuya_wifi_mode_to_str(WF_WK_MD_E mode)
+{
+    switch (mode) {
+        case WWM_POWERDOWN: return "powerdown";
+        case WWM_SNIFFER: return "sniffer";
+        case WWM_STATION: return "station";
+        case WWM_SOFTAP: return "softap";
+        case WWM_STATIONAP: return "stationap";
+        default: return "unknown";
+    }
+}
+
+static const char *tuya_sta_status_to_str(WF_STATION_STAT_E status)
+{
+    switch (status) {
+        case WSS_IDLE: return "idle";
+        case WSS_CONNECTING: return "connecting";
+        case WSS_PASSWD_WRONG: return "passwd_wrong";
+        case WSS_NO_AP_FOUND: return "no_ap";
+        case WSS_CONN_FAIL: return "conn_fail";
+        case WSS_CONN_SUCCESS: return "conn_ok";
+        case WSS_GOT_IP: return "got_ip";
+        case WSS_DHCP_FAIL: return "dhcp_fail";
+        default: return "unknown";
+    }
+}
+
+static void tuya_diag_print_ipv4_line(const char *label, uint32_t ip)
+{
+    uint32_t temp = htonl(ip);
+
+    UART_PRINT("%s", label);
+    PrintIPAddress(FALSE, &temp);
+    UART_PRINT("\r\n");
+}
+
+static void tuya_diag_print_netif_info(const char *label, WlanRole_e role)
+{
+    uint32_t ip = 0;
+    uint32_t netmask = 0;
+    uint32_t gw = 0;
+    uint32_t dhcp = 0;
+    int32_t ret = network_stack_get_if_ip(role, &ip, &netmask, &gw, &dhcp);
+
+    UART_PRINT("[%s] ret=%d dhcp=%u\r\n", label, ret, (unsigned int)dhcp);
+    if (ret == 0) {
+        tuya_diag_print_ipv4_line("  ip: ", ip);
+        tuya_diag_print_ipv4_line("  mask: ", netmask);
+        tuya_diag_print_ipv4_line("  gw: ", gw);
+    }
+}
+
+static int32_t tuya_net_test_tcp_server_common(uint16_t port, bool run_select)
+{
+    uint32_t ap_ip = 0;
+    TUYA_FD_SET_T readfds;
+    TUYA_FD_SET_T errfds;
+    int fd;
+    int ret;
+
+    if (network_stack_get_if_ip(WLAN_ROLE_AP, &ap_ip, NULL, NULL, NULL) != 0) {
+        UART_PRINT("[TUYA_TEST] AP IP unavailable\r\n");
+        return -1;
+    }
+
+    fd = tkl_net_socket_create(PROTOCOL_TCP);
+    if (fd < 0) {
+        UART_PRINT("[TUYA_TEST] tcp socket create FAIL\r\n");
+        return -1;
+    }
+
+    ret = tkl_net_set_reuse(fd);
+    UART_PRINT("[TUYA_TEST] reuse ret=%d\r\n", ret);
+    ret = tkl_net_bind(fd, ap_ip, port);
+    if (ret != 0) {
+        UART_PRINT("[TUYA_TEST] bind FAIL ret=%d\r\n", ret);
+        (void)tkl_net_close(fd);
+        return -1;
+    }
+
+    ret = tkl_net_listen(fd, 1);
+    if (ret != 0) {
+        UART_PRINT("[TUYA_TEST] listen FAIL ret=%d\r\n", ret);
+        (void)tkl_net_close(fd);
+        return -1;
+    }
+
+    UART_PRINT("[TUYA_TEST] tcp bind/listen PASS port=%u\r\n", port);
+
+    if (run_select) {
+        (void)tkl_net_fd_zero(&readfds);
+        (void)tkl_net_fd_zero(&errfds);
+        (void)tkl_net_fd_set(fd, &readfds);
+        (void)tkl_net_fd_set(fd, &errfds);
+        ret = tkl_net_select(fd + 1, &readfds, NULL, &errfds, 1000);
+        UART_PRINT("[TUYA_TEST] select ret=%d read=0x%02x err=0x%02x\r\n",
+                   ret,
+                   readfds.placeholder[0],
+                   errfds.placeholder[0]);
+        if (ret < 0) {
+            (void)tkl_net_close(fd);
+            return -1;
+        }
+    }
+
+    (void)tkl_net_close(fd);
+    UART_PRINT("[TUYA_TEST] tcp server PASS\r\n");
+    return 0;
+}
+
+static const char *tuya_state_to_str(uint8_t state)
+{
+    switch (state) {
+        case 0: return "STATE_IDLE";
+        case 1: return "STATE_START";
+        case 2: return "STATE_DATA_LOAD";
+        case 3: return "STATE_ENDPOINT_GET";
+        case 4: return "STATE_ENDPOINT_UPDATE";
+        case 5: return "STATE_TOKEN_PENDING";
+        case 6: return "STATE_ACTIVATING";
+        case 7: return "STATE_NETWORK_CHECK";
+        case 8: return "STATE_NETWORK_RECONNECT";
+        case 9: return "STATE_STARTUP_UPDATE";
+        case 10: return "STATE_MQTT_CONNECT_START";
+        case 11: return "STATE_MQTT_CONNECTING";
+        case 12: return "STATE_MQTT_RECONNECT";
+        case 13: return "STATE_MQTT_YIELD";
+        case 14: return "STATE_RESTART";
+        case 15: return "STATE_RESET";
+        case 16: return "STATE_STOP";
+        case 17: return "STATE_EXIT";
+        default: return "STATE_UNKNOWN";
+    }
+}
+
+static OPERATE_RET tuya_kv_self_test(void)
+{
+    static const char probe_key[] = "__tuya_boot_probe";
+    static const char probe_value[] = "ok";
+    uint8_t *readback = NULL;
+    size_t readback_len = 0;
+    OPERATE_RET op_ret;
+
+    op_ret = tal_kv_set(probe_key, (const uint8_t *)probe_value, sizeof(probe_value) - 1);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] KV self-test write failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    op_ret = tal_kv_get(probe_key, &readback, &readback_len);
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] KV self-test read failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
+    if ((readback_len != (sizeof(probe_value) - 1)) ||
+        (memcmp(readback, probe_value, sizeof(probe_value) - 1) != 0)) {
+        UART_PRINT("[TUYA_BOOT] KV self-test verify failed len=%u\r\n", (unsigned int)readback_len);
+        tal_kv_free(readback);
+        return OPRT_COM_ERROR;
+    }
+
+    tal_kv_free(readback);
+    (void)tal_kv_del(probe_key);
+    UART_PRINT("[TUYA_BOOT] KV self-test passed\r\n");
+    return OPRT_OK;
+}
 
 static void tuya_log_output_cb(const char *str)
 {
@@ -529,21 +725,22 @@ static OPERATE_RET tuya_platform_bootstrap(void)
         .seed = TUYA_KV_SEED,
         .key = TUYA_KV_KEY,
     };
-    netcfg_args_t netcfg_args = {
-        .type = NETCFG_TUYA_WIFI_AP,
-        .uuid = (char *)TUYA_DEVICE_UUID,
-        .pincode = (char *)TUYA_DEVICE_PINCODE,
-    };
+   netcfg_args_t netcfg_args = {
+    .type = NETCFG_TUYA_WIFI_AP,
+    .uuid = (char *)TUYA_DEVICE_UUID,
+    .pincode = NULL,
+};
     tuya_iot_config_t config = {
-        .productkey = TUYA_PRODUCT_KEY,
-        .uuid = TUYA_DEVICE_UUID,
-        .pincode = TUYA_DEVICE_PINCODE,
-        .authkey = TUYA_DEVICE_AUTHKEY,
-        .software_ver = TUYA_DEVICE_SW_VER,
-        .storage_namespace = TUYA_STORAGE_NAMESPACE,
-        .event_handler = tuya_event_handler,
-        .network_check = tuya_network_check,
-    };
+    .productkey = TUYA_PRODUCT_KEY,
+    .uuid = TUYA_DEVICE_UUID,
+    .authkey = TUYA_DEVICE_AUTHKEY,
+    .software_ver = TUYA_DEVICE_SW_VER,
+    .firmware_key = TUYA_FIRMWARE_KEY,
+    .storage_namespace = TUYA_STORAGE_NAMESPACE,
+    .event_handler = tuya_event_handler,
+    .network_check = tuya_network_check,
+    .pincode = NULL,
+};
 
     if (g_tuya_platform_ready) {
         return OPRT_OK;
@@ -552,6 +749,9 @@ static OPERATE_RET tuya_platform_bootstrap(void)
     if (tuya_wifi_owner_start() != 0) {
         return OPRT_COM_ERROR;
     }
+
+    UART_PRINT("[TUYA_BOOT] product=%s sw=%s fw_key=%s pincode=NULL\r\n",
+               TUYA_PRODUCT_KEY, TUYA_DEVICE_SW_VER, TUYA_FIRMWARE_KEY);
 
     op_ret = tal_log_init(TAL_LOG_LEVEL_DEBUG, DEF_LOG_BUF_LEN, tuya_log_output_cb);
     if (op_ret != OPRT_OK) {
@@ -571,11 +771,24 @@ static OPERATE_RET tuya_platform_bootstrap(void)
         return op_ret;
     }
 
+    op_ret = tal_sw_timer_init();
+    if (op_ret != OPRT_OK) {
+        UART_PRINT("[TUYA_BOOT] tal_sw_timer_init failed ret=%d\r\n", op_ret);
+        return op_ret;
+    }
+
     op_ret = tal_kv_init(&kv_cfg);
     if (op_ret != OPRT_OK) {
         UART_PRINT("[TUYA_BOOT] tal_kv_init failed ret=%d\r\n", op_ret);
         return op_ret;
     }
+
+    op_ret = tuya_kv_self_test();
+    if (op_ret != OPRT_OK) {
+        return op_ret;
+    }
+
+    UART_PRINT("[TUYA_BOOT] free heap before init: %d\r\n", tal_system_get_free_heap_size());
 
     op_ret = tuya_iot_init(&g_tuya_client, &config);
     if (op_ret != OPRT_OK) {
@@ -583,7 +796,7 @@ static OPERATE_RET tuya_platform_bootstrap(void)
         return op_ret;
     }
 
-    UART_PRINT("[TUYA_BOOT] Tuya init ok\r\n");
+    UART_PRINT("[TUYA_BOOT] Tuya init ok, free heap after init: %d\r\n", tal_system_get_free_heap_size());
 
     op_ret = netmgr_init(NETCONN_WIFI);
     if (op_ret != OPRT_OK) {
@@ -597,6 +810,10 @@ static OPERATE_RET tuya_platform_bootstrap(void)
         return op_ret;
     }
 
+    UART_PRINT("[TUYA_BOOT] token_get.count=%u cb0=%p\r\n",
+               g_tuya_client.token_get.count,
+               (void *)g_tuya_client.token_get.cb[0]);
+
     g_tuya_platform_ready = true;
     UART_PRINT("[TUYA_BOOT] platform bootstrap ok\r\n");
     return OPRT_OK;
@@ -606,6 +823,8 @@ static void tuya_task(void *arg)
 {
     int op_ret;
     tuya_iot_client_t *client = (tuya_iot_client_t *)arg;
+    uint8_t last_state = 0xFF;
+    uint8_t last_nextstate = 0xFF;
 
     if (client == NULL) {
         UART_PRINT("[TUYA_BOOT] Tuya task missing client\r\n");
@@ -624,6 +843,17 @@ static void tuya_task(void *arg)
 
     for (;;) {
         (void)tuya_iot_yield(client);
+        if (client->state != last_state || client->nextstate != last_nextstate) {
+            UART_PRINT("[TUYA_TASK] state=%s(%u) next=%s(%u) activated=%d token_cb=%u binding=%p status=%u\r\n",
+                       tuya_state_to_str(client->state), client->state,
+                       tuya_state_to_str(client->nextstate), client->nextstate,
+                       client->is_activated ? 1 : 0,
+                       client->token_get.count,
+                       client->binding,
+                       client->status);
+            last_state = client->state;
+            last_nextstate = client->nextstate;
+        }
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
@@ -834,8 +1064,11 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
             macAddr[3],
             macAddr[4],
             macAddr[5]);
+        memcpy(g_last_peer_mac, macAddr, sizeof(g_last_peer_mac));
+        g_last_peer_valid = true;
         app_CB.ConnectedStations++;
         SET_STATUS_BIT(app_CB.Status, STATUS_BIT_PEER_CONNECTED);
+        tkl_wifi_handle_event(pWlanEvent);
     }
     break;
     case WLAN_EVENT_REMOVE_PEER:
@@ -854,6 +1087,7 @@ void WlanStackEventHandler(WlanEvent_t *pWlanEvent)
         {
             CLR_STATUS_BIT(app_CB.Status, STATUS_BIT_PEER_CONNECTED);
         }
+        tkl_wifi_handle_event(pWlanEvent);
     }
     break;
     case WLAN_EVENT_CONNECTING:
@@ -1748,5 +1982,187 @@ int32_t printTklWifiConnectUsage(void *arg)
 {
     UART_PRINT("\n\rUsage: tkl_wifi_connect <ssid> [password]\n\r");
     UART_PRINT("Description: connect to AP using TKL WiFi layer\n\r");
+    return 0;
+}
+
+int32_t cmdTuyaDiagCallback(void *arg)
+{
+    TKL_WIFI_DIAG_T wifi_diag;
+    TKL_NET_DIAG_T net_diag;
+    struct dhcps_lease lease = {0};
+    int dhcp_lease_ok = 0;
+
+    (void)arg;
+    memset(&wifi_diag, 0, sizeof(wifi_diag));
+    memset(&net_diag, 0, sizeof(net_diag));
+    (void)tkl_wifi_diag_get(&wifi_diag);
+    (void)tkl_net_diag_get(&net_diag);
+
+    UART_PRINT("\r\n[TUYA_DIAG] tuya_ready=%u task=%p heap_free=%u\r\n",
+               g_tuya_platform_ready ? 1U : 0U,
+               g_tuya_task_handle,
+               (unsigned int)tal_system_get_free_heap_size());
+
+    UART_PRINT("[TUYA_DIAG] tuya_state=%s(%u) next=%s(%u) activated=%u status=%u token_cb=%u binding=%p\r\n",
+               tuya_state_to_str(g_tuya_client.state),
+               g_tuya_client.state,
+               tuya_state_to_str(g_tuya_client.nextstate),
+               g_tuya_client.nextstate,
+               g_tuya_client.is_activated ? 1U : 0U,
+               g_tuya_client.status,
+               g_tuya_client.token_get.count,
+               g_tuya_client.binding);
+
+    UART_PRINT("[TUYA_DIAG] wifi_owner_up=%u active_bitmap=0x%08lx role=%lu connected_sta=%lu\r\n",
+               IS_BIT_SET(ActiveNetIfBitMap, NET_IF_IS_UP) ? 1U : 0U,
+               (unsigned long)ActiveNetIfBitMap,
+               (unsigned long)app_CB.Role,
+               (unsigned long)app_CB.ConnectedStations);
+
+    UART_PRINT("[TUYA_DIAG] tkl_wifi init=%u sta_up=%u ap_up=%u req=%s current=%s sta_status=%s\r\n",
+               wifi_diag.initialized ? 1U : 0U,
+               wifi_diag.sta_role_up ? 1U : 0U,
+               wifi_diag.ap_role_up ? 1U : 0U,
+               tuya_wifi_mode_to_str(wifi_diag.requested_mode),
+               tuya_wifi_mode_to_str(wifi_diag.current_mode),
+               tuya_sta_status_to_str(wifi_diag.sta_status));
+
+    tuya_diag_print_netif_info("AP", WLAN_ROLE_AP);
+    tuya_diag_print_netif_info("STA", WLAN_ROLE_STA);
+
+    dhcp_lease_ok = wifi_softap_get_dhcps_lease(&lease);
+    UART_PRINT("[TUYA_DIAG] dhcp_server lease_api=%d\r\n", dhcp_lease_ok);
+    if (dhcp_lease_ok > 0) {
+        tuya_diag_print_ipv4_line("  start: ", ntohl(lease.start_ip.addr));
+        tuya_diag_print_ipv4_line("  end: ", ntohl(lease.end_ip.addr));
+        UART_PRINT("  lease_time_min: %lu\r\n", (unsigned long)wifi_softap_get_dhcps_lease_time());
+    }
+
+    UART_PRINT("[TUYA_DIAG] ap_tcp fd=%d port=%u bind_ok=%u listen_ok=%u\r\n",
+               net_diag.ap_tcp_server_fd,
+               net_diag.ap_tcp_server_port,
+               net_diag.ap_tcp_server_bind_ok ? 1U : 0U,
+               net_diag.ap_tcp_server_listen_ok ? 1U : 0U);
+
+    UART_PRINT("[TUYA_DIAG] select last_ret=%d maxfd=%d timeout_ms=%lu calls=%lu ready=%lu timeout=%lu err=%lu read_before=0x%08lx read_after=0x%08lx err_after=0x%08lx\r\n",
+               net_diag.last_select_ret,
+               net_diag.last_select_maxfd,
+               (unsigned long)net_diag.last_select_timeout_ms,
+               (unsigned long)net_diag.select_call_count,
+               (unsigned long)net_diag.select_ready_count,
+               (unsigned long)net_diag.select_timeout_count,
+               (unsigned long)net_diag.select_error_count,
+               (unsigned long)net_diag.last_select_read_mask_before,
+               (unsigned long)net_diag.last_select_read_mask_after,
+               (unsigned long)net_diag.last_select_error_mask_after);
+
+    UART_PRINT("[TUYA_DIAG] accept last_listen_fd=%d last_ret=%d peer_port=%u recv_fd=%d recv_ret=%d send_fd=%d send_ret=%d sendto_fd=%d sendto_ret=%d close_fd=%d close_ret=%d bcast_translate=%u\r\n",
+               net_diag.last_accept_listen_fd,
+               net_diag.last_accept_ret,
+               net_diag.last_accept_port,
+               net_diag.last_recv_fd,
+               net_diag.last_recv_ret,
+               net_diag.last_send_fd,
+               net_diag.last_send_ret,
+               net_diag.last_sendto_fd,
+               net_diag.last_sendto_ret,
+               net_diag.last_close_fd,
+               net_diag.last_close_ret,
+               net_diag.ap_broadcast_translate_active ? 1U : 0U);
+    if (net_diag.last_accept_port != 0U || net_diag.last_accept_ret >= 0) {
+        tuya_diag_print_ipv4_line("  accept_peer_ip: ", net_diag.last_accept_addr);
+    }
+
+    if (g_last_peer_valid) {
+        UART_PRINT("[TUYA_DIAG] last_peer_mac=%02x:%02x:%02x:%02x:%02x:%02x\r\n",
+                   g_last_peer_mac[0], g_last_peer_mac[1], g_last_peer_mac[2],
+                   g_last_peer_mac[3], g_last_peer_mac[4], g_last_peer_mac[5]);
+    } else {
+        UART_PRINT("[TUYA_DIAG] last_peer_mac=<none>\r\n");
+    }
+
+    UART_PRINT("[TUYA_DIAG] net_check=%u sta_connected=%u ip_acquired=%u peer_connected=%u\r\n",
+               tuya_network_check() ? 1U : 0U,
+               IS_STA_CONNECTED(app_CB.Status) ? 1U : 0U,
+               IS_IP_ACQUIRED(app_CB.Status) ? 1U : 0U,
+               IS_PEER_CONNECTED(app_CB.Status) ? 1U : 0U);
+    return 0;
+}
+
+int32_t printTuyaDiagUsage(void *arg)
+{
+    (void)arg;
+    UART_PRINT("\n\rUsage: tuya_diag\n\r");
+    UART_PRINT("Description: print Tuya/TKL/TI AP provisioning diagnostics\n\r");
+    return 0;
+}
+
+int32_t cmdTuyaNetTestUdpCallback(void *arg)
+{
+    uint32_t ap_ip = 0;
+    static const char payload[] = "tuya udp self test";
+    int fd;
+    int ret;
+
+    (void)arg;
+    if (network_stack_get_if_ip(WLAN_ROLE_AP, &ap_ip, NULL, NULL, NULL) != 0) {
+        UART_PRINT("[TUYA_TEST] AP IP unavailable\r\n");
+        return -1;
+    }
+
+    fd = tkl_net_socket_create(PROTOCOL_UDP);
+    if (fd < 0) {
+        UART_PRINT("[TUYA_TEST] udp socket create FAIL\r\n");
+        return -1;
+    }
+
+    ret = tkl_net_set_broadcast(fd);
+    UART_PRINT("[TUYA_TEST] set_broadcast ret=%d\r\n", ret);
+    ret = tkl_net_bind(fd, ap_ip, 0);
+    if (ret != 0) {
+        UART_PRINT("[TUYA_TEST] udp bind FAIL ret=%d\r\n", ret);
+        (void)tkl_net_close(fd);
+        return -1;
+    }
+
+    ret = tkl_net_send_to(fd, payload, sizeof(payload) - 1U, 0xffffffffUL, 6667U);
+    (void)tkl_net_close(fd);
+    UART_PRINT("[TUYA_TEST] udp sendto ret=%d => %s\r\n", ret, (ret > 0) ? "PASS" : "FAIL");
+    return (ret > 0) ? 0 : -1;
+}
+
+int32_t printTuyaNetTestUdpUsage(void *arg)
+{
+    (void)arg;
+    UART_PRINT("\n\rUsage: tuya_net_test_udp\n\r");
+    UART_PRINT("Description: test UDP broadcast through TKL socket layer\n\r");
+    return 0;
+}
+
+int32_t cmdTuyaNetTestTcpServerCallback(void *arg)
+{
+    (void)arg;
+    return tuya_net_test_tcp_server_common(6670U, false);
+}
+
+int32_t printTuyaNetTestTcpServerUsage(void *arg)
+{
+    (void)arg;
+    UART_PRINT("\n\rUsage: tuya_net_test_tcp_server\n\r");
+    UART_PRINT("Description: test TCP socket/bind/listen path through TKL\n\r");
+    return 0;
+}
+
+int32_t cmdTuyaNetTestSelectCallback(void *arg)
+{
+    (void)arg;
+    return tuya_net_test_tcp_server_common(6671U, true);
+}
+
+int32_t printTuyaNetTestSelectUsage(void *arg)
+{
+    (void)arg;
+    UART_PRINT("\n\rUsage: tuya_net_test_select\n\r");
+    UART_PRINT("Description: test TCP bind/listen/select path through TKL\n\r");
     return 0;
 }

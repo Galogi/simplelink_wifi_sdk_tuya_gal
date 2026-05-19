@@ -176,9 +176,17 @@ TUYA_RESET_REASON_E tkl_system_get_reset_reason(char **describe)
 void tkl_system_sleep(uint32_t num_ms)
 {
     // --- BEGIN: user implements ---
-    uint32_t ticks = num_ms / portTICK_PERIOD_MS;
-    if (ticks == 0 && num_ms > 0) {
-        ticks = 1;
+    if (xTaskGetSchedulerState() == taskSCHEDULER_NOT_STARTED) {
+        volatile uint32_t loops = num_ms * 4000U;
+        while (loops-- > 0U) {
+            __asm volatile("nop");
+        }
+        return;
+    }
+
+    TickType_t ticks = pdMS_TO_TICKS(num_ms);
+    if (ticks == 0U && num_ms > 0U) {
+        ticks = 1U;
     }
     vTaskDelay(ticks);
     // --- END: user implements ---

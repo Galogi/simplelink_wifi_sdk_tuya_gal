@@ -44,16 +44,19 @@ OPERATE_RET tkl_thread_create(TKL_THREAD_HANDLE *thread, const char *name, uint3
     if (!thread || !func) {
         return OPRT_INVALID_PARM;
     }
-    
-    // Convert Stack Size from BYTES to WORDS
-    // Tuya sends bytes (e.g., 4096), FreeRTOS on ARM needs words (e.g., 1024)
-    uint32_t stack_depth = stack_size / sizeof(portSTACK_TYPE);
+
+    // Tuya passes stack size in bytes; FreeRTOS expects stack depth in words.
+    // Round up so small non-aligned sizes do not truncate to a smaller stack.
+    uint32_t stack_depth = (stack_size + sizeof(portSTACK_TYPE) - 1U) / sizeof(portSTACK_TYPE);
+    if (stack_depth == 0U) {
+        stack_depth = 1U;
+    }
 
     // Create the task using Standard FreeRTOS
     BaseType_t ret = xTaskCreate(
         (TaskFunction_t)func,       // Function pointer
         name,                       // Debug name
-        (uint16_t)stack_depth,      // Stack size in words
+        (configSTACK_DEPTH_TYPE)stack_depth, // Stack size in words
         arg,                        // Argument
         (UBaseType_t)priority,      // Priority
         (TaskHandle_t *)thread      // Handle output

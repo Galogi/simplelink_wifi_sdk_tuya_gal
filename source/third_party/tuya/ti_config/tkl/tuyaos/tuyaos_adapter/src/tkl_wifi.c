@@ -20,6 +20,7 @@
 
 /* --- TI SDK Wi-Fi Host Driver --- */
 #include <ti/drivers/net/wifi/wifi_host_driver/inc_adapt/wlan_if.h>
+#include <ti/drivers/net/wifi/wifi_host_driver/inc_adapt/osi_kernel.h>
 
 /* --- Macros & Constants --- */
 #ifndef WLAN_MAX_SCAN_COUNT
@@ -50,6 +51,14 @@ extern void *network_get_ap_if(void);
 extern void network_set_up(void *newif);
 extern int8_t network_stack_set_dynamic_ip_if_ap(uint32_t ip, uint32_t netmask, uint32_t gw);
 extern int8_t network_stack_get_if_ip(WlanRole_e role, uint32_t *ip, uint32_t *netmask, uint32_t *gw, uint32_t *dhcp);
+extern int Report(const char *pcFormat, ...);
+extern char g_wpsConfigMethods[];
+extern const char g_manufacturer[];
+extern const char g_modelName[];
+extern const char g_modelNumber[];
+extern const char g_serialNumber[];
+extern const unsigned char g_uuid_string[];
+extern const char g_primaryDeviceType[];
 
 /* --- Helpers --- */
 
@@ -149,6 +158,23 @@ static WF_WK_MD_E _get_current_work_mode(void)
     return WWM_POWERDOWN;
 }
 
+static void _fill_default_wps_params(WpsParams_t *wps)
+{
+    if (wps == NULL) {
+        return;
+    }
+
+    memset(wps, 0, sizeof(*wps));
+    wps->deviceName = (char *)g_modelName;
+    wps->configMethods = (char *)g_wpsConfigMethods;
+    wps->manufacturer = (char *)g_manufacturer;
+    wps->modelName = (char *)g_modelName;
+    wps->modelNumber = (char *)g_modelNumber;
+    wps->serialNumber = (char *)g_serialNumber;
+    wps->uuid = (uint8_t *)g_uuid_string;
+    wps->deviceType = (uint8_t *)g_primaryDeviceType;
+}
+
 static uint8_t _tuya_ap_sec_to_ti(WF_AP_AUTH_MODE_E mode)
 {
     switch (mode) {
@@ -207,7 +233,8 @@ static int _wifi_role_up_sta(void)
     staParams.countryDomain[0] = g_country_domain[0];
     staParams.countryDomain[1] = g_country_domain[1];
     staParams.countryDomain[2] = g_country_domain[2];
-    staParams.wpsDisabled = TRUE;
+    staParams.wpsDisabled = FALSE;
+    _fill_default_wps_params(&staParams.wpsParams);
     staParams.p2pDeviceEnabled = FALSE;
 
     ret = Wlan_RoleUp(WLAN_ROLE_STA, &staParams, WLAN_WAIT_FOREVER);
@@ -407,6 +434,21 @@ OPERATE_RET tkl_wifi_init(WIFI_EVENT_CB cb)
     return OPRT_OK;
 }
 
+OPERATE_RET tkl_wifi_diag_get(TKL_WIFI_DIAG_T *diag)
+{
+    if (diag == NULL) {
+        return OPRT_INVALID_PARM;
+    }
+
+    diag->initialized = g_wifi_initialized;
+    diag->sta_role_up = g_sta_role_up;
+    diag->ap_role_up = g_ap_role_up;
+    diag->requested_mode = g_requested_mode;
+    diag->current_mode = _get_current_work_mode();
+    diag->sta_status = g_wifi_status;
+    return OPRT_OK;
+}
+
 
 
 OPERATE_RET tkl_wifi_scan_ap(const int8_t *ssid, AP_IF_S **ap_ary, uint32_t *num)
@@ -551,18 +593,72 @@ OPERATE_RET tkl_wifi_station_disconnect(void)
 OPERATE_RET tkl_wifi_get_mac(const WF_IF_E wf, NW_MAC_S *mac)
 {
     WlanMacAddress_t macParam;
+    WlanMacAddress_t fallbackMacParam;
     int ret;
 
-    if (mac == NULL) return OPRT_INVALID_PARM;
-    if (wf != WF_STATION) return OPRT_NOT_SUPPORTED;
+    if (mac == NULL) {
+        return OPRT_INVALID_PARM;
+    }
 
-    macParam.roleType = WLAN_ROLE_STA;
+    memset(&macParam, 0, sizeof(macParam));
+    memset(&fallbackMacParam, 0, sizeof(fallbackMacParam));
+
+    switch (wf) {
+        case WF_STATION:
+            macParam.roleType = WLAN_ROLE_STA;
+            break;
+        case WF_AP:
+            if (g_ap_role_up == FALSE) {
+                fallbackMacParam.roleType = (g_sta_role_up == TRUE) ? WLAN_ROLE_STA : WLAN_ROLE_DEVICE;
+                ret = Wlan_Get(WLAN_GET_MACADDRESS, &fallbackMacParam);
+                if (ret == 0) {
+                    memcpy(mac->mac, fallbackMacParam.pMacAddress, 6);
+                    tkl_log_output("[TKL_WIFI] get_mac pre-ap fallback role=%d %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+                                   fallbackMacParam.roleType,
+                                   mac->mac[0], mac->mac[1], mac->mac[2],
+                                   mac->mac[3], mac->mac[4], mac->mac[5]);
+                    return OPRT_OK;
+                }
+            }
+            macParam.roleType = WLAN_ROLE_AP;
+            break;
+        default:
+            return OPRT_NOT_SUPPORTED;
+    }
+
     ret = Wlan_Get(WLAN_GET_MACADDRESS, &macParam);
+    if (ret != 0 && wf == WF_AP) {
+        fallbackMacParam.roleType = WLAN_ROLE_STA;
+        ret = Wlan_Get(WLAN_GET_MACADDRESS, &fallbackMacParam);
+        if (ret == 0) {
+            memcpy(mac->mac, fallbackMacParam.pMacAddress, 6);
+            tkl_log_output("[TKL_WIFI] get_mac ap-fallback-to-sta %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+                           mac->mac[0], mac->mac[1], mac->mac[2],
+                           mac->mac[3], mac->mac[4], mac->mac[5]);
+            return OPRT_OK;
+        }
+
+        fallbackMacParam.roleType = WLAN_ROLE_DEVICE;
+        ret = Wlan_Get(WLAN_GET_MACADDRESS, &fallbackMacParam);
+        if (ret == 0) {
+            memcpy(mac->mac, fallbackMacParam.pMacAddress, 6);
+            tkl_log_output("[TKL_WIFI] get_mac ap-fallback-to-device %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+                           mac->mac[0], mac->mac[1], mac->mac[2],
+                           mac->mac[3], mac->mac[4], mac->mac[5]);
+            return OPRT_OK;
+        }
+    }
 
     if (ret == 0) {
         memcpy(mac->mac, macParam.pMacAddress, 6);
+        tkl_log_output("[TKL_WIFI] get_mac wf=%d %02X:%02X:%02X:%02X:%02X:%02X\r\n",
+                       wf,
+                       mac->mac[0], mac->mac[1], mac->mac[2],
+                       mac->mac[3], mac->mac[4], mac->mac[5]);
         return OPRT_OK;
     }
+
+    tkl_log_output("[TKL_WIFI] get_mac fail wf=%d ret=%d\r\n", wf, ret);
     return OPRT_COM_ERROR;
 }
 
@@ -580,7 +676,7 @@ OPERATE_RET tkl_wifi_set_work_mode(const WF_WK_MD_E mode)
 {
     int ret = 0;
 
-    printf("[TKL_WIFI] set_work_mode req=%s\n\r", _work_mode_to_str(mode));
+    Report("[TKL_WIFI] set_work_mode req=%s\r\n", _work_mode_to_str(mode));
 
     switch (mode) {
         case WWM_STATION:
@@ -599,13 +695,18 @@ OPERATE_RET tkl_wifi_set_work_mode(const WF_WK_MD_E mode)
             return OPRT_OK;
 
         case WWM_SOFTAP:
+            Report("[TKL_WIFI] set_work_mode softap path sta_up=%d ap_up=%d\r\n",
+                   g_sta_role_up, g_ap_role_up);
             if (g_ap_role_up == TRUE && g_sta_role_up == TRUE) {
                 ret = _wifi_role_down_sta();
                 if (ret != 0) {
+                    Report("[TKL_WIFI] set_work_mode softap down sta fail ret=%d\r\n", ret);
                     return OPRT_COM_ERROR;
                 }
             }
             g_requested_mode = mode;
+            Report("[TKL_WIFI] set_work_mode softap done req=%s current=%s\r\n",
+                   _work_mode_to_str(g_requested_mode), _work_mode_to_str(_get_current_work_mode()));
             return OPRT_OK;
 
         case WWM_STATIONAP:
@@ -672,14 +773,18 @@ OPERATE_RET tkl_wifi_start_ap(const WF_AP_CFG_IF_S *cfg)
     uint8_t sec_type;
 
     if (cfg == NULL || cfg->s_len == 0 || cfg->s_len > WIFI_SSID_LEN) {
-        printf("[TKL_WIFI] start_ap fail ret=%d\n\r", OPRT_INVALID_PARM);
+        Report("[TKL_WIFI] start_ap invalid cfg ret=%d\r\n", OPRT_INVALID_PARM);
         return OPRT_INVALID_PARM;
     }
+
+    Report("[TKL_WIFI] start_ap enter requested_ssid=%s mode=%s sta_up=%d ap_up=%d chan=%u sec=%u max=%u hidden_req=%u\r\n",
+           cfg->ssid, _work_mode_to_str(g_requested_mode), g_sta_role_up, g_ap_role_up,
+           cfg->chan, cfg->md, cfg->max_conn, cfg->ssid_hidden);
 
     if (g_requested_mode == WWM_SOFTAP && g_sta_role_up == TRUE) {
         ret = _wifi_role_down_sta();
         if (ret != 0) {
-            printf("[TKL_WIFI] start_ap fail ret=%d\n\r", ret);
+            Report("[TKL_WIFI] start_ap down_sta fail ret=%d\r\n", ret);
             return OPRT_COM_ERROR;
         }
     }
@@ -687,35 +792,46 @@ OPERATE_RET tkl_wifi_start_ap(const WF_AP_CFG_IF_S *cfg)
     if (g_ap_role_up == TRUE) {
         ret = _wifi_role_down_ap();
         if (ret != 0) {
-            printf("[TKL_WIFI] start_ap fail ret=%d\n\r", ret);
+            Report("[TKL_WIFI] start_ap down_ap fail ret=%d\r\n", ret);
             return OPRT_COM_ERROR;
         }
     }
 
     sec_type = _tuya_ap_sec_to_ti(cfg->md);
 
-    apParams.ssid = (uint8_t *)cfg->ssid;
-    apParams.hidden = cfg->ssid_hidden;
+    apParams.ssid = (int8_t *)cfg->ssid;
+    /*
+     * Keep Tuya onboarding AP visible. Some Tuya flows request a hidden SSID,
+     * but on this platform that makes the network effectively undiscoverable
+     * for manual bring-up and SmartLife onboarding.
+     */
+    apParams.hidden = FALSE;
     apParams.channel = (cfg->chan != 0U) ? cfg->chan : 6U;
     apParams.tx_pow = 0;
     apParams.sta_limit = (cfg->max_conn != 0U) ? cfg->max_conn : 1U;
     apParams.secParams.Type = sec_type;
     apParams.secParams.Key = (cfg->p_len > 0U) ? (int8_t *)cfg->passwd : NULL;
     apParams.secParams.KeyLen = cfg->p_len;
-    apParams.countryDomain[0] = g_country_domain[0];
-    apParams.countryDomain[1] = g_country_domain[1];
-    apParams.countryDomain[2] = g_country_domain[2];
+    apParams.countryDomain[0] = '0';
+    apParams.countryDomain[1] = '0';
+    apParams.countryDomain[2] = '\0';
     apParams.sae_pwe = 0;
     apParams.p2p_aGO = FALSE;
-    apParams.wpsDisabled = TRUE;
+    apParams.wpsDisabled = FALSE;
+    _fill_default_wps_params(&apParams.wpsParams);
     apParams.p2pDeviceEnabled = FALSE;
 
-    network_stack_add_if_ap();
+    Report("[TKL_WIFI] start_ap roleup ssid=%s chan=%u sec=%u keylen=%u hidden=%u country=%c%c%c\r\n",
+           apParams.ssid, apParams.channel, apParams.secParams.Type, apParams.secParams.KeyLen,
+           apParams.hidden, apParams.countryDomain[0], apParams.countryDomain[1], apParams.countryDomain[2]);
 
-    ret = Wlan_RoleUp(WLAN_ROLE_AP, &apParams, WLAN_WAIT_FOREVER);
+    network_stack_add_if_ap();
+    os_sleep(1, 0);
+
+    ret = Wlan_RoleUp(WLAN_ROLE_AP, &apParams, OSI_WAIT_FOR_SECOND * 10);
     if (ret != 0) {
         network_stack_remove_if_ap();
-        printf("[TKL_WIFI] start_ap fail ret=%d\n\r", ret);
+        Report("[TKL_WIFI] start_ap roleup fail ret=%d\r\n", ret);
         return OPRT_COM_ERROR;
     }
 
@@ -723,12 +839,15 @@ OPERATE_RET tkl_wifi_start_ap(const WF_AP_CFG_IF_S *cfg)
     if (apif != NULL) {
         _wifi_apply_ap_ip_config(cfg);
         network_set_up(apif);
+        Report("[TKL_WIFI] start_ap netif up apif=%p\r\n", apif);
+    } else {
+        Report("[TKL_WIFI] start_ap apif is null\r\n");
     }
 
     g_ap_role_up = TRUE;
     g_requested_mode = (g_requested_mode == WWM_STATIONAP || g_sta_role_up == TRUE) ? WWM_STATIONAP : WWM_SOFTAP;
 
-    printf("[TKL_WIFI] start_ap ok\n\r");
+    Report("[TKL_WIFI] start_ap ok ssid=%s\r\n", apParams.ssid);
     return OPRT_OK;
 }
 

@@ -30,6 +30,23 @@ static uint32_t tuya_flash_read_log_count = 0;
 static uint32_t tuya_flash_write_log_count = 0;
 static uint32_t tuya_flash_erase_log_count = 0;
 
+static BOOL_T _is_flash_range_valid(uint32_t addr, uint32_t size)
+{
+    if (size == 0U) {
+        return FALSE;
+    }
+
+    if (addr >= nvocmp_region_size) {
+        return FALSE;
+    }
+
+    if (size > (nvocmp_region_size - addr)) {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
 static void _tuya_flash_log_region(const char *tag)
 {
     printf("[TUYA_FLASH] %s physical=0x%08lx\n\r", tag, (unsigned long)nvocmp_physical_slot_address);
@@ -68,6 +85,7 @@ static OPERATE_RET _ensure_flash_open(void) {
 
 OPERATE_RET tkl_flash_read(uint32_t addr, uint8_t *dst, uint32_t size) {
     if (dst == NULL) return OPRT_INVALID_PARM;
+    if (_is_flash_range_valid(addr, size) == FALSE) return OPRT_INVALID_PARM;
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
     
     int_fast16_t res = XMEMWFF3_read(tuya_xmem_handle, addr, dst, size, 0);
@@ -82,6 +100,7 @@ OPERATE_RET tkl_flash_read(uint32_t addr, uint8_t *dst, uint32_t size) {
 OPERATE_RET tkl_flash_write(uint32_t addr, const uint8_t *src, uint32_t size)
 {
     if (src == NULL) return OPRT_INVALID_PARM;
+    if (_is_flash_range_valid(addr, size) == FALSE) return OPRT_INVALID_PARM;
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
 
     uint32_t bytes_remaining = size;
@@ -113,6 +132,7 @@ OPERATE_RET tkl_flash_write(uint32_t addr, const uint8_t *src, uint32_t size)
 }
 
 OPERATE_RET tkl_flash_erase(uint32_t addr, uint32_t size) {
+    if (_is_flash_range_valid(addr, size) == FALSE) return OPRT_INVALID_PARM;
     if (_ensure_flash_open() != OPRT_OK) return OPRT_COM_ERROR;
     
     int_fast16_t res = XMEMWFF3_erase(tuya_xmem_handle, addr, size);

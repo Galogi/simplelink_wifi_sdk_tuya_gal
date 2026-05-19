@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
 project(tuya)
-
 set(TARGET_NAME tuya)
 message(STATUS "Generating target ${TARGET_NAME}")
 
@@ -69,12 +68,7 @@ set(${TARGET_NAME}_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libhttp/src/http_client_wrapper.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libhttp/src/http_download.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/src/cipher_wrapper.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/ctr_drbg.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/aes.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/entropy.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/entropy_poll.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha256.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha512.c
+
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/src/tal_kv.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/src/kv_serialize.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/littlefs/lfs.c
@@ -120,18 +114,18 @@ set(${TARGET_NAME}_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/tuya_ota.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/tuya_register_center.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/cloud/mqtt_service.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/netcfg.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/protocol/tuya_protocol.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/lan/lan_sock.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/lan/tuya_lan.c
-   
+      
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/schema/dp_schema.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/schema/tuya_iot_dp.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/tls/tuya_tls.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netmgr.c
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c
+     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netmgr.c
+     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/netcfg.c
+     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_pbkdf2.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netcfg/ap_netcfg.c
+     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/netmgr/netconn_wifi.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tuya_transport.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tcp_transporter.c
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tuya_cloud_service/transport/tls_transporter.c
@@ -191,6 +185,11 @@ set(${TARGET_NAME}_INCLUDES
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/include
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/port
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/include
+    C:/ti/simplelink_wifi_sdk_9_21_00_15/source/third_party/mbedtls/include
+    C:/ti/simplelink_wifi_sdk_9_21_00_15/source/third_party/mbedtls/ti/configs
+    C:/ti/simplelink_wifi_sdk_9_21_00_15/source/third_party/mbedtls/ti/port
+    C:/ti/simplelink_wifi_sdk_9_21_00_15/source/third_party/mbedtls/ti
+    
     ${CMAKE_CURRENT_LIST_DIR}/third_party/hostap/src/openssl/include
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/tal_kv/littlefs
     ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libcjson/cJSON
@@ -255,16 +254,29 @@ set(${TARGET_NAME}_DEFINITIONS
     -DTUYA_GW_OPERATING_SYSTEM=1
     -DDeviceFamily_CC35XX
 )
-file(GLOB CONFIGURE_DEPENDS MBEDTLS_SOURCES
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/*.c
+list(APPEND ${TARGET_NAME}_SOURCES
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/aes.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/ccm.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/cipher.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/cipher_wrap.c
+    
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/ctr_drbg.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/entropy.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/entropy_poll.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/gcm.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/aria.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/camellia.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/des.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/nist_kw.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/ripemd160.c
+    
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/md5.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/platform.c
+    
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha1.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha256.c
+    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/sha512.c
 )
-
-# Remove OS sockets module (not for embedded)
-list(REMOVE_ITEM MBEDTLS_SOURCES
-    ${CMAKE_CURRENT_LIST_DIR}/tuya_src/libtls/mbedtls-3.1.0/library/net_sockets.c
-)
-
-list(APPEND ${TARGET_NAME}_SOURCES ${MBEDTLS_SOURCES})
 
 set(${TARGET_NAME}_COMPILER_FLAGS -Ofast -Wno-error)
 
@@ -274,6 +286,12 @@ add_library(${TARGET_NAME} STATIC ${${TARGET_NAME}_SOURCES})
 
 target_compile_options(${TARGET_NAME} PRIVATE ${${TARGET_NAME}_COMPILER_FLAGS})
 target_compile_definitions(${TARGET_NAME} PRIVATE ${${TARGET_NAME}_DEFINITIONS})
+target_compile_definitions(${TARGET_NAME} PRIVATE
+    MBEDTLS_CONFIG_FILE="mbedtls/mbedtls_config.h"
+)
+target_compile_definitions(${TARGET_NAME} PRIVATE
+    EOF=-1
+)
 target_compile_definitions(${TARGET_NAME} PRIVATE TUYA_SECURITY_LEVEL=0)
 target_compile_definitions(${TARGET_NAME} PRIVATE LFS_CONFIG=lfs_config.h)
 target_compile_definitions(${TARGET_NAME} PRIVATE
